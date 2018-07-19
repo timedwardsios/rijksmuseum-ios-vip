@@ -11,9 +11,10 @@ import TinyConstraints
 
 class MainView: UIView {
 
-    let label = UILabel()
+    let collectionView:UICollectionView
 
     init() {
+        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         super.init(frame: .zero)
         setupSubviews()
         setupConstraints()
@@ -26,11 +27,10 @@ class MainView: UIView {
     func setupSubviews(){
         backgroundColor = .white
 
-        label.text = "Rijkmuseum"
-        self.addSubview(label)
+        addSubview(collectionView)
     }
 
     func setupConstraints(){
-        label.edges(to: self)
+        collectionView.edges(to: self)
     }
 }

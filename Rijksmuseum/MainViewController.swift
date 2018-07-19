@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Rijksmuseum"
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -37,3 +37,4 @@ Utilities
 		Wrapper for CoreData
 	NetworkingService
 		Wrapper for networking classes
+	Result

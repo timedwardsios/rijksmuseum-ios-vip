@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -64,18 +64,17 @@
 		8B0ACAE6ACB365A0B64AEA83D6D7C276 /* Pods-RijksmuseumTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RijksmuseumTests-frameworks.sh"; sourceTree = "<group>"; };
 		8C6FABDBDCB0B6160B68BE040E18EBBC /* Pods-RijksmuseumTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RijksmuseumTests.modulemap"; sourceTree = "<group>"; };
 		90878EE1D353D6C94CA10B9B812553DE /* TinyConstraints.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TinyConstraints.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D8065292A58C8DDD75B067221AEE516 /* Abstraction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Abstraction.swift; path = TinyConstraints/Classes/Abstraction.swift; sourceTree = "<group>"; };
 		AD3071339490D839FB4950CD05F4441F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5EB557CAC98FB1323ED546ADECC3A16 /* Pods-Rijksmuseum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rijksmuseum.debug.xcconfig"; sourceTree = "<group>"; };
 		BB64B55294AF14A8CE223F731D583369 /* Pods-Rijksmuseum-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rijksmuseum-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C3C0D460A5C481C0112A3DF663D87CAE /* Pods-Rijksmuseum-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Rijksmuseum-resources.sh"; sourceTree = "<group>"; };
 		C5CEC240B055F7DDC6FEFBFEB77A5034 /* TinyConstraints-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TinyConstraints-dummy.m"; sourceTree = "<group>"; };
-		D0EDE34BAD93FC62B9EE254347B69B84 /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TinyConstraints.framework; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EDE34BAD93FC62B9EE254347B69B84 /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D25986184A8E5CE7C392028CFE6361C4 /* Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraints.swift; path = TinyConstraints/Classes/Constraints.swift; sourceTree = "<group>"; };
-		E09A37164B80DFBCCCBB8931C7D30549 /* Pods_RijksmuseumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RijksmuseumTests.framework; path = "Pods-RijksmuseumTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E09A37164B80DFBCCCBB8931C7D30549 /* Pods_RijksmuseumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RijksmuseumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E487CFFDD322DBFD3C9AAD60B1CC12C0 /* Pods-Rijksmuseum-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rijksmuseum-dummy.m"; sourceTree = "<group>"; };
-		F41F6DE61A963BCA4976BF8E1A4EA6AD /* Pods_Rijksmuseum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Rijksmuseum.framework; path = "Pods-Rijksmuseum.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41F6DE61A963BCA4976BF8E1A4EA6AD /* Pods_Rijksmuseum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rijksmuseum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7721BF3C96D409DAD6986D5CC01C762 /* Pods-Rijksmuseum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rijksmuseum.release.xcconfig"; sourceTree = "<group>"; };
 		FC8B3DFE1D40FED16980E5776F868FE8 /* TinyConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TinyConstraints.swift; path = TinyConstraints/Classes/TinyConstraints.swift; sourceTree = "<group>"; };
 		FF3D702D4681C26E9F39C40BE163A94C /* Pods-Rijksmuseum-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rijksmuseum-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 				7D2B36A455C25EC7FFE080173BC205FC /* TinyConstraints+superview.swift */,
 				9D70BA5FBA62C82F1BF1D7806510AE13 /* Support Files */,
 			);
-			name = TinyConstraints;
 			path = TinyConstraints;
 			sourceTree = "<group>";
 		};
@@ -153,7 +151,6 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				8A550A56F4606360CD946232A6965FB3 /* Pods */,
 				BEFF3D93A9C6204787DC2CAE45519012 /* Products */,
@@ -406,11 +403,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Rijksmuseum/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Rijksmuseum/Pods-Rijksmuseum.modulemap";
 				OTHER_LDFLAGS = "";
@@ -445,11 +438,7 @@
 				INFOPLIST_FILE = "Target Support Files/TinyConstraints/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TinyConstraints/TinyConstraints.modulemap";
 				PRODUCT_MODULE_NAME = TinyConstraints;
 				PRODUCT_NAME = TinyConstraints;
@@ -482,11 +471,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-Rijksmuseum/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Rijksmuseum/Pods-Rijksmuseum.modulemap";
 				OTHER_LDFLAGS = "";
@@ -585,11 +570,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-RijksmuseumTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-RijksmuseumTests/Pods-RijksmuseumTests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -680,11 +661,7 @@
 				INFOPLIST_FILE = "Target Support Files/TinyConstraints/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TinyConstraints/TinyConstraints.modulemap";
 				PRODUCT_MODULE_NAME = TinyConstraints;
 				PRODUCT_NAME = TinyConstraints;
@@ -718,11 +695,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-RijksmuseumTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-RijksmuseumTests/Pods-RijksmuseumTests.modulemap";
 				OTHER_LDFLAGS = "";
