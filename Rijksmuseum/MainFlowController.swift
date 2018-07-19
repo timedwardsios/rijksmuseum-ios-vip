@@ -8,18 +8,19 @@
 
 import UIKit
 
-class MainFlowCoordinator {
+class MainFlowController {
     let screen:UIScreen
     let window:UIWindow
     let navigationController: UINavigationController
-    let mainViewController:MainViewController
+    let portfolioViewController:PortfolioViewController
 
     init(screen:UIScreen,
-         window:UIWindow) {
+         window:UIWindow,
+         artService:ArtService) {
         self.screen = screen
         self.window = window
-        self.mainViewController = MainViewController()
-        self.navigationController = UINavigationController(rootViewController: mainViewController)
+        self.portfolioViewController = PortfolioViewController(artService: artService)
+        self.navigationController = UINavigationController(rootViewController: portfolioViewController)
     }
 
     func updateWindow(){

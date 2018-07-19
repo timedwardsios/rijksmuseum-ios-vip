@@ -9,12 +9,12 @@
 import UIKit
 import TinyConstraints
 
-class MainView: UIView {
+class PortfolioView: UIView {
 
     let collectionView:UICollectionView
 
-    init() {
-        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+    init(collectionView:UICollectionView) {
+        self.collectionView = collectionView
         super.init(frame: .zero)
         setupSubviews()
         setupConstraints()
@@ -25,7 +25,7 @@ class MainView: UIView {
     }
 
     func setupSubviews(){
-        backgroundColor = .white
+        collectionView.backgroundColor = .white
 
         addSubview(collectionView)
     }

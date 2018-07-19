@@ -13,13 +13,16 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let mainScreen:UIScreen
-    let mainWindow = UIWindow()
-    let mainFlowCoordinator:MainFlowCoordinator
+    let mainWindow:UIWindow
+    let mainFlowCoordinator:MainFlowController
+    let artService = ArtService()
 
     override init() {
         mainScreen = UIScreen.main
-        self.mainFlowCoordinator = MainFlowCoordinator(screen: mainScreen,
-                                                       window: mainWindow)
+        mainWindow = UIWindow()
+        self.mainFlowCoordinator = MainFlowController(screen: mainScreen,
+                                                       window: mainWindow,
+                                                       artService: artService)
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
