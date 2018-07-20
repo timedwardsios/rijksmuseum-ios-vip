@@ -10,9 +10,9 @@ import UIKit
 import TinyConstraints
 import SDWebImage
 
-class PortfolioCell: UICollectionViewCell {
+class PortfolioViewCell: UICollectionViewCell {
     struct ViewModel {
-        let imageUrl:URL
+        let imageUrl:URL?
     }
 
     private let imageView = UIImageView()
@@ -23,8 +23,8 @@ class PortfolioCell: UICollectionViewCell {
         }
     }
 
-    init(viewModel: ViewModel) {
-        self.viewModel = viewModel
+    override init(frame: CGRect) {
+        self.viewModel = ViewModel(imageUrl: nil)
         super.init(frame: .zero)
         setupSubviews()
         setupConstraints()

@@ -12,15 +12,16 @@ class MainFlowController {
     let screen:UIScreen
     let window:UIWindow
     let navigationController: UINavigationController
-    let portfolioViewController:PortfolioViewController
+    let portfolioView:PortfolioView
 
     init(screen:UIScreen,
          window:UIWindow,
          artService:ArtService) {
         self.screen = screen
         self.window = window
-        self.portfolioViewController = PortfolioViewController(artService: artService)
-        self.navigationController = UINavigationController(rootViewController: portfolioViewController)
+        let portfolioController = PortfolioController()
+        self.portfolioView = PortfolioView(eventHandler: portfolioController)
+        self.navigationController = UINavigationController(rootViewController: portfolioView)
     }
 
     func updateWindow(){
