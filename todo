@@ -1,7 +1,7 @@
-Test driven development
-
 Later:
+Test driven development
+	Works best with model/service layer components with defined inputs/outputs
 Unit tests
 Generics
 Swift-objc interoperability
-Promise
+Promise framework

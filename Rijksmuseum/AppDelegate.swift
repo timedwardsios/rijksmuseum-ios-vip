@@ -13,19 +13,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let mainScreen:UIScreen
     let mainWindow:UIWindow
-    let mainFlowCoordinator:MainFlowController
-    let artService = ArtService()
+    let artService:ArtService
+    let mainRouter:MainRouter
 
     override init() {
+        // TODO: clean up
+        UIWindow.appearance().backgroundColor = UIColor(hex: "343537")
+        UINavigationBar.appearance().barTintColor = UIColor(hex: "40474f")
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: UIFont(name: "Rijksmuseum-Bold", size: 22) as Any
+        ]
+        UICollectionView.appearance().backgroundColor = .clear
+
         mainScreen = UIScreen.main
         mainWindow = UIWindow()
-        self.mainFlowCoordinator = MainFlowController(screen: mainScreen,
+        mainWindow.backgroundColor = UIWindow.appearance().backgroundColor // workaround
+        artService = ArtService()
+        self.mainRouter = MainRouter(screen: mainScreen,
                                                        window: mainWindow,
                                                        artService: artService)
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        mainFlowCoordinator.updateWindow()
+        mainRouter.setupWindow()
         return true
     }
 

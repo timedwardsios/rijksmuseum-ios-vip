@@ -9,6 +9,19 @@
 import Foundation
 import CoreData
 
+struct ArtObject {
+    let remoteId: String
+    let title: String
+    let artist: String
+    let imageUrl: URL
+    let starred: Bool
+}
+
+struct ArtRequest {
+    let page:Int
+    let starredOnly:Bool
+}
+
 extension ArtObject: Decodable {
     enum CodingKeys: String, CodingKey {
         case objectNumber

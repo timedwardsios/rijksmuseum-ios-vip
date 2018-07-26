@@ -8,23 +8,23 @@
 
 import UIKit
 
-class MainFlowController {
+class MainRouter {
     let screen:UIScreen
     let window:UIWindow
     let navigationController: UINavigationController
-    let portfolioView:PortfolioView
 
     init(screen:UIScreen,
          window:UIWindow,
          artService:ArtService) {
         self.screen = screen
         self.window = window
-        let portfolioController = PortfolioController()
-        self.portfolioView = PortfolioView(eventHandler: portfolioController)
-        self.navigationController = UINavigationController(rootViewController: portfolioView)
+        let portfolioPresenter = PortfolioPresenter(artService: artService)
+        let portfolioViewController = PortfolioViewController(eventHandler: portfolioPresenter)
+        portfolioPresenter.interface = portfolioViewController
+        self.navigationController = UINavigationController(rootViewController: portfolioViewController)
     }
 
-    func updateWindow(){
+    func setupWindow(){
         window.rootViewController = navigationController
         window.frame = screen.bounds
         window.makeKeyAndVisible()
