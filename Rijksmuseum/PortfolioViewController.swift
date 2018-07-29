@@ -11,16 +11,20 @@
 //
 
 import UIKit
+import TinyConstraints
 
-protocol PortfolioDisplayLogic: class{
-    func displaySomething(viewModel: Portfolio.Something.ViewModel)
+protocol PortfolioViewInput: class{
+    func updateViewModel(viewModel: Portfolio.FetchArt.ViewModel)
 }
 
 class PortfolioViewController: UIViewController{
-    var interactor: PortfolioBusinessLogic?
+    var interactor: PortfolioInteractorInput?
     var router: (PortfolioRoutingLogic & PortfolioDataPassing)?
+    var listings = [Portfolio.FetchArt.ViewModel.Listing]()
 
-    // MARK: Object lifecycle
+    let collectionView = UICollectionView(frame: .zero,
+                                          collectionViewLayout: UICollectionViewLayout())
+
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,18 +36,70 @@ class PortfolioViewController: UIViewController{
     // MARK: View lifecycle
     override func viewDidLoad(){
         super.viewDidLoad()
-        doSomething()
+        title = "Rijksmuseum"
+        collectionView.register(ImageViewCell.self,
+                                forCellWithReuseIdentifier: ImageViewCell.reuseIdentifier())
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        view.addSubview(collectionView)
+        collectionView.edges(to: view)
+
+        interactor?.doSomething(request: Portfolio.FetchArt.Request())
     }
 
-    // MARK: Do something
-    func doSomething(){
-        let request = Portfolio.Something.Request()
-        interactor?.doSomething(request: request)
+    override func viewDidLayoutSubviews() {
+        let flowLayout = UICollectionViewFlowLayout()
+        let gutterSize = CGFloat(8)
+        let cellSize = CGFloat(83.75)
+        flowLayout.itemSize = CGSize(width: cellSize, height: cellSize)
+        flowLayout.minimumLineSpacing = CGFloat(gutterSize)
+        flowLayout.minimumInteritemSpacing = CGFloat(gutterSize)
+        flowLayout.sectionInset = UIEdgeInsets(top: gutterSize,
+                                               left: gutterSize,
+                                               bottom: gutterSize,
+                                               right: gutterSize)
+        collectionView.setCollectionViewLayout(flowLayout, animated: false)
     }
 }
 
-extension PortfolioViewController: PortfolioDisplayLogic {
-    func displaySomething(viewModel: Portfolio.Something.ViewModel){
-        // process vm
+extension PortfolioViewController: PortfolioViewInput {
+    func updateViewModel(viewModel: Portfolio.FetchArt.ViewModel){
+        listings = viewModel.listings
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+}
+
+extension PortfolioViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return listings.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.reuseIdentifier(),
+                                                            for: indexPath) as? ImageViewCell else {
+                                                                fatalError()
+        }
+        let imageUrl = listings[indexPath.row].imageUrl
+        cell.setImageUrl(imageUrl)
+        return cell
+    }
+}
+
+extension PortfolioViewController:UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.alpha = 0.5
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.alpha = 1.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let associatedObject = viewModel.[indexPath.row].associatedObject
+//        eventHandler.didSelectAssociatedObject(associatedObject)
     }
 }

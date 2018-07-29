@@ -21,14 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSAttributedStringKey.font: UIFont(name: "Rijksmuseum-Bold", size: 22) as Any
         ]
         UICollectionView.appearance().backgroundColor = .clear
-        mainWindow.backgroundColor = UIWindow.appearance().backgroundColor // workaround
+        window.backgroundColor = UIWindow.appearance().backgroundColor // workaround
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let portfolioViewController = Portfolio.build()
         let navigationController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navigationController
-        window.frame = screen.bounds
+        window.frame = UIScreen.main.bounds
         window.makeKeyAndVisible()
         return true
     }

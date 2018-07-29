@@ -12,16 +12,16 @@
 
 import UIKit
 
-protocol PortfolioPresentationLogic{
-    func presentSomething(response: Portfolio.Something.Response)
+protocol PortfolioPresenterInput{
+    func presentSomething(response: Portfolio.FetchArt.Response)
 }
 
-class PortfolioPresenter: PortfolioPresentationLogic{
-    weak var viewController: PortfolioDisplayLogic?
+class PortfolioPresenter: PortfolioPresenterInput{
+    weak var viewController: PortfolioViewInput?
     
     // MARK: Do something
-    func presentSomething(response: Portfolio.Something.Response){
-        let viewModel = Portfolio.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentSomething(response: Portfolio.FetchArt.Response){
+        let viewModel = Portfolio.FetchArt.ViewModel(listings: [Portfolio.FetchArt.ViewModel.Listing]())
+        viewController?.updateViewModel(viewModel: viewModel)
     }
 }
