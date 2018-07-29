@@ -5,3 +5,12 @@ Unit tests
 Generics
 Swift-objc interoperability
 Promise framework
+
+
+VIP:
+View
+ViewController
+ViewModel
+Interactor
+Presenter
+Router

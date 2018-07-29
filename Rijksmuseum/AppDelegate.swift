@@ -11,13 +11,9 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let mainScreen:UIScreen
-    let mainWindow:UIWindow
-    let artService:ArtService
-    let mainRouter:MainRouter
+    let window = UIWindow()
 
     override init() {
-        // TODO: clean up
         UIWindow.appearance().backgroundColor = UIColor(hex: "343537")
         UINavigationBar.appearance().barTintColor = UIColor(hex: "40474f")
         UINavigationBar.appearance().titleTextAttributes = [
@@ -25,18 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSAttributedStringKey.font: UIFont(name: "Rijksmuseum-Bold", size: 22) as Any
         ]
         UICollectionView.appearance().backgroundColor = .clear
-
-        mainScreen = UIScreen.main
-        mainWindow = UIWindow()
         mainWindow.backgroundColor = UIWindow.appearance().backgroundColor // workaround
-        artService = ArtService()
-        self.mainRouter = MainRouter(screen: mainScreen,
-                                                       window: mainWindow,
-                                                       artService: artService)
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        mainRouter.setupWindow()
+        let portfolioViewController = Portfolio.build()
+        let navigationController = UINavigationController(rootViewController: portfolioViewController)
+        window.rootViewController = navigationController
+        window.frame = screen.bounds
+        window.makeKeyAndVisible()
         return true
     }
 
