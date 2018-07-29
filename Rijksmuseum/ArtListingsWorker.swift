@@ -13,7 +13,7 @@
 import UIKit
 
 class PortfolioWorker{
-    func fetchListings(){
+    func fetchListings(completion: (Result<[ArtStub], Error>)->Void){
 //        let artRequest = ArtRequest(page: 0, starredOnly: false)
 //        artService.getArtResults(withRequest: artRequest) {[weak self] (result) in
 //            guard let sSelf = self else {return}

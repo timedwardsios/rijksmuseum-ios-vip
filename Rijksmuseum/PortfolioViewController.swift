@@ -19,12 +19,11 @@ protocol PortfolioViewInput: class{
 
 class PortfolioViewController: UIViewController{
     var interactor: PortfolioInteractorInput?
-    var router: (PortfolioRoutingLogic & PortfolioDataPassing)?
-    var listings = [Portfolio.FetchArt.ViewModel.Listing]()
+    var router: (PortfolioRouterInput & PortfolioDataPassing)?
 
-    let collectionView = UICollectionView(frame: .zero,
+    private var listings = [Portfolio.FetchArt.ViewModel.Listing]()
+    private let collectionView = UICollectionView(frame: .zero,
                                           collectionViewLayout: UICollectionViewLayout())
-
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,12 +38,13 @@ class PortfolioViewController: UIViewController{
         title = "Rijksmuseum"
         collectionView.register(ImageViewCell.self,
                                 forCellWithReuseIdentifier: ImageViewCell.reuseIdentifier())
+        collectionView.alwaysBounceVertical = true
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addSubview(collectionView)
         collectionView.edges(to: view)
 
-        interactor?.doSomething(request: Portfolio.FetchArt.Request())
+        interactor?.fetchArt(request: Portfolio.FetchArt.Request())
     }
 
     override func viewDidLayoutSubviews() {
@@ -71,7 +71,7 @@ extension PortfolioViewController: PortfolioViewInput {
     }
 }
 
-extension PortfolioViewController: UICollectionViewDataSource {
+extension PortfolioViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return listings.count
     }
@@ -87,7 +87,7 @@ extension PortfolioViewController: UICollectionViewDataSource {
     }
 }
 
-extension PortfolioViewController:UICollectionViewDelegate{
+extension PortfolioViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.alpha = 0.5

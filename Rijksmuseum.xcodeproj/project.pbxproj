@@ -13,7 +13,7 @@
 		22277D50210DB258009AE8A0 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D4A210DB258009AE8A0 /* Portfolio.swift */; };
 		22277D51210DB258009AE8A0 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D4B210DB258009AE8A0 /* PortfolioViewController.swift */; };
 		22277D52210DB258009AE8A0 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D4C210DB258009AE8A0 /* PortfolioInteractor.swift */; };
-		22277D54210DEF67009AE8A0 /* ArtDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D53210DEF67009AE8A0 /* ArtDetails.swift */; };
+		22277D54210DEF67009AE8A0 /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D53210DEF67009AE8A0 /* Art.swift */; };
 		22277D59210DFF2D009AE8A0 /* _PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22706C8620FE510E006E27EE /* _PortfolioViewController.swift */; };
 		2234A8A12100B1A6006DE2BD /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A8A02100B1A6006DE2BD /* ImageViewCell.swift */; };
 		2234A8A32100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A8A22100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift */; };
@@ -48,7 +48,7 @@
 		22277D4A210DB258009AE8A0 /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		22277D4B210DB258009AE8A0 /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		22277D4C210DB258009AE8A0 /* PortfolioInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractor.swift; sourceTree = "<group>"; };
-		22277D53210DEF67009AE8A0 /* ArtDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetails.swift; sourceTree = "<group>"; };
+		22277D53210DEF67009AE8A0 /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
 		2234A8A02100B1A6006DE2BD /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		2234A8A22100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+reuseIdentifier.swift"; sourceTree = "<group>"; };
 		22363AC621090BDB006F5C3A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				22706CAF20FFBF85006E27EE /* ArtService.swift */,
-				22277D53210DEF67009AE8A0 /* ArtDetails.swift */,
+				22277D53210DEF67009AE8A0 /* Art.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -402,7 +402,7 @@
 			files = (
 				22277D51210DB258009AE8A0 /* PortfolioViewController.swift in Sources */,
 				22706CB020FFBF85006E27EE /* ArtService.swift in Sources */,
-				22277D54210DEF67009AE8A0 /* ArtDetails.swift in Sources */,
+				22277D54210DEF67009AE8A0 /* Art.swift in Sources */,
 				2234A8A12100B1A6006DE2BD /* ImageViewCell.swift in Sources */,
 				22277D4E210DB258009AE8A0 /* ArtListingsWorker.swift in Sources */,
 				22277D59210DFF2D009AE8A0 /* _PortfolioViewController.swift in Sources */,

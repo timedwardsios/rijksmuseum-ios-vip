@@ -12,25 +12,23 @@
 
 import UIKit
 
+protocol PortfolioInteractorData{
+    //
+}
+
 protocol PortfolioInteractorInput{
-    func doSomething(request: Portfolio.FetchArt.Request)
+    func fetchArt(request: Portfolio.FetchArt.Request)
 }
 
-protocol PortfolioDataStore{
-    //var name: String { get set }
-}
-
-class PortfolioInteractor: PortfolioInteractorInput, PortfolioDataStore{
+class PortfolioInteractor: PortfolioInteractorData{
     var presenter: PortfolioPresenterInput?
-    var worker: PortfolioWorker?
-    //var name: String = ""
-    
-    // MARK: Do something
-    func doSomething(request: Portfolio.FetchArt.Request){
-        worker = PortfolioWorker()
-        worker?.fetchListings()
-        
-        let response = Portfolio.FetchArt.Response()
-        presenter?.presentSomething(response: response)
+}
+
+extension PortfolioInteractor: PortfolioInteractorInput {
+    func fetchArt(request: Portfolio.FetchArt.Request) {
+        let worker = PortfolioWorker()
+        worker.fetchListings { (result) in
+            presenter?.didFetchArt(response: Portfolio.FetchArt.Response())
+        }
     }
 }

@@ -13,14 +13,13 @@
 import UIKit
 
 protocol PortfolioPresenterInput{
-    func presentSomething(response: Portfolio.FetchArt.Response)
+    func didFetchArt(response: Portfolio.FetchArt.Response)
 }
 
 class PortfolioPresenter: PortfolioPresenterInput{
     weak var viewController: PortfolioViewInput?
-    
-    // MARK: Do something
-    func presentSomething(response: Portfolio.FetchArt.Response){
+
+    func didFetchArt(response: Portfolio.FetchArt.Response) {
         let viewModel = Portfolio.FetchArt.ViewModel(listings: [Portfolio.FetchArt.ViewModel.Listing]())
         viewController?.updateViewModel(viewModel: viewModel)
     }

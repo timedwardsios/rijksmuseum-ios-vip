@@ -12,18 +12,18 @@
 
 import UIKit
 
-@objc protocol PortfolioRoutingLogic{
-    //func routeToSomewhere(segue: UIStoryboardSegue?)
+protocol PortfolioRouterInput{
+    //
 }
 
 protocol PortfolioDataPassing{
-    var dataStore: PortfolioDataStore? { get }
+    var interactorData: PortfolioInteractorData? { get }
 }
 
-class PortfolioRouter: PortfolioRoutingLogic, PortfolioDataPassing{
+class PortfolioRouter: PortfolioRouterInput, PortfolioDataPassing{
     weak var viewController: PortfolioViewController?
-    var dataStore: PortfolioDataStore?
-
+    var interactorData: PortfolioInteractorData?
+    
     // MARK: Routing
 
     //func routeToSomewhere(segue: UIStoryboardSegue?)

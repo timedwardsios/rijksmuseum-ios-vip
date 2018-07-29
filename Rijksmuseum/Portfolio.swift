@@ -14,10 +14,8 @@ import UIKit
 
 enum Portfolio{
     enum FetchArt{
-        struct Request{
-        }
-        struct Response{
-        }
+        struct Request{}
+        struct Response{}
         struct ViewModel{
             struct Listing {
                 let imageUrl:URL
@@ -36,7 +34,7 @@ enum Portfolio{
         interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController
-        router.dataStore = interactor
+        router.interactorData = interactor
         return viewController
     }
 }
