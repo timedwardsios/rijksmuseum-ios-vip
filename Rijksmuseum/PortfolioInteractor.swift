@@ -26,7 +26,7 @@ class PortfolioInteractor: PortfolioInteractorData{
 
 extension PortfolioInteractor: PortfolioInteractorInput {
     func fetchArt(request: Portfolio.FetchArt.Request) {
-        let worker = PortfolioWorker()
+        let worker = ArtListingWorker()
         worker.fetchListings { (result) in
             presenter?.didFetchArt(response: Portfolio.FetchArt.Response())
         }

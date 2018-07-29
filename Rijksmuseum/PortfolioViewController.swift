@@ -18,21 +18,22 @@ protocol PortfolioViewInput: class{
 }
 
 class PortfolioViewController: UIViewController{
-    var interactor: PortfolioInteractorInput?
-    var router: (PortfolioRouterInput & PortfolioDataPassing)?
-
-    private var listings = [Portfolio.FetchArt.ViewModel.Listing]()
-    private let collectionView = UICollectionView(frame: .zero,
-                                          collectionViewLayout: UICollectionViewLayout())
-    init() {
+    let interactor: PortfolioInteractorInput
+    let router: (PortfolioRouterInput & PortfolioDataPassing)
+    init(interactor: PortfolioInteractorInput,
+         router: (PortfolioRouterInput & PortfolioDataPassing)) {
+        self.interactor = interactor
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: View lifecycle
+    private var listings = [Portfolio.FetchArt.ViewModel.Listing]()
+    private let collectionView = UICollectionView(frame: .zero,
+                                                  collectionViewLayout: UICollectionViewLayout())
+
     override func viewDidLoad(){
         super.viewDidLoad()
         title = "Rijksmuseum"
@@ -44,7 +45,7 @@ class PortfolioViewController: UIViewController{
         view.addSubview(collectionView)
         collectionView.edges(to: view)
 
-        interactor?.fetchArt(request: Portfolio.FetchArt.Request())
+        interactor.fetchArt(request: Portfolio.FetchArt.Request())
     }
 
     override func viewDidLayoutSubviews() {

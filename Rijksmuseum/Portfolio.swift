@@ -25,12 +25,11 @@ enum Portfolio{
     }
 
     static func build()->PortfolioViewController{
-        let viewController = PortfolioViewController()
         let interactor = PortfolioInteractor()
         let presenter = PortfolioPresenter()
         let router = PortfolioRouter()
-        viewController.interactor = interactor
-        viewController.router = router
+        let viewController = PortfolioViewController(interactor: interactor,
+                                                     router: router)
         interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController

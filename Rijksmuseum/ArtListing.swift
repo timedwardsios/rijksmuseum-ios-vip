@@ -8,14 +8,9 @@
 
 import Foundation
 
-protocol ArtStub {
+protocol ArtListing {
     var remoteId: String{get}
     var title: String{get}
     var artist: String{get}
     var imageUrl: URL{get}
-}
-
-protocol ArtDetails: ArtStub {
-    var subtitle: String{get}
-    var description: String{get}
 }
