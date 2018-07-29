@@ -1,16 +1,6 @@
-Later:
-Test driven development
-	Works best with model/service layer components with defined inputs/outputs
-Unit tests
-Generics
-Swift-objc interoperability
-Promise framework
-
-
-VIP:
-View
-ViewController
-ViewModel
-Interactor
-Presenter
-Router
+Finish reading blog posts + comments
+Write tests for Portfolio scene
+Write tests for details scene
+Create details scene
+Finish app
+Write blog posts

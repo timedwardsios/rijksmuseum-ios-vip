@@ -12,10 +12,22 @@
 
 import UIKit
 
+protocol PortfolioBusinessLogic{
+    func fetchListings(request: Portfolio.FetchListings.Request)
+    func numberOfListings()->Int
+    func imageUrlForListingAtIndex(_ index:Int)->URL
+    func setSelectedRow(_ row:Int)
+}
+
+protocol PortfolioDataStore{
+    var selectedArtPrimitive:ArtPrimitive? { get }
+}
+
 class PortfolioInteractor: PortfolioDataStore{
     private let presenter: PortfolioPresentationLogic
     private let artPrimitiveWorker:ArtPrimitiveWorker = ArtPrimitiveWorker(artPrimitiveSource: ArtPrimitiveAPI())
-    var selectedPrimitive: ArtPrimitive?
+    var artPrimitives = [ArtPrimitive]()
+    var selectedArtPrimitive: ArtPrimitive?
 
     init(presenter:PortfolioPresentationLogic) {
         self.presenter = presenter
@@ -23,15 +35,29 @@ class PortfolioInteractor: PortfolioDataStore{
 }
 
 extension PortfolioInteractor: PortfolioBusinessLogic {
-    func fetchArt(request: Portfolio.FetchArt.Request) {
+    func fetchListings(request: Portfolio.FetchListings.Request) {
         artPrimitiveWorker.fetchPrimitives {[weak self] (result) in
             guard let sSelf = self else {return}
             switch result {
             case .success(let artPrimitives):
-                sSelf.presenter.didFetchArt(response: Portfolio.FetchArt.Response(artPrimitives: artPrimitives))
+                sSelf.artPrimitives = artPrimitives
+                sSelf.presenter.didFetchListings(response: Portfolio.FetchListings.Response())
             case .failure(_):
                 fatalError()
             }
         }
+    }
+
+    // kinda hacky but can't think of a better way of doing this :(
+    func numberOfListings() -> Int {
+        return artPrimitives.count
+    }
+
+    func imageUrlForListingAtIndex(_ index: Int) -> URL {
+        return artPrimitives[index].imageUrl
+    }
+
+    func setSelectedRow(_ row: Int) {
+        selectedArtPrimitive = artPrimitives[row]
     }
 }

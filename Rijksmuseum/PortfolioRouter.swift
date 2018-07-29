@@ -12,6 +12,10 @@
 
 import UIKit
 
+protocol PortfolioRoutingLogic{
+    var dataStore: PortfolioDataStore { get }
+}
+
 class PortfolioRouter: PortfolioRoutingLogic{
     weak var viewController: PortfolioViewController?
     

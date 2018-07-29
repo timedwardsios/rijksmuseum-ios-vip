@@ -12,37 +12,16 @@
 
 import UIKit
 
-protocol PortfolioDisplayLogic: class{
-    func updateViewModel(viewModel: Portfolio.FetchArt.ViewModel)
-}
-
-protocol PortfolioBusinessLogic{
-    func fetchArt(request: Portfolio.FetchArt.Request)
-}
-
-protocol PortfolioPresentationLogic{
-    func didFetchArt(response: Portfolio.FetchArt.Response)
-}
-
-protocol PortfolioRoutingLogic{
-    var dataStore: PortfolioDataStore { get }
-}
-
-protocol PortfolioDataStore{
-    var selectedPrimitive:ArtPrimitive?{get}
-}
-
 enum Portfolio{
-    enum FetchArt{
+    enum FetchListings{
         struct Request{}
-        struct Response{
-            let artPrimitives:[ArtPrimitive]
-        }
+        struct Response{}
         struct ViewModel{
-            struct Listing {
-                let imageUrl:URL
+            enum ViewState {
+                case loading
+                case loaded
             }
-            let listings:[Listing]
+            let viewState:ViewState
         }
     }
 

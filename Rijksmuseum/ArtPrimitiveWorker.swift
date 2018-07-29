@@ -27,7 +27,9 @@ class ArtPrimitiveWorker{
         artPrimitiveSource.fetchPrimitives { (result) in
             switch result {
             case .success(let artPrimitives):
-                completion(.success(artPrimitives))
+                DispatchQueue.main.async {
+                    completion(.success(artPrimitives))
+                }
             case .failure(_):
                 fatalError()
             }

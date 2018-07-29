@@ -12,14 +12,15 @@
 
 import UIKit
 
+protocol PortfolioPresentationLogic{
+    func didFetchListings(response: Portfolio.FetchListings.Response)
+}
+
 class PortfolioPresenter: PortfolioPresentationLogic{
     weak var viewController: PortfolioDisplayLogic?
 
-    func didFetchArt(response: Portfolio.FetchArt.Response) {
-        let listings = response.artPrimitives.map {
-            return Portfolio.FetchArt.ViewModel.Listing(imageUrl: $0.imageUrl)
-        }
-        let viewModel = Portfolio.FetchArt.ViewModel(listings: listings)
+    func didFetchListings(response: Portfolio.FetchListings.Response) {
+        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded)
         viewController?.updateViewModel(viewModel: viewModel)
     }
 }

@@ -13,20 +13,22 @@
 import UIKit
 import TinyConstraints
 
+protocol PortfolioDisplayLogic: class{
+    func updateViewModel(viewModel: Portfolio.FetchListings.ViewModel)
+}
+
 class PortfolioViewController: UIViewController{
-    private let interactor: PortfolioBusinessLogic
+    let interactor: PortfolioBusinessLogic
     private let router: PortfolioRoutingLogic
     private let collectionView = UICollectionView(frame: .zero,
                                                   collectionViewLayout: UICollectionViewLayout())
-    private var listings = [Portfolio.FetchArt.ViewModel.Listing]()
-
     init(interactor: PortfolioBusinessLogic,
          router: PortfolioRoutingLogic){
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -41,7 +43,7 @@ class PortfolioViewController: UIViewController{
         collectionView.delegate = self
         view.addSubview(collectionView)
         collectionView.edges(to: view)
-        interactor.fetchArt(request: Portfolio.FetchArt.Request())
+        interactor.fetchListings(request: Portfolio.FetchListings.Request())
     }
 
     override func viewDidLayoutSubviews() {
@@ -61,7 +63,7 @@ class PortfolioViewController: UIViewController{
 
 extension PortfolioViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listings.count
+        return interactor.numberOfListings()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,7 +71,7 @@ extension PortfolioViewController: UICollectionViewDataSource{
                                                             for: indexPath) as? ImageViewCell else {
                                                                 fatalError()
         }
-        let imageUrl = listings[indexPath.row].imageUrl
+        let imageUrl = interactor.imageUrlForListingAtIndex(indexPath.row)
         cell.setImageUrl(imageUrl)
         return cell
     }
@@ -87,16 +89,17 @@ extension PortfolioViewController: UICollectionViewDelegate{
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let associatedObject = viewModel.[indexPath.row].associatedObject
-//        eventHandler.didSelectAssociatedObject(associatedObject)
+        interactor.setSelectedRow(indexPath.row)
     }
 }
 
 extension PortfolioViewController: PortfolioDisplayLogic {
-    func updateViewModel(viewModel: Portfolio.FetchArt.ViewModel){
-        listings = viewModel.listings
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
+    func updateViewModel(viewModel: Portfolio.FetchListings.ViewModel){
+        switch viewModel.viewState {
+        case .loading:
+            return
+        case .loaded:
+            collectionView.reloadData()
         }
     }
 }
