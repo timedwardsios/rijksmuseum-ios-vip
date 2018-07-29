@@ -16,10 +16,6 @@ protocol PortfolioDisplayLogic: class{
     func updateViewModel(viewModel: Portfolio.FetchArt.ViewModel)
 }
 
-protocol PortfolioDataStore{
-    var selectedListing:ArtListing?{get}
-}
-
 protocol PortfolioBusinessLogic{
     func fetchArt(request: Portfolio.FetchArt.Request)
 }
@@ -29,32 +25,36 @@ protocol PortfolioPresentationLogic{
 }
 
 protocol PortfolioRoutingLogic{
-    var dataStore: PortfolioDataStore? { get }
+    var dataStore: PortfolioDataStore { get }
+}
+
+protocol PortfolioDataStore{
+    var selectedPrimitive:ArtPrimitive?{get}
 }
 
 enum Portfolio{
     enum FetchArt{
         struct Request{}
-        struct Response{}
+        struct Response{
+            let artPrimitives:[ArtPrimitive]
+        }
         struct ViewModel{
             struct Listing {
                 let imageUrl:URL
             }
-            var listings:[Listing]
+            let listings:[Listing]
         }
     }
 
+    // TODO: check for retain cycles
     static func build()->PortfolioViewController{
-        let viewController = PortfolioViewController()
-        let interactor = PortfolioInteractor()
         let presenter = PortfolioPresenter()
-        let router = PortfolioRouter()
-        viewController.interactor = interactor
-        viewController.router = router
-        interactor.presenter = presenter
+        let interactor = PortfolioInteractor(presenter: presenter)
+        let router = PortfolioRouter(dataStore: interactor)
+        let viewController = PortfolioViewController(interactor: interactor,
+                                                     router: router)
         presenter.viewController = viewController
         router.viewController = viewController
-        router.dataStore = interactor
         return viewController
     }
 }

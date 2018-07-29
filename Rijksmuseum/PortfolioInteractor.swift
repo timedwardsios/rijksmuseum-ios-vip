@@ -13,15 +13,25 @@
 import UIKit
 
 class PortfolioInteractor: PortfolioDataStore{
-    var presenter: PortfolioPresentationLogic?
-    var selectedListing: ArtListing?
+    let presenter: PortfolioPresentationLogic
+    var selectedPrimitive: ArtPrimitive?
+    init(presenter:PortfolioPresentationLogic) {
+        self.presenter = presenter
+    }
 }
 
 extension PortfolioInteractor: PortfolioBusinessLogic {
     func fetchArt(request: Portfolio.FetchArt.Request) {
-        let worker = ArtListingWorker()
-        worker.fetchListings { (result) in
-            presenter?.didFetchArt(response: Portfolio.FetchArt.Response())
+        let artPrimitiveSource = ArtPrimitiveAPI()
+        let worker = ArtPrimitivesWorker(artPrimitiveSource: artPrimitiveSource)
+        worker.fetchPrimitives {[weak self] (result) in
+            guard let sSelf = self else {return}
+            switch result {
+            case .success(let artPrimitives):
+                sSelf.presenter.didFetchArt(response: Portfolio.FetchArt.Response(artPrimitives: artPrimitives))
+            case .failure(_):
+                fatalError()
+            }
         }
     }
 }

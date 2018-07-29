@@ -16,7 +16,10 @@ class PortfolioPresenter: PortfolioPresentationLogic{
     weak var viewController: PortfolioDisplayLogic?
 
     func didFetchArt(response: Portfolio.FetchArt.Response) {
-        let viewModel = Portfolio.FetchArt.ViewModel(listings: [Portfolio.FetchArt.ViewModel.Listing]())
+        let listings = response.artPrimitives.map {
+            return Portfolio.FetchArt.ViewModel.Listing(imageUrl: $0.imageUrl)
+        }
+        let viewModel = Portfolio.FetchArt.ViewModel(listings: listings)
         viewController?.updateViewModel(viewModel: viewModel)
     }
 }

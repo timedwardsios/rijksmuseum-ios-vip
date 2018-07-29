@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ArtDetails: ArtListing {
+protocol Art: ArtPrimitive {
     var subtitle: String{get}
     var description: String{get}
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ArtListing {
+protocol ArtPrimitive {
     var remoteId: String{get}
     var title: String{get}
     var artist: String{get}
