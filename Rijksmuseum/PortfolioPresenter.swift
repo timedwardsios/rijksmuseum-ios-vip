@@ -12,12 +12,8 @@
 
 import UIKit
 
-protocol PortfolioPresenterInput{
-    func didFetchArt(response: Portfolio.FetchArt.Response)
-}
-
-class PortfolioPresenter: PortfolioPresenterInput{
-    weak var viewController: PortfolioViewInput?
+class PortfolioPresenter: PortfolioPresentationLogic{
+    weak var viewController: PortfolioDisplayLogic?
 
     func didFetchArt(response: Portfolio.FetchArt.Response) {
         let viewModel = Portfolio.FetchArt.ViewModel(listings: [Portfolio.FetchArt.ViewModel.Listing]())

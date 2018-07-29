@@ -15,7 +15,6 @@
 		22277D51210DB258009AE8A0 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D4B210DB258009AE8A0 /* PortfolioViewController.swift */; };
 		22277D52210DB258009AE8A0 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D4C210DB258009AE8A0 /* PortfolioInteractor.swift */; };
 		22277D54210DEF67009AE8A0 /* ArtListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D53210DEF67009AE8A0 /* ArtListing.swift */; };
-		22277D59210DFF2D009AE8A0 /* _PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22706C8620FE510E006E27EE /* _PortfolioViewController.swift */; };
 		2234A8A12100B1A6006DE2BD /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A8A02100B1A6006DE2BD /* ImageViewCell.swift */; };
 		2234A8A32100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A8A22100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift */; };
 		22363AC721090BDB006F5C3A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22363AC621090BDB006F5C3A /* UIColor.swift */; };
@@ -56,7 +55,6 @@
 		22363AC621090BDB006F5C3A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		22706C8120FE510E006E27EE /* Rijksmuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rijksmuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C8420FE510E006E27EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22706C8620FE510E006E27EE /* _PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _PortfolioViewController.swift; sourceTree = "<group>"; };
 		22706C8C20FE510E006E27EE /* Rijksmuseum.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rijksmuseum.xcdatamodel; sourceTree = "<group>"; };
 		22706C8E20FE510F006E27EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22706C9120FE510F006E27EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				22277D4C210DB258009AE8A0 /* PortfolioInteractor.swift */,
 				22277D47210DB258009AE8A0 /* PortfolioPresenter.swift */,
 				22277D49210DB258009AE8A0 /* PortfolioRouter.swift */,
-				22706C8620FE510E006E27EE /* _PortfolioViewController.swift */,
 			);
 			name = Portfolio;
 			sourceTree = "<group>";
@@ -408,7 +405,6 @@
 				22277D54210DEF67009AE8A0 /* ArtListing.swift in Sources */,
 				2234A8A12100B1A6006DE2BD /* ImageViewCell.swift in Sources */,
 				22277D4E210DB258009AE8A0 /* ArtListingWorker.swift in Sources */,
-				22277D59210DFF2D009AE8A0 /* _PortfolioViewController.swift in Sources */,
 				2234A8A32100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift in Sources */,
 				22277D4D210DB258009AE8A0 /* PortfolioPresenter.swift in Sources */,
 				2213A1F7210E464C00CFD9AB /* ArtDetails.swift in Sources */,

@@ -12,17 +12,9 @@
 
 import UIKit
 
-protocol PortfolioRouterInput{
-    //
-}
-
-protocol PortfolioDataPassing{
-    var interactorData: PortfolioInteractorData? { get }
-}
-
-class PortfolioRouter: PortfolioRouterInput, PortfolioDataPassing{
+class PortfolioRouter: PortfolioRoutingLogic{
     weak var viewController: PortfolioViewController?
-    var interactorData: PortfolioInteractorData?
+    var dataStore: PortfolioDataStore?
     
     // MARK: Routing
 

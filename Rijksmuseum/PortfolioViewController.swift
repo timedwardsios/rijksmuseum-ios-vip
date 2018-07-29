@@ -13,17 +13,10 @@
 import UIKit
 import TinyConstraints
 
-protocol PortfolioViewInput: class{
-    func updateViewModel(viewModel: Portfolio.FetchArt.ViewModel)
-}
-
 class PortfolioViewController: UIViewController{
-    let interactor: PortfolioInteractorInput
-    let router: (PortfolioRouterInput & PortfolioDataPassing)
-    init(interactor: PortfolioInteractorInput,
-         router: (PortfolioRouterInput & PortfolioDataPassing)) {
-        self.interactor = interactor
-        self.router = router
+    var interactor: PortfolioBusinessLogic?
+    var router: PortfolioRoutingLogic?
+    init(){
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) {
@@ -45,7 +38,7 @@ class PortfolioViewController: UIViewController{
         view.addSubview(collectionView)
         collectionView.edges(to: view)
 
-        interactor.fetchArt(request: Portfolio.FetchArt.Request())
+        interactor?.fetchArt(request: Portfolio.FetchArt.Request())
     }
 
     override func viewDidLayoutSubviews() {
@@ -60,15 +53,6 @@ class PortfolioViewController: UIViewController{
                                                bottom: gutterSize,
                                                right: gutterSize)
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
-    }
-}
-
-extension PortfolioViewController: PortfolioViewInput {
-    func updateViewModel(viewModel: Portfolio.FetchArt.ViewModel){
-        listings = viewModel.listings
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
     }
 }
 
@@ -104,3 +88,96 @@ extension PortfolioViewController: UICollectionViewDelegate{
 //        eventHandler.didSelectAssociatedObject(associatedObject)
     }
 }
+
+extension PortfolioViewController: PortfolioDisplayLogic {
+    func updateViewModel(viewModel: Portfolio.FetchArt.ViewModel){
+        listings = viewModel.listings
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+}
+
+//class PortfolioViewController: UIViewController, PortfolioInterface{
+//    let collectionView = UICollectionView(frame: .zero,
+//                                          collectionViewLayout: UICollectionViewLayout())
+//
+//    var viewModel = PortfolioViewModel(portfolioListings: [PortfolioViewModel.PortfolioListing]()) {
+//        didSet{
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+//            }
+//        }
+//    }
+//
+//    let eventHandler:PortfolioEventHandler
+//    init(eventHandler: PortfolioEventHandler) {
+//        self.eventHandler = eventHandler
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("Method not implemented")
+//    }
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        eventHandler.didLoad()
+//
+//        title = "Rijksmuseum"
+//
+//        collectionView.register(ImageViewCell.self,
+//                                forCellWithReuseIdentifier: ImageViewCell.reuseIdentifier())
+//        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        view.addSubview(collectionView)
+//        collectionView.edges(to: view)
+//    }
+//
+//    override func viewDidLayoutSubviews() {
+//        let flowLayout = UICollectionViewFlowLayout()
+//        let gutterSize = CGFloat(8)
+//        let cellSize = CGFloat(83.75)
+//        flowLayout.itemSize = CGSize(width: cellSize, height: cellSize)
+//        flowLayout.minimumLineSpacing = CGFloat(gutterSize)
+//        flowLayout.minimumInteritemSpacing = CGFloat(gutterSize)
+//        flowLayout.sectionInset = UIEdgeInsets(top: gutterSize,
+//                                               left: gutterSize,
+//                                               bottom: gutterSize,
+//                                               right: gutterSize)
+//        collectionView.setCollectionViewLayout(flowLayout, animated: false)
+//    }
+//}
+//
+//extension PortfolioViewController: UICollectionViewDataSource {
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return viewModel.portfolioListings.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.reuseIdentifier(),
+//                                                            for: indexPath) as? ImageViewCell else {
+//            fatalError()
+//        }
+//        let imageUrl = viewModel.portfolioListings[indexPath.row].imageUrl
+//        cell.setImageUrl(imageUrl)
+//        return cell
+//    }
+//}
+//
+//extension PortfolioViewController:UICollectionViewDelegate{
+//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath)
+//        cell?.alpha = 0.5
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath)
+//        cell?.alpha = 1.0
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let associatedObject = viewModel.portfolioListings[indexPath.row].associatedObject
+//        eventHandler.didSelectAssociatedObject(associatedObject)
+//    }
+//}

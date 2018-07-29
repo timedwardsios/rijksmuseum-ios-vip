@@ -12,26 +12,16 @@
 
 import UIKit
 
-protocol PortfolioInteractorData{
-    //
+class PortfolioInteractor: PortfolioDataStore{
+    var presenter: PortfolioPresentationLogic?
+    var selectedListing: ArtListing?
 }
 
-protocol PortfolioInteractorInput{
-    func fetchArt(request: Portfolio.FetchArt.Request)
-}
-
-class PortfolioInteractor: PortfolioInteractorData{
-    let presenter: PortfolioPresenterInput
-    init(presenter: PortfolioPresenterInput) {
-        self.presenter = presenter
-    }
-}
-
-extension PortfolioInteractor: PortfolioInteractorInput {
+extension PortfolioInteractor: PortfolioBusinessLogic {
     func fetchArt(request: Portfolio.FetchArt.Request) {
         let worker = ArtListingWorker()
         worker.fetchListings { (result) in
-            presenter.didFetchArt(response: Portfolio.FetchArt.Response())
+            presenter?.didFetchArt(response: Portfolio.FetchArt.Response())
         }
     }
 }

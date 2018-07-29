@@ -12,6 +12,26 @@
 
 import UIKit
 
+protocol PortfolioDisplayLogic: class{
+    func updateViewModel(viewModel: Portfolio.FetchArt.ViewModel)
+}
+
+protocol PortfolioDataStore{
+    var selectedListing:ArtListing?{get}
+}
+
+protocol PortfolioBusinessLogic{
+    func fetchArt(request: Portfolio.FetchArt.Request)
+}
+
+protocol PortfolioPresentationLogic{
+    func didFetchArt(response: Portfolio.FetchArt.Response)
+}
+
+protocol PortfolioRoutingLogic{
+    var dataStore: PortfolioDataStore? { get }
+}
+
 enum Portfolio{
     enum FetchArt{
         struct Request{}
@@ -25,14 +45,16 @@ enum Portfolio{
     }
 
     static func build()->PortfolioViewController{
+        let viewController = PortfolioViewController()
+        let interactor = PortfolioInteractor()
         let presenter = PortfolioPresenter()
         let router = PortfolioRouter()
-        let interactor = PortfolioInteractor(presenter: presenter)
-        let viewController = PortfolioViewController(interactor: interactor,
-                                                     router: router)
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController
-        router.interactorData = interactor
+        router.dataStore = interactor
         return viewController
     }
 }
