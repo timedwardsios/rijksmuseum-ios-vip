@@ -13,8 +13,10 @@
 import UIKit
 
 class PortfolioInteractor: PortfolioDataStore{
-    let presenter: PortfolioPresentationLogic
+    private let presenter: PortfolioPresentationLogic
+    private let artPrimitiveWorker:ArtPrimitiveWorker = ArtPrimitiveWorker(artPrimitiveSource: ArtPrimitiveAPI())
     var selectedPrimitive: ArtPrimitive?
+
     init(presenter:PortfolioPresentationLogic) {
         self.presenter = presenter
     }
@@ -22,9 +24,7 @@ class PortfolioInteractor: PortfolioDataStore{
 
 extension PortfolioInteractor: PortfolioBusinessLogic {
     func fetchArt(request: Portfolio.FetchArt.Request) {
-        let artPrimitiveSource = ArtPrimitiveAPI()
-        let worker = ArtPrimitivesWorker(artPrimitiveSource: artPrimitiveSource)
-        worker.fetchPrimitives {[weak self] (result) in
+        artPrimitiveWorker.fetchPrimitives {[weak self] (result) in
             guard let sSelf = self else {return}
             switch result {
             case .success(let artPrimitives):

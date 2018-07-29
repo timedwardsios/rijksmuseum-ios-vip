@@ -16,11 +16,13 @@ protocol ArtPrimitiveSource {
     func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>)->Void)
 }
 
-class ArtPrimitivesWorker{
-    let artPrimitiveSource:ArtPrimitiveSource
+class ArtPrimitiveWorker{
+    private let artPrimitiveSource:ArtPrimitiveSource
+
     init(artPrimitiveSource:ArtPrimitiveSource) {
         self.artPrimitiveSource = artPrimitiveSource
     }
+
     func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>)->Void){
         artPrimitiveSource.fetchPrimitives { (result) in
             switch result {

@@ -46,7 +46,6 @@ enum Portfolio{
         }
     }
 
-    // TODO: check for retain cycles
     static func build()->PortfolioViewController{
         let presenter = PortfolioPresenter()
         let interactor = PortfolioInteractor(presenter: presenter)

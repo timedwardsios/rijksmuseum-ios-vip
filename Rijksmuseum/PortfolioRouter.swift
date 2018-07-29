@@ -14,6 +14,7 @@ import UIKit
 
 class PortfolioRouter: PortfolioRoutingLogic{
     weak var viewController: PortfolioViewController?
+    
     let dataStore: PortfolioDataStore
     init(dataStore:PortfolioDataStore) {
         self.dataStore = dataStore
