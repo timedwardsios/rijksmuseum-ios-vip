@@ -21,14 +21,17 @@ protocol PortfolioInteractorInput{
 }
 
 class PortfolioInteractor: PortfolioInteractorData{
-    var presenter: PortfolioPresenterInput?
+    let presenter: PortfolioPresenterInput
+    init(presenter: PortfolioPresenterInput) {
+        self.presenter = presenter
+    }
 }
 
 extension PortfolioInteractor: PortfolioInteractorInput {
     func fetchArt(request: Portfolio.FetchArt.Request) {
         let worker = ArtListingWorker()
         worker.fetchListings { (result) in
-            presenter?.didFetchArt(response: Portfolio.FetchArt.Response())
+            presenter.didFetchArt(response: Portfolio.FetchArt.Response())
         }
     }
 }
