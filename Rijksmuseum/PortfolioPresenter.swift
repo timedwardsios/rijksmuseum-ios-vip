@@ -12,12 +12,12 @@
 
 import UIKit
 
-protocol PortfolioPresenterInput{
+protocol PortfolioPresenterInterface{
     func didFetchListings(response: Portfolio.FetchListings.Response)
 }
 
-class PortfolioPresenter: PortfolioPresenterInput{
-    weak var viewController: PortfolioViewControllerInput?
+class PortfolioPresenter: PortfolioPresenterInterface{
+    weak var viewController: PortfolioViewControllerInterface?
 
     func didFetchListings(response: Portfolio.FetchListings.Response) {
         let viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded)

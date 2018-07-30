@@ -10,29 +10,39 @@ import XCTest
 @testable import Rijksmuseum
 
 class PortfolioInteractorTests: XCTestCase {
-    struct PresenterMock: PortfolioPresenterInput {
-        let exp = XCTestExpectation()
+    class PresenterMock: PortfolioPresenterInterface {
+        var expectation: XCTestExpectation?
         func didFetchListings(response: Portfolio.FetchListings.Response) {
-            exp.fulfill()
+            expectation?.fulfill()
         }
     }
 
+    class ArtPrimitiveWorkerMock: ArtPrimitiveWorkerInterface {
+        func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
+            completion(.success([]))
+        }
+    }
+
+    var sut: PortfolioInteractor!
+    var presenter = PresenterMock()
+    var artPrimitiveWorker = ArtPrimitiveWorkerMock()
     override func setUp() {
         super.setUp()
-
+        self.sut = PortfolioInteractor(presenter: presenter,
+                                  artPrimitiveWorker: artPrimitiveWorker)
     }
 
     func test_fetchListings(){
-        let presenter = PresenterMock()
-        let interactor = PortfolioInteractor(presenter: presenter, artPrimitiveWorker: <#T##ArtPrimitiveWorker#>)
-        interactor.fetchListings(request: Portfolio.FetchListings.Request())
-        wait(for: [presenter.exp], timeout: 3)
+        let exp = XCTestExpectation()
+        presenter.expectation = exp
+        sut.fetchListings(request: Portfolio.FetchListings.Request())
+        wait(for: [exp], timeout: 3)
     }
 
     func test_numberOfListings(){
-        let presenter = PresenterMock()
-        let interactor = PortfolioInteractor(presenter: presenter)
-        interactor.numberOfListings()
-        wait(for: [presenter.exp], timeout: 3)
+//        let exp = XCTestExpectation()
+//        presenter.expectation = exp
+//        sut.fetchListings(request: Portfolio.FetchListings.Request())
+//        wait(for: [exp], timeout: 3)
     }
 }

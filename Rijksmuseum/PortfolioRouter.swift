@@ -12,11 +12,11 @@
 
 import UIKit
 
-protocol PortfolioRouterInput{
+protocol PortfolioRouterInterface{
     var dataStore: PortfolioDataStore { get }
 }
 
-class PortfolioRouter: PortfolioRouterInput{
+class PortfolioRouter: PortfolioRouterInterface{
     weak var viewController: PortfolioViewController?
 
     let dataStore: PortfolioDataStore

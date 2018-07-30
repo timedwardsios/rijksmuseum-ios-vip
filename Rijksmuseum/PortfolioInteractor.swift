@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol PortfolioInteractorInput{
+protocol PortfolioInteractorInterface{
     func fetchListings(request: Portfolio.FetchListings.Request)
     func numberOfListings()->Int
     func imageUrlForListingAtIndex(_ index:Int)->URL
@@ -24,10 +24,10 @@ protocol PortfolioDataStore{
 }
 
 class PortfolioInteractor: PortfolioDataStore{
-    private let presenter: PortfolioPresenterInput
-    private let artPrimitiveWorker: ArtPrimitiveWorker
-    init(presenter:PortfolioPresenterInput,
-         artPrimitiveWorker:ArtPrimitiveWorker) {
+    let presenter: PortfolioPresenterInterface
+    let artPrimitiveWorker: ArtPrimitiveWorkerInterface
+    init(presenter:PortfolioPresenterInterface,
+         artPrimitiveWorker:ArtPrimitiveWorkerInterface) {
         self.presenter = presenter
         self.artPrimitiveWorker = artPrimitiveWorker
     }
@@ -36,7 +36,7 @@ class PortfolioInteractor: PortfolioDataStore{
     var selectedArtPrimitive: ArtPrimitive?
 }
 
-extension PortfolioInteractor: PortfolioInteractorInput {
+extension PortfolioInteractor: PortfolioInteractorInterface {
     func fetchListings(request: Portfolio.FetchListings.Request) {
         artPrimitiveWorker.fetchPrimitives {[weak self] (result) in
             switch result {

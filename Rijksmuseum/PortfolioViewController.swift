@@ -13,15 +13,15 @@
 import UIKit
 import TinyConstraints
 
-protocol PortfolioViewControllerInput: class{
+protocol PortfolioViewControllerInterface: class{
     func updateViewModel(viewModel: Portfolio.FetchListings.ViewModel)
 }
 
 class PortfolioViewController: UIViewController{
-    private let interactor: PortfolioInteractorInput
-    private let router: PortfolioRouterInput
-    init(interactor: PortfolioInteractorInput,
-         router: PortfolioRouterInput){
+    let interactor: PortfolioInteractorInterface
+    let router: PortfolioRouterInterface
+    init(interactor: PortfolioInteractorInterface,
+         router: PortfolioRouterInterface){
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
@@ -93,7 +93,7 @@ extension PortfolioViewController: UICollectionViewDelegate{
     }
 }
 
-extension PortfolioViewController: PortfolioViewControllerInput {
+extension PortfolioViewController: PortfolioViewControllerInterface {
     func updateViewModel(viewModel: Portfolio.FetchListings.ViewModel){
         switch viewModel.viewState {
         case .loading:
