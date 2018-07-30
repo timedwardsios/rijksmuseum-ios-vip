@@ -12,13 +12,12 @@
 
 import UIKit
 
-protocol ArtPrimitiveSource {
+protocol ArtPrimitiveWorkerInput {
     func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>)->Void)
 }
 
-class ArtPrimitiveWorker{
+class ArtPrimitiveWorker:ArtPrimitiveWorkerInput{
     private let artPrimitiveSource:ArtPrimitiveSource
-
     init(artPrimitiveSource:ArtPrimitiveSource) {
         self.artPrimitiveSource = artPrimitiveSource
     }

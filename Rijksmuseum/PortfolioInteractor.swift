@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol PortfolioBusinessLogic{
+protocol PortfolioInteractorInput{
     func fetchListings(request: Portfolio.FetchListings.Request)
     func numberOfListings()->Int
     func imageUrlForListingAtIndex(_ index:Int)->URL
@@ -24,31 +24,31 @@ protocol PortfolioDataStore{
 }
 
 class PortfolioInteractor: PortfolioDataStore{
-    private let presenter: PortfolioPresentationLogic
-    private let artPrimitiveWorker:ArtPrimitiveWorker = ArtPrimitiveWorker(artPrimitiveSource: ArtPrimitiveAPI())
-    var artPrimitives = [ArtPrimitive]()
-    var selectedArtPrimitive: ArtPrimitive?
-
-    init(presenter:PortfolioPresentationLogic) {
+    private let presenter: PortfolioPresenterInput
+    private let artPrimitiveWorker: ArtPrimitiveWorker
+    init(presenter:PortfolioPresenterInput,
+         artPrimitiveWorker:ArtPrimitiveWorker) {
         self.presenter = presenter
+        self.artPrimitiveWorker = artPrimitiveWorker
     }
+
+    private var artPrimitives = [ArtPrimitive]()
+    var selectedArtPrimitive: ArtPrimitive?
 }
 
-extension PortfolioInteractor: PortfolioBusinessLogic {
+extension PortfolioInteractor: PortfolioInteractorInput {
     func fetchListings(request: Portfolio.FetchListings.Request) {
         artPrimitiveWorker.fetchPrimitives {[weak self] (result) in
-            guard let sSelf = self else {return}
             switch result {
             case .success(let artPrimitives):
-                sSelf.artPrimitives = artPrimitives
-                sSelf.presenter.didFetchListings(response: Portfolio.FetchListings.Response())
+                self?.artPrimitives = artPrimitives
+                self?.presenter.didFetchListings(response: Portfolio.FetchListings.Response())
             case .failure(_):
                 fatalError()
             }
         }
     }
 
-    // kinda hacky but can't think of a better way of doing this :(
     func numberOfListings() -> Int {
         return artPrimitives.count
     }

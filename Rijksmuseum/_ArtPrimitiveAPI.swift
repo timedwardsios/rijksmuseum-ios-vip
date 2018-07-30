@@ -9,11 +9,6 @@
 import Foundation
 import CoreData
 
-//struct ArtRequest {
-//    let page:Int
-//    let starredOnly:Bool
-//}
-
 class ArtPrimitiveAPI: ArtPrimitiveSource{
     private struct ServerResponse: Decodable {
         struct Primitive: ArtPrimitive, Decodable {
@@ -22,7 +17,7 @@ class ArtPrimitiveAPI: ArtPrimitiveSource{
             var artist: String
             var imageUrl: URL
 
-            enum CodingKeys: String, CodingKey {
+            private enum CodingKeys: String, CodingKey {
                 case objectNumber
                 case title
                 case principalOrFirstMaker
@@ -43,7 +38,7 @@ class ArtPrimitiveAPI: ArtPrimitiveSource{
 
         let primitives: [Primitive]
 
-        enum CodingKeys: String, CodingKey {
+        private enum CodingKeys: String, CodingKey {
             case artObjects
         }
 
