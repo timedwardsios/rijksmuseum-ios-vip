@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2213A1F7210E464C00CFD9AB /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2213A1F6210E464C00CFD9AB /* Art.swift */; };
+		2213A1F7210E464C00CFD9AB /* ArtDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2213A1F6210E464C00CFD9AB /* ArtDetails.swift */; };
 		221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */; };
 		221830EA210F2F2000FA1E13 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830E9210F2F2000FA1E13 /* main.swift */; };
 		22277D4D210DB258009AE8A0 /* PortfolioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D47210DB258009AE8A0 /* PortfolioPresenter.swift */; };
@@ -18,7 +18,7 @@
 		22277D52210DB258009AE8A0 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D4C210DB258009AE8A0 /* PortfolioInteractor.swift */; };
 		22277D54210DEF67009AE8A0 /* ArtPrimitive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22277D53210DEF67009AE8A0 /* ArtPrimitive.swift */; };
 		2234A8A12100B1A6006DE2BD /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A8A02100B1A6006DE2BD /* ImageViewCell.swift */; };
-		2234A8A32100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A8A22100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift */; };
+		2234A8A32100B202006DE2BD /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2234A8A22100B202006DE2BD /* UICollectionReusableView.swift */; };
 		22363AC721090BDB006F5C3A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22363AC621090BDB006F5C3A /* UIColor.swift */; };
 		22706C8520FE510E006E27EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22706C8420FE510E006E27EE /* AppDelegate.swift */; };
 		22706C8D20FE510E006E27EE /* Rijksmuseum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22706C8B20FE510E006E27EE /* Rijksmuseum.xcdatamodeld */; };
@@ -44,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2213A1F6210E464C00CFD9AB /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
+		2213A1F6210E464C00CFD9AB /* ArtDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetails.swift; sourceTree = "<group>"; };
 		221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
 		221830E9210F2F2000FA1E13 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		22277D47210DB258009AE8A0 /* PortfolioPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioPresenter.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		22277D4C210DB258009AE8A0 /* PortfolioInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractor.swift; sourceTree = "<group>"; };
 		22277D53210DEF67009AE8A0 /* ArtPrimitive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtPrimitive.swift; sourceTree = "<group>"; };
 		2234A8A02100B1A6006DE2BD /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
-		2234A8A22100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+reuseIdentifier.swift"; sourceTree = "<group>"; };
+		2234A8A22100B202006DE2BD /* UICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
 		22363AC621090BDB006F5C3A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		22706C8120FE510E006E27EE /* Rijksmuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rijksmuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C8420FE510E006E27EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		220DCC652108D017008A45D9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2234A8A22100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift */,
+				2234A8A22100B202006DE2BD /* UICollectionReusableView.swift */,
 				22363AC621090BDB006F5C3A /* UIColor.swift */,
 			);
 			name = Extensions;
@@ -164,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				22277D53210DEF67009AE8A0 /* ArtPrimitive.swift */,
-				2213A1F6210E464C00CFD9AB /* Art.swift */,
+				2213A1F6210E464C00CFD9AB /* ArtDetails.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -437,9 +437,9 @@
 				22277D54210DEF67009AE8A0 /* ArtPrimitive.swift in Sources */,
 				2234A8A12100B1A6006DE2BD /* ImageViewCell.swift in Sources */,
 				22277D4E210DB258009AE8A0 /* ArtPrimitiveWorker.swift in Sources */,
-				2234A8A32100B202006DE2BD /* UICollectionReusableView+reuseIdentifier.swift in Sources */,
+				2234A8A32100B202006DE2BD /* UICollectionReusableView.swift in Sources */,
 				22277D4D210DB258009AE8A0 /* PortfolioPresenter.swift in Sources */,
-				2213A1F7210E464C00CFD9AB /* Art.swift in Sources */,
+				2213A1F7210E464C00CFD9AB /* ArtDetails.swift in Sources */,
 				22277D52210DB258009AE8A0 /* PortfolioInteractor.swift in Sources */,
 				22277D50210DB258009AE8A0 /* Portfolio.swift in Sources */,
 				221830EA210F2F2000FA1E13 /* main.swift in Sources */,

@@ -15,7 +15,7 @@ import UIKit
 protocol PortfolioInteractorInterface{
     func fetchListings(request: Portfolio.FetchListings.Request)
     func numberOfListings()->Int
-    func imageUrlForListingAtIndex(_ index:Int)->URL
+    func imageUrlForListingAtIndex(_ index:Int)->URL?
     func setSelectedRow(_ row:Int)
 }
 
@@ -32,7 +32,7 @@ class PortfolioInteractor: PortfolioDataStore{
         self.artPrimitiveWorker = artPrimitiveWorker
     }
 
-    private var artPrimitives = [ArtPrimitive]()
+    var artPrimitives = [ArtPrimitive]()
     var selectedArtPrimitive: ArtPrimitive?
 }
 
@@ -53,11 +53,16 @@ extension PortfolioInteractor: PortfolioInteractorInterface {
         return artPrimitives.count
     }
 
-    func imageUrlForListingAtIndex(_ index: Int) -> URL {
-        return artPrimitives[index].imageUrl
+    func imageUrlForListingAtIndex(_ index: Int) -> URL? {
+        if artPrimitives.indices.contains(index) {
+            return artPrimitives[index].imageUrl
+        }
+        return nil
     }
 
     func setSelectedRow(_ row: Int) {
-        selectedArtPrimitive = artPrimitives[row]
+        if artPrimitives.indices.contains(row) {
+            selectedArtPrimitive = artPrimitives[row]
+        }
     }
 }

@@ -71,8 +71,9 @@ extension PortfolioViewController: UICollectionViewDataSource{
                                                             for: indexPath) as? ImageViewCell else {
                                                                 fatalError()
         }
-        let imageUrl = interactor.imageUrlForListingAtIndex(indexPath.row)
-        cell.setImageUrl(imageUrl)
+        if let imageUrl = interactor.imageUrlForListingAtIndex(indexPath.row) {
+            cell.setImageUrl(imageUrl)
+        }
         return cell
     }
 }
