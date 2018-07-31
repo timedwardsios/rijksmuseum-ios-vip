@@ -13,16 +13,12 @@
 import UIKit
 
 protocol PortfolioRouterInterface{
-    var dataStore: PortfolioDataStore { get }
+    var dataStore: PortfolioDataStore? { get }
 }
 
 class PortfolioRouter: PortfolioRouterInterface{
     weak var viewController: PortfolioViewController?
-
-    let dataStore: PortfolioDataStore
-    init(dataStore:PortfolioDataStore) {
-        self.dataStore = dataStore
-    }
+    var dataStore: PortfolioDataStore?
     
     // MARK: Routing
 

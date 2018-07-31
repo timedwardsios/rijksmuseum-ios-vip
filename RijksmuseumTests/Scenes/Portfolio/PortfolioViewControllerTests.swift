@@ -12,24 +12,24 @@ import XCTest
 class PortfolioViewControllerTests: XCTestCase {
     class InteractorMock: PortfolioInteractorInterface {
         func fetchListings(request: Portfolio.FetchListings.Request) {
-            <#code#>
+            //
         }
 
         func numberOfListings() -> Int {
-            <#code#>
+            //
         }
 
         func imageUrlForListingAtIndex(_ index: Int) -> URL? {
-            <#code#>
+            //
         }
 
         func setSelectedRow(_ row: Int) {
-            <#code#>
+            //
         }
     }
 
-    struct RouterMock: PortfolioRouterInterface {
-        var dataStore: PortfolioDataStore
+    class RouterMock: PortfolioRouterInterface {
+        var dataStore: PortfolioDataStore?
     }
 
     var sut: PortfolioViewController!
@@ -37,7 +37,7 @@ class PortfolioViewControllerTests: XCTestCase {
     var router = RouterMock()
     override func setUp() {
         super.setUp()
-        self.router = RouterMock(dataStore: <#T##PortfolioDataStore#>)
+        self.router = RouterMock(dataStore: Interactor)
         self.router = RouterMock(dataStore: )
         self.sut = PortfolioViewController(interactor: interactor,
                                            router: RouterMock)
