@@ -31,6 +31,7 @@
 		22706CB420FFC0E0006E27EE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22706CB320FFC0E0006E27EE /* Result.swift */; };
 		229663B62109185A00AEB7C1 /* Rijksmuseum-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 229663B42109185900AEB7C1 /* Rijksmuseum-Normal.ttf */; };
 		229663B72109185A00AEB7C1 /* Rijksmuseum-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 229663B52109185A00AEB7C1 /* Rijksmuseum-Bold.ttf */; };
+		22AFE3DE2110CA5B003E8C76 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AFE3DD2110CA5B003E8C76 /* PortfolioView.swift */; };
 		87425328E7CBDF0776696700 /* Pods_RijksmuseumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1826AAE7DC20D72226E09AE /* Pods_RijksmuseumTests.framework */; };
 		DAD12A12B1CE8CB3D3B4C4F0 /* Pods_Rijksmuseum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FFD80F3A797A5195CA2F11D /* Pods_Rijksmuseum.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		22706CB320FFC0E0006E27EE /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		229663B42109185900AEB7C1 /* Rijksmuseum-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rijksmuseum-Normal.ttf"; sourceTree = "<group>"; };
 		229663B52109185A00AEB7C1 /* Rijksmuseum-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rijksmuseum-Bold.ttf"; sourceTree = "<group>"; };
+		22AFE3DD2110CA5B003E8C76 /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		3C087DA9D3A2AE7774C70139 /* Pods-Rijksmuseum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rijksmuseum.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rijksmuseum/Pods-Rijksmuseum.debug.xcconfig"; sourceTree = "<group>"; };
 		5D5A4C889509244FBB9EF27F /* Pods-Rijksmuseum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rijksmuseum.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rijksmuseum/Pods-Rijksmuseum.release.xcconfig"; sourceTree = "<group>"; };
 		7CE99ACB92CF310986616DE4 /* Pods-RijksmuseumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RijksmuseumTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RijksmuseumTests/Pods-RijksmuseumTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				22277D4A210DB258009AE8A0 /* Portfolio.swift */,
 				22277D4B210DB258009AE8A0 /* PortfolioViewController.swift */,
+				22AFE3DD2110CA5B003E8C76 /* PortfolioView.swift */,
 				22277D4C210DB258009AE8A0 /* PortfolioInteractor.swift */,
 				22277D47210DB258009AE8A0 /* PortfolioPresenter.swift */,
 				22277D49210DB258009AE8A0 /* PortfolioRouter.swift */,
@@ -438,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AFE3DE2110CA5B003E8C76 /* PortfolioView.swift in Sources */,
 				22277D51210DB258009AE8A0 /* PortfolioViewController.swift in Sources */,
 				22706CB020FFBF85006E27EE /* _ArtPrimitiveAPI.swift in Sources */,
 				22277D54210DEF67009AE8A0 /* ArtPrimitive.swift in Sources */,

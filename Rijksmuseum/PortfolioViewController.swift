@@ -11,7 +11,6 @@
 //
 
 import UIKit
-import TinyConstraints
 
 protocol PortfolioViewControllerInterface: class{
     func updateViewModel(viewModel: Portfolio.FetchListings.ViewModel)
@@ -30,34 +29,18 @@ class PortfolioViewController: UIViewController{
         fatalError("init(coder:) has not been implemented")
     }
 
-    private let collectionView = UICollectionView(frame: .zero,
-                                                  collectionViewLayout: UICollectionViewLayout())
+    let rootView = PortfolioView()
+
+    override func loadView() {
+        view = rootView
+    }
 
     override func viewDidLoad(){
         super.viewDidLoad()
         title = "Rijksmuseum"
-        collectionView.register(ImageViewCell.self,
-                                forCellWithReuseIdentifier: ImageViewCell.reuseIdentifier())
-        collectionView.alwaysBounceVertical = true
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        view.addSubview(collectionView)
-        collectionView.edges(to: view)
+        rootView.collectionView.dataSource = self
+        rootView.collectionView.delegate = self
         interactor.fetchListings(request: Portfolio.FetchListings.Request())
-    }
-
-    override func viewDidLayoutSubviews() {
-        let flowLayout = UICollectionViewFlowLayout()
-        let gutterSize = CGFloat(8)
-        let cellSize = CGFloat(83.75)
-        flowLayout.itemSize = CGSize(width: cellSize, height: cellSize)
-        flowLayout.minimumLineSpacing = CGFloat(gutterSize)
-        flowLayout.minimumInteritemSpacing = CGFloat(gutterSize)
-        flowLayout.sectionInset = UIEdgeInsets(top: gutterSize,
-                                               left: gutterSize,
-                                               bottom: gutterSize,
-                                               right: gutterSize)
-        collectionView.setCollectionViewLayout(flowLayout, animated: false)
     }
 }
 
@@ -100,7 +83,7 @@ extension PortfolioViewController: PortfolioViewControllerInterface {
         case .loading:
             return
         case .loaded:
-            collectionView.reloadData()
+            rootView.collectionView.reloadData()
         case .error(let message):
             print(message)
         }
