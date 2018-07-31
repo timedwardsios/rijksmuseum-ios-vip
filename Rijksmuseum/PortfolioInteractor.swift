@@ -39,13 +39,11 @@ class PortfolioInteractor: PortfolioDataStore{
 extension PortfolioInteractor: PortfolioInteractorInterface {
     func fetchListings(request: Portfolio.FetchListings.Request) {
         artPrimitiveWorker.fetchPrimitives {[weak self] (result) in
-            switch result {
-            case .success(let artPrimitives):
+            if case let .success(artPrimitives) = result {
                 self?.artPrimitives = artPrimitives
-                self?.presenter.didFetchListings(response: Portfolio.FetchListings.Response())
-            case .failure(_):
-                fatalError()
             }
+            let response = Portfolio.FetchListings.Response(result: result)
+            self?.presenter.presentListings(response: response)
         }
     }
 

@@ -53,3 +53,11 @@ ArtDetailsWorker
 
 
 "For each scene, you have one view controller, one interactor, one presenter, to handle any number of use cases. Each use case is represented by a triplet of request-response-view model defined in your <Scene>Models.swift. Typically but not always, the number of input/output methods equals the number of your use case structs."
+
+
+BOUNDRIES:
+ViewController -> Interactor (BusinessLogic)
+Interactor -> Presenter (PresentationLogic)
+Interactor -> Workers
+Presenter -> ViewController (DisplayLogic)
+ViewController -> Router (RoutingLogic)

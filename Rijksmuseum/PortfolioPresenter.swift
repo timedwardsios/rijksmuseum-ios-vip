@@ -13,14 +13,20 @@
 import UIKit
 
 protocol PortfolioPresenterInterface{
-    func didFetchListings(response: Portfolio.FetchListings.Response)
+    func presentListings(response: Portfolio.FetchListings.Response)
 }
 
 class PortfolioPresenter: PortfolioPresenterInterface{
     weak var viewController: PortfolioViewControllerInterface?
 
-    func didFetchListings(response: Portfolio.FetchListings.Response) {
-        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded)
+    func presentListings(response: Portfolio.FetchListings.Response) {
+        let viewModel:Portfolio.FetchListings.ViewModel
+        switch response.result {
+        case .success(_):
+            viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded)
+        case .failure(let error):
+            viewModel = Portfolio.FetchListings.ViewModel(viewState: .error(error.localizedDescription))
+        }
         viewController?.updateViewModel(viewModel: viewModel)
     }
 }

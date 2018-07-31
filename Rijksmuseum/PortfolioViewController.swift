@@ -101,6 +101,8 @@ extension PortfolioViewController: PortfolioViewControllerInterface {
             return
         case .loaded:
             collectionView.reloadData()
+        case .error(let message):
+            print(message)
         }
     }
 }

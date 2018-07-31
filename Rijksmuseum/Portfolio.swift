@@ -15,11 +15,14 @@ import UIKit
 enum Portfolio{
     enum FetchListings{
         struct Request{}
-        struct Response{}
+        struct Response{
+            let result:Result<[ArtPrimitive], Error>
+        }
         struct ViewModel{
             enum ViewState {
                 case loading
                 case loaded
+                case error(String)
             }
             let viewState:ViewState
         }

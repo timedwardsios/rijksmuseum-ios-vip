@@ -12,7 +12,7 @@ import XCTest
 class PortfolioInteractorTests: XCTestCase {
     class PresenterMock: PortfolioPresenterInterface {
         var didFetchListings_called = false
-        func didFetchListings(response: Portfolio.FetchListings.Response) {
+        func presentListings(response: Portfolio.FetchListings.Response) {
             didFetchListings_called = true
         }
     }
@@ -48,7 +48,7 @@ class PortfolioInteractorTests: XCTestCase {
         XCTAssert(presenter.didFetchListings_called)
         XCTAssert(artPrimitiveWorker.fetchPrimitives_called)
     }
-
+    
     func test_numberOfListings_none(){
         XCTAssert(sut.numberOfListings() == 0)
     }
