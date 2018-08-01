@@ -13,18 +13,18 @@ class PortfolioPresenter: PortfolioPresenterInterface{
         let viewModel:Portfolio.FetchListings.ViewModel
         switch response.result {
         case .success(_):
-            viewModel = Portfolio.FetchListings.ViewModel(viewState: .refreshed,
-                                                          hightlightedIndex: nil)
+            viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded(true),
+                                                          highlightedIndex: nil)
         case .failure(let error):
             viewModel = Portfolio.FetchListings.ViewModel(viewState: .error(error.localizedDescription),
-                                                          hightlightedIndex: nil)
+                                                          highlightedIndex: nil)
         }
         viewController?.viewModel = viewModel
     }
 
     func presentHighlightedIndex(_ index: Int?) {
-        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded,
-                                                      hightlightedIndex: index)
+        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded(false),
+                                                      highlightedIndex: index)
         viewController?.viewModel = viewModel
     }
 }

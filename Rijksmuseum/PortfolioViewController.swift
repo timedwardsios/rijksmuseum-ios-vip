@@ -8,14 +8,13 @@ protocol PortfolioViewControllerInterface: class{
 class PortfolioViewController: UIViewController, PortfolioViewControllerInterface{
     let interactor: PortfolioInteractorInterface
     let router: PortfolioRouterInterface
-    init(interactor: PortfolioInteractorInterface,
+    convenience init(interactor: PortfolioInteractorInterface,
          router: PortfolioRouterInterface){
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
+        self.init
     }
-
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
 
     let rootView = PortfolioView()
 
@@ -32,7 +31,7 @@ class PortfolioViewController: UIViewController, PortfolioViewControllerInterfac
     }
 
     var viewModel = Portfolio.FetchListings.ViewModel(viewState: .loading,
-                                                      hightlightedIndex: nil) {
+                                                      highlightedIndex: nil) {
         willSet{willUpdateViewModel()}
         didSet{didUpdateViewModel()}
     }
@@ -54,22 +53,25 @@ extension PortfolioViewController: UICollectionViewDataSource{
 }
 
 extension PortfolioViewController: UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didHighlightItemAt indexPath: IndexPath) {
         interactor.setHighlightedIndex(indexPath.row)
     }
 
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didUnhighlightItemAt indexPath: IndexPath) {
         interactor.setHighlightedIndex(nil)
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
         interactor.setSelectedIndex(indexPath.row)
     }
 }
 
 extension PortfolioViewController {
     func willUpdateViewModel() {
-        if let index = viewModel.hightlightedIndex,
+        if let index = viewModel.highlightedIndex,
             let cell = rootView.collectionView.cellForItem(at: IndexPath(row: index, section: 0)){
                 cell.alpha = 1.0
         }
@@ -79,14 +81,14 @@ extension PortfolioViewController {
         switch viewModel.viewState {
         case .loading:
             break
-        case .refreshed:
-            rootView.collectionView.reloadData()
-        case .loaded:
-            break
+        case .loaded(let newData):
+            if newData == true {
+                rootView.collectionView.reloadData()
+            }
         case .error(_):
             break
         }
-        if let index = viewModel.hightlightedIndex,
+        if let index = viewModel.highlightedIndex,
             let cell = rootView.collectionView.cellForItem(at: IndexPath(row: index, section: 0)){
             cell.alpha = 0.5
         }

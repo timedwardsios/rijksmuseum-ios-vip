@@ -3,75 +3,95 @@ import XCTest
 @testable import Rijksmuseum
 
 class PortfolioInteractorTests: XCTestCase {
+    // MARK: mocks
     class PresenterMock: PortfolioPresenterInterface {
-        var didFetchListings_called = false
+        var presentListings_called = false
         func presentListings(response: Portfolio.FetchListings.Response) {
-            didFetchListings_called = true
+            presentListings_called = true
         }
 
+        var presentHighlightedIndex_value:Int?
         func presentHighlightedIndex(_ index: Int?) {
-            sfds
+            presentHighlightedIndex_value = index
         }
     }
 
-    class ArtPrimitiveWorkerMock: ArtPrimitiveWorkerInterface {
+    class ArtPrimitiveWorkerMock: ArtPrimitiveWorker {
         var fetchPrimitives_called = false
-        func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
+        override func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
             fetchPrimitives_called = true
-            struct Art:ArtPrimitive{
-                var remoteId = "remoteId"
-                var title = "title"
-                var artist = "artist"
-                var imageUrl = URL(string: "http://www.apple.com")!
-            }
-            var arts = Array.init(repeating: Art(), count: 10)
-            arts[0].remoteId = "123456789"
-            arts[0].imageUrl = URL(string: "http://www.google.com")!
-            completion(.success(arts))
+            completion(.success([TestData.ArtPrimitiveMock()]))
         }
     }
 
+    // MARK: init
     var sut: PortfolioInteractor!
-    var presenter = PresenterMock()
-    var artPrimitiveWorker = ArtPrimitiveWorkerMock()
+    var presenter: PresenterMock!
+    var artPrimitiveWorker: ArtPrimitiveWorkerMock!
     override func setUp() {
         super.setUp()
-        self.sut = PortfolioInteractor(presenter: presenter,
+        presenter = PresenterMock()
+        artPrimitiveWorker = ArtPrimitiveWorkerMock(artPrimitiveSource: ArtPrimitiveAPIService())
+        sut = PortfolioInteractor(presenter: presenter,
                                   artPrimitiveWorker: artPrimitiveWorker)
     }
 
-    func test_fetchListings(){
+    // MARK: tests
+    func test_fetchListings_presenter_called(){
+        // when
         sut.fetchListings(request: Portfolio.FetchListings.Request())
-        XCTAssert(presenter.didFetchListings_called)
+        // then
+        XCTAssert(presenter.presentListings_called)
+    }
+
+    func test_fetchListings_worker_called(){
+        // when
+        sut.fetchListings(request: Portfolio.FetchListings.Request())
+        // then
         XCTAssert(artPrimitiveWorker.fetchPrimitives_called)
     }
-    
-    func test_numberOfListings_none(){
-        XCTAssert(sut.numberOfListings() == 0)
-    }
 
-    func test_numberOfListings_some(){
+    func test_numberOfListings(){
+        // when
         sut.fetchListings(request: Portfolio.FetchListings.Request())
-        XCTAssert(sut.numberOfListings() == 10)
+        // then
+        XCTAssert(sut.numberOfListings() == 1)
     }
 
-    func test_imageUrlForListingAtIndex_none(){
+    func test_imageUrlForListingAtIndex(){
+        // given
+        let testUrl = TestData.ArtPrimitiveMock().imageUrl
+        // when
+        sut.fetchListings(request: Portfolio.FetchListings.Request())
+        // then
+        XCTAssert(sut.imageUrlForListingAtIndex(0) == testUrl)
+    }
+
+    func test_imageUrlForListingAtIndex_outOfRange(){
+        // then
         XCTAssert(sut.imageUrlForListingAtIndex(0) == nil)
     }
 
-    func test_imageUrlForListingAtIndex_some(){
-        sut.fetchListings(request: Portfolio.FetchListings.Request())
-        XCTAssert(sut.imageUrlForListingAtIndex(0) == URL(string: "http://www.google.com"))
+    func test_setHighlightedIndex_none(){
+        // when
+        sut.setHighlightedIndex(nil)
+        // then
+        XCTAssert(presenter.presentHighlightedIndex_value == nil)
     }
 
-    func test_setSelectedIndex_none(){
-        sut.setSelectedIndex(0)
-        XCTAssert(sut.selectedArtPrimitive == nil)
+    func test_setHighlightedIndex_some(){
+        // when
+        sut.setHighlightedIndex(0)
+        // then
+        XCTAssert(presenter.presentHighlightedIndex_value == 0)
     }
 
-    func test_setSelectedIndex_some(){
+    func test_setSelectedIndex(){
+        // when
         sut.fetchListings(request: Portfolio.FetchListings.Request())
         sut.setSelectedIndex(0)
-        XCTAssert(sut.selectedArtPrimitive!.remoteId == sut.artPrimitives[0].remoteId)
+        // then
+        let selectedPrimitiveId = sut.selectedArtPrimitive!.remoteId
+        XCTAssert(selectedPrimitiveId == sut.artPrimitives[0].remoteId)
     }
 }

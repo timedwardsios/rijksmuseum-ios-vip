@@ -1,17 +1,13 @@
 
 import UIKit
 
-protocol ArtPrimitiveWorkerInterface {
+protocol ArtPrimitiveService {
     func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>)->Void)
 }
 
-protocol ArtPrimitiveSource {
-    func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>)->Void)
-}
-
-class ArtPrimitiveWorker:ArtPrimitiveWorkerInterface{
-    let artPrimitiveSource:ArtPrimitiveSource
-    init(artPrimitiveSource:ArtPrimitiveSource) {
+class ArtPrimitiveWorker{
+    let artPrimitiveSource:ArtPrimitiveService
+    init(artPrimitiveSource:ArtPrimitiveService) {
         self.artPrimitiveSource = artPrimitiveSource
     }
 

@@ -2,7 +2,7 @@
 import Foundation
 import CoreData
 
-class ArtPrimitiveAPI: ArtPrimitiveSource{
+class ArtPrimitiveAPIService: ArtPrimitiveService{
     private struct ServerResponse: Decodable {
         struct Primitive: ArtPrimitive, Decodable {
             var remoteId: String

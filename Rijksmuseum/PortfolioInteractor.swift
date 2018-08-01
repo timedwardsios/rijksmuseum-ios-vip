@@ -15,9 +15,9 @@ protocol PortfolioDataStore{
 
 class PortfolioInteractor: PortfolioDataStore{
     let presenter: PortfolioPresenterInterface
-    let artPrimitiveWorker: ArtPrimitiveWorkerInterface
+    let artPrimitiveWorker: ArtPrimitiveWorker
     init(presenter:PortfolioPresenterInterface,
-         artPrimitiveWorker:ArtPrimitiveWorkerInterface) {
+         artPrimitiveWorker:ArtPrimitiveWorker) {
         self.presenter = presenter
         self.artPrimitiveWorker = artPrimitiveWorker
     }

@@ -3,28 +3,36 @@ import XCTest
 @testable import Rijksmuseum
 
 class PortfolioViewControllerTests: XCTestCase {
+    // MARK: mocks
     class InteractorMock: PortfolioInteractorInterface {
-
-        var imageUrlForListingAtIndex_expectation:XCTestExpectation?
-
         func fetchListings(request: Portfolio.FetchListings.Request) {}
 
         func numberOfListings() -> Int {
             return 1
         }
 
+        var imageUrlForListingAtIndex_expectation:XCTestExpectation?
         func imageUrlForListingAtIndex(_ index: Int) -> URL? {
             imageUrlForListingAtIndex_expectation?.fulfill()
             return URL(string: "http://www.google.com")!
         }
 
-        func setSelectedRow(_ row: Int) {}
+        var setHighlightedIndex_value:Int?
+        func setHighlightedIndex(_ index: Int?) {
+            setHighlightedIndex_value = index
+        }
+
+        var setSelectedIndex_value:Int?
+        func setSelectedIndex(_ index: Int) {
+            setSelectedIndex_value = index
+        }
     }
 
     class RouterMock: PortfolioRouterInterface {
         var dataStore: PortfolioDataStore?
     }
 
+    // MARK: init
     var sut:PortfolioViewController!
     var interactor:InteractorMock!
     var router:RouterMock!
@@ -41,25 +49,61 @@ class PortfolioViewControllerTests: XCTestCase {
         sut.view.layoutSubviews()
     }
 
+    // MARK: tests
     func test_updateViewModel_loading(){
-        sut.updateViewModel(viewModel: Portfolio.FetchListings.ViewModel(viewState: .loading))
+        // when
+        sut.viewModel = Portfolio.FetchListings.ViewModel(viewState: .loading,
+                                                          highlightedIndex:nil)
     }
 
     func test_updateViewModel_loaded(){
-        let exp = XCTestExpectation(description: "Loads collection view")
+        // given
+        let exp = XCTestExpectation(description: "Load collection view")
+        let newData = true
+        // when
         interactor.imageUrlForListingAtIndex_expectation = exp
-        sut.updateViewModel(viewModel: Portfolio.FetchListings.ViewModel(viewState: .loaded))
+        sut.viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded(newData),
+                                                          highlightedIndex:nil)
+        // then
         wait(for: [exp], timeout: 1)
     }
 
     func test_updateViewModel_error(){
-        sut.updateViewModel(viewModel: Portfolio.FetchListings.ViewModel(viewState: .error("Something went wrong")))
+        // given
+        let errorMessage = "Something went wrong"
+        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .error(errorMessage),
+                                                          highlightedIndex:nil)
+        // when
+        sut.viewModel = viewModel
     }
 
     func test_didHighlightItem(){
-        sut.updateViewModel(viewModel: Portfolio.FetchListings.ViewModel(viewState: .loaded))
+        // given
+        let row = 0
+        // when
+        sut.collectionView(sut.rootView.collectionView,
+                           didHighlightItemAt: IndexPath(row: row, section: 0))
+        // then
+        XCTAssert(interactor.setHighlightedIndex_value == row)
+    }
 
-        let indexPath = IndexPath(row: 0, section: 0)
-        let cell = sut.rootView.collectionView.cellForItem(at: indexPath)
+    func test_didUnhighlightItem(){
+        // given
+        let row = 0
+        // when
+        sut.collectionView(sut.rootView.collectionView,
+                           didUnhighlightItemAt: IndexPath(row: row, section: 0))
+        // then
+        XCTAssert(interactor.setHighlightedIndex_value == nil)
+    }
+
+    func test_didSelectItem(){
+        // given
+        let row = 0
+        // when
+        sut.collectionView(sut.rootView.collectionView,
+                           didSelectItemAt: IndexPath(row: row, section: 0))
+        // then
+        XCTAssert(interactor.setSelectedIndex_value == row)
     }
 }
