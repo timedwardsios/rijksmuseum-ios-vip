@@ -1,10 +1,3 @@
-//
-//  PortfolioInteractorTests.swift
-//  RijksmuseumTests
-//
-//  Created by Tim Edwards on 30/07/2018.
-//  Copyright © 2018 Tim Edwards. All rights reserved.
-//
 
 import XCTest
 @testable import Rijksmuseum
@@ -14,6 +7,10 @@ class PortfolioInteractorTests: XCTestCase {
         var didFetchListings_called = false
         func presentListings(response: Portfolio.FetchListings.Response) {
             didFetchListings_called = true
+        }
+
+        func presentHighlightedIndex(_ index: Int?) {
+            sfds
         }
     }
 
@@ -67,14 +64,14 @@ class PortfolioInteractorTests: XCTestCase {
         XCTAssert(sut.imageUrlForListingAtIndex(0) == URL(string: "http://www.google.com"))
     }
 
-    func test_setSelectedRow_none(){
-        sut.setSelectedRow(0)
+    func test_setSelectedIndex_none(){
+        sut.setSelectedIndex(0)
         XCTAssert(sut.selectedArtPrimitive == nil)
     }
 
-    func test_setSelectedRow_some(){
+    func test_setSelectedIndex_some(){
         sut.fetchListings(request: Portfolio.FetchListings.Request())
-        sut.setSelectedRow(0)
+        sut.setSelectedIndex(0)
         XCTAssert(sut.selectedArtPrimitive!.remoteId == sut.artPrimitives[0].remoteId)
     }
 }

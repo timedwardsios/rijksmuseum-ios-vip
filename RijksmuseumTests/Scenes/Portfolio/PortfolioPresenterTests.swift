@@ -1,20 +1,10 @@
-//
-//  PortfolioPresenterTests.swift
-//  RijksmuseumTests
-//
-//  Created by Tim Edwards on 30/07/2018.
-//  Copyright © 2018 Tim Edwards. All rights reserved.
-//
 
 import XCTest
 @testable import Rijksmuseum
 
 class PortfolioPresenterTests: XCTestCase {
     class ViewControllerMock: PortfolioViewControllerInterface {
-        var viewModel:Portfolio.FetchListings.ViewModel?
-        func updateViewModel(viewModel: Portfolio.FetchListings.ViewModel) {
-            self.viewModel = viewModel
-        }
+        var viewModel: Portfolio.FetchListings.ViewModel = 
     }
 
     var sut: PortfolioPresenter!
