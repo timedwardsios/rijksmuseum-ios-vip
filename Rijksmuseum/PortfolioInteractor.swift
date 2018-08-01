@@ -16,7 +16,8 @@ protocol PortfolioInteractorInterface{
     func fetchListings(request: Portfolio.FetchListings.Request)
     func numberOfListings()->Int
     func imageUrlForListingAtIndex(_ index:Int)->URL?
-    func setSelectedRow(_ row:Int)
+    func setHighlightedIndex(_ index:Int?)
+    func setSelectedIndex(_ index:Int)
 }
 
 protocol PortfolioDataStore{
@@ -58,9 +59,13 @@ extension PortfolioInteractor: PortfolioInteractorInterface {
         return nil
     }
 
-    func setSelectedRow(_ row: Int) {
-        if artPrimitives.indices.contains(row) {
-            selectedArtPrimitive = artPrimitives[row]
+    func setHighlightedIndex(_ index: Int?) {
+        presenter.presentHighlightedIndex(index)
+    }
+
+    func setSelectedIndex(_ index: Int) {
+        if artPrimitives.indices.contains(index) {
+            selectedArtPrimitive = artPrimitives[index]
         }
     }
 }

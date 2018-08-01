@@ -21,7 +21,7 @@ protocol ArtPrimitiveSource {
 }
 
 class ArtPrimitiveWorker:ArtPrimitiveWorkerInterface{
-    private let artPrimitiveSource:ArtPrimitiveSource
+    let artPrimitiveSource:ArtPrimitiveSource
     init(artPrimitiveSource:ArtPrimitiveSource) {
         self.artPrimitiveSource = artPrimitiveSource
     }

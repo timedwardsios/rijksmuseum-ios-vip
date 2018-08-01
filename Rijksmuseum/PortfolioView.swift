@@ -21,16 +21,14 @@ class PortfolioView: UIView{
         setupSubviews()
     }
 
+    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
+
     func setupSubviews(){
         collectionView.alwaysBounceVertical = true
         collectionView.register(ImageViewCell.self,
                                 forCellWithReuseIdentifier: ImageViewCell.reuseIdentifier())
         addSubview(collectionView)
         collectionView.edges(to: self)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     override func layoutSubviews() {

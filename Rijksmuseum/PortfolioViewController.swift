@@ -13,10 +13,10 @@
 import UIKit
 
 protocol PortfolioViewControllerInterface: class{
-    func updateViewModel(viewModel: Portfolio.FetchListings.ViewModel)
+    var viewModel:Portfolio.FetchListings.ViewModel{get set}
 }
 
-class PortfolioViewController: UIViewController{
+class PortfolioViewController: UIViewController, PortfolioViewControllerInterface{
     let interactor: PortfolioInteractorInterface
     let router: PortfolioRouterInterface
     init(interactor: PortfolioInteractorInterface,
@@ -25,9 +25,8 @@ class PortfolioViewController: UIViewController{
         self.router = router
         super.init(nibName: nil, bundle: nil)
     }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
+    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
 
     let rootView = PortfolioView()
 
@@ -42,6 +41,12 @@ class PortfolioViewController: UIViewController{
         rootView.collectionView.delegate = self
         interactor.fetchListings(request: Portfolio.FetchListings.Request())
     }
+
+    var viewModel = Portfolio.FetchListings.ViewModel(viewState: .loading,
+                                                      hightlightedIndex: nil) {
+        willSet{willUpdateViewModel()}
+        didSet{didUpdateViewModel()}
+    }
 }
 
 extension PortfolioViewController: UICollectionViewDataSource{
@@ -50,12 +55,10 @@ extension PortfolioViewController: UICollectionViewDataSource{
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.reuseIdentifier(),
-                                                            for: indexPath) as? ImageViewCell else {
-                                                                fatalError()
-        }
-        if let imageUrl = interactor.imageUrlForListingAtIndex(indexPath.row) {
-            cell.setImageUrl(imageUrl)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageViewCell.reuseIdentifier(),
+                                                            for: indexPath)
+        if let cell = cell as? ImageViewCell {
+            cell.imageUrl = interactor.imageUrlForListingAtIndex(indexPath.row)
         }
         return cell
     }
@@ -63,29 +66,40 @@ extension PortfolioViewController: UICollectionViewDataSource{
 
 extension PortfolioViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.alpha = 0.5
+        interactor.setHighlightedIndex(indexPath.row)
     }
 
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.alpha = 1.0
+        interactor.setHighlightedIndex(nil)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        interactor.setSelectedRow(indexPath.row)
+        interactor.setSelectedIndex(indexPath.row)
     }
 }
 
-extension PortfolioViewController: PortfolioViewControllerInterface {
-    func updateViewModel(viewModel: Portfolio.FetchListings.ViewModel){
+extension PortfolioViewController {
+    func willUpdateViewModel() {
+        if let index = viewModel.hightlightedIndex,
+            let cell = rootView.collectionView.cellForItem(at: IndexPath(row: index, section: 0)){
+                cell.alpha = 1.0
+        }
+    }
+
+    func didUpdateViewModel(){
         switch viewModel.viewState {
         case .loading:
-            return
-        case .loaded:
+            break
+        case .refreshed:
             rootView.collectionView.reloadData()
-        case .error(let message):
-            print(message)
+        case .loaded:
+            break
+        case .error(_):
+            break
+        }
+        if let index = viewModel.hightlightedIndex,
+            let cell = rootView.collectionView.cellForItem(at: IndexPath(row: index, section: 0)){
+            cell.alpha = 0.5
         }
     }
 }

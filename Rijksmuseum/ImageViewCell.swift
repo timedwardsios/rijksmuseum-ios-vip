@@ -12,6 +12,13 @@ import SDWebImage
 
 class ImageViewCell: UICollectionViewCell {
 
+    var imageUrl:URL?{
+        didSet{
+            imageView.sd_cancelCurrentImageLoad()
+            imageView.sd_setImage(with: imageUrl, completed: nil)
+        }
+    }
+
     private let imageView = UIImageView()
 
     override init(frame: CGRect) {
@@ -30,10 +37,5 @@ class ImageViewCell: UICollectionViewCell {
         imageView.clipsToBounds = true
         addSubview(imageView)
         imageView.edges(to: self)
-    }
-
-    func setImageUrl(_ url:URL){
-        imageView.sd_cancelCurrentImageLoad()
-        imageView.sd_setImage(with: url, completed: nil)
     }
 }

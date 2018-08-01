@@ -21,10 +21,12 @@ enum Portfolio{
         struct ViewModel{
             enum ViewState {
                 case loading
+                case refreshed
                 case loaded
                 case error(String)
             }
             let viewState:ViewState
+            let hightlightedIndex:Int?
         }
     }
 
