@@ -5,11 +5,12 @@ import XCTest
 class ArtPrimitiveWorkerTests: XCTestCase {
     // MARK: mocks
     class ArtPrimitiveServiceMock: ArtPrimitiveService {
-        var fetchPrimitives_called = false
-        func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
-            fetchPrimitives_called = true
-            let result = TestData.ArtPrimitiveMock()
-            completion(.success([result]))
+        var active = true
+        var loadPrimitives_called = false
+        func loadPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
+            loadPrimitives_called = true
+            let result = SharedMockData.ArtPrimitiveMock()
+            completion(active ? .success([result]) : .failure(SharedMockData.ErrorMock()))
         }
     }
 
@@ -23,9 +24,38 @@ class ArtPrimitiveWorkerTests: XCTestCase {
     }
 
     // MARK: tests
-    func test_fetchPrimitives_success(){
-        let exp = XCTestExpectation()
+    func test_fetchPrimitives_forwarded_service(){
+        sut.fetchPrimitives {_ in}
+        XCTAssert(artPrimitiveService.loadPrimitives_called,
+                  "Method should be forwarded to the service object")
+    }
+
+    func test_fetchPrimitives_return_success(){
+        // given
+        let exp = XCTestExpectation(description: "Should return success")
+        // when
         sut.fetchPrimitives { (result) in
+            // then
+            guard case .success = result else {
+                XCTFail("Didn't return success")
+                return
+            }
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+    }
+
+    func test_fetchPrimitives_return_failure(){
+        // given
+        let exp = XCTestExpectation(description: "Should return failure")
+        artPrimitiveService.active = false
+        // when
+        sut.fetchPrimitives { (result) in
+            // then
+            guard case .failure = result else {
+                XCTFail("Didn't return failure")
+                return
+            }
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1)

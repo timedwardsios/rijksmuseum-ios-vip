@@ -8,13 +8,14 @@ protocol PortfolioViewControllerInterface: class{
 class PortfolioViewController: UIViewController, PortfolioViewControllerInterface{
     let interactor: PortfolioInteractorInterface
     let router: PortfolioRouterInterface
-    convenience init(interactor: PortfolioInteractorInterface,
+    init(interactor: PortfolioInteractorInterface,
          router: PortfolioRouterInterface){
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
-        self.init
     }
+
+    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
 
     let rootView = PortfolioView()
 
@@ -71,9 +72,9 @@ extension PortfolioViewController: UICollectionViewDelegate{
 
 extension PortfolioViewController {
     func willUpdateViewModel() {
-        if let index = viewModel.highlightedIndex,
-            let cell = rootView.collectionView.cellForItem(at: IndexPath(row: index, section: 0)){
-                cell.alpha = 1.0
+        if let index = self.viewModel.highlightedIndex,
+            let cell = self.rootView.collectionView.cellForItem(at: IndexPath(row: index, section: 0)){
+            cell.alpha = 1.0
         }
     }
 

@@ -2,7 +2,7 @@
 import UIKit
 
 protocol ArtPrimitiveService {
-    func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>)->Void)
+    func loadPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>)->Void)
 }
 
 class ArtPrimitiveWorker{
@@ -12,14 +12,12 @@ class ArtPrimitiveWorker{
     }
 
     func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>)->Void){
-        artPrimitiveSource.fetchPrimitives { (result) in
+        artPrimitiveSource.loadPrimitives { (result) in
             switch result {
             case .success(let artPrimitives):
-                DispatchQueue.main.async {
-                    completion(.success(artPrimitives))
-                }
-            case .failure(_):
-                fatalError()
+                completion(.success(artPrimitives))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }

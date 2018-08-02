@@ -1,5 +1,5 @@
-Write tests for Portfolio scene
 Finish reading blog posts + comments
+How to write test for API layer
 Write tests for details scene
 Create details scene
 Finish app
@@ -11,6 +11,3 @@ VIP
 TestingAppDelegate
 Result enum
 CollectionViewCell reusable
-
-
-rename fetchlisting

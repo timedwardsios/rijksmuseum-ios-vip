@@ -25,34 +25,37 @@ class PortfolioPresenterTests: XCTestCase {
         sut.presentListings(response: Portfolio.FetchListings.Response(result: .success([])))
         // then
         if case .loaded(let newData) = viewController.viewModel.viewState {
-            XCTAssert(newData == true)
+            XCTAssert(newData == true,
+                      "New data from the interactor should be flagged in the ViewModel")
         } else {
-            XCTAssert(false)
+            XCTFail("View model should reflect loaded state")
         }
     }
 
     func test_presentListings_failure(){
-        // given
-        struct TestError:Error {}
         // when
-        sut.presentListings(response: Portfolio.FetchListings.Response(result: .failure(TestError())))
+        let error = SharedMockData.ErrorMock()
+        sut.presentListings(response: Portfolio.FetchListings.Response(result: .failure(error)))
         // then
-        if case .error = viewController.viewModel.viewState {} else {
-            XCTAssert(false)
+        guard case .error = viewController.viewModel.viewState else {
+            XCTFail("View model should reflect error state")
+            return
         }
     }
-
+    
     func test_presentHighlightedIndex_none(){
         // when
         sut.presentHighlightedIndex(nil)
         // then
-        XCTAssert(viewController.viewModel.highlightedIndex == nil)
+        XCTAssert(viewController.viewModel.highlightedIndex == nil,
+                  "No index in the interactor should be forwarded")
     }
 
     func test_presentHighlightedIndex_some(){
         // when
         sut.presentHighlightedIndex(0)
         // then
-        XCTAssert(viewController.viewModel.highlightedIndex == 0)
+        XCTAssert(viewController.viewModel.highlightedIndex == 0,
+                  "Correct index in the interactor should be forwarded")
     }
 }

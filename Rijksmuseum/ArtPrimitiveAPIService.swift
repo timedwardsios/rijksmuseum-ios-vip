@@ -41,7 +41,7 @@ class ArtPrimitiveAPIService: ArtPrimitiveService{
         }
     }
 
-    func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
+    func loadPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
         guard let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection?key=VV23OnI1&format=json&ps=100&imgonly=true&s=relevance") else {
             fatalError()
         }
