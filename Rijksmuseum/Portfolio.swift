@@ -20,9 +20,10 @@ enum Portfolio{
 
     static func build()->PortfolioViewController{
         let presenter = PortfolioPresenter()
-        let artPrimitiveAPI = ArtPrimitiveAPIService()
+        let apiClient = APIClient(networkSession: URLSession.shared,
+                                  apiConfig: APIData.Live.Config())
+        let artPrimitiveWorker = ArtPrimitiveAPIWorker(apiClient: apiClient)
         let router = PortfolioRouter()
-        let artPrimitiveWorker = ArtPrimitiveWorker(artPrimitiveSource: artPrimitiveAPI)
         let interactor = PortfolioInteractor(presenter: presenter,
                                              artPrimitiveWorker: artPrimitiveWorker)
         let viewController = PortfolioViewController(interactor: interactor,

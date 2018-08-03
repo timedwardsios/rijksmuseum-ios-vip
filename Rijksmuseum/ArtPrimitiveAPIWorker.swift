@@ -1,8 +1,11 @@
 
 import Foundation
-import CoreData
 
-class ArtPrimitiveAPIService: ArtPrimitiveService{
+protocol ArtPrimitiveWorkerInterface {
+    func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void)
+}
+
+class ArtPrimitiveAPIWorker: ArtPrimitiveWorkerInterface{
     private struct ServerResponse: Decodable {
         struct Primitive: ArtPrimitive, Decodable {
             var remoteId: String
@@ -41,23 +44,36 @@ class ArtPrimitiveAPIService: ArtPrimitiveService{
         }
     }
 
-    func loadPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
-        guard let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection?key=VV23OnI1&format=json&ps=100&imgonly=true&s=relevance") else {
-            fatalError()
-        }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {
-                fatalError()
-            }
-            let jsonDecoder = JSONDecoder()
-            do {
-                let response = try jsonDecoder.decode(ServerResponse.self, from: data)
-                completion(.success(response.primitives))
-            } catch {
-                fatalError()
-            }
-        }
-        task.resume()
+    let apiClient:APIClientInterface
+    init(apiClient:APIClientInterface) {
+        self.apiClient = apiClient
+    }
+
+    func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
+//        let request = APIRequest(endpoint: "collection", parameters: <#T##[APIRequest.Parameter]#>)
+//        apiClient.get(request) { (result) in
+            // todo
+//        }
+
+
+
+
+//        guard let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection?key=VV23OnI1&format=json&ps=100&imgonly=true&s=relevance") else {
+//            fatalError()
+//        }
+//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+//            guard let data = data else {
+//                fatalError()
+//            }
+//            let jsonDecoder = JSONDecoder()
+//            do {
+//                let response = try jsonDecoder.decode(ServerResponse.self, from: data)
+//                completion(.success(response.primitives))
+//            } catch {
+//                fatalError()
+//            }
+//        }
+//        task.resume()
     }
 }
 

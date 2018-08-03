@@ -16,9 +16,9 @@ class PortfolioInteractorTests: XCTestCase {
         }
     }
 
-    class ArtPrimitiveWorkerMock: ArtPrimitiveWorker {
+    class ArtPrimitiveWorkerMock: ArtPrimitiveWorkerInterface {
         var fetchPrimitives_called = false
-        override func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
+        func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
             fetchPrimitives_called = true
             completion(.success([SharedMockData.ArtPrimitiveMock()]))
         }
@@ -31,7 +31,7 @@ class PortfolioInteractorTests: XCTestCase {
     override func setUp() {
         super.setUp()
         presenter = PresenterMock()
-        artPrimitiveWorker = ArtPrimitiveWorkerMock(artPrimitiveSource: ArtPrimitiveAPIService())
+        artPrimitiveWorker = ArtPrimitiveWorkerMock()
         sut = PortfolioInteractor(presenter: presenter,
                                   artPrimitiveWorker: artPrimitiveWorker)
     }
