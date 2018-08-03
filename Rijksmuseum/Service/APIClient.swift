@@ -14,7 +14,7 @@ class APIClient:APIClientInterface{
         self.networkSession = networkSession
         self.apiConfig = apiConfig
     }
-
+    
     func get(_ request: APIRequest, completionHandler: @escaping (Result<Data,Error>) -> Void){
         // todo
     }
