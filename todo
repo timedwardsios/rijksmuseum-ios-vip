@@ -1,6 +1,7 @@
-Test API worker using NSURLSession mock
+Move tableview to viewmodel
 Finish reading blog posts + comments
 Write arch and tests for details scene
+Write core data caching layer
 Finish app
 Write blog posts
 
@@ -12,3 +13,5 @@ CollectionViewCell reusable
 Dependency injection
 Unit testing and mocking
 Testing NSURLSession
+Core Data
+Error handling

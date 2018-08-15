@@ -1,0 +1,41 @@
+{
+  "elapsedMilliseconds": 0,
+  "count": 375343,
+  "countFacets": {
+    "hasimage": 375343,
+    "ondisplay": 6632
+  },
+  "artObjects": [
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1904-360",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1904-360"
+      },
+      "id": "en-RP-T-1904-360",
+      "objectNumber": "RP-T-1904-360",
+      "title": "Staande koe met een deken",
+      "hasImage": true,
+      "principalOrFirstMaker": "Jean Bernard",
+      "longTitle": "Staande koe met een deken, Jean Bernard, 1812",
+      "showImage": false,
+      "permitDownload": false,
+      "webImage": {
+        "guid": "22d0bee3-5cb3-47bf-bf62-fd7acd0d2c24",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2330,
+        "height": 2330,
+        "url": "https://lh6.ggpht.com/n5dFjq4ymomgTeLY0Z2ZDFVkEDtJpixUTfkPcm06O7hu3-dVeVX-DDi6yE23GV_DHggbENh9e7MtC0gQlgGkNauZozbi"
+      },
+      "headerImage": {
+        "guid": "70a6979f-aba9-4ef7-b5bc-f92ab8496f89",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 460,
+        "height": 460,
+        "url": "https://lh4.ggpht.com/TqDRn6ayB9fKhIMedJw_04IK3sCMqdp6efe29xAsdafElFY_c2rVfYasY6YM_hdflz9tgqJ-4DJITiuNJhyFOHzqwA"
+      },
+      "productionPlaces": []
+    }
+  ]
+}

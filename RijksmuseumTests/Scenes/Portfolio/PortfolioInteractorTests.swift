@@ -5,9 +5,9 @@ import XCTest
 class PortfolioInteractorTests: XCTestCase {
     // MARK: mocks
     class PresenterMock: PortfolioPresenterInterface {
-        var presentListings_called = false
+        var presentListings_invocations = 0
         func presentListings(response: Portfolio.FetchListings.Response) {
-            presentListings_called = true
+            presentListings_invocations += 1
         }
 
         var presentHighlightedIndex_value:Int?
@@ -16,11 +16,11 @@ class PortfolioInteractorTests: XCTestCase {
         }
     }
 
-    class ArtPrimitiveWorkerMock: ArtPrimitiveWorkerInterface {
+    class ArtPrimitiveWorkerMock: ArtPrimitiveWorker {
         var fetchPrimitives_called = false
         func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
             fetchPrimitives_called = true
-            completion(.success([SharedMockData.ArtPrimitiveMock()]))
+            completion(.success([Seeds.Model.ArtPrimitiveSeed()]))
         }
     }
 
@@ -41,16 +41,16 @@ class PortfolioInteractorTests: XCTestCase {
         // when
         sut.fetchListings(request: Portfolio.FetchListings.Request())
         // then
-        XCTAssert(presenter.presentListings_called,
+        XCTAssert(presenter.presentListings_invocations == 1,
                   "Interactor should forward response to presenter")
     }
 
-    func test_fetchListings_forwarded_worker(){
+    func test_fetchListings_forwarded_service(){
         // when
         sut.fetchListings(request: Portfolio.FetchListings.Request())
         // then
         XCTAssert(artPrimitiveWorker.fetchPrimitives_called,
-                  "Interactor should refer to worker for result")
+                  "Interactor should refer to service for result")
     }
 
     func test_numberOfListings_none(){
@@ -76,7 +76,7 @@ class PortfolioInteractorTests: XCTestCase {
 
     func test_imageUrlForListingAtIndex_some(){
         // given
-        let testUrl = SharedMockData.ArtPrimitiveMock().imageUrl
+        let testUrl = Seeds.Model.ArtPrimitiveSeed().imageUrl
         // when
         sut.fetchListings(request: Portfolio.FetchListings.Request())
         // then

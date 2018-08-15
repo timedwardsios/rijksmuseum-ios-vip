@@ -1,12 +1,27 @@
 
 import Foundation
 
-protocol ArtPrimitiveWorkerInterface {
+protocol ArtPrimitiveWorker {
     func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void)
 }
 
-class ArtPrimitiveAPIWorker: ArtPrimitiveWorkerInterface{
-    private struct ServerResponse: Decodable {
+class ArtPrimitiveAPIWorker: ArtPrimitiveWorker{
+    enum WorkerError:String,Error{
+        case apiServiceError
+        case jsonError
+    }
+
+    struct Request:APIRequest {
+        enum QueryItemName:String {
+            case pageCount = "ps"
+            case resultsWithImagesOnly = "imgonly"
+            case sortBy = "s"
+        }
+        let endpoint = "collection"
+        let queryItems: [URLQueryItem]
+    }
+
+    private struct Response: Decodable {
         struct Primitive: ArtPrimitive, Decodable {
             var remoteId: String
             var title: String
@@ -44,36 +59,32 @@ class ArtPrimitiveAPIWorker: ArtPrimitiveWorkerInterface{
         }
     }
 
-    let apiClient:APIClientInterface
-    init(apiClient:APIClientInterface) {
-        self.apiClient = apiClient
+    let apiService:APIServiceInterface
+    init(apiService:APIServiceInterface) {
+        self.apiService = apiService
     }
 
     func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
-//        let request = APIRequest(endpoint: "collection", parameters: <#T##[APIRequest.Parameter]#>)
-//        apiClient.get(request) { (result) in
-            // todo
-//        }
-
-
-
-
-//        guard let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection?key=VV23OnI1&format=json&ps=100&imgonly=true&s=relevance") else {
-//            fatalError()
-//        }
-//        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let data = data else {
-//                fatalError()
-//            }
-//            let jsonDecoder = JSONDecoder()
-//            do {
-//                let response = try jsonDecoder.decode(ServerResponse.self, from: data)
-//                completion(.success(response.primitives))
-//            } catch {
-//                fatalError()
-//            }
-//        }
-//        task.resume()
+        let parameters = [URLQueryItem(name: Request.QueryItemName.pageCount.rawValue,
+                                       value: "100"),
+                          URLQueryItem(name: Request.QueryItemName.resultsWithImagesOnly.rawValue,
+                                       value: "true"),
+                          URLQueryItem(name: Request.QueryItemName.sortBy.rawValue,
+                                       value: "relevance")]
+        let request = Request(queryItems:parameters)
+        apiService.performGet(request: request) { (result) in
+            switch result {
+            case .success(let data):
+                let jsonDecoder = JSONDecoder()
+                guard let response = try? jsonDecoder.decode(Response.self, from: data) else {
+                    completion(.failure(WorkerError.jsonError))
+                    return
+                }
+                completion(.success(response.primitives))
+            case .failure(_):
+                completion(.failure(WorkerError.apiServiceError))
+            }
+        }
     }
 }
 

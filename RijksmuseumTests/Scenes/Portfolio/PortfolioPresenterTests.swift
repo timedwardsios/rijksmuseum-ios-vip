@@ -34,7 +34,7 @@ class PortfolioPresenterTests: XCTestCase {
 
     func test_presentListings_failure(){
         // when
-        let error = SharedMockData.ErrorMock()
+        let error = Seeds.ErrorSeed()
         sut.presentListings(response: Portfolio.FetchListings.Response(result: .failure(error)))
         // then
         guard case .error = viewController.viewModel.viewState else {

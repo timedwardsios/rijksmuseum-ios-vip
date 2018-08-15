@@ -16,7 +16,7 @@ class PortfolioViewControllerTests: XCTestCase {
         var imageUrlForListingAtIndex_exp:XCTestExpectation?
         func imageUrlForListingAtIndex(_ index: Int) -> URL? {
             imageUrlForListingAtIndex_exp?.fulfill()
-            return SharedMockData.ArtPrimitiveMock().imageUrl
+            return Seeds.Model.ArtPrimitiveSeed().imageUrl
         }
 
         var setHighlightedIndex_value:Int?
@@ -74,7 +74,7 @@ class PortfolioViewControllerTests: XCTestCase {
 
     func test_updateViewModel_error(){
         // given
-        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .error("Error!"),
+        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .error("Error"),
                                                           highlightedIndex:nil)
         // when
         sut.viewModel = viewModel

@@ -10,19 +10,19 @@ enum Portfolio{
         struct ViewModel{
             enum ViewState {
                 case loading
-                case loaded(Bool)//newData
-                case error(String)//message
+                case loaded([URL])
+                case highlighted(Int)
+                case error(String)
             }
             let viewState:ViewState
-            let highlightedIndex:Int?
         }
     }
 
     static func build()->PortfolioViewController{
         let presenter = PortfolioPresenter()
-        let apiClient = APIClient(networkSession: URLSession.shared,
-                                  apiConfig: APIData.Live.Config())
-        let artPrimitiveWorker = ArtPrimitiveAPIWorker(apiClient: apiClient)
+        let apiService = APIService(apiSession: URLSession.shared,
+                                    apiConfig: LiveAPIConfig())
+        let artPrimitiveWorker = ArtPrimitiveAPIWorker(apiService: apiService)
         let router = PortfolioRouter()
         let interactor = PortfolioInteractor(presenter: presenter,
                                              artPrimitiveWorker: artPrimitiveWorker)
