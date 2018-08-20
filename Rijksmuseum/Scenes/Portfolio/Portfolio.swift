@@ -1,22 +1,55 @@
 
 import UIKit
 
+protocol PortfolioInteractorInterface{
+    func performFetchListings(request: Portfolio.FetchListings.Request)
+}
+
+protocol PortfolioPresenterInterface{
+    func presentFetchListings(response: Portfolio.FetchListings.Response)
+//    func presentHighlightedIndex(_ index:Int?)
+}
+
+protocol PortfolioViewControllerInterface: class{
+    func displayFetchListings(viewModel:Portfolio.FetchListings.ViewModel)
+}
+
+protocol PortfolioDataStore{
+    var selectedArtPrimitive:ArtPrimitive? { get }
+}
+
+protocol PortfolioRouterInterface{
+    var dataStore: PortfolioDataStore? { get }
+}
+
 enum Portfolio{
     enum FetchListings{
         struct Request{}
         struct Response{
-            let result:Result<[ArtPrimitive], Error>
+            enum State {
+                case loading
+                case loaded([ArtPrimitive])
+                case error(Error)
+            }
+            let state:State
         }
         struct ViewModel{
-            enum ViewState {
+            enum State {
                 case loading
                 case loaded([URL])
-                case highlighted(Int)
                 case error(String)
             }
-            let viewState:ViewState
+            let state:State
         }
     }
+
+//    enum HighlightListing{
+//        struct Request{}
+//        struct Response{}
+//        struct ViewModel{
+//            let highlightedIndex:Int
+//        }
+//    }
 
     static func build()->PortfolioViewController{
         let presenter = PortfolioPresenter()

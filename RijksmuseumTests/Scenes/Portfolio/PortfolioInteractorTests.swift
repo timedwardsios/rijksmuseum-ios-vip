@@ -39,7 +39,7 @@ class PortfolioInteractorTests: XCTestCase {
     // MARK: tests
     func test_fetchListings_forwarded_presenter(){
         // when
-        sut.fetchListings(request: Portfolio.FetchListings.Request())
+        sut.processFetchListings(request: Portfolio.FetchListings.Request())
         // then
         XCTAssert(presenter.presentListings_invocations == 1,
                   "Interactor should forward response to presenter")
@@ -47,7 +47,7 @@ class PortfolioInteractorTests: XCTestCase {
 
     func test_fetchListings_forwarded_service(){
         // when
-        sut.fetchListings(request: Portfolio.FetchListings.Request())
+        sut.processFetchListings(request: Portfolio.FetchListings.Request())
         // then
         XCTAssert(artPrimitiveWorker.fetchPrimitives_called,
                   "Interactor should refer to service for result")
@@ -61,7 +61,7 @@ class PortfolioInteractorTests: XCTestCase {
 
     func test_numberOfListings_some(){
         // when
-        sut.fetchListings(request: Portfolio.FetchListings.Request())
+        sut.processFetchListings(request: Portfolio.FetchListings.Request())
         // then
         XCTAssert(sut.numberOfListings() == 1,
                   "After fetching, number of listings should be >0")
@@ -78,7 +78,7 @@ class PortfolioInteractorTests: XCTestCase {
         // given
         let testUrl = Seeds.Model.ArtPrimitiveSeed().imageUrl
         // when
-        sut.fetchListings(request: Portfolio.FetchListings.Request())
+        sut.processFetchListings(request: Portfolio.FetchListings.Request())
         // then
         XCTAssert(sut.imageUrlForListingAtIndex(0) == testUrl,
                   "After fetching, imageUrls should be available")
@@ -102,7 +102,7 @@ class PortfolioInteractorTests: XCTestCase {
 
     func test_setSelectedIndex(){
         // when
-        sut.fetchListings(request: Portfolio.FetchListings.Request())
+        sut.processFetchListings(request: Portfolio.FetchListings.Request())
         sut.setSelectedIndex(0)
         // then
         let selectedPrimitiveId = sut.selectedArtPrimitive!.remoteId

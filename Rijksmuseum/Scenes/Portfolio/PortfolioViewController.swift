@@ -1,11 +1,8 @@
 
 import UIKit
 
-protocol PortfolioViewControllerInterface: class{
-    var viewModel:Portfolio.FetchListings.ViewModel{get set}
-}
-
-class PortfolioViewController: UIViewController, PortfolioViewControllerInterface{
+class PortfolioViewController: UIViewController{
+    // MARK: init
     let interactor: PortfolioInteractorInterface
     let router: PortfolioRouterInterface
     init(interactor: PortfolioInteractorInterface,
@@ -17,8 +14,11 @@ class PortfolioViewController: UIViewController, PortfolioViewControllerInterfac
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
 
+    // MARK: vars
     let rootView = PortfolioView()
+    var imageUrls = [URL]()
 
+    // MARK: methods
     override func loadView() {
         view = rootView
     }
@@ -28,22 +28,14 @@ class PortfolioViewController: UIViewController, PortfolioViewControllerInterfac
         title = "Rijksmuseum"
         rootView.collectionView.dataSource = self
         rootView.collectionView.delegate = self
-        interactor.fetchListings(request: Portfolio.FetchListings.Request())
-    }
-
-    var viewModel = Portfolio.FetchListings.ViewModel(viewState: .loading) {
-        willSet{willSetViewModel()}
-        didSet{didSetViewModel()}
+        interactor.performFetchListings(request: Portfolio.FetchListings.Request())
     }
 }
 
 extension PortfolioViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        guard case .loaded(let urls) = viewModel.viewState else{
-            return 0
-        }
-        return urls.count
+        return imageUrls.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -54,13 +46,10 @@ extension PortfolioViewController: UICollectionViewDataSource{
         guard let imageViewCell = cell as? ImageViewCell else {
             return cell
         }
-        guard case .loaded(let urls) = viewModel.viewState else{
+        guard imageUrls.indices.contains(indexPath.row) else {
             return imageViewCell
         }
-        if !urls.indices.contains(indexPath.row){
-            return imageViewCell
-        }
-        imageViewCell.imageUrl = urls[indexPath.row]
+        imageViewCell.imageUrl = imageUrls[indexPath.row]
         return imageViewCell
     }
 }
@@ -68,43 +57,77 @@ extension PortfolioViewController: UICollectionViewDataSource{
 extension PortfolioViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView,
                         didHighlightItemAt indexPath: IndexPath) {
-        interactor.setHighlightedIndex(indexPath.row)
+//        interactor.setHighlightedIndex(indexPath.row)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         didUnhighlightItemAt indexPath: IndexPath) {
-        interactor.setHighlightedIndex(nil)
+//        interactor.setHighlightedIndex(nil)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        interactor.setSelectedIndex(indexPath.row)
+//        interactor.setSelectedIndex(indexPath.row)
     }
 }
 
-extension PortfolioViewController {
-    func willSetViewModel() {
-        if let index = self.viewModel.highlightedIndex,
-            let cell = self.rootView.collectionView.cellForItem(at: IndexPath(row: index,
-                                                                              section: 0)){
-            cell.alpha = 1.0
+extension PortfolioViewController: PortfolioViewControllerInterface {
+    func displayFetchListings(viewModel: Portfolio.FetchListings.ViewModel) {
+        switch viewModel.state {
+        case .loading:
+            beginRefreshing()
+        case .loaded(let imageUrls):
+            endRefreshing()
+            self.imageUrls = imageUrls
+        case .error(let message):
+            endRefreshing()
+            displayErrorMessage(message)
         }
     }
 
-    func didSetViewModel(){
-        switch viewModel.viewState {
-        case .loading:
-            break
-        case .loaded(let newData):
-            if newData == true {
-                rootView.collectionView.reloadData()
-            }
-        case .error(_):
-            break
-        }
-        if let index = viewModel.highlightedIndex,
-            let cell = rootView.collectionView.cellForItem(at: IndexPath(row: index, section: 0)){
-            cell.alpha = 0.5
-        }
+    func beginRefreshing(){
+        self.rootView.refreshControl.beginRefreshingProgramatically()
     }
+
+    func endRefreshing(){
+        rootView.refreshControl.endRefreshing()
+    }
+
+    func displayErrorMessage(_ message:String){
+        let alertViewController = UIAlertController(title: "Error",
+                                      message: message,
+                                      preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK",
+                                     style: .default,
+                                     handler: nil)
+        alertViewController.addAction(okAction)
+        self.present(alertViewController,
+                     animated: true,
+                     completion: nil)
+    }
+
+
+//    func willSetViewModel() {
+//        if let highlighedIndex = viewModel.highlightedIndex {
+//            if let cell = self.rootView.collectionView.cellForItem(at: IndexPath(row: highlighedIndex,
+//                                                                                 section: 0)){
+//                cell.alpha = 1.0
+//            }
+//        }
+//    }
+//
+//    func didSetViewModel(){
+//        switch viewModel.viewState {
+//        case .loading:
+//            break
+//        case .loaded(_):
+//            rootView.collectionView.reloadData()
+//        case .error(_):
+//            break
+//        }
+//        if let index = viewModel.highlightedIndex,
+//            let cell = rootView.collectionView.cellForItem(at: IndexPath(row: index, section: 0)){
+//            cell.alpha = 0.5
+//        }
+//    }
 }

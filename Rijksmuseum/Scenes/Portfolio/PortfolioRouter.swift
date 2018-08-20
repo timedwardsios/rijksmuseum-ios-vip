@@ -1,10 +1,6 @@
 
 import UIKit
 
-protocol PortfolioRouterInterface{
-    var dataStore: PortfolioDataStore? { get }
-}
-
 class PortfolioRouter: PortfolioRouterInterface{
     weak var viewController: PortfolioViewController?
     var dataStore: PortfolioDataStore?

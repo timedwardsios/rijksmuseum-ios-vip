@@ -22,6 +22,7 @@
 		22363AC721090BDB006F5C3A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22363AC621090BDB006F5C3A /* UIColor.swift */; };
 		22403A252113C058000D296C /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22403A242113C058000D296C /* APIService.swift */; };
 		22403A292113C29F000D296C /* LiveAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22403A282113C29F000D296C /* LiveAPIConfig.swift */; };
+		225483CC212AF6C200B7DFC8 /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225483CB212AF6C200B7DFC8 /* UIRefreshControl.swift */; };
 		2262CA1F2111312C001737B9 /* PortfolioViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2262CA1E2111312B001737B9 /* PortfolioViewControllerTests.swift */; };
 		22706C8520FE510E006E27EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22706C8420FE510E006E27EE /* AppDelegate.swift */; };
 		22706C8D20FE510E006E27EE /* Rijksmuseum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22706C8B20FE510E006E27EE /* Rijksmuseum.xcdatamodeld */; };
@@ -67,6 +68,7 @@
 		22363AC621090BDB006F5C3A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		22403A242113C058000D296C /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		22403A282113C29F000D296C /* LiveAPIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveAPIConfig.swift; sourceTree = "<group>"; };
+		225483CB212AF6C200B7DFC8 /* UIRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRefreshControl.swift; sourceTree = "<group>"; };
 		2262CA1E2111312B001737B9 /* PortfolioViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewControllerTests.swift; sourceTree = "<group>"; };
 		22706C8120FE510E006E27EE /* Rijksmuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rijksmuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C8420FE510E006E27EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,10 +164,10 @@
 			isa = PBXGroup;
 			children = (
 				22277D4A210DB258009AE8A0 /* Portfolio.swift */,
-				22277D4B210DB258009AE8A0 /* PortfolioViewController.swift */,
-				22AFE3DD2110CA5B003E8C76 /* PortfolioView.swift */,
 				22277D4C210DB258009AE8A0 /* PortfolioInteractor.swift */,
 				22277D47210DB258009AE8A0 /* PortfolioPresenter.swift */,
+				22277D4B210DB258009AE8A0 /* PortfolioViewController.swift */,
+				22AFE3DD2110CA5B003E8C76 /* PortfolioView.swift */,
 				22277D49210DB258009AE8A0 /* PortfolioRouter.swift */,
 			);
 			path = Portfolio;
@@ -196,6 +198,7 @@
 			children = (
 				2234A8A22100B202006DE2BD /* UICollectionReusableView.swift */,
 				22363AC621090BDB006F5C3A /* UIColor.swift */,
+				225483CB212AF6C200B7DFC8 /* UIRefreshControl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				22706CB420FFC0E0006E27EE /* Result.swift in Sources */,
 				22706C8520FE510E006E27EE /* AppDelegate.swift in Sources */,
 				22706C8D20FE510E006E27EE /* Rijksmuseum.xcdatamodeld in Sources */,
+				225483CC212AF6C200B7DFC8 /* UIRefreshControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,6 +5,7 @@ import TinyConstraints
 class PortfolioView: UIView{
     let collectionView = UICollectionView(frame: .zero,
                                                   collectionViewLayout: UICollectionViewLayout())
+    let refreshControl = UIRefreshControl()
     init() {
         super.init(frame: .zero)
         setupSubviews()
@@ -13,6 +14,8 @@ class PortfolioView: UIView{
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
 
     func setupSubviews(){
+        refreshControl.tintColor = .white
+        collectionView.refreshControl = refreshControl
         collectionView.alwaysBounceVertical = true
         collectionView.register(ImageViewCell.self,
                                 forCellWithReuseIdentifier: ImageViewCell.reuseIdentifier())

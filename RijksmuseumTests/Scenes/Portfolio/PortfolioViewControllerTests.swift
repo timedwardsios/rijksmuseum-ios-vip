@@ -5,7 +5,7 @@ import XCTest
 class PortfolioViewControllerTests: XCTestCase {
     // MARK: mocks
     class InteractorMock: PortfolioInteractorInterface {
-        func fetchListings(request: Portfolio.FetchListings.Request) {}
+        func performFetchListings(request: Portfolio.FetchListings.Request) {}
 
         var numberOfListings_exp:XCTestExpectation?
         func numberOfListings() -> Int {

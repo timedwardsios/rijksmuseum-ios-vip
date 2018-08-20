@@ -1,30 +1,35 @@
 
 import UIKit
 
-protocol PortfolioPresenterInterface{
-    func presentListings(response: Portfolio.FetchListings.Response)
-    func presentHighlightedIndex(_ index:Int?)
-}
-
-class PortfolioPresenter: PortfolioPresenterInterface{
+class PortfolioPresenter{
     weak var viewController: PortfolioViewControllerInterface?
-
-    func presentListings(response: Portfolio.FetchListings.Response) {
-        let viewModel:Portfolio.FetchListings.ViewModel
-        switch response.result {
-        case .success(_):
-            viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded(true),
-                                                          highlightedIndex: nil)
-        case .failure(let error):
-            viewModel = Portfolio.FetchListings.ViewModel(viewState: .error(error.localizedDescription),
-                                                          highlightedIndex: nil)
+}
+extension PortfolioPresenter: PortfolioPresenterInterface{
+    func presentFetchListings(response: Portfolio.FetchListings.Response) {
+        DispatchQueue.main.async {
+            self.processFetchListingsResponse(response)
         }
-        viewController?.viewModel = viewModel
     }
 
-    func presentHighlightedIndex(_ index: Int?) {
-        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded(false),
-                                                      highlightedIndex: index)
-        viewController?.viewModel = viewModel
+    func processFetchListingsResponse(_ response:Portfolio.FetchListings.Response) {
+        switch response.state {
+        case .loading:
+            displayFetchListings(state: .loading)
+        case .loaded(let artPrimitives):
+            let imageUrls = imageUrlsFrom(artPrimitives: artPrimitives)
+            displayFetchListings(state: .loaded(imageUrls))
+        case .error(let error):
+            let errorMessage = error.localizedDescription
+            displayFetchListings(state: .error(errorMessage))
+        }
+    }
+
+    func displayFetchListings(state:Portfolio.FetchListings.ViewModel.State){
+        let viewModel = Portfolio.FetchListings.ViewModel(state: state)
+        self.viewController?.displayFetchListings(viewModel: viewModel)
+    }
+
+    func imageUrlsFrom(artPrimitives:[ArtPrimitive]) -> [URL] {
+        return artPrimitives.map({$0.imageUrl})
     }
 }

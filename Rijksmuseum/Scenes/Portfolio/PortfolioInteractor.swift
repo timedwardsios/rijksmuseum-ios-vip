@@ -1,16 +1,6 @@
 
 import UIKit
 
-protocol PortfolioInteractorInterface{
-    func fetchListings(request: Portfolio.FetchListings.Request)
-    func setHighlightedIndex(_ index:Int?)
-    func setSelectedIndex(_ index:Int)
-}
-
-protocol PortfolioDataStore{
-    var selectedArtPrimitive:ArtPrimitive? { get }
-}
-
 class PortfolioInteractor: PortfolioDataStore{
     let presenter: PortfolioPresenterInterface
     let artPrimitiveWorker: ArtPrimitiveWorker
@@ -25,23 +15,36 @@ class PortfolioInteractor: PortfolioDataStore{
 }
 
 extension PortfolioInteractor: PortfolioInteractorInterface {
-    func fetchListings(request: Portfolio.FetchListings.Request) {
+    // MARK: FetchListings
+    func performFetchListings(request: Portfolio.FetchListings.Request) {
+        presentFetchListings(state: .loading)
         artPrimitiveWorker.fetchPrimitives {[weak self] (result) in
-            if case let .success(artPrimitives) = result {
-                self?.artPrimitives = artPrimitives
-            }
-            let response = Portfolio.FetchListings.Response(result: result)
-            self?.presenter.presentListings(response: response)
+            self?.processFetchListingsResult(result)
         }
     }
 
-    func setHighlightedIndex(_ index: Int?) {
-        presenter.presentHighlightedIndex(index)
-    }
-
-    func setSelectedIndex(_ index: Int) {
-        if artPrimitives.indices.contains(index) {
-            selectedArtPrimitive = artPrimitives[index]
+    func processFetchListingsResult(_ result:ArtPrimitiveResult){
+        switch result {
+        case .success(let artPrimtives):
+            self.artPrimitives = artPrimtives
+            presentFetchListings(state: .loaded(artPrimtives))
+        case .failure(let error):
+            presentFetchListings(state: .error(error))
         }
     }
+
+    func presentFetchListings(state:Portfolio.FetchListings.Response.State){
+        let response = Portfolio.FetchListings.Response(state: state)
+        presenter.presentFetchListings(response: response)
+    }
+
+    //    func setHighlightedIndex(_ index: Int?) {
+    ////        presenter.presentHighlightedIndex(index)
+    //    }
+    //
+    //    func setSelectedIndex(_ index: Int) {
+    //        if artPrimitives.indices.contains(index) {
+    //            selectedArtPrimitive = artPrimitives[index]
+    //        }
+    //    }
 }

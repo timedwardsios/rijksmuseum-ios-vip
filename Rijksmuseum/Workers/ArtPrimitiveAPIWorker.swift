@@ -1,8 +1,10 @@
 
 import Foundation
 
+typealias ArtPrimitiveResult = Result<[ArtPrimitive], Error>
+
 protocol ArtPrimitiveWorker {
-    func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void)
+    func fetchPrimitives(completion: @escaping (ArtPrimitiveResult) -> Void)
 }
 
 class ArtPrimitiveAPIWorker: ArtPrimitiveWorker{
