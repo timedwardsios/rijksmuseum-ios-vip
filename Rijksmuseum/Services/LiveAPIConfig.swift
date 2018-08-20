@@ -3,7 +3,7 @@ import Foundation
 
 struct LiveAPIConfig:APIConfig{
     let scheme = "https"
-    let hostname = "rijksmuseum.nl"
+    let hostname = "www.rijksmuseum.nl"
     let path = "/api/en"
     enum QueryItemName:String {
         case apiKey = "key"

@@ -87,7 +87,7 @@ extension PortfolioViewController: PortfolioViewControllerInterface {
             beginRefreshing()
         case .loaded(let imageUrls):
             endRefreshing()
-            self.imageUrls = imageUrls
+            setImageUrls(imageUrls)
         case .error(let message):
             endRefreshing()
             displayErrorMessage(message)
@@ -100,6 +100,11 @@ extension PortfolioViewController: PortfolioViewControllerInterface {
 
     func endRefreshing(){
         rootView.refreshControl.endRefreshing()
+    }
+
+    func setImageUrls(_ imageUrls:[URL]){
+        self.imageUrls = imageUrls
+        rootView.collectionView.reloadData()
     }
 
     func displayErrorMessage(_ message:String){

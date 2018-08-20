@@ -19,7 +19,7 @@ class ArtPrimitiveAPIWorker: ArtPrimitiveWorker{
             case resultsWithImagesOnly = "imgonly"
             case sortBy = "s"
         }
-        let endpoint = "collection"
+        let endpoint = "/collection"
         let queryItems: [URLQueryItem]
     }
 

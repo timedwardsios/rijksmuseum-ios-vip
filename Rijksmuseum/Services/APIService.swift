@@ -22,7 +22,7 @@ class APIService:APIServiceInterface{
     }
 
     func performGet(request: APIRequest, completion: @escaping (Result<Data,Error>) -> Void){
-        let url = APIService.urlFrom(config: apiConfig, request: request)
+        let url = urlFrom(config: apiConfig, request: request)
         let dataTask = apiSession.dataTask(with: url) { (data,response,error) in
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(ServiceError.responseFormatError))
@@ -41,7 +41,7 @@ class APIService:APIServiceInterface{
         dataTask.resume()
     }
 
-    class func urlFrom(config:APIConfig,
+    func urlFrom(config:APIConfig,
                        request:APIRequest)->URL{
         var urlComponents = URLComponents()
         urlComponents.scheme = config.scheme
