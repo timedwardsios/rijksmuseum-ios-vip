@@ -1,4 +1,4 @@
-Move tableview to viewmodel
+Fix highlighted and selected
 Write arch and tests for details scene
 Write core data caching layer
 Finish app

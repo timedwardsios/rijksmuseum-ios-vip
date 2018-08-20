@@ -1,6 +1,7 @@
 
 import UIKit
 
+// MARK: protocols
 protocol PortfolioInteractorInterface{
     func performFetchListings(request: Portfolio.FetchListings.Request)
 }
@@ -22,6 +23,7 @@ protocol PortfolioRouterInterface{
     var dataStore: PortfolioDataStore? { get }
 }
 
+// MARK: use-cases
 enum Portfolio{
     enum FetchListings{
         struct Request{}

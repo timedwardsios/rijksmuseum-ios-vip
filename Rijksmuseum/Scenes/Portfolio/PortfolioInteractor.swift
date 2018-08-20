@@ -15,7 +15,6 @@ class PortfolioInteractor: PortfolioDataStore{
 }
 
 extension PortfolioInteractor: PortfolioInteractorInterface {
-    // MARK: FetchListings
     func performFetchListings(request: Portfolio.FetchListings.Request) {
         presentFetchListings(state: .loading)
         artPrimitiveWorker.fetchPrimitives {[weak self] (result) in

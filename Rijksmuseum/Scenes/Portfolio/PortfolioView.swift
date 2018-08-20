@@ -10,9 +10,10 @@ class PortfolioView: UIView{
         super.init(frame: .zero)
         setupSubviews()
     }
-
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
+}
 
+extension PortfolioView {
     func setupSubviews(){
         refreshControl.tintColor = .white
         collectionView.refreshControl = refreshControl

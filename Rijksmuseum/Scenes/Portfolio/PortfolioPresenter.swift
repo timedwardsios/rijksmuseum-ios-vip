@@ -4,6 +4,7 @@ import UIKit
 class PortfolioPresenter{
     weak var viewController: PortfolioViewControllerInterface?
 }
+
 extension PortfolioPresenter: PortfolioPresenterInterface{
     func presentFetchListings(response: Portfolio.FetchListings.Response) {
         DispatchQueue.main.async {
