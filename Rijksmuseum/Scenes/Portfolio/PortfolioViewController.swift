@@ -2,7 +2,6 @@
 import UIKit
 
 class PortfolioViewController: UIViewController{
-    // MARK: init
     let interactor: PortfolioInteractorInterface
     let router: PortfolioRouterInterface
     init(interactor: PortfolioInteractorInterface,
@@ -11,14 +10,14 @@ class PortfolioViewController: UIViewController{
         self.router = router
         super.init(nibName: nil, bundle: nil)
     }
-
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
 
-    // MARK: vars
     let rootView = PortfolioView()
     var imageUrls = [URL]()
+}
 
-    // MARK: methods
+// MARK: methods
+extension PortfolioViewController {
     override func loadView() {
         view = rootView
     }
@@ -28,6 +27,16 @@ class PortfolioViewController: UIViewController{
         title = "Rijksmuseum"
         rootView.collectionView.dataSource = self
         rootView.collectionView.delegate = self
+        rootView.refreshControl.addTarget(self,
+                                          action: #selector(fetchListings),
+                                          for: .valueChanged)
+        fetchListings()
+    }
+}
+
+// MARK: selectors
+extension PortfolioViewController {
+    @objc func fetchListings() {
         interactor.performFetchListings(request: Portfolio.FetchListings.Request())
     }
 }
