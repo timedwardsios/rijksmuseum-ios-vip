@@ -1,3 +1,4 @@
+Fix unit tests for presenter and view controller
 Fix highlighted and selected
 Write arch and tests for details scene
 Write core data caching layer

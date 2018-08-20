@@ -3,10 +3,10 @@ import Foundation
 @testable import Rijksmuseum
 
 enum Seeds{
-    struct ErrorSeed:Error {}
+    class ErrorSeed:Error {}
 
     enum Model {
-        struct ArtPrimitiveSeed:ArtPrimitive{
+        class ArtPrimitiveSeed:ArtPrimitive{
             var remoteId = "remoteId seed"
             var title = "title seed"
             var artist = "artist seed"
@@ -30,10 +30,12 @@ enum Seeds{
         }
 
         enum Endpoint:String {
-            case collection
+            case collection = "/collection"
             func data()->Data{
                 class BundleClass{}
-                let url = Bundle.init(for: BundleClass.self).url(forResource: self.rawValue,
+                var fileName = self.rawValue
+                fileName.removeFirst()
+                let url = Bundle.init(for: BundleClass.self).url(forResource: fileName,
                                                             withExtension: "json")!
                 return try! Data(contentsOf: url)
             }

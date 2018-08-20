@@ -3,28 +3,6 @@ import XCTest
 @testable import Rijksmuseum
 
 class PortfolioInteractorTests: XCTestCase {
-    // MARK: mocks
-    class PresenterMock: PortfolioPresenterInterface {
-        var presentListings_invocations = 0
-        func presentListings(response: Portfolio.FetchListings.Response) {
-            presentListings_invocations += 1
-        }
-
-        var presentHighlightedIndex_value:Int?
-        func presentHighlightedIndex(_ index: Int?) {
-            presentHighlightedIndex_value = index
-        }
-    }
-
-    class ArtPrimitiveWorkerMock: ArtPrimitiveWorker {
-        var fetchPrimitives_called = false
-        func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
-            fetchPrimitives_called = true
-            completion(.success([Seeds.Model.ArtPrimitiveSeed()]))
-        }
-    }
-
-    // MARK: init
     var sut: PortfolioInteractor!
     var presenter: PresenterMock!
     var artPrimitiveWorker: ArtPrimitiveWorkerMock!
@@ -35,78 +13,114 @@ class PortfolioInteractorTests: XCTestCase {
         sut = PortfolioInteractor(presenter: presenter,
                                   artPrimitiveWorker: artPrimitiveWorker)
     }
+}
 
-    // MARK: tests
-    func test_fetchListings_forwarded_presenter(){
-        // when
-        sut.processFetchListings(request: Portfolio.FetchListings.Request())
-        // then
-        XCTAssert(presenter.presentListings_invocations == 1,
-                  "Interactor should forward response to presenter")
+extension PortfolioInteractorTests {
+    class PresenterMock: PortfolioPresenterInterface {
+        var presentFetchListings_loading_invocations = 0
+        var presentFetchListings_loaded_invocations = 0
+        var presentFetchListings_loaded_value:[ArtPrimitive]?
+        var presentFetchListings_error_invocations = 0
+        var presentFetchListings_error_value:Error?
+        func presentFetchListings(response: Portfolio.FetchListings.Response) {
+            switch response.state {
+            case .loading:
+                presentFetchListings_loading_invocations += 1
+            case .loaded(let artPrimitives):
+                presentFetchListings_loaded_invocations += 1
+                presentFetchListings_loaded_value = artPrimitives
+            case .error(let error):
+                presentFetchListings_error_invocations += 1
+                presentFetchListings_error_value = error
+            }
+        }
+
+        var presentHighlightedIndex_value:Int?
+        func presentHighlightedIndex(_ index: Int?) {
+            presentHighlightedIndex_value = index
+        }
     }
 
-    func test_fetchListings_forwarded_service(){
-        // when
-        sut.processFetchListings(request: Portfolio.FetchListings.Request())
-        // then
-        XCTAssert(artPrimitiveWorker.fetchPrimitives_called,
-                  "Interactor should refer to service for result")
+    class ArtPrimitiveWorkerMock: ArtPrimitiveWorker {
+        var active = true
+        var artPrimitiveSeed = [Seeds.Model.ArtPrimitiveSeed()]
+        var errorSeed = Seeds.ErrorSeed()
+        var fetchPrimitives_invocations = 0
+        func fetchPrimitives(completion: @escaping (Result<[ArtPrimitive], Error>) -> Void) {
+            fetchPrimitives_invocations += 1
+            if active == true {
+                completion(.success(artPrimitiveSeed))
+            } else {
+                completion(.failure(errorSeed))
+            }
+        }
     }
+}
 
-    func test_numberOfListings_none(){
-        // then
-        XCTAssert(sut.numberOfListings() == 0,
-                  "Before fetching, number of listings should be 0")
-    }
-
-    func test_numberOfListings_some(){
-        // when
-        sut.processFetchListings(request: Portfolio.FetchListings.Request())
-        // then
-        XCTAssert(sut.numberOfListings() == 1,
-                  "After fetching, number of listings should be >0")
-    }
-
-    func test_imageUrlForListingAtIndex_none(){
-        // then
-        XCTAssert(sut.imageUrlForListingAtIndex(0) == nil,
-                  "Before fetching, imageUrls should not be available")
-    }
-
-
-    func test_imageUrlForListingAtIndex_some(){
+extension PortfolioInteractorTests {
+    func test_performFetchListings(){
         // given
-        let testUrl = Seeds.Model.ArtPrimitiveSeed().imageUrl
+        let request = Portfolio.FetchListings.Request()
         // when
-        sut.processFetchListings(request: Portfolio.FetchListings.Request())
-        // then
-        XCTAssert(sut.imageUrlForListingAtIndex(0) == testUrl,
-                  "After fetching, imageUrls should be available")
+        sut.performFetchListings(request: request)
     }
 
-    func test_setHighlightedIndex_none(){
+    func test_performFetchListings_presenter_loading(){
+        // given
+        let request = Portfolio.FetchListings.Request()
         // when
-        sut.setHighlightedIndex(nil)
+        sut.performFetchListings(request: request)
         // then
-        XCTAssert(presenter.presentHighlightedIndex_value == nil,
-                  "Removing highlighted index should propagate to presenter")
+        XCTAssert(presenter.presentFetchListings_loading_invocations == 1)
     }
 
-    func test_setHighlightedIndex_some(){
+    func test_performFetchListings_worker(){
+        // given
+        let request = Portfolio.FetchListings.Request()
         // when
-        sut.setHighlightedIndex(0)
+        sut.performFetchListings(request: request)
         // then
-        XCTAssert(presenter.presentHighlightedIndex_value == 0,
-                  "Setting highlighted index should propagate to presenter")
+        XCTAssert(artPrimitiveWorker.fetchPrimitives_invocations == 1)
     }
 
-    func test_setSelectedIndex(){
+    func test_performFetchListings_presenter_loaded(){
+        // given
+        let request = Portfolio.FetchListings.Request()
         // when
-        sut.processFetchListings(request: Portfolio.FetchListings.Request())
-        sut.setSelectedIndex(0)
+        sut.performFetchListings(request: request)
         // then
-        let selectedPrimitiveId = sut.selectedArtPrimitive!.remoteId
-        XCTAssert(selectedPrimitiveId == sut.artPrimitives[0].remoteId,
-                  "Selected index should set artPrimitive")
+        XCTAssert(presenter.presentFetchListings_loaded_invocations == 1)
+    }
+
+    func test_performFetchListings_presenter_loaded_value(){
+        // given
+        let request = Portfolio.FetchListings.Request()
+        // when
+        sut.performFetchListings(request: request)
+        // then
+        let firstValue = presenter.presentFetchListings_loaded_value?.first
+        let castValue = firstValue as! Seeds.Model.ArtPrimitiveSeed
+        XCTAssert(castValue === artPrimitiveWorker.artPrimitiveSeed.first)
+    }
+
+    func test_performFetchListings_presenter_error(){
+        // given
+        let request = Portfolio.FetchListings.Request()
+        artPrimitiveWorker.active = false
+        // when
+        sut.performFetchListings(request: request)
+        // then
+        XCTAssert(presenter.presentFetchListings_error_invocations == 1)
+    }
+
+    func test_performFetchListings_presenter_error_value(){
+        // given
+        let request = Portfolio.FetchListings.Request()
+        artPrimitiveWorker.active = false
+        // when
+        sut.performFetchListings(request: request)
+        // then
+        let value = presenter.presentFetchListings_error_value as! Seeds.ErrorSeed
+        XCTAssert(value === artPrimitiveWorker.errorSeed)
     }
 }

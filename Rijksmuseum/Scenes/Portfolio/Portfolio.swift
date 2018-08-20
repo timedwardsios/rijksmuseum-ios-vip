@@ -8,7 +8,6 @@ protocol PortfolioInteractorInterface{
 
 protocol PortfolioPresenterInterface{
     func presentFetchListings(response: Portfolio.FetchListings.Response)
-//    func presentHighlightedIndex(_ index:Int?)
 }
 
 protocol PortfolioViewControllerInterface: class{
