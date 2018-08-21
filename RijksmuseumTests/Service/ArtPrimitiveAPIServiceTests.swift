@@ -2,9 +2,9 @@
 import XCTest
 @testable import Rijksmuseum
 
-class ArtPrimitiveAPIWorkerTests: XCTestCase {
+class ArtAPIWorkerTests: XCTestCase {
     // MARK: mocks
-    class APIServiceMock: APIServiceInterface {
+    class APIServiceMock: APIServiceInput {
         var performGetRequest_invocations = 0
         var lastRequest:APIRequest?
         var shouldReturnSuccess = true
@@ -27,38 +27,38 @@ class ArtPrimitiveAPIWorkerTests: XCTestCase {
     }
 
     // MARK: init
-    var sut: ArtPrimitiveAPIWorker!
+    var sut: ArtWorkerAPI!
     var apiService: APIServiceMock!
     override func setUp() {
         super.setUp()
         apiService = APIServiceMock()
-        sut = ArtPrimitiveAPIWorker(apiService: apiService)
+        sut = ArtWorkerAPI(apiService: apiService)
     }
 
-    func test_fetchPrimitives(){
+    func test_fetchArt(){
         // when
-        sut.fetchPrimitives(completion: {_ in})
+        sut.fetchArt(completion: {_ in})
     }
 
-    func test_fetchPrimitives_apiService_called(){
+    func test_fetchArt_apiService_called(){
         // when
-        sut.fetchPrimitives(completion: {_ in})
+        sut.fetchArt(completion: {_ in})
         // then
         XCTAssert(apiService.performGetRequest_invocations == 1,
                   "Should forward to APIService")
     }
 
-    func test_fetchPrimitives_apiService_endpoint(){
+    func test_fetchArt_apiService_endpoint(){
         // given
         let correctEndpoint = Seeds.API.Endpoint.collection.rawValue
         // when
-        sut.fetchPrimitives(completion: {_ in})
+        sut.fetchArt(completion: {_ in})
         // then
         XCTAssert(apiService.lastRequest?.endpoint == correctEndpoint,
                   "Should call APIService with correct endpoint")
     }
 
-    func test_fetchPrimitives_apiService_parameters(){
+    func test_fetchArt_apiService_parameters(){
         // given
         let queryItems = [URLQueryItem(name: "ps",
                                        value: "100"),
@@ -67,28 +67,28 @@ class ArtPrimitiveAPIWorkerTests: XCTestCase {
                           URLQueryItem(name: "s",
                                        value: "relevance")]
         // when
-        sut.fetchPrimitives(completion: {_ in})
+        sut.fetchArt(completion: {_ in})
         // then
         XCTAssert(apiService.lastRequest?.queryItems == queryItems,
                   "Should call APIService with correct parameters")
     }
 
-    func test_fetchPrimitives_callback(){
+    func test_fetchArt_callback(){
         // given
         let exp = XCTestExpectation(description: "Should callback")
         // when
-        sut.fetchPrimitives(completion: {_ in
+        sut.fetchArt(completion: {_ in
             // then
             exp.fulfill()
         })
         wait(for: [exp], timeout: 1)
     }
 
-    func test_fetchPrimitives_callback_success(){
+    func test_fetchArt_callback_success(){
         // given
         let exp = XCTestExpectation(description: "Should callback with success")
         // when
-        sut.fetchPrimitives(completion: {result in
+        sut.fetchArt(completion: {result in
             // then
             if case .success = result {
                 exp.fulfill()
@@ -97,31 +97,31 @@ class ArtPrimitiveAPIWorkerTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
-    func test_fetchPrimitives_callback_artPrimitives(){
+    func test_fetchArt_callback_arts(){
         // given
         let remoteId = "RP-T-1904-360"
         let exp = XCTestExpectation(description: "Should callback with result")
         // when
-        sut.fetchPrimitives(completion: {result in
+        sut.fetchArt(completion: {result in
             // then
-            if case .success(let artPrimitives) = result {
-                XCTAssert(artPrimitives.count == 1)
-                XCTAssert(artPrimitives.first!.remoteId == remoteId)
+            if case .success(let arts) = result {
+                XCTAssert(arts.count == 1)
+                XCTAssert(arts.first!.remoteId == remoteId)
                 exp.fulfill()
             }
         })
         wait(for: [exp], timeout: 1)
     }
 
-    func test_fetchPrimitives_callback_apiError(){
+    func test_fetchArt_callback_apiError(){
         // given
         let exp = XCTestExpectation(description: "Should callback with API error")
         apiService.shouldReturnSuccess = false
         // when
-        sut.fetchPrimitives(completion: {result in
+        sut.fetchArt(completion: {result in
             // then
             if case .failure(let error) = result {
-                if case ArtPrimitiveAPIWorker.WorkerError.apiServiceError = error {
+                if case ArtWorkerAPI.WorkerError.apiServiceError = error {
                     exp.fulfill()
                 }
             }
@@ -129,15 +129,15 @@ class ArtPrimitiveAPIWorkerTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
-    func test_fetchPrimitives_callback_jsonError(){
+    func test_fetchArt_callback_jsonError(){
         // given
         let exp = XCTestExpectation(description: "Should callback with JSON error")
         apiService.shouldReturnData = false
         // when
-        sut.fetchPrimitives(completion: {result in
+        sut.fetchArt(completion: {result in
             // then
             if case .failure(let error) = result {
-                if case ArtPrimitiveAPIWorker.WorkerError.jsonError = error {
+                if case ArtWorkerAPI.WorkerError.jsonError = error {
                     exp.fulfill()
                 }
             }

@@ -3,32 +3,32 @@ import UIKit
 
 class PortfolioInteractor: PortfolioDataStore{
     let presenter: PortfolioPresenterInput
-    let artPrimitiveWorker: ArtPrimitiveWorker
+    let artWorker: ArtWorkerInput
     init(presenter:PortfolioPresenterInput,
-         artPrimitiveWorker:ArtPrimitiveWorker) {
+         artWorker:ArtWorkerInput) {
         self.presenter = presenter
-        self.artPrimitiveWorker = artPrimitiveWorker
+        self.artWorker = artWorker
     }
 
-    var artPrimitives = [ArtPrimitive]()
-    var selectedArtPrimitive: ArtPrimitive?
+    var arts = [Art]()
+    var selectedArt: Art?
 }
 
 extension PortfolioInteractor: PortfolioInteractorInput {
     func performFetchListings(request: Portfolio.FetchListings.Request) {
         presentFetchListings(state: .loading)
-        artPrimitiveWorker.fetchPrimitives {[weak self] (result) in
+        artWorker.fetchArt {[weak self] (result) in
             self?.processFetchListingsResult(result)
         }
     }
 }
 
 private extension PortfolioInteractor {
-    func processFetchListingsResult(_ result:ArtPrimitiveResult){
+    func processFetchListingsResult(_ result:ArtWorkerResult){
         switch result {
-        case .success(let artPrimtives):
-            self.artPrimitives = artPrimtives
-            presentFetchListings(state: .loaded(artPrimtives))
+        case .success(let arts):
+            self.arts = arts
+            presentFetchListings(state: .loaded(arts))
         case .failure(let error):
             presentFetchListings(state: .error(error))
         }

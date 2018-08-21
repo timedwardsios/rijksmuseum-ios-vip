@@ -3,10 +3,8 @@ import UIKit
 
 class TestingAppDelegate: UIResponder {}
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder {
     let window = UIWindow()
-
     override init() {
         UIWindow.appearance().backgroundColor = UIColor(hex: "343537")
         UINavigationBar.appearance().barTintColor = UIColor(hex: "40474f")
@@ -17,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UICollectionView.appearance().backgroundColor = .clear
         window.backgroundColor = UIWindow.appearance().backgroundColor // workaround
     }
+}
 
+extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let portfolioViewController = Portfolio.build()
         let navigationController = UINavigationController(rootViewController: portfolioViewController)
@@ -27,4 +27,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-

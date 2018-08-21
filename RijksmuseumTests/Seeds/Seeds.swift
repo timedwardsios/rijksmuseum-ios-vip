@@ -6,7 +6,7 @@ enum Seeds{
     class ErrorSeed:Error {}
 
     enum Model {
-        class ArtPrimitiveSeed:ArtPrimitive{
+        class ArtSeed:Art{
             var remoteId = "remoteId seed"
             var title = "title seed"
             var artist = "artist seed"

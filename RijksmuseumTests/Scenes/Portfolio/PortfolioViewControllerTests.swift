@@ -32,7 +32,7 @@ extension PortfolioViewControllerTests {
         var imageUrlForListingAtIndex_exp:XCTestExpectation?
         func imageUrlForListingAtIndex(_ index: Int) -> URL? {
             imageUrlForListingAtIndex_exp?.fulfill()
-            return Seeds.Model.ArtPrimitiveSeed().imageUrl
+            return Seeds.Model.ArtSeed().imageUrl
         }
 
         var setHighlightedIndex_value:Int?

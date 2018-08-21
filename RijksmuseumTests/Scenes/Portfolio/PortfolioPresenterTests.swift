@@ -26,7 +26,7 @@ extension PortfolioPresenterTests {
 private extension PortfolioPresenterTests {
 //    func test_presentFetchListings_success(){
 //        // when
-//        sut.presentFetchListings(response: Portfolio.FetchListings.Response(state: .loaded(<#T##[ArtPrimitive]#>)))
+//        sut.presentFetchListings(response: Portfolio.FetchListings.Response(state: .loaded(<#T##[Art]#>)))
 //        sut.presentFetchListings(response: Portfolio.FetchListings.Response(result: .success([])))
 //        // then
 //        if case .loaded(let newData) = viewController.viewModel.viewState {

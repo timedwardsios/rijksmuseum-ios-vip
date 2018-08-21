@@ -18,8 +18,8 @@ private extension PortfolioPresenter {
         switch response.state {
         case .loading:
             displayFetchListings(state: .loading)
-        case .loaded(let artPrimitives):
-            let imageUrls = imageUrlsFrom(artPrimitives: artPrimitives)
+        case .loaded(let arts):
+            let imageUrls = imageUrlsFrom(arts: arts)
             displayFetchListings(state: .loaded(imageUrls))
         case .error(let error):
             let errorMessage = error.localizedDescription
@@ -32,7 +32,7 @@ private extension PortfolioPresenter {
         self.viewController?.displayFetchListings(viewModel: viewModel)
     }
 
-    func imageUrlsFrom(artPrimitives:[ArtPrimitive]) -> [URL] {
-        return artPrimitives.map({$0.imageUrl})
+    func imageUrlsFrom(arts:[Art]) -> [URL] {
+        return arts.map({$0.imageUrl})
     }
 }

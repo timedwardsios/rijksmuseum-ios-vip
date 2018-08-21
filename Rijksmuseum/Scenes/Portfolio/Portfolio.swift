@@ -14,7 +14,7 @@ protocol PortfolioViewControllerInput: class{
 }
 
 protocol PortfolioDataStore{
-    var selectedArtPrimitive:ArtPrimitive? { get }
+    var selectedArt:Art? { get }
 }
 
 protocol PortfolioRouterInput{
@@ -27,7 +27,7 @@ enum Portfolio{
         struct Response{
             enum State {
                 case loading
-                case loaded([ArtPrimitive])
+                case loaded([Art])
                 case error(Error)
             }
             let state:State
@@ -46,10 +46,10 @@ enum Portfolio{
         let presenter = PortfolioPresenter()
         let apiService = APIService(apiSession: URLSession.shared,
                                     apiConfig: LiveAPIConfig())
-        let artPrimitiveWorker = ArtPrimitiveAPIWorker(apiService: apiService)
+        let artWorker = ArtWorkerAPI(apiService: apiService)
         let router = PortfolioRouter()
         let interactor = PortfolioInteractor(presenter: presenter,
-                                             artPrimitiveWorker: artPrimitiveWorker)
+                                             artWorker: artWorker)
         let viewController = PortfolioViewController(interactor: interactor,
                                                      router: router)
         presenter.viewController = viewController

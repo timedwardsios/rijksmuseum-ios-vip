@@ -1,10 +1,12 @@
 
 import UIKit
 
-class PortfolioRouter: PortfolioRouterInput{
+class PortfolioRouter{
     weak var viewController: PortfolioViewController?
     var dataStore: PortfolioDataStore?
-    
+}
+
+extension PortfolioRouter: PortfolioRouterInput{
     //func routeToSomewhere(segue: UIStoryboardSegue?)
     //{
     //  if let segue = segue {
