@@ -23,7 +23,7 @@ extension PortfolioPresenterTests {
 }
 
 
-extension PortfolioPresenterTests {
+private extension PortfolioPresenterTests {
 //    func test_presentFetchListings_success(){
 //        // when
 //        sut.presentFetchListings(response: Portfolio.FetchListings.Response(state: .loaded(<#T##[ArtPrimitive]#>)))

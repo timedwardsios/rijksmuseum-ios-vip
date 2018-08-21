@@ -1,8 +1,7 @@
 
 import UIKit
 
-// MARK: init
-class PortfolioInteractor: PortfolioInteractorInterface, PortfolioDataStore{
+class PortfolioInteractor: PortfolioDataStore{
     let presenter: PortfolioPresenterInterface
     let artPrimitiveWorker: ArtPrimitiveWorker
     init(presenter:PortfolioPresenterInterface,
@@ -15,16 +14,17 @@ class PortfolioInteractor: PortfolioInteractorInterface, PortfolioDataStore{
     var selectedArtPrimitive: ArtPrimitive?
 }
 
-// MARK: FetchListings
-extension PortfolioInteractor {
+extension PortfolioInteractor: PortfolioInteractorInterface {
     func performFetchListings(request: Portfolio.FetchListings.Request) {
         presentFetchListings(state: .loading)
         artPrimitiveWorker.fetchPrimitives {[weak self] (result) in
             self?.processFetchListingsResult(result)
         }
     }
+}
 
-    private func processFetchListingsResult(_ result:ArtPrimitiveResult){
+private extension PortfolioInteractor {
+    func processFetchListingsResult(_ result:ArtPrimitiveResult){
         switch result {
         case .success(let artPrimtives):
             self.artPrimitives = artPrimtives
@@ -34,7 +34,7 @@ extension PortfolioInteractor {
         }
     }
 
-    private func presentFetchListings(state:Portfolio.FetchListings.Response.State){
+    func presentFetchListings(state:Portfolio.FetchListings.Response.State){
         let response = Portfolio.FetchListings.Response(state: state)
         presenter.presentFetchListings(response: response)
     }

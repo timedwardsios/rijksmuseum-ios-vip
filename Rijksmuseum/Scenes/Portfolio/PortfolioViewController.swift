@@ -1,8 +1,7 @@
 
 import UIKit
 
-// MARK: init
-class PortfolioViewController: UIViewController, PortfolioViewControllerInterface{
+class PortfolioViewController: UIViewController{
     let interactor: PortfolioInteractorInterface
     let router: PortfolioRouterInterface
     init(interactor: PortfolioInteractorInterface,
@@ -15,10 +14,7 @@ class PortfolioViewController: UIViewController, PortfolioViewControllerInterfac
 
     let rootView = PortfolioView()
     var imageUrls = [URL]()
-}
 
-// MARK: methods
-extension PortfolioViewController {
     override func loadView() {
         view = rootView
     }
@@ -35,14 +31,6 @@ extension PortfolioViewController {
     }
 }
 
-// MARK: actions
-extension PortfolioViewController {
-    @objc func fetchListings() {
-        interactor.performFetchListings(request: Portfolio.FetchListings.Request())
-    }
-}
-
-// MARK: UICollectionViewDataSource
 extension PortfolioViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -65,7 +53,6 @@ extension PortfolioViewController: UICollectionViewDataSource{
     }
 }
 
-// MARK: UICollectionViewDelegate
 extension PortfolioViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView,
                         didHighlightItemAt indexPath: IndexPath) {
@@ -80,8 +67,7 @@ extension PortfolioViewController: UICollectionViewDelegate{
     }
 }
 
-// MARK: FetchListings
-extension PortfolioViewController {
+extension PortfolioViewController:PortfolioViewControllerInterface {
     func displayFetchListings(viewModel: Portfolio.FetchListings.ViewModel) {
         switch viewModel.state {
         case .loading:
@@ -94,24 +80,26 @@ extension PortfolioViewController {
             displayErrorMessage(message)
         }
     }
+}
 
-    private func beginRefreshing(){
+private extension PortfolioViewController {
+    func beginRefreshing(){
         self.rootView.refreshControl.beginRefreshingProgramatically()
     }
 
-    private func endRefreshing(){
+    func endRefreshing(){
         rootView.refreshControl.endRefreshing()
     }
 
-    private func setImageUrls(_ imageUrls:[URL]){
+    func setImageUrls(_ imageUrls:[URL]){
         self.imageUrls = imageUrls
         rootView.collectionView.reloadData()
     }
 
-    private func displayErrorMessage(_ message:String){
+    func displayErrorMessage(_ message:String){
         let alertViewController = UIAlertController(title: "Error",
-                                      message: message,
-                                      preferredStyle: .alert)
+                                                    message: message,
+                                                    preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK",
                                      style: .default,
                                      handler: nil)
@@ -119,5 +107,12 @@ extension PortfolioViewController {
         self.present(alertViewController,
                      animated: true,
                      completion: nil)
+    }
+}
+
+// MARK: actions
+@objc private extension PortfolioViewController {
+    func fetchListings() {
+        interactor.performFetchListings(request: Portfolio.FetchListings.Request())
     }
 }

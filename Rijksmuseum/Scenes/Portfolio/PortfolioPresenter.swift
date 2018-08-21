@@ -1,20 +1,20 @@
 
 import UIKit
 
-// MARK: init
-class PortfolioPresenter: PortfolioPresenterInterface{
+class PortfolioPresenter {
     weak var viewController: PortfolioViewControllerInterface?
 }
 
-// MARK: FetchListings
-extension PortfolioPresenter{
+extension PortfolioPresenter: PortfolioPresenterInterface{
     func presentFetchListings(response: Portfolio.FetchListings.Response) {
         DispatchQueue.main.async {
             self.processFetchListingsResponse(response)
         }
     }
+}
 
-    private func processFetchListingsResponse(_ response:Portfolio.FetchListings.Response) {
+private extension PortfolioPresenter {
+    func processFetchListingsResponse(_ response:Portfolio.FetchListings.Response) {
         switch response.state {
         case .loading:
             displayFetchListings(state: .loading)
@@ -27,12 +27,12 @@ extension PortfolioPresenter{
         }
     }
 
-    private func displayFetchListings(state:Portfolio.FetchListings.ViewModel.State){
+    func displayFetchListings(state:Portfolio.FetchListings.ViewModel.State){
         let viewModel = Portfolio.FetchListings.ViewModel(state: state)
         self.viewController?.displayFetchListings(viewModel: viewModel)
     }
 
-    private func imageUrlsFrom(artPrimitives:[ArtPrimitive]) -> [URL] {
+    func imageUrlsFrom(artPrimitives:[ArtPrimitive]) -> [URL] {
         return artPrimitives.map({$0.imageUrl})
     }
 }

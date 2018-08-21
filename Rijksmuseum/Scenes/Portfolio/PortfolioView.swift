@@ -2,7 +2,6 @@
 import UIKit
 import TinyConstraints
 
-// MARK: init
 class PortfolioView: UIView{
     let collectionView = UICollectionView(frame: .zero,
                                                   collectionViewLayout: UICollectionViewLayout())
@@ -12,11 +11,15 @@ class PortfolioView: UIView{
         setupSubviews()
     }
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateCollectionViewLayout()
+    }
 }
 
-// MARK: methods
-extension PortfolioView {
-    private func setupSubviews(){
+private extension PortfolioView {
+    func setupSubviews(){
         refreshControl.tintColor = .white
         collectionView.refreshControl = refreshControl
         collectionView.alwaysBounceVertical = true
@@ -26,8 +29,7 @@ extension PortfolioView {
         collectionView.edges(to: self)
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    func updateCollectionViewLayout(){
         let flowLayout = UICollectionViewFlowLayout()
         let gutterSize = CGFloat(8)
         let cellSize = CGFloat(83.75)
