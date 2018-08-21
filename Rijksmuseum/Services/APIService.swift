@@ -1,18 +1,20 @@
 
 import Foundation
 
-protocol APIServiceInterface {
-    func performGet(request: APIRequest, completion: @escaping (Result<Data,Error>) -> Void)
+enum APIServiceError:Error{
+    case url
+    case responseFormat
+    case statusCode
+    case data
 }
 
-class APIService:APIServiceInterface{
-    enum ServiceError:String,Error{
-        case urlError
-        case responseFormatError
-        case statusCodeError
-        case dataError
-    }
+typealias APIServiceResult = Result<Data, APIServiceError>
 
+protocol APIServiceInput {
+    func performGet(request: APIRequest, completion: @escaping (APIServiceResult) -> Void)
+}
+
+class APIService{
     let apiSession: APISession
     let apiConfig: APIConfig
     init(apiSession: APISession,
@@ -20,29 +22,33 @@ class APIService:APIServiceInterface{
         self.apiSession = apiSession
         self.apiConfig = apiConfig
     }
+}
 
-    func performGet(request: APIRequest, completion: @escaping (Result<Data,Error>) -> Void){
+extension APIService: APIServiceInput {
+    func performGet(request: APIRequest, completion: @escaping (APIServiceResult) -> Void){
         let url = urlFrom(config: apiConfig, request: request)
         let dataTask = apiSession.dataTask(with: url) { (data,response,error) in
             guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(ServiceError.responseFormatError))
+                completion(.failure(.responseFormat))
                 return
             }
             if !(200..<300 ~= httpResponse.statusCode) {
-                completion(.failure(ServiceError.statusCodeError))
+                completion(.failure(.statusCode))
                 return
             }
             guard let data = data else {
-                completion(.failure(ServiceError.dataError))
+                completion(.failure(.data))
                 return
             }
             completion(.success(data))
         }
         dataTask.resume()
     }
+}
 
+private extension APIService {
     func urlFrom(config:APIConfig,
-                       request:APIRequest)->URL{
+                 request:APIRequest)->URL{
         var urlComponents = URLComponents()
         urlComponents.scheme = config.scheme
         urlComponents.host = config.hostname
