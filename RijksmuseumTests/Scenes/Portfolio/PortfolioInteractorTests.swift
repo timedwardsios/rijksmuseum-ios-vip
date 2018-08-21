@@ -98,8 +98,8 @@ extension PortfolioInteractorTests {
         // when
         sut.performFetchListings(request: request)
         // then
-        let firstValue = presenter.presentFetchListings_loaded_value?.first
-        let castValue = firstValue as! Seeds.Model.ArtPrimitiveSeed
+        let value = presenter.presentFetchListings_loaded_value?.first
+        let castValue = value as! Seeds.Model.ArtPrimitiveSeed
         XCTAssert(castValue === artPrimitiveWorker.artPrimitiveSeed.first)
     }
 

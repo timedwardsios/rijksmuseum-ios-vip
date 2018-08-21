@@ -1,7 +1,8 @@
 
 import UIKit
 
-class PortfolioInteractor: PortfolioDataStore{
+// MARK: init
+class PortfolioInteractor: PortfolioInteractorInterface, PortfolioDataStore{
     let presenter: PortfolioPresenterInterface
     let artPrimitiveWorker: ArtPrimitiveWorker
     init(presenter:PortfolioPresenterInterface,
@@ -14,7 +15,8 @@ class PortfolioInteractor: PortfolioDataStore{
     var selectedArtPrimitive: ArtPrimitive?
 }
 
-extension PortfolioInteractor: PortfolioInteractorInterface {
+// MARK: FetchListings
+extension PortfolioInteractor {
     func performFetchListings(request: Portfolio.FetchListings.Request) {
         presentFetchListings(state: .loading)
         artPrimitiveWorker.fetchPrimitives {[weak self] (result) in
@@ -22,7 +24,7 @@ extension PortfolioInteractor: PortfolioInteractorInterface {
         }
     }
 
-    func processFetchListingsResult(_ result:ArtPrimitiveResult){
+    private func processFetchListingsResult(_ result:ArtPrimitiveResult){
         switch result {
         case .success(let artPrimtives):
             self.artPrimitives = artPrimtives
@@ -32,18 +34,8 @@ extension PortfolioInteractor: PortfolioInteractorInterface {
         }
     }
 
-    func presentFetchListings(state:Portfolio.FetchListings.Response.State){
+    private func presentFetchListings(state:Portfolio.FetchListings.Response.State){
         let response = Portfolio.FetchListings.Response(state: state)
         presenter.presentFetchListings(response: response)
     }
-
-    //    func setHighlightedIndex(_ index: Int?) {
-    ////        presenter.presentHighlightedIndex(index)
-    //    }
-    //
-    //    func setSelectedIndex(_ index: Int) {
-    //        if artPrimitives.indices.contains(index) {
-    //            selectedArtPrimitive = artPrimitives[index]
-    //        }
-    //    }
 }

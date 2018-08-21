@@ -1,12 +1,11 @@
 
 import UIKit
 
+// MARK: init
 class PortfolioRouter: PortfolioRouterInterface{
     weak var viewController: PortfolioViewController?
     var dataStore: PortfolioDataStore?
     
-    // MARK: Routing
-
     //func routeToSomewhere(segue: UIStoryboardSegue?)
     //{
     //  if let segue = segue {

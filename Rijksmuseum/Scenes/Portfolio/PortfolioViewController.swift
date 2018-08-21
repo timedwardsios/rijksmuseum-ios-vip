@@ -1,7 +1,8 @@
 
 import UIKit
 
-class PortfolioViewController: UIViewController{
+// MARK: init
+class PortfolioViewController: UIViewController, PortfolioViewControllerInterface{
     let interactor: PortfolioInteractorInterface
     let router: PortfolioRouterInterface
     init(interactor: PortfolioInteractorInterface,
@@ -34,13 +35,14 @@ extension PortfolioViewController {
     }
 }
 
-// MARK: selectors
+// MARK: actions
 extension PortfolioViewController {
     @objc func fetchListings() {
         interactor.performFetchListings(request: Portfolio.FetchListings.Request())
     }
 }
 
+// MARK: UICollectionViewDataSource
 extension PortfolioViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -63,24 +65,23 @@ extension PortfolioViewController: UICollectionViewDataSource{
     }
 }
 
+// MARK: UICollectionViewDelegate
 extension PortfolioViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView,
                         didHighlightItemAt indexPath: IndexPath) {
-//        interactor.setHighlightedIndex(indexPath.row)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         didUnhighlightItemAt indexPath: IndexPath) {
-//        interactor.setHighlightedIndex(nil)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-//        interactor.setSelectedIndex(indexPath.row)
     }
 }
 
-extension PortfolioViewController: PortfolioViewControllerInterface {
+// MARK: FetchListings
+extension PortfolioViewController {
     func displayFetchListings(viewModel: Portfolio.FetchListings.ViewModel) {
         switch viewModel.state {
         case .loading:
@@ -94,20 +95,20 @@ extension PortfolioViewController: PortfolioViewControllerInterface {
         }
     }
 
-    func beginRefreshing(){
+    private func beginRefreshing(){
         self.rootView.refreshControl.beginRefreshingProgramatically()
     }
 
-    func endRefreshing(){
+    private func endRefreshing(){
         rootView.refreshControl.endRefreshing()
     }
 
-    func setImageUrls(_ imageUrls:[URL]){
+    private func setImageUrls(_ imageUrls:[URL]){
         self.imageUrls = imageUrls
         rootView.collectionView.reloadData()
     }
 
-    func displayErrorMessage(_ message:String){
+    private func displayErrorMessage(_ message:String){
         let alertViewController = UIAlertController(title: "Error",
                                       message: message,
                                       preferredStyle: .alert)
@@ -119,29 +120,4 @@ extension PortfolioViewController: PortfolioViewControllerInterface {
                      animated: true,
                      completion: nil)
     }
-
-
-//    func willSetViewModel() {
-//        if let highlighedIndex = viewModel.highlightedIndex {
-//            if let cell = self.rootView.collectionView.cellForItem(at: IndexPath(row: highlighedIndex,
-//                                                                                 section: 0)){
-//                cell.alpha = 1.0
-//            }
-//        }
-//    }
-//
-//    func didSetViewModel(){
-//        switch viewModel.viewState {
-//        case .loading:
-//            break
-//        case .loaded(_):
-//            rootView.collectionView.reloadData()
-//        case .error(_):
-//            break
-//        }
-//        if let index = viewModel.highlightedIndex,
-//            let cell = rootView.collectionView.cellForItem(at: IndexPath(row: index, section: 0)){
-//            cell.alpha = 0.5
-//        }
-//    }
 }

@@ -1,7 +1,6 @@
 
 import UIKit
 
-// MARK: protocols
 protocol PortfolioInteractorInterface{
     func performFetchListings(request: Portfolio.FetchListings.Request)
 }
@@ -22,7 +21,6 @@ protocol PortfolioRouterInterface{
     var dataStore: PortfolioDataStore? { get }
 }
 
-// MARK: use-cases
 enum Portfolio{
     enum FetchListings{
         struct Request{}
@@ -43,14 +41,6 @@ enum Portfolio{
             let state:State
         }
     }
-
-//    enum HighlightListing{
-//        struct Request{}
-//        struct Response{}
-//        struct ViewModel{
-//            let highlightedIndex:Int
-//        }
-//    }
 
     static func build()->PortfolioViewController{
         let presenter = PortfolioPresenter()
