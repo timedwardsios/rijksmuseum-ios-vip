@@ -1,4 +1,4 @@
-Fix unit tests for presenter and view controller
+Fix unit tests for view controller
 Refactor services
 Fix highlighted and selected
 Write arch and tests for details scene

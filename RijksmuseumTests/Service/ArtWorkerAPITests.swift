@@ -142,17 +142,4 @@ extension ArtWorkerAPITests {
         })
         wait(for: [exp], timeout: 1)
     }
-
-    func test_fetchArt_callback_isMainThread(){
-        // given
-        let exp = XCTestExpectation(description: "Should be on the main thread")
-        // when
-        sut.fetchArt(completion: {_ in
-            if Thread.isMainThread {
-                exp.fulfill()
-            }
-        })
-        wait(for: [exp], timeout: 1)
-    }
-
 }
