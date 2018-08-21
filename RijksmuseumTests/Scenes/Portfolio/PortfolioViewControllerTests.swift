@@ -20,7 +20,7 @@ class PortfolioViewControllerTests: XCTestCase {
     }
 }
 extension PortfolioViewControllerTests {
-    class InteractorMock: PortfolioInteractorInterface {
+    class InteractorMock: PortfolioInteractorInput {
         func performFetchListings(request: Portfolio.FetchListings.Request) {}
 
         var numberOfListings_exp:XCTestExpectation?
@@ -46,7 +46,7 @@ extension PortfolioViewControllerTests {
         }
     }
 
-    class RouterMock: PortfolioRouterInterface {
+    class RouterMock: PortfolioRouterInput {
         var dataStore: PortfolioDataStore?
     }
 }

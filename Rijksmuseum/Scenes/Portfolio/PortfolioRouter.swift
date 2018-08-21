@@ -1,7 +1,7 @@
 
 import UIKit
 
-class PortfolioRouter: PortfolioRouterInterface{
+class PortfolioRouter: PortfolioRouterInput{
     weak var viewController: PortfolioViewController?
     var dataStore: PortfolioDataStore?
     

@@ -2,10 +2,10 @@
 import UIKit
 
 class PortfolioViewController: UIViewController{
-    let interactor: PortfolioInteractorInterface
-    let router: PortfolioRouterInterface
-    init(interactor: PortfolioInteractorInterface,
-         router: PortfolioRouterInterface){
+    let interactor: PortfolioInteractorInput
+    let router: PortfolioRouterInput
+    init(interactor: PortfolioInteractorInput,
+         router: PortfolioRouterInput){
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
@@ -67,7 +67,7 @@ extension PortfolioViewController: UICollectionViewDelegate{
     }
 }
 
-extension PortfolioViewController:PortfolioViewControllerInterface {
+extension PortfolioViewController:PortfolioViewControllerInput {
     func displayFetchListings(viewModel: Portfolio.FetchListings.ViewModel) {
         switch viewModel.state {
         case .loading:

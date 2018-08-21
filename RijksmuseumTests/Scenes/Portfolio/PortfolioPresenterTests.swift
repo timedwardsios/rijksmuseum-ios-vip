@@ -15,7 +15,7 @@ class PortfolioPresenterTests: XCTestCase {
 }
 
 extension PortfolioPresenterTests {
-    class ViewControllerMock: PortfolioViewControllerInterface {
+    class ViewControllerMock: PortfolioViewControllerInput {
         func displayFetchListings(viewModel: Portfolio.FetchListings.ViewModel) {
             //
         }

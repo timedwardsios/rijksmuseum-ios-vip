@@ -16,7 +16,7 @@ class PortfolioInteractorTests: XCTestCase {
 }
 
 extension PortfolioInteractorTests {
-    class PresenterMock: PortfolioPresenterInterface {
+    class PresenterMock: PortfolioPresenterInput {
         var presentFetchListings_loading_invocations = 0
         var presentFetchListings_loaded_invocations = 0
         var presentFetchListings_loaded_value:[ArtPrimitive]?

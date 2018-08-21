@@ -2,10 +2,10 @@
 import UIKit
 
 class PortfolioPresenter {
-    weak var viewController: PortfolioViewControllerInterface?
+    weak var viewController: PortfolioViewControllerInput?
 }
 
-extension PortfolioPresenter: PortfolioPresenterInterface{
+extension PortfolioPresenter: PortfolioPresenterInput{
     func presentFetchListings(response: Portfolio.FetchListings.Response) {
         DispatchQueue.main.async {
             self.processFetchListingsResponse(response)
