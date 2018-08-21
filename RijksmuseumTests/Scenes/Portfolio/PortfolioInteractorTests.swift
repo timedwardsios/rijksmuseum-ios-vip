@@ -17,27 +17,22 @@ class PortfolioInteractorTests: XCTestCase {
 
 extension PortfolioInteractorTests {
     class PresenterMock: PortfolioPresenterInput {
-        var presentFetchListings_loading_invocations = 0
-        var presentFetchListings_loaded_invocations = 0
-        var presentFetchListings_loaded_value:[Art]?
-        var presentFetchListings_error_invocations = 0
-        var presentFetchListings_error_value:Error?
-        func presentFetchListings(response: Portfolio.FetchListings.Response) {
+        var presentFetchArt_loading_invocations = 0
+        var presentFetchArt_loaded_invocations = 0
+        var presentFetchArt_loaded_value:[Art]?
+        var presentFetchArt_error_invocations = 0
+        var presentFetchArt_error_value:Error?
+        func presentFetchArt(response: Portfolio.FetchArt.Response) {
             switch response.state {
             case .loading:
-                presentFetchListings_loading_invocations += 1
+                presentFetchArt_loading_invocations += 1
             case .loaded(let arts):
-                presentFetchListings_loaded_invocations += 1
-                presentFetchListings_loaded_value = arts
+                presentFetchArt_loaded_invocations += 1
+                presentFetchArt_loaded_value = arts
             case .error(let error):
-                presentFetchListings_error_invocations += 1
-                presentFetchListings_error_value = error
+                presentFetchArt_error_invocations += 1
+                presentFetchArt_error_value = error
             }
-        }
-
-        var presentHighlightedIndex_value:Int?
-        func presentHighlightedIndex(_ index: Int?) {
-            presentHighlightedIndex_value = index
         }
     }
 
@@ -46,7 +41,7 @@ extension PortfolioInteractorTests {
         var artSeed = [Seeds.Model.ArtSeed()]
         var errorSeed = Seeds.ErrorSeed()
         var fetchArt_invocations = 0
-        func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void) {
+        func fetchArt(completion: @escaping (ArtWorkerResult) -> Void) {
             fetchArt_invocations += 1
             if active == true {
                 completion(.success(artSeed))
@@ -58,69 +53,70 @@ extension PortfolioInteractorTests {
 }
 
 extension PortfolioInteractorTests {
-    func test_performFetchListings(){
+    func test_performFetchArt(){
         // given
-        let request = Portfolio.FetchListings.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
-        sut.performFetchListings(request: request)
+        sut.performFetchArt(request: request)
     }
 
-    func test_performFetchListings_presenter_loading(){
+    func test_performFetchArt_presenter_loading(){
         // given
-        let request = Portfolio.FetchListings.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
-        sut.performFetchListings(request: request)
+        sut.performFetchArt(request: request)
         // then
-        XCTAssert(presenterMock.presentFetchListings_loading_invocations == 1)
+        XCTAssert(presenterMock.presentFetchArt_loading_invocations == 1)
     }
 
-    func test_performFetchListings_worker(){
+    func test_performFetchArt_worker(){
         // given
-        let request = Portfolio.FetchListings.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
-        sut.performFetchListings(request: request)
+        sut.performFetchArt(request: request)
         // then
         XCTAssert(artWorkerMock.fetchArt_invocations == 1)
     }
 
-    func test_performFetchListings_presenter_loaded(){
+    func test_performFetchArt_presenter_loaded(){
         // given
-        let request = Portfolio.FetchListings.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
-        sut.performFetchListings(request: request)
+        sut.performFetchArt(request: request)
         // then
-        XCTAssert(presenterMock.presentFetchListings_loaded_invocations == 1)
+        XCTAssert(presenterMock.presentFetchArt_loaded_invocations == 1)
     }
 
-    func test_performFetchListings_presenter_loaded_value(){
+    func test_performFetchArt_presenter_loaded_value(){
         // given
-        let request = Portfolio.FetchListings.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
-        sut.performFetchListings(request: request)
+        sut.performFetchArt(request: request)
         // then
-        let value = presenterMock.presentFetchListings_loaded_value?.first
+        XCTAssert(presenterMock.presentFetchArt_loaded_value?.count == 1)
+        let value = presenterMock.presentFetchArt_loaded_value?.first
         let castValue = value as! Seeds.Model.ArtSeed
         XCTAssert(castValue === artWorkerMock.artSeed.first)
     }
 
-    func test_performFetchListings_presenter_error(){
+    func test_performFetchArt_presenter_error(){
         // given
-        let request = Portfolio.FetchListings.Request()
+        let request = Portfolio.FetchArt.Request()
         artWorkerMock.active = false
         // when
-        sut.performFetchListings(request: request)
+        sut.performFetchArt(request: request)
         // then
-        XCTAssert(presenterMock.presentFetchListings_error_invocations == 1)
+        XCTAssert(presenterMock.presentFetchArt_error_invocations == 1)
     }
 
-    func test_performFetchListings_presenter_error_value(){
+    func test_performFetchArt_presenter_error_value(){
         // given
-        let request = Portfolio.FetchListings.Request()
+        let request = Portfolio.FetchArt.Request()
         artWorkerMock.active = false
         // when
-        sut.performFetchListings(request: request)
+        sut.performFetchArt(request: request)
         // then
-        let value = presenterMock.presentFetchListings_error_value as! Seeds.ErrorSeed
+        let value = presenterMock.presentFetchArt_error_value as! Seeds.ErrorSeed
         XCTAssert(value === artWorkerMock.errorSeed)
     }
 }

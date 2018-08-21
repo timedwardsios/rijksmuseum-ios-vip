@@ -2,39 +2,41 @@
 import XCTest
 @testable import Rijksmuseum
 
-class ArtAPIWorkerTests: XCTestCase {
-    // MARK: mocks
+class ArtWorkerAPITests: XCTestCase {
+    var sut: ArtWorkerAPI!
+    var apiServiceMock: APIServiceMock!
+    override func setUp() {
+        super.setUp()
+        apiServiceMock = APIServiceMock()
+        sut = ArtWorkerAPI(apiService: apiServiceMock)
+    }
+}
+
+extension ArtWorkerAPITests {
     class APIServiceMock: APIServiceInput {
         var performGetRequest_invocations = 0
         var lastRequest:APIRequest?
         var shouldReturnSuccess = true
         var shouldReturnData = true
         func performGet( request: APIRequest,
-                         completion: @escaping (Result<Data, Error>) -> Void) {
+                         completion: @escaping (APIServiceResult) -> Void) {
             performGetRequest_invocations += 1
             lastRequest = request
             let sampleData = Seeds.API.Endpoint.collection.data()
             if shouldReturnSuccess {
                 if shouldReturnData {
+                    completion(.success(sampleData))
                 } else {
                     completion(.success(Data()))
                 }
             } else {
                 completion(.failure(Seeds.ErrorSeed()))
             }
-            completion(.success(sampleData))
         }
     }
+}
 
-    // MARK: init
-    var sut: ArtWorkerAPI!
-    var apiService: APIServiceMock!
-    override func setUp() {
-        super.setUp()
-        apiService = APIServiceMock()
-        sut = ArtWorkerAPI(apiService: apiService)
-    }
-
+extension ArtWorkerAPITests {
     func test_fetchArt(){
         // when
         sut.fetchArt(completion: {_ in})
@@ -44,7 +46,7 @@ class ArtAPIWorkerTests: XCTestCase {
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(apiService.performGetRequest_invocations == 1,
+        XCTAssert(apiServiceMock.performGetRequest_invocations == 1,
                   "Should forward to APIService")
     }
 
@@ -54,7 +56,7 @@ class ArtAPIWorkerTests: XCTestCase {
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(apiService.lastRequest?.endpoint == correctEndpoint,
+        XCTAssert(apiServiceMock.lastRequest?.endpoint == correctEndpoint,
                   "Should call APIService with correct endpoint")
     }
 
@@ -69,7 +71,7 @@ class ArtAPIWorkerTests: XCTestCase {
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(apiService.lastRequest?.queryItems == queryItems,
+        XCTAssert(apiServiceMock.lastRequest?.queryItems == queryItems,
                   "Should call APIService with correct parameters")
     }
 
@@ -86,7 +88,7 @@ class ArtAPIWorkerTests: XCTestCase {
 
     func test_fetchArt_callback_success(){
         // given
-        let exp = XCTestExpectation(description: "Should callback with success")
+        let exp = XCTestExpectation(description: "Should succeed")
         // when
         sut.fetchArt(completion: {result in
             // then
@@ -99,8 +101,8 @@ class ArtAPIWorkerTests: XCTestCase {
 
     func test_fetchArt_callback_arts(){
         // given
-        let remoteId = "RP-T-1904-360"
-        let exp = XCTestExpectation(description: "Should callback with result")
+        let remoteId = "EFED716C-1180-485A-A511-63F65F1D63F1"
+        let exp = XCTestExpectation(description: "Should succeed with result")
         // when
         sut.fetchArt(completion: {result in
             // then
@@ -113,17 +115,15 @@ class ArtAPIWorkerTests: XCTestCase {
         wait(for: [exp], timeout: 1)
     }
 
-    func test_fetchArt_callback_apiError(){
+    func test_fetchArt_callback_failure(){
         // given
-        let exp = XCTestExpectation(description: "Should callback with API error")
-        apiService.shouldReturnSuccess = false
+        let exp = XCTestExpectation(description: "Should fail when APIService fails")
+        apiServiceMock.shouldReturnSuccess = false
         // when
         sut.fetchArt(completion: {result in
             // then
-            if case .failure(let error) = result {
-                if case ArtWorkerAPI.WorkerError.apiServiceError = error {
-                    exp.fulfill()
-                }
+            if case .failure(_) = result {
+                exp.fulfill()
             }
         })
         wait(for: [exp], timeout: 1)
@@ -131,15 +131,13 @@ class ArtAPIWorkerTests: XCTestCase {
 
     func test_fetchArt_callback_jsonError(){
         // given
-        let exp = XCTestExpectation(description: "Should callback with JSON error")
-        apiService.shouldReturnData = false
+        let exp = XCTestExpectation(description: "Should fail when no data")
+        apiServiceMock.shouldReturnData = false
         // when
         sut.fetchArt(completion: {result in
             // then
-            if case .failure(let error) = result {
-                if case ArtWorkerAPI.WorkerError.jsonError = error {
-                    exp.fulfill()
-                }
+            if case .failure(_) = result {
+                exp.fulfill()
             }
         })
         wait(for: [exp], timeout: 1)

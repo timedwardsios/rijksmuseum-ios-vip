@@ -1,20 +1,15 @@
 
 import Foundation
 
-enum ArtWorkerError:Error{
-    case apiService
-    case json
-}
-
-typealias ArtWorkerResult = Result<[Art], ArtWorkerError>
+typealias ArtWorkerResult = Result<[Art], Error>
 
 protocol ArtWorkerInput {
     func fetchArt(completion: @escaping (ArtWorkerResult) -> Void)
 }
 
 class ArtWorkerAPI {
-    let apiService:APIService
-    init(apiService:APIService) {
+    let apiService:APIServiceInput
+    init(apiService:APIServiceInput) {
         self.apiService = apiService
     }
 }
@@ -33,18 +28,23 @@ extension ArtWorkerAPI:  ArtWorkerInput {
             case .success(let data):
                 let jsonDecoder = JSONDecoder()
                 guard let response = try? jsonDecoder.decode(ServerResponse.self, from: data) else {
-                    completion(.failure(.json))
+                    completion(.failure(Error.json))
                     return
                 }
                 completion(.success(response.artResponses))
             case .failure(_):
-                completion(.failure(.apiService))
+                completion(.failure(Error.apiService))
             }
         }
     }
 }
 
 private extension ArtWorkerAPI {
+    enum Error:AppError{
+        case apiService
+        case json
+    }
+
     struct Request:APIRequest {
         enum QueryItemName:String {
             case pageCount = "ps"

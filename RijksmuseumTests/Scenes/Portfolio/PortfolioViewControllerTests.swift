@@ -4,15 +4,15 @@ import XCTest
 
 class PortfolioViewControllerTests: XCTestCase {
     var sut:PortfolioViewController!
-    var interactor:InteractorMock!
-    var router:RouterMock!
+    var interactorMock:InteractorMock!
+    var routerMock:RouterMock!
     var window:UIWindow!
     override func setUp() {
         super.setUp()
-        interactor = InteractorMock()
-        router = RouterMock()
-        self.sut = PortfolioViewController(interactor: interactor,
-                                           router: router)
+        interactorMock = InteractorMock()
+        routerMock = RouterMock()
+        self.sut = PortfolioViewController(interactor: interactorMock,
+                                           router: routerMock)
         window = UIWindow()
         window.rootViewController = sut
         window.makeKeyAndVisible()
@@ -21,17 +21,17 @@ class PortfolioViewControllerTests: XCTestCase {
 }
 extension PortfolioViewControllerTests {
     class InteractorMock: PortfolioInteractorInput {
-        func performFetchListings(request: Portfolio.FetchListings.Request) {}
+        func performFetchArt(request: Portfolio.FetchArt.Request) {}
 
-        var numberOfListings_exp:XCTestExpectation?
-        func numberOfListings() -> Int {
-            numberOfListings_exp?.fulfill()
+        var numberOfArts_exp:XCTestExpectation?
+        func numberOfArts() -> Int {
+            numberOfArts_exp?.fulfill()
             return 1
         }
 
-        var imageUrlForListingAtIndex_exp:XCTestExpectation?
-        func imageUrlForListingAtIndex(_ index: Int) -> URL? {
-            imageUrlForListingAtIndex_exp?.fulfill()
+        var imageUrlForArtAtIndex_exp:XCTestExpectation?
+        func imageUrlForArtAtIndex(_ index: Int) -> URL? {
+            imageUrlForArtAtIndex_exp?.fulfill()
             return Seeds.Model.ArtSeed().imageUrl
         }
 
@@ -54,7 +54,7 @@ extension PortfolioViewControllerTests {
 extension PortfolioViewControllerTests {
 //    func test_updateViewModel_loading(){
 //        // when
-//        sut.viewModel = Portfolio.FetchListings.ViewModel(viewState: .loading,
+//        sut.viewModel = Portfolio.FetchArt.ViewModel(viewState: .loading,
 //                                                          highlightedIndex:nil)
 //    }
 //
@@ -62,11 +62,11 @@ extension PortfolioViewControllerTests {
 //        // given
 //        let exp1 = XCTestExpectation(description: "CollectionView should ask for count")
 //        let exp2 = XCTestExpectation(description: "CollectionView should ask for cells")
-//        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .loaded(true),
+//        let viewModel = Portfolio.FetchArt.ViewModel(viewState: .loaded(true),
 //                                                          highlightedIndex:nil)
 //        // when
-//        interactor.numberOfListings_exp = exp1
-//        interactor.imageUrlForListingAtIndex_exp = exp2
+//        interactor.numberOfArts_exp = exp1
+//        interactor.imageUrlForArtAtIndex_exp = exp2
 //        sut.viewModel = viewModel
 //        // then
 //        wait(for: [exp1, exp2], timeout: 1)
@@ -74,7 +74,7 @@ extension PortfolioViewControllerTests {
 //
 //    func test_updateViewModel_error(){
 //        // given
-//        let viewModel = Portfolio.FetchListings.ViewModel(viewState: .error("Error"),
+//        let viewModel = Portfolio.FetchArt.ViewModel(viewState: .error("Error"),
 //                                                          highlightedIndex:nil)
 //        // when
 //        sut.viewModel = viewModel

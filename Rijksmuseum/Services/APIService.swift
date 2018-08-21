@@ -1,14 +1,7 @@
 
 import Foundation
 
-enum APIServiceError:Error{
-    case url
-    case responseFormat
-    case statusCode
-    case data
-}
-
-typealias APIServiceResult = Result<Data, APIServiceError>
+typealias APIServiceResult = Result<Data, Error>
 
 protocol APIServiceInput {
     func performGet(request: APIRequest, completion: @escaping (APIServiceResult) -> Void)
@@ -29,15 +22,15 @@ extension APIService: APIServiceInput {
         let url = urlFrom(config: apiConfig, request: request)
         let dataTask = apiSession.dataTask(with: url) { (data,response,error) in
             guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(.responseFormat))
+                completion(.failure(Error.responseFormat))
                 return
             }
             if !(200..<300 ~= httpResponse.statusCode) {
-                completion(.failure(.statusCode))
+                completion(.failure(Error.statusCode))
                 return
             }
             guard let data = data else {
-                completion(.failure(.data))
+                completion(.failure(Error.data))
                 return
             }
             completion(.success(data))
@@ -47,6 +40,13 @@ extension APIService: APIServiceInput {
 }
 
 private extension APIService {
+    enum Error:AppError{
+        case url
+        case responseFormat
+        case statusCode
+        case data
+    }
+
     func urlFrom(config:APIConfig,
                  request:APIRequest)->URL{
         var urlComponents = URLComponents()

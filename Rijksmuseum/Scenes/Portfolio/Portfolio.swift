@@ -2,15 +2,15 @@
 import UIKit
 
 protocol PortfolioInteractorInput{
-    func performFetchListings(request: Portfolio.FetchListings.Request)
+    func performFetchArt(request: Portfolio.FetchArt.Request)
 }
 
 protocol PortfolioPresenterInput{
-    func presentFetchListings(response: Portfolio.FetchListings.Response)
+    func presentFetchArt(response: Portfolio.FetchArt.Response)
 }
 
 protocol PortfolioViewControllerInput: class{
-    func displayFetchListings(viewModel:Portfolio.FetchListings.ViewModel)
+    func displayFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
 }
 
 protocol PortfolioDataStore{
@@ -22,7 +22,7 @@ protocol PortfolioRouterInput{
 }
 
 enum Portfolio{
-    enum FetchListings{
+    enum FetchArt{
         struct Request{}
         struct Response{
             enum State {

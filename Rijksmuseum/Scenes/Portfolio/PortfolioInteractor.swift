@@ -15,27 +15,27 @@ class PortfolioInteractor: PortfolioDataStore{
 }
 
 extension PortfolioInteractor: PortfolioInteractorInput {
-    func performFetchListings(request: Portfolio.FetchListings.Request) {
-        presentFetchListings(state: .loading)
+    func performFetchArt(request: Portfolio.FetchArt.Request) {
+        presentFetchArt(state: .loading)
         artWorker.fetchArt {[weak self] (result) in
-            self?.processFetchListingsResult(result)
+            self?.processFetchArtResult(result)
         }
     }
 }
 
 private extension PortfolioInteractor {
-    func processFetchListingsResult(_ result:ArtWorkerResult){
+    func processFetchArtResult(_ result:ArtWorkerResult){
         switch result {
         case .success(let arts):
             self.arts = arts
-            presentFetchListings(state: .loaded(arts))
+            presentFetchArt(state: .loaded(arts))
         case .failure(let error):
-            presentFetchListings(state: .error(error))
+            presentFetchArt(state: .error(error))
         }
     }
 
-    func presentFetchListings(state:Portfolio.FetchListings.Response.State){
-        let response = Portfolio.FetchListings.Response(state: state)
-        presenter.presentFetchListings(response: response)
+    func presentFetchArt(state:Portfolio.FetchArt.Response.State){
+        let response = Portfolio.FetchArt.Response(state: state)
+        presenter.presentFetchArt(response: response)
     }
 }

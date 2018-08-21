@@ -3,7 +3,21 @@ import XCTest
 @testable import Rijksmuseum
 
 class APIServiceTests: XCTestCase {
-    // MARK: mocks
+    var sut: APIService!
+    var apiSessionMock:APISessionMock!
+    var apiConfigMock:Seeds.API.Config!
+    var dataTaskMock:URLSessionDataTaskMock!
+    override func setUp() {
+        super.setUp()
+        dataTaskMock = URLSessionDataTaskMock()
+        apiSessionMock = APISessionMock(dataTask: dataTaskMock)
+        apiConfigMock = Seeds.API.Config()
+        sut = APIService(apiSession: apiSessionMock,
+                         apiConfig: apiConfigMock)
+    }
+}
+
+extension APIServiceTests {
     class APISessionMock: APISession {
         let dataTask:URLSessionDataTaskMock
         init(dataTask:URLSessionDataTaskMock) {
@@ -42,21 +56,9 @@ class APIServiceTests: XCTestCase {
             completion(data, response, nil)
         }
     }
+}
 
-    // MARK: init
-    var sut: APIService!
-    var apiSession:APISessionMock!
-    var apiConfig:Seeds.API.Config!
-    var dataTask:URLSessionDataTaskMock!
-    override func setUp() {
-        super.setUp()
-        dataTask = URLSessionDataTaskMock()
-        apiSession = APISessionMock(dataTask: dataTask)
-        apiConfig = Seeds.API.Config()
-        sut = APIService(apiSession: apiSession,
-                         apiConfig: apiConfig)
-    }
-    // MARK: tests
+extension APIServiceTests {
     func test_performGet(){
         // given
         let request = Seeds.API.Request()
@@ -72,7 +74,7 @@ class APIServiceTests: XCTestCase {
         sut.performGet(request: request,
                        completion: {_ in})
         // then
-        XCTAssert(apiSession.dataTask_invocations == 1,
+        XCTAssert(apiSessionMock.dataTask_invocations == 1,
                   "Should invoke apiSession once")
     }
 
@@ -83,7 +85,7 @@ class APIServiceTests: XCTestCase {
         sut.performGet(request: request,
                        completion: {_ in})
         // then
-        XCTAssert(apiSession.dataTask.url == Seeds.API.fullUrl(),
+        XCTAssert(apiSessionMock.dataTask.url == Seeds.API.fullUrl(),
                   "Should invoke apiSession with correct URL")
     }
 
@@ -132,16 +134,14 @@ class APIServiceTests: XCTestCase {
 
     func test_performGet_callback_responseFormatError(){
         // given
-        let exp = XCTestExpectation(description: "Should complete with format error")
+        let exp = XCTestExpectation(description: "Should fail when corrupted response")
         let request = Seeds.API.Request()
-        apiSession.dataTask.validResponseFormat = false
+        apiSessionMock.dataTask.validResponseFormat = false
         // when
         sut.performGet(request: request) { (result) in
             // then
-            if case .failure(let error) = result {
-                if case APIService.ServiceError.responseFormatError = error {
-                    exp.fulfill()
-                }
+            if case .failure(_) = result {
+                exp.fulfill()
             }
         }
         wait(for: [exp], timeout: 1)
@@ -149,16 +149,14 @@ class APIServiceTests: XCTestCase {
 
     func test_performGet_callback_statusCodeError(){
         // given
-        let exp = XCTestExpectation(description: "Should complete with status code error")
+        let exp = XCTestExpectation(description: "Should fail when bad status code")
         let request = Seeds.API.Request()
-        dataTask.statusCode = 999
+        dataTaskMock.statusCode = 999
         // when
         sut.performGet(request: request) { (result) in
             // then
-            if case .failure(let error) = result {
-                if case APIService.ServiceError.statusCodeError = error {
-                    exp.fulfill()
-                }
+            if case .failure(_) = result {
+                exp.fulfill()
             }
         }
         wait(for: [exp], timeout: 1)
@@ -166,16 +164,14 @@ class APIServiceTests: XCTestCase {
 
     func test_performGet_callback_dataError(){
         // given
-        let exp = XCTestExpectation(description: "Should complete with data error")
+        let exp = XCTestExpectation(description: "Should fail when no data")
         let request = Seeds.API.Request()
-        dataTask.includeData = false
+        dataTaskMock.includeData = false
         // when
         sut.performGet(request: request) { (result) in
             // then
-            if case .failure(let error) = result {
-                if case APIService.ServiceError.dataError = error {
-                    exp.fulfill()
-                }
+            if case .failure(_) = result {
+                exp.fulfill()
             }
         }
         wait(for: [exp], timeout: 1)

@@ -25,9 +25,9 @@ class PortfolioViewController: UIViewController{
         rootView.collectionView.dataSource = self
         rootView.collectionView.delegate = self
         rootView.refreshControl.addTarget(self,
-                                          action: #selector(fetchListings),
+                                          action: #selector(fetchArt),
                                           for: .valueChanged)
-        fetchListings()
+        fetchArt()
     }
 }
 
@@ -68,7 +68,7 @@ extension PortfolioViewController: UICollectionViewDelegate{
 }
 
 extension PortfolioViewController:PortfolioViewControllerInput {
-    func displayFetchListings(viewModel: Portfolio.FetchListings.ViewModel) {
+    func displayFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
         switch viewModel.state {
         case .loading:
             beginRefreshing()
@@ -112,7 +112,7 @@ private extension PortfolioViewController {
 
 // MARK: actions
 @objc private extension PortfolioViewController {
-    func fetchListings() {
-        interactor.performFetchListings(request: Portfolio.FetchListings.Request())
+    func fetchArt() {
+        interactor.performFetchArt(request: Portfolio.FetchArt.Request())
     }
 }
