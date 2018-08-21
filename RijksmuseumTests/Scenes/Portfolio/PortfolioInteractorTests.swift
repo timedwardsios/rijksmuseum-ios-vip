@@ -119,4 +119,6 @@ extension PortfolioInteractorTests {
         let value = presenterMock.presentFetchArt_error_value as! Seeds.ErrorSeed
         XCTAssert(value === artWorkerMock.errorSeed)
     }
+
+
 }

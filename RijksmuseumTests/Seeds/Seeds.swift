@@ -3,11 +3,9 @@ import Foundation
 @testable import Rijksmuseum
 
 enum Seeds{
-    class ErrorSeed:Error {
+    class ErrorSeed:AppError {
         var localizedDescription: String{
-            get{
-                return "49F6409E-76BF-41E4-A049-80C905922E7C"
-            }
+            return "49F6409E-76BF-41E4-A049-80C905922E7C"
         }
     }
 

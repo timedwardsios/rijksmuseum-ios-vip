@@ -28,7 +28,7 @@ enum Portfolio{
             enum State {
                 case loading
                 case loaded([Art])
-                case error(Error)
+                case error(AppError)
             }
             let state:State
         }

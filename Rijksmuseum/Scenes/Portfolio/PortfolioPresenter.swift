@@ -7,7 +7,6 @@ class PortfolioPresenter {
 
 extension PortfolioPresenter: PortfolioPresenterInput{
     func presentFetchArt(response: Portfolio.FetchArt.Response) {
-        //        DispatchQueue.main.async {
         //            self.processFetchArtResponse(response)
         switch response.state {
         case .loading:
@@ -18,12 +17,10 @@ extension PortfolioPresenter: PortfolioPresenterInput{
             let viewModel = Portfolio.FetchArt.ViewModel(state: .loaded(imageUrls))
             self.viewController?.displayFetchArt(viewModel: viewModel)
         case .error(let error):
-            fatalError()
-//            let errorMessage = error.localizedDescription
-//            let viewModel = Portfolio.FetchArt.ViewModel(state: .error(errorMessage))
-//            self.viewController?.displayFetchArt(viewModel: viewModel)
+            let errorMessage = error.localizedDescription
+            let viewModel = Portfolio.FetchArt.ViewModel(state: .error(errorMessage))
+            self.viewController?.displayFetchArt(viewModel: viewModel)
         }
-        //        }
     }
 }
 

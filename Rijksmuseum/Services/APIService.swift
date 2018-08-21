@@ -1,7 +1,7 @@
 
 import Foundation
 
-typealias APIServiceResult = Result<Data, Error>
+typealias APIServiceResult = Result<Data, AppError>
 
 protocol APIServiceInput {
     func performGet(request: APIRequest, completion: @escaping (APIServiceResult) -> Void)

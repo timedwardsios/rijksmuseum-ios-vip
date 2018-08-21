@@ -1,7 +1,7 @@
 
 import Foundation
 
-typealias ArtWorkerResult = Result<[Art], Error>
+typealias ArtWorkerResult = Result<[Art], AppError>
 
 protocol ArtWorkerInput {
     func fetchArt(completion: @escaping (ArtWorkerResult) -> Void)

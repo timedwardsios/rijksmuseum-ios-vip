@@ -69,20 +69,26 @@ extension PortfolioViewController: UICollectionViewDelegate{
 
 extension PortfolioViewController:PortfolioViewControllerInput {
     func displayFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
-        switch viewModel.state {
-        case .loading:
-            beginRefreshing()
-        case .loaded(let imageUrls):
-            endRefreshing()
-            setImageUrls(imageUrls)
-        case .error(let message):
-            endRefreshing()
-            displayErrorMessage(message)
+        DispatchQueue.main.async {
+            self.unpackViewModel(viewModel)
         }
     }
 }
 
 private extension PortfolioViewController {
+    func unpackViewModel(_ viewModel:Portfolio.FetchArt.ViewModel){
+        switch viewModel.state {
+        case .loading:
+            self.beginRefreshing()
+        case .loaded(let imageUrls):
+            self.endRefreshing()
+            self.setImageUrls(imageUrls)
+        case .error(let message):
+            self.endRefreshing()
+            self.displayErrorMessage(message)
+        }
+    }
+
     func beginRefreshing(){
         self.rootView.refreshControl.beginRefreshingProgramatically()
     }
