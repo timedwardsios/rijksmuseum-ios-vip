@@ -1,5 +1,6 @@
 
 import Foundation
+import Workers
 import Utility
 
 struct LiveNetworkConfig:NetworkConfig{

@@ -1,8 +1,4 @@
-Change service to NetworkWorker
-Move NetworkWorker to Workers project
 APIService should input APIRequest and nothing else
-Finish project layout and fix tests
-NetworkService -> Utility
 Utility -> Utilities
 
 Remove foundation?

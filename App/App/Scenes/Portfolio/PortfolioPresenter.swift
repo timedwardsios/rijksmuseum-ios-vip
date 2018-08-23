@@ -1,5 +1,6 @@
 
 import UIKit
+import Workers
 
 class PortfolioPresenter {
     weak var viewController: PortfolioViewControllerInput?

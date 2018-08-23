@@ -2,19 +2,33 @@
 import Foundation
 import Utility
 
-protocol ArtWorkerInput {
+public protocol Art {
+    var remoteId: String{get}
+    var title: String{get}
+    var artist: String{get}
+    var imageUrl: URL{get}
+}
+
+//protocol ArtDetails {
+//    var subtitle: String{get}
+//    var description: String{get}
+//}
+
+public protocol ArtWorkerInput {
     func fetchArt(completion: @escaping (Result<[Art]>) -> Void)
 }
 
-class ArtWorkerNetwork {
+public class ArtWorkerNetwork {
     let networkWorker:NetworkWorkerInput
-    init(networkWorker:NetworkWorkerInput) {
+    public init(networkWorker:NetworkWorkerInput) {
         self.networkWorker = networkWorker
     }
 }
 
-extension ArtWorkerNetwork:  ArtWorkerInput {
-    func fetchArt(completion: @escaping (Result<[Art]>) -> Void) {
+public protocol ArtWorkerNetworkInput:ArtWorkerInput{}
+
+extension ArtWorkerNetwork: ArtWorkerNetworkInput {
+    public func fetchArt(completion: @escaping (Result<[Art]>) -> Void) {
         let parameters = [URLQueryItem(name: Request.QueryItemName.pageCount.rawValue,
                                        value: "100"),
                           URLQueryItem(name: Request.QueryItemName.resultsWithImagesOnly.rawValue,
@@ -38,7 +52,7 @@ extension ArtWorkerNetwork:  ArtWorkerInput {
     }
 }
 
-private extension ArtWorkerNetwork {
+extension ArtWorkerNetwork {
     enum Error:Swift.Error{
         case networkWorker
         case json

@@ -1,5 +1,6 @@
 
 import Foundation
+import Workers
 @testable import App
 
 enum Seeds{

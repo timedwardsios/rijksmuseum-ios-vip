@@ -1,5 +1,6 @@
 
 import XCTest
+import Workers
 import Utility
 @testable import App
 
