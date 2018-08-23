@@ -21,9 +21,9 @@ target 'Workers' do
     end
 end
 
-target 'Utility' do
-    project 'Utility/Utility.xcodeproj'
-    target 'UtilityTests' do
+target 'Utilities' do
+    project 'Utilities/Utilities.xcodeproj'
+    target 'UtilitiesTests' do
         inherit! :search_paths
     end
 end

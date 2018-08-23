@@ -1,7 +1,7 @@
 
 import UIKit
 import Workers
-import Utility
+import Utilities
 
 protocol PortfolioInteractorInput{
     func performFetchArt(request: Portfolio.FetchArt.Request)

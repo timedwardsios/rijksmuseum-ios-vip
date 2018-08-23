@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22AC8C48212EE635000A0BE0"
-               BuildableName = "Utility.framework"
-               BlueprintName = "Utility"
-               ReferencedContainer = "container:Utility.xcodeproj">
+               BuildableName = "Utilities.framework"
+               BlueprintName = "Utilities"
+               ReferencedContainer = "container:Utilities.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22AC8C51212EE635000A0BE0"
-               BuildableName = "UtilityTests.xctest"
-               BlueprintName = "UtilityTests"
-               ReferencedContainer = "container:Utility.xcodeproj">
+               BuildableName = "UtilitiesTests.xctest"
+               BlueprintName = "UtilitiesTests"
+               ReferencedContainer = "container:Utilities.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AC8C48212EE635000A0BE0"
-            BuildableName = "Utility.framework"
-            BlueprintName = "Utility"
-            ReferencedContainer = "container:Utility.xcodeproj">
+            BuildableName = "Utilities.framework"
+            BlueprintName = "Utilities"
+            ReferencedContainer = "container:Utilities.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -58,9 +58,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22AC8C51212EE635000A0BE0"
-               BuildableName = "UtilityTests.xctest"
-               BlueprintName = "UtilityTests"
-               ReferencedContainer = "container:Utility.xcodeproj">
+               BuildableName = "UtilitiesTests.xctest"
+               BlueprintName = "UtilitiesTests"
+               ReferencedContainer = "container:Utilities.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,9 +68,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AC8C48212EE635000A0BE0"
-            BuildableName = "Utility.framework"
-            BlueprintName = "Utility"
-            ReferencedContainer = "container:Utility.xcodeproj">
+            BuildableName = "Utilities.framework"
+            BlueprintName = "Utilities"
+            ReferencedContainer = "container:Utilities.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -90,9 +90,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AC8C48212EE635000A0BE0"
-            BuildableName = "Utility.framework"
-            BlueprintName = "Utility"
-            ReferencedContainer = "container:Utility.xcodeproj">
+            BuildableName = "Utilities.framework"
+            BlueprintName = "Utilities"
+            ReferencedContainer = "container:Utilities.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -108,9 +108,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AC8C48212EE635000A0BE0"
-            BuildableName = "Utility.framework"
-            BlueprintName = "Utility"
-            ReferencedContainer = "container:Utility.xcodeproj">
+            BuildableName = "Utilities.framework"
+            BlueprintName = "Utilities"
+            ReferencedContainer = "container:Utilities.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

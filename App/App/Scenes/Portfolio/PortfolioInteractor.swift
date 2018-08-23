@@ -1,7 +1,7 @@
 
 import UIKit
 import Workers
-import Utility
+import Utilities
 
 class PortfolioInteractor: PortfolioDataStore{
     let presenter: PortfolioPresenterInput

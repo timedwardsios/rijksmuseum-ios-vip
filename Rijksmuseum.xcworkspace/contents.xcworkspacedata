@@ -11,7 +11,7 @@
       location = "group:Workers/Workers.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Utility/Utility.xcodeproj">
+      location = "group:Utilities/Utilities.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

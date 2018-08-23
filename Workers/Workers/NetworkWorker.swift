@@ -1,6 +1,6 @@
 
 import Foundation
-import Utility
+import Utilities
 
 public protocol HasQueryItems {
     var queryItems:[URLQueryItem] {get}

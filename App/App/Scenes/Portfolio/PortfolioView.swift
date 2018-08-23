@@ -1,7 +1,7 @@
 
 import UIKit
 import TinyConstraints
-import Utility
+import Utilities
 
 class PortfolioView: UIView{
     let collectionView = UICollectionView(frame: .zero,

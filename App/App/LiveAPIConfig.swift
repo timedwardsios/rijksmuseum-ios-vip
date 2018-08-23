@@ -1,7 +1,7 @@
 
 import Foundation
 import Workers
-import Utility
+import Utilities
 
 struct LiveNetworkConfig:NetworkConfig{
     let scheme = "https"

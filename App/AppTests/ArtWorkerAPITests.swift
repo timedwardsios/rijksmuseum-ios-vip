@@ -1,7 +1,7 @@
 
 import XCTest
 import Workers
-import Utility
+import Utilities
 @testable import App
 
 class ArtWorkerNetworkTests: XCTestCase {

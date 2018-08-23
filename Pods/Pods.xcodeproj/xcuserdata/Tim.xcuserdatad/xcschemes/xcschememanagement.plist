@@ -14,12 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Utility.xcscheme</key>
+		<key>Pods-Utilities.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-UtilityTests.xcscheme</key>
+		<key>Pods-UtilitiesTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

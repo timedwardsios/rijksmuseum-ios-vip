@@ -1,6 +1,6 @@
 
 import Foundation
-import Utility
+import Utilities
 
 public protocol Art {
     var remoteId: String{get}
