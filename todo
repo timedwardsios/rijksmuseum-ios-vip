@@ -1,10 +1,17 @@
-Fix unit tests for view controller
+APIService should input APIRequest and nothing else
+
+Finish project layout and fix tests
+NetworkService -> Utility
+Utility -> Utilities
+Worker -> Workers
+
 Refactor services
 Fix highlighted and selected
 Write arch and tests for details scene
 Write core data caching layer
 Finish app
 Write blog posts
+Keybindings
 
 Potential topics:
 VIP
