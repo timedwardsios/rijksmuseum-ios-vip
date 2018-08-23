@@ -2,7 +2,7 @@
 import Workers
 import Utilities
 
-struct LiveNetworkConfig:NetworkConfig{
+struct LiveAPIConfig:APIConfig{
     let scheme = "https"
     let hostname = "www.rijksmuseum.nl"
     let path = "/api/en"

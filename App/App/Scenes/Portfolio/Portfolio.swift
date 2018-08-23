@@ -30,7 +30,7 @@ enum Portfolio{
             enum State {
                 case loading
                 case loaded([Art])
-                case error(Error)
+                case error(ResultError)
             }
             let state:State
         }
@@ -46,9 +46,9 @@ enum Portfolio{
 
     static func build()->PortfolioViewController{
         let presenter = PortfolioPresenter()
-        let networkWorker = NetworkWorker(networkSession: URLSession.shared,
-                                    networkConfig: LiveNetworkConfig())
-        let artWorker = ArtWorkerNetwork(networkWorker: networkWorker)
+        let apiWorker = APIWorker(apiSession: URLSession.shared,
+                                    apiConfig: LiveAPIConfig())
+        let artWorker = ArtWorkerAPI(apiWorker: apiWorker)
         let router = PortfolioRouter()
         let interactor = PortfolioInteractor(presenter: presenter,
                                              artWorker: artWorker)

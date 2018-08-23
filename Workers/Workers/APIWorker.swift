@@ -1,40 +1,40 @@
 
 import Utilities
 
-public protocol NetworkRequest {
+public protocol APIRequest {
     var path:String {get}
     var queryItems:[URLQueryItem] {get}
 }
 
-public protocol NetworkConfig:NetworkRequest {
+public protocol APIConfig:APIRequest {
     var scheme:String {get}
     var hostname:String {get}
 }
 
-public protocol NetworkSession {
+public protocol APISession {
     typealias DataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
     func dataTask(with url: URL, completionHandler: @escaping DataTaskCompletion) -> URLSessionDataTask
 }
-extension URLSession:NetworkSession{}
+extension URLSession:APISession{}
 
-public protocol NetworkWorkerInput {
-    func performGet(request: NetworkRequest, completion: @escaping (Result<Data>) -> Void)
+public protocol APIWorkerInput {
+    func performGet(request: APIRequest, completion: @escaping (Result<Data>) -> Void)
 }
 
-public class NetworkWorker{
-    let networkSession: NetworkSession
-    let networkConfig: NetworkConfig
-    public init(networkSession: NetworkSession,
-         networkConfig: NetworkConfig) {
-        self.networkSession = networkSession
-        self.networkConfig = networkConfig
+public class APIWorker{
+    let apiSession: APISession
+    let apiConfig: APIConfig
+    public init(apiSession: APISession,
+         apiConfig: APIConfig) {
+        self.apiSession = apiSession
+        self.apiConfig = apiConfig
     }
 }
 
-extension NetworkWorker: NetworkWorkerInput {
-    public func performGet(request: NetworkRequest, completion: @escaping (Result<Data>) -> Void){
-        let url = urlFrom(config: networkConfig, request: request)
-        let dataTask = networkSession.dataTask(with: url) { (data,response,error) in
+extension APIWorker: APIWorkerInput {
+    public func performGet(request: APIRequest, completion: @escaping (Result<Data>) -> Void){
+        let url = urlFrom(config: apiConfig, request: request)
+        let dataTask = apiSession.dataTask(with: url) { (data,response,error) in
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(Error.responseFormat))
                 return
@@ -53,16 +53,16 @@ extension NetworkWorker: NetworkWorkerInput {
     }
 }
 
-private extension NetworkWorker {
-    enum Error:Swift.Error{
+private extension APIWorker {
+    enum Error:String,ResultError{
         case url
         case responseFormat
         case statusCode
         case data
     }
 
-    func urlFrom(config:NetworkConfig,
-                 request:NetworkRequest)->URL{
+    func urlFrom(config:APIConfig,
+                 request:APIRequest)->URL{
         var urlComponents = URLComponents()
         urlComponents.scheme = config.scheme
         urlComponents.host = config.hostname

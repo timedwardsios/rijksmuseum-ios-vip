@@ -2,23 +2,23 @@
 import XCTest
 @testable import Workers
 
-class NetworkWorkerTests: XCTestCase {
-    var sut: NetworkWorker!
-    var networkSessionMock:NetworkSessionMock!
-    var networkConfigMock:Seeds.Network.Config!
+class APIWorkerTests: XCTestCase {
+    var sut: APIWorker!
+    var apiSessionMock:APISessionMock!
+    var apiConfigMock:Seeds.API.Config!
     var dataTaskMock:URLSessionDataTaskMock!
     override func setUp() {
         super.setUp()
         dataTaskMock = URLSessionDataTaskMock()
-        networkSessionMock = NetworkSessionMock(dataTask: dataTaskMock)
-        networkConfigMock = Seeds.Network.Config()
-        sut = NetworkWorker(networkSession: networkSessionMock,
-                             networkConfig: networkConfigMock)
+        apiSessionMock = APISessionMock(dataTask: dataTaskMock)
+        apiConfigMock = Seeds.API.Config()
+        sut = APIWorker(apiSession: apiSessionMock,
+                             apiConfig: apiConfigMock)
     }
 }
 
-extension NetworkWorkerTests {
-    class NetworkSessionMock: NetworkSession {
+extension APIWorkerTests {
+    class APISessionMock: APISession {
         let dataTask:URLSessionDataTaskMock
         init(dataTask:URLSessionDataTaskMock) {
             self.dataTask = dataTask
@@ -38,11 +38,11 @@ extension NetworkWorkerTests {
         var includeData = true
         var statusCode = 200
         var url:URL!
-        var completion:NetworkSession.DataTaskCompletion!
+        var completion:APISession.DataTaskCompletion!
         override func resume() {
             var data:Data?
             if includeData == true {
-                data = Seeds.Network.Endpoint.collection.data()
+                data = Seeds.API.Endpoint.collection.data()
             }
             let response:URLResponse
             if validResponseFormat == true{
@@ -58,41 +58,41 @@ extension NetworkWorkerTests {
     }
 }
 
-extension NetworkWorkerTests {
+extension APIWorkerTests {
     func test_performGet(){
         // given
-        let request = Seeds.Network.Request()
+        let request = Seeds.API.Request()
         // when
         sut.performGet(request: request,
                        completion: {_ in})
     }
 
-    func test_performGet_networkSession_called(){
+    func test_performGet_apiSession_called(){
         // given
-        let request = Seeds.Network.Request()
+        let request = Seeds.API.Request()
         // when
         sut.performGet(request: request,
                        completion: {_ in})
         // then
-        XCTAssert(networkSessionMock.dataTask_invocations == 1,
-                  "Should invoke networkSession once")
+        XCTAssert(apiSessionMock.dataTask_invocations == 1,
+                  "Should invoke apiSession once")
     }
 
-    func test_performGet_networkSession_url(){
+    func test_performGet_apiSession_url(){
         // given
-        let request = Seeds.Network.Request()
+        let request = Seeds.API.Request()
         // when
         sut.performGet(request: request,
                        completion: {_ in})
         // then
-        XCTAssert(networkSessionMock.dataTask.url == Seeds.Network.fullUrl(),
-                  "Should invoke networkSession with correct URL")
+        XCTAssert(apiSessionMock.dataTask.url == Seeds.API.fullUrl(),
+                  "Should invoke apiSession with correct URL")
     }
 
     func test_performGet_callback(){
         // given
         let exp = XCTestExpectation(description: "Should complete with result")
-        let request = Seeds.Network.Request()
+        let request = Seeds.API.Request()
         // when
         sut.performGet(request: request) { (result) in
             // then
@@ -104,7 +104,7 @@ extension NetworkWorkerTests {
     func test_performGet_callback_success(){
         // given
         let exp = XCTestExpectation(description: "Should complete with success")
-        let request = Seeds.Network.Request()
+        let request = Seeds.API.Request()
         // when
         sut.performGet(request: request) { (result) in
             // then
@@ -118,12 +118,12 @@ extension NetworkWorkerTests {
     func test_performGet_callback_data(){
         // given
         let exp = XCTestExpectation(description: "")
-        let request = Seeds.Network.Request()
+        let request = Seeds.API.Request()
         // when
         sut.performGet(request: request) { (result) in
             // then
             if case .success(let data) = result {
-                let dataCount = Seeds.Network.Endpoint.collection.data().count
+                let dataCount = Seeds.API.Endpoint.collection.data().count
                 XCTAssert(dataCount == data.count,
                           "Should complete with correct data")
                 exp.fulfill()
@@ -135,8 +135,8 @@ extension NetworkWorkerTests {
     func test_performGet_callback_responseFormatError(){
         // given
         let exp = XCTestExpectation(description: "Should fail when corrupted response")
-        let request = Seeds.Network.Request()
-        networkSessionMock.dataTask.validResponseFormat = false
+        let request = Seeds.API.Request()
+        apiSessionMock.dataTask.validResponseFormat = false
         // when
         sut.performGet(request: request) { (result) in
             // then
@@ -150,7 +150,7 @@ extension NetworkWorkerTests {
     func test_performGet_callback_statusCodeError(){
         // given
         let exp = XCTestExpectation(description: "Should fail when bad status code")
-        let request = Seeds.Network.Request()
+        let request = Seeds.API.Request()
         dataTaskMock.statusCode = 999
         // when
         sut.performGet(request: request) { (result) in
@@ -165,7 +165,7 @@ extension NetworkWorkerTests {
     func test_performGet_callback_dataError(){
         // given
         let exp = XCTestExpectation(description: "Should fail when no data")
-        let request = Seeds.Network.Request()
+        let request = Seeds.API.Request()
         dataTaskMock.includeData = false
         // when
         sut.performGet(request: request) { (result) in

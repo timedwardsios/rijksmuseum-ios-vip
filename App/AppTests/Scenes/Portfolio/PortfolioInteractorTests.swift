@@ -41,7 +41,7 @@ extension PortfolioInteractorTests {
     class ArtWorkerMock: ArtWorkerInput {
         var active = true
         var artSeed = [Seeds.Model.ArtSeed()]
-        var errorSeed = Seeds.ErrorSeed()
+        var errorSeed = Seeds.ErrorSeed.generic
         var fetchArt_invocations = 0
         func fetchArt(completion: @escaping (Result<[Art]>) -> Void) {
             fetchArt_invocations += 1
@@ -119,7 +119,10 @@ extension PortfolioInteractorTests {
         sut.performFetchArt(request: request)
         // then
         let value = presenterMock.presentFetchArt_error_value as! Seeds.ErrorSeed
-        XCTAssert(value === artWorkerMock.errorSeed)
+        guard case .generic = value else {
+            XCTFail()
+            return
+        }
     }
 
 

@@ -17,16 +17,16 @@ public protocol ArtWorkerInput {
     func fetchArt(completion: @escaping (Result<[Art]>) -> Void)
 }
 
-public class ArtWorkerNetwork {
-    let networkWorker:NetworkWorkerInput
-    public init(networkWorker:NetworkWorkerInput) {
-        self.networkWorker = networkWorker
+public class ArtWorkerAPI {
+    let apiWorker:APIWorkerInput
+    public init(apiWorker:APIWorkerInput) {
+        self.apiWorker = apiWorker
     }
 }
 
-public protocol ArtWorkerNetworkInput:ArtWorkerInput{}
+public protocol ArtWorkerAPIInput:ArtWorkerInput{}
 
-extension ArtWorkerNetwork: ArtWorkerNetworkInput {
+extension ArtWorkerAPI: ArtWorkerAPIInput {
     public func fetchArt(completion: @escaping (Result<[Art]>) -> Void) {
         let parameters = [URLQueryItem(name: Request.QueryItemName.pageCount.rawValue,
                                        value: "100"),
@@ -35,7 +35,7 @@ extension ArtWorkerNetwork: ArtWorkerNetworkInput {
                           URLQueryItem(name: Request.QueryItemName.sortBy.rawValue,
                                        value: "relevance")]
         let request = Request(queryItems:parameters)
-        networkWorker.performGet(request: request) { (result) in
+        apiWorker.performGet(request: request) { (result) in
             switch result {
             case .success(let data):
                 let jsonDecoder = JSONDecoder()
@@ -45,19 +45,19 @@ extension ArtWorkerNetwork: ArtWorkerNetworkInput {
                 }
                 completion(.success(response.artResponses))
             case .failure(_):
-                completion(.failure(Error.networkWorker))
+                completion(.failure(Error.apiWorker))
             }
         }
     }
 }
 
-extension ArtWorkerNetwork {
-    enum Error:Swift.Error{
-        case networkWorker
+extension ArtWorkerAPI {
+    enum Error:String,ResultError{
+        case apiWorker
         case json
     }
 
-    struct Request:NetworkRequest {
+    struct Request:APIRequest {
         enum QueryItemName:String {
             case pageCount = "ps"
             case resultsWithImagesOnly = "imgonly"

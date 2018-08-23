@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221F3EE3212F49C900907255 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3EDF212F497F00907255 /* Seeds.swift */; };
 		2289A5BD212F104C00787E2B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C63212EE7E5000A0BE0 /* Result.swift */; };
 		2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */; };
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221F3EDF212F497F00907255 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		22AC8C49212EE635000A0BE0 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C4C212EE635000A0BE0 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		22AC8C4D212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221F3EDE212F497F00907255 /* Seeds */ = {
+			isa = PBXGroup;
+			children = (
+				221F3EDF212F497F00907255 /* Seeds.swift */,
+			);
+			name = Seeds;
+			path = UtilitiesTests/Seeds;
+			sourceTree = SOURCE_ROOT;
+		};
 		222A72CE212EEBC800BA759F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +139,7 @@
 		22AC8C56212EE635000A0BE0 /* UtilitiesTests */ = {
 			isa = PBXGroup;
 			children = (
+				221F3EDE212F497F00907255 /* Seeds */,
 				222A72CF212EEBD600BA759F /* Resources */,
 			);
 			name = UtilitiesTests;
@@ -368,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221F3EE3212F49C900907255 /* Seeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

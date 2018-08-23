@@ -2,12 +2,6 @@
 @testable import Workers
 
 enum Seeds{
-//    class ErrorSeed:AppError {
-//        var localizedDescription: String{
-//            return "49F6409E-76BF-41E4-A049-80C905922E7C"
-//        }
-//    }
-//
 //    enum Model {
 //        class ArtSeed:Art{
 //            var remoteId = "remoteId seed"
@@ -17,8 +11,8 @@ enum Seeds{
 //        }
 //    }
 //
-    enum Network{
-        struct Config:NetworkConfig{
+    enum API{
+        struct Config:APIConfig{
             let scheme:String = "https"
             let hostname = "hostname.seed"
             let path = "/path/to/api"
@@ -26,7 +20,7 @@ enum Seeds{
                                            value: "configValue")]
         }
 
-        struct Request: NetworkRequest {
+        struct Request: APIRequest {
             let path = "/endpointseed"
             let queryItems = [URLQueryItem(name: "requestKey",
                                            value: "requestValue")]

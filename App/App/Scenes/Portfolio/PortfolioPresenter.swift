@@ -1,6 +1,7 @@
 
 import UIKit
 import Workers
+import Utilities
 
 class PortfolioPresenter {
     weak var viewController: PortfolioViewControllerInput?
@@ -21,7 +22,7 @@ private extension PortfolioPresenter {
             let imageUrls = imageUrlsFrom(arts: arts)
             displayFetchArt(state: .loaded(imageUrls))
         case .error(let error):
-            let errorMessage = error.localizedDescription
+            let errorMessage = error.message
             displayFetchArt(state: .error(errorMessage))
         }
     }

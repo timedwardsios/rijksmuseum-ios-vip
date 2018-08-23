@@ -4,27 +4,27 @@ import Workers
 import Utilities
 @testable import App
 
-class ArtWorkerNetworkTests: XCTestCase {
-    var sut: ArtWorkerNetwork!
-    var networkWorkerMock: NetworkWorkerMock!
+class ArtWorkerAPITests: XCTestCase {
+    var sut: ArtWorkerAPI!
+    var apiWorkerMock: APIWorkerMock!
     override func setUp() {
         super.setUp()
-        networkWorkerMock = NetworkWorkerMock()
-        sut = ArtWorkerNetwork(networkWorker: networkWorkerMock)
+        apiWorkerMock = APIWorkerMock()
+        sut = ArtWorkerAPI(apiWorker: apiWorkerMock)
     }
 }
 
-extension ArtWorkerNetworkTests {
-    class NetworkWorkerMock: NetworkWorkerInput {
+extension ArtWorkerAPITests {
+    class APIWorkerMock: APIWorkerInput {
         var performGetRequest_invocations = 0
-        var lastRequest:NetworkRequest?
+        var lastRequest:APIRequest?
         var shouldReturnSuccess = true
         var shouldReturnData = true
-        func performGet( request: NetworkRequest,
+        func performGet( request: APIRequest,
                          completion: @escaping (Result<Data>) -> Void) {
             performGetRequest_invocations += 1
             lastRequest = request
-            let sampleData = Seeds.Network.Endpoint.collection.data()
+            let sampleData = Seeds.API.Endpoint.collection.data()
             if shouldReturnSuccess {
                 if shouldReturnData {
                     completion(.success(sampleData))
@@ -38,31 +38,31 @@ extension ArtWorkerNetworkTests {
     }
 }
 
-extension ArtWorkerNetworkTests {
+extension ArtWorkerAPITests {
     func test_fetchArt(){
         // when
         sut.fetchArt(completion: {_ in})
     }
 
-    func test_fetchArt_networkWorker_called(){
+    func test_fetchArt_apiWorker_called(){
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(networkWorkerMock.performGetRequest_invocations == 1,
-                  "Should forward to NetworkWorker")
+        XCTAssert(apiWorkerMock.performGetRequest_invocations == 1,
+                  "Should forward to APIWorker")
     }
 
-    func test_fetchArt_networkWorker_endpoint(){
+    func test_fetchArt_apiWorker_endpoint(){
         // given
-        let correctEndpoint = Seeds.Network.Endpoint.collection.rawValue
+        let correctEndpoint = Seeds.API.Endpoint.collection.rawValue
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(networkWorkerMock.lastRequest?.endpoint == correctEndpoint,
-                  "Should call NetworkWorker with correct endpoint")
+        XCTAssert(apiWorkerMock.lastRequest?.endpoint == correctEndpoint,
+                  "Should call APIWorker with correct endpoint")
     }
 
-    func test_fetchArt_networkWorker_parameters(){
+    func test_fetchArt_apiWorker_parameters(){
         // given
         let queryItems = [URLQueryItem(name: "ps",
                                        value: "100"),
@@ -73,8 +73,8 @@ extension ArtWorkerNetworkTests {
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(networkWorkerMock.lastRequest?.queryItems == queryItems,
-                  "Should call NetworkWorker with correct parameters")
+        XCTAssert(apiWorkerMock.lastRequest?.queryItems == queryItems,
+                  "Should call APIWorker with correct parameters")
     }
 
     func test_fetchArt_callback(){
@@ -119,8 +119,8 @@ extension ArtWorkerNetworkTests {
 
     func test_fetchArt_callback_failure(){
         // given
-        let exp = XCTestExpectation(description: "Should fail when NetworkWorker fails")
-        networkWorkerMock.shouldReturnSuccess = false
+        let exp = XCTestExpectation(description: "Should fail when APIWorker fails")
+        apiWorkerMock.shouldReturnSuccess = false
         // when
         sut.fetchArt(completion: {result in
             // then
@@ -134,7 +134,7 @@ extension ArtWorkerNetworkTests {
     func test_fetchArt_callback_jsonError(){
         // given
         let exp = XCTestExpectation(description: "Should fail when no data")
-        networkWorkerMock.shouldReturnData = false
+        apiWorkerMock.shouldReturnData = false
         // when
         sut.fetchArt(completion: {result in
             // then
