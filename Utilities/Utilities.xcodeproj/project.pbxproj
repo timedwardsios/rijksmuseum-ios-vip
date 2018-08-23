@@ -16,7 +16,6 @@
 		22AC8C6A212EE7E6000A0BE0 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C64212EE7E5000A0BE0 /* ImageViewCell.swift */; };
 		2E5E2AF15FA2A0132F779D0E /* Pods_UtilitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8CF29241AA148AA4FEE212 /* Pods_UtilitiesTests.framework */; };
 		7A4ECF861AFA8D269D318F30 /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89793EE859C8686A7FA1892B /* Pods_Utilities.framework */; };
-		B063DC8B93523665457FD3E4 /* Pods_Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC0253969F8083EE6542C2C /* Pods_Utility.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B063DC8B93523665457FD3E4 /* Pods_Utility.framework in Frameworks */,
 				7A4ECF861AFA8D269D318F30 /* Pods_Utilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +246,7 @@
 				TargetAttributes = {
 					22AC8C48212EE635000A0BE0 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					22AC8C51212EE635000A0BE0 = {
 						CreatedOnToolsVersion = 10.0;
@@ -530,6 +529,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -555,6 +555,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

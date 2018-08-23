@@ -1,5 +1,4 @@
 
-import Foundation
 import Utilities
 
 public protocol HasQueryItems {

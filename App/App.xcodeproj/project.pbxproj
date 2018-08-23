@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */; };
 		221830F2210FDA5900FA1E13 /* PortfolioPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */; };
+		221F3ECA212F3A7B00907255 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221F3EC9212F3A7B00907255 /* Utilities.framework */; };
 		227C39DA2112262F00CA5F1F /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227C39D92112262F00CA5F1F /* Seeds.swift */; };
 		2289A5B2212F0C3600787E2B /* ArtWorkerAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2289A5B1212F0C3500787E2B /* ArtWorkerAPITests.swift */; };
-		2289A5CB212F121400787E2B /* Utility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2289A5CA212F121400787E2B /* Utility.framework */; };
 		22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C75212EEA02000A0BE0 /* Assets.xcassets */; };
 		22AC8C8F212EEA02000A0BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C76212EEA02000A0BE0 /* LaunchScreen.storyboard */; };
 		22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C79212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld */; };
@@ -45,6 +45,7 @@
 		0B943DC2858758823077F507 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
 		221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterTests.swift; sourceTree = "<group>"; };
+		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C8120FE510E006E27EE /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C9820FE510F006E27EE /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C9E20FE5110006E27EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../App/Misc/Info.plist; sourceTree = "<group>"; };
@@ -84,8 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221F3ECA212F3A7B00907255 /* Utilities.framework in Frameworks */,
 				22C9BF1A212F2DFE000D15E6 /* Workers.framework in Frameworks */,
-				2289A5CB212F121400787E2B /* Utility.framework in Frameworks */,
 				D32F2D023CE356875C5E4FD7 /* Pods_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +223,7 @@
 		A10F01533FEF44811CAB0213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				221F3EC9212F3A7B00907255 /* Utilities.framework */,
 				22C9BF19212F2DFE000D15E6 /* Workers.framework */,
 				2289A5CA212F121400787E2B /* Utility.framework */,
 				2289A5C8212F11F700787E2B /* Pods_Utility.framework */,
@@ -593,7 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Rijksmuseum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -612,7 +614,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Rijksmuseum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -631,7 +633,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.RijksmuseumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
 			};
@@ -651,7 +653,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.RijksmuseumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
 			};
