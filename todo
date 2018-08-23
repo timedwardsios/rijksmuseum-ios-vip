@@ -1,9 +1,13 @@
+Change service to NetworkWorker
+Move NetworkWorker to Workers project
 APIService should input APIRequest and nothing else
-
 Finish project layout and fix tests
 NetworkService -> Utility
 Utility -> Utilities
-Worker -> Workers
+
+Remove foundation?
+
+Try and fix error problem
 
 Refactor services
 Fix highlighted and selected
@@ -23,3 +27,4 @@ Unit testing and mocking
 Testing NSURLSession
 Core Data
 Error handling
+Different projects in Workspace

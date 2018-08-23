@@ -13,6 +13,13 @@ target 'App' do
     end
 end
 
+target 'Workers' do
+    project 'Workers/Workers.xcodeproj'
+    target 'WorkersTests' do
+        inherit! :search_paths
+    end
+end
+
 target 'Utility' do
     project 'Utility/Utility.xcodeproj'
     pod "TinyConstraints"

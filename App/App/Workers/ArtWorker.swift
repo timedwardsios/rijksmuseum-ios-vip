@@ -2,21 +2,19 @@
 import Foundation
 import Utility
 
-typealias ArtWorkerResult = Result<[Art]>
-
 protocol ArtWorkerInput {
-    func fetchArt(completion: @escaping (ArtWorkerResult) -> Void)
+    func fetchArt(completion: @escaping (Result<[Art]>) -> Void)
 }
 
 class ArtWorkerNetwork {
-    let networkService:NetworkServiceInput
-    init(networkService:NetworkServiceInput) {
-        self.networkService = networkService
+    let networkWorker:NetworkWorkerInput
+    init(networkWorker:NetworkWorkerInput) {
+        self.networkWorker = networkWorker
     }
 }
 
 extension ArtWorkerNetwork:  ArtWorkerInput {
-    func fetchArt(completion: @escaping (ArtWorkerResult) -> Void) {
+    func fetchArt(completion: @escaping (Result<[Art]>) -> Void) {
         let parameters = [URLQueryItem(name: Request.QueryItemName.pageCount.rawValue,
                                        value: "100"),
                           URLQueryItem(name: Request.QueryItemName.resultsWithImagesOnly.rawValue,
@@ -24,7 +22,7 @@ extension ArtWorkerNetwork:  ArtWorkerInput {
                           URLQueryItem(name: Request.QueryItemName.sortBy.rawValue,
                                        value: "relevance")]
         let request = Request(queryItems:parameters)
-        networkService.performGet(request: request) { (result) in
+        networkWorker.performGet(request: request) { (result) in
             switch result {
             case .success(let data):
                 let jsonDecoder = JSONDecoder()
@@ -34,7 +32,7 @@ extension ArtWorkerNetwork:  ArtWorkerInput {
                 }
                 completion(.success(response.artResponses))
             case .failure(_):
-                completion(.failure(Error.networkService))
+                completion(.failure(Error.networkWorker))
             }
         }
     }
@@ -42,7 +40,7 @@ extension ArtWorkerNetwork:  ArtWorkerInput {
 
 private extension ArtWorkerNetwork {
     enum Error:Swift.Error{
-        case networkService
+        case networkWorker
         case json
     }
 

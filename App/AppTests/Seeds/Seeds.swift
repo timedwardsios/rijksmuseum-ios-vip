@@ -3,7 +3,7 @@ import Foundation
 @testable import App
 
 enum Seeds{
-    class ErrorSeed:AppError {
+    class ErrorSeed:Error {
         var localizedDescription: String{
             return "49F6409E-76BF-41E4-A049-80C905922E7C"
         }
@@ -19,20 +19,6 @@ enum Seeds{
     }
 
     enum Network{
-        struct Config:NetworkConfig{
-            let scheme:String = "https"
-            let hostname = "hostname.seed"
-            let path = "/path/to/network"
-            let queryItems = [URLQueryItem(name : "configKey",
-                                           value: "configValue")]
-        }
-
-        struct Request: NetworkRequest {
-            let endpoint = "/endpointseed"
-            let queryItems = [URLQueryItem(name: "requestKey",
-                                           value: "requestValue")]
-        }
-
         enum Endpoint:String {
             case collection = "/collection"
             func data()->Data{

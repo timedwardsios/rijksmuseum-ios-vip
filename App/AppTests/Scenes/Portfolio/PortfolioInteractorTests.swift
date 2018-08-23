@@ -1,5 +1,6 @@
 
 import XCTest
+import Utility
 @testable import App
 
 class PortfolioInteractorTests: XCTestCase {
@@ -41,7 +42,7 @@ extension PortfolioInteractorTests {
         var artSeed = [Seeds.Model.ArtSeed()]
         var errorSeed = Seeds.ErrorSeed()
         var fetchArt_invocations = 0
-        func fetchArt(completion: @escaping (ArtWorkerResult) -> Void) {
+        func fetchArt(completion: @escaping (Result<[Art]>) -> Void) {
             fetchArt_invocations += 1
             if active == true {
                 completion(.success(artSeed))

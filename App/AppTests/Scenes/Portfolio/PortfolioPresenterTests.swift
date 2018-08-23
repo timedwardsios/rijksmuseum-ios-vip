@@ -76,10 +76,10 @@ extension PortfolioPresenterTests {
         XCTAssert(viewControllerMock.displayFetchArt_error_invocations == 1)
     }
 
-    func test_presentFetchArt_viewController_error_value(){
-        let errorSeed = Seeds.ErrorSeed()
-        let response = Portfolio.FetchArt.Response(state: .error(errorSeed))
-        sut.presentFetchArt(response: response)
-        XCTAssert(viewControllerMock.displayFetchArt_error_value == errorSeed.localizedDescription)
-    }
+//    func test_presentFetchArt_viewController_error_value(){
+//        let errorSeed = Seeds.ErrorSeed()
+//        let response = Portfolio.FetchArt.Response(state: .error(errorSeed))
+//        sut.presentFetchArt(response: response)
+//        XCTAssert(viewControllerMock.displayFetchArt_error_value == errorSeed.localizedDescription)
+//    }
 }

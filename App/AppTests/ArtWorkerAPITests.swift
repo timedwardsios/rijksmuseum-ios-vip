@@ -1,25 +1,26 @@
 
 import XCTest
+import Utility
 @testable import App
 
 class ArtWorkerNetworkTests: XCTestCase {
     var sut: ArtWorkerNetwork!
-    var networkServiceMock: NetworkServiceMock!
+    var networkWorkerMock: NetworkWorkerMock!
     override func setUp() {
         super.setUp()
-        networkServiceMock = NetworkServiceMock()
-        sut = ArtWorkerNetwork(networkService: networkServiceMock)
+        networkWorkerMock = NetworkWorkerMock()
+        sut = ArtWorkerNetwork(networkWorker: networkWorkerMock)
     }
 }
 
 extension ArtWorkerNetworkTests {
-    class NetworkServiceMock: NetworkServiceInput {
+    class NetworkWorkerMock: NetworkWorkerInput {
         var performGetRequest_invocations = 0
         var lastRequest:NetworkRequest?
         var shouldReturnSuccess = true
         var shouldReturnData = true
         func performGet( request: NetworkRequest,
-                         completion: @escaping (NetworkServiceResult) -> Void) {
+                         completion: @escaping (Result<Data>) -> Void) {
             performGetRequest_invocations += 1
             lastRequest = request
             let sampleData = Seeds.Network.Endpoint.collection.data()
@@ -42,25 +43,25 @@ extension ArtWorkerNetworkTests {
         sut.fetchArt(completion: {_ in})
     }
 
-    func test_fetchArt_networkService_called(){
+    func test_fetchArt_networkWorker_called(){
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(networkServiceMock.performGetRequest_invocations == 1,
-                  "Should forward to NetworkService")
+        XCTAssert(networkWorkerMock.performGetRequest_invocations == 1,
+                  "Should forward to NetworkWorker")
     }
 
-    func test_fetchArt_networkService_endpoint(){
+    func test_fetchArt_networkWorker_endpoint(){
         // given
         let correctEndpoint = Seeds.Network.Endpoint.collection.rawValue
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(networkServiceMock.lastRequest?.endpoint == correctEndpoint,
-                  "Should call NetworkService with correct endpoint")
+        XCTAssert(networkWorkerMock.lastRequest?.endpoint == correctEndpoint,
+                  "Should call NetworkWorker with correct endpoint")
     }
 
-    func test_fetchArt_networkService_parameters(){
+    func test_fetchArt_networkWorker_parameters(){
         // given
         let queryItems = [URLQueryItem(name: "ps",
                                        value: "100"),
@@ -71,8 +72,8 @@ extension ArtWorkerNetworkTests {
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(networkServiceMock.lastRequest?.queryItems == queryItems,
-                  "Should call NetworkService with correct parameters")
+        XCTAssert(networkWorkerMock.lastRequest?.queryItems == queryItems,
+                  "Should call NetworkWorker with correct parameters")
     }
 
     func test_fetchArt_callback(){
@@ -117,8 +118,8 @@ extension ArtWorkerNetworkTests {
 
     func test_fetchArt_callback_failure(){
         // given
-        let exp = XCTestExpectation(description: "Should fail when NetworkService fails")
-        networkServiceMock.shouldReturnSuccess = false
+        let exp = XCTestExpectation(description: "Should fail when NetworkWorker fails")
+        networkWorkerMock.shouldReturnSuccess = false
         // when
         sut.fetchArt(completion: {result in
             // then
@@ -132,7 +133,7 @@ extension ArtWorkerNetworkTests {
     func test_fetchArt_callback_jsonError(){
         // given
         let exp = XCTestExpectation(description: "Should fail when no data")
-        networkServiceMock.shouldReturnData = false
+        networkWorkerMock.shouldReturnData = false
         // when
         sut.fetchArt(completion: {result in
             // then

@@ -1,5 +1,6 @@
 
 import UIKit
+import Utility
 
 class PortfolioInteractor: PortfolioDataStore{
     let presenter: PortfolioPresenterInput
@@ -24,7 +25,7 @@ extension PortfolioInteractor: PortfolioInteractorInput {
 }
 
 private extension PortfolioInteractor {
-    func processFetchArtResult(_ result:ArtWorkerResult){
+    func processFetchArtResult(_ result:Result<[Art]>){
         switch result {
         case .success(let arts):
             self.arts = arts

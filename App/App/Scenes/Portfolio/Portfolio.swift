@@ -45,9 +45,9 @@ enum Portfolio{
 
     static func build()->PortfolioViewController{
         let presenter = PortfolioPresenter()
-        let networkService = NetworkService(networkSession: URLSession.shared,
+        let networkWorker = NetworkWorker(networkSession: URLSession.shared,
                                     networkConfig: LiveNetworkConfig())
-        let artWorker = ArtWorkerNetwork(networkService: networkService)
+        let artWorker = ArtWorkerNetwork(networkWorker: networkWorker)
         let router = PortfolioRouter()
         let interactor = PortfolioInteractor(presenter: presenter,
                                              artWorker: artWorker)
