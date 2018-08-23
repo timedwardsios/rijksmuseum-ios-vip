@@ -1,7 +1,25 @@
-Later:
-Test driven development
-	Works best with model/service layer components with defined inputs/outputs
-Unit tests
-Generics
-Swift-objc interoperability
-Promise framework
+APIService should input APIRequest and nothing else
+
+Finish project layout and fix tests
+NetworkService -> Utility
+Utility -> Utilities
+Worker -> Workers
+
+Refactor services
+Fix highlighted and selected
+Write arch and tests for details scene
+Write core data caching layer
+Finish app
+Write blog posts
+Keybindings
+
+Potential topics:
+VIP
+TestingAppDelegate
+Result enum
+CollectionViewCell reusable
+Dependency injection
+Unit testing and mocking
+Testing NSURLSession
+Core Data
+Error handling

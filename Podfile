@@ -1,14 +1,23 @@
+platform:ios, '11.4'
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+use_frameworks!
 
-target 'Rijksmuseum' do
-  use_frameworks!
+workspace 'Rijksmuseum'
 
-  pod "TinyConstraints"
-  pod "SDWebImage"
-
-  target 'RijksmuseumTests' do
-    inherit! :search_paths
-  end
+target 'App' do
+    project 'App/App.xcodeproj'
+    pod "TinyConstraints"
+    pod "SDWebImage"
+    target 'AppTests' do
+        inherit! :search_paths
+    end
 end
 
-# Promises
+target 'Utility' do
+    project 'Utility/Utility.xcodeproj'
+    pod "TinyConstraints"
+    pod "SDWebImage"
+    target 'UtilityTests' do
+        inherit! :search_paths
+    end
+end
