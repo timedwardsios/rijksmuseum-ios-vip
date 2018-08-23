@@ -1,6 +1,5 @@
 APIService should input APIRequest and nothing else
-Remove foundation?
-
+Re-enable error check unit test
 Try and fix error problem
 
 Refactor services

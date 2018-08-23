@@ -1,22 +1,15 @@
 
 import Utilities
 
-public protocol HasQueryItems {
+public protocol NetworkRequest {
+    var path:String {get}
     var queryItems:[URLQueryItem] {get}
 }
 
-public protocol HasEndpoint {
-    var endpoint:String {get}
-}
-
-public protocol HasBaseURL {
+public protocol NetworkConfig:NetworkRequest {
     var scheme:String {get}
     var hostname:String {get}
-    var path:String {get}
 }
-
-public typealias NetworkConfig = HasBaseURL & HasQueryItems
-public typealias NetworkRequest = HasEndpoint & HasQueryItems
 
 public protocol NetworkSession {
     typealias DataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
@@ -73,7 +66,7 @@ private extension NetworkWorker {
         var urlComponents = URLComponents()
         urlComponents.scheme = config.scheme
         urlComponents.host = config.hostname
-        urlComponents.path = config.path + request.endpoint
+        urlComponents.path = config.path + request.path
         urlComponents.queryItems = config.queryItems + request.queryItems
         return urlComponents.url! // outdated framework requires this
     }

@@ -27,7 +27,7 @@ enum Seeds{
         }
 
         struct Request: NetworkRequest {
-            let endpoint = "/endpointseed"
+            let path = "/endpointseed"
             let queryItems = [URLQueryItem(name: "requestKey",
                                            value: "requestValue")]
         }

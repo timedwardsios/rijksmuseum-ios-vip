@@ -63,7 +63,7 @@ extension ArtWorkerNetwork {
             case resultsWithImagesOnly = "imgonly"
             case sortBy = "s"
         }
-        let endpoint = "/collection"
+        let path = "/collection"
         let queryItems: [URLQueryItem]
     }
 

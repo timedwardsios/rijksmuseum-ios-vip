@@ -12,7 +12,7 @@
 		22AA6066212F29BF007379B1 /* Workers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AA605C212F29BE007379B1 /* Workers.framework */; };
 		22AA606D212F29BF007379B1 /* Workers.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AA605F212F29BE007379B1 /* Workers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C9BF08212F2A38000D15E6 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9BF07212F2A38000D15E6 /* NetworkWorker.swift */; };
-		22C9BF0A212F2A5A000D15E6 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9BF09212F2A5A000D15E6 /* NetworkServiceTests.swift */; };
+		22C9BF0A212F2A5A000D15E6 /* NetworkWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9BF09212F2A5A000D15E6 /* NetworkWorkerTests.swift */; };
 		22C9BF12212F2AD4000D15E6 /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C9BF10212F2AD4000D15E6 /* collection.json */; };
 		22C9BF13212F2AD4000D15E6 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9BF11212F2AD4000D15E6 /* Seeds.swift */; };
 		22C9BF1D212F2E8F000D15E6 /* ArtWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9BF1B212F2E8E000D15E6 /* ArtWorker.swift */; };
@@ -37,7 +37,7 @@
 		22AA6065212F29BF007379B1 /* WorkersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AA606C212F29BF007379B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C9BF07212F2A38000D15E6 /* NetworkWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
-		22C9BF09212F2A5A000D15E6 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		22C9BF09212F2A5A000D15E6 /* NetworkWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkWorkerTests.swift; sourceTree = "<group>"; };
 		22C9BF10212F2AD4000D15E6 /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
 		22C9BF11212F2AD4000D15E6 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		22C9BF15212F2CC7000D15E6 /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +89,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		221F3ECB212F3DD000907255 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				22AA606C212F29BF007379B1 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		22AA6052212F29BE007379B1 = {
 			isa = PBXGroup;
 			children = (
@@ -122,9 +130,9 @@
 		22AA6069212F29BF007379B1 /* WorkersTests */ = {
 			isa = PBXGroup;
 			children = (
-				22C9BF09212F2A5A000D15E6 /* NetworkServiceTests.swift */,
+				22C9BF09212F2A5A000D15E6 /* NetworkWorkerTests.swift */,
 				22C9BF14212F2AD9000D15E6 /* Seeds */,
-				22AA606C212F29BF007379B1 /* Info.plist */,
+				221F3ECB212F3DD000907255 /* Resources */,
 			);
 			path = WorkersTests;
 			sourceTree = "<group>";
@@ -354,7 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22C9BF13212F2AD4000D15E6 /* Seeds.swift in Sources */,
-				22C9BF0A212F2A5A000D15E6 /* NetworkServiceTests.swift in Sources */,
+				22C9BF0A212F2A5A000D15E6 /* NetworkWorkerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
