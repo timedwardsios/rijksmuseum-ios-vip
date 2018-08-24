@@ -3,7 +3,7 @@ import UIKit
 import Services
 import Utilities
 
-class PortfolioInteractor: PortfolioDataStore{
+class PortfolioInteractor:PortfolioDataInterface{
     let presenter: PortfolioPresenterInterface
     let artService: ArtServiceInterface
     init(presenter:PortfolioPresenterInterface,

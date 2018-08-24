@@ -3,7 +3,11 @@ import UIKit
 import Services
 import Utilities
 
-protocol ListingInteractorInterface{
+protocol ListingDataInterface{
+    var art:Art?{get}
+}
+
+protocol ListingInteractorInterface:ListingDataInterface{
     //
 }
 
@@ -15,28 +19,23 @@ protocol ListingViewControllerInterface: class{
     //
 }
 
-protocol ListingDataStore{
-    //
-}
-
 protocol ListingRouterInterface{
-    var dataStore: ListingDataStore? { get }
+    var dataStore: ListingDataInterface { get }
 }
 
-enum ListingScene{
-    static func build()->ListingViewController{
+enum Listing{
+    static func buildScene()->ListingViewController{
         let presenter = ListingPresenter()
         let apiService = APIService(apiSession: URLSession.shared,
                                     apiConfig: LiveAPIConfig())
         let artDetailsService = ArtDetailsServiceAPI(apiService: apiService)
-        let router = ListingRouter()
         let interactor = ListingInteractor(presenter: presenter,
-                                               artDetailsService: artDetailsService)
+                                           artDetailsService: artDetailsService)
+        let router = ListingRouter(dataStore: interactor)
         let viewController = ListingViewController(interactor: interactor,
-                                                     router: router)
+                                                   router: router)
         presenter.viewController = viewController
         router.viewController = viewController
-        router.dataStore = interactor
         return viewController
     }
 }

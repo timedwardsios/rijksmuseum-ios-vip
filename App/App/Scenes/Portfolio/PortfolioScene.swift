@@ -3,7 +3,11 @@ import UIKit
 import Services
 import Utilities
 
-protocol PortfolioInteractorInterface{
+protocol PortfolioDataInterface{
+    var selectedArt:Art? { get }
+}
+
+protocol PortfolioInteractorInterface:PortfolioDataInterface{
     func fetchArt(request: Portfolio.FetchArt.Request)
     func selectArt(request: Portfolio.SelectArt.Request)
 }
@@ -16,15 +20,11 @@ protocol PortfolioViewControllerInterface: class{
     func displayFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
 }
 
-protocol PortfolioDataStore{
-    var selectedArt:Art? { get }
-}
-
 protocol PortfolioRouterInterface{
-    var dataStore: PortfolioDataStore? { get }
+    func navigateToListingScene()
 }
 
-enum PortfolioScene{
+enum Portfolio{
     enum FetchArt{
         struct Request{}
         struct Response{
@@ -53,19 +53,18 @@ enum PortfolioScene{
         struct ViewModel{}
     }
 
-    static func build()->PortfolioViewController{
+    static func buildScene()->PortfolioViewController{
         let presenter = PortfolioPresenter()
         let apiService = APIService(apiSession: URLSession.shared,
                                     apiConfig: LiveAPIConfig())
         let artService = ArtServiceAPI(apiService: apiService)
-        let router = PortfolioRouter()
         let interactor = PortfolioInteractor(presenter: presenter,
                                              artService: artService)
+        let router = PortfolioRouter(dataStore: interactor)
         let viewController = PortfolioViewController(interactor: interactor,
                                                      router: router)
         presenter.viewController = viewController
         router.viewController = viewController
-        router.dataStore = interactor
         return viewController
     }
 }

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder {
 
 extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let portfolioViewController = Portfolio.build()
+        let portfolioViewController = Portfolio.buildScene()
         let navigationController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navigationController
         window.frame = UIScreen.main.bounds
