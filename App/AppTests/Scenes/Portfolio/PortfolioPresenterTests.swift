@@ -15,7 +15,7 @@ class PortfolioPresenterTests: XCTestCase {
 }
 
 extension PortfolioPresenterTests {
-    class ViewControllerMock: PortfolioViewControllerInput {
+    class ViewControllerMock: PortfolioViewControllerInterface {
         var displayFetchArt_loading_invocations = 0
         var displayFetchArt_loaded_invocations = 0
         var displayFetchArt_loaded_value:[URL]?

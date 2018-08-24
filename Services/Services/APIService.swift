@@ -18,7 +18,7 @@ public protocol APISession {
 }
 extension URLSession:APISession{}
 
-public protocol APIServiceInput {
+public protocol APIServiceInterface {
     func performGet(request: APIRequest,
                     completion: @escaping (Result<Data>) -> Void)
 }
@@ -33,7 +33,7 @@ public class APIService{
     }
 }
 
-extension APIService: APIServiceInput {
+extension APIService: APIServiceInterface {
     public func performGet(request: APIRequest,
                            completion: @escaping (Result<Data>) -> Void){
         let url = urlFrom(config: apiConfig,

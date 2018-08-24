@@ -6,7 +6,7 @@ class PortfolioRouter{
     var dataStore: PortfolioDataStore?
 }
 
-extension PortfolioRouter: PortfolioRouterInput{
+extension PortfolioRouter: PortfolioRouterInterface{
     //func routeToSomewhere(segue: UIStoryboardSegue?)
     //{
     //  if let segue = segue {

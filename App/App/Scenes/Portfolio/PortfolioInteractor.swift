@@ -4,10 +4,10 @@ import Services
 import Utilities
 
 class PortfolioInteractor: PortfolioDataStore{
-    let presenter: PortfolioPresenterInput
-    let artService: ArtServiceInput
-    init(presenter:PortfolioPresenterInput,
-         artService:ArtServiceInput) {
+    let presenter: PortfolioPresenterInterface
+    let artService: ArtServiceInterface
+    init(presenter:PortfolioPresenterInterface,
+         artService:ArtServiceInterface) {
         self.presenter = presenter
         self.artService = artService
     }
@@ -16,7 +16,7 @@ class PortfolioInteractor: PortfolioDataStore{
     var selectedArt: Art?
 }
 
-extension PortfolioInteractor: PortfolioInteractorInput {
+extension PortfolioInteractor: PortfolioInteractorInterface {
     func performFetchArt(request: Portfolio.FetchArt.Request) {
         presentFetchArt(state: .loading)
         artService.fetchArt {[weak self] (result) in

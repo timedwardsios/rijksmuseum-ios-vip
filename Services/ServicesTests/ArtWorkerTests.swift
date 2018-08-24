@@ -15,7 +15,7 @@ class ArtServiceAPITests: XCTestCase {
 }
 
 extension ArtServiceAPITests {
-    class APIServiceMock: APIServiceInput {
+    class APIServiceMock: APIServiceInterface {
         var performGetRequest_invocations = 0
         var lastRequest:APIRequest?
         var shouldReturnSuccess = true

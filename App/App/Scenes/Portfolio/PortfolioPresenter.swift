@@ -4,10 +4,10 @@ import Services
 import Utilities
 
 class PortfolioPresenter {
-    weak var viewController: PortfolioViewControllerInput?
+    weak var viewController: PortfolioViewControllerInterface?
 }
 
-extension PortfolioPresenter: PortfolioPresenterInput{
+extension PortfolioPresenter: PortfolioPresenterInterface{
     func presentFetchArt(response: Portfolio.FetchArt.Response) {
         self.processFetchArtResponse(response)
     }

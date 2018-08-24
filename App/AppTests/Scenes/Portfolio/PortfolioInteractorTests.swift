@@ -18,7 +18,7 @@ class PortfolioInteractorTests: XCTestCase {
 }
 
 extension PortfolioInteractorTests {
-    class PresenterMock: PortfolioPresenterInput {
+    class PresenterMock: PortfolioPresenterInterface {
         var presentFetchArt_loading_invocations = 0
         var presentFetchArt_loaded_invocations = 0
         var presentFetchArt_loaded_value:[Art]?
@@ -38,7 +38,7 @@ extension PortfolioInteractorTests {
         }
     }
 
-    class ArtServiceMock: ArtServiceInput {
+    class ArtServiceMock: ArtServiceInterface {
         var active = true
         var artSeed = [Seeds.Model.ArtSeed()]
         var errorSeed = Seeds.ErrorSeed.generic

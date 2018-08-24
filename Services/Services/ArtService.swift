@@ -8,8 +8,8 @@ public protocol ArtServiceInterface {
 public protocol ArtServiceAPIInterface:ArtServiceInterface{}
 
 public class ArtServiceAPI {
-    let apiService:APIServiceInput
-    public init(apiService:APIServiceInput) {
+    let apiService:APIServiceInterface
+    public init(apiService:APIServiceInterface) {
         self.apiService = apiService
     }
 }

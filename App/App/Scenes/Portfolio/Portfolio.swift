@@ -3,15 +3,15 @@ import UIKit
 import Services
 import Utilities
 
-protocol PortfolioInteractorInput{
+protocol PortfolioInteractorInterface{
     func performFetchArt(request: Portfolio.FetchArt.Request)
 }
 
-protocol PortfolioPresenterInput{
+protocol PortfolioPresenterInterface{
     func presentFetchArt(response: Portfolio.FetchArt.Response)
 }
 
-protocol PortfolioViewControllerInput: class{
+protocol PortfolioViewControllerInterface: class{
     func displayFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
 }
 
@@ -19,7 +19,7 @@ protocol PortfolioDataStore{
     var selectedArt:Art? { get }
 }
 
-protocol PortfolioRouterInput{
+protocol PortfolioRouterInterface{
     var dataStore: PortfolioDataStore? { get }
 }
 
