@@ -1,21 +1,21 @@
 
 import XCTest
-import Workers
+import Services
 import Utilities
 @testable import App
 
-class ArtWorkerAPITests: XCTestCase {
-    var sut: ArtWorkerAPI!
-    var apiWorkerMock: APIWorkerMock!
+class ArtServiceAPITests: XCTestCase {
+    var sut: ArtServiceAPI!
+    var apiServiceMock: APIServiceMock!
     override func setUp() {
         super.setUp()
-        apiWorkerMock = APIWorkerMock()
-        sut = ArtWorkerAPI(apiWorker: apiWorkerMock)
+        apiServiceMock = APIServiceMock()
+        sut = ArtServiceAPI(apiService: apiServiceMock)
     }
 }
 
-extension ArtWorkerAPITests {
-    class APIWorkerMock: APIWorkerInput {
+extension ArtServiceAPITests {
+    class APIServiceMock: APIServiceInput {
         var performGetRequest_invocations = 0
         var lastRequest:APIRequest?
         var shouldReturnSuccess = true
@@ -32,37 +32,37 @@ extension ArtWorkerAPITests {
                     completion(.success(Data()))
                 }
             } else {
-                completion(.failure(Seeds.ErrorSeed()))
+                completion(.failure(Seeds.ErrorSeed.generic))
             }
         }
     }
 }
 
-extension ArtWorkerAPITests {
+extension ArtServiceAPITests {
     func test_fetchArt(){
         // when
         sut.fetchArt(completion: {_ in})
     }
 
-    func test_fetchArt_apiWorker_called(){
+    func test_fetchArt_apiService_called(){
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(apiWorkerMock.performGetRequest_invocations == 1,
-                  "Should forward to APIWorker")
+        XCTAssert(apiServiceMock.performGetRequest_invocations == 1,
+                  "Should forward to APIService")
     }
 
-    func test_fetchArt_apiWorker_endpoint(){
+    func test_fetchArt_apiService_endpoint(){
         // given
         let correctEndpoint = Seeds.API.Endpoint.collection.rawValue
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(apiWorkerMock.lastRequest?.endpoint == correctEndpoint,
-                  "Should call APIWorker with correct endpoint")
+        XCTAssert(apiServiceMock.lastRequest?.path == correctEndpoint,
+                  "Should call APIService with correct endpoint")
     }
 
-    func test_fetchArt_apiWorker_parameters(){
+    func test_fetchArt_apiService_parameters(){
         // given
         let queryItems = [URLQueryItem(name: "ps",
                                        value: "100"),
@@ -73,8 +73,8 @@ extension ArtWorkerAPITests {
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(apiWorkerMock.lastRequest?.queryItems == queryItems,
-                  "Should call APIWorker with correct parameters")
+        XCTAssert(apiServiceMock.lastRequest?.queryItems == queryItems,
+                  "Should call APIService with correct parameters")
     }
 
     func test_fetchArt_callback(){
@@ -119,8 +119,8 @@ extension ArtWorkerAPITests {
 
     func test_fetchArt_callback_failure(){
         // given
-        let exp = XCTestExpectation(description: "Should fail when APIWorker fails")
-        apiWorkerMock.shouldReturnSuccess = false
+        let exp = XCTestExpectation(description: "Should fail when APIService fails")
+        apiServiceMock.shouldReturnSuccess = false
         // when
         sut.fetchArt(completion: {result in
             // then
@@ -134,7 +134,7 @@ extension ArtWorkerAPITests {
     func test_fetchArt_callback_jsonError(){
         // given
         let exp = XCTestExpectation(description: "Should fail when no data")
-        apiWorkerMock.shouldReturnData = false
+        apiServiceMock.shouldReturnData = false
         // when
         sut.fetchArt(completion: {result in
             // then

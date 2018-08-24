@@ -17,3 +17,8 @@ Testing NSURLSession
 Core Data
 Error handling
 Different projects in Workspace
+
+//protocol ArtDetails {
+//    var subtitle: String{get}
+//    var description: String{get}
+//}

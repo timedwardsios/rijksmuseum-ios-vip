@@ -1,15 +1,15 @@
 
 import UIKit
-import Workers
+import Services
 import Utilities
 
 class PortfolioInteractor: PortfolioDataStore{
     let presenter: PortfolioPresenterInput
-    let artWorker: ArtWorkerInput
+    let artService: ArtServiceInput
     init(presenter:PortfolioPresenterInput,
-         artWorker:ArtWorkerInput) {
+         artService:ArtServiceInput) {
         self.presenter = presenter
-        self.artWorker = artWorker
+        self.artService = artService
     }
 
     var arts = [Art]()
@@ -19,7 +19,7 @@ class PortfolioInteractor: PortfolioDataStore{
 extension PortfolioInteractor: PortfolioInteractorInput {
     func performFetchArt(request: Portfolio.FetchArt.Request) {
         presentFetchArt(state: .loading)
-        artWorker.fetchArt {[weak self] (result) in
+        artService.fetchArt {[weak self] (result) in
             self?.processFetchArtResult(result)
         }
     }

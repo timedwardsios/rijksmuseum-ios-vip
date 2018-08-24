@@ -8,66 +8,76 @@ public protocol Art {
     var imageUrl: URL{get}
 }
 
-//protocol ArtDetails {
-//    var subtitle: String{get}
-//    var description: String{get}
-//}
 
-public protocol ArtWorkerInput {
-    func fetchArt(completion: @escaping (Result<[Art]>) -> Void)
+
+
+
+
+
+public enum ArtServiceError:String,ResultError{
+    case apiService
+    case json
 }
 
-public class ArtWorkerAPI {
-    let apiWorker:APIWorkerInput
-    public init(apiWorker:APIWorkerInput) {
-        self.apiWorker = apiWorker
+public typealias ArtServiceCompletion = (Result<[Art], ArtServiceError>)->Void
+public protocol ArtServiceInterface {
+    func fetchArt(completion: @escaping ArtServiceCompletion)
+}
+
+public class ArtServiceAPI {
+    let apiService:APIServiceInput
+    public init(apiService:APIServiceInput) {
+        self.apiService = apiService
     }
 }
 
-public protocol ArtWorkerAPIInput:ArtWorkerInput{}
+public protocol ArtServiceAPIInterface:ArtServiceInterface{}
 
-extension ArtWorkerAPI: ArtWorkerAPIInput {
-    public func fetchArt(completion: @escaping (Result<[Art]>) -> Void) {
-        let parameters = [URLQueryItem(name: Request.QueryItemName.pageCount.rawValue,
-                                       value: "100"),
-                          URLQueryItem(name: Request.QueryItemName.resultsWithImagesOnly.rawValue,
-                                       value: "true"),
-                          URLQueryItem(name: Request.QueryItemName.sortBy.rawValue,
-                                       value: "relevance")]
-        let request = Request(queryItems:parameters)
-        apiWorker.performGet(request: request) { (result) in
+extension ArtServiceAPI: ArtServiceAPIInterface {
+    public func fetchArt(input: ,
+                         completion: @escaping ArtServiceCompletion) {
+        <#code#>
+    }
+
+    public func fetchArt(completion: @escaping ArtServiceCompletion) {
+        let request = ArtRequest()
+        apiService.performGet(request: request) {(result) in
             switch result {
             case .success(let data):
-                let jsonDecoder = JSONDecoder()
-                guard let response = try? jsonDecoder.decode(ServerResponse.self, from: data) else {
-                    completion(.failure(Error.json))
-                    return
-                }
-                completion(.success(response.artResponses))
+                let decodeResult = self.decodeData(data)
+                completion(decodeResult)
             case .failure(_):
-                completion(.failure(Error.apiWorker))
+                completion(.failure(ArtServiceError.apiService))
             }
         }
     }
 }
 
-extension ArtWorkerAPI {
-    enum Error:String,ResultError{
-        case apiWorker
-        case json
+private extension ArtServiceAPI {
+    func decodeData(_ data:Data)->Result<[Art]>{
+        let jsonDecoder = JSONDecoder()
+        guard let response = try? jsonDecoder.decode(ArtResponse.self, from: data) else {
+            return .failure(ArtServiceError.json)
+        }
+        return .success(response.artResponses)
     }
 
-    struct Request:APIRequest {
+    struct ArtRequest:APIRequest {
         enum QueryItemName:String {
             case pageCount = "ps"
             case resultsWithImagesOnly = "imgonly"
             case sortBy = "s"
         }
         let path = "/collection"
-        let queryItems: [URLQueryItem]
+        let queryItems = [URLQueryItem(name: QueryItemName.pageCount.rawValue,
+                                       value: "100"),
+                          URLQueryItem(name: QueryItemName.resultsWithImagesOnly.rawValue,
+                                       value: "true"),
+                          URLQueryItem(name: QueryItemName.sortBy.rawValue,
+                                       value: "relevance")]
     }
 
-    struct ServerResponse: Decodable {
+    struct ArtResponse: Decodable {
         struct ArtResponse: Art, Decodable {
             var remoteId: String
             var title: String

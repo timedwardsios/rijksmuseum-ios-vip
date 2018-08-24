@@ -1,6 +1,6 @@
 
 import UIKit
-import Workers
+import Services
 import Utilities
 
 protocol PortfolioInteractorInput{
@@ -46,12 +46,12 @@ enum Portfolio{
 
     static func build()->PortfolioViewController{
         let presenter = PortfolioPresenter()
-        let apiWorker = APIWorker(apiSession: URLSession.shared,
+        let apiService = APIService(apiSession: URLSession.shared,
                                     apiConfig: LiveAPIConfig())
-        let artWorker = ArtWorkerAPI(apiWorker: apiWorker)
+        let artService = ArtServiceAPI(apiService: apiService)
         let router = PortfolioRouter()
         let interactor = PortfolioInteractor(presenter: presenter,
-                                             artWorker: artWorker)
+                                             artService: artService)
         let viewController = PortfolioViewController(interactor: interactor,
                                                      router: router)
         presenter.viewController = viewController

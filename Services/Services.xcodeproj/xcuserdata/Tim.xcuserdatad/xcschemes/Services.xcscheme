@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22AA605B212F29BE007379B1"
-               BuildableName = "Workers.framework"
-               BlueprintName = "Workers"
-               ReferencedContainer = "container:Workers.xcodeproj">
+               BuildableName = "Services.framework"
+               BlueprintName = "Services"
+               ReferencedContainer = "container:Services.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AA605B212F29BE007379B1"
-            BuildableName = "Workers.framework"
-            BlueprintName = "Workers"
-            ReferencedContainer = "container:Workers.xcodeproj">
+            BuildableName = "Services.framework"
+            BlueprintName = "Services"
+            ReferencedContainer = "container:Services.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -44,9 +44,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22AA6064212F29BF007379B1"
-               BuildableName = "WorkersTests.xctest"
-               BlueprintName = "WorkersTests"
-               ReferencedContainer = "container:Workers.xcodeproj">
+               BuildableName = "ServicesTests.xctest"
+               BlueprintName = "ServicesTests"
+               ReferencedContainer = "container:Services.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -54,9 +54,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AA605B212F29BE007379B1"
-            BuildableName = "Workers.framework"
-            BlueprintName = "Workers"
-            ReferencedContainer = "container:Workers.xcodeproj">
+            BuildableName = "Services.framework"
+            BlueprintName = "Services"
+            ReferencedContainer = "container:Services.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AA605B212F29BE007379B1"
-            BuildableName = "Workers.framework"
-            BlueprintName = "Workers"
-            ReferencedContainer = "container:Workers.xcodeproj">
+            BuildableName = "Services.framework"
+            BlueprintName = "Services"
+            ReferencedContainer = "container:Services.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AA605B212F29BE007379B1"
-            BuildableName = "Workers.framework"
-            BlueprintName = "Workers"
-            ReferencedContainer = "container:Workers.xcodeproj">
+            BuildableName = "Services.framework"
+            BlueprintName = "Services"
+            ReferencedContainer = "container:Services.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

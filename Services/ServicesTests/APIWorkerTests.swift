@@ -1,9 +1,9 @@
 
 import XCTest
-@testable import Workers
+@testable import Services
 
-class APIWorkerTests: XCTestCase {
-    var sut: APIWorker!
+class APIServiceTests: XCTestCase {
+    var sut: APIService!
     var apiSessionMock:APISessionMock!
     var apiConfigMock:Seeds.API.Config!
     var dataTaskMock:URLSessionDataTaskMock!
@@ -12,12 +12,12 @@ class APIWorkerTests: XCTestCase {
         dataTaskMock = URLSessionDataTaskMock()
         apiSessionMock = APISessionMock(dataTask: dataTaskMock)
         apiConfigMock = Seeds.API.Config()
-        sut = APIWorker(apiSession: apiSessionMock,
+        sut = APIService(apiSession: apiSessionMock,
                              apiConfig: apiConfigMock)
     }
 }
 
-extension APIWorkerTests {
+extension APIServiceTests {
     class APISessionMock: APISession {
         let dataTask:URLSessionDataTaskMock
         init(dataTask:URLSessionDataTaskMock) {
@@ -58,7 +58,7 @@ extension APIWorkerTests {
     }
 }
 
-extension APIWorkerTests {
+extension APIServiceTests {
     func test_performGet(){
         // given
         let request = Seeds.API.Request()

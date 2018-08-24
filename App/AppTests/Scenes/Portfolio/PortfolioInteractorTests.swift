@@ -1,19 +1,19 @@
 
 import XCTest
-import Workers
+import Services
 import Utilities
 @testable import App
 
 class PortfolioInteractorTests: XCTestCase {
     var sut: PortfolioInteractor!
     var presenterMock: PresenterMock!
-    var artWorkerMock: ArtWorkerMock!
+    var artServiceMock: ArtServiceMock!
     override func setUp() {
         super.setUp()
         presenterMock = PresenterMock()
-        artWorkerMock = ArtWorkerMock()
+        artServiceMock = ArtServiceMock()
         sut = PortfolioInteractor(presenter: presenterMock,
-                                  artWorker: artWorkerMock)
+                                  artService: artServiceMock)
     }
 }
 
@@ -38,7 +38,7 @@ extension PortfolioInteractorTests {
         }
     }
 
-    class ArtWorkerMock: ArtWorkerInput {
+    class ArtServiceMock: ArtServiceInput {
         var active = true
         var artSeed = [Seeds.Model.ArtSeed()]
         var errorSeed = Seeds.ErrorSeed.generic
@@ -71,13 +71,13 @@ extension PortfolioInteractorTests {
         XCTAssert(presenterMock.presentFetchArt_loading_invocations == 1)
     }
 
-    func test_performFetchArt_worker(){
+    func test_performFetchArt_service(){
         // given
         let request = Portfolio.FetchArt.Request()
         // when
         sut.performFetchArt(request: request)
         // then
-        XCTAssert(artWorkerMock.fetchArt_invocations == 1)
+        XCTAssert(artServiceMock.fetchArt_invocations == 1)
     }
 
     func test_performFetchArt_presenter_loaded(){
@@ -98,13 +98,13 @@ extension PortfolioInteractorTests {
         XCTAssert(presenterMock.presentFetchArt_loaded_value?.count == 1)
         let value = presenterMock.presentFetchArt_loaded_value?.first
         let castValue = value as! Seeds.Model.ArtSeed
-        XCTAssert(castValue === artWorkerMock.artSeed.first)
+        XCTAssert(castValue === artServiceMock.artSeed.first)
     }
 
     func test_performFetchArt_presenter_error(){
         // given
         let request = Portfolio.FetchArt.Request()
-        artWorkerMock.active = false
+        artServiceMock.active = false
         // when
         sut.performFetchArt(request: request)
         // then
@@ -114,7 +114,7 @@ extension PortfolioInteractorTests {
     func test_performFetchArt_presenter_error_value(){
         // given
         let request = Portfolio.FetchArt.Request()
-        artWorkerMock.active = false
+        artServiceMock.active = false
         // when
         sut.performFetchArt(request: request)
         // then

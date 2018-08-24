@@ -8,13 +8,7 @@ public extension ResultError {
     }
 }
 
-public enum Result<T> {
-    case success(T)
+public enum Result<Type> {
+    case success(Type)
     case failure(ResultError)
-    public var value: T? {
-        if case .success(let value) = self {
-            return value
-        }
-        return nil
-    }
 }
