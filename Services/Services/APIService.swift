@@ -1,13 +1,6 @@
 
 import Utilities
 
-enum APIServiceError:String,ResultError{
-    case url
-    case responseFormat
-    case statusCode
-    case data
-}
-
 public protocol APIRequest {
     var path:String {get}
     var queryItems:[URLQueryItem] {get}
@@ -55,6 +48,13 @@ extension APIService: APIServiceInput {
 }
 
 private extension APIService {
+    enum ServiceError:String,ResultError{
+        case url
+        case responseFormat
+        case statusCode
+        case data
+    }
+
     func urlFrom(config:APIConfig,
                  request:APIRequest)->URL{
         var urlComponents = URLComponents()
@@ -69,13 +69,13 @@ private extension APIService {
                                        _ urlResponse:URLResponse?,
                                        _ error:Error?) -> Result<Data>{
         guard let httpResponse = urlResponse as? HTTPURLResponse else {
-            return .failure(APIServiceError.responseFormat)
+            return .failure(ServiceError.responseFormat)
         }
         if !(200..<300 ~= httpResponse.statusCode) {
-            return .failure(APIServiceError.statusCode)
+            return .failure(ServiceError.statusCode)
         }
         guard let data = data else {
-            return .failure(APIServiceError.data)
+            return .failure(ServiceError.data)
         }
         return .success(data)
     }

@@ -1,28 +1,11 @@
 
 import Utilities
 
-public protocol Art {
-    var remoteId: String{get}
-    var title: String{get}
-    var artist: String{get}
-    var imageUrl: URL{get}
-}
-
-
-
-
-
-
-
-public enum ArtServiceError:String,ResultError{
-    case apiService
-    case json
-}
-
-public typealias ArtServiceCompletion = (Result<[Art], ArtServiceError>)->Void
 public protocol ArtServiceInterface {
-    func fetchArt(completion: @escaping ArtServiceCompletion)
+    func fetchArt(completion: @escaping (Result<[Art]>)->Void)
 }
+
+public protocol ArtServiceAPIInterface:ArtServiceInterface{}
 
 public class ArtServiceAPI {
     let apiService:APIServiceInput
@@ -31,33 +14,32 @@ public class ArtServiceAPI {
     }
 }
 
-public protocol ArtServiceAPIInterface:ArtServiceInterface{}
-
 extension ArtServiceAPI: ArtServiceAPIInterface {
-    public func fetchArt(input: ,
-                         completion: @escaping ArtServiceCompletion) {
-        <#code#>
-    }
 
-    public func fetchArt(completion: @escaping ArtServiceCompletion) {
+    public func fetchArt(completion: @escaping (Result<[Art]>)->Void) {
         let request = ArtRequest()
         apiService.performGet(request: request) {(result) in
             switch result {
             case .success(let data):
-                let decodeResult = self.decodeData(data)
-                completion(decodeResult)
+                let dataResult = self.decodeJsonData(data)
+                completion(dataResult)
             case .failure(_):
-                completion(.failure(ArtServiceError.apiService))
+                completion(.failure(ServiceError.apiService))
             }
         }
     }
 }
 
 private extension ArtServiceAPI {
-    func decodeData(_ data:Data)->Result<[Art]>{
+    enum ServiceError:String,ResultError{
+        case apiService
+        case json
+    }
+
+    func decodeJsonData(_ data:Data)->Result<[Art]>{
         let jsonDecoder = JSONDecoder()
         guard let response = try? jsonDecoder.decode(ArtResponse.self, from: data) else {
-            return .failure(ArtServiceError.json)
+            return .failure(ServiceError.json)
         }
         return .success(response.artResponses)
     }

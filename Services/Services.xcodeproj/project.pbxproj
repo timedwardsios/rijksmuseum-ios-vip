@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17730C55367B090460380323 /* Pods_Workers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CAB557DB7FAFDD6CCF932BA /* Pods_Workers.framework */; };
+		221DB10F2130AAC20031A401 /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB10E2130AAC20031A401 /* Art.swift */; };
 		221F3EC8212F397100907255 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221F3EC7212F397100907255 /* Utilities.framework */; };
 		221F3ECE212F3E9A00907255 /* ArtWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3ECC212F3E7F00907255 /* ArtWorkerTests.swift */; };
 		22AA6066212F29BF007379B1 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AA605C212F29BE007379B1 /* Services.framework */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221DB10E2130AAC20031A401 /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
 		221F3EC7212F397100907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F3ECC212F3E7F00907255 /* ArtWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkerTests.swift; sourceTree = "<group>"; };
 		22AA605C212F29BE007379B1 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 		22AA605E212F29BE007379B1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				221DB10E2130AAC20031A401 /* Art.swift */,
 				22C9BF1B212F2E8E000D15E6 /* ArtService.swift */,
 				22C9BF07212F2A38000D15E6 /* APIService.swift */,
 				22C9BF06212F2A27000D15E6 /* Resources */,
@@ -357,6 +360,7 @@
 			files = (
 				22C9BF08212F2A38000D15E6 /* APIService.swift in Sources */,
 				22C9BF1D212F2E8F000D15E6 /* ArtService.swift in Sources */,
+				221DB10F2130AAC20031A401 /* Art.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
