@@ -8,7 +8,7 @@ class PortfolioPresenter {
 }
 
 extension PortfolioPresenter: PortfolioPresenterInterface{
-    func presentFetchArt(response: Portfolio.FetchArt.Response) {
+    func didFetchArt(response: Portfolio.FetchArt.Response) {
         self.processFetchArtResponse(response)
     }
 }

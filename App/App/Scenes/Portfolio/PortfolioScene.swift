@@ -4,11 +4,12 @@ import Services
 import Utilities
 
 protocol PortfolioInteractorInterface{
-    func performFetchArt(request: Portfolio.FetchArt.Request)
+    func fetchArt(request: Portfolio.FetchArt.Request)
+    func selectArt(request: Portfolio.SelectArt.Request)
 }
 
 protocol PortfolioPresenterInterface{
-    func presentFetchArt(response: Portfolio.FetchArt.Response)
+    func didFetchArt(response: Portfolio.FetchArt.Response)
 }
 
 protocol PortfolioViewControllerInterface: class{
@@ -23,7 +24,7 @@ protocol PortfolioRouterInterface{
     var dataStore: PortfolioDataStore? { get }
 }
 
-enum Portfolio{
+enum PortfolioScene{
     enum FetchArt{
         struct Request{}
         struct Response{
@@ -42,6 +43,14 @@ enum Portfolio{
             }
             let state:State
         }
+    }
+
+    enum SelectArt{
+        struct Request{
+            let index:Int
+        }
+        struct Response{}
+        struct ViewModel{}
     }
 
     static func build()->PortfolioViewController{

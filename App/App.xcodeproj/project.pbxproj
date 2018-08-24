@@ -10,6 +10,12 @@
 		221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */; };
 		221830F2210FDA5900FA1E13 /* PortfolioPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */; };
 		221DB1112130ABE20031A401 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221DB1102130ABE20031A401 /* Services.framework */; };
+		221DB1192130B1830031A401 /* ViewListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1132130B1830031A401 /* ViewListingPresenter.swift */; };
+		221DB11A2130B1830031A401 /* ViewListingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1142130B1830031A401 /* ViewListingInteractor.swift */; };
+		221DB11B2130B1830031A401 /* ViewListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1152130B1830031A401 /* ViewListingViewController.swift */; };
+		221DB11C2130B1830031A401 /* ListingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1162130B1830031A401 /* ListingScene.swift */; };
+		221DB11D2130B1830031A401 /* ViewListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1172130B1830031A401 /* ViewListingView.swift */; };
+		221DB11E2130B1830031A401 /* ViewListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1182130B1830031A401 /* ViewListingRouter.swift */; };
 		221F3ECA212F3A7B00907255 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221F3EC9212F3A7B00907255 /* Utilities.framework */; };
 		221F3EEB212F4A4100907255 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3EE9212F4A4100907255 /* Seeds.swift */; };
 		221F3EEC212F4A4100907255 /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 221F3EEA212F4A4100907255 /* collection.json */; };
@@ -20,7 +26,7 @@
 		22AC8C93212EEA02000A0BE0 /* Rijksmuseum-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C7D212EEA02000A0BE0 /* Rijksmuseum-Bold.ttf */; };
 		22AC8C95212EEA02000A0BE0 /* PortfolioRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */; };
 		22AC8C96212EEA02000A0BE0 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */; };
-		22AC8C97212EEA02000A0BE0 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C83212EEA02000A0BE0 /* Portfolio.swift */; };
+		22AC8C97212EEA02000A0BE0 /* PortfolioScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C83212EEA02000A0BE0 /* PortfolioScene.swift */; };
 		22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */; };
 		22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */; };
 		22AC8C9A212EEA02000A0BE0 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */; };
@@ -45,6 +51,12 @@
 		221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
 		221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterTests.swift; sourceTree = "<group>"; };
 		221DB1102130ABE20031A401 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		221DB1132130B1830031A401 /* ViewListingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingPresenter.swift; sourceTree = "<group>"; };
+		221DB1142130B1830031A401 /* ViewListingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingInteractor.swift; sourceTree = "<group>"; };
+		221DB1152130B1830031A401 /* ViewListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingViewController.swift; sourceTree = "<group>"; };
+		221DB1162130B1830031A401 /* ListingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingScene.swift; sourceTree = "<group>"; };
+		221DB1172130B1830031A401 /* ViewListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingView.swift; sourceTree = "<group>"; };
+		221DB1182130B1830031A401 /* ViewListingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingRouter.swift; sourceTree = "<group>"; };
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F3EE9212F4A4100907255 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		221F3EEA212F4A4100907255 /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
@@ -61,7 +73,7 @@
 		22AC8C7E212EEA02000A0BE0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioRouter.swift; sourceTree = "<group>"; };
 		22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
-		22AC8C83212EEA02000A0BE0 /* Portfolio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
+		22AC8C83212EEA02000A0BE0 /* PortfolioScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioScene.swift; sourceTree = "<group>"; };
 		22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenter.swift; sourceTree = "<group>"; };
 		22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioInteractor.swift; sourceTree = "<group>"; };
 		22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
@@ -116,6 +128,19 @@
 				221830E7210F1FC200FA1E13 /* Portfolio */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		221DB1122130B1830031A401 /* Listing */ = {
+			isa = PBXGroup;
+			children = (
+				221DB1162130B1830031A401 /* ListingScene.swift */,
+				221DB1142130B1830031A401 /* ViewListingInteractor.swift */,
+				221DB1132130B1830031A401 /* ViewListingPresenter.swift */,
+				221DB1152130B1830031A401 /* ViewListingViewController.swift */,
+				221DB1172130B1830031A401 /* ViewListingView.swift */,
+				221DB1182130B1830031A401 /* ViewListingRouter.swift */,
+			);
+			path = Listing;
 			sourceTree = "<group>";
 		};
 		221F3EE8212F4A4100907255 /* Seeds */ = {
@@ -193,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				22AC8C80212EEA02000A0BE0 /* Portfolio */,
+				221DB1122130B1830031A401 /* Listing */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -200,12 +226,12 @@
 		22AC8C80212EEA02000A0BE0 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
-				22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */,
-				22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */,
-				22AC8C83212EEA02000A0BE0 /* Portfolio.swift */,
-				22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */,
+				22AC8C83212EEA02000A0BE0 /* PortfolioScene.swift */,
 				22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */,
+				22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */,
+				22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */,
 				22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */,
+				22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */,
 			);
 			path = Portfolio;
 			sourceTree = "<group>";
@@ -418,14 +444,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221DB11E2130B1830031A401 /* ViewListingRouter.swift in Sources */,
 				22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */,
+				221DB11A2130B1830031A401 /* ViewListingInteractor.swift in Sources */,
+				221DB11D2130B1830031A401 /* ViewListingView.swift in Sources */,
+				221DB11C2130B1830031A401 /* ListingScene.swift in Sources */,
+				221DB11B2130B1830031A401 /* ViewListingViewController.swift in Sources */,
 				22AC8C95212EEA02000A0BE0 /* PortfolioRouter.swift in Sources */,
 				22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */,
 				22AC8C96212EEA02000A0BE0 /* PortfolioViewController.swift in Sources */,
+				221DB1192130B1830031A401 /* ViewListingPresenter.swift in Sources */,
 				22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */,
 				22C9BF20212F2EE1000D15E6 /* LiveAPIConfig.swift in Sources */,
 				22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */,
-				22AC8C97212EEA02000A0BE0 /* Portfolio.swift in Sources */,
+				22AC8C97212EEA02000A0BE0 /* PortfolioScene.swift in Sources */,
 				22AC8C9A212EEA02000A0BE0 /* PortfolioView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

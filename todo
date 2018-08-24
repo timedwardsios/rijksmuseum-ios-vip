@@ -1,9 +1,6 @@
-Fix highlighted and selected
-Write arch and tests for details scene
 Write core data caching layer
-Finish app
+Finish details scene
 Write blog posts
-Keybindings
 
 Potential topics:
 VIP
@@ -16,6 +13,7 @@ Testing NSURLSession
 Core Data
 Error handling
 Different projects in Workspace
+
 
 //protocol ArtDetails {
 //    var subtitle: String{get}

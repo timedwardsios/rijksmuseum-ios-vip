@@ -57,14 +57,17 @@ extension PortfolioViewController: UICollectionViewDataSource{
 extension PortfolioViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView,
                         didHighlightItemAt indexPath: IndexPath) {
+        collectionView.cellForItem(at: indexPath)?.alpha = 0.5
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         didUnhighlightItemAt indexPath: IndexPath) {
+        collectionView.cellForItem(at: indexPath)?.alpha = 1
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
+        //
     }
 }
 
@@ -117,9 +120,8 @@ private extension PortfolioViewController {
     }
 }
 
-// MARK: actions
 @objc private extension PortfolioViewController {
     func fetchArt() {
-        interactor.performFetchArt(request: Portfolio.FetchArt.Request())
+        interactor.fetchArt(request: Portfolio.FetchArt.Request())
     }
 }
