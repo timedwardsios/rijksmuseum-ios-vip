@@ -3,7 +3,7 @@ import UIKit
 import TinyConstraints
 import Utilities
 
-class ViewListingView: UIView{
+class ListingView: UIView{
     init() {
         super.init(frame: .zero)
         setupSubviews()
@@ -11,7 +11,7 @@ class ViewListingView: UIView{
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
 }
 
-private extension ViewListingView {
+private extension ListingView {
     func setupSubviews(){
 
     }

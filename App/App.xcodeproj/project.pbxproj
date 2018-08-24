@@ -10,12 +10,12 @@
 		221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */; };
 		221830F2210FDA5900FA1E13 /* PortfolioPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */; };
 		221DB1112130ABE20031A401 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221DB1102130ABE20031A401 /* Services.framework */; };
-		221DB1192130B1830031A401 /* ViewListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1132130B1830031A401 /* ViewListingPresenter.swift */; };
-		221DB11A2130B1830031A401 /* ViewListingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1142130B1830031A401 /* ViewListingInteractor.swift */; };
-		221DB11B2130B1830031A401 /* ViewListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1152130B1830031A401 /* ViewListingViewController.swift */; };
+		221DB1192130B1830031A401 /* ListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1132130B1830031A401 /* ListingPresenter.swift */; };
+		221DB11A2130B1830031A401 /* ListingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1142130B1830031A401 /* ListingInteractor.swift */; };
+		221DB11B2130B1830031A401 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1152130B1830031A401 /* ListingViewController.swift */; };
 		221DB11C2130B1830031A401 /* ListingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1162130B1830031A401 /* ListingScene.swift */; };
-		221DB11D2130B1830031A401 /* ViewListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1172130B1830031A401 /* ViewListingView.swift */; };
-		221DB11E2130B1830031A401 /* ViewListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1182130B1830031A401 /* ViewListingRouter.swift */; };
+		221DB11D2130B1830031A401 /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1172130B1830031A401 /* ListingView.swift */; };
+		221DB11E2130B1830031A401 /* ListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1182130B1830031A401 /* ListingRouter.swift */; };
 		221F3ECA212F3A7B00907255 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221F3EC9212F3A7B00907255 /* Utilities.framework */; };
 		221F3EEB212F4A4100907255 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3EE9212F4A4100907255 /* Seeds.swift */; };
 		221F3EEC212F4A4100907255 /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 221F3EEA212F4A4100907255 /* collection.json */; };
@@ -51,12 +51,12 @@
 		221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
 		221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterTests.swift; sourceTree = "<group>"; };
 		221DB1102130ABE20031A401 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		221DB1132130B1830031A401 /* ViewListingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingPresenter.swift; sourceTree = "<group>"; };
-		221DB1142130B1830031A401 /* ViewListingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingInteractor.swift; sourceTree = "<group>"; };
-		221DB1152130B1830031A401 /* ViewListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingViewController.swift; sourceTree = "<group>"; };
+		221DB1132130B1830031A401 /* ListingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPresenter.swift; sourceTree = "<group>"; };
+		221DB1142130B1830031A401 /* ListingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingInteractor.swift; sourceTree = "<group>"; };
+		221DB1152130B1830031A401 /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 		221DB1162130B1830031A401 /* ListingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingScene.swift; sourceTree = "<group>"; };
-		221DB1172130B1830031A401 /* ViewListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingView.swift; sourceTree = "<group>"; };
-		221DB1182130B1830031A401 /* ViewListingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewListingRouter.swift; sourceTree = "<group>"; };
+		221DB1172130B1830031A401 /* ListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingView.swift; sourceTree = "<group>"; };
+		221DB1182130B1830031A401 /* ListingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingRouter.swift; sourceTree = "<group>"; };
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F3EE9212F4A4100907255 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		221F3EEA212F4A4100907255 /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
@@ -134,11 +134,11 @@
 			isa = PBXGroup;
 			children = (
 				221DB1162130B1830031A401 /* ListingScene.swift */,
-				221DB1142130B1830031A401 /* ViewListingInteractor.swift */,
-				221DB1132130B1830031A401 /* ViewListingPresenter.swift */,
-				221DB1152130B1830031A401 /* ViewListingViewController.swift */,
-				221DB1172130B1830031A401 /* ViewListingView.swift */,
-				221DB1182130B1830031A401 /* ViewListingRouter.swift */,
+				221DB1142130B1830031A401 /* ListingInteractor.swift */,
+				221DB1132130B1830031A401 /* ListingPresenter.swift */,
+				221DB1152130B1830031A401 /* ListingViewController.swift */,
+				221DB1172130B1830031A401 /* ListingView.swift */,
+				221DB1182130B1830031A401 /* ListingRouter.swift */,
 			);
 			path = Listing;
 			sourceTree = "<group>";
@@ -444,16 +444,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221DB11E2130B1830031A401 /* ViewListingRouter.swift in Sources */,
+				221DB11E2130B1830031A401 /* ListingRouter.swift in Sources */,
 				22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */,
-				221DB11A2130B1830031A401 /* ViewListingInteractor.swift in Sources */,
-				221DB11D2130B1830031A401 /* ViewListingView.swift in Sources */,
+				221DB11A2130B1830031A401 /* ListingInteractor.swift in Sources */,
+				221DB11D2130B1830031A401 /* ListingView.swift in Sources */,
 				221DB11C2130B1830031A401 /* ListingScene.swift in Sources */,
-				221DB11B2130B1830031A401 /* ViewListingViewController.swift in Sources */,
+				221DB11B2130B1830031A401 /* ListingViewController.swift in Sources */,
 				22AC8C95212EEA02000A0BE0 /* PortfolioRouter.swift in Sources */,
 				22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */,
 				22AC8C96212EEA02000A0BE0 /* PortfolioViewController.swift in Sources */,
-				221DB1192130B1830031A401 /* ViewListingPresenter.swift in Sources */,
+				221DB1192130B1830031A401 /* ListingPresenter.swift in Sources */,
 				22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */,
 				22C9BF20212F2EE1000D15E6 /* LiveAPIConfig.swift in Sources */,
 				22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */,
