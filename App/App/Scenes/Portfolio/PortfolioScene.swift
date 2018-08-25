@@ -8,23 +8,23 @@ protocol PortfolioDataStore{
 }
 
 protocol PortfolioInteractorInterface:PortfolioDataStore{
-    func fetchArt(request: Portfolio.FetchArt.Request)
-    func selectArt(request: Portfolio.SelectArt.Request)
+    func fetchArt(request: PortfolioScene.FetchArt.Request)
+    func selectArt(request: PortfolioScene.SelectArt.Request)
 }
 
 protocol PortfolioPresenterInterface{
-    func didFetchArt(response: Portfolio.FetchArt.Response)
+    func didFetchArt(response: PortfolioScene.FetchArt.Response)
 }
 
 protocol PortfolioViewControllerInterface: class{
-    func displayFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
+    func displayFetchArt(viewModel:PortfolioScene.FetchArt.ViewModel)
 }
 
 protocol PortfolioRouterInterface{
     func navigateToListingScene()
 }
 
-enum Portfolio{
+enum PortfolioScene{
     enum FetchArt{
         struct Request{}
         struct Response{
@@ -54,7 +54,7 @@ enum Portfolio{
     }
 
     typealias Dependencies = HasArtService
-    static func buildScene(dependencies:Dependencies)->PortfolioViewController{
+    static func build(dependencies:Dependencies)->PortfolioViewController{
         let presenter = PortfolioPresenter()
         let interactor = PortfolioInteractor(presenter: presenter,
                                              artService: dependencies.artService)

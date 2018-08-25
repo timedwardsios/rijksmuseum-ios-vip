@@ -1,40 +1,24 @@
 
 import Utilities
 
-public protocol APIRequest {
-    var path:String {get}
-    var queryItems:[URLQueryItem] {get}
-}
-
-public protocol APIConfig:APIRequest {
-    var scheme:String {get}
-    var hostname:String {get}
-}
-
-public protocol APISession {
-    typealias DataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
-    func dataTask(with url: URL,
-                  completionHandler: @escaping DataTaskCompletion)-> URLSessionDataTask
-}
-extension URLSession:APISession{}
+public typealias APIServiceDependencies = HasAPISession & HasAPIConfig
 
 public protocol APIServiceInterface {
-    func performGet(request: APIRequest,
+    func performGet(request: APIRequestInterface,
                     completion: @escaping (Result<Data>) -> Void)
 }
 
 public class APIService{
-    let apiSession: APISession
-    let apiConfig: APIConfig
-    public init(apiSession: APISession,
-                apiConfig: APIConfig) {
-        self.apiSession = apiSession
-        self.apiConfig = apiConfig
+    let apiSession:APISessionInterface
+    let apiConfig:APIConfigInterface
+    public init(dependencies:APIServiceDependencies){
+        self.apiSession = dependencies.apiSession
+        self.apiConfig = dependencies.apiConfig
     }
 }
 
 extension APIService: APIServiceInterface {
-    public func performGet(request: APIRequest,
+    public func performGet(request: APIRequestInterface,
                            completion: @escaping (Result<Data>) -> Void){
         let url = urlFrom(config: apiConfig,
                           request: request)
@@ -55,8 +39,8 @@ private extension APIService {
         case data
     }
 
-    func urlFrom(config:APIConfig,
-                 request:APIRequest)->URL{
+    func urlFrom(config:APIConfigInterface,
+                 request:APIRequestInterface)->URL{
         var urlComponents = URLComponents()
         urlComponents.scheme = config.scheme
         urlComponents.host = config.hostname

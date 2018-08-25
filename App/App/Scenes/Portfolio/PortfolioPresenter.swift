@@ -8,13 +8,13 @@ class PortfolioPresenter {
 }
 
 extension PortfolioPresenter: PortfolioPresenterInterface{
-    func didFetchArt(response: Portfolio.FetchArt.Response) {
+    func didFetchArt(response: PortfolioScene.FetchArt.Response) {
         self.processFetchArtResponse(response)
     }
 }
 
 private extension PortfolioPresenter {
-    func processFetchArtResponse(_ response:Portfolio.FetchArt.Response) {
+    func processFetchArtResponse(_ response:PortfolioScene.FetchArt.Response) {
         switch response.state {
         case .loading:
             displayFetchArt(state: .loading)
@@ -27,8 +27,8 @@ private extension PortfolioPresenter {
         }
     }
 
-    func displayFetchArt(state:Portfolio.FetchArt.ViewModel.State){
-        let viewModel = Portfolio.FetchArt.ViewModel(state: state)
+    func displayFetchArt(state:PortfolioScene.FetchArt.ViewModel.State){
+        let viewModel = PortfolioScene.FetchArt.ViewModel(state: state)
         self.viewController?.displayFetchArt(viewModel: viewModel)
     }
 

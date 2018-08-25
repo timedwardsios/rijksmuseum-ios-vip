@@ -2,7 +2,7 @@
 import Services
 import Utilities
 
-struct LiveAPIConfig:APIConfig{
+struct LiveAPIConfig:APIConfigInterface{
     let scheme = "https"
     let hostname = "www.rijksmuseum.nl"
     let path = "/api/en"

@@ -3,10 +3,6 @@ import UIKit
 import Services
 import Utilities
 
-protocol ListingDataInput{
-    var art:Art{get}
-}
-
 protocol ListingDataStore{}
 
 protocol ListingInteractorInterface{}
@@ -17,7 +13,7 @@ protocol ListingViewControllerInterface: class{}
 
 protocol ListingRouterInterface{}
 
-enum Listing{
+enum ListingScene{
     typealias Dependencies = HasArtDetailsService
     static func build(dependencies:Dependencies,
                       art:Art)->ListingViewController{

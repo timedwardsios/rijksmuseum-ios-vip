@@ -67,13 +67,13 @@ extension PortfolioViewController: UICollectionViewDelegate{
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        interactor.selectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
+        interactor.selectArt(request: PortfolioScene.SelectArt.Request(index: indexPath.row))
         router.navigateToListingScene()
     }
 }
 
 extension PortfolioViewController:PortfolioViewControllerInterface {
-    func displayFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
+    func displayFetchArt(viewModel: PortfolioScene.FetchArt.ViewModel) {
         DispatchQueue.main.async {
             self.unpackViewModel(viewModel)
         }
@@ -81,7 +81,7 @@ extension PortfolioViewController:PortfolioViewControllerInterface {
 }
 
 private extension PortfolioViewController {
-    func unpackViewModel(_ viewModel:Portfolio.FetchArt.ViewModel){
+    func unpackViewModel(_ viewModel:PortfolioScene.FetchArt.ViewModel){
         switch viewModel.state {
         case .loading:
             self.beginRefreshing()
@@ -123,6 +123,6 @@ private extension PortfolioViewController {
 
 @objc private extension PortfolioViewController {
     func fetchArt() {
-        interactor.fetchArt(request: Portfolio.FetchArt.Request())
+        interactor.fetchArt(request: PortfolioScene.FetchArt.Request())
     }
 }

@@ -5,12 +5,21 @@ import Utilities
 
 struct AppDependencies{}
 
-extension AppDependencies:HasApiService {
+extension AppDependencies:HasAPISession {
+    var apiSession: APISessionInterface {
+        return URLSession.shared
+    }
+}
+
+extension AppDependencies:HasAPIConfig {
+    var apiConfig: APIConfigInterface {
+        return LiveAPIConfig()
+    }
+}
+
+extension AppDependencies:HasAPIService {
     var apiService: APIServiceInterface {
-        let apiSession = URLSession.shared
-        let apiConfig = LiveAPIConfig()
-        return APIService(apiSession: apiSession,
-                          apiConfig: apiConfig)
+        return APIService(dependencies: self)
     }
 }
 

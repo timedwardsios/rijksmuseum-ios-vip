@@ -1,6 +1,7 @@
-Portfolio -> PortfolioScene
-Generics for scene?
 Utilities -> Utils
+Generics for scene?
+Interface -> Impl
+Routing black box?
 Write core data caching layer
 Finish details scene
 Write blog posts

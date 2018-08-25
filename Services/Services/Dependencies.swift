@@ -1,7 +1,15 @@
 
 import Utilities
 
-public protocol HasApiService{
+public protocol HasAPISession{
+    var apiSession:APISessionInterface{get}
+}
+
+public protocol HasAPIConfig{
+    var apiConfig:APIConfigInterface{get}
+}
+
+public protocol HasAPIService{
     var apiService:APIServiceInterface{get}
 }
 

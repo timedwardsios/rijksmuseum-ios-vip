@@ -1,7 +1,7 @@
 
 import Utilities
 
-public typealias ArtServiceDependencies = HasApiService
+public typealias ArtServiceDependencies = HasAPIService
 
 public protocol ArtServiceInterface {
     func fetchArt(completion: @escaping (Result<[Art]>)->Void)
@@ -43,7 +43,7 @@ private extension ArtServiceAPI {
         return .success(response.artResponses)
     }
 
-    struct ArtRequest:APIRequest {
+    struct ArtRequest:APIRequestInterface {
         enum QueryItemName:String {
             case pageCount = "ps"
             case resultsWithImagesOnly = "imgonly"
