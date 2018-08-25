@@ -3,7 +3,7 @@ import UIKit
 import Services
 import Utilities
 
-class PortfolioInteractor:PortfolioDataInterface{
+class PortfolioInteractor:PortfolioDataStore{
     let presenter: PortfolioPresenterInterface
     let artService: ArtServiceInterface
     init(presenter:PortfolioPresenterInterface,
@@ -25,6 +25,9 @@ extension PortfolioInteractor: PortfolioInteractorInterface {
     }
 
     func selectArt(request: Portfolio.SelectArt.Request) {
+        guard arts.indices.contains(request.index) else {
+            return
+        }
         selectedArt = arts[request.index]
     }
 }

@@ -67,7 +67,8 @@ extension PortfolioViewController: UICollectionViewDelegate{
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        //
+        interactor.selectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
+        router.navigateToListingScene()
     }
 }
 

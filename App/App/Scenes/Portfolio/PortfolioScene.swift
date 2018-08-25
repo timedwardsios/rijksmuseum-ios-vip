@@ -3,11 +3,15 @@ import UIKit
 import Services
 import Utilities
 
-protocol PortfolioDataInterface{
-    var selectedArt:Art? { get }
+protocol PortfolioDependencies{
+    var artService:ArtServiceInterface{get}
 }
 
-protocol PortfolioInteractorInterface:PortfolioDataInterface{
+protocol PortfolioDataStore{
+    var selectedArt:Art? {get}
+}
+
+protocol PortfolioInteractorInterface:PortfolioDataStore{
     func fetchArt(request: Portfolio.FetchArt.Request)
     func selectArt(request: Portfolio.SelectArt.Request)
 }

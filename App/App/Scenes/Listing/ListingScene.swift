@@ -3,34 +3,27 @@ import UIKit
 import Services
 import Utilities
 
-protocol ListingDataInterface{
-    var art:Art?{get}
+protocol ListingDependencies{
+    var artDetailsService:ArtDetailsServiceInterface{get}
+    var art:Art{get}
 }
 
-protocol ListingInteractorInterface:ListingDataInterface{
-    //
-}
+protocol ListingDataStore{}
 
-protocol ListingPresenterInterface{
-    //
-}
+protocol ListingInteractorInterface{}
 
-protocol ListingViewControllerInterface: class{
-    //
-}
+protocol ListingPresenterInterface{}
 
-protocol ListingRouterInterface{
-    var dataStore: ListingDataInterface { get }
-}
+protocol ListingViewControllerInterface: class{}
+
+protocol ListingRouterInterface{}
 
 enum Listing{
-    static func buildScene()->ListingViewController{
+    static func build(dependencies:ListingDependencies)->ListingViewController{
         let presenter = ListingPresenter()
-        let apiService = APIService(apiSession: URLSession.shared,
-                                    apiConfig: LiveAPIConfig())
-        let artDetailsService = ArtDetailsServiceAPI(apiService: apiService)
         let interactor = ListingInteractor(presenter: presenter,
-                                           artDetailsService: artDetailsService)
+                                           artDetailsService: dependencies.artDetailsService,
+                                           art:dependencies.art)
         let router = ListingRouter(dataStore: interactor)
         let viewController = ListingViewController(interactor: interactor,
                                                    router: router)

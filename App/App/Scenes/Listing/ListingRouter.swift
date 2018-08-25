@@ -3,8 +3,8 @@ import UIKit
 
 class ListingRouter{
     weak var viewController: ListingViewController?
-    let dataStore: ListingDataInterface
-    init(dataStore:ListingDataInterface){
+    let dataStore:ListingDataStore
+    init(dataStore:ListingDataStore){
         self.dataStore = dataStore
     }
 }

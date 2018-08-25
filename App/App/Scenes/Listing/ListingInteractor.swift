@@ -3,22 +3,19 @@ import UIKit
 import Services
 import Utilities
 
-class ListingInteractor: ListingDataInterface{
+class ListingInteractor: ListingDataStore{
     let presenter: ListingPresenterInterface
     let artDetailsService: ArtDetailsServiceInterface
+    let art: Art
     init(presenter:ListingPresenterInterface,
-         artDetailsService:ArtDetailsServiceInterface) {
+         artDetailsService:ArtDetailsServiceInterface,
+         art:Art) {
         self.presenter = presenter
         self.artDetailsService = artDetailsService
+        self.art = art
     }
-
-    var art: Art?
 }
 
-extension ListingInteractor: ListingInteractorInterface {
-    //
-}
+extension ListingInteractor: ListingInteractorInterface {}
 
-private extension ListingInteractor {
-    //
-}
+private extension ListingInteractor {}
