@@ -2,11 +2,11 @@
 import Foundation
 import Utils
 
-public protocol ArtDetailsServiceInterface {
+public protocol ArtDetailsServiceProtocol {
     func fetchArt(completion: @escaping (Result<[Art]>)->Void)
 }
 
-public class ArtDetailsServiceAPI {
+public class ArtDetailsServiceLive {
     public typealias Dependencies = HasAPIService
     let dependencies:Dependencies
     public init(dependencies:Dependencies) {
@@ -14,7 +14,7 @@ public class ArtDetailsServiceAPI {
     }
 }
 
-extension ArtDetailsServiceAPI: ArtDetailsServiceInterface {
+extension ArtDetailsServiceLive: ArtDetailsServiceProtocol {
     public func fetchArt(completion: @escaping (Result<[Art]>)->Void) {
         let request = ArtRequest()
         dependencies.apiService.performGet(request: request) {(result) in
@@ -29,7 +29,7 @@ extension ArtDetailsServiceAPI: ArtDetailsServiceInterface {
     }
 }
 
-private extension ArtDetailsServiceAPI {
+private extension ArtDetailsServiceLive {
     enum ServiceError:String,ResultError{
         case apiService
         case json
@@ -43,7 +43,7 @@ private extension ArtDetailsServiceAPI {
         return .success(response.artResponses)
     }
 
-    struct ArtRequest:APIRequestInterface {
+    struct ArtRequest:APIRequestProtocol {
         enum QueryItemName:String {
             case pageCount = "ps"
             case resultsWithImagesOnly = "imgonly"

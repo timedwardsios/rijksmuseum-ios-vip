@@ -14,16 +14,16 @@ class ArtServiceAPITests: XCTestCase {
 }
 
 extension ArtServiceAPITests:ArtServiceAPI.Dependencies {
-    var apiService: APIServiceInterface {return apiServiceMock}
+    var apiService: APIServiceProtocol {return apiServiceMock}
 }
 
 extension ArtServiceAPITests {
-    class APIServiceMock: APIServiceInterface {
+    class APIServiceMock: APIServiceProtocol {
         var performGetRequest_invocations = 0
-        var lastRequest:APIRequestInterface?
+        var lastRequest:APIRequestProtocol?
         var shouldReturnSuccess = true
         var shouldReturnData = true
-        func performGet( request: APIRequestInterface,
+        func performGet( request: APIRequestProtocol,
                          completion: @escaping (Result<Data>) -> Void) {
             performGetRequest_invocations += 1
             lastRequest = request

@@ -5,13 +5,13 @@ import Utils
 
 protocol ListingDataStore{}
 
-protocol ListingInteractorInterface{}
+protocol ListingInteractorProtocol{}
 
-protocol ListingPresenterInterface{}
+protocol ListingPresenterProtocol{}
 
-protocol ListingViewControllerInterface: class{}
+protocol ListingViewControllerProtocol: class{}
 
-protocol ListingRouterInterface{}
+protocol ListingRouterProtocol{}
 
 enum ListingScene{
     typealias Dependencies = HasArtDetailsService

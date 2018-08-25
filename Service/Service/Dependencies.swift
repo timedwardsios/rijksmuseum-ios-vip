@@ -9,21 +9,21 @@ public typealias ServiceDependencies =
     HasArtDetailsService
 
 public protocol HasAPISession{
-    var apiSession:APISessionInterface{get}
+    var apiSession:APISessionProtocol{get}
 }
 
 public protocol HasAPIConfig{
-    var apiConfig:APIConfigInterface{get}
+    var apiConfig:APIConfigProtocol{get}
 }
 
 public protocol HasAPIService{
-    var apiService:APIServiceInterface{get}
+    var apiService:APIServiceProtocol{get}
 }
 
 public protocol HasArtService{
-    var artService:ArtServiceInterface{get}
+    var artService:ArtServiceProtocol{get}
 }
 
 public protocol HasArtDetailsService{
-    var artDetailsService:ArtDetailsServiceInterface{get}
+    var artDetailsService:ArtDetailsServiceProtocol{get}
 }

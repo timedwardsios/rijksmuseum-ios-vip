@@ -4,11 +4,11 @@ import Service
 import Utils
 
 class ListingInteractor: ListingDataStore{
-    let presenter: ListingPresenterInterface
-    let artDetailsService: ArtDetailsServiceInterface
+    let presenter: ListingPresenterProtocol
+    let artDetailsService: ArtDetailsServiceProtocol
     let art: Art
-    init(presenter:ListingPresenterInterface,
-         artDetailsService:ArtDetailsServiceInterface,
+    init(presenter:ListingPresenterProtocol,
+         artDetailsService:ArtDetailsServiceProtocol,
          art:Art) {
         self.presenter = presenter
         self.artDetailsService = artDetailsService
@@ -16,6 +16,6 @@ class ListingInteractor: ListingDataStore{
     }
 }
 
-extension ListingInteractor: ListingInteractorInterface {}
+extension ListingInteractor: ListingInteractorProtocol {}
 
 private extension ListingInteractor {}

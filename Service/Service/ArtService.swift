@@ -2,7 +2,7 @@
 import Foundation
 import Utils
 
-public protocol ArtServiceInterface {
+public protocol ArtServiceProtocol {
     func fetchArt(completion: @escaping (Result<[Art]>)->Void)
 }
 
@@ -14,7 +14,7 @@ public class ArtServiceAPI {
     }
 }
 
-extension ArtServiceAPI:ArtServiceInterface {
+extension ArtServiceAPI:ArtServiceProtocol {
     public func fetchArt(completion: @escaping (Result<[Art]>)->Void) {
         let request = ArtRequest()
         dependencies.apiService.performGet(request: request) {(result) in
@@ -43,7 +43,7 @@ private extension ArtServiceAPI {
         return .success(response.artResponses)
     }
 
-    struct ArtRequest:APIRequestInterface {
+    struct ArtRequest:APIRequestProtocol {
         enum QueryItemName:String {
             case pageCount = "ps"
             case resultsWithImagesOnly = "imgonly"

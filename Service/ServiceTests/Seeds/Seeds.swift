@@ -18,7 +18,7 @@ enum Seeds{
 //    }
 //
     enum API{
-        struct Config:APIConfigInterface{
+        struct Config:APIConfigProtocol{
             let scheme:String = "https"
             let hostname = "hostname.com"
             let path = "/path/to/api"
@@ -26,7 +26,7 @@ enum Seeds{
                                            value: "configValue")]
         }
 
-        struct Request: APIRequestInterface {
+        struct Request: APIRequestProtocol {
             let path = "/endpointseed"
             let queryItems = [URLQueryItem(name: "requestKey",
                                            value: "requestValue")]

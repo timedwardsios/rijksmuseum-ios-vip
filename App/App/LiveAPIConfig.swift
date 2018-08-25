@@ -3,7 +3,7 @@ import Foundation
 import Service
 import Utils
 
-struct LiveAPIConfig:APIConfigInterface{
+struct LiveAPIConfig:APIConfigProtocol{
     let scheme = "https"
     let hostname = "www.rijksmuseum.nl"
     let path = "/api/en"

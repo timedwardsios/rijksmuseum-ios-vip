@@ -2,8 +2,8 @@
 import Foundation
 import Utils
 
-public protocol APIServiceInterface {
-    func performGet(request: APIRequestInterface,
+public protocol APIServiceProtocol {
+    func performGet(request: APIRequestProtocol,
                     completion: @escaping (Result<Data>) -> Void)
 }
 
@@ -15,8 +15,8 @@ public class APIService{
     }
 }
 
-extension APIService: APIServiceInterface {
-    public func performGet(request: APIRequestInterface,
+extension APIService: APIServiceProtocol {
+    public func performGet(request: APIRequestProtocol,
                            completion: @escaping (Result<Data>) -> Void){
         let url = urlFrom(config: dependencies.apiConfig,
                           request: request)
@@ -37,8 +37,8 @@ private extension APIService {
         case data
     }
 
-    func urlFrom(config:APIConfigInterface,
-                 request:APIRequestInterface)->URL{
+    func urlFrom(config:APIConfigProtocol,
+                 request:APIRequestProtocol)->URL{
         var urlComponents = URLComponents()
         urlComponents.scheme = config.scheme
         urlComponents.host = config.hostname

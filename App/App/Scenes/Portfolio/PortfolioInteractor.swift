@@ -4,10 +4,10 @@ import Service
 import Utils
 
 class PortfolioInteractor:PortfolioDataStore{
-    let presenter: PortfolioPresenterInterface
-    let artService: ArtServiceInterface
-    init(presenter:PortfolioPresenterInterface,
-         artService:ArtServiceInterface) {
+    let presenter: PortfolioPresenterProtocol
+    let artService: ArtServiceProtocol
+    init(presenter:PortfolioPresenterProtocol,
+         artService:ArtServiceProtocol) {
         self.presenter = presenter
         self.artService = artService
     }
@@ -16,7 +16,7 @@ class PortfolioInteractor:PortfolioDataStore{
     var selectedArt: Art?
 }
 
-extension PortfolioInteractor: PortfolioInteractorInterface {
+extension PortfolioInteractor: PortfolioInteractorProtocol {
     func fetchArt(request: PortfolioScene.FetchArt.Request) {
         presentFetchArt(state: .loading)
         artService.fetchArt {[weak self] (result) in

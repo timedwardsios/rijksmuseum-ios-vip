@@ -7,20 +7,20 @@ protocol PortfolioDataStore{
     var selectedArt:Art? {get}
 }
 
-protocol PortfolioInteractorInterface:PortfolioDataStore{
+protocol PortfolioInteractorProtocol:PortfolioDataStore{
     func fetchArt(request: PortfolioScene.FetchArt.Request)
     func selectArt(request: PortfolioScene.SelectArt.Request)
 }
 
-protocol PortfolioPresenterInterface{
+protocol PortfolioPresenterProtocol{
     func didFetchArt(response: PortfolioScene.FetchArt.Response)
 }
 
-protocol PortfolioViewControllerInterface: class{
+protocol PortfolioViewControllerProtocol: class{
     func displayFetchArt(viewModel:PortfolioScene.FetchArt.ViewModel)
 }
 
-protocol PortfolioRouterInterface{
+protocol PortfolioRouterProtocol{
     func navigateToListingScene()
 }
 

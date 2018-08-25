@@ -1,19 +1,19 @@
 
 import Foundation
 
-public protocol APIRequestInterface {
+public protocol APIRequestProtocol {
     var path:String {get}
     var queryItems:[URLQueryItem] {get}
 }
 
-public protocol APIConfigInterface:APIRequestInterface {
+public protocol APIConfigProtocol:APIRequestProtocol {
     var scheme:String {get}
     var hostname:String {get}
 }
 
-public protocol APISessionInterface {
+public protocol APISessionProtocol {
     typealias DataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
     func dataTask(with url: URL,
                   completionHandler: @escaping DataTaskCompletion)-> URLSessionDataTask
 }
-extension URLSession:APISessionInterface{}
+extension URLSession:APISessionProtocol{}

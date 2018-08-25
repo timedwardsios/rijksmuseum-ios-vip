@@ -3,10 +3,10 @@ import UIKit
 import Utils
 
 class PortfolioViewController: UIViewController{
-    let interactor: PortfolioInteractorInterface
-    let router: PortfolioRouterInterface
-    init(interactor: PortfolioInteractorInterface,
-         router: PortfolioRouterInterface){
+    let interactor: PortfolioInteractorProtocol
+    let router: PortfolioRouterProtocol
+    init(interactor: PortfolioInteractorProtocol,
+         router: PortfolioRouterProtocol){
         self.interactor = interactor
         self.router = router
         super.init(nibName: nil, bundle: nil)
@@ -72,7 +72,7 @@ extension PortfolioViewController: UICollectionViewDelegate{
     }
 }
 
-extension PortfolioViewController:PortfolioViewControllerInterface {
+extension PortfolioViewController:PortfolioViewControllerProtocol {
     func displayFetchArt(viewModel: PortfolioScene.FetchArt.ViewModel) {
         DispatchQueue.main.async {
             self.unpackViewModel(viewModel)

@@ -17,12 +17,12 @@ class APIServiceTests: XCTestCase {
 }
 
 extension APIServiceTests:APIService.Dependencies {
-    var apiConfig: APIConfigInterface {return apiConfigMock}
-    var apiSession: APISessionInterface {return apiSessionMock}
+    var apiConfig: APIConfigProtocol {return apiConfigMock}
+    var apiSession: APISessionProtocol {return apiSessionMock}
 }
 
 extension APIServiceTests {
-    class APISessionMock: APISessionInterface {
+    class APISessionMock: APISessionProtocol {
         let dataTask:URLSessionDataTaskMock
         init(dataTask:URLSessionDataTaskMock) {
             self.dataTask = dataTask
@@ -42,7 +42,7 @@ extension APIServiceTests {
         var includeData = true
         var statusCode = 200
         var url:URL!
-        var completion:APISessionInterface.DataTaskCompletion!
+        var completion:APISessionProtocol.DataTaskCompletion!
         override func resume() {
             var data:Data?
             if includeData == true {
