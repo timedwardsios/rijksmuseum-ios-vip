@@ -1,17 +1,16 @@
 
 import Utilities
 
-public typealias APIServiceDependencies = HasAPISession & HasAPIConfig
-
 public protocol APIServiceInterface {
     func performGet(request: APIRequestInterface,
                     completion: @escaping (Result<Data>) -> Void)
 }
 
 public class APIService{
+    public typealias Dependencies = HasAPISession & HasAPIConfig
     let apiSession:APISessionInterface
     let apiConfig:APIConfigInterface
-    public init(dependencies:APIServiceDependencies){
+    public init(dependencies:Dependencies){
         self.apiSession = dependencies.apiSession
         self.apiConfig = dependencies.apiConfig
     }

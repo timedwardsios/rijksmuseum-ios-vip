@@ -1,8 +1,7 @@
 
 import XCTest
-import Services
 import Utilities
-@testable import App
+@testable import Services
 
 class ArtServiceAPITests: XCTestCase {
     var sut: ArtServiceAPI!
@@ -10,17 +9,23 @@ class ArtServiceAPITests: XCTestCase {
     override func setUp() {
         super.setUp()
         apiServiceMock = APIServiceMock()
-        sut = ArtServiceAPI(apiService: apiServiceMock)
+        sut = ArtServiceAPI(dependencies: self)
+    }
+}
+
+extension ArtServiceAPITests:ArtServiceAPI.Dependencies {
+    var apiService: APIServiceInterface {
+        return self.apiServiceMock
     }
 }
 
 extension ArtServiceAPITests {
     class APIServiceMock: APIServiceInterface {
         var performGetRequest_invocations = 0
-        var lastRequest:APIRequest?
+        var lastRequest:APIRequestInterface?
         var shouldReturnSuccess = true
         var shouldReturnData = true
-        func performGet( request: APIRequest,
+        func performGet( request: APIRequestInterface,
                          completion: @escaping (Result<Data>) -> Void) {
             performGetRequest_invocations += 1
             lastRequest = request
@@ -48,7 +53,7 @@ extension ArtServiceAPITests {
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(apiServiceMock.performGetRequest_invocations == 1,
+        XCTAssert(apiService.performGetRequest_invocations == 1,
                   "Should forward to APIService")
     }
 
@@ -58,7 +63,7 @@ extension ArtServiceAPITests {
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(apiServiceMock.lastRequest?.path == correctEndpoint,
+        XCTAssert(apiService.lastRequest?.path == correctEndpoint,
                   "Should call APIService with correct endpoint")
     }
 
@@ -73,7 +78,7 @@ extension ArtServiceAPITests {
         // when
         sut.fetchArt(completion: {_ in})
         // then
-        XCTAssert(apiServiceMock.lastRequest?.queryItems == queryItems,
+        XCTAssert(apiService.lastRequest?.queryItems == queryItems,
                   "Should call APIService with correct parameters")
     }
 
@@ -120,7 +125,7 @@ extension ArtServiceAPITests {
     func test_fetchArt_callback_failure(){
         // given
         let exp = XCTestExpectation(description: "Should fail when APIService fails")
-        apiServiceMock.shouldReturnSuccess = false
+        apiService.shouldReturnSuccess = false
         // when
         sut.fetchArt(completion: {result in
             // then
@@ -134,7 +139,7 @@ extension ArtServiceAPITests {
     func test_fetchArt_callback_jsonError(){
         // given
         let exp = XCTestExpectation(description: "Should fail when no data")
-        apiServiceMock.shouldReturnData = false
+        apiService.shouldReturnData = false
         // when
         sut.fetchArt(completion: {result in
             // then

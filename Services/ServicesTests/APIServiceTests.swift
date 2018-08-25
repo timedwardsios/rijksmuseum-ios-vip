@@ -2,6 +2,7 @@
 import XCTest
 @testable import Services
 
+
 class APIServiceTests: XCTestCase {
     var sut: APIService!
     var apiSessionMock:APISessionMock!
@@ -9,15 +10,18 @@ class APIServiceTests: XCTestCase {
     var dataTaskMock:URLSessionDataTaskMock!
     override func setUp() {
         super.setUp()
+        
         dataTaskMock = URLSessionDataTaskMock()
-        apiSessionMock = APISessionMock(dataTask: dataTaskMock)
-        apiConfigMock = Seeds.API.Config()
-        sut = APIService(apiSession: apiSessionMock,
-                             apiConfig: apiConfigMock)
+        sut = APIService(dependencies: AppTestDependencies())
     }
 }
 
 extension APIServiceTests {
+    struct Dependencies:APIServiceDependencies{
+        let apiSession: APISessionInterface
+        let apiConfig:APIConfigInterface
+    }
+
     class APISessionMock: APISession {
         let dataTask:URLSessionDataTaskMock
         init(dataTask:URLSessionDataTaskMock) {

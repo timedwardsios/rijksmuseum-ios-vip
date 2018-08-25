@@ -1,15 +1,14 @@
 
 import Utilities
 
-public typealias ArtDetailsServiceDependencies = HasAPIService
-
 public protocol ArtDetailsServiceInterface {
     func fetchArt(completion: @escaping (Result<[Art]>)->Void)
 }
 
 public class ArtDetailsServiceAPI {
+    public typealias Dependencies = HasAPIService
     let apiService:APIServiceInterface
-    public init(dependencies:ArtDetailsServiceDependencies) {
+    public init(dependencies:Dependencies) {
         self.apiService = dependencies.apiService
     }
 }

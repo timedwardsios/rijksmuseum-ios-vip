@@ -1,6 +1,13 @@
 
 import Utilities
 
+public typealias Dependencies =
+    HasAPISession &
+    HasAPIConfig &
+    HasAPIService &
+    HasArtService &
+    HasArtDetailsService
+
 public protocol HasAPISession{
     var apiSession:APISessionInterface{get}
 }
