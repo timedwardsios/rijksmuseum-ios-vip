@@ -1,7 +1,7 @@
 
 import Utilities
 
-public typealias Dependencies =
+public typealias ServiceDependencies =
     HasAPISession &
     HasAPIConfig &
     HasAPIService &

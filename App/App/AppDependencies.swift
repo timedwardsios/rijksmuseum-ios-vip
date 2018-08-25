@@ -2,20 +2,20 @@
 import Foundation
 import Services
 
-struct AppDependencies:Dependencies{
-    var apiSession: APISessionInterface {
+class AppDependencies:ServiceDependencies{
+    lazy var apiSession: APISessionInterface = {
         return URLSession.shared
-    }
-    var apiConfig: APIConfigInterface {
+    }()
+    lazy var apiConfig: APIConfigInterface = {
         return LiveAPIConfig()
-    }
-    var apiService: APIServiceInterface {
+    }()
+    lazy var apiService: APIServiceInterface = {
         return APIService(dependencies: self)
-    }
-    var artService: ArtServiceInterface {
+    }()
+    lazy var artService: ArtServiceInterface = {
         return ArtServiceAPI(dependencies: self)
-    }
-    var artDetailsService: ArtDetailsServiceInterface {
+    }()
+    lazy var artDetailsService: ArtDetailsServiceInterface = {
         return ArtDetailsServiceAPI(dependencies: self)
-    }
+    }()
 }

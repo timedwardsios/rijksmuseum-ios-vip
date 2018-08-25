@@ -7,16 +7,16 @@ public protocol ArtServiceInterface {
 
 public class ArtServiceAPI {
     public typealias Dependencies = HasAPIService
-    let apiService: APIServiceInterface
+    let dependencies: Dependencies
     public init(dependencies:Dependencies){
-        self.apiService = dependencies.apiService
+        self.dependencies = dependencies
     }
 }
 
 extension ArtServiceAPI:ArtServiceInterface {
     public func fetchArt(completion: @escaping (Result<[Art]>)->Void) {
         let request = ArtRequest()
-        apiService.performGet(request: request) {(result) in
+        dependencies.apiService.performGet(request: request) {(result) in
             switch result {
             case .success(let data):
                 let dataResult = self.decodeJsonData(data)

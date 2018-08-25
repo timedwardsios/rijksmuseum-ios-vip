@@ -8,20 +8,18 @@ public protocol APIServiceInterface {
 
 public class APIService{
     public typealias Dependencies = HasAPISession & HasAPIConfig
-    let apiSession:APISessionInterface
-    let apiConfig:APIConfigInterface
+    let dependencies:Dependencies
     public init(dependencies:Dependencies){
-        self.apiSession = dependencies.apiSession
-        self.apiConfig = dependencies.apiConfig
+        self.dependencies = dependencies
     }
 }
 
 extension APIService: APIServiceInterface {
     public func performGet(request: APIRequestInterface,
                            completion: @escaping (Result<Data>) -> Void){
-        let url = urlFrom(config: apiConfig,
+        let url = urlFrom(config: dependencies.apiConfig,
                           request: request)
-        apiSession.dataTask(with: url) { (data, response, error) in
+        dependencies.apiSession.dataTask(with: url) { (data, response, error) in
             let dataResult = self.dataResultFromSessionResponse(data,
                                                                 response,
                                                                 error)

@@ -2,27 +2,27 @@
 import XCTest
 @testable import Services
 
-
 class APIServiceTests: XCTestCase {
     var sut: APIService!
     var apiSessionMock:APISessionMock!
-    var apiConfigMock:Seeds.API.Config!
     var dataTaskMock:URLSessionDataTaskMock!
+    var apiConfigMock:Seeds.API.Config!
     override func setUp() {
         super.setUp()
-        
+        apiConfigMock = Seeds.API.Config()
         dataTaskMock = URLSessionDataTaskMock()
-        sut = APIService(dependencies: AppTestDependencies())
+        apiSessionMock = APISessionMock(dataTask: dataTaskMock)
+        sut = APIService(dependencies: self)
     }
 }
 
-extension APIServiceTests {
-    struct Dependencies:APIServiceDependencies{
-        let apiSession: APISessionInterface
-        let apiConfig:APIConfigInterface
-    }
+extension APIServiceTests:APIService.Dependencies {
+    var apiConfig: APIConfigInterface {return apiConfigMock}
+    var apiSession: APISessionInterface {return apiSessionMock}
+}
 
-    class APISessionMock: APISession {
+extension APIServiceTests {
+    class APISessionMock: APISessionInterface {
         let dataTask:URLSessionDataTaskMock
         init(dataTask:URLSessionDataTaskMock) {
             self.dataTask = dataTask
@@ -42,7 +42,7 @@ extension APIServiceTests {
         var includeData = true
         var statusCode = 200
         var url:URL!
-        var completion:APISession.DataTaskCompletion!
+        var completion:APISessionInterface.DataTaskCompletion!
         override func resume() {
             var data:Data?
             if includeData == true {

@@ -14,7 +14,7 @@ extension PortfolioRouter: PortfolioRouterInterface{
     func navigateToListingScene() {
         guard let art = dataStore.selectedArt else {return}
         let listingViewController = ListingScene.build(dependencies: AppDependencies(),
-                                                  art: art)
+                                                       art: art)
         viewController?.navigationController?.pushViewController(listingViewController,
                                                                        animated: true)
     }

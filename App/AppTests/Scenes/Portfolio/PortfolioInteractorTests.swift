@@ -24,7 +24,7 @@ extension PortfolioInteractorTests {
         var presentFetchArt_loaded_value:[Art]?
         var presentFetchArt_error_invocations = 0
         var presentFetchArt_error_value:Error?
-        func presentFetchArt(response: PortfolioScene.FetchArt.Response) {
+        func didFetchArt(response: PortfolioScene.FetchArt.Response) {
             switch response.state {
             case .loading:
                 presentFetchArt_loading_invocations += 1
@@ -55,45 +55,45 @@ extension PortfolioInteractorTests {
 }
 
 extension PortfolioInteractorTests {
-    func test_performFetchArt(){
+    func test_fetchArt(){
         // given
         let request = PortfolioScene.FetchArt.Request()
         // when
-        sut.performFetchArt(request: request)
+        sut.fetchArt(request: request)
     }
 
-    func test_performFetchArt_presenter_loading(){
+    func test_fetchArt_presenter_loading(){
         // given
         let request = PortfolioScene.FetchArt.Request()
         // when
-        sut.performFetchArt(request: request)
+        sut.fetchArt(request: request)
         // then
         XCTAssert(presenterMock.presentFetchArt_loading_invocations == 1)
     }
 
-    func test_performFetchArt_service(){
+    func test_fetchArt_service(){
         // given
         let request = PortfolioScene.FetchArt.Request()
         // when
-        sut.performFetchArt(request: request)
+        sut.fetchArt(request: request)
         // then
         XCTAssert(artServiceMock.fetchArt_invocations == 1)
     }
 
-    func test_performFetchArt_presenter_loaded(){
+    func test_fetchArt_presenter_loaded(){
         // given
         let request = PortfolioScene.FetchArt.Request()
         // when
-        sut.performFetchArt(request: request)
+        sut.fetchArt(request: request)
         // then
         XCTAssert(presenterMock.presentFetchArt_loaded_invocations == 1)
     }
 
-    func test_performFetchArt_presenter_loaded_value(){
+    func test_fetchArt_presenter_loaded_value(){
         // given
         let request = PortfolioScene.FetchArt.Request()
         // when
-        sut.performFetchArt(request: request)
+        sut.fetchArt(request: request)
         // then
         XCTAssert(presenterMock.presentFetchArt_loaded_value?.count == 1)
         let value = presenterMock.presentFetchArt_loaded_value?.first
@@ -101,22 +101,22 @@ extension PortfolioInteractorTests {
         XCTAssert(castValue === artServiceMock.artSeed.first)
     }
 
-    func test_performFetchArt_presenter_error(){
+    func test_fetchArt_presenter_error(){
         // given
         let request = PortfolioScene.FetchArt.Request()
         artServiceMock.active = false
         // when
-        sut.performFetchArt(request: request)
+        sut.fetchArt(request: request)
         // then
         XCTAssert(presenterMock.presentFetchArt_error_invocations == 1)
     }
 
-    func test_performFetchArt_presenter_error_value(){
+    func test_fetchArt_presenter_error_value(){
         // given
         let request = PortfolioScene.FetchArt.Request()
         artServiceMock.active = false
         // when
-        sut.performFetchArt(request: request)
+        sut.fetchArt(request: request)
         // then
         let value = presenterMock.presentFetchArt_error_value as! Seeds.ErrorSeed
         guard case .generic = value else {
