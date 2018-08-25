@@ -1,7 +1,7 @@
 
 import UIKit
-import Services
-import Utilities
+import Service
+import Utils
 
 class ListingInteractor: ListingDataStore{
     let presenter: ListingPresenterInterface

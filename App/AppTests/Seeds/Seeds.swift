@@ -1,7 +1,7 @@
 
-import App
-import Services
-import Utilities
+import Foundation
+import Service
+import Utils
 
 enum Seeds{
     enum ErrorSeed:String,ResultError {

@@ -1,6 +1,7 @@
 
-import Services
-import Utilities
+import Foundation
+import Service
+import Utils
 
 struct LiveAPIConfig:APIConfigInterface{
     let scheme = "https"

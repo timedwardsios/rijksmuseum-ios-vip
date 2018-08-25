@@ -1,7 +1,7 @@
 
 import XCTest
-import Services
-import Utilities
+import Service
+import Utils
 @testable import App
 
 class PortfolioInteractorTests: XCTestCase {

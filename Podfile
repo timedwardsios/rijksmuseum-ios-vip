@@ -4,7 +4,7 @@ use_frameworks!
 
 workspace 'Rijksmuseum'
 
-pod "TinyConstraints"
+pod 'TinyConstraints', :git => 'https://github.com/timedwardsios/TinyConstraints'
 pod "SDWebImage"
 
 target 'App' do
@@ -14,16 +14,16 @@ target 'App' do
     end
 end
 
-target 'Workers' do
-    project 'Workers/Workers.xcodeproj'
-    target 'WorkersTests' do
+target 'Service' do
+    project 'Service/Service.xcodeproj'
+    target 'ServiceTests' do
         inherit! :search_paths
     end
 end
 
-target 'Utilities' do
-    project 'Utilities/Utilities.xcodeproj'
-    target 'UtilitiesTests' do
+target 'Utils' do
+    project 'Utils/Utils.xcodeproj'
+    target 'UtilsTests' do
         inherit! :search_paths
     end
 end

@@ -1,6 +1,6 @@
 
 import Foundation
-import Services
+import Service
 
 class AppDependencies:ServiceDependencies{
     lazy var apiSession: APISessionInterface = {

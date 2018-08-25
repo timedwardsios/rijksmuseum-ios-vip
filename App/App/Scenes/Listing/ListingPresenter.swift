@@ -1,7 +1,7 @@
 
 import UIKit
-import Services
-import Utilities
+import Service
+import Utils
 
 class ListingPresenter {
     weak var viewController: ListingViewControllerInterface?

@@ -14,22 +14,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Utilities.xcscheme</key>
+		<key>Pods-Service.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-UtilitiesTests.xcscheme</key>
+		<key>Pods-ServiceTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Workers.xcscheme</key>
+		<key>Pods-Utils.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-WorkersTests.xcscheme</key>
+		<key>Pods-UtilsTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

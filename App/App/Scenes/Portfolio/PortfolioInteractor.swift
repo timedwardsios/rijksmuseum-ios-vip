@@ -1,7 +1,7 @@
 
 import UIKit
-import Services
-import Utilities
+import Service
+import Utils
 
 class PortfolioInteractor:PortfolioDataStore{
     let presenter: PortfolioPresenterInterface

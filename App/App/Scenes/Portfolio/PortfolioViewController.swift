@@ -1,6 +1,6 @@
 
 import UIKit
-import Utilities
+import Utils
 
 class PortfolioViewController: UIViewController{
     let interactor: PortfolioInteractorInterface

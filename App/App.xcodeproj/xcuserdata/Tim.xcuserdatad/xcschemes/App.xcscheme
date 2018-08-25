@@ -54,16 +54,16 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AA605B212F29BE007379B1"
-            BuildableName = "Services.framework"
-            BlueprintName = "Services"
-            ReferencedContainer = "container:../Services/Services.xcodeproj">
+            BuildableName = "Service.framework"
+            BlueprintName = "Service"
+            ReferencedContainer = "container:../Service/Service.xcodeproj">
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22AC8C48212EE635000A0BE0"
-            BuildableName = "Utilities.framework"
-            BlueprintName = "Utilities"
-            ReferencedContainer = "container:../Utilities/Utilities.xcodeproj">
+            BuildableName = "Utils.framework"
+            BlueprintName = "Utils"
+            ReferencedContainer = "container:../Utils/Utils.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -82,9 +82,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22AA6064212F29BF007379B1"
-               BuildableName = "ServicesTests.xctest"
-               BlueprintName = "ServicesTests"
-               ReferencedContainer = "container:../Services/Services.xcodeproj">
+               BuildableName = "ServiceTests.xctest"
+               BlueprintName = "ServiceTests"
+               ReferencedContainer = "container:../Service/Service.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -92,9 +92,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22AC8C51212EE635000A0BE0"
-               BuildableName = "UtilitiesTests.xctest"
-               BlueprintName = "UtilitiesTests"
-               ReferencedContainer = "container:../Utilities/Utilities.xcodeproj">
+               BuildableName = "UtilsTests.xctest"
+               BlueprintName = "UtilsTests"
+               ReferencedContainer = "container:../Utils/Utils.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

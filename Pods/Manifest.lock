@@ -2,21 +2,29 @@ PODS:
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
-  - TinyConstraints (3.1.1)
+  - TinyConstraints (3.2.0)
 
 DEPENDENCIES:
   - SDWebImage
-  - TinyConstraints
+  - TinyConstraints (from `https://github.com/timedwardsios/TinyConstraints`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SDWebImage
-    - TinyConstraints
+
+EXTERNAL SOURCES:
+  TinyConstraints:
+    :git: https://github.com/timedwardsios/TinyConstraints
+
+CHECKOUT OPTIONS:
+  TinyConstraints:
+    :commit: b116224c17cc1816f74902ee2dc939931409a045
+    :git: https://github.com/timedwardsios/TinyConstraints
 
 SPEC CHECKSUMS:
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
-  TinyConstraints: c15ce864e9ef87dfd18ee3bd746d510a38d84198
+  TinyConstraints: aa45fdc7e4b7a0e9081993935a6a11a814dd3ec5
 
-PODFILE CHECKSUM: b1b75050014887073b871e7ff828c5aad6a59f0c
+PODFILE CHECKSUM: 24989d8d6bde9979bc62b5186793ac87a0c9a2f0
 
 COCOAPODS: 1.5.3
