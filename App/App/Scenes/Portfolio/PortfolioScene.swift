@@ -3,10 +3,6 @@ import UIKit
 import Services
 import Utilities
 
-protocol PortfolioDependencies{
-    var artService:ArtServiceInterface{get}
-}
-
 protocol PortfolioDataStore{
     var selectedArt:Art? {get}
 }
@@ -57,13 +53,11 @@ enum Portfolio{
         struct ViewModel{}
     }
 
-    static func buildScene()->PortfolioViewController{
+    typealias Dependencies = HasArtService
+    static func buildScene(dependencies:Dependencies)->PortfolioViewController{
         let presenter = PortfolioPresenter()
-        let apiService = APIService(apiSession: URLSession.shared,
-                                    apiConfig: LiveAPIConfig())
-        let artService = ArtServiceAPI(apiService: apiService)
         let interactor = PortfolioInteractor(presenter: presenter,
-                                             artService: artService)
+                                             artService: dependencies.artService)
         let router = PortfolioRouter(dataStore: interactor)
         let viewController = PortfolioViewController(interactor: interactor,
                                                      router: router)

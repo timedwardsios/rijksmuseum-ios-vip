@@ -19,6 +19,7 @@
 		221F3ECA212F3A7B00907255 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221F3EC9212F3A7B00907255 /* Utilities.framework */; };
 		221F3EEB212F4A4100907255 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3EE9212F4A4100907255 /* Seeds.swift */; };
 		221F3EEC212F4A4100907255 /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 221F3EEA212F4A4100907255 /* collection.json */; };
+		22695F3921317CF6004C47A5 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22695F3821317CF6004C47A5 /* AppDependencies.swift */; };
 		22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C75212EEA02000A0BE0 /* Assets.xcassets */; };
 		22AC8C8F212EEA02000A0BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C76212EEA02000A0BE0 /* LaunchScreen.storyboard */; };
 		22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C79212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld */; };
@@ -60,6 +61,7 @@
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F3EE9212F4A4100907255 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		221F3EEA212F4A4100907255 /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
+		22695F3821317CF6004C47A5 /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		22706C8120FE510E006E27EE /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C9820FE510F006E27EE /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C9E20FE5110006E27EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../App/Misc/Info.plist; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */,
 				22C9BF1F212F2EE1000D15E6 /* LiveAPIConfig.swift */,
+				22695F3821317CF6004C47A5 /* AppDependencies.swift */,
 				22AC8C7F212EEA02000A0BE0 /* Scenes */,
 				22AC8C74212EEA02000A0BE0 /* Resources */,
 			);
@@ -452,6 +455,7 @@
 				221DB11B2130B1830031A401 /* ListingViewController.swift in Sources */,
 				22AC8C95212EEA02000A0BE0 /* PortfolioRouter.swift in Sources */,
 				22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */,
+				22695F3921317CF6004C47A5 /* AppDependencies.swift in Sources */,
 				22AC8C96212EEA02000A0BE0 /* PortfolioViewController.swift in Sources */,
 				221DB1192130B1830031A401 /* ListingPresenter.swift in Sources */,
 				22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */,

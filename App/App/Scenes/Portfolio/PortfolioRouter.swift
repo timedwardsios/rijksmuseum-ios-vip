@@ -12,19 +12,9 @@ class PortfolioRouter{
 
 extension PortfolioRouter: PortfolioRouterInterface{
     func navigateToListingScene() {
-        struct Dependencies:ListingDependencies {
-            let artDetailsService: ArtDetailsServiceInterface
-            let art: Art
-        }
         guard let art = dataStore.selectedArt else {return}
-        let apiSession = URLSession.shared
-        let apiConfig = LiveAPIConfig()
-        let apiService = APIService(apiSession: apiSession,
-                                    apiConfig: apiConfig)
-        let artDetailsService = ArtDetailsServiceAPI(apiService: apiService)
-        let dependencies = Dependencies(artDetailsService: artDetailsService,
-                                        art: art)
-        let listingViewController = Listing.build(dependencies: dependencies)
+        let listingViewController = Listing.build(dependencies: AppDependencies(),
+                                                  art: art)
         viewController?.navigationController?.pushViewController(listingViewController,
                                                                        animated: true)
     }

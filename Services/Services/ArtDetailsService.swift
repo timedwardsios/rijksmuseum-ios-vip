@@ -1,21 +1,20 @@
 
 import Utilities
 
+public typealias ArtDetailsServiceDependencies = HasApiService
+
 public protocol ArtDetailsServiceInterface {
     func fetchArt(completion: @escaping (Result<[Art]>)->Void)
 }
 
-public protocol ArtDetailsServiceAPIInterface:ArtDetailsServiceInterface{}
-
 public class ArtDetailsServiceAPI {
     let apiService:APIServiceInterface
-    public init(apiService:APIServiceInterface) {
-        self.apiService = apiService
+    public init(dependencies:ArtDetailsServiceDependencies) {
+        self.apiService = dependencies.apiService
     }
 }
 
-extension ArtDetailsServiceAPI: ArtDetailsServiceAPIInterface {
-
+extension ArtDetailsServiceAPI: ArtDetailsServiceInterface {
     public func fetchArt(completion: @escaping (Result<[Art]>)->Void) {
         let request = ArtRequest()
         apiService.performGet(request: request) {(result) in
@@ -96,40 +95,3 @@ private extension ArtDetailsServiceAPI {
         }
     }
 }
-
-// Random core data shit
-//    lazy var persistentContainer: NSPersistentContainer = {
-//        let container = NSPersistentContainer(name: "Rijksmuseum")
-//        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-//            if let error = error as NSError? {
-//                fatalError("Unresolved error \(error), \(error.userInfo)")
-//            }
-//        })
-//        return container
-//    }()
-//
-//        let context = persistentContainer.viewContext
-//        if context.hasChanges {
-//            do {
-//                try context.save()
-//            } catch {
-//                let nserror = error as NSError
-//                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-//            }
-//        }
-//        let result = Art(remoteId: "123",
-//                               title: "A nice piece of art",
-//                               artist: "Timothy Edwards",
-//                               imageUrl: URL(string: "https://secure.gravatar.com/avatar/27e2d00ab3715b944d9ce99a421a012b?s=192&d=mm&r=g")!,
-//                               starred: false)
-//
-//    func getArtDetails(_ art:Art) -> (Result<Art, Error>)->Void
-//    func setArtStarred(_ art:Art, starred:Bool)
-//
-//    struct Error: LocalizedError {
-//        public enum Reason {
-//            case generic
-//        }
-//        public let reason: Reason
-//        public var errorDescription: String?
-//    }

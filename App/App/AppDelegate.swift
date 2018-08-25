@@ -1,5 +1,6 @@
 
 import UIKit
+import Services
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
@@ -18,9 +19,9 @@ class AppDelegate: UIResponder {
 
 extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let portfolioViewController = Portfolio.buildScene()
-        let navigationController = UINavigationController(rootViewController: portfolioViewController)
-        window.rootViewController = navigationController
+        let portfolioViewController = Portfolio.buildScene(dependencies: AppDependencies())
+        let navController = UINavigationController(rootViewController: portfolioViewController)
+        window.rootViewController = navController
         window.frame = UIScreen.main.bounds
         window.makeKeyAndVisible()
         return true

@@ -3,8 +3,7 @@ import UIKit
 import Services
 import Utilities
 
-protocol ListingDependencies{
-    var artDetailsService:ArtDetailsServiceInterface{get}
+protocol ListingDataInput{
     var art:Art{get}
 }
 
@@ -19,11 +18,13 @@ protocol ListingViewControllerInterface: class{}
 protocol ListingRouterInterface{}
 
 enum Listing{
-    static func build(dependencies:ListingDependencies)->ListingViewController{
+    typealias Dependencies = HasArtDetailsService
+    static func build(dependencies:Dependencies,
+                      art:Art)->ListingViewController{
         let presenter = ListingPresenter()
         let interactor = ListingInteractor(presenter: presenter,
                                            artDetailsService: dependencies.artDetailsService,
-                                           art:dependencies.art)
+                                           art:art)
         let router = ListingRouter(dataStore: interactor)
         let viewController = ListingViewController(interactor: interactor,
                                                    router: router)
