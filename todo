@@ -1,3 +1,5 @@
+"Protocol" to "Impl"
+
 New idea:
 "Scenes" with sub-scenes.
 AppScene wrapping AppDelegate
@@ -8,8 +10,6 @@ Scenes no longer have a router, they have a Delegate.
 Routing is handled in the super-scene's interactor.
 The Delegate is the super-scene, going all the way up to the AppDelegate.
 Put the AppDelegate in it's own scene?
-
-Move dependencies -> seperate vars
 
 Write core data caching layer
 Finish details scene

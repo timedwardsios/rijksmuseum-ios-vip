@@ -8,16 +8,16 @@ public protocol ArtServiceProtocol {
 
 public class ArtServiceAPI {
     public typealias Dependencies = HasAPIService
-    let dependencies: Dependencies
-    public init(dependencies:Dependencies){
-        self.dependencies = dependencies
+    let apiService:APIServiceProtocol
+    public init(apiService:APIServiceProtocol){
+        self.apiService = apiService
     }
 }
 
 extension ArtServiceAPI:ArtServiceProtocol {
     public func fetchArt(completion: @escaping (Result<[Art]>)->Void) {
         let request = ArtRequest()
-        dependencies.apiService.performGet(request: request) {(result) in
+        apiService.performGet(request: request) {(result) in
             switch result {
             case .success(let data):
                 let dataResult = self.decodeJsonData(data)

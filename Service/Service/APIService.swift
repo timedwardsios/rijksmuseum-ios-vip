@@ -9,18 +9,21 @@ public protocol APIServiceProtocol {
 
 public class APIService{
     public typealias Dependencies = HasAPISession & HasAPIConfig
-    let dependencies:Dependencies
-    public init(dependencies:Dependencies){
-        self.dependencies = dependencies
+    let apiSession: APISessionProtocol
+    let apiConfig: APIConfigProtocol
+    public init(apiSession:APISessionProtocol,
+                apiConfig:APIConfigProtocol){
+        self.apiSession = apiSession
+        self.apiConfig = apiConfig
     }
 }
 
 extension APIService: APIServiceProtocol {
     public func performGet(request: APIRequestProtocol,
                            completion: @escaping (Result<Data>) -> Void){
-        let url = urlFrom(config: dependencies.apiConfig,
+        let url = urlFrom(config: apiConfig,
                           request: request)
-        dependencies.apiSession.dataTask(with: url) { (data, response, error) in
+        apiSession.dataTask(with: url) { (data, response, error) in
             let dataResult = self.dataResultFromSessionResponse(data,
                                                                 response,
                                                                 error)

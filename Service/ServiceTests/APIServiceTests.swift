@@ -12,13 +12,9 @@ class APIServiceTests: XCTestCase {
         apiConfigMock = Seeds.API.Config()
         dataTaskMock = URLSessionDataTaskMock()
         apiSessionMock = APISessionMock(dataTask: dataTaskMock)
-        sut = APIService(dependencies: self)
+        sut = APIService(apiSession: apiSessionMock,
+                         apiConfig: apiConfigMock)
     }
-}
-
-extension APIServiceTests:APIService.Dependencies {
-    var apiConfig: APIConfigProtocol {return apiConfigMock}
-    var apiSession: APISessionProtocol {return apiSessionMock}
 }
 
 extension APIServiceTests {

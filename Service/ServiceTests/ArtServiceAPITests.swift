@@ -9,12 +9,8 @@ class ArtServiceAPITests: XCTestCase {
     override func setUp() {
         super.setUp()
         apiServiceMock = APIServiceMock()
-        sut = ArtServiceAPI(dependencies: self)
+        sut = ArtServiceAPI(apiService: apiServiceMock)
     }
-}
-
-extension ArtServiceAPITests:ArtServiceAPI.Dependencies {
-    var apiService: APIServiceProtocol {return apiServiceMock}
 }
 
 extension ArtServiceAPITests {

@@ -10,12 +10,13 @@ class AppDependencies:ServiceDependencies{
         return LiveAPIConfig()
     }()
     lazy var apiService: APIServiceProtocol = {
-        return APIService(dependencies: self)
+        return APIService(apiSession: self.apiSession,
+                          apiConfig: self.apiConfig)
     }()
     lazy var artService: ArtServiceProtocol = {
-        return ArtServiceAPI(dependencies: self)
+        return ArtServiceAPI(apiService: self.apiService)
     }()
     lazy var artDetailsService: ArtDetailsServiceProtocol = {
-        return ArtDetailsServiceLive(dependencies: self)
+        return ArtDetailsServiceLive(apiService: self.apiService)
     }()
 }
