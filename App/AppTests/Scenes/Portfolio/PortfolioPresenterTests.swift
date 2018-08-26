@@ -4,33 +4,33 @@ import XCTest
 
 class PortfolioPresenterTests: XCTestCase {
     var sut: PortfolioPresenter!
-    var viewControllerMock: ViewControllerMock!
+    var outputMock: Portfolio.Presenter.Output!
     override func setUp() {
         super.setUp()
-        viewControllerMock = ViewControllerMock()
+        outputMock = OutputMock()
         sut = PortfolioPresenter()
-        sut.viewController = viewControllerMock
+        sut.output = viewControllerMock
     }
 
 }
 
 extension PortfolioPresenterTests {
-    class ViewControllerMock: PortfolioViewControllerInput {
-        var displayFetchArt_loading_invocations = 0
-        var displayFetchArt_loaded_invocations = 0
-        var displayFetchArt_loaded_value:[URL]?
-        var displayFetchArt_error_invocations = 0
-        var displayFetchArt_error_value:String?
-        func displayFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
+    class OutputMock: Portfolio.Presenter.Output {
+        var presentFetchArt_loading_invocations = 0
+        var presentFetchArt_loaded_invocations = 0
+        var presentFetchArt_loaded_value:[URL]?
+        var presentFetchArt_error_invocations = 0
+        var presentFetchArt_error_value:String?
+        func presentFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
             switch viewModel.state {
             case .loading:
-                displayFetchArt_loading_invocations += 1
+                presentFetchArt_loading_invocations += 1
             case .loaded(let imageUrls):
-                displayFetchArt_loaded_invocations += 1
-                displayFetchArt_loaded_value = imageUrls
+                presentFetchArt_loaded_invocations += 1
+                presentFetchArt_loaded_value = imageUrls
             case .error(let errorMessage):
-                displayFetchArt_error_invocations += 1
-                displayFetchArt_error_value = errorMessage
+                presentFetchArt_error_invocations += 1
+                presentFetchArt_error_value = errorMessage
             }
         }
     }
@@ -42,44 +42,44 @@ extension PortfolioPresenterTests {
         // given
         let response = Portfolio.FetchArt.Response(state: .loading)
         // when
-        sut.displayFetchArt(response: response)
+        sut.presentFetchArt(response: response)
     }
 
     func test_didFetchArt_viewController_loading(){
         // given
         let response = Portfolio.FetchArt.Response(state: .loading)
         // when
-        sut.displayFetchArt(response: response)
-        XCTAssert(viewControllerMock.displayFetchArt_loading_invocations == 1)
+        sut.presentFetchArt(response: response)
+        XCTAssert(viewControllerMock.presentFetchArt_loading_invocations == 1)
     }
 
     func test_didFetchArt_viewController_loaded(){
         let artSeed = Seeds.Model.ArtSeed()
         let response = Portfolio.FetchArt.Response(state: .loaded([artSeed]))
-        sut.displayFetchArt(response: response)
-        XCTAssert(viewControllerMock.displayFetchArt_loaded_invocations == 1)
+        sut.presentFetchArt(response: response)
+        XCTAssert(viewControllerMock.presentFetchArt_loaded_invocations == 1)
     }
 
     func test_didFetchArt_viewController_loaded_value(){
         let artSeed = Seeds.Model.ArtSeed()
         let response = Portfolio.FetchArt.Response(state: .loaded([artSeed]))
-        sut.displayFetchArt(response: response)
-        XCTAssert(viewControllerMock.displayFetchArt_loaded_value?.count == 1)
-        let firstValue = viewControllerMock.displayFetchArt_loaded_value?.first
+        sut.presentFetchArt(response: response)
+        XCTAssert(viewControllerMock.presentFetchArt_loaded_value?.count == 1)
+        let firstValue = viewControllerMock.presentFetchArt_loaded_value?.first
         XCTAssert(firstValue == artSeed.imageUrl)
     }
 
     func test_didFetchArt_viewController_error(){
         let errorSeed = Seeds.ErrorSeed.generic
         let response = Portfolio.FetchArt.Response(state: .error(errorSeed))
-        sut.displayFetchArt(response: response)
-        XCTAssert(viewControllerMock.displayFetchArt_error_invocations == 1)
+        sut.presentFetchArt(response: response)
+        XCTAssert(viewControllerMock.presentFetchArt_error_invocations == 1)
     }
 
     func test_didFetchArt_viewController_error_value(){
         let errorSeed = Seeds.ErrorSeed.generic
         let response = Portfolio.FetchArt.Response(state: .error(errorSeed))
-        sut.displayFetchArt(response: response)
-        XCTAssert(viewControllerMock.displayFetchArt_error_value == errorSeed.message)
+        sut.presentFetchArt(response: response)
+        XCTAssert(viewControllerMock.presentFetchArt_error_value == errorSeed.message)
     }
 }

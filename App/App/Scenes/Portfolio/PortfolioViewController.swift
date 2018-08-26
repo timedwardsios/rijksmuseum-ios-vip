@@ -3,11 +3,11 @@ import UIKit
 import Utils
 
 class PortfolioViewController: UIViewController{
-    let interactor: PortfolioInteractorProtocol
-    let router: PortfolioRouterProtocol
-    init(interactor: PortfolioInteractorProtocol,
-         router: PortfolioRouterProtocol){
-        self.interactor = interactor
+    let output: Portfolio.ViewController.Output
+    let router: Portfolio.Router
+    init(output: Portfolio.ViewController.Output,
+         router: Portfolio.Router){
+        self.output = output
         self.router = router
         super.init(nibName: nil, bundle: nil)
     }
@@ -52,13 +52,13 @@ extension PortfolioViewController: UICollectionViewDelegate{
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        interactor.selectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
+        output.performSelectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
         router.navigateToListingScene()
     }
 }
 
-extension PortfolioViewController:PortfolioViewControllerProtocol {
-    func displayFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
+extension PortfolioViewController:Portfolio.ViewController.Input {
+    func presentFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
         DispatchQueue.main.async {
             self.unpackViewModel(viewModel)
         }
@@ -108,6 +108,6 @@ private extension PortfolioViewController {
 
 @objc private extension PortfolioViewController {
     func fetchArt() {
-        interactor.fetchArt(request: Portfolio.FetchArt.Request())
+        output.performFetchArt(request: Portfolio.FetchArt.Request())
     }
 }

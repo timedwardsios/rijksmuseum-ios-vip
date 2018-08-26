@@ -4,10 +4,10 @@ import Service
 import Utils
 
 class PortfolioPresenter{
-    weak var viewController: PortfolioViewController?
+    weak var output: Portfolio.Presenter.Output?
 }
 
-extension PortfolioPresenter: PortfolioPresenterProtocol{
+extension PortfolioPresenter: Portfolio.Presenter.Input{
     func presentFetchArt(response: Portfolio.FetchArt.Response) {
         self.processFetchArtResponse(response)
     }
@@ -17,19 +17,19 @@ private extension PortfolioPresenter {
     func processFetchArtResponse(_ response:Portfolio.FetchArt.Response) {
         switch response.state {
         case .loading:
-            displayFetchArt(state: .loading)
+            presentFetchArt(state: .loading)
         case .loaded(let arts):
             let imageUrls = imageUrlsFrom(arts: arts)
-            displayFetchArt(state: .loaded(imageUrls))
+            presentFetchArt(state: .loaded(imageUrls))
         case .error(let error):
             let errorMessage = error.message
-            displayFetchArt(state: .error(errorMessage))
+            presentFetchArt(state: .error(errorMessage))
         }
     }
 
-    func displayFetchArt(state:Portfolio.FetchArt.ViewModel.State){
+    func presentFetchArt(state:Portfolio.FetchArt.ViewModel.State){
         let viewModel = Portfolio.FetchArt.ViewModel(state: state)
-        self.viewController?.displayFetchArt(viewModel: viewModel)
+        output?.presentFetchArt(viewModel: viewModel)
     }
 
     func imageUrlsFrom(arts:[Art]) -> [URL] {

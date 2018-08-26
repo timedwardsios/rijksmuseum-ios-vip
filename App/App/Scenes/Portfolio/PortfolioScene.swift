@@ -3,20 +3,20 @@ import Foundation
 import Service
 import Utils
 
-protocol PortfolioViewControllerProtocol:class{
-    func displayFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
+protocol PortfolioLogic{
+    func performFetchArt(request: Portfolio.FetchArt.Request)
+    func performSelectArt(request: Portfolio.SelectArt.Request)
 }
 
-protocol PortfolioInteractorProtocol{
-    func fetchArt(request: Portfolio.FetchArt.Request)
-    func selectArt(request: Portfolio.SelectArt.Request)
-}
-
-protocol PortfolioPresenterProtocol{
+protocol PortfolioPresentation{
     func presentFetchArt(response: Portfolio.FetchArt.Response)
 }
 
-protocol PortfolioRouterProtocol{
+protocol PortfolioDisplay:class{
+    func presentFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
+}
+
+protocol PortfolioRouting{
     func navigateToListingScene()
 }
 
@@ -25,6 +25,21 @@ protocol PortfolioDataStore{
 }
 
 enum Portfolio{
+    enum ViewController{
+        typealias Input = PortfolioDisplay
+        typealias Output = Interactor.Input
+    }
+    enum Interactor{
+        typealias Input = PortfolioLogic
+        typealias Output = Presenter.Input
+    }
+    enum Presenter{
+        typealias Input = PortfolioPresentation
+        typealias Output = ViewController.Input
+    }
+    typealias Router = PortfolioRouter
+    typealias DataStore = PortfolioDataStore
+
     enum FetchArt{
         struct Request{}
         struct Response{
@@ -56,12 +71,12 @@ enum Portfolio{
     typealias Dependencies = HasArtService
     static func build(dependencies:Dependencies)->PortfolioViewController{
         let presenter = PortfolioPresenter()
-        let interactor = PortfolioInteractor(presenter: presenter,
+        let interactor = PortfolioInteractor(output: presenter,
                                              dependencies: dependencies)
         let router = PortfolioRouter(dataStore: interactor)
-        let viewController = PortfolioViewController(interactor: interactor,
+        let viewController = PortfolioViewController(output: interactor,
                                                      router: router)
-        presenter.viewController = viewController
+        presenter.output = viewController
         router.viewController = viewController
         return viewController
     }

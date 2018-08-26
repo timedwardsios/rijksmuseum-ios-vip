@@ -10,7 +10,7 @@ class PortfolioRouter{
     }
 }
 
-extension PortfolioRouter: PortfolioRouterProtocol{
+extension PortfolioRouter: PortfolioRouting {
     func navigateToListingScene() {
         guard let art = dataStore.selectedArt else {return}
         let listingViewController = ListingScene.build(dependencies: AppDependencies(),
