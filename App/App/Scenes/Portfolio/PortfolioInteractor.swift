@@ -5,9 +5,9 @@ import Utils
 
 class PortfolioInteractor:PortfolioDataStore{
     let output:PortfolioInteractorOutput
-    let artService:ArtServiceProtocol
+    let artService:ArtService
     init(output: PortfolioInteractorOutput,
-         artService: ArtServiceProtocol) {
+         artService: ArtService) {
         self.output = output
         self.artService = artService
     }

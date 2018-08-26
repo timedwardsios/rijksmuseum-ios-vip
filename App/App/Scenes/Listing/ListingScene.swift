@@ -3,28 +3,32 @@ import UIKit
 import Service
 import Utils
 
-protocol ListingDataStore{}
+protocol ListingViewControllerInput: class{}
 
-protocol ListingInteractorProtocol{}
+protocol ListingInteractorInput{}
 
-protocol ListingPresenterProtocol{}
-
-protocol ListingViewControllerProtocol: class{}
+protocol ListingPresenterInput{}
 
 protocol ListingRouterProtocol{}
+
+protocol ListingDataStore{}
+
+typealias ListingViewControllerOutput = ListingInteractorInput
+typealias ListingInteractorOutput = ListingPresenterInput
+typealias ListingPresenterOutput = ListingViewControllerInput
 
 enum ListingScene{
     typealias Dependencies = HasArtDetailsService
     static func build(dependencies:Dependencies,
                       art:Art)->ListingViewController{
         let presenter = ListingPresenter()
-        let interactor = ListingInteractor(presenter: presenter,
+        let interactor = ListingInteractor(output: presenter,
                                            artDetailsService: dependencies.artDetailsService,
                                            art:art)
         let router = ListingRouter(dataStore: interactor)
-        let viewController = ListingViewController(interactor: interactor,
+        let viewController = ListingViewController(output: interactor,
                                                    router: router)
-        presenter.viewController = viewController
+        presenter.output = viewController
         router.viewController = viewController
         return viewController
     }

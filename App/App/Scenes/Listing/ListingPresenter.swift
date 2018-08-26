@@ -4,10 +4,10 @@ import Service
 import Utils
 
 class ListingPresenter {
-    weak var viewController: ListingViewControllerProtocol?
+    weak var output: ListingPresenterOutput?
 }
 
-extension ListingPresenter: ListingPresenterProtocol{
+extension ListingPresenter: ListingPresenterInput{
     //
 }
 

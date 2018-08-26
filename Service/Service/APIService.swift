@@ -2,24 +2,24 @@
 import Foundation
 import Utils
 
-public protocol APIServiceProtocol {
-    func performGet(request: APIRequestProtocol,
+public protocol APIService {
+    func performGet(request: APIRequest,
                     completion: @escaping (Result<Data>) -> Void)
 }
 
-public class APIService{
+public class APIServiceDefault{
     public typealias Dependencies = HasAPISession & HasAPIConfig
-    let apiSession: APISessionProtocol
-    let apiConfig: APIConfigProtocol
-    public init(apiSession:APISessionProtocol,
-                apiConfig:APIConfigProtocol){
+    let apiSession: APISession
+    let apiConfig: APIConfig
+    public init(apiSession:APISession,
+                apiConfig:APIConfig){
         self.apiSession = apiSession
         self.apiConfig = apiConfig
     }
 }
 
-extension APIService: APIServiceProtocol {
-    public func performGet(request: APIRequestProtocol,
+extension APIServiceDefault: APIService {
+    public func performGet(request: APIRequest,
                            completion: @escaping (Result<Data>) -> Void){
         let url = urlFrom(config: apiConfig,
                           request: request)
@@ -32,7 +32,7 @@ extension APIService: APIServiceProtocol {
     }
 }
 
-private extension APIService {
+private extension APIServiceDefault {
     enum ServiceError:String,ResultError{
         case url
         case responseFormat
@@ -40,8 +40,8 @@ private extension APIService {
         case data
     }
 
-    func urlFrom(config:APIConfigProtocol,
-                 request:APIRequestProtocol)->URL{
+    func urlFrom(config:APIConfig,
+                 request:APIRequest)->URL{
         var urlComponents = URLComponents()
         urlComponents.scheme = config.scheme
         urlComponents.host = config.hostname

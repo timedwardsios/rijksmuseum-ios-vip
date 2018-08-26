@@ -2,19 +2,19 @@
 import Foundation
 import Utils
 
-public protocol ArtDetailsServiceProtocol {
+public protocol ArtDetailsService {
     func fetchArt(completion: @escaping (Result<[Art]>)->Void)
 }
 
 public class ArtDetailsServiceLive {
     public typealias Dependencies = HasAPIService
-    let apiService:APIServiceProtocol
-    public init(apiService:APIServiceProtocol) {
+    let apiService:APIService
+    public init(apiService:APIService) {
         self.apiService = apiService
     }
 }
 
-extension ArtDetailsServiceLive: ArtDetailsServiceProtocol {
+extension ArtDetailsServiceLive: ArtDetailsService {
     public func fetchArt(completion: @escaping (Result<[Art]>)->Void) {
         let request = ArtRequest()
         apiService.performGet(request: request) {(result) in
@@ -43,7 +43,7 @@ private extension ArtDetailsServiceLive {
         return .success(response.artResponses)
     }
 
-    struct ArtRequest:APIRequestProtocol {
+    struct ArtRequest:APIRequest {
         enum QueryItemName:String {
             case pageCount = "ps"
             case resultsWithImagesOnly = "imgonly"

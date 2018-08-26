@@ -4,22 +4,22 @@ import Utils
 @testable import Service
 
 class ArtServiceAPITests: XCTestCase {
-    var sut: ArtServiceAPI!
+    var sut: ArtServiceLive!
     var apiServiceMock: APIServiceMock!
     override func setUp() {
         super.setUp()
         apiServiceMock = APIServiceMock()
-        sut = ArtServiceAPI(apiService: apiServiceMock)
+        sut = ArtServiceLive(apiService: apiServiceMock)
     }
 }
 
 extension ArtServiceAPITests {
-    class APIServiceMock: APIServiceProtocol {
+    class APIServiceMock: APIService {
         var performGetRequest_invocations = 0
-        var lastRequest:APIRequestProtocol?
+        var lastRequest:APIRequest?
         var shouldReturnSuccess = true
         var shouldReturnData = true
-        func performGet( request: APIRequestProtocol,
+        func performGet( request: APIRequest,
                          completion: @escaping (Result<Data>) -> Void) {
             performGetRequest_invocations += 1
             lastRequest = request

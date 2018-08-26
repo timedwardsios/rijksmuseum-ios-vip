@@ -38,7 +38,7 @@ extension PortfolioInteractorTests {
         }
     }
 
-    class ArtServiceMock: ArtServiceProtocol {
+    class ArtServiceMock: ArtService {
         var active = true
         var artSeed = [Seeds.Model.ArtSeed()]
         var errorSeed = Seeds.ErrorSeed.generic

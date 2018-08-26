@@ -3,11 +3,11 @@ import UIKit
 import Utils
 
 class ListingViewController: UIViewController{
-    let interactor: ListingInteractorProtocol
+    let output: ListingViewControllerOutput
     let router: ListingRouterProtocol
-    init(interactor: ListingInteractorProtocol,
+    init(output: ListingViewControllerOutput,
          router: ListingRouterProtocol){
-        self.interactor = interactor
+        self.output = output
         self.router = router
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,7 +25,7 @@ class ListingViewController: UIViewController{
     }
 }
 
-extension ListingViewController:ListingViewControllerProtocol {
+extension ListingViewController:ListingViewControllerInput {
     //
 }
 

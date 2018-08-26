@@ -1,5 +1,3 @@
-"Protocol" to "Impl"
-
 New idea:
 "Scenes" with sub-scenes.
 AppScene wrapping AppDelegate
