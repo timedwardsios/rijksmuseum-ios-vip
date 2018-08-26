@@ -3,18 +3,18 @@ import UIKit
 import Service
 import Utils
 
-class PortfolioPresenter {
-    weak var viewController: PortfolioViewControllerProtocol?
+class PortfolioPresenter{
+    weak var viewController: PortfolioViewController?
 }
 
 extension PortfolioPresenter: PortfolioPresenterProtocol{
-    func didFetchArt(response: PortfolioScene.FetchArt.Response) {
+    func presentFetchArt(response: Portfolio.FetchArt.Response) {
         self.processFetchArtResponse(response)
     }
 }
 
 private extension PortfolioPresenter {
-    func processFetchArtResponse(_ response:PortfolioScene.FetchArt.Response) {
+    func processFetchArtResponse(_ response:Portfolio.FetchArt.Response) {
         switch response.state {
         case .loading:
             displayFetchArt(state: .loading)
@@ -27,8 +27,8 @@ private extension PortfolioPresenter {
         }
     }
 
-    func displayFetchArt(state:PortfolioScene.FetchArt.ViewModel.State){
-        let viewModel = PortfolioScene.FetchArt.ViewModel(state: state)
+    func displayFetchArt(state:Portfolio.FetchArt.ViewModel.State){
+        let viewModel = Portfolio.FetchArt.ViewModel(state: state)
         self.viewController?.displayFetchArt(viewModel: viewModel)
     }
 

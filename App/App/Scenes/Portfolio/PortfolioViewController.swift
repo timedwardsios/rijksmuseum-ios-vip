@@ -15,21 +15,6 @@ class PortfolioViewController: UIViewController{
 
     let rootView = PortfolioView()
     var imageUrls = [URL]()
-
-    override func loadView() {
-        view = rootView
-    }
-
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        title = "Rijksmuseum"
-        rootView.collectionView.dataSource = self
-        rootView.collectionView.delegate = self
-        rootView.refreshControl.addTarget(self,
-                                          action: #selector(fetchArt),
-                                          for: .valueChanged)
-        fetchArt()
-    }
 }
 
 extension PortfolioViewController: UICollectionViewDataSource{
@@ -67,13 +52,13 @@ extension PortfolioViewController: UICollectionViewDelegate{
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        interactor.selectArt(request: PortfolioScene.SelectArt.Request(index: indexPath.row))
+        interactor.selectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
         router.navigateToListingScene()
     }
 }
 
 extension PortfolioViewController:PortfolioViewControllerProtocol {
-    func displayFetchArt(viewModel: PortfolioScene.FetchArt.ViewModel) {
+    func displayFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
         DispatchQueue.main.async {
             self.unpackViewModel(viewModel)
         }
@@ -81,7 +66,7 @@ extension PortfolioViewController:PortfolioViewControllerProtocol {
 }
 
 private extension PortfolioViewController {
-    func unpackViewModel(_ viewModel:PortfolioScene.FetchArt.ViewModel){
+    func unpackViewModel(_ viewModel:Portfolio.FetchArt.ViewModel){
         switch viewModel.state {
         case .loading:
             self.beginRefreshing()
@@ -123,6 +108,6 @@ private extension PortfolioViewController {
 
 @objc private extension PortfolioViewController {
     func fetchArt() {
-        interactor.fetchArt(request: PortfolioScene.FetchArt.Request())
+        interactor.fetchArt(request: Portfolio.FetchArt.Request())
     }
 }

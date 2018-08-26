@@ -234,10 +234,10 @@
 			isa = PBXGroup;
 			children = (
 				22AC8C83212EEA02000A0BE0 /* PortfolioScene.swift */,
-				22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */,
-				22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */,
 				22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */,
 				22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */,
+				22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */,
+				22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */,
 				22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */,
 			);
 			path = Portfolio;

@@ -4,12 +4,12 @@ import Service
 import Utils
 
 class PortfolioInteractor:PortfolioDataStore{
-    let presenter: PortfolioPresenterProtocol
-    let artService: ArtServiceProtocol
-    init(presenter:PortfolioPresenterProtocol,
-         artService:ArtServiceProtocol) {
+    let presenter:PortfolioPresenter
+    let dependencies: Portfolio.Dependencies
+    init(presenter: PortfolioPresenter,
+                  dependencies: Portfolio.Dependencies) {
         self.presenter = presenter
-        self.artService = artService
+        self.dependencies = dependencies
     }
 
     var arts = [Art]()
@@ -17,14 +17,14 @@ class PortfolioInteractor:PortfolioDataStore{
 }
 
 extension PortfolioInteractor: PortfolioInteractorProtocol {
-    func fetchArt(request: PortfolioScene.FetchArt.Request) {
+    func fetchArt(request: Portfolio.FetchArt.Request) {
         presentFetchArt(state: .loading)
-        artService.fetchArt {[weak self] (result) in
+        dependencies.artService.fetchArt {[weak self] (result) in
             self?.processFetchArtResult(result)
         }
     }
 
-    func selectArt(request: PortfolioScene.SelectArt.Request) {
+    func selectArt(request: Portfolio.SelectArt.Request) {
         guard arts.indices.contains(request.index) else {
             return
         }
@@ -43,8 +43,8 @@ private extension PortfolioInteractor {
         }
     }
 
-    func presentFetchArt(state:PortfolioScene.FetchArt.Response.State){
-        let response = PortfolioScene.FetchArt.Response(state: state)
-        presenter.didFetchArt(response: response)
+    func presentFetchArt(state:Portfolio.FetchArt.Response.State){
+        let response = Portfolio.FetchArt.Response(state: state)
+        presenter.presentFetchArt(response: response)
     }
 }

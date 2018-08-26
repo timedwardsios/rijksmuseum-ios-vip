@@ -18,13 +18,13 @@ class PortfolioInteractorTests: XCTestCase {
 }
 
 extension PortfolioInteractorTests {
-    class PresenterMock: PortfolioPresenterProtocol {
+    class PresenterMock: PortfolioPresenterInput {
         var presentFetchArt_loading_invocations = 0
         var presentFetchArt_loaded_invocations = 0
         var presentFetchArt_loaded_value:[Art]?
         var presentFetchArt_error_invocations = 0
         var presentFetchArt_error_value:Error?
-        func didFetchArt(response: PortfolioScene.FetchArt.Response) {
+        func didFetchArt(response: Portfolio.FetchArt.Response) {
             switch response.state {
             case .loading:
                 presentFetchArt_loading_invocations += 1
@@ -57,14 +57,14 @@ extension PortfolioInteractorTests {
 extension PortfolioInteractorTests {
     func test_fetchArt(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.fetchArt(request: request)
     }
 
     func test_fetchArt_presenter_loading(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.fetchArt(request: request)
         // then
@@ -73,7 +73,7 @@ extension PortfolioInteractorTests {
 
     func test_fetchArt_service(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.fetchArt(request: request)
         // then
@@ -82,7 +82,7 @@ extension PortfolioInteractorTests {
 
     func test_fetchArt_presenter_loaded(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.fetchArt(request: request)
         // then
@@ -91,7 +91,7 @@ extension PortfolioInteractorTests {
 
     func test_fetchArt_presenter_loaded_value(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.fetchArt(request: request)
         // then
@@ -103,7 +103,7 @@ extension PortfolioInteractorTests {
 
     func test_fetchArt_presenter_error(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         artServiceMock.active = false
         // when
         sut.fetchArt(request: request)
@@ -113,7 +113,7 @@ extension PortfolioInteractorTests {
 
     func test_fetchArt_presenter_error_value(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         artServiceMock.active = false
         // when
         sut.fetchArt(request: request)
