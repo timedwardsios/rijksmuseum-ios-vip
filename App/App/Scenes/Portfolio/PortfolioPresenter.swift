@@ -4,10 +4,10 @@ import Service
 import Utils
 
 class PortfolioPresenter{
-    weak var output: Portfolio.Presenter.Output?
+    weak var output: PortfolioPresenterOutput?
 }
 
-extension PortfolioPresenter: Portfolio.Presenter.Input{
+extension PortfolioPresenter: PortfolioPresenterInput{
     func presentFetchArt(response: Portfolio.FetchArt.Response) {
         self.processFetchArtResponse(response)
     }

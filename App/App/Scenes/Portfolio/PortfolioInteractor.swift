@@ -3,23 +3,23 @@ import UIKit
 import Service
 import Utils
 
-class PortfolioInteractor:Portfolio.DataStore{
-    let output:Portfolio.Interactor.Output
-    let dependencies: Portfolio.Dependencies
-    init(output: Portfolio.Interactor.Output,
-         dependencies: Portfolio.Dependencies) {
+class PortfolioInteractor:PortfolioDataStore{
+    let output:PortfolioInteractorOutput
+    let artService:ArtServiceProtocol
+    init(output: PortfolioInteractorOutput,
+         artService: ArtServiceProtocol) {
         self.output = output
-        self.dependencies = dependencies
+        self.artService = artService
     }
 
     var arts = [Art]()
     var selectedArt: Art?
 }
 
-extension PortfolioInteractor: Portfolio.Interactor.Input {
+extension PortfolioInteractor: PortfolioInteractorInput {
     func performFetchArt(request: Portfolio.FetchArt.Request) {
         presentFetchArt(state: .loading)
-        dependencies.artService.fetchArt {[weak self] (result) in
+        artService.fetchArt {[weak self] (result) in
             self?.processFetchArtResult(result)
         }
     }

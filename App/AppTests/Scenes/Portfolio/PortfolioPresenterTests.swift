@@ -4,18 +4,18 @@ import XCTest
 
 class PortfolioPresenterTests: XCTestCase {
     var sut: PortfolioPresenter!
-    var outputMock: Portfolio.Presenter.Output!
+    var outputMock: OutputMock!
     override func setUp() {
         super.setUp()
         outputMock = OutputMock()
         sut = PortfolioPresenter()
-        sut.output = viewControllerMock
+        sut.output = outputMock
     }
 
 }
 
 extension PortfolioPresenterTests {
-    class OutputMock: Portfolio.Presenter.Output {
+    class OutputMock: PortfolioPresenterOutput {
         var presentFetchArt_loading_invocations = 0
         var presentFetchArt_loaded_invocations = 0
         var presentFetchArt_loaded_value:[URL]?
@@ -50,22 +50,22 @@ extension PortfolioPresenterTests {
         let response = Portfolio.FetchArt.Response(state: .loading)
         // when
         sut.presentFetchArt(response: response)
-        XCTAssert(viewControllerMock.presentFetchArt_loading_invocations == 1)
+        XCTAssert(outputMock.presentFetchArt_loading_invocations == 1)
     }
 
     func test_didFetchArt_viewController_loaded(){
         let artSeed = Seeds.Model.ArtSeed()
         let response = Portfolio.FetchArt.Response(state: .loaded([artSeed]))
         sut.presentFetchArt(response: response)
-        XCTAssert(viewControllerMock.presentFetchArt_loaded_invocations == 1)
+        XCTAssert(outputMock.presentFetchArt_loaded_invocations == 1)
     }
 
     func test_didFetchArt_viewController_loaded_value(){
         let artSeed = Seeds.Model.ArtSeed()
         let response = Portfolio.FetchArt.Response(state: .loaded([artSeed]))
         sut.presentFetchArt(response: response)
-        XCTAssert(viewControllerMock.presentFetchArt_loaded_value?.count == 1)
-        let firstValue = viewControllerMock.presentFetchArt_loaded_value?.first
+        XCTAssert(outputMock.presentFetchArt_loaded_value?.count == 1)
+        let firstValue = outputMock.presentFetchArt_loaded_value?.first
         XCTAssert(firstValue == artSeed.imageUrl)
     }
 
@@ -73,13 +73,13 @@ extension PortfolioPresenterTests {
         let errorSeed = Seeds.ErrorSeed.generic
         let response = Portfolio.FetchArt.Response(state: .error(errorSeed))
         sut.presentFetchArt(response: response)
-        XCTAssert(viewControllerMock.presentFetchArt_error_invocations == 1)
+        XCTAssert(outputMock.presentFetchArt_error_invocations == 1)
     }
 
     func test_didFetchArt_viewController_error_value(){
         let errorSeed = Seeds.ErrorSeed.generic
         let response = Portfolio.FetchArt.Response(state: .error(errorSeed))
         sut.presentFetchArt(response: response)
-        XCTAssert(viewControllerMock.presentFetchArt_error_value == errorSeed.message)
+        XCTAssert(outputMock.presentFetchArt_error_value == errorSeed.message)
     }
 }

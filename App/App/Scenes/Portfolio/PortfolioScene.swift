@@ -3,17 +3,17 @@ import Foundation
 import Service
 import Utils
 
-protocol PortfolioLogic{
+protocol PortfolioViewControllerInput:class{
+    func presentFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
+}
+
+protocol PortfolioInteractorInput{
     func performFetchArt(request: Portfolio.FetchArt.Request)
     func performSelectArt(request: Portfolio.SelectArt.Request)
 }
 
-protocol PortfolioPresentation{
+protocol PortfolioPresenterInput{
     func presentFetchArt(response: Portfolio.FetchArt.Response)
-}
-
-protocol PortfolioDisplay:class{
-    func presentFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
 }
 
 protocol PortfolioRouting{
@@ -24,22 +24,11 @@ protocol PortfolioDataStore{
     var selectedArt:Art? {get}
 }
 
-enum Portfolio{
-    enum ViewController{
-        typealias Input = PortfolioDisplay
-        typealias Output = Interactor.Input
-    }
-    enum Interactor{
-        typealias Input = PortfolioLogic
-        typealias Output = Presenter.Input
-    }
-    enum Presenter{
-        typealias Input = PortfolioPresentation
-        typealias Output = ViewController.Input
-    }
-    typealias Router = PortfolioRouter
-    typealias DataStore = PortfolioDataStore
+typealias PortfolioViewControllerOutput = PortfolioInteractorInput
+typealias PortfolioInteractorOutput = PortfolioPresenterInput
+typealias PortfolioPresenterOutput = PortfolioViewControllerInput
 
+enum Portfolio{
     enum FetchArt{
         struct Request{}
         struct Response{
@@ -72,7 +61,7 @@ enum Portfolio{
     static func build(dependencies:Dependencies)->PortfolioViewController{
         let presenter = PortfolioPresenter()
         let interactor = PortfolioInteractor(output: presenter,
-                                             dependencies: dependencies)
+                                             artService: dependencies.artService)
         let router = PortfolioRouter(dataStore: interactor)
         let viewController = PortfolioViewController(output: interactor,
                                                      router: router)
