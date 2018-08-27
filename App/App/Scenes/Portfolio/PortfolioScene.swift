@@ -10,14 +10,13 @@ protocol PortfolioInteractorInput{
 
 protocol PortfolioPresenterInput{
     func presentFetchArt(response: PortfolioScene.FetchArt.Response)
-    func presentSelectArt(response: PortfolioScene.SelectArt.Response)
 }
 
 protocol PortfolioViewControllerInput:class{
     func displayFetchArt(viewModel:PortfolioScene.FetchArt.ViewModel)
 }
 
-protocol PortfolioRouter:class{
+protocol PortfolioDelegate{
     func didSelectArt(_ art:Art)
 }
 
@@ -50,21 +49,19 @@ enum PortfolioScene{
         struct Request{
             let index:Int
         }
-        struct Response{
-            let art:Art
-        }
+        struct Response{}
         struct ViewModel{}
     }
 
     typealias Dependencies = HasArtService
     static func build(dependencies:Dependencies,
-                      router: PortfolioRouter)->UIViewController{
+                      delegate: PortfolioDelegate)->UIViewController{
         let presenter = PortfolioPresenter()
         let interactor = PortfolioInteractor(output: presenter,
+                                             delegate: delegate,
                                              artService: dependencies.artService)
         let viewController = PortfolioViewController(output: interactor)
         presenter.output = viewController
-        presenter.router = router
         return viewController
     }
 }
