@@ -10,7 +10,7 @@ class AppDelegate: UIResponder {
         UINavigationBar.appearance().barTintColor = UIColor(hex: "40474f")
         UINavigationBar.appearance().titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont(name: "Rijksmuseum-Bold", size: 22) as Any
+            NSAttributedString.Key.font: UIFont(name: "Rijksmuseum-Bold", size: 21) as Any
         ]
         UICollectionView.appearance().backgroundColor = .clear
         window.backgroundColor = UIWindow.appearance().backgroundColor // workaround
