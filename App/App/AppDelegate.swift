@@ -17,21 +17,13 @@ class AppDelegate: UIResponder {
     }
 }
 
-extension AppDelegate {
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let portfolioViewController = PortfolioScene.build(dependencies: AppDependencies(),
-                                                           delegate: self)
+extension AppDelegate: UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let portfolioViewController = Portfolio.build(dependencies: AppDependencies())
         let navController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navController
         window.frame = UIScreen.main.bounds
         window.makeKeyAndVisible()
         return true
-    }
-}
-
-extension AppDelegate: UIApplicationDelegate,PortfolioDelegate {
-    func didSelectArt(_ art: Art) {
-        print(art)
     }
 }

@@ -24,7 +24,7 @@ extension PortfolioInteractorTests {
         var presentFetchArt_loaded_value:[Art]?
         var presentFetchArt_error_invocations = 0
         var presentFetchArt_error_value:Error?
-        func presentFetchArt(response: PortfolioScene.FetchArt.Response) {
+        func presentFetchArt(response: Portfolio.FetchArt.Response) {
             switch response.state {
             case .loading:
                 presentFetchArt_loading_invocations += 1
@@ -57,14 +57,14 @@ extension PortfolioInteractorTests {
 extension PortfolioInteractorTests {
     func test_performFetchArt(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.performFetchArt(request: request)
     }
 
     func test_performFetchArt_presenter_loading(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.performFetchArt(request: request)
         // then
@@ -73,7 +73,7 @@ extension PortfolioInteractorTests {
 
     func test_performFetchArt_service(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.performFetchArt(request: request)
         // then
@@ -82,7 +82,7 @@ extension PortfolioInteractorTests {
 
     func test_performFetchArt_presenter_loaded(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.performFetchArt(request: request)
         // then
@@ -91,7 +91,7 @@ extension PortfolioInteractorTests {
 
     func test_performFetchArt_presenter_loaded_value(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         // when
         sut.performFetchArt(request: request)
         // then
@@ -103,7 +103,7 @@ extension PortfolioInteractorTests {
 
     func test_performFetchArt_presenter_error(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         artServiceMock.active = false
         // when
         sut.performFetchArt(request: request)
@@ -113,7 +113,7 @@ extension PortfolioInteractorTests {
 
     func test_performFetchArt_presenter_error_value(){
         // given
-        let request = PortfolioScene.FetchArt.Request()
+        let request = Portfolio.FetchArt.Request()
         artServiceMock.active = false
         // when
         sut.performFetchArt(request: request)

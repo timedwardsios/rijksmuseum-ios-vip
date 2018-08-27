@@ -3,33 +3,32 @@ import UIKit
 import Service
 import Utils
 
-class PortfolioInteractor{
+class PortfolioInteractor:PortfolioDataStore{
     let output:PortfolioInteractorOutput
-    let delegate:PortfolioDelegate
     let artService:ArtService
     init(output: PortfolioInteractorOutput,
-         delegate: PortfolioDelegate,
          artService: ArtService) {
         self.output = output
-        self.delegate = delegate
         self.artService = artService
     }
 
     var arts = [Art]()
+    var selectedArt: Art?
 }
 
 extension PortfolioInteractor: PortfolioInteractorInput {
-    func executeFetchArt(request: PortfolioScene.FetchArt.Request) {
+    func performFetchArt(request: Portfolio.FetchArt.Request) {
         presentFetchArt(state: .loading)
         artService.fetchArt {[weak self] (result) in
             self?.processFetchArtResult(result)
         }
     }
 
-    func executeSelectArt(request: PortfolioScene.SelectArt.Request) {
-        guard arts.indices.contains(request.index) else {return}
-        let selectedArt = arts[request.index]
-        delegate.didSelectArt(selectedArt)
+    func performSelectArt(request: Portfolio.SelectArt.Request) {
+        guard arts.indices.contains(request.index) else {
+            return
+        }
+        selectedArt = arts[request.index]
     }
 }
 
@@ -44,8 +43,8 @@ private extension PortfolioInteractor {
         }
     }
 
-    func presentFetchArt(state:PortfolioScene.FetchArt.Response.State){
-        let response = PortfolioScene.FetchArt.Response(state: state)
+    func presentFetchArt(state:Portfolio.FetchArt.Response.State){
+        let response = Portfolio.FetchArt.Response(state: state)
         output.presentFetchArt(response: response)
     }
 }
