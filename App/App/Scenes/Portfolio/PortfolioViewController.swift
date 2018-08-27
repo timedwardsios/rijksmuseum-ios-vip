@@ -17,6 +17,23 @@ class PortfolioViewController: UIViewController{
     var imageUrls = [URL]()
 }
 
+extension PortfolioViewController{
+    override func loadView() {
+        view = rootView
+    }
+
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        title = "Rijksmuseum"
+        rootView.collectionView.dataSource = self
+        rootView.collectionView.delegate = self
+        rootView.refreshControl.addTarget(self,
+                                          action: #selector(fetchArt),
+                                          for: .valueChanged)
+        fetchArt()
+    }
+}
+
 extension PortfolioViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
@@ -53,7 +70,7 @@ extension PortfolioViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         output.performSelectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
-        router.navigateToListingScene()
+        router.navigateToListing()
     }
 }
 

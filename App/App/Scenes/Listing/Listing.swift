@@ -17,7 +17,7 @@ typealias ListingViewControllerOutput = ListingInteractorInput
 typealias ListingInteractorOutput = ListingPresenterInput
 typealias ListingPresenterOutput = ListingViewControllerInput
 
-enum ListingScene{
+enum Listing{
     typealias Dependencies = HasArtDetailsService
     static func build(dependencies:Dependencies,
                       art:Art)->ListingViewController{

@@ -12,7 +12,7 @@
 		221DB1192130B1830031A401 /* ListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1132130B1830031A401 /* ListingPresenter.swift */; };
 		221DB11A2130B1830031A401 /* ListingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1142130B1830031A401 /* ListingInteractor.swift */; };
 		221DB11B2130B1830031A401 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1152130B1830031A401 /* ListingViewController.swift */; };
-		221DB11C2130B1830031A401 /* ListingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1162130B1830031A401 /* ListingScene.swift */; };
+		221DB11C2130B1830031A401 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1162130B1830031A401 /* Listing.swift */; };
 		221DB11D2130B1830031A401 /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1172130B1830031A401 /* ListingView.swift */; };
 		221DB11E2130B1830031A401 /* ListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1182130B1830031A401 /* ListingRouter.swift */; };
 		221F3EEB212F4A4100907255 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3EE9212F4A4100907255 /* Seeds.swift */; };
@@ -27,7 +27,7 @@
 		22AC8C93212EEA02000A0BE0 /* Rijksmuseum-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C7D212EEA02000A0BE0 /* Rijksmuseum-Bold.ttf */; };
 		22AC8C95212EEA02000A0BE0 /* PortfolioRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */; };
 		22AC8C96212EEA02000A0BE0 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */; };
-		22AC8C97212EEA02000A0BE0 /* PortfolioScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C83212EEA02000A0BE0 /* PortfolioScene.swift */; };
+		22AC8C97212EEA02000A0BE0 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C83212EEA02000A0BE0 /* Portfolio.swift */; };
 		22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */; };
 		22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */; };
 		22AC8C9A212EEA02000A0BE0 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */; };
@@ -55,7 +55,7 @@
 		221DB1132130B1830031A401 /* ListingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPresenter.swift; sourceTree = "<group>"; };
 		221DB1142130B1830031A401 /* ListingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingInteractor.swift; sourceTree = "<group>"; };
 		221DB1152130B1830031A401 /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
-		221DB1162130B1830031A401 /* ListingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingScene.swift; sourceTree = "<group>"; };
+		221DB1162130B1830031A401 /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		221DB1172130B1830031A401 /* ListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingView.swift; sourceTree = "<group>"; };
 		221DB1182130B1830031A401 /* ListingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingRouter.swift; sourceTree = "<group>"; };
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +66,7 @@
 		22695F43213203C8004C47A5 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4721320A27004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4921320A72004C47A5 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22706C8120FE510E006E27EE /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22706C8120FE510E006E27EE /* Rijksmuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rijksmuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C9820FE510F006E27EE /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C9E20FE5110006E27EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../App/Misc/Info.plist; sourceTree = "<group>"; };
 		2289A5C8212F11F700787E2B /* Pods_Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +79,7 @@
 		22AC8C7E212EEA02000A0BE0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioRouter.swift; sourceTree = "<group>"; };
 		22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
-		22AC8C83212EEA02000A0BE0 /* PortfolioScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioScene.swift; sourceTree = "<group>"; };
+		22AC8C83212EEA02000A0BE0 /* Portfolio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenter.swift; sourceTree = "<group>"; };
 		22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioInteractor.swift; sourceTree = "<group>"; };
 		22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		221DB1122130B1830031A401 /* Listing */ = {
 			isa = PBXGroup;
 			children = (
-				221DB1162130B1830031A401 /* ListingScene.swift */,
+				221DB1162130B1830031A401 /* Listing.swift */,
 				221DB1152130B1830031A401 /* ListingViewController.swift */,
 				221DB1172130B1830031A401 /* ListingView.swift */,
 				221DB1142130B1830031A401 /* ListingInteractor.swift */,
@@ -172,7 +172,7 @@
 		22706C8220FE510E006E27EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22706C8120FE510E006E27EE /* App.app */,
+				22706C8120FE510E006E27EE /* Rijksmuseum.app */,
 				22706C9820FE510F006E27EE /* AppTests.xctest */,
 			);
 			name = Products;
@@ -233,7 +233,7 @@
 		22AC8C80212EEA02000A0BE0 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
-				22AC8C83212EEA02000A0BE0 /* PortfolioScene.swift */,
+				22AC8C83212EEA02000A0BE0 /* Portfolio.swift */,
 				22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */,
 				22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */,
 				22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */,
@@ -303,7 +303,7 @@
 			);
 			name = App;
 			productName = Rijksmuseum;
-			productReference = 22706C8120FE510E006E27EE /* App.app */;
+			productReference = 22706C8120FE510E006E27EE /* Rijksmuseum.app */;
 			productType = "com.apple.product-type.application";
 		};
 		22706C9720FE510F006E27EE /* AppTests */ = {
@@ -459,7 +459,7 @@
 				22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */,
 				221DB11A2130B1830031A401 /* ListingInteractor.swift in Sources */,
 				221DB11D2130B1830031A401 /* ListingView.swift in Sources */,
-				221DB11C2130B1830031A401 /* ListingScene.swift in Sources */,
+				221DB11C2130B1830031A401 /* Listing.swift in Sources */,
 				221DB11B2130B1830031A401 /* ListingViewController.swift in Sources */,
 				22AC8C95212EEA02000A0BE0 /* PortfolioRouter.swift in Sources */,
 				22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */,
@@ -469,7 +469,7 @@
 				22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */,
 				22C9BF20212F2EE1000D15E6 /* APIConfigLive.swift in Sources */,
 				22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */,
-				22AC8C97212EEA02000A0BE0 /* PortfolioScene.swift in Sources */,
+				22AC8C97212EEA02000A0BE0 /* Portfolio.swift in Sources */,
 				22AC8C9A212EEA02000A0BE0 /* PortfolioView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +561,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Rijksmuseum;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -615,6 +616,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/$(TARGET_NAME)/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Rijksmuseum;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -635,7 +637,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Rijksmuseum;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,7 +656,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Rijksmuseum;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -677,7 +677,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rijksmuseum.app/Rijksmuseum";
 			};
 			name = Debug;
 		};
@@ -697,7 +697,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rijksmuseum.app/Rijksmuseum";
 			};
 			name = Release;
 		};

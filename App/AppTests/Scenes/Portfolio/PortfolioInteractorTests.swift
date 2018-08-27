@@ -2,7 +2,7 @@
 import XCTest
 import Service
 import Utils
-@testable import App
+@testable import Rijksmuseum
 
 class PortfolioInteractorTests: XCTestCase {
     var sut: PortfolioInteractor!

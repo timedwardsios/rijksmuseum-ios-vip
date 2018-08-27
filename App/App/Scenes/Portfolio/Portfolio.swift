@@ -17,7 +17,7 @@ protocol PortfolioPresenterInput{
 }
 
 protocol PortfolioRouting{
-    func navigateToListingScene()
+    func navigateToListing()
 }
 
 protocol PortfolioDataStore{
