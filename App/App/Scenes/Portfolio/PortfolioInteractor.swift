@@ -5,13 +5,10 @@ import Utils
 
 class PortfolioInteractor{
     let output:PortfolioInteractorOutput
-    let delegate:PortfolioDelegate
     let artService:ArtService
     init(output: PortfolioInteractorOutput,
-         delegate: PortfolioDelegate,
          artService: ArtService) {
         self.output = output
-        self.delegate = delegate
         self.artService = artService
     }
 
@@ -29,7 +26,7 @@ extension PortfolioInteractor: PortfolioInteractorInput {
     func executeSelectArt(request: PortfolioScene.SelectArt.Request) {
         guard arts.indices.contains(request.index) else {return}
         let selectedArt = arts[request.index]
-        delegate.didSelectArt(selectedArt)
+        output.presentSelectArt(response: PortfolioScene.SelectArt.Response(art:selectedArt))
     }
 }
 

@@ -21,7 +21,7 @@ extension AppDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let portfolioViewController = PortfolioScene.build(dependencies: AppDependencies(),
-                                                           delegate: self)
+                                                           router: self)
         let navController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navController
         window.frame = UIScreen.main.bounds
@@ -30,7 +30,7 @@ extension AppDelegate {
     }
 }
 
-extension AppDelegate: UIApplicationDelegate,PortfolioDelegate {
+extension AppDelegate: UIApplicationDelegate,PortfolioRouter {
     func didSelectArt(_ art: Art) {
         print(art)
     }

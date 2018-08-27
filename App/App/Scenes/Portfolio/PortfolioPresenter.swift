@@ -5,11 +5,16 @@ import Utils
 
 class PortfolioPresenter{
     weak var output: PortfolioPresenterOutput?
+    weak var router: PortfolioRouter?
 }
 
 extension PortfolioPresenter: PortfolioPresenterInput{
     func presentFetchArt(response: PortfolioScene.FetchArt.Response) {
-        self.processFetchArtResponse(response)
+        processFetchArtResponse(response)
+    }
+    
+    func presentSelectArt(response: PortfolioScene.SelectArt.Response) {
+        router?.didSelectArt(response.art)
     }
 }
 
