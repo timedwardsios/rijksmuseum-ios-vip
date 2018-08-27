@@ -1,34 +1,30 @@
 
-import Foundation
+import UIKit
 import Service
 import Utils
 
-protocol PortfolioViewControllerInput:class{
-    func presentFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
-}
-
 protocol PortfolioInteractorInput{
-    func performFetchArt(request: Portfolio.FetchArt.Request)
-    func performSelectArt(request: Portfolio.SelectArt.Request)
+    func executeFetchArt(request: PortfolioScene.FetchArt.Request)
+    func executeSelectArt(request: PortfolioScene.SelectArt.Request)
 }
 
 protocol PortfolioPresenterInput{
-    func presentFetchArt(response: Portfolio.FetchArt.Response)
+    func presentFetchArt(response: PortfolioScene.FetchArt.Response)
 }
 
-protocol PortfolioRouting{
-    func navigateToListingScene()
+protocol PortfolioViewControllerInput:class{
+    func displayFetchArt(viewModel:PortfolioScene.FetchArt.ViewModel)
 }
 
-protocol PortfolioDataStore{
-    var selectedArt:Art? {get}
+protocol PortfolioDelegate{
+    func didSelectArt(_ art:Art)
 }
 
 typealias PortfolioViewControllerOutput = PortfolioInteractorInput
 typealias PortfolioInteractorOutput = PortfolioPresenterInput
 typealias PortfolioPresenterOutput = PortfolioViewControllerInput
 
-enum Portfolio{
+enum PortfolioScene{
     enum FetchArt{
         struct Request{}
         struct Response{
@@ -58,15 +54,14 @@ enum Portfolio{
     }
 
     typealias Dependencies = HasArtService
-    static func build(dependencies:Dependencies)->PortfolioViewController{
+    static func build(dependencies:Dependencies,
+                      delegate: PortfolioDelegate)->UIViewController{
         let presenter = PortfolioPresenter()
         let interactor = PortfolioInteractor(output: presenter,
+                                             delegate: delegate,
                                              artService: dependencies.artService)
-        let router = PortfolioRouter(dataStore: interactor)
-        let viewController = PortfolioViewController(output: interactor,
-                                                     router: router)
+        let viewController = PortfolioViewController(output: interactor)
         presenter.output = viewController
-        router.viewController = viewController
         return viewController
     }
 }

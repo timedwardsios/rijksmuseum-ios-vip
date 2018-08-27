@@ -4,11 +4,8 @@ import Utils
 
 class PortfolioViewController: UIViewController{
     let output: PortfolioViewControllerOutput
-    let router: PortfolioRouter
-    init(output: PortfolioViewControllerOutput,
-         router: PortfolioRouter){
+    init(output: PortfolioViewControllerOutput){
         self.output = output
-        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
@@ -52,13 +49,12 @@ extension PortfolioViewController: UICollectionViewDelegate{
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        output.performSelectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
-        router.navigateToListingScene()
+        output.executeSelectArt(request: PortfolioScene.SelectArt.Request(index: indexPath.row))
     }
 }
 
 extension PortfolioViewController:PortfolioViewControllerInput {
-    func presentFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
+    func displayFetchArt(viewModel: PortfolioScene.FetchArt.ViewModel) {
         DispatchQueue.main.async {
             self.unpackViewModel(viewModel)
         }
@@ -66,7 +62,7 @@ extension PortfolioViewController:PortfolioViewControllerInput {
 }
 
 private extension PortfolioViewController {
-    func unpackViewModel(_ viewModel:Portfolio.FetchArt.ViewModel){
+    func unpackViewModel(_ viewModel:PortfolioScene.FetchArt.ViewModel){
         switch viewModel.state {
         case .loading:
             self.beginRefreshing()
@@ -108,6 +104,6 @@ private extension PortfolioViewController {
 
 @objc private extension PortfolioViewController {
     func fetchArt() {
-        output.performFetchArt(request: Portfolio.FetchArt.Request())
+        output.executeFetchArt(request: PortfolioScene.FetchArt.Request())
     }
 }
