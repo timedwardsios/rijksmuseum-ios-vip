@@ -2,7 +2,7 @@
 import Foundation
 import Service
 
-class AppDependencies:ServiceDependencies{
+class DependenciesDefault:ServiceDependencies{
     lazy var apiSession: APISession = {
         return URLSession.shared
     }()

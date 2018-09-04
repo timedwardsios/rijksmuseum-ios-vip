@@ -9,6 +9,4 @@ class ListingRouter{
     }
 }
 
-extension ListingRouter: ListingRouterProtocol{
-    //
-}
+extension ListingRouter: ListingRouterProtocol{}

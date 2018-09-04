@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "22706C8020FE510E006E27EE"
-               BuildableName = "App.app"
+               BuildableName = "Rijksmuseum.app"
                BlueprintName = "App"
                ReferencedContainer = "container:App.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22706C8020FE510E006E27EE"
-            BuildableName = "App.app"
+            BuildableName = "Rijksmuseum.app"
             BlueprintName = "App"
             ReferencedContainer = "container:App.xcodeproj">
          </BuildableReference>
@@ -102,7 +102,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22706C8020FE510E006E27EE"
-            BuildableName = "App.app"
+            BuildableName = "Rijksmuseum.app"
             BlueprintName = "App"
             ReferencedContainer = "container:App.xcodeproj">
          </BuildableReference>
@@ -130,7 +130,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22706C8020FE510E006E27EE"
-            BuildableName = "App.app"
+            BuildableName = "Rijksmuseum.app"
             BlueprintName = "App"
             ReferencedContainer = "container:App.xcodeproj">
          </BuildableReference>
@@ -148,7 +148,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "22706C8020FE510E006E27EE"
-            BuildableName = "App.app"
+            BuildableName = "Rijksmuseum.app"
             BlueprintName = "App"
             ReferencedContainer = "container:App.xcodeproj">
          </BuildableReference>

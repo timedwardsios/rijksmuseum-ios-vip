@@ -3,10 +3,6 @@ import Foundation
 import Service
 import Utils
 
-protocol PortfolioViewControllerInput:class{
-    func presentFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
-}
-
 protocol PortfolioInteractorInput{
     func performFetchArt(request: Portfolio.FetchArt.Request)
     func performSelectArt(request: Portfolio.SelectArt.Request)
@@ -14,6 +10,10 @@ protocol PortfolioInteractorInput{
 
 protocol PortfolioPresenterInput{
     func presentFetchArt(response: Portfolio.FetchArt.Response)
+}
+
+protocol PortfolioViewControllerInput:class{
+    func displayFetchArt(viewModel:Portfolio.FetchArt.ViewModel)
 }
 
 protocol PortfolioRouting{

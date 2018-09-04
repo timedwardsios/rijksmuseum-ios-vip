@@ -21,6 +21,7 @@ class PortfolioView: UIView{
 
 private extension PortfolioView {
     func setupSubviews(){
+        backgroundColor = UIColor(hex: "343537")
         refreshControl.tintColor = .white
         collectionView.refreshControl = refreshControl
         collectionView.alwaysBounceVertical = true

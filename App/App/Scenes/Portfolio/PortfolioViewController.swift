@@ -75,7 +75,7 @@ extension PortfolioViewController: UICollectionViewDelegate{
 }
 
 extension PortfolioViewController:PortfolioViewControllerInput {
-    func presentFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
+    func displayFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
         DispatchQueue.main.async {
             self.unpackViewModel(viewModel)
         }

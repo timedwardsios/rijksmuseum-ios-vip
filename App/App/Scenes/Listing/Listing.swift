@@ -3,11 +3,17 @@ import UIKit
 import Service
 import Utils
 
-protocol ListingViewControllerInput: class{}
+protocol ListingInteractorInput{
+    func performLoadArt(request: Listing.LoadArt.Request)
+}
 
-protocol ListingInteractorInput{}
+protocol ListingPresenterInput{
+    func presentLoadArt(response: Listing.LoadArt.Response)
+}
 
-protocol ListingPresenterInput{}
+protocol ListingViewControllerInput: class{
+    func displayLoadArt(viewModel:Listing.LoadArt.ViewModel)
+}
 
 protocol ListingRouterProtocol{}
 
@@ -18,6 +24,16 @@ typealias ListingInteractorOutput = ListingPresenterInput
 typealias ListingPresenterOutput = ListingViewControllerInput
 
 enum Listing{
+    enum LoadArt{
+        struct Request{}
+        struct Response{
+            let art:Art
+        }
+        struct ViewModel{
+            let imageUrl:URL
+        }
+    }
+
     typealias Dependencies = HasArtDetailsService
     static func build(dependencies:Dependencies,
                       art:Art)->ListingViewController{

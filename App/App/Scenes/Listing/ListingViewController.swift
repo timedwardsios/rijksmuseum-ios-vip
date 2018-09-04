@@ -22,17 +22,13 @@ class ListingViewController: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         title = "Rijksmuseum"
+        output.performLoadArt(request: Listing.LoadArt.Request())
     }
 }
 
 extension ListingViewController:ListingViewControllerInput {
-    //
-}
-
-private extension ListingViewController {
-    //
-}
-
-@objc private extension ListingViewController {
-    //
+    func displayLoadArt(viewModel: Listing.LoadArt.ViewModel) {
+        rootView.imageView.sd_setImage(with: viewModel.imageUrl,
+                                       completed: nil)
+    }
 }

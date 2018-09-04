@@ -16,6 +16,11 @@ class ListingInteractor: ListingDataStore{
     }
 }
 
-extension ListingInteractor: ListingInteractorInput {}
+extension ListingInteractor: ListingInteractorInput {
+    func performLoadArt(request: Listing.LoadArt.Request) {
+        let response = Listing.LoadArt.Response(art: self.art)
+        output.presentLoadArt(response: response)
+    }
+}
 
 private extension ListingInteractor {}

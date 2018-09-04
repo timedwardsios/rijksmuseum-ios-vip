@@ -29,7 +29,7 @@ private extension PortfolioPresenter {
 
     func presentFetchArt(state:Portfolio.FetchArt.ViewModel.State){
         let viewModel = Portfolio.FetchArt.ViewModel(state: state)
-        output?.presentFetchArt(viewModel: viewModel)
+        output?.displayFetchArt(viewModel: viewModel)
     }
 
     func imageUrlsFrom(arts:[Art]) -> [URL] {

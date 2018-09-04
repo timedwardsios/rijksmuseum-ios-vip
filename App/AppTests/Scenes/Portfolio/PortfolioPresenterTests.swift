@@ -21,7 +21,7 @@ extension PortfolioPresenterTests {
         var presentFetchArt_loaded_value:[URL]?
         var presentFetchArt_error_invocations = 0
         var presentFetchArt_error_value:String?
-        func presentFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
+        func displayFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
             switch viewModel.state {
             case .loading:
                 presentFetchArt_loading_invocations += 1

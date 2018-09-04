@@ -13,7 +13,7 @@ class PortfolioRouter{
 extension PortfolioRouter: PortfolioRouting {
     func navigateToListing() {
         guard let art = dataStore.selectedArt else {return}
-        let listingViewController = Listing.build(dependencies: AppDependencies(),
+        let listingViewController = Listing.build(dependencies: DependenciesDefault(),
                                                        art: art)
         viewController?.navigationController?.pushViewController(listingViewController,
                                                                        animated: true)
