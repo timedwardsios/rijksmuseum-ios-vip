@@ -17,6 +17,7 @@
 		221DB11E2130B1830031A401 /* ListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1182130B1830031A401 /* ListingRouter.swift */; };
 		221F3EEB212F4A4100907255 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3EE9212F4A4100907255 /* Seeds.swift */; };
 		221F3EEC212F4A4100907255 /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 221F3EEA212F4A4100907255 /* collection.json */; };
+		224195FD226292C50006348F /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224195FC226292C50006348F /* PortfolioViewModel.swift */; };
 		22695F3921317CF6004C47A5 /* DependenciesDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22695F3821317CF6004C47A5 /* DependenciesDefault.swift */; };
 		22695F4821320A27004C47A5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4721320A27004C47A5 /* Utils.framework */; };
 		22695F4A21320A72004C47A5 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4921320A72004C47A5 /* Service.framework */; };
@@ -60,6 +61,7 @@
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F3EE9212F4A4100907255 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		221F3EEA212F4A4100907255 /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
+		224195FC226292C50006348F /* PortfolioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
 		22695F3821317CF6004C47A5 /* DependenciesDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependenciesDefault.swift; sourceTree = "<group>"; };
 		22695F3D213202E1004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F43213203C8004C47A5 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +243,7 @@
 			children = (
 				22AC8C83212EEA02000A0BE0 /* PortfolioContract.swift */,
 				22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */,
+				224195FC226292C50006348F /* PortfolioViewModel.swift */,
 				22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */,
 				22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */,
 				22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */,
@@ -473,6 +476,7 @@
 				221DB1192130B1830031A401 /* ListingPresenter.swift in Sources */,
 				22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */,
 				22C9BF20212F2EE1000D15E6 /* APIConfigLive.swift in Sources */,
+				224195FD226292C50006348F /* PortfolioViewModel.swift in Sources */,
 				22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */,
 				22AC8C97212EEA02000A0BE0 /* PortfolioContract.swift in Sources */,
 			);

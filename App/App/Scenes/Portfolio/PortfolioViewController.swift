@@ -1,16 +1,15 @@
-
 import UIKit
 import Utils
 
 class PortfolioViewController: UICollectionViewController {
 
-    let interactor: PortfolioInteracting
+    let eventHandler: PortfolioEventHandling
 
     let router: PortfolioRouting
 
-    init(interactor: PortfolioInteracting,
+    init(eventHandler: PortfolioEventHandling,
          router: PortfolioRouting){
-        self.interactor = interactor
+        self.eventHandler = eventHandler
         self.router = router
         super.init(collectionViewLayout: UICollectionViewLayout())
     }
@@ -31,9 +30,9 @@ extension PortfolioViewController{
         collectionView.dataSource = self
         collectionView.delegate = self
         refreshControl.addTarget(self,
-                                          action: #selector(fetchArt),
-                                          for: .valueChanged)
-        fetchArt()
+                                 action: #selector(didPullToRefresh),
+                                 for: .valueChanged)
+        eventHandler.didLoadView()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -79,13 +78,13 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-//        interactor.performSelectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
+//        eventHandler.performSelectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
         router.navigateToListing()
     }
 }
 
-extension PortfolioViewController: PortfolioView {
-    func setViewModel(_ viewModel: Portfolio.ViewModel) {
+extension PortfolioViewController: PortfolioViewing {
+    func setViewModel(_ viewModel: PortfolioViewModel) {
         DispatchQueue.main.async {
             self.unpackViewModel(viewModel)
         }
@@ -120,25 +119,17 @@ private extension PortfolioViewController {
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
     }
 
-    func unpackViewModel(_ viewModel:Portfolio.ViewModel){
+    func unpackViewModel(_ viewModel:PortfolioViewModel){
         switch viewModel.state {
         case .loading:
-            self.beginRefreshing()
+            refreshControl.beginRefreshingProgramatically()
         case .loaded(let imageUrls):
-            self.endRefreshing()
+            refreshControl.endRefreshing()
             self.setImageUrls(imageUrls)
         case .error(let message):
-            self.endRefreshing()
+            refreshControl.endRefreshing()
             self.displayErrorMessage(message)
         }
-    }
-
-    func beginRefreshing(){
-        refreshControl.beginRefreshingProgramatically()
-    }
-
-    func endRefreshing(){
-        refreshControl.endRefreshing()
     }
 
     func setImageUrls(_ imageUrls:[URL]){
@@ -162,7 +153,7 @@ private extension PortfolioViewController {
 
 // MARK: - Selectors
 @objc extension PortfolioViewController {
-    func fetchArt() {
-        interactor.performFetchArt(request: Portfolio.FetchArt.Request())
+    func didPullToRefresh() {
+        eventHandler.didPullToRefresh()
     }
 }
