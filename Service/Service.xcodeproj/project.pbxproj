@@ -274,10 +274,11 @@
 				TargetAttributes = {
 					22AA605B212F29BE007379B1 = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					22AA6064212F29BF007379B1 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -287,6 +288,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 22AA6052212F29BE007379B1;
 			productRefGroup = 22AA605D212F29BE007379B1 /* Products */;
@@ -568,7 +570,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Workers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -594,7 +596,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Workers;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -612,7 +614,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.WorkersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -630,7 +632,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.WorkersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -29,7 +29,6 @@ private extension AppDelegate{
         let portfolioViewController = Portfolio.build(dependencies: DependenciesDefault())
         let navController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navController
-        window.frame = UIScreen.main.bounds
         window.makeKeyAndVisible()
     }
 }

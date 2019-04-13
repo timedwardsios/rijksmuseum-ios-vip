@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B90B1DAD8E3443C5365300D /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB434F98CFA0638795566DD /* Pods_Utils.framework */; };
-		2289A5BD212F104C00787E2B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C63212EE7E5000A0BE0 /* Result.swift */; };
 		2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */; };
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
@@ -34,7 +33,6 @@
 		22AC8C4D212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AC8C52212EE635000A0BE0 /* UtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C59212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22AC8C63212EE7E5000A0BE0 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		22AC8C64212EE7E5000A0BE0 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
 		22AC8C66212EE7E5000A0BE0 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -123,7 +121,6 @@
 		22AC8C4B212EE635000A0BE0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				22AC8C63212EE7E5000A0BE0 /* Result.swift */,
 				22AC8C6B212EE7F4000A0BE0 /* UI */,
 				22AC8C68212EE7E5000A0BE0 /* Extensions */,
 				222A72CE212EEBC800BA759F /* Resources */,
@@ -257,7 +254,7 @@
 				TargetAttributes = {
 					22AC8C48212EE635000A0BE0 = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					22AC8C51212EE635000A0BE0 = {
 						CreatedOnToolsVersion = 10.0;
@@ -270,6 +267,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 22AC8C3F212EE635000A0BE0;
 			productRefGroup = 22AC8C4A212EE635000A0BE0 /* Products */;
@@ -367,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2289A5BD212F104C00787E2B /* Result.swift in Sources */,
 				2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */,
 				2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */,
 				22AC8C6A212EE7E6000A0BE0 /* ImageViewCell.swift in Sources */,
@@ -540,7 +537,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -566,7 +563,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

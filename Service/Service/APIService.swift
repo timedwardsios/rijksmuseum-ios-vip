@@ -4,7 +4,7 @@ import Utils
 
 public protocol APIService {
     func performGet(request: APIRequest,
-                    completion: @escaping (Result<Data>) -> Void)
+                    completion: @escaping (Result<Data, Error>) -> Void)
 }
 
 public class APIServiceDefault{
@@ -20,7 +20,7 @@ public class APIServiceDefault{
 
 extension APIServiceDefault: APIService {
     public func performGet(request: APIRequest,
-                           completion: @escaping (Result<Data>) -> Void){
+                           completion: @escaping (Result<Data, Error>) -> Void){
         let url = urlFrom(config: apiConfig,
                           request: request)
         apiSession.dataTask(with: url) { (data, response, error) in
@@ -33,7 +33,7 @@ extension APIServiceDefault: APIService {
 }
 
 private extension APIServiceDefault {
-    enum ServiceError:String,ResultError{
+    enum ServiceError:String,Error{
         case url
         case responseFormat
         case statusCode
@@ -52,7 +52,7 @@ private extension APIServiceDefault {
 
     func dataResultFromSessionResponse(_ data:Data?,
                                        _ urlResponse:URLResponse?,
-                                       _ error:Error?) -> Result<Data>{
+                                       _ error:Error?) -> Result<Data, Error>{
         guard let httpResponse = urlResponse as? HTTPURLResponse else {
             return .failure(ServiceError.responseFormat)
         }

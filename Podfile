@@ -1,10 +1,10 @@
-platform:ios, '11.4'
+platform:ios, '12.2'
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 use_frameworks!
 
 workspace 'Rijksmuseum'
 
-pod 'TinyConstraints', :git => 'https://github.com/timedwardsios/TinyConstraints'
+pod "TinyConstraints"
 pod "SDWebImage"
 
 target 'App' do

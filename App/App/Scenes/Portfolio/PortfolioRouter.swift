@@ -3,9 +3,12 @@ import UIKit
 import Service
 
 class PortfolioRouter{
+
     weak var viewController: PortfolioViewController?
-    let dataStore:PortfolioDataStore
-    init(dataStore:PortfolioDataStore){
+
+    let dataStore:PortfolioDataStoring
+
+    init(dataStore:PortfolioDataStoring){
         self.dataStore = dataStore
     }
 }

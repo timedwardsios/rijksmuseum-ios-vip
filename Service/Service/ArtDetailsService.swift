@@ -3,7 +3,7 @@ import Foundation
 import Utils
 
 public protocol ArtDetailsService {
-    func fetchArt(completion: @escaping (Result<[Art]>)->Void)
+    func fetchArt(completion: @escaping (Result<[Art], Error>)->Void)
 }
 
 public class ArtDetailsServiceLive {
@@ -15,7 +15,7 @@ public class ArtDetailsServiceLive {
 }
 
 extension ArtDetailsServiceLive: ArtDetailsService {
-    public func fetchArt(completion: @escaping (Result<[Art]>)->Void) {
+    public func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
         let request = ArtRequest()
         apiService.performGet(request: request) {(result) in
             switch result {
@@ -30,12 +30,12 @@ extension ArtDetailsServiceLive: ArtDetailsService {
 }
 
 private extension ArtDetailsServiceLive {
-    enum ServiceError:String,ResultError{
+    enum ServiceError:String,Error{
         case apiService
         case json
     }
 
-    func decodeJsonData(_ data:Data)->Result<[Art]>{
+    func decodeJsonData(_ data:Data)->Result<[Art], Error>{
         let jsonDecoder = JSONDecoder()
         guard let response = try? jsonDecoder.decode(ArtResponse.self, from: data) else {
             return .failure(ServiceError.json)
