@@ -1,25 +1,27 @@
 
 import Utils
 
-public typealias ServiceDependencies =
+typealias Dependencies =
     HasAPISession &
     HasAPIConfig &
     HasAPIService &
     HasArtService &
     HasArtDetailsService
 
-public protocol HasAPISession{
+// MARK: - internal
+protocol HasAPISession{
     var apiSession:APISession{get}
 }
 
-public protocol HasAPIConfig{
+protocol HasAPIConfig{
     var apiConfig:APIConfig{get}
 }
 
-public protocol HasAPIService{
+protocol HasAPIService{
     var apiService:APIService{get}
 }
 
+// MARK: - public
 public protocol HasArtService{
     var artService:ArtService{get}
 }

@@ -1,3 +1,4 @@
-Write core data caching layer
+Write Realm caching layer
 Finish details scene
 Improve on "Themable" protocol
+Make collection view more declerative

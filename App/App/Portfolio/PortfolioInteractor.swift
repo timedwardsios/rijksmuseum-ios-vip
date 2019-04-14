@@ -4,7 +4,6 @@ import Utils
 class PortfolioInteractor: PortfolioDataStoring{
 
     let presenter: PortfolioPresenting
-
     let artService: ArtService
 
     init(presenter: PortfolioPresenting,
@@ -17,24 +16,18 @@ class PortfolioInteractor: PortfolioDataStoring{
     var selectedArt: Art?
 }
 
-extension PortfolioInteractor: PortfolioEventHandling {
-    func didLoadView() {
-        fetchArt()
+extension PortfolioInteractor: PortfolioInteracting {
+    func selectArt(withIndex index: Int) {
+        selectedArt = arts[safe: index]
     }
 
-    func didPullToRefresh() {
-        fetchArt()
+    internal func fetchArt() {
+        presenter.didBeginLoading()
+        artService.fetchArt(completion: processFetchArtResult)
     }
 }
 
 private extension PortfolioInteractor {
-    func fetchArt() {
-        presenter.didBeginLoading()
-        artService.fetchArt {[weak self] (result) in
-            self?.processFetchArtResult(result)
-        }
-    }
-
     func processFetchArtResult(_ result:Result<[Art], Error>){
         switch result {
         case .success(let arts):

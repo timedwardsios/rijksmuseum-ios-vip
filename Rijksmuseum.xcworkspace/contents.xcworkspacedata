@@ -5,7 +5,7 @@
       location = "group:todo">
    </FileRef>
    <FileRef
-      location = "group:/Users/Tim/dev/rijksmuseum-ios-vip/App/App.xcodeproj">
+      location = "group:App/App.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Service/Service.xcodeproj">
@@ -15,8 +15,5 @@
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:App/App.xcodeproj">
    </FileRef>
 </Workspace>

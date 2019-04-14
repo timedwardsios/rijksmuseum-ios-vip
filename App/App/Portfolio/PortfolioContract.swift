@@ -1,9 +1,9 @@
 import Foundation
 import Service
 
-protocol PortfolioEventHandling{
-    func didLoadView()
-    func didPullToRefresh()
+protocol PortfolioInteracting{
+    func fetchArt()
+    func selectArt(withIndex index:Int)
 }
 
 protocol PortfolioPresenting{
@@ -31,7 +31,7 @@ enum Portfolio {
         let interactor = PortfolioInteractor(presenter: presenter,
                                              artService: dependencies.artService)
         let router = PortfolioRouter(dataStore: interactor)
-        let viewController = PortfolioViewController(eventHandler: interactor,
+        let viewController = PortfolioViewController(interactor: interactor,
                                                      router: router)
         presenter.view = viewController
         router.viewController = viewController

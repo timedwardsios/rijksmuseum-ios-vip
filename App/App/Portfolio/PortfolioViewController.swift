@@ -3,13 +3,13 @@ import Utils
 
 class PortfolioViewController: UICollectionViewController {
 
-    let eventHandler: PortfolioEventHandling
+    let interactor: PortfolioInteracting
 
     let router: PortfolioRouting
 
-    init(eventHandler: PortfolioEventHandling,
+    init(interactor: PortfolioInteracting,
          router: PortfolioRouting){
-        self.eventHandler = eventHandler
+        self.interactor = interactor
         self.router = router
         super.init(collectionViewLayout: UICollectionViewLayout())
     }
@@ -32,7 +32,7 @@ extension PortfolioViewController{
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
-        eventHandler.didLoadView()
+        interactor.fetchArt()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -50,7 +50,7 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let reuseId = ImageViewCell.reuseIdentifier()
+        let reuseId = ImageViewCell.reuseIdentifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId,
                                                       for: indexPath)
         guard let imageViewCell = cell as? ImageViewCell else {
@@ -78,7 +78,6 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-//        eventHandler.performSelectArt(request: Portfolio.SelectArt.Request(index: indexPath.row))
         router.navigateToListing()
     }
 }
@@ -100,7 +99,7 @@ private extension PortfolioViewController {
         collectionView.refreshControl = refreshControl
         collectionView.alwaysBounceVertical = true
         collectionView.register(ImageViewCell.self,
-                                forCellWithReuseIdentifier: ImageViewCell.reuseIdentifier())
+                                forCellWithReuseIdentifier: ImageViewCell.reuseIdentifier)
         view.addSubview(collectionView)
         collectionView.edges(to: view)
     }
@@ -154,6 +153,6 @@ private extension PortfolioViewController {
 // MARK: - Selectors
 @objc extension PortfolioViewController {
     func didPullToRefresh() {
-        eventHandler.didPullToRefresh()
+        interactor.fetchArt()
     }
 }

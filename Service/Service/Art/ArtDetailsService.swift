@@ -1,37 +1,33 @@
-
 import Foundation
-import Utils
 
 public protocol ArtDetailsService {
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void)
 }
 
-public class ArtDetailsServiceLive {
-    public typealias Dependencies = HasAPIService
+class ArtDetailsServiceDefault {
     let apiService:APIService
-    public init(apiService:APIService) {
+    init(apiService:APIService) {
         self.apiService = apiService
     }
 }
 
-extension ArtDetailsServiceLive: ArtDetailsService {
-    public func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
+extension ArtDetailsServiceDefault: ArtDetailsService {
+    func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
         let request = ArtRequest()
         apiService.performGet(request: request) {(result) in
             switch result {
             case .success(let data):
                 let dataResult = self.decodeJsonData(data)
                 completion(dataResult)
-            case .failure(_):
-                completion(.failure(ServiceError.apiService))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
 }
 
-private extension ArtDetailsServiceLive {
+private extension ArtDetailsServiceDefault {
     enum ServiceError:String,Error{
-        case apiService
         case json
     }
 
@@ -60,7 +56,7 @@ private extension ArtDetailsServiceLive {
 
     struct ArtResponse: Decodable {
         struct ArtResponse: Art, Decodable {
-            var remoteId: String
+            var id: String
             var title: String
             var artist: String
             var imageUrl: URL
@@ -75,7 +71,7 @@ private extension ArtDetailsServiceLive {
 
             init(from decoder: Decoder) throws {
                 let container = try decoder.container(keyedBy: CodingKeys.self)
-                self.remoteId = try container.decode(String.self, forKey: .remoteId)
+                self.id = try container.decode(String.self, forKey: .remoteId)
                 self.title = try container.decode(String.self, forKey: .title)
                 self.artist = try container.decode(String.self, forKey: .artist)
                 let webImage = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .imageDict)

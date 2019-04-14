@@ -1,49 +1,47 @@
-
 import Foundation
-import Utils
+
+enum ArtServiceError: String,LocalizedError{
+    case json = "JSON decoding error"
+}
 
 public protocol ArtService {
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void)
 }
 
-public class ArtServiceLive {
-    public typealias Dependencies = HasAPIService
+class ArtServiceDefault {
     let apiService:APIService
-    public init(apiService:APIService){
+    init(apiService:APIService){
         self.apiService = apiService
     }
 }
 
-extension ArtServiceLive:ArtService {
-    public func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
+extension ArtServiceDefault: ArtService {
+    func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
         let request = ArtRequest()
         apiService.performGet(request: request) {(result) in
             switch result {
             case .success(let data):
-                let dataResult = self.decodeJsonData(data)
+                let dataResult = ArtServiceDefault.decodeJsonData(data)
                 completion(dataResult)
-            case .failure(_):
-                completion(.failure(ServiceError.apiService))
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
     }
 }
 
-private extension ArtServiceLive {
-    enum ServiceError:String,Error{
-        case apiService
-        case json
-    }
+private extension ArtServiceDefault {
 
-    func decodeJsonData(_ data:Data)->Result<[Art], Error>{
+    static func decodeJsonData(_ data:Data)->Result<[Art], Error>{
         let jsonDecoder = JSONDecoder()
-        guard let response = try? jsonDecoder.decode(ArtResponse.self, from: data) else {
-            return .failure(ServiceError.json)
+        if let response = try? jsonDecoder.decode(ArtResponse.self, from: data) {
+            return .success(response.artResponses)
+        } else {
+            return .failure(ArtServiceError.json)
         }
-        return .success(response.artResponses)
     }
 
-    struct ArtRequest:APIRequest {
+    struct ArtRequest: APIRequest {
         enum QueryItemName:String {
             case pageCount = "ps"
             case resultsWithImagesOnly = "imgonly"
@@ -60,7 +58,7 @@ private extension ArtServiceLive {
 
     struct ArtResponse: Decodable {
         struct ArtResponse: Art, Decodable {
-            var remoteId: String
+            var id: String
             var title: String
             var artist: String
             var imageUrl: URL
@@ -75,7 +73,7 @@ private extension ArtServiceLive {
 
             init(from decoder: Decoder) throws {
                 let container = try decoder.container(keyedBy: CodingKeys.self)
-                self.remoteId = try container.decode(String.self, forKey: .remoteId)
+                self.id = try container.decode(String.self, forKey: .remoteId)
                 self.title = try container.decode(String.self, forKey: .title)
                 self.artist = try container.decode(String.self, forKey: .artist)
                 let webImage = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .imageDict)

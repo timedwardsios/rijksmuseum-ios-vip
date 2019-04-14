@@ -2,7 +2,6 @@ import Service
 import Utils
 
 class PortfolioPresenter{
-
     weak var view: PortfolioViewing?
 }
 
