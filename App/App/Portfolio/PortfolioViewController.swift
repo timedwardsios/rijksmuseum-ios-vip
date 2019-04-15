@@ -3,14 +3,13 @@ import Utils
 
 class PortfolioViewController: UICollectionViewController {
 
-    let interactor: PortfolioInteracting
+    let interacting: PortfolioInteraction
+    let routing: PortfolioRouting
 
-    let router: PortfolioRouting
-
-    init(interactor: PortfolioInteracting,
-         router: PortfolioRouting){
-        self.interactor = interactor
-        self.router = router
+    init(interacting: PortfolioInteraction,
+         routing: PortfolioRouting){
+        self.interacting = interacting
+        self.routing = routing
         super.init(collectionViewLayout: UICollectionViewLayout())
     }
 
@@ -22,7 +21,7 @@ class PortfolioViewController: UICollectionViewController {
 }
 
 // MARK: - Overrides
-extension PortfolioViewController{
+extension PortfolioDisplay{
     override func viewDidLoad(){
         super.viewDidLoad()
         setupSubviews()
@@ -32,7 +31,7 @@ extension PortfolioViewController{
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
-        interactor.fetchArt()
+        interacting.fetchArts()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -42,7 +41,7 @@ extension PortfolioViewController{
 }
 
 // MARK: - UICollectionViewDataSource
-extension PortfolioViewController {
+extension PortfolioDisplay {
     override func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         return imageUrls.count
@@ -65,7 +64,7 @@ extension PortfolioViewController {
 }
 
 // MARK: - UICollectionViewDelegate
-extension PortfolioViewController {
+extension PortfolioDisplay {
     override func collectionView(_ collectionView: UICollectionView,
                         didHighlightItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)?.alpha = 0.5
@@ -78,20 +77,30 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        router.navigateToListing()
+        routing.navigateToListing()
     }
 }
 
-extension PortfolioViewController: PortfolioViewing {
-    func setViewModel(_ viewModel: PortfolioViewModel) {
-        DispatchQueue.main.async {
-            self.unpackViewModel(viewModel)
+extension PortfolioDisplay: PortfolioDisplaying {
+    func displayArts(state: State<[URL]>) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {return}
+            switch state {
+            case .loading:
+                self.refreshControl.beginRefreshingProgramatically()
+            case .loaded(let imageUrls):
+                self.refreshControl.endRefreshing()
+                self.setImageUrls(imageUrls)
+            case .error(let error):
+                self.refreshControl.endRefreshing()
+                self.displayErrorMessage(error.localizedDescription)
+            }
         }
     }
 }
 
 // MARK: - Private methods
-private extension PortfolioViewController {
+private extension PortfolioDisplay {
 
     func setupSubviews(){
         view.backgroundColor = UIColor(hex: "343537")
@@ -118,19 +127,6 @@ private extension PortfolioViewController {
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
     }
 
-    func unpackViewModel(_ viewModel:PortfolioViewModel){
-        switch viewModel.state {
-        case .loading:
-            refreshControl.beginRefreshingProgramatically()
-        case .loaded(let imageUrls):
-            refreshControl.endRefreshing()
-            self.setImageUrls(imageUrls)
-        case .error(let message):
-            refreshControl.endRefreshing()
-            self.displayErrorMessage(message)
-        }
-    }
-
     func setImageUrls(_ imageUrls:[URL]){
         self.imageUrls = imageUrls
         collectionView.reloadData()
@@ -151,7 +147,7 @@ private extension PortfolioViewController {
 }
 
 // MARK: - Selectors
-@objc extension PortfolioViewController {
+@objc extension PortfolioDisplay {
     func didPullToRefresh() {
         interactor.fetchArt()
     }

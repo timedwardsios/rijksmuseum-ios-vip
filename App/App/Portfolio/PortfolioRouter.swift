@@ -2,7 +2,7 @@ import Service
 
 class PortfolioRouter{
 
-    weak var viewController: PortfolioViewController?
+    weak var viewController: PortfolioDisplay?
 
     let dataStore:PortfolioDataStoring
 

@@ -2,20 +2,20 @@ import Service
 import Utils
 
 class PortfolioPresenter{
-    weak var view: PortfolioViewing?
+    weak var display: PortfolioDisplay?
 }
 
-extension PortfolioPresenter: PortfolioPresenting{
-    func didBeginLoading() {
-        view?.setViewModel(PortfolioViewModel(state: .loading))
-    }
-
-    func didFetchArts(_ arts: [Art]) {
-        let imageUrls = arts.map({$0.imageUrl})
-        view?.setViewModel(PortfolioViewModel(state: .loaded(imageUrls)))
-    }
-
-    func didError(_ error: Error) {
-        view?.setViewModel(PortfolioViewModel(state: .error(error.localizedDescription)))
+extension PortfolioPresenter: PortfolioPresentation{
+    func presentArts(state: State<[Art], Error>) {
+        switch state {
+        case .loading:
+            display?.set
+            display?.setViewModel(PortfolioViewModel(state: .loading))
+        case .loaded(let arts):
+            let imageUrls = arts.map({$0.imageUrl})
+            display?.setViewModel(PortfolioViewModel(state: .loaded(imageUrls)))
+        case .error(let error):
+            display?.setViewModel(PortfolioViewModel(state: .error(error.localizedDescription)))
+        }
     }
 }

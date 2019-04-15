@@ -3,12 +3,12 @@ import Utils
 
 class PortfolioInteractor: PortfolioDataStoring{
 
-    let presenter: PortfolioPresenting
+    let presentation: PortfolioPresentation
     let artService: ArtService
 
-    init(presenter: PortfolioPresenting,
+    init(presentation: PortfolioPresentation,
          artService: ArtService) {
-        self.presenter = presenter
+        self.presentation = presentation
         self.artService = artService
     }
 
@@ -16,25 +16,23 @@ class PortfolioInteractor: PortfolioDataStoring{
     var selectedArt: Art?
 }
 
-extension PortfolioInteractor: PortfolioInteracting {
-    func selectArt(withIndex index: Int) {
-        selectedArt = arts[safe: index]
+extension PortfolioInteractor: PortfolioInteraction {
+    func fetchArts() {
+        presentation.presentArts(state: .loading)
+        artService.fetchArt(completion: artServiceDidFetchArt)
     }
 
-    internal func fetchArt() {
-        presenter.didBeginLoading()
-        artService.fetchArt(completion: processFetchArtResult)
+    func selectArt(withIndex index: Int) {
+        selectedArt = arts[safe: index]
     }
 }
 
 private extension PortfolioInteractor {
-    func processFetchArtResult(_ result:Result<[Art], Error>){
-        switch result {
-        case .success(let arts):
-            self.arts = arts
-            presenter.didFetchArts(arts)
-        case .failure(let error):
-            presenter.didError(error)
+    func artServiceDidFetchArt(_ result:Result<[Art], Error>){
+        do {
+            self.arts = try result.get()
+        } catch (let error) {
+            presentation.presentArts(state: .error(error))
         }
     }
 }
