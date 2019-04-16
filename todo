@@ -1,6 +1,5 @@
-Try coordinator pattern
 Write Realm caching layer
 Finish details scene
 Improve on "Themable" protocol
 Make collection view more declerative
-Figure out if supposed to pass around dependencies or not
+Figure out if supposed to pass around dependencies or not. Yes, instantiate them once.

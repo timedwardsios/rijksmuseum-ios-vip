@@ -3,40 +3,57 @@ import Foundation
 import Service
 import Utils
 
-protocol PortfolioEventHandling{
-    func didLoadView()
-    func didPullToRefresh()
-    func didTapCell(atIndex index: Int)
+// VIP
+protocol PortfolioInteracting {
+    func fetchArtsRequest(_ request:Portfolio.FetchArts.Request)
+    func selectArtRequest(_ request:Portfolio.SelectArt.Request)
 }
 
-protocol PortfolioInteracting{
-    func fetchArts()
+protocol PortfolioPresentating : class {
+    func fetchArtsResponse(_ response:Portfolio.FetchArts.Response)
+    func selectArtResponse(_ response:Portfolio.SelectArt.Response)
 }
 
-protocol PortfolioPresentating : class{
-    func didFetchArts(_ arts:[Art])
-    func didError(_ error:Error)
+protocol PortfolioView : class {
+    func fetchArtsViewModel(_ viewModel:Portfolio.FetchArts.ViewModel)
+    func selectArtViewModel(_ viewModel:Portfolio.SelectArt.ViewModel)
 }
 
-protocol PortfolioDisplaying : class {
-    func setIsLoading(_ isLoading:Bool)
-    func setImageUrls(_ imageUrls:[URL])
-    func displayErrorMessage(_ message:String)
+protocol PortfolioDataStore {
+    var arts: [Art] {get}
+    var selectedArt: Art? {get}
 }
 
-//protocol PortfolioDataStoring{
-//    var selectedArt:Art? {get}
-//}
-
+// scene
 enum Portfolio {
+    enum FetchArts {
+        struct Request {}
+
+        struct Response {
+            let state: State<[Art], Error>
+        }
+
+        struct ViewModel {
+            let state: State<[URL], String>
+        }
+    }
+
+    enum SelectArt  {
+        struct Request {
+            let index: Int
+        }
+
+        struct Response {}
+
+        struct ViewModel {}
+    }
+
     static func build() -> PortfolioViewController {
-        let interactor = PortfolioInteractor(artService: DependenciesDefault.artService)
-        let presenter = PortfolioPresenter(interactor: interactor)
-        let display = PortfolioViewController(eventHandler: presenter)
-        presenter.display = display
-        interactor.presenter = presenter
-        return display
+        let presenter = PortfolioPresenter()
+        let interactor = PortfolioInteractor(presenter: presenter,
+                                             artService: DependenciesDefault.artService)
+        let view = PortfolioViewController(interactor: interactor)
+        presenter.view = view
+        return view
     }
 }
-
-

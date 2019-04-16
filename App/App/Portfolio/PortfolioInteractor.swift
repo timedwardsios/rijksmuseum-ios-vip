@@ -2,31 +2,36 @@
 import Service
 import Utils
 
-class PortfolioInteractor {
+class PortfolioInteractor: PortfolioDataStore {
 
-    weak var presenter: PortfolioPresentating?
-    
+    let presenter: PortfolioPresentating
     let artService: ArtService
 
-    init(presenter: PortfolioPresentating? = nil,
+    init(presenter: PortfolioPresentating,
          artService: ArtService) {
         self.presenter = presenter
         self.artService = artService
     }
+
+    var arts = [Art]()
+    var selectedArt: Art?
 }
 
 extension PortfolioInteractor: PortfolioInteracting {
-    func fetchArts() {
-        artService.fetchArt(completion: artServiceDidFetchArt)
-    }
-}
-
-private extension PortfolioInteractor {
-    func artServiceDidFetchArt(_ result:Result<[Art], Error>){
-        do {
-            presenter?.didFetchArts(try result.get())
-        } catch (let error) {
-            presenter?.didError(error)
+    func fetchArtsRequest(_ request: Portfolio.FetchArts.Request) {
+        presenter.fetchArtsResponse(.init(state: .loading))
+        artService.fetchArt { [weak self] (result) in
+            guard let self = self else {return}
+            do {
+                let urls = try result.get()
+                self.presenter.fetchArtsResponse(.init(state: .loaded(urls)))
+            } catch (let error) {
+                self.presenter.fetchArtsResponse(.init(state: .error(error)))
+            }
         }
+    }
+
+    func selectArtRequest(_ request: Portfolio.SelectArt.Request) {
+        self.selectedArt = arts[safe: request.index]
     }
 }
