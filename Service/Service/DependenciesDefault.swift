@@ -12,12 +12,13 @@ public enum DependenciesDefault: Dependencies {
     }()
 
     static var apiService: APIService = {
-        return APIServiceDefault()
+        return APIServiceDefault(apiSession: DependenciesDefault.apiSession,
+                                 apiConfig: DependenciesDefault.apiConfig)
     }()
 
     // MARK: - public
     public static var artService: ArtService = {
-        return ArtServiceDefault()
+        return ArtServiceDefault(apiService: DependenciesDefault.apiService)
     }()
 
     public static var artDetailsService: ArtDetailsService = {

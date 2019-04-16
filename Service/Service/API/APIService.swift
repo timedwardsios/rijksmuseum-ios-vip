@@ -14,8 +14,8 @@ protocol APIService {
 class APIServiceDefault{
     let apiSession: APISession
     let apiConfig: APIConfig
-    init(apiSession:APISession = DependenciesDefault.apiSession,
-                apiConfig:APIConfig = DependenciesDefault.apiConfig){
+    init(apiSession:APISession,
+                apiConfig:APIConfig){
         self.apiSession = apiSession
         self.apiConfig = apiConfig
     }

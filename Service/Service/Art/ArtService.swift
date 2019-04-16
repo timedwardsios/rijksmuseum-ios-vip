@@ -10,7 +10,7 @@ public protocol ArtService {
 
 class ArtServiceDefault {
     let apiService:APIService
-    init(apiService:APIService = DependenciesDefault.apiService){
+    init(apiService:APIService){
         self.apiService = apiService
     }
 }

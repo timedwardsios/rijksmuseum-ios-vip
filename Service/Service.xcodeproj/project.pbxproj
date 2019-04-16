@@ -10,6 +10,7 @@
 		221DB10F2130AAC20031A401 /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB10E2130AAC20031A401 /* Art.swift */; };
 		221DB1202130B1F30031A401 /* ArtDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB11F2130B1F30031A401 /* ArtDetailsService.swift */; };
 		221F3ECE212F3E9A00907255 /* ArtServiceAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3ECC212F3E7F00907255 /* ArtServiceAPITests.swift */; };
+		2222142422664C9B001F41C8 /* DependenciesNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222142322664C9B001F41C8 /* DependenciesNew.swift */; };
 		224196072262A7420006348F /* DependenciesDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196062262A7420006348F /* DependenciesDefault.swift */; };
 		2241960D2262A7700006348F /* APIConfigDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2241960C2262A7700006348F /* APIConfigDefault.swift */; };
 		224196122262AD170006348F /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196102262AD160006348F /* APISession.swift */; };
@@ -43,6 +44,7 @@
 		221DB11F2130B1F30031A401 /* ArtDetailsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetailsService.swift; sourceTree = "<group>"; };
 		221F3EC7212F397100907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F3ECC212F3E7F00907255 /* ArtServiceAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtServiceAPITests.swift; sourceTree = "<group>"; };
+		2222142322664C9B001F41C8 /* DependenciesNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependenciesNew.swift; sourceTree = "<group>"; };
 		224196062262A7420006348F /* DependenciesDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependenciesDefault.swift; sourceTree = "<group>"; };
 		2241960C2262A7700006348F /* APIConfigDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfigDefault.swift; sourceTree = "<group>"; };
 		224196102262AD160006348F /* APISession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISession.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		22AA605E212F29BE007379B1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				2222142322664C9B001F41C8 /* DependenciesNew.swift */,
 				22695F362131773F004C47A5 /* Dependencies.swift */,
 				224196062262A7420006348F /* DependenciesDefault.swift */,
 				2241960E2262A7A00006348F /* Art */,
@@ -423,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2222142422664C9B001F41C8 /* DependenciesNew.swift in Sources */,
 				22C9BF08212F2A38000D15E6 /* APIService.swift in Sources */,
 				22C9BF1D212F2E8F000D15E6 /* ArtService.swift in Sources */,
 				224196072262A7420006348F /* DependenciesDefault.swift in Sources */,
