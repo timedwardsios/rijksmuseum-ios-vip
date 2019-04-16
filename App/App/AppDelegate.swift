@@ -4,7 +4,7 @@ import Service
 @UIApplicationMain
 class AppDelegate: UIResponder {
     let window = UIWindow()
-    let assembler: Assembler = AssemblerDefault()
+    let dependencies: Dependencies = DependenciesDefault()
 }
 
 extension AppDelegate: UIApplicationDelegate {
@@ -26,7 +26,7 @@ private extension AppDelegate{
     }
 
     func setupRootViewController(){
-        let portfolioViewController: PortfolioViewController = assembler.resolve()
+        let portfolioViewController: PortfolioViewController = Portfolio.build(dependencies: dependencies)
         let navController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navController
         window.makeKeyAndVisible()

@@ -6,7 +6,7 @@ public protocol ArtDetailsService {
 
 class ArtDetailsServiceDefault {
     let apiService:APIService
-    init(apiService:APIService = DependenciesDefault.apiService) {
+    init(apiService:APIService) {
         self.apiService = apiService
     }
 }

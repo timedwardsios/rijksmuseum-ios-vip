@@ -3,7 +3,6 @@ import Foundation
 import Service
 import Utils
 
-// VIP
 protocol PortfolioInteracting {
     func fetchArtsRequest(_ request:Portfolio.FetchArts.Request)
     func selectArtRequest(_ request:Portfolio.SelectArt.Request)
@@ -20,11 +19,13 @@ protocol PortfolioView : class {
 }
 
 protocol PortfolioDataStore {
-    var arts: [Art] {get}
     var selectedArt: Art? {get}
 }
 
-// scene
+protocol PortfolioRouting {
+    func routeToListing()
+}
+
 enum Portfolio {
     enum FetchArts {
         struct Request {}
@@ -46,5 +47,15 @@ enum Portfolio {
         struct Response {}
 
         struct ViewModel {}
+    }
+
+    static func build(dependencies: Dependencies) -> PortfolioViewController {
+        let presenter = PortfolioPresenter()
+        let interactor = PortfolioInteractor(presenter: presenter, artService: dependencies.resolve())
+        let router = PortfolioRouter(dependencies: dependencies, dataStore: interactor)
+        let viewController = PortfolioViewController(interactor: interactor, router: router)
+        presenter.view = viewController
+        router.viewController = viewController
+        return viewController
     }
 }

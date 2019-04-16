@@ -5,8 +5,12 @@ import Utils
 class PortfolioViewController: UICollectionViewController {
 
     let interactor: PortfolioInteracting
-    init(interactor: PortfolioInteracting){
+    let router: PortfolioRouting
+
+    init(interactor: PortfolioInteracting,
+         router: PortfolioRouting){
         self.interactor = interactor
+        self.router = router
         super.init(collectionViewLayout: .init())
     }
 
@@ -79,6 +83,7 @@ extension PortfolioViewController {
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         interactor.selectArtRequest(.init(index: indexPath.row))
+        router.routeToListing()
     }
 }
 

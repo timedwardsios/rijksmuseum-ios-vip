@@ -2,11 +2,16 @@
 import Foundation
 import Utils
 
-public protocol ServiceAssembler {
+public protocol ServiceDependencies {
     func resolve() -> ArtService
+    func resolve() -> ArtDetailsService
 }
 
-extension ServiceAssembler {
+extension ServiceDependencies {
+    public func resolve() -> ArtDetailsService {
+        return ArtDetailsServiceDefault(apiService: resolve())
+    }
+
     public func resolve() -> ArtService {
         return ArtServiceDefault(apiService: resolve())
     }

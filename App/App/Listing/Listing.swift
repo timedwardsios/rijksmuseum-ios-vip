@@ -33,18 +33,4 @@ enum Listing{
             let imageUrl:URL
         }
     }
-
-    typealias Dependencies = HasArtDetailsService
-    static func build(art:Art)->ListingViewController{
-        let presenter = ListingPresenter()
-        let interactor = ListingInteractor(output: presenter,
-                                           artDetailsService: DependenciesDefault.artDetailsService,
-                                           art:art)
-        let router = ListingRouter(dataStore: interactor)
-        let viewController = ListingViewController(output: interactor,
-                                                   router: router)
-        presenter.output = viewController
-        router.viewController = viewController
-        return viewController
-    }
 }
