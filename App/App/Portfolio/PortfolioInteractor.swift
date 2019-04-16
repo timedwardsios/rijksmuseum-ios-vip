@@ -1,14 +1,15 @@
+
 import Service
 import Utils
 
 class PortfolioInteractor: PortfolioDataStoring{
 
-    let presentation: PortfolioPresentation
+    let presenting: PortfolioPresentating
     let artService: ArtService
 
-    init(presentation: PortfolioPresentation,
+    init(presenting: PortfolioPresentating,
          artService: ArtService) {
-        self.presentation = presentation
+        self.presenting = presenting
         self.artService = artService
     }
 
@@ -16,9 +17,9 @@ class PortfolioInteractor: PortfolioDataStoring{
     var selectedArt: Art?
 }
 
-extension PortfolioInteractor: PortfolioInteraction {
+extension PortfolioInteractor: PortfolioInteracting {
     func fetchArts() {
-        presentation.presentArts(state: .loading)
+        presenting.didStartLoading()
         artService.fetchArt(completion: artServiceDidFetchArt)
     }
 
@@ -31,8 +32,9 @@ private extension PortfolioInteractor {
     func artServiceDidFetchArt(_ result:Result<[Art], Error>){
         do {
             self.arts = try result.get()
+            presenting.didFetchArts(arts)
         } catch (let error) {
-            presentation.presentArts(state: .error(error))
+            presenting.didError(error)
         }
     }
 }

@@ -1,18 +1,21 @@
+
 import Foundation
 import Service
 import Utils
 
-protocol PortfolioInteraction{
-    func performFetchArts()
-    func performSelectArt(withIndex index:Int)
+protocol PortfolioInteracting{
+    func fetchArts()
+    func selectArt(withIndex index:Int)
 }
 
-protocol PortfolioPresentation{
-    func presentArts(state: State<[Art], Error>)
+protocol PortfolioPresentating{
+    func didStartLoading()
+    func didFetchArts(_ arts:[Art])
+    func didError(_ error:Error)
 }
 
-protocol PortfolioDisplay:class{
-    func displayArts(state: State<[URL], String>)
+protocol PortfolioView:class{
+    func setViewModel(_ viewModel:PortfolioViewModel)
 }
 
 protocol PortfolioRouting{
@@ -25,13 +28,13 @@ protocol PortfolioDataStoring{
 
 enum Portfolio {
     typealias Dependencies = HasArtService
-    static func build(dependencies:Dependencies)->PortfolioDisplay{
+    static func build(dependencies:Dependencies) -> PortfolioViewController {
         let presenter = PortfolioPresenter()
-        let interactor = PortfolioInteractor(presentation: presenter,
+        let interactor = PortfolioInteractor(presenting: presenter,
                                              artService: dependencies.artService)
         let router = PortfolioRouter(dataStore: interactor)
-        let viewController = PortfolioDisplay(interacting: interactor,
-                                              routing: router)
+        let viewController = PortfolioViewController(interacting: interactor,
+                                                     routing: router)
         presenter.view = viewController
         router.viewController = viewController
         return viewController

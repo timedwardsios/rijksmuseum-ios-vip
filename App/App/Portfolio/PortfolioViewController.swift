@@ -1,27 +1,32 @@
+
 import UIKit
 import Utils
 
 class PortfolioViewController: UICollectionViewController {
 
-    let interacting: PortfolioInteraction
+    let interacting: PortfolioInteracting
     let routing: PortfolioRouting
 
-    init(interacting: PortfolioInteraction,
+    init(interacting: PortfolioInteracting,
          routing: PortfolioRouting){
         self.interacting = interacting
         self.routing = routing
-        super.init(collectionViewLayout: UICollectionViewLayout())
+        super.init(collectionViewLayout: .init())
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
 
     let refreshControl = UIRefreshControl()
 
-    var imageUrls = [URL]()
+    var imageUrls = [URL](){
+        didSet{
+            collectionView.reloadData()
+        }
+    }
 }
 
 // MARK: - Overrides
-extension PortfolioDisplay{
+extension PortfolioViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         setupSubviews()
@@ -41,7 +46,7 @@ extension PortfolioDisplay{
 }
 
 // MARK: - UICollectionViewDataSource
-extension PortfolioDisplay {
+extension PortfolioViewController {
     override func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         return imageUrls.count
@@ -64,7 +69,7 @@ extension PortfolioDisplay {
 }
 
 // MARK: - UICollectionViewDelegate
-extension PortfolioDisplay {
+extension PortfolioViewController {
     override func collectionView(_ collectionView: UICollectionView,
                         didHighlightItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)?.alpha = 0.5
@@ -77,30 +82,30 @@ extension PortfolioDisplay {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        routing.navigateToListing()
+        routing.routeToListing()
     }
 }
 
-extension PortfolioDisplay: PortfolioDisplaying {
-    func displayArts(state: State<[URL]>) {
+extension PortfolioViewController: PortfolioView {
+    func setViewModel(_ viewModel: PortfolioViewModel) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}
-            switch state {
+            switch viewModel.state {
             case .loading:
                 self.refreshControl.beginRefreshingProgramatically()
             case .loaded(let imageUrls):
                 self.refreshControl.endRefreshing()
-                self.setImageUrls(imageUrls)
-            case .error(let error):
+                self.imageUrls = imageUrls
+            case .error(let errorMessage):
                 self.refreshControl.endRefreshing()
-                self.displayErrorMessage(error.localizedDescription)
+                self.displayErrorMessage(errorMessage)
             }
         }
     }
 }
 
 // MARK: - Private methods
-private extension PortfolioDisplay {
+private extension PortfolioViewController {
 
     func setupSubviews(){
         view.backgroundColor = UIColor(hex: "343537")
@@ -127,11 +132,6 @@ private extension PortfolioDisplay {
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
     }
 
-    func setImageUrls(_ imageUrls:[URL]){
-        self.imageUrls = imageUrls
-        collectionView.reloadData()
-    }
-
     func displayErrorMessage(_ message:String){
         let alertViewController = UIAlertController(title: "Error",
                                                     message: message,
@@ -147,8 +147,8 @@ private extension PortfolioDisplay {
 }
 
 // MARK: - Selectors
-@objc extension PortfolioDisplay {
+@objc extension PortfolioViewController {
     func didPullToRefresh() {
-        interactor.fetchArt()
+        interacting.fetchArts()
     }
 }

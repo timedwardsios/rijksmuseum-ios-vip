@@ -1,8 +1,9 @@
+
 import Service
 
 class PortfolioRouter{
 
-    weak var viewController: PortfolioDisplay?
+    weak var viewController: PortfolioViewController?
 
     let dataStore:PortfolioDataStoring
 
@@ -12,7 +13,7 @@ class PortfolioRouter{
 }
 
 extension PortfolioRouter: PortfolioRouting {
-    func navigateToListing() {
+    func routeToListing() {
         guard let art = dataStore.selectedArt else {return}
         let listingViewController = Listing.build(dependencies: DependenciesDefault(),
                                                   art: art)
