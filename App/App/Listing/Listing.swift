@@ -35,11 +35,10 @@ enum Listing{
     }
 
     typealias Dependencies = HasArtDetailsService
-    static func build(dependencies:Dependencies,
-                      art:Art)->ListingViewController{
+    static func build(art:Art)->ListingViewController{
         let presenter = ListingPresenter()
         let interactor = ListingInteractor(output: presenter,
-                                           artDetailsService: dependencies.artDetailsService,
+                                           artDetailsService: DependenciesDefault.artDetailsService,
                                            art:art)
         let router = ListingRouter(dataStore: interactor)
         let viewController = ListingViewController(output: interactor,

@@ -1,30 +1,26 @@
 
 import Foundation
 
-public class DependenciesDefault: Dependencies {
-
-    public init(){}
-
+public enum DependenciesDefault: Dependencies {
     // MARK: - internal
-    lazy var apiSession: APISession = {
+    static var apiSession: APISession = {
         return URLSession.shared
     }()
 
-    lazy var apiConfig: APIConfig = {
+    static var apiConfig: APIConfig = {
         return APIConfigDefault()
     }()
 
-    lazy var apiService: APIService = {
-        return APIServiceDefault(apiSession: self.apiSession,
-                                 apiConfig: self.apiConfig)
+    static var apiService: APIService = {
+        return APIServiceDefault()
     }()
 
     // MARK: - public
-    public lazy var artService: ArtService = {
-        return ArtServiceDefault(apiService: self.apiService)
+    public static var artService: ArtService = {
+        return ArtServiceDefault()
     }()
 
-    public lazy var artDetailsService: ArtDetailsService = {
-        return ArtDetailsServiceDefault(apiService: self.apiService)
+    public static var artDetailsService: ArtDetailsService = {
+        return ArtDetailsServiceDefault()
     }()
 }

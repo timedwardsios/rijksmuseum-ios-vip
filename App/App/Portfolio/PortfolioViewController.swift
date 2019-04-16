@@ -4,13 +4,9 @@ import Utils
 
 class PortfolioViewController: UICollectionViewController {
 
-    let interacting: PortfolioInteracting
-    let routing: PortfolioRouting
-
-    init(interacting: PortfolioInteracting,
-         routing: PortfolioRouting){
-        self.interacting = interacting
-        self.routing = routing
+    let eventHandler: PortfolioEventHandling
+    init(eventHandler: PortfolioEventHandling){
+        self.eventHandler = eventHandler
         super.init(collectionViewLayout: .init())
     }
 
@@ -36,7 +32,7 @@ extension PortfolioViewController{
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
-        interacting.fetchArts()
+        eventHandler.didLoadView()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -82,24 +78,33 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        routing.routeToListing()
+        eventHandler.didTapCell(atIndex: indexPath.row)
     }
 }
 
-extension PortfolioViewController: PortfolioView {
-    func setViewModel(_ viewModel: PortfolioViewModel) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            switch viewModel.state {
-            case .loading:
+extension PortfolioViewController: PortfolioDisplaying {
+    func setIsLoading(_ isLoading: Bool) {
+        DispatchQueue.main.async {
+            if isLoading == true {
                 self.refreshControl.beginRefreshingProgramatically()
-            case .loaded(let imageUrls):
+            } else {
                 self.refreshControl.endRefreshing()
-                self.imageUrls = imageUrls
-            case .error(let errorMessage):
-                self.refreshControl.endRefreshing()
-                self.displayErrorMessage(errorMessage)
             }
+        }
+    }
+
+    func setImageUrls(_ imageUrls: [URL]) {
+        DispatchQueue.main.async {
+            self.imageUrls = imageUrls
+        }
+    }
+
+    func displayErrorMessage(_ message: String) {
+        DispatchQueue.main.async {
+            let alertViewController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertViewController.addAction(okAction)
+            self.present(alertViewController, animated: true)
         }
     }
 }
@@ -131,24 +136,11 @@ private extension PortfolioViewController {
                                                right: gutterSize)
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
     }
-
-    func displayErrorMessage(_ message:String){
-        let alertViewController = UIAlertController(title: "Error",
-                                                    message: message,
-                                                    preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK",
-                                     style: .default,
-                                     handler: nil)
-        alertViewController.addAction(okAction)
-        self.present(alertViewController,
-                     animated: true,
-                     completion: nil)
-    }
 }
 
 // MARK: - Selectors
 @objc extension PortfolioViewController {
     func didPullToRefresh() {
-        interacting.fetchArts()
+        eventHandler.didPullToRefresh()
     }
 }

@@ -10,22 +10,22 @@ typealias Dependencies =
 
 // MARK: - internal
 protocol HasAPISession{
-    var apiSession:APISession{get}
+    static var apiSession:APISession{get}
 }
 
 protocol HasAPIConfig{
-    var apiConfig:APIConfig{get}
+    static var apiConfig:APIConfig{get}
 }
 
 protocol HasAPIService{
-    var apiService:APIService{get}
+    static var apiService:APIService{get}
 }
 
 // MARK: - public
 public protocol HasArtService{
-    var artService:ArtService{get}
+    static var artService:ArtService{get}
 }
 
 public protocol HasArtDetailsService{
-    var artDetailsService:ArtDetailsService{get}
+    static var artDetailsService:ArtDetailsService{get}
 }

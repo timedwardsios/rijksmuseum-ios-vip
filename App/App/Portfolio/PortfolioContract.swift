@@ -3,41 +3,39 @@ import Foundation
 import Service
 import Utils
 
-protocol PortfolioInteracting{
-    func fetchArts()
-    func selectArt(withIndex index:Int)
+protocol PortfolioEventHandling{
+    func didLoadView()
+    func didPullToRefresh()
+    func didTapCell(atIndex index: Int)
 }
 
-protocol PortfolioPresentating{
-    func didStartLoading()
+protocol PortfolioInteracting{
+    func fetchArts()
+}
+
+protocol PortfolioPresentating : class{
     func didFetchArts(_ arts:[Art])
     func didError(_ error:Error)
 }
 
-protocol PortfolioView:class{
-    func setViewModel(_ viewModel:PortfolioViewModel)
+protocol PortfolioDisplaying : class {
+    func setIsLoading(_ isLoading:Bool)
+    func setImageUrls(_ imageUrls:[URL])
+    func displayErrorMessage(_ message:String)
 }
 
-protocol PortfolioRouting{
-    func routeToListing()
-}
-
-protocol PortfolioDataStoring{
-    var selectedArt:Art? {get}
-}
+//protocol PortfolioDataStoring{
+//    var selectedArt:Art? {get}
+//}
 
 enum Portfolio {
-    typealias Dependencies = HasArtService
-    static func build(dependencies:Dependencies) -> PortfolioViewController {
-        let presenter = PortfolioPresenter()
-        let interactor = PortfolioInteractor(presenting: presenter,
-                                             artService: dependencies.artService)
-        let router = PortfolioRouter(dataStore: interactor)
-        let viewController = PortfolioViewController(interacting: interactor,
-                                                     routing: router)
-        presenter.view = viewController
-        router.viewController = viewController
-        return viewController
+    static func build() -> PortfolioViewController {
+        let interactor = PortfolioInteractor(artService: DependenciesDefault.artService)
+        let presenter = PortfolioPresenter(interactor: interactor)
+        let display = PortfolioViewController(eventHandler: presenter)
+        presenter.display = display
+        interactor.presenter = presenter
+        return display
     }
 }
 

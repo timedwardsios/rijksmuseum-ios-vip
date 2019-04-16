@@ -3,20 +3,45 @@ import Service
 import Utils
 
 class PortfolioPresenter{
-    weak var view: PortfolioViewController?
+
+    let interactor: PortfolioInteracting
+    weak var display: PortfolioDisplaying?
+
+    init(interactor: PortfolioInteracting,
+         display: PortfolioDisplaying? = nil) {
+        self.interactor = interactor
+        self.display = display
+    }
+
+    var arts = [Art]()
+    var selectedArt: Art?
 }
 
-extension PortfolioPresenter: PortfolioPresentating{
-    func didStartLoading() {
-        view?.setViewModel(.init(state: .loading))
+extension PortfolioPresenter: PortfolioEventHandling {
+    func didLoadView() {
+        interactor.fetchArts()
+        display?.setIsLoading(true)
     }
-    
+
+    func didPullToRefresh() {
+        interactor.fetchArts()
+        display?.setIsLoading(true)
+    }
+
+    func didTapCell(atIndex index: Int) {
+        selectedArt = arts[safe: index]
+    }
+}
+
+extension PortfolioPresenter: PortfolioPresentating {
     func didFetchArts(_ arts: [Art]) {
         let imageUrls = arts.map({$0.imageUrl})
-        view?.setViewModel(.init(state: .loaded(imageUrls)))
+        display?.setIsLoading(false)
+        display?.setImageUrls(imageUrls)
     }
-    
+
     func didError(_ error: Error) {
-        view?.setViewModel(.init(state: .error(error.localizedDescription)))
+        display?.setIsLoading(false)
+        display?.displayErrorMessage(error.localizedDescription)
     }
 }
