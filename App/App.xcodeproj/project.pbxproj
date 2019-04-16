@@ -18,6 +18,7 @@
 		221F3EEB212F4A4100907255 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3EE9212F4A4100907255 /* Seeds.swift */; };
 		221F3EEC212F4A4100907255 /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 221F3EEA212F4A4100907255 /* collection.json */; };
 		2222142022661377001F41C8 /* PortfolioContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222141F22661377001F41C8 /* PortfolioContract.swift */; };
+		22221426226650F2001F41C8 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22221425226650F2001F41C8 /* Assembler.swift */; };
 		22695F4821320A27004C47A5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4721320A27004C47A5 /* Utils.framework */; };
 		22695F4A21320A72004C47A5 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4921320A72004C47A5 /* Service.framework */; };
 		22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C75212EEA02000A0BE0 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		221F3EE9212F4A4100907255 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		221F3EEA212F4A4100907255 /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
 		2222141F22661377001F41C8 /* PortfolioContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioContract.swift; sourceTree = "<group>"; };
+		22221425226650F2001F41C8 /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		22695F3D213202E1004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F43213203C8004C47A5 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4721320A27004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */,
+				22221425226650F2001F41C8 /* Assembler.swift */,
 				22AC8C80212EEA02000A0BE0 /* Portfolio */,
 				221DB1122130B1830031A401 /* Listing */,
 				22AC8C74212EEA02000A0BE0 /* Resources */,
@@ -440,6 +443,7 @@
 			files = (
 				221DB11E2130B1830031A401 /* ListingRouter.swift in Sources */,
 				22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */,
+				22221426226650F2001F41C8 /* Assembler.swift in Sources */,
 				221DB11A2130B1830031A401 /* ListingInteractor.swift in Sources */,
 				2222142022661377001F41C8 /* PortfolioContract.swift in Sources */,
 				221DB11D2130B1830031A401 /* ListingView.swift in Sources */,

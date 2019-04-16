@@ -47,13 +47,4 @@ enum Portfolio {
 
         struct ViewModel {}
     }
-
-    static func build() -> PortfolioViewController {
-        let presenter = PortfolioPresenter()
-        let interactor = PortfolioInteractor(presenter: presenter,
-                                             artService: DependenciesDefault.artService)
-        let view = PortfolioViewController(interactor: interactor)
-        presenter.view = view
-        return view
-    }
 }
