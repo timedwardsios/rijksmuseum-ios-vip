@@ -48,14 +48,4 @@ enum Portfolio {
 
         struct ViewModel {}
     }
-
-    static func build(dependencies: Dependencies) -> PortfolioViewController {
-        let presenter = PortfolioPresenter()
-        let interactor = PortfolioInteractor(presenter: presenter, artService: dependencies.resolve())
-        let router = PortfolioRouter(dependencies: dependencies, dataStore: interactor)
-        let viewController = PortfolioViewController(interactor: interactor, router: router)
-        presenter.view = viewController
-        router.viewController = viewController
-        return viewController
-    }
 }

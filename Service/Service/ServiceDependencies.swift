@@ -1,6 +1,5 @@
 
 import Foundation
-import Utils
 
 public protocol ServiceDependencies {
     func resolve() -> ArtService

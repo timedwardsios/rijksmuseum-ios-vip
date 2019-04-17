@@ -26,7 +26,7 @@ private extension AppDelegate{
     }
 
     func setupRootViewController(){
-        let portfolioViewController: PortfolioViewController = Portfolio.build(dependencies: dependencies)
+        let portfolioViewController: PortfolioViewController = dependencies.resolve()
         let navController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navController
         window.makeKeyAndVisible()

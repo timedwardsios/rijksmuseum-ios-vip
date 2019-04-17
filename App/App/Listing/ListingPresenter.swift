@@ -4,14 +4,15 @@ import Service
 import Utils
 
 class ListingPresenter {
-    weak var output: ListingPresenterOutput?
-}
+    weak var view: ListingView?
 
-extension ListingPresenter: ListingPresenterInput{
-    func presentLoadArt(response: Listing.LoadArt.Response) {
-        let viewModel = Listing.LoadArt.ViewModel(imageUrl: response.art.imageUrl)
-        output?.displayLoadArt(viewModel: viewModel)
+    init(view: ListingView? = nil) {
+        self.view = view
     }
 }
 
-private extension ListingPresenter {}
+extension ListingPresenter: ListingPresentating {
+    func loadArtResponse(_ response: Listing.LoadArt.Response) {
+        view?.loadArtViewModel(.init(imageUrl: response.art.imageUrl))
+    }
+}

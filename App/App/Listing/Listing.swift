@@ -1,29 +1,24 @@
 
-import UIKit
+import Foundation
 import Service
 import Utils
 
-protocol ListingInteractorInput{
-    func performLoadArt(request: Listing.LoadArt.Request)
+protocol ListingInteracting {
+    func loadArtRequest(_ request:Listing.LoadArt.Request)
 }
 
-protocol ListingPresenterInput{
-    func presentLoadArt(response: Listing.LoadArt.Response)
+protocol ListingPresentating : class {
+    func loadArtResponse(_ response:Listing.LoadArt.Response)
 }
 
-protocol ListingViewControllerInput: class{
-    func displayLoadArt(viewModel:Listing.LoadArt.ViewModel)
+protocol ListingView : class {
+    func loadArtViewModel(_ viewModel:Listing.LoadArt.ViewModel)
 }
 
-protocol ListingRouterProtocol{}
+protocol ListingDataStore {}
+protocol ListingRouting {}
 
-protocol ListingDataStore{}
-
-typealias ListingViewControllerOutput = ListingInteractorInput
-typealias ListingInteractorOutput = ListingPresenterInput
-typealias ListingPresenterOutput = ListingViewControllerInput
-
-enum Listing{
+enum Listing {
     enum LoadArt{
         struct Request{}
         struct Response{
