@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221545212267181C0062E9C6 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221545202267181C0062E9C6 /* AppDependencies.swift */; };
+		2215452222671C460062E9C6 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1162130B1830031A401 /* Listing.swift */; };
+		2215452322671C460062E9C6 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1152130B1830031A401 /* ListingViewController.swift */; };
+		2215452422671C460062E9C6 /* ListingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1142130B1830031A401 /* ListingInteractor.swift */; };
+		2215452522671C460062E9C6 /* ListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1132130B1830031A401 /* ListingPresenter.swift */; };
+		2215452622671C460062E9C6 /* ListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1182130B1830031A401 /* ListingRouter.swift */; };
 		221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */; };
 		221830F2210FDA5900FA1E13 /* PortfolioPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */; };
-		221DB1192130B1830031A401 /* ListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1132130B1830031A401 /* ListingPresenter.swift */; };
-		221DB11A2130B1830031A401 /* ListingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1142130B1830031A401 /* ListingInteractor.swift */; };
-		221DB11B2130B1830031A401 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1152130B1830031A401 /* ListingViewController.swift */; };
-		221DB11C2130B1830031A401 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1162130B1830031A401 /* Listing.swift */; };
-		221DB11D2130B1830031A401 /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1172130B1830031A401 /* ListingView.swift */; };
-		221DB11E2130B1830031A401 /* ListingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1182130B1830031A401 /* ListingRouter.swift */; };
 		221F3EEB212F4A4100907255 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3EE9212F4A4100907255 /* Seeds.swift */; };
 		221F3EEC212F4A4100907255 /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 221F3EEA212F4A4100907255 /* collection.json */; };
-		22695F3921317CF6004C47A5 /* DependenciesDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22695F3821317CF6004C47A5 /* DependenciesDefault.swift */; };
+		2222142022661377001F41C8 /* PortfolioContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222141F22661377001F41C8 /* PortfolioContract.swift */; };
 		22695F4821320A27004C47A5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4721320A27004C47A5 /* Utils.framework */; };
 		22695F4A21320A72004C47A5 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4921320A72004C47A5 /* Service.framework */; };
 		22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C75212EEA02000A0BE0 /* Assets.xcassets */; };
@@ -27,12 +27,9 @@
 		22AC8C93212EEA02000A0BE0 /* Rijksmuseum-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C7D212EEA02000A0BE0 /* Rijksmuseum-Bold.ttf */; };
 		22AC8C95212EEA02000A0BE0 /* PortfolioRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */; };
 		22AC8C96212EEA02000A0BE0 /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */; };
-		22AC8C97212EEA02000A0BE0 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C83212EEA02000A0BE0 /* Portfolio.swift */; };
 		22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */; };
 		22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */; };
-		22AC8C9A212EEA02000A0BE0 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */; };
 		22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */; };
-		22C9BF20212F2EE1000D15E6 /* APIConfigLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9BF1F212F2EE1000D15E6 /* APIConfigLive.swift */; };
 		5A8C1210C1A4D88029384924 /* Pods_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D423CE397C56E04579F7E1E1 /* Pods_AppTests.framework */; };
 		D32F2D023CE356875C5E4FD7 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB77412EEC4466EA87789A04 /* Pods_App.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0B943DC2858758823077F507 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
+		221545202267181C0062E9C6 /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
 		221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterTests.swift; sourceTree = "<group>"; };
 		221DB1102130ABE20031A401 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,12 +54,11 @@
 		221DB1142130B1830031A401 /* ListingInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingInteractor.swift; sourceTree = "<group>"; };
 		221DB1152130B1830031A401 /* ListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewController.swift; sourceTree = "<group>"; };
 		221DB1162130B1830031A401 /* Listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
-		221DB1172130B1830031A401 /* ListingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingView.swift; sourceTree = "<group>"; };
 		221DB1182130B1830031A401 /* ListingRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingRouter.swift; sourceTree = "<group>"; };
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F3EE9212F4A4100907255 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		221F3EEA212F4A4100907255 /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
-		22695F3821317CF6004C47A5 /* DependenciesDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependenciesDefault.swift; sourceTree = "<group>"; };
+		2222141F22661377001F41C8 /* PortfolioContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioContract.swift; sourceTree = "<group>"; };
 		22695F3D213202E1004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F43213203C8004C47A5 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4721320A27004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,13 +76,10 @@
 		22AC8C7E212EEA02000A0BE0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioRouter.swift; sourceTree = "<group>"; };
 		22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
-		22AC8C83212EEA02000A0BE0 /* Portfolio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenter.swift; sourceTree = "<group>"; };
 		22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioInteractor.swift; sourceTree = "<group>"; };
-		22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22C9BF19212F2DFE000D15E6 /* Workers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Workers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22C9BF1F212F2EE1000D15E6 /* APIConfigLive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfigLive.swift; sourceTree = "<group>"; };
 		22D88AEE212EF67E006E96AF /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		230A03C686A9C5E28B0806F6 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "../Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 		69D1288B754CBC0298CD5852 /* Pods-App-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-AppTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-App-AppTests/Pods-App-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +135,6 @@
 			children = (
 				221DB1162130B1830031A401 /* Listing.swift */,
 				221DB1152130B1830031A401 /* ListingViewController.swift */,
-				221DB1172130B1830031A401 /* ListingView.swift */,
 				221DB1142130B1830031A401 /* ListingInteractor.swift */,
 				221DB1132130B1830031A401 /* ListingPresenter.swift */,
 				221DB1182130B1830031A401 /* ListingRouter.swift */,
@@ -156,15 +149,6 @@
 				221F3EEA212F4A4100907255 /* collection.json */,
 			);
 			path = Seeds;
-			sourceTree = "<group>";
-		};
-		2225167B213EB78000600D40 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				22C9BF1F212F2EE1000D15E6 /* APIConfigLive.swift */,
-				22695F3821317CF6004C47A5 /* DependenciesDefault.swift */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		22706C7820FE510E006E27EE = {
@@ -200,9 +184,10 @@
 		22AC8C73212EEA02000A0BE0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				221545202267181C0062E9C6 /* AppDependencies.swift */,
 				22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */,
-				22AC8C7F212EEA02000A0BE0 /* Scenes */,
-				2225167B213EB78000600D40 /* Data */,
+				22AC8C80212EEA02000A0BE0 /* Portfolio */,
+				221DB1122130B1830031A401 /* Listing */,
 				22AC8C74212EEA02000A0BE0 /* Resources */,
 			);
 			path = App;
@@ -229,21 +214,11 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		22AC8C7F212EEA02000A0BE0 /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				22AC8C80212EEA02000A0BE0 /* Portfolio */,
-				221DB1122130B1830031A401 /* Listing */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
 		22AC8C80212EEA02000A0BE0 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
-				22AC8C83212EEA02000A0BE0 /* Portfolio.swift */,
+				2222141F22661377001F41C8 /* PortfolioContract.swift */,
 				22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */,
-				22AC8C86212EEA02000A0BE0 /* PortfolioView.swift */,
 				22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */,
 				22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */,
 				22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */,
@@ -345,11 +320,11 @@
 				TargetAttributes = {
 					22706C8020FE510E006E27EE = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 					};
 					22706C9720FE510F006E27EE = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1020;
 						TestTargetID = 22706C8020FE510E006E27EE;
 					};
 				};
@@ -463,22 +438,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221DB11E2130B1830031A401 /* ListingRouter.swift in Sources */,
 				22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */,
-				221DB11A2130B1830031A401 /* ListingInteractor.swift in Sources */,
-				221DB11D2130B1830031A401 /* ListingView.swift in Sources */,
-				221DB11C2130B1830031A401 /* Listing.swift in Sources */,
-				221DB11B2130B1830031A401 /* ListingViewController.swift in Sources */,
+				2215452522671C460062E9C6 /* ListingPresenter.swift in Sources */,
+				2215452322671C460062E9C6 /* ListingViewController.swift in Sources */,
+				2215452222671C460062E9C6 /* Listing.swift in Sources */,
+				2215452622671C460062E9C6 /* ListingRouter.swift in Sources */,
+				221545212267181C0062E9C6 /* AppDependencies.swift in Sources */,
+				2222142022661377001F41C8 /* PortfolioContract.swift in Sources */,
 				22AC8C95212EEA02000A0BE0 /* PortfolioRouter.swift in Sources */,
+				2215452422671C460062E9C6 /* ListingInteractor.swift in Sources */,
 				22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */,
-				22695F3921317CF6004C47A5 /* DependenciesDefault.swift in Sources */,
 				22AC8C96212EEA02000A0BE0 /* PortfolioViewController.swift in Sources */,
-				221DB1192130B1830031A401 /* ListingPresenter.swift in Sources */,
 				22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */,
-				22C9BF20212F2EE1000D15E6 /* APIConfigLive.swift in Sources */,
 				22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */,
-				22AC8C97212EEA02000A0BE0 /* Portfolio.swift in Sources */,
-				22AC8C9A212EEA02000A0BE0 /* PortfolioView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +618,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Rijksmuseum;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -664,7 +636,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Rijksmuseum;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -683,7 +655,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.RijksmuseumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rijksmuseum.app/Rijksmuseum";
 			};
@@ -703,7 +675,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.RijksmuseumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rijksmuseum.app/Rijksmuseum";
 			};

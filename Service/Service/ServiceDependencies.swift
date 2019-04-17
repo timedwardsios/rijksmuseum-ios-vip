@@ -1,29 +1,29 @@
 
-import Utils
+import Foundation
 
-public typealias ServiceDependencies =
-    HasAPISession &
-    HasAPIConfig &
-    HasAPIService &
-    HasArtService &
-    HasArtDetailsService
-
-public protocol HasAPISession{
-    var apiSession:APISession{get}
+public protocol ServiceDependencies {
+    func resolve() -> ArtService
+    func resolve() -> ArtDetailsService
 }
 
-public protocol HasAPIConfig{
-    var apiConfig:APIConfig{get}
-}
+extension ServiceDependencies {
+    public func resolve() -> ArtDetailsService {
+        return ArtDetailsServiceDefault(apiService: resolve())
+    }
 
-public protocol HasAPIService{
-    var apiService:APIService{get}
-}
+    public func resolve() -> ArtService {
+        return ArtServiceDefault(apiService: resolve())
+    }
 
-public protocol HasArtService{
-    var artService:ArtService{get}
-}
+    func resolve() -> APIService {
+        return APIServiceDefault(apiSession: resolve(), apiConfig: resolve())
+    }
 
-public protocol HasArtDetailsService{
-    var artDetailsService:ArtDetailsService{get}
+    func resolve() -> APISession {
+        return URLSession.shared
+    }
+
+    func resolve() -> APIConfig {
+        return APIConfigDefault()
+    }
 }

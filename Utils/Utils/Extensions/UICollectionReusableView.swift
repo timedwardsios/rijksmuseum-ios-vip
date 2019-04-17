@@ -1,8 +1,9 @@
-
 import UIKit
 
+// Can now use .reuseIdentifier on collection and table view cell objects
+
 public extension UICollectionReusableView {
-    class func reuseIdentifier() -> String {
+    static var reuseIdentifier: String {
         return String(describing: self)
     }
 }

@@ -1,10 +1,10 @@
-
 import UIKit
 import Service
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
     let window = UIWindow()
+    let dependencies: Dependencies = DependenciesDefault()
 }
 
 extension AppDelegate: UIApplicationDelegate {
@@ -26,10 +26,9 @@ private extension AppDelegate{
     }
 
     func setupRootViewController(){
-        let portfolioViewController = Portfolio.build(dependencies: DependenciesDefault())
+        let portfolioViewController: PortfolioViewController = dependencies.resolve()
         let navController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navController
-        window.frame = UIScreen.main.bounds
         window.makeKeyAndVisible()
     }
 }
