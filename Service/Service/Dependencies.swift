@@ -1,12 +1,12 @@
 
 import Foundation
 
-public protocol ServiceDependencies {
+public protocol Dependencies {
     func resolve() -> ArtService
     func resolve() -> ArtDetailsService
 }
 
-extension ServiceDependencies {
+extension Dependencies {
     public func resolve() -> ArtDetailsService {
         return ArtDetailsServiceDefault(apiService: resolve())
     }

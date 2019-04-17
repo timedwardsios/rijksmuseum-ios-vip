@@ -1,3 +1,4 @@
+
 import Foundation
 
 // Can now use generic .localizedDescription on localized errors that use an enum

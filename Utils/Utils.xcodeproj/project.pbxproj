@@ -18,7 +18,6 @@
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
 		22AC8C53212EE635000A0BE0 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AC8C49212EE635000A0BE0 /* Utils.framework */; };
 		22AC8C5A212EE635000A0BE0 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC8C4C212EE635000A0BE0 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22AC8C6A212EE7E6000A0BE0 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C64212EE7E5000A0BE0 /* ImageViewCell.swift */; };
 		FCE3CC423F108016E928F856 /* Pods_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE2A3E55A264A0892929C44 /* Pods_UtilsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		22AC8C4D212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AC8C52212EE635000A0BE0 /* UtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C59212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22AC8C64212EE7E5000A0BE0 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionReusableView.swift; sourceTree = "<group>"; };
 		22AC8C66212EE7E5000A0BE0 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRefreshControl.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				2222142122661FF3001F41C8 /* State.swift */,
-				22AC8C6B212EE7F4000A0BE0 /* UI */,
 				22AC8C68212EE7E5000A0BE0 /* Extensions */,
 				222A72CE212EEBC800BA759F /* Resources */,
 			);
@@ -159,14 +156,6 @@
 				22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		22AC8C6B212EE7F4000A0BE0 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				22AC8C64212EE7E5000A0BE0 /* ImageViewCell.swift */,
-			);
-			path = UI;
 			sourceTree = "<group>";
 		};
 		9B1CB214609DABFA088B4A6C /* Frameworks */ = {
@@ -383,7 +372,6 @@
 				224196012262A0720006348F /* Result.swift in Sources */,
 				2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */,
 				2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */,
-				22AC8C6A212EE7E6000A0BE0 /* ImageViewCell.swift in Sources */,
 				224195FF2262A0620006348F /* LocalizedError.swift in Sources */,
 				2222142222661FF3001F41C8 /* State.swift in Sources */,
 				224196032262A0820006348F /* Collection.swift in Sources */,
