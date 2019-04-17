@@ -3,14 +3,9 @@ import Foundation
 
 public protocol Dependencies {
     func resolve() -> ArtService
-    func resolve() -> ArtDetailsService
 }
 
 extension Dependencies {
-    public func resolve() -> ArtDetailsService {
-        return ArtDetailsServiceDefault(apiService: resolve())
-    }
-
     public func resolve() -> ArtService {
         return ArtServiceDefault(apiService: resolve())
     }

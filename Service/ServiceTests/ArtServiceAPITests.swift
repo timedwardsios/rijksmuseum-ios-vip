@@ -4,36 +4,12 @@ import Utils
 @testable import Service
 
 class ArtServiceAPITests: XCTestCase {
-    var sut: ArtServiceLive!
+    var sut: ArtServiceDefault!
     var apiServiceMock: APIServiceMock!
     override func setUp() {
         super.setUp()
-        apiServiceMock = APIServiceMock()
-        sut = ArtServiceLive(apiService: apiServiceMock)
-    }
-}
-
-extension ArtServiceAPITests {
-    class APIServiceMock: APIService {
-        var performGetRequest_invocations = 0
-        var lastRequest:APIRequest?
-        var shouldReturnSuccess = true
-        var shouldReturnData = true
-        func performGet( request: APIRequest,
-                         completion: @escaping (Result<Data>) -> Void) {
-            performGetRequest_invocations += 1
-            lastRequest = request
-            let sampleData = Seeds.API.Endpoint.collection.data()
-            if shouldReturnSuccess {
-                if shouldReturnData {
-                    completion(.success(sampleData))
-                } else {
-                    completion(.success(Data()))
-                }
-            } else {
-                completion(.failure(Seeds.ErrorSeed.generic))
-            }
-        }
+        apiServiceMock = .init()
+        sut = .init(apiService: apiServiceMock)
     }
 }
 
@@ -53,7 +29,7 @@ extension ArtServiceAPITests {
 
     func test_fetchArt_apiServiceMock_endpoint(){
         // given
-        let correctEndpoint = Seeds.API.Endpoint.collection.rawValue
+        let correctEndpoint = ModelMock.API.Endpoint.collection.rawValue
         // when
         sut.fetchArt(completion: {_ in})
         // then
@@ -102,14 +78,14 @@ extension ArtServiceAPITests {
 
     func test_fetchArt_callback_arts(){
         // given
-        let remoteId = "EFED716C-1180-485A-A511-63F65F1D63F1"
+        let id = "EFED716C-1180-485A-A511-63F65F1D63F1"
         let exp = XCTestExpectation(description: "Should succeed with result")
         // when
         sut.fetchArt(completion: {result in
             // then
             if case .success(let arts) = result {
                 XCTAssert(arts.count == 1)
-                XCTAssert(arts.first!.remoteId == remoteId)
+                XCTAssert(arts.first!.id == id)
                 exp.fulfill()
             }
         })

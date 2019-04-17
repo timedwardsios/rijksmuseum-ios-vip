@@ -6,14 +6,11 @@ import Utils
 class ListingInteractor: ListingDataStore{
 
     let presenter: ListingPresentating
-    let artDetailsService: ArtDetailsService
     let art: Art
 
     init(presenter: ListingPresentating,
-         artDetailsService:ArtDetailsService,
          art:Art) {
         self.presenter = presenter
-        self.artDetailsService = artDetailsService
         self.art = art
     }
 }

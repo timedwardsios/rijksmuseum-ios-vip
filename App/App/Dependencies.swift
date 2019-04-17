@@ -21,7 +21,7 @@ extension Dependencies {
 
     func resolve(art: Art) -> ListingViewController {
         let presenter = ListingPresenter()
-        let interactor = ListingInteractor(presenter: presenter, artDetailsService: resolve(), art: art)
+        let interactor = ListingInteractor(presenter: presenter, art: art)
         let router = ListingRouter(dependencies: self, dataStore: interactor)
         let viewController = ListingViewController(interactor: interactor, router: router)
         presenter.view = viewController

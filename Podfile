@@ -4,10 +4,9 @@ use_frameworks!
 
 workspace 'Rijksmuseum'
 
-pod "TinyConstraints"
-pod "SDWebImage"
-
 target 'App' do
+    pod "TinyConstraints"
+    pod "SDWebImage"
     project 'App/App.xcodeproj'
     target 'AppTests' do
         inherit! :search_paths
@@ -15,6 +14,7 @@ target 'App' do
 end
 
 target 'Service' do
+    pod "Alamofire"
     project 'Service/Service.xcodeproj'
     target 'ServiceTests' do
         inherit! :search_paths
