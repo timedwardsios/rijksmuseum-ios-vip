@@ -11,10 +11,14 @@ extension Dependencies {
     }
 
     func resolve() -> APIService {
-        return APIServiceDefault(apiSession: resolve(), apiConfig: resolve())
+        return APIServiceDefault(networkService: resolve(), apiConfig: resolve())
     }
 
-    func resolve() -> APISession {
+    func resolve() -> NetworkService {
+        return NetworkServiceDefault(networkSession: resolve())
+    }
+
+    func resolve() -> NetworkSession {
         return URLSession.shared
     }
 

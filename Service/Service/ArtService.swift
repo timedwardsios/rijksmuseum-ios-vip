@@ -19,7 +19,7 @@ class ArtServiceDefault {
 extension ArtServiceDefault: ArtService {
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
         let request = ArtRequest()
-        apiService.performGet(request: request) {(result) in
+        apiService.performRequest(request: request) {(result) in
             switch result {
             case .success(let data):
                 let dataResult = ArtServiceDefault.decodeJsonData(data)

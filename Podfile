@@ -14,7 +14,6 @@ target 'App' do
 end
 
 target 'Service' do
-    pod "Alamofire"
     project 'Service/Service.xcodeproj'
     target 'ServiceTests' do
         inherit! :search_paths

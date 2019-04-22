@@ -1,4 +1,4 @@
-Fix tests
+Write new decoder class and tests
 Move to xibs
 Make collection view more declerative
 Improve on "Themable" protocol

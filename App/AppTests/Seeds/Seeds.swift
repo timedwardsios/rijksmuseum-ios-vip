@@ -18,7 +18,7 @@ enum Seeds{
     }
     
 
-    enum API{
+    enum Network{
         struct Config:APIConfig{
             let scheme:String = "https"
             let hostname = "hostname.seed"

@@ -5,7 +5,7 @@ import Foundation
 struct APIConfigMock: APIConfig{
     let scheme:String = "https"
     let hostname = "hostname.com"
-    let path = "/path/to/api"
-    let queryItems = [URLQueryItem(name : "configKey",
-                                   value: "configValue")]
+    let path = "/path"
+    let queryItems = [URLQueryItem(name : "key",
+                                   value: "value")]
 }

@@ -5,139 +5,58 @@ import XCTest
 class APIServiceTests: XCTestCase {
 
     var sut: APIServiceDefault!
-    var apiSessionMock:APISessionMock!
-    var dataTaskMock:URLSessionDataTaskMock!
-    var apiConfigMock:APIConfigMock!
+    var apiConfig: APIConfigMock!
+    var networkService:NetworkServiceMock!
 
     override func setUp() {
         super.setUp()
-        apiConfigMock = APIConfigMock()
-
-        dataTaskMock = .init()
-        apiSessionMock = .init(dataTask: dataTaskMock)
-        sut = .init(apiSession: apiSessionMock,
-                    apiConfig: apiConfigMock)
+        apiConfig = .init()
+        networkService = .init()
+        networkService.result = .success(Data(count: 10))
+        sut = .init(networkService: networkService,
+                    apiConfig: apiConfig)
     }
 }
 
 extension APIServiceTests {
-    func test_performGet(){
-        // given
-        let request = ModelMock.APIRequest()
-        // when
-        sut.performGet(request: request,
-                       completion: {_ in})
-    }
 
-    func test_performGet_apiSession_called(){
+    func test_performRequest_networkService(){
         // given
-        let request = ModelMock.APIRequest()
+        let correctUrl = URL(string: "https://hostname.com/path/path?key=value&key=value")
+        let request = APIRequestMock()
         // when
-        sut.performGet(request: request,
-                       completion: {_ in})
+        sut.performRequest(request: request) { _ in }
         // then
-        XCTAssert(apiSessionMock.dataTask_invocations.count == 1,
-                  "Should invoke apiSession once")
+        XCTAssertEqual(self.networkService.performRequest_invocations.count, 1)
+        XCTAssertEqual(self.networkService.performRequest_invocations.last?.0, correctUrl)
+        XCTAssertEqual(self.networkService.performRequest_invocations.last?.1, .GET)
     }
 
-    func test_performGet_apiSession_url(){
+    func test_performRequest_callback(){
         // given
-        let request = ModelMock.APIRequest()
+        let request = APIRequestMock()
+        let exp = XCTestExpectation()
         // when
-        sut.performGet(request: request,
-                       completion: {_ in})
-        // then
-
-        XCTAssert(apiSessionMock.dataTask_invocations.first != nil,
-                  "Should invoke apiSession with correct URL")
-    }
-
-    func test_performGet_callback(){
-        // given
-        let exp = XCTestExpectation(description: "Should complete with result")
-        let request = ModelMock.APIRequest()
-        // when
-        sut.performGet(request: request) { (result) in
+        sut.performRequest(request: request) { (result) in
             // then
+            XCTAssertEqual(self.networkService.result?.unwrap(), result.unwrap())
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1)
     }
 
-    func test_performGet_callback_success(){
+    func test_performRequest_error(){
         // given
-        let exp = XCTestExpectation(description: "Should complete with success")
-        let request = ModelMock.APIRequest()
+        networkService.result = .failure(Seeds.error)
+        let request = APIRequestMock()
+        let exp = XCTestExpectation()
         // when
-        sut.performGet(request: request) { (result) in
+        sut.performRequest(request: request) { (result) in
             // then
-            if case .success = result {
-                exp.fulfill()
-            }
-        }
-        wait(for: [exp], timeout: 1)
-    }
-
-    func test_performGet_callback_data(){
-        // given
-        let exp = XCTestExpectation(description: "")
-        let request = ModelMock.APIRequest()
-        // when
-        sut.performGet(request: request) { (result) in
-            // then
-            if case .success(let data) = result {
-                let dataCount = ModelMock.API.Endpoint.collection.data().count
-                XCTAssert(dataCount == data.count,
-                          "Should complete with correct data")
-                exp.fulfill()
-            }
-        }
-        wait(for: [exp], timeout: 1)
-    }
-
-    func test_performGet_callback_responseFormatError(){
-        // given
-        let exp = XCTestExpectation(description: "Should fail when corrupted response")
-        let request = ModelMock.APIRequest()
-//        apiSessionMock.dataTask.validResponseFormat = false
-        // when
-        sut.performGet(request: request) { (result) in
-            // then
-            if case .failure(_) = result {
-                exp.fulfill()
-            }
-        }
-        wait(for: [exp], timeout: 1)
-    }
-
-    func test_performGet_callback_statusCodeError(){
-        // given
-        let exp = XCTestExpectation(description: "Should fail when bad status code")
-        let request = ModelMock.APIRequest()
-//        dataTaskMock.statusCode = 999
-        // when
-        sut.performGet(request: request) { (result) in
-            // then
-            if case .failure(_) = result {
-                exp.fulfill()
-            }
-        }
-        wait(for: [exp], timeout: 1)
-    }
-
-    func test_performGet_callback_dataError(){
-        // given
-        let exp = XCTestExpectation(description: "Should fail when no data")
-        let request = ModelMock.APIRequest()
-//        dataTaskMock.includeData = false
-        // when
-        sut.performGet(request: request) { (result) in
-            // then
-            if case .failure(_) = result {
+            if result.isFailure {
                 exp.fulfill()
             }
         }
         wait(for: [exp], timeout: 1)
     }
 }
-
