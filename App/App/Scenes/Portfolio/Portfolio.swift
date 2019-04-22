@@ -4,21 +4,21 @@ import Service
 import Utils
 
 protocol PortfolioInteracting {
-    func fetchArtsRequest(_ request:Portfolio.FetchArts.Request)
-    func selectArtRequest(_ request:Portfolio.SelectArt.Request)
+    func processFetchArtsRequest(_ request:Portfolio.FetchArts.Request)
+    func processSelectArtRequest(_ request:Portfolio.SelectArt.Request)
 }
 
 protocol PortfolioPresentating : class {
-    func fetchArtsResponse(_ response:Portfolio.FetchArts.Response)
-    func selectArtResponse(_ response:Portfolio.SelectArt.Response)
+    func presentFetchArtsResponse(_ response:Portfolio.FetchArts.Response)
+    func presentSelectArtResponse(_ response:Portfolio.SelectArt.Response)
 }
 
-protocol PortfolioView : class {
-    func fetchArtsViewModel(_ viewModel:Portfolio.FetchArts.ViewModel)
-    func selectArtViewModel(_ viewModel:Portfolio.SelectArt.ViewModel)
+protocol PortfolioDisplaying : class {
+    func displayFetchArtsViewModel(_ viewModel:Portfolio.FetchArts.ViewModel)
+    func displaySelectArtViewModel(_ viewModel:Portfolio.SelectArt.ViewModel)
 }
 
-protocol PortfolioDataStore {
+protocol PortfolioDataStoring {
     var selectedArt: Art? {get}
 }
 

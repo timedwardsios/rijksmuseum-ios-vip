@@ -3,25 +3,25 @@ import Service
 import Utils
 
 class PortfolioPresenter{
-    weak var view: PortfolioView?
+    weak var view: PortfolioDisplaying?
 
-    init(view: PortfolioView? = nil) {
+    init(view: PortfolioDisplaying? = nil) {
         self.view = view
     }
 }
 
 extension PortfolioPresenter: PortfolioPresentating {
-    func fetchArtsResponse(_ response: Portfolio.FetchArts.Response) {
+    func presentFetchArtsResponse(_ response: Portfolio.FetchArts.Response) {
         switch response.state {
         case .loading:
-            view?.fetchArtsViewModel(.init(state: .loading))
+            view?.displayFetchArtsViewModel(.init(state: .loading))
         case .loaded(let arts):
             let imageUrls = arts.map({$0.imageUrl})
-            view?.fetchArtsViewModel(.init(state: .loaded(imageUrls)))
+            view?.displayFetchArtsViewModel(.init(state: .loaded(imageUrls)))
         case .error(let error):
-            view?.fetchArtsViewModel(.init(state: .error(error.localizedDescription)))
+            view?.displayFetchArtsViewModel(.init(state: .error(error.localizedDescription)))
         }
     }
 
-    func selectArtResponse(_ response: Portfolio.SelectArt.Response) {}
+    func presentSelectArtResponse(_ response: Portfolio.SelectArt.Response) {}
 }

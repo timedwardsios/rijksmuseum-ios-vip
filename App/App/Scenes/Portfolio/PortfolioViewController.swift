@@ -36,7 +36,7 @@ extension PortfolioViewController{
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
-        interactor.fetchArtsRequest(.init())
+        interactor.processFetchArtsRequest(.init())
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -82,13 +82,13 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        interactor.selectArtRequest(.init(index: indexPath.row))
+        interactor.processSelectArtRequest(.init(index: indexPath.row))
         router.routeToListing()
     }
 }
 
-extension PortfolioViewController: PortfolioView {
-    func fetchArtsViewModel(_ viewModel: Portfolio.FetchArts.ViewModel) {
+extension PortfolioViewController: PortfolioDisplaying {
+    func displayFetchArtsViewModel(_ viewModel: Portfolio.FetchArts.ViewModel) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {return}
             switch viewModel.state {
@@ -104,7 +104,7 @@ extension PortfolioViewController: PortfolioView {
         }
     }
 
-    func selectArtViewModel(_ viewModel: Portfolio.SelectArt.ViewModel) {}
+    func displaySelectArtViewModel(_ viewModel: Portfolio.SelectArt.ViewModel) {}
 }
 
 // MARK: - Private methods
@@ -148,6 +148,6 @@ private extension PortfolioViewController {
 // MARK: - Selectors
 @objc extension PortfolioViewController {
     func didPullToRefresh() {
-        interactor.fetchArtsRequest(.init())
+        interactor.processFetchArtsRequest(.init())
     }
 }

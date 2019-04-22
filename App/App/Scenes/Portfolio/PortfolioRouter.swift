@@ -4,11 +4,11 @@ import Service
 class PortfolioRouter{
 
     let dependencies: Dependencies
-    let dataStore: PortfolioDataStore
+    let dataStore: PortfolioDataStoring
     weak var viewController: PortfolioViewController?
 
     init(dependencies:Dependencies,
-         dataStore: PortfolioDataStore,
+         dataStore: PortfolioDataStoring,
          viewController: PortfolioViewController? = nil){
         self.dependencies = dependencies
         self.dataStore = dataStore
