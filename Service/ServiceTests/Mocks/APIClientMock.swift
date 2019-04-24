@@ -2,7 +2,7 @@
 import Foundation
 @testable import Service
 
-class APIServiceMock: APIService {
+class APIRequestFactoryMock: APIRequestFactory {
 
     var resultToReturn: Result<Data, Error>
 

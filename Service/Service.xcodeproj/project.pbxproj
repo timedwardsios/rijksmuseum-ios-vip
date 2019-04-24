@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2215452A226720320062E9C6 /* ArtService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154529226720320062E9C6 /* ArtService.swift */; };
-		22154539226720DD0062E9C6 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154538226720DD0062E9C6 /* APIService.swift */; };
+		22154539226720DD0062E9C6 /* APIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154538226720DD0062E9C6 /* APIRequestFactory.swift */; };
 		2215454922672A8D0062E9C6 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215454822672A8D0062E9C6 /* APIClientMock.swift */; };
 		221BDF2D2270DD1500631270 /* ArtServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2C2270DD1500631270 /* ArtServiceMock.swift */; };
 		221BDF2F2270DEA100631270 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2E2270DEA100631270 /* NetworkServiceMock.swift */; };
 		221BDF312270E2F200631270 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF302270E2F200631270 /* Seeds.swift */; };
+		221BDF412270F89600631270 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF402270F89600631270 /* Dependencies.swift */; };
 		221DB10F2130AAC20031A401 /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB10E2130AAC20031A401 /* Art.swift */; };
 		221F3ECE212F3E9A00907255 /* ArtServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3ECC212F3E7F00907255 /* ArtServiceTests.swift */; };
 		222520BE2268B0020003EE88 /* APIRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222520BD2268B0020003EE88 /* APIRequestMock.swift */; };
 		2241960D2262A7700006348F /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2241960C2262A7700006348F /* APIConfig.swift */; };
-		22695F3B2131C3FE004C47A5 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22695F3A2131C3FE004C47A5 /* APIRequest.swift */; };
 		22695F4621320A1D004C47A5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4521320A1D004C47A5 /* Utils.framework */; };
 		22AA6066212F29BF007379B1 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AA605C212F29BE007379B1 /* Service.framework */; };
 		22AA606D212F29BF007379B1 /* Workers.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AA605F212F29BE007379B1 /* Workers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,17 +38,17 @@
 
 /* Begin PBXFileReference section */
 		22154529226720320062E9C6 /* ArtService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtService.swift; sourceTree = "<group>"; };
-		22154538226720DD0062E9C6 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		22154538226720DD0062E9C6 /* APIRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestFactory.swift; sourceTree = "<group>"; };
 		2215454822672A8D0062E9C6 /* APIClientMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		221BDF2C2270DD1500631270 /* ArtServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtServiceMock.swift; sourceTree = "<group>"; };
 		221BDF2E2270DEA100631270 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
 		221BDF302270E2F200631270 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
+		221BDF402270F89600631270 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		221DB10E2130AAC20031A401 /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
 		221F3EC7212F397100907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F3ECC212F3E7F00907255 /* ArtServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtServiceTests.swift; sourceTree = "<group>"; };
 		222520BD2268B0020003EE88 /* APIRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestMock.swift; sourceTree = "<group>"; };
 		2241960C2262A7700006348F /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
-		22695F3A2131C3FE004C47A5 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		22695F3F213202E9004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F41213203BD004C47A5 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4521320A1D004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				221DB10E2130AAC20031A401 /* Art.swift */,
-				22695F3A2131C3FE004C47A5 /* APIRequest.swift */,
 				2241960C2262A7700006348F /* APIConfig.swift */,
 			);
 			path = Model;
@@ -157,8 +156,9 @@
 		22AA605E212F29BE007379B1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				221BDF402270F89600631270 /* Dependencies.swift */,
 				22154529226720320062E9C6 /* ArtService.swift */,
-				22154538226720DD0062E9C6 /* APIService.swift */,
+				22154538226720DD0062E9C6 /* APIRequestFactory.swift */,
 				22695F3C2131C901004C47A5 /* Model */,
 				22C9BF06212F2A27000D15E6 /* Resources */,
 			);
@@ -376,9 +376,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2241960D2262A7700006348F /* APIConfig.swift in Sources */,
-				22695F3B2131C3FE004C47A5 /* APIRequest.swift in Sources */,
 				221DB10F2130AAC20031A401 /* Art.swift in Sources */,
-				22154539226720DD0062E9C6 /* APIService.swift in Sources */,
+				22154539226720DD0062E9C6 /* APIRequestFactory.swift in Sources */,
+				221BDF412270F89600631270 /* Dependencies.swift in Sources */,
 				2215452A226720320062E9C6 /* ArtService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

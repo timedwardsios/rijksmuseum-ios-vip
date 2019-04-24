@@ -1,5 +1,6 @@
 
 import Foundation
+import Utils
 
 // To be improved...
 
@@ -12,16 +13,20 @@ public protocol ArtService {
 }
 
 class ArtServiceDefault {
-    let apiService:APIService
-    init(apiService:APIService){
-        self.apiService = apiService
+    let apiRequestFactory:APIRequestFactory
+    let networkService: NetworkService
+    init(apiRequestFactory:APIRequestFactory,
+         networkService: NetworkService){
+        self.apiRequestFactory = apiRequestFactory
+        self.networkService = networkService
     }
 }
 
 extension ArtServiceDefault: ArtService {
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
-        let request = ArtRequest()
-        apiService.performRequest(request: request) {(result) in
+        let request = try! apiRequestFactory.createRequest(withEndpoint: .art)
+
+        networkService.processRequest(request) { (result) in
             switch result {
             case .success(let data):
                 let dataResult = ArtServiceDefault.decodeJsonData(data)
@@ -42,21 +47,6 @@ private extension ArtServiceDefault {
         } else {
             return .failure(ArtServiceError.json)
         }
-    }
-
-    struct ArtRequest: APIRequest {
-        enum QueryItemName:String {
-            case pageCount = "ps"
-            case resultsWithImagesOnly = "imgonly"
-            case sortBy = "s"
-        }
-        let path = "/collection"
-        let queryItems = [URLQueryItem(name: QueryItemName.pageCount.rawValue,
-                                       value: "100"),
-                          URLQueryItem(name: QueryItemName.resultsWithImagesOnly.rawValue,
-                                       value: "true"),
-                          URLQueryItem(name: QueryItemName.sortBy.rawValue,
-                                       value: "relevance")]
     }
 
     struct ArtResponse: Decodable {

@@ -5,11 +5,11 @@ import Utils
 
 class ArtServiceNetworkTests: XCTestCase {
     var sut: ArtServiceDefault!
-//    var apiServiceMock: APIServiceMock!
+//    var apiRequestFactoryMock: APIRequestFactoryMock!
     override func setUp() {
         super.setUp()
-//        apiServiceMock = .init()
-//        sut = .init(apiService: apiServiceMock)
+//        apiRequestFactoryMock = .init()
+//        sut = .init(apiRequestFactory: apiRequestFactoryMock)
     }
 }
 
@@ -19,25 +19,25 @@ extension ArtServiceNetworkTests {
 //        sut.fetchArt(completion: {_ in})
 //    }
 //
-//    func test_fetchArt_apiServiceMock_called(){
+//    func test_fetchArt_apiRequestFactoryMock_called(){
 //        // when
 //        sut.fetchArt(completion: {_ in})
 //        // then
-//        XCTAssert(apiServiceMock.performGetRequestArgs == 1,
-//                  "Should forward to APIService")
+//        XCTAssert(apiRequestFactoryMock.performGetRequestArgs == 1,
+//                  "Should forward to APIRequestFactory")
 //    }
 //
-//    func test_fetchArt_apiServiceMock_endpoint(){
+//    func test_fetchArt_apiRequestFactoryMock_endpoint(){
 //        // given
 //        let correctEndpoint = ModelMock.Network.Endpoint.collection.rawValue
 //        // when
 //        sut.fetchArt(completion: {_ in})
 //        // then
-//        XCTAssert(apiServiceMock.lastRequest?.path == correctEndpoint,
-//                  "Should call APIService with correct endpoint")
+//        XCTAssert(apiRequestFactoryMock.lastRequest?.path == correctEndpoint,
+//                  "Should call APIRequestFactory with correct endpoint")
 //    }
 //
-//    func test_fetchArt_apiServiceMock_parameters(){
+//    func test_fetchArt_apiRequestFactoryMock_parameters(){
 //        // given
 //        let queryItems = [URLQueryItem(name: "ps",
 //                                       value: "100"),
@@ -48,8 +48,8 @@ extension ArtServiceNetworkTests {
 //        // when
 //        sut.fetchArt(completion: {_ in})
 //        // then
-//        XCTAssert(apiServiceMock.lastRequest?.queryItems == queryItems,
-//                  "Should call APIService with correct parameters")
+//        XCTAssert(apiRequestFactoryMock.lastRequest?.queryItems == queryItems,
+//                  "Should call APIRequestFactory with correct parameters")
 //    }
 //
 //    func test_fetchArt_callback(){
@@ -94,8 +94,8 @@ extension ArtServiceNetworkTests {
 //
 //    func test_fetchArt_callback_failure(){
 //        // given
-//        let exp = XCTestExpectation(description: "Should fail when APIService fails")
-//        apiServiceMock.shouldReturnSuccess = false
+//        let exp = XCTestExpectation(description: "Should fail when APIRequestFactory fails")
+//        apiRequestFactoryMock.shouldReturnSuccess = false
 //        // when
 //        sut.fetchArt(completion: {result in
 //            // then
@@ -109,7 +109,7 @@ extension ArtServiceNetworkTests {
 //    func test_fetchArt_callback_jsonError(){
 //        // given
 //        let exp = XCTestExpectation(description: "Should fail when no data")
-//        apiServiceMock.shouldReturnData = false
+//        apiRequestFactoryMock.shouldReturnData = false
 //        // when
 //        sut.fetchArt(completion: {result in
 //            // then

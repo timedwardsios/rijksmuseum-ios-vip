@@ -15,6 +15,7 @@
 		221BDF282270CC7700631270 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF272270CC7700631270 /* NetworkMethod.swift */; };
 		221BDF2A2270CFFD00631270 /* NetworkResponseValidatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF292270CFFD00631270 /* NetworkResponseValidatorMock.swift */; };
 		221BDF2B2270DB3500631270 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305422707CD4004A5FE9 /* Seeds.swift */; };
+		221BDF432270F89A00631270 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF422270F89A00631270 /* Dependencies.swift */; };
 		2222142222661FF3001F41C8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222142122661FF3001F41C8 /* State.swift */; };
 		222E305022707C97004A5FE9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */; };
 		222E305222707CB8004A5FE9 /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */; };
@@ -53,6 +54,7 @@
 		221BDF252270C5A600631270 /* NetworkRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestMock.swift; sourceTree = "<group>"; };
 		221BDF272270CC7700631270 /* NetworkMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 		221BDF292270CFFD00631270 /* NetworkResponseValidatorMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorMock.swift; sourceTree = "<group>"; };
+		221BDF422270F89A00631270 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		2222142122661FF3001F41C8 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		22AC8C4B212EE635000A0BE0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				221BDF422270F89A00631270 /* Dependencies.swift */,
 				222E305C22707D23004A5FE9 /* Network */,
 				222E305422707CD4004A5FE9 /* Seeds.swift */,
 				2222142122661FF3001F41C8 /* State.swift */,
@@ -425,6 +428,7 @@
 				221BDF212270C38E00631270 /* NetworkRequest.swift in Sources */,
 				224196012262A0720006348F /* Result.swift in Sources */,
 				222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */,
+				221BDF432270F89A00631270 /* Dependencies.swift in Sources */,
 				222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */,
 				221BDF282270CC7700631270 /* NetworkMethod.swift in Sources */,
 				2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */,

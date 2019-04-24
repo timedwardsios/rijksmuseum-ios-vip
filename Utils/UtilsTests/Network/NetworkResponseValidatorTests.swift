@@ -16,6 +16,7 @@ class NetworkResponseValidatorDefaultTests: XCTestCase {
 
 extension NetworkResponseValidatorDefaultTests {
     func test_validateResponse(){
+        // then
         XCTAssertNoThrow(try sut.validateResponseAndUnwrapData(response))
     }
 
