@@ -8,13 +8,10 @@ protocol APIClient {
 }
 
 class APIClientDefault{
-    let networkRequestFactory: NetworkRequestFactory
     let networkService: NetworkService
     let apiConfig: APIConfig
-    init(networkRequestFactory: NetworkRequestFactory,
-        networkService:NetworkService,
+    init(networkService:NetworkService,
         apiConfig:APIConfig){
-        self.networkRequestFactory = networkRequestFactory
         self.networkService = networkService
         self.apiConfig = apiConfig
     }
@@ -25,6 +22,8 @@ extension APIClientDefault: APIClient {
         // TODO: extract this
         let url = urlFrom(config: apiConfig, request: request)
 
+
+        
 
         let request = networkRequestFactory.createRequest(url: url, method: .GET)
         // TODO: sort out these functions

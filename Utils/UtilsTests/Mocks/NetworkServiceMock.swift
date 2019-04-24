@@ -4,14 +4,14 @@ import Foundation
 
 class NetworkServiceMock: NetworkService {
     var result: Result<Data, Error>?
-    var response: NetworkResponse?
+    var response: NetworkResponseMock?
 
     var performRequest_invocations = [NetworkRequest]()
 
-    func processRequest(_ request: NetworkRequest, completion: @escaping (NetworkResponse) -> Void) {
+    func processRequest(_ request: NetworkRequest, completion: (Result<Data, Error>) -> Void) {
         performRequest_invocations.append(request)
-        if let response = response {
-            completion(response)
+        if let result = result {
+            completion(result)
         }
     }
 }

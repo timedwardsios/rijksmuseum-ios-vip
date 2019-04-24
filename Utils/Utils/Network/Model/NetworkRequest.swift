@@ -2,5 +2,6 @@
 import Foundation
 
 public protocol NetworkRequest {
-    var urlRequest:URLRequest {get}
+    var url: URL {get}
+    var method: NetworkMethod {get}
 }

@@ -3,12 +3,13 @@ import Foundation
 
 protocol NetworkSession {
     typealias DataTask = NetworkSessionDataTask
-    func dataTask(with url: URL,
-                  completionHandler: @escaping DataTask.Completion)-> DataTask
+    func dataTask(with request: URLRequest,
+                  completionHandler: @escaping DataTask.Completion) -> DataTask
 }
 
 extension URLSession: NetworkSession{
-    func dataTask(with url: URL, completionHandler: @escaping DataTask.Completion) -> DataTask {
-        return dataTask(with: url, completionHandler: completionHandler) as URLSessionDataTask
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> DataTask {
+        return dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTask
     }
+
 }

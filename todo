@@ -6,4 +6,4 @@ Write Realm caching layer
 Lazy init of dependency. "DependencyFactory"?
 Create "Main" app, with dependency provider?
 Add main thread to DI from VCs
-Remove unused req/res/vms?
+Fix names of mock invocation arrays

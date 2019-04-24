@@ -1,72 +1,32 @@
 
 import Foundation
 
-// Performs requests
-// Checks for errors
-
-public protocol NetworkResponseValidator {
-//    func validateResponse(_ response: NetworkResponse)
-//    func processRequest(_ request: NetworkRequest,
-//                        completion: @escaping (NetworkResponse) -> Void)
+protocol NetworkResponseValidator {
+    func validateResponseAndUnwrapData(_ response: NetworkResponse) throws -> Data
 }
 
 class NetworkResponseValidatorDefault{}
 
 extension NetworkResponseValidatorDefault: NetworkResponseValidator {
-
-    enum Error: String, LocalizedError{
-        case unknown = "Unknown error"
-        case responseFormat = "Invalid response format"
-        case statusCode = "Invalid status code"
-        case data = "No data"
+    enum LocalError: String, LocalizedError{
+        case noData = "No data"
+        case invalidResponseFormat = "Invalid response format"
+        case badStatusCode = "Invalid status code"
     }
 
-//    func processRequest(_ request: NetworkRequest, completion: @escaping (NetworkResponse) -> Void) {
-//        networkSession.dataTask(with: request.url) { (data, response, error) in
-
-//        }
-//            if let error = error {
-//                completion(.failure(error))
-//            }
-//            guard let httpResponse = response as? HTTPURLResponse else {
-//                completion(.failure(Error.responseFormat))
-//                return
-//            }
-//            if !(200..<300 ~= httpResponse.statusCode) {
-//                completion(.failure(Error.statusCode))
-//                return
-//            }
-//            guard let data = data else {
-//                completion(.failure(Error.data))
-//                return
-//            }
-//            completion(.success(data))
-//
-//            }.resume()
-//    }
-
-//    func performRequest(atUrl url: URL,
-//                        usingMethod method: NetworkMethod,
-//                        completion: @escaping (Result<Data, Swift.Error>) -> Void) {
-//        networkSession.dataTask(with: url) { (data, response, error) in
-//
-//            if let error = error {
-//                completion(.failure(error))
-//            }
-//            guard let httpResponse = response as? HTTPURLResponse else {
-//                completion(.failure(Error.responseFormat))
-//                return
-//            }
-//            if !(200..<300 ~= httpResponse.statusCode) {
-//                completion(.failure(Error.statusCode))
-//                return
-//            }
-//            guard let data = data else {
-//                completion(.failure(Error.data))
-//                return
-//            }
-//            completion(.success(data))
-//
-//            }.resume()
-//    }
+    func validateResponseAndUnwrapData(_ response: NetworkResponse) throws -> Data {
+        guard let data = response.data else {
+            throw LocalError.noData
+        }
+        guard let httpResponse = response.urlResponse as? HTTPURLResponse else {
+            throw LocalError.invalidResponseFormat
+        }
+        if !(200..<300 ~= httpResponse.statusCode) {
+            throw LocalError.badStatusCode
+        }
+        if let error = response.error {
+            throw error
+        }
+        return data
+    }
 }
