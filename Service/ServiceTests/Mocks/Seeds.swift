@@ -6,20 +6,16 @@ import Utils
 public enum Seeds{
 
     struct APIConfigSeed: APIConfig{
-        var scheme = Utils.Seeds.string
+        var scheme = "https"
         var hostname = Utils.Seeds.string
-        var path = Utils.Seeds.string
+        var path = "/" + Utils.Seeds.string
         var queryItems = [Utils.Seeds.urlQueryItem]
     }
-
     static let apiConfig = APIConfigSeed()
 
-    struct APIRequestSeed: APIRequest{
-        var scheme = Utils.Seeds.string
-        var hostname = Utils.Seeds.string
-        var path = Utils.Seeds.string
+    struct APIEndpointSeed: APIEndpoint{
+        var path = "/" + Utils.Seeds.string
         var queryItems = [Utils.Seeds.urlQueryItem]
     }
-
-    static let apiRequest = APIRequestSeed()
+    static let apiEndpoint = APIEndpointSeed()
 }

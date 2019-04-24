@@ -19,6 +19,6 @@ private extension Dependencies {
     }
 
     func resolve() -> APIConfig {
-        return APIConfigDefault()
+        return APIConfigLive()
     }
 }

@@ -20,7 +20,7 @@ public enum Seeds{
                                                     httpVersion: nil,
                                                     headerFields: nil)
 
-    public static let string = UUID().uuidString
+    public static var string = UUID().uuidString
 
     public static let urlQueryItem = URLQueryItem(name: Seeds.string, value: Seeds.string)
 }

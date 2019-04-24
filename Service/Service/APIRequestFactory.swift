@@ -2,10 +2,6 @@
 import Foundation
 import Utils
 
-enum APIEndpoint {
-    case art
-}
-
 protocol APIRequestFactory {
     func createRequest(withEndpoint endpoint:APIEndpoint) throws -> NetworkRequest
 }
@@ -18,13 +14,6 @@ class APIRequestFactoryDefault{
 }
 
 extension APIRequestFactoryDefault: APIRequestFactory {
-
-    private struct NetworkRequestAPI: NetworkRequest {
-        var url: URL
-        var method: NetworkMethod
-    }
-
-
     func createRequest(withEndpoint endpoint: APIEndpoint) throws -> NetworkRequest {
 
         var urlComponents = URLComponents()
@@ -33,18 +22,18 @@ extension APIRequestFactoryDefault: APIRequestFactory {
         urlComponents.path = apiConfig.path
         urlComponents.queryItems = apiConfig.queryItems
 
-        switch endpoint {
-        case .art:
-            urlComponents.path.append("/collection")
-            urlComponents.queryItems?.append(contentsOf: [URLQueryItem(name: "ps",
-                                           value: "100"),
-                              URLQueryItem(name: "imgonly",
-                                           value: "true"),
-                              URLQueryItem(name: "s",
-                                           value: "relevance")])
-        }
-
         return NetworkRequestAPI(url: urlComponents.url!, method: .GET)
+    }
+}
+
+private extension APIRequestFactoryDefault {
+    enum LocalError: String, LocalizedError{
+        case unknown
+    }
+
+    struct NetworkRequestAPI: NetworkRequest {
+        var url: URL
+        var method: NetworkMethod
     }
 }
 

@@ -29,6 +29,7 @@
 		224196012262A0720006348F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196002262A0720006348F /* Result.swift */; };
 		224196032262A0820006348F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196022262A0820006348F /* Collection.swift */; };
 		224196052262A08B0006348F /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196042262A08B0006348F /* UITableViewCell.swift */; };
+		2273F7BE227117020027C7FC /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273F7BD227117020027C7FC /* XCTest.swift */; };
 		2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */; };
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
@@ -69,6 +70,8 @@
 		224196002262A0720006348F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		224196042262A08B0006348F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2273F7BD227117020027C7FC /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		22AC8C49212EE635000A0BE0 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C4C212EE635000A0BE0 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		22AC8C4D212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 				224196042262A08B0006348F /* UITableViewCell.swift */,
 				22AC8C66212EE7E5000A0BE0 /* UIColor.swift */,
 				22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */,
+				2273F7BD227117020027C7FC /* XCTest.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +245,7 @@
 		9B1CB214609DABFA088B4A6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2273F7B9227112E00027C7FC /* XCTest.framework */,
 				ACC0253969F8083EE6542C2C /* Pods_Utility.framework */,
 				29A45348468C05E17C5C7926 /* Pods_UtilityTests.framework */,
 				71E4960A4AB5F4857DB9999A /* Pods_Utility_UtilityTests.framework */,
@@ -427,6 +432,7 @@
 			files = (
 				221BDF212270C38E00631270 /* NetworkRequest.swift in Sources */,
 				224196012262A0720006348F /* Result.swift in Sources */,
+				2273F7BE227117020027C7FC /* XCTest.swift in Sources */,
 				222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */,
 				221BDF432270F89A00631270 /* Dependencies.swift in Sources */,
 				222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */,
@@ -607,6 +613,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -633,6 +640,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (

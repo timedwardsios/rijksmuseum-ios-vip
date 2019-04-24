@@ -23,8 +23,22 @@ class ArtServiceDefault {
 }
 
 extension ArtServiceDefault: ArtService {
+
+    private struct APIEndpointArt: APIEndpoint{
+
+        var path = "/collection"
+
+        var queryItems = [URLQueryItem(name: "ps",
+                                       value: "100"),
+                          URLQueryItem(name: "imgonly",
+                                       value: "true"),
+                          URLQueryItem(name: "s",
+                                       value: "relevance")]
+
+    }
+
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
-        let request = try! apiRequestFactory.createRequest(withEndpoint: .art)
+        let request = try! apiRequestFactory.createRequest(withEndpoint: APIEndpointArt())
 
         networkService.processRequest(request) { (result) in
             switch result {
