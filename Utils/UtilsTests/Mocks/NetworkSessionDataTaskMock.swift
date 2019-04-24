@@ -1,6 +1,6 @@
 
 import Foundation
-@testable import Service
+@testable import Utils
 
 class NetworkSessionDataTaskMock: NetworkSessionDataTask {
 

@@ -9,6 +9,23 @@
 /* Begin PBXBuildFile section */
 		0B90B1DAD8E3443C5365300D /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB434F98CFA0638795566DD /* Pods_Utils.framework */; };
 		2222142222661FF3001F41C8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222142122661FF3001F41C8 /* State.swift */; };
+		222E305022707C97004A5FE9 /* NetworkAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E304F22707C97004A5FE9 /* NetworkAdapterTests.swift */; };
+		222E305222707CB8004A5FE9 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305122707CB8004A5FE9 /* NetworkSessionMock.swift */; };
+		222E305522707CD4004A5FE9 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305422707CD4004A5FE9 /* Seeds.swift */; };
+		222E306622707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E306522707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift */; };
+		222E306822707DB8004A5FE9 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E306722707DB8004A5FE9 /* NetworkServiceMock.swift */; };
+		222E306B22707E1F004A5FE9 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305922707D23004A5FE9 /* NetworkMethod.swift */; };
+		222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305B22707D23004A5FE9 /* NetworkService.swift */; };
+		222E307022707E80004A5FE9 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E306F22707E80004A5FE9 /* NetworkRequest.swift */; };
+		222E307322707E99004A5FE9 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307222707E99004A5FE9 /* NetworkResponse.swift */; };
+		222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307422707EF6004A5FE9 /* NetworkSession.swift */; };
+		222E307722707F16004A5FE9 /* NetworkSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307622707F16004A5FE9 /* NetworkSessionDataTask.swift */; };
+		222E308022708DCB004A5FE9 /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307F22708DCB004A5FE9 /* NetworkRequestFactory.swift */; };
+		222E308222708DD3004A5FE9 /* NetworkResponseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308122708DD3004A5FE9 /* NetworkResponseFactory.swift */; };
+		222E308422708DD9004A5FE9 /* NetworkRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308322708DD9004A5FE9 /* NetworkRequestFactoryTests.swift */; };
+		222E3086227091D1004A5FE9 /* NetworkResponseFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E3085227091D1004A5FE9 /* NetworkResponseFactoryTests.swift */; };
+		222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */; };
+		222E308A22709F3A004A5FE9 /* NetworkResponseValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */; };
 		224195FF2262A0620006348F /* LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224195FE2262A0620006348F /* LocalizedError.swift */; };
 		224196012262A0720006348F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196002262A0720006348F /* Result.swift */; };
 		224196032262A0820006348F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196022262A0820006348F /* Collection.swift */; };
@@ -33,6 +50,23 @@
 
 /* Begin PBXFileReference section */
 		2222142122661FF3001F41C8 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		222E304F22707C97004A5FE9 /* NetworkAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAdapterTests.swift; sourceTree = "<group>"; };
+		222E305122707CB8004A5FE9 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
+		222E305422707CD4004A5FE9 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
+		222E305922707D23004A5FE9 /* NetworkMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		222E305B22707D23004A5FE9 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		222E306522707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTaskMock.swift; sourceTree = "<group>"; };
+		222E306722707DB8004A5FE9 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
+		222E306F22707E80004A5FE9 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		222E307222707E99004A5FE9 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		222E307422707EF6004A5FE9 /* NetworkSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		222E307622707F16004A5FE9 /* NetworkSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTask.swift; sourceTree = "<group>"; };
+		222E307F22708DCB004A5FE9 /* NetworkRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactory.swift; sourceTree = "<group>"; };
+		222E308122708DD3004A5FE9 /* NetworkResponseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseFactory.swift; sourceTree = "<group>"; };
+		222E308322708DD9004A5FE9 /* NetworkRequestFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactoryTests.swift; sourceTree = "<group>"; };
+		222E3085227091D1004A5FE9 /* NetworkResponseFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseFactoryTests.swift; sourceTree = "<group>"; };
+		222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidator.swift; sourceTree = "<group>"; };
+		222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorTests.swift; sourceTree = "<group>"; };
 		224195FE2262A0620006348F /* LocalizedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedError.swift; sourceTree = "<group>"; };
 		224196002262A0720006348F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
@@ -106,6 +140,52 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		222E305322707CBA004A5FE9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				222E305422707CD4004A5FE9 /* Seeds.swift */,
+				222E306722707DB8004A5FE9 /* NetworkServiceMock.swift */,
+				222E306522707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift */,
+				222E305122707CB8004A5FE9 /* NetworkSessionMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		222E305C22707D23004A5FE9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */,
+				222E305B22707D23004A5FE9 /* NetworkService.swift */,
+				222E307422707EF6004A5FE9 /* NetworkSession.swift */,
+				222E307622707F16004A5FE9 /* NetworkSessionDataTask.swift */,
+				222E307F22708DCB004A5FE9 /* NetworkRequestFactory.swift */,
+				222E308122708DD3004A5FE9 /* NetworkResponseFactory.swift */,
+				222E307122707E8A004A5FE9 /* Model */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		222E307122707E8A004A5FE9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				222E305922707D23004A5FE9 /* NetworkMethod.swift */,
+				222E306F22707E80004A5FE9 /* NetworkRequest.swift */,
+				222E307222707E99004A5FE9 /* NetworkResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		222E307822708578004A5FE9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				222E308322708DD9004A5FE9 /* NetworkRequestFactoryTests.swift */,
+				222E3085227091D1004A5FE9 /* NetworkResponseFactoryTests.swift */,
+				222E304F22707C97004A5FE9 /* NetworkAdapterTests.swift */,
+				222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		22AC8C3F212EE635000A0BE0 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +209,7 @@
 		22AC8C4B212EE635000A0BE0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				222E305C22707D23004A5FE9 /* Network */,
 				2222142122661FF3001F41C8 /* State.swift */,
 				22AC8C68212EE7E5000A0BE0 /* Extensions */,
 				222A72CE212EEBC800BA759F /* Resources */,
@@ -139,6 +220,8 @@
 		22AC8C56212EE635000A0BE0 /* UtilsTests */ = {
 			isa = PBXGroup;
 			children = (
+				222E307822708578004A5FE9 /* Network */,
+				222E305322707CBA004A5FE9 /* Mocks */,
 				222A72CF212EEBD600BA759F /* Resources */,
 			);
 			path = UtilsTests;
@@ -344,12 +427,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222E306B22707E1F004A5FE9 /* NetworkMethod.swift in Sources */,
 				224196012262A0720006348F /* Result.swift in Sources */,
+				222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */,
+				222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */,
 				2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */,
+				222E307722707F16004A5FE9 /* NetworkSessionDataTask.swift in Sources */,
+				222E307022707E80004A5FE9 /* NetworkRequest.swift in Sources */,
 				2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */,
 				224195FF2262A0620006348F /* LocalizedError.swift in Sources */,
+				222E308222708DD3004A5FE9 /* NetworkResponseFactory.swift in Sources */,
 				2222142222661FF3001F41C8 /* State.swift in Sources */,
+				222E307322707E99004A5FE9 /* NetworkResponse.swift in Sources */,
 				224196032262A0820006348F /* Collection.swift in Sources */,
+				222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */,
+				222E308022708DCB004A5FE9 /* NetworkRequestFactory.swift in Sources */,
 				2289A5C2212F108800787E2B /* UIColor.swift in Sources */,
 				224196052262A08B0006348F /* UITableViewCell.swift in Sources */,
 			);
@@ -359,6 +451,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222E308A22709F3A004A5FE9 /* NetworkResponseValidatorTests.swift in Sources */,
+				222E308422708DD9004A5FE9 /* NetworkRequestFactoryTests.swift in Sources */,
+				222E3086227091D1004A5FE9 /* NetworkResponseFactoryTests.swift in Sources */,
+				222E305022707C97004A5FE9 /* NetworkAdapterTests.swift in Sources */,
+				222E305222707CB8004A5FE9 /* NetworkSessionMock.swift in Sources */,
+				222E305522707CD4004A5FE9 /* Seeds.swift in Sources */,
+				222E306622707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift in Sources */,
+				222E306822707DB8004A5FE9 /* NetworkServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

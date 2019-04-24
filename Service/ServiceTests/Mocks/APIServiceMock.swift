@@ -2,7 +2,7 @@
 import Foundation
 @testable import Service
 
-//class APIServiceMock: APIService {
+//class APIClientMock: APIClient {
 //    var performGetRequest_invocations = 0
 //    var lastRequest:APIRequest?
 //    var shouldReturnSuccess = true

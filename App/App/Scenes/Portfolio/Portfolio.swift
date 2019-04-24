@@ -10,12 +10,10 @@ protocol PortfolioInteracting {
 
 protocol PortfolioPresentating : class {
     func presentFetchArtsResponse(_ response: Portfolio.FetchArts.Response)
-    func presentSelectArtResponse(_ response: Portfolio.SelectArt.Response)
 }
 
 protocol PortfolioDisplaying : class {
     func displayFetchArtsViewModel(_ viewModel: Portfolio.FetchArts.ViewModel)
-    func displaySelectArtViewModel(_ viewModel: Portfolio.SelectArt.ViewModel)
 }
 
 protocol PortfolioDataStoring {
@@ -43,9 +41,5 @@ enum Portfolio {
         struct Request {
             let index: Int
         }
-
-        struct Response {}
-
-        struct ViewModel {}
     }
 }

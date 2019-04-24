@@ -3,3 +3,7 @@ Move to xibs
 Make collection view more declerative
 Improve on "Themable" protocol
 Write Realm caching layer
+Lazy init of dependency. "DependencyFactory"?
+Create "Main" app, with dependency provider?
+Add main thread to DI from VCs
+Remove unused req/res/vms?

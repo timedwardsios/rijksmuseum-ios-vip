@@ -2,9 +2,9 @@
 import XCTest
 @testable import Service
 
-class APIServiceTests: XCTestCase {
+class APIClientTests: XCTestCase {
 
-    var sut: APIServiceDefault!
+    var sut: APIClientDefault!
     var apiConfig: APIConfigMock!
     var networkService:NetworkServiceMock!
 
@@ -18,7 +18,7 @@ class APIServiceTests: XCTestCase {
     }
 }
 
-extension APIServiceTests {
+extension APIClientTests {
 
     func test_performRequest_networkService(){
         // given

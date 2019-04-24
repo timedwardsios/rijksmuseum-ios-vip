@@ -103,8 +103,6 @@ extension PortfolioViewController: PortfolioDisplaying {
             }
         }
     }
-
-    func displaySelectArtViewModel(_ viewModel: Portfolio.SelectArt.ViewModel) {}
 }
 
 // MARK: - Private methods

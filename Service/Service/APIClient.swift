@@ -2,29 +2,35 @@
 import Foundation
 import Utils
 
-// TODO: Update this to use generics
-
-protocol APIService {
+protocol APIClient {
     func performRequest(request: APIRequest,
                         completion: @escaping (Result<Data, Error>) -> Void)
 }
 
-class APIServiceDefault{
+class APIClientDefault{
+    let networkRequestFactory: NetworkRequestFactory
     let networkService: NetworkService
     let apiConfig: APIConfig
-    init(networkService:NetworkService,
-         apiConfig:APIConfig){
+    init(networkRequestFactory: NetworkRequestFactory,
+        networkService:NetworkService,
+        apiConfig:APIConfig){
+        self.networkRequestFactory = networkRequestFactory
         self.networkService = networkService
         self.apiConfig = apiConfig
     }
 }
 
-extension APIServiceDefault: APIService {
+extension APIClientDefault: APIClient {
     func performRequest(request: APIRequest, completion: @escaping (Result<Data, Swift.Error>) -> Void){
+        // TODO: extract this
         let url = urlFrom(config: apiConfig, request: request)
-        networkService.performRequest(atUrl: url, usingMethod: .GET) { (result) in
+
+
+        let request = networkRequestFactory.createRequest(url: url, method: .GET)
+        // TODO: sort out these functions
+        networkService.processRequest(request) { (response) in
             do {
-                completion(.success(try result.get()))
+                completion(.success(try response.result.get()))
             } catch(let error) {
                 completion(.failure(error))
             }
@@ -32,7 +38,7 @@ extension APIServiceDefault: APIService {
     }
 }
 
-private extension APIServiceDefault {
+private extension APIClientDefault {
     enum Error: String, LocalizedError{
         case networkError = "An error occured with the network"
     }

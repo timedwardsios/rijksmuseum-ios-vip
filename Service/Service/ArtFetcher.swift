@@ -1,6 +1,8 @@
 
 import Foundation
 
+// To be improved...
+
 enum ArtServiceError: String,LocalizedError{
     case json = "JSON decoding error"
 }
@@ -10,16 +12,16 @@ public protocol ArtService {
 }
 
 class ArtServiceDefault {
-    let apiService:APIService
-    init(apiService:APIService){
-        self.apiService = apiService
+    let apiClient:APIClient
+    init(apiClient:APIClient){
+        self.apiClient = apiClient
     }
 }
 
 extension ArtServiceDefault: ArtService {
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
         let request = ArtRequest()
-        apiService.performRequest(request: request) {(result) in
+        apiClient.performRequest(request: request) {(result) in
             switch result {
             case .success(let data):
                 let dataResult = ArtServiceDefault.decodeJsonData(data)

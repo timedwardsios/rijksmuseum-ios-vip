@@ -22,6 +22,4 @@ extension PortfolioPresenter: PortfolioPresentating {
             view?.displayFetchArtsViewModel(.init(state: .error(error.localizedDescription)))
         }
     }
-
-    func presentSelectArtResponse(_ response: Portfolio.SelectArt.Response) {}
 }
