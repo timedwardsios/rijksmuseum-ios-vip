@@ -32,8 +32,10 @@ extension NetworkServiceTests {
         // when
         sut.processRequest(networkRequest) { (result) in
             // then
-            if let data = result.unwrap() {
-                XCTAssertEqual(self.networkSession.data, data)
+            if let expectedData = self.networkResponseValidator.resultToReturn.unwrap(),
+                let actualData = result.unwrap(){
+
+                XCTAssertEqual(expectedData, actualData)
                 exp.fulfill()
             }
         }

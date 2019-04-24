@@ -12,7 +12,6 @@
 		2215454922672A8D0062E9C6 /* APIClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215454822672A8D0062E9C6 /* APIClientMock.swift */; };
 		221BDF2D2270DD1500631270 /* ArtServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2C2270DD1500631270 /* ArtServiceMock.swift */; };
 		221BDF2F2270DEA100631270 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2E2270DEA100631270 /* NetworkServiceMock.swift */; };
-		221BDF312270E2F200631270 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF302270E2F200631270 /* Seeds.swift */; };
 		221BDF412270F89600631270 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF402270F89600631270 /* Dependencies.swift */; };
 		221DB10F2130AAC20031A401 /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB10E2130AAC20031A401 /* Art.swift */; };
 		221F3ECE212F3E9A00907255 /* ArtServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221F3ECC212F3E7F00907255 /* ArtServiceTests.swift */; };
@@ -20,6 +19,8 @@
 		22695F4621320A1D004C47A5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4521320A1D004C47A5 /* Utils.framework */; };
 		2273F7C0227119690027C7FC /* APIConfigLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273F7BF227119690027C7FC /* APIConfigLive.swift */; };
 		2273F7C2227119DD0027C7FC /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273F7C1227119DD0027C7FC /* APIEndpoint.swift */; };
+		2273F7C4227125CC0027C7FC /* APIConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273F7C3227125CC0027C7FC /* APIConfigMock.swift */; };
+		2273F7C8227126210027C7FC /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273F7C7227126210027C7FC /* Seeds.swift */; };
 		22AA6066212F29BF007379B1 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AA605C212F29BE007379B1 /* Service.framework */; };
 		22AA606D212F29BF007379B1 /* Workers.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AA605F212F29BE007379B1 /* Workers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C9BF0A212F2A5A000D15E6 /* APIRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9BF09212F2A5A000D15E6 /* APIRequestFactoryTests.swift */; };
@@ -43,7 +44,6 @@
 		2215454822672A8D0062E9C6 /* APIClientMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientMock.swift; sourceTree = "<group>"; };
 		221BDF2C2270DD1500631270 /* ArtServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtServiceMock.swift; sourceTree = "<group>"; };
 		221BDF2E2270DEA100631270 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
-		221BDF302270E2F200631270 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		221BDF402270F89600631270 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		221DB10E2130AAC20031A401 /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
 		221F3EC7212F397100907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +54,8 @@
 		22695F4521320A1D004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2273F7BF227119690027C7FC /* APIConfigLive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfigLive.swift; sourceTree = "<group>"; };
 		2273F7C1227119DD0027C7FC /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		2273F7C3227125CC0027C7FC /* APIConfigMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfigMock.swift; sourceTree = "<group>"; };
+		2273F7C7227126210027C7FC /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		22AA605C212F29BE007379B1 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AA605F212F29BE007379B1 /* Workers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Workers.h; sourceTree = "<group>"; };
 		22AA6060212F29BE007379B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		22AA6069212F29BF007379B1 /* ServiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				2273F7C7227126210027C7FC /* Seeds.swift */,
 				221F3ECC212F3E7F00907255 /* ArtServiceTests.swift */,
 				22C9BF09212F2A5A000D15E6 /* APIRequestFactoryTests.swift */,
 				22C9BF14212F2AD9000D15E6 /* Mocks */,
@@ -192,8 +195,8 @@
 		22C9BF14212F2AD9000D15E6 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				221BDF302270E2F200631270 /* Seeds.swift */,
 				221BDF2C2270DD1500631270 /* ArtServiceMock.swift */,
+				2273F7C3227125CC0027C7FC /* APIConfigMock.swift */,
 				2215454822672A8D0062E9C6 /* APIClientMock.swift */,
 				221BDF2E2270DEA100631270 /* NetworkServiceMock.swift */,
 			);
@@ -393,11 +396,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2215454922672A8D0062E9C6 /* APIClientMock.swift in Sources */,
-				221BDF312270E2F200631270 /* Seeds.swift in Sources */,
 				221F3ECE212F3E9A00907255 /* ArtServiceTests.swift in Sources */,
 				221BDF2D2270DD1500631270 /* ArtServiceMock.swift in Sources */,
 				221BDF2F2270DEA100631270 /* NetworkServiceMock.swift in Sources */,
+				2273F7C4227125CC0027C7FC /* APIConfigMock.swift in Sources */,
 				22C9BF0A212F2A5A000D15E6 /* APIRequestFactoryTests.swift in Sources */,
+				2273F7C8227126210027C7FC /* Seeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

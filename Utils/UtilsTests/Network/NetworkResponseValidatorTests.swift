@@ -4,6 +4,8 @@ import XCTest
 
 class NetworkResponseValidatorDefaultTests: XCTestCase {
 
+    let seeds = Seeds()
+
     var sut: NetworkResponseValidatorDefault!
     var response: NetworkResponseMock!
 

@@ -6,8 +6,8 @@ import Utils
 class APIRequestFactoryTests: XCTestCase {
 
     var sut: APIRequestFactoryDefault!
-    var apiConfig: APIConfig!
-    var apiEndpoint: APIEndpoint!
+    var apiConfig: APIConfigSeed!
+    var apiEndpoint: APIEndpointSeed!
 
     override func setUp() {
         super.setUp()
@@ -19,7 +19,7 @@ class APIRequestFactoryTests: XCTestCase {
 
 extension APIRequestFactoryTests {
 
-    func test_createRequest_apiConfig() throws {
+    func test_createRequest() throws {
         let request = try sut.createRequest(withEndpoint: apiEndpoint)
         let actualComponents = try XCTAssertUnwrap(URLComponents(url: request.url,
                                                                resolvingAgainstBaseURL: false))
@@ -28,15 +28,18 @@ extension APIRequestFactoryTests {
         XCTAssertTrue(actualComponents.path.contains(apiConfig.path))
         let actualQueryItems = try XCTAssertUnwrap(actualComponents.queryItems)
         XCTAssertTrue(Set(apiConfig.queryItems).isSubset(of: actualQueryItems))
+        XCTAssertTrue(actualComponents.path.contains(apiEndpoint.path))
+        XCTAssertTrue(Set(apiEndpoint.queryItems).isSubset(of: actualQueryItems))
     }
 
-    func test_createRequest_endpoint() throws {
-        let request = try sut.createRequest(withEndpoint: apiEndpoint)
-        let actualComponents = try XCTAssertUnwrap(URLComponents(url: request.url,
-                                                                 resolvingAgainstBaseURL: false))
-        XCTAssertTrue(actualComponents.path.contains(apiEndpoint.path))
-        let actualQueryItems = try XCTAssertUnwrap(actualComponents.queryItems)
-        XCTAssertTrue(Set(apiConfig.queryItems).isSubset(of: actualQueryItems))
+    func test_createRequest_noScheme() {
+        apiConfig.scheme = ""
+        XCTAssertThrowsError(try sut.createRequest(withEndpoint: apiEndpoint))
+    }
+
+    func test_createRequest_noHostname() {
+        apiConfig.hostname = ""
+        XCTAssertThrowsError(try sut.createRequest(withEndpoint: apiEndpoint))
     }
 
 //    func test_createRequest_endpoint() throws {

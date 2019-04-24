@@ -1,26 +1,41 @@
 
 import Foundation
 
-public enum Seeds{
+public protocol Seedable {
+    static var string: String {get}
+    static var urlQueryItem: URLQueryItem {get}
+}
 
-    struct ErrorSeed: LocalizedError {
-        var errorDescription: String? {
-            return UUID().uuidString
-        }
+public extension Seedable {
+    static var string: String {
+        return UUID().uuidString
     }
-    
-    public static let error:Error = ErrorSeed()
 
-    public static let data = UUID().uuidString.data(using: .utf8)!
+    static var urlQueryItem: URLQueryItem {
+        return URLQueryItem(name: string,
+                            value: string)
+    }
+}
 
-    public static let url = URL(string: "http://www.\(UUID().uuidString).com")!
+private struct ErrorSeed: Error {}
 
-    public static let urlResponse = HTTPURLResponse(url: Seeds.url,
-                                                    statusCode: 200,
-                                                    httpVersion: nil,
-                                                    headerFields: nil)
+private extension Seedable {
+    static var error: Error {
+        return ErrorSeed()
+    }
 
-    public static var string = UUID().uuidString
+    static var data: Data {
+        return string.data(using: .utf8)!
+    }
 
-    public static let urlQueryItem = URLQueryItem(name: Seeds.string, value: Seeds.string)
+    static var url: URL {
+        return URL(string: "http://www.\(string).com")!
+    }
+
+    static var urlResponse: URLResponse {
+        return HTTPURLResponse(url: url,
+                               statusCode: 200,
+                               httpVersion: nil,
+                               headerFields: nil)!
+    }
 }

@@ -14,7 +14,25 @@ class APIRequestFactoryDefault{
 }
 
 extension APIRequestFactoryDefault: APIRequestFactory {
+    private enum LocalError: String, LocalizedError{
+        case invalidScheme
+    }
+
+    private struct NetworkRequestAPI: NetworkRequest {
+        var url: URL
+        var method: NetworkMethod
+    }
+    
+
     func createRequest(withEndpoint endpoint: APIEndpoint) throws -> NetworkRequest {
+
+        if apiConfig.scheme != "http" && apiConfig.scheme != "https" {
+            throw LocalError.invalidScheme
+        }
+        // TODO: Finish error handling
+        if apiConfig. != "http" && apiConfig.scheme != "https" {
+            throw LocalError.invalidScheme
+        }
 
         var urlComponents = URLComponents()
         urlComponents.scheme = apiConfig.scheme
@@ -22,18 +40,10 @@ extension APIRequestFactoryDefault: APIRequestFactory {
         urlComponents.path = apiConfig.path
         urlComponents.queryItems = apiConfig.queryItems
 
+        urlComponents.path.append(endpoint.path)
+        urlComponents.queryItems?.append(contentsOf: endpoint.queryItems)
+
         return NetworkRequestAPI(url: urlComponents.url!, method: .GET)
-    }
-}
-
-private extension APIRequestFactoryDefault {
-    enum LocalError: String, LocalizedError{
-        case unknown
-    }
-
-    struct NetworkRequestAPI: NetworkRequest {
-        var url: URL
-        var method: NetworkMethod
     }
 }
 
