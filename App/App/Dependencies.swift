@@ -38,11 +38,11 @@ import Foundation
 
 extension Dependencies {
 //    public func resolve() -> ArtService {
-//        return ArtServiceDefault(apiClient: resolve())
+//        return ArtServiceDefault(apiService: resolve())
 //    }
 //
-//    func resolve() -> APIClient {
-//        return APIClientDefault(networkService: resolve(), apiConfig: resolve())
+//    func resolve() -> APIService {
+//        return APIServiceDefault(networkService: resolve(), apiConfig: resolve())
 //    }
 //
 //    func resolve() -> NetworkService {

@@ -6,10 +6,10 @@ class NetworkSessionDataTaskMock: NetworkSessionDataTask {
 
     var completion: (()->Void)?
 
-    var resume_invocations = 0
+    var resumeArgs = 0
 
     func resume() {
-        resume_invocations += 1
+        resumeArgs += 1
         completion?()
     }
 }

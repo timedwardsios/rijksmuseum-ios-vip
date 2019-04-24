@@ -19,10 +19,10 @@ class NetworkSessionMock: NetworkSession {
         self.error = error
     }
 
-    var dataTask_invocations = [URLRequest]()
+    var dataTaskArgs = [URLRequest]()
 
     func dataTask(with request: URLRequest, completionHandler: @escaping DataTask.Completion) -> DataTask {
-        dataTask_invocations.append(request)
+        dataTaskArgs.append(request)
         dataTask.completion = {
             completionHandler(self.data, self.urlResponse, self.error)
         }

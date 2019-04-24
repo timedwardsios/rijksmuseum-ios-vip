@@ -5,11 +5,11 @@ import Utils
 
 class ArtServiceNetworkTests: XCTestCase {
     var sut: ArtServiceDefault!
-//    var apiClientMock: APIClientMock!
+//    var apiServiceMock: APIServiceMock!
     override func setUp() {
         super.setUp()
-//        apiClientMock = .init()
-//        sut = .init(apiClient: apiClientMock)
+//        apiServiceMock = .init()
+//        sut = .init(apiService: apiServiceMock)
     }
 }
 
@@ -19,25 +19,25 @@ extension ArtServiceNetworkTests {
 //        sut.fetchArt(completion: {_ in})
 //    }
 //
-//    func test_fetchArt_apiClientMock_called(){
+//    func test_fetchArt_apiServiceMock_called(){
 //        // when
 //        sut.fetchArt(completion: {_ in})
 //        // then
-//        XCTAssert(apiClientMock.performGetRequest_invocations == 1,
-//                  "Should forward to APIClient")
+//        XCTAssert(apiServiceMock.performGetRequestArgs == 1,
+//                  "Should forward to APIService")
 //    }
 //
-//    func test_fetchArt_apiClientMock_endpoint(){
+//    func test_fetchArt_apiServiceMock_endpoint(){
 //        // given
 //        let correctEndpoint = ModelMock.Network.Endpoint.collection.rawValue
 //        // when
 //        sut.fetchArt(completion: {_ in})
 //        // then
-//        XCTAssert(apiClientMock.lastRequest?.path == correctEndpoint,
-//                  "Should call APIClient with correct endpoint")
+//        XCTAssert(apiServiceMock.lastRequest?.path == correctEndpoint,
+//                  "Should call APIService with correct endpoint")
 //    }
 //
-//    func test_fetchArt_apiClientMock_parameters(){
+//    func test_fetchArt_apiServiceMock_parameters(){
 //        // given
 //        let queryItems = [URLQueryItem(name: "ps",
 //                                       value: "100"),
@@ -48,8 +48,8 @@ extension ArtServiceNetworkTests {
 //        // when
 //        sut.fetchArt(completion: {_ in})
 //        // then
-//        XCTAssert(apiClientMock.lastRequest?.queryItems == queryItems,
-//                  "Should call APIClient with correct parameters")
+//        XCTAssert(apiServiceMock.lastRequest?.queryItems == queryItems,
+//                  "Should call APIService with correct parameters")
 //    }
 //
 //    func test_fetchArt_callback(){
@@ -94,8 +94,8 @@ extension ArtServiceNetworkTests {
 //
 //    func test_fetchArt_callback_failure(){
 //        // given
-//        let exp = XCTestExpectation(description: "Should fail when APIClient fails")
-//        apiClientMock.shouldReturnSuccess = false
+//        let exp = XCTestExpectation(description: "Should fail when APIService fails")
+//        apiServiceMock.shouldReturnSuccess = false
 //        // when
 //        sut.fetchArt(completion: {result in
 //            // then
@@ -109,7 +109,7 @@ extension ArtServiceNetworkTests {
 //    func test_fetchArt_callback_jsonError(){
 //        // given
 //        let exp = XCTestExpectation(description: "Should fail when no data")
-//        apiClientMock.shouldReturnData = false
+//        apiServiceMock.shouldReturnData = false
 //        // when
 //        sut.fetchArt(completion: {result in
 //            // then

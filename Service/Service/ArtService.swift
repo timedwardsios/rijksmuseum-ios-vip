@@ -12,16 +12,16 @@ public protocol ArtService {
 }
 
 class ArtServiceDefault {
-    let apiClient:APIClient
-    init(apiClient:APIClient){
-        self.apiClient = apiClient
+    let apiService:APIService
+    init(apiService:APIService){
+        self.apiService = apiService
     }
 }
 
 extension ArtServiceDefault: ArtService {
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
         let request = ArtRequest()
-        apiClient.performRequest(request: request) {(result) in
+        apiService.performRequest(request: request) {(result) in
             switch result {
             case .success(let data):
                 let dataResult = ArtServiceDefault.decodeJsonData(data)

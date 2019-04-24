@@ -2,12 +2,12 @@
 import Foundation
 import Utils
 
-protocol APIClient {
+protocol APIService {
     func performRequest(request: APIRequest,
                         completion: @escaping (Result<Data, Error>) -> Void)
 }
 
-class APIClientDefault{
+class APIServiceDefault{
     let networkService: NetworkService
     let apiConfig: APIConfig
     init(networkService:NetworkService,
@@ -17,27 +17,14 @@ class APIClientDefault{
     }
 }
 
-extension APIClientDefault: APIClient {
+extension APIServiceDefault: APIService {
     func performRequest(request: APIRequest, completion: @escaping (Result<Data, Swift.Error>) -> Void){
-        // TODO: extract this
         let url = urlFrom(config: apiConfig, request: request)
-
-
         
-
-        let request = networkRequestFactory.createRequest(url: url, method: .GET)
-        // TODO: sort out these functions
-        networkService.processRequest(request) { (response) in
-            do {
-                completion(.success(try response.result.get()))
-            } catch(let error) {
-                completion(.failure(error))
-            }
-        }
     }
 }
 
-private extension APIClientDefault {
+private extension APIServiceDefault {
     enum Error: String, LocalizedError{
         case networkError = "An error occured with the network"
     }

@@ -1,24 +1,24 @@
 
 import XCTest
 @testable import Service
+import Utils
 
-class APIClientTests: XCTestCase {
+class APIServiceTests: XCTestCase {
 
-    var sut: APIClientDefault!
-    var apiConfig: APIConfigMock!
+    var sut: APIServiceDefault!
+    var apiConfig: APIConfig!
     var networkService:NetworkServiceMock!
 
     override func setUp() {
         super.setUp()
-        apiConfig = .init()
-        networkService = .init()
-        networkService.result = .success(Data(count: 10))
+        apiConfig = Seeds.apiConfig
+        networkService = .init(resultToReturn: .success(<#T##Success#>))
         sut = .init(networkService: networkService,
                     apiConfig: apiConfig)
     }
 }
 
-extension APIClientTests {
+extension APIServiceTests {
 
     func test_performRequest_networkService(){
         // given
@@ -27,9 +27,9 @@ extension APIClientTests {
         // when
         sut.performRequest(request: request) { _ in }
         // then
-        XCTAssertEqual(self.networkService.performRequest_invocations.count, 1)
-        XCTAssertEqual(self.networkService.performRequest_invocations.last?.0, correctUrl)
-        XCTAssertEqual(self.networkService.performRequest_invocations.last?.1, .GET)
+        XCTAssertEqual(self.networkService.performRequestArgs.count, 1)
+        XCTAssertEqual(self.networkService.performRequestArgs.last?.0, correctUrl)
+        XCTAssertEqual(self.networkService.performRequestArgs.last?.1, .GET)
     }
 
     func test_performRequest_callback(){
