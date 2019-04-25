@@ -19,18 +19,18 @@ class PortfolioInteractorTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-
-        presenterSpy = .init()
-        artWorker = .init(fetchArtResult: .success([Seeds]))
-        outputMock = OutputMock()
-        artServiceMock = ArtServiceSpy()
-        sut = PortfolioInteractor(output: outputMock,
-                                  artService: artServiceMock)
+        presenter = .init()
+        let artMock = ArtMock(id: Seeds.string, title: Seeds.string, artist: Seeds.string, imageUrl: Seeds.url)
+        artWorker = .init(fetchArtResult: .success([artMock]))
+        sut = .init(presenter: presenter, artWorker: artWorker)
     }
 }
 
 extension PortfolioInteractorTests {
-
-
-
+    func test_processFetchArtsRequest(){
+//        let response = Portfolio.FetchArts.Response(state: .loaded(<#T##T#>))
+        sut.processFetchArtsRequest(.init())
+        let actual = presenter.presentFetchArtsResponseArgs.last?.state
+        XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, presenter.presentFetchArtsResponseArgs.last?.)
+    }
 }

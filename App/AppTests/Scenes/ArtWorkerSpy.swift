@@ -1,6 +1,5 @@
 
 import Foundation
-import Utils
 @testable import Services
 
 class ArtWorkerSpy: ArtWorker {

@@ -19,7 +19,8 @@
 		2222142022661377001F41C8 /* PortfolioContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222141F22661377001F41C8 /* PortfolioContract.swift */; };
 		2258B966227210A600516603 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258B965227210A600516603 /* Services.framework */; };
 		2258B98422723F5000516603 /* ArtWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B98322723F5000516603 /* ArtWorkerSpy.swift */; };
-		2258B9862272401900516603 /* TestingUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258B9852272401900516603 /* TestingUtils.framework */; };
+		2258B9F422724B7B00516603 /* ArtMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9F322724B7B00516603 /* ArtMock.swift */; };
+		2258B9F622724D6500516603 /* UtilsTestTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258B9F522724D6500516603 /* UtilsTestTools.framework */; };
 		22695F4821320A27004C47A5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4721320A27004C47A5 /* Utils.framework */; };
 		22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C75212EEA02000A0BE0 /* Assets.xcassets */; };
 		22AC8C8F212EEA02000A0BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C76212EEA02000A0BE0 /* LaunchScreen.storyboard */; };
@@ -62,6 +63,8 @@
 		2258B965227210A600516603 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258B98322723F5000516603 /* ArtWorkerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkerSpy.swift; sourceTree = "<group>"; };
 		2258B9852272401900516603 /* TestingUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestingUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2258B9F322724B7B00516603 /* ArtMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtMock.swift; sourceTree = "<group>"; };
+		2258B9F522724D6500516603 /* UtilsTestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UtilsTestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F3D213202E1004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F43213203C8004C47A5 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4721320A27004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2258B9862272401900516603 /* TestingUtils.framework in Frameworks */,
+				2258B9F622724D6500516603 /* UtilsTestTools.framework in Frameworks */,
 				5A8C1210C1A4D88029384924 /* Pods_AppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				2258B98322723F5000516603 /* ArtWorkerSpy.swift */,
+				2258B9F322724B7B00516603 /* ArtMock.swift */,
 				221830E7210F1FC200FA1E13 /* Portfolio */,
 			);
 			path = Scenes;
@@ -249,6 +253,7 @@
 		A10F01533FEF44811CAB0213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2258B9F522724D6500516603 /* UtilsTestTools.framework */,
 				2258B9852272401900516603 /* TestingUtils.framework */,
 				2258B965227210A600516603 /* Services.framework */,
 				22695F4921320A72004C47A5 /* Service.framework */,
@@ -473,6 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2258B98422723F5000516603 /* ArtWorkerSpy.swift in Sources */,
+				2258B9F422724B7B00516603 /* ArtMock.swift in Sources */,
 				221830F2210FDA5900FA1E13 /* PortfolioPresenterTests.swift in Sources */,
 				221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */,
 			);
