@@ -1,9 +1,9 @@
 
 import Foundation
 import Utils
-@testable import Service
+@testable import Services
 
-class JSONDecoderServiceSpy: Service.JSONDecoderService {
+class JSONDecoderServiceSpy: Services.JSONDecoderService {
 
     var decodeArgs = [Data]()
 

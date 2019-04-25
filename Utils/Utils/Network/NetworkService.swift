@@ -1,6 +1,19 @@
 
 import Foundation
 
+public enum NetworkMethod: String {
+    case GET
+    case POST
+    case PUT
+    case PATCH
+    case DELETE
+}
+
+public protocol NetworkRequest {
+    var url: URL {get}
+    var method: NetworkMethod {get}
+}
+
 public protocol NetworkService {
     func processRequest(_ request: NetworkRequest,
                         completion: @escaping (Result<Data, Error>) -> Void)

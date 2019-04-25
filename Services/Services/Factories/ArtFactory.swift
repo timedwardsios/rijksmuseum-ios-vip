@@ -10,7 +10,7 @@ public protocol Art {
 }
 
 protocol ArtFactory {
-    func createArt(fromJSONData data:Data) throws -> [Art]
+    func createArts(fromJSONData data:Data) throws -> [Art]
 }
 
 class ArtFactoryDefault{
@@ -22,7 +22,7 @@ class ArtFactoryDefault{
 
 extension ArtFactoryDefault: ArtFactory {
 
-    func createArt(fromJSONData data: Data) throws -> [Art] {
+    func createArts(fromJSONData data: Data) throws -> [Art] {
         do {
             let rootObject = try jsonDecoderService.decode(RootObject.self, from: data)
             return rootObject.artObjects

@@ -1,6 +1,5 @@
-"Return value" on all mocks
+Remove count unit tests
 
-Finish art service unit testing
 Finish VIP unit testing
 Refactor
     Add main thread to DI from VCs

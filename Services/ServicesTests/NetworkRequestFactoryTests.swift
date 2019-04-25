@@ -1,7 +1,7 @@
 
 import XCTest
 import TestingUtils
-@testable import Service
+@testable import Services
 
 class NetworkRequestFactoryTests: XCTestCase {
 

@@ -50,10 +50,8 @@ extension NetworkServiceTests {
         sut.processRequest(networkRequest) { (result) in
             // then
             if result.isSuccess {
-                XCTAssertEqual(self.networkSession.dataTaskArgs.count, 1)
                 XCTAssertEqual(self.networkSession.dataTaskArgs.last?.url, self.networkRequest.url)
                 XCTAssertEqual(self.networkSession.dataTaskArgs.last?.httpMethod, self.networkRequest.method.rawValue)
-                XCTAssertEqual(self.networkSession.dataTask.resumeArgs, 1)
                 exp.fulfill()
             }
         }
@@ -67,7 +65,6 @@ extension NetworkServiceTests {
         sut.processRequest(networkRequest) { (result) in
             // then
             if result.isSuccess {
-                XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.count, 1)
                 XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.data, self.networkSession.data)
                 XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.urlResponse, self.networkSession.urlResponse)
                 exp.fulfill()

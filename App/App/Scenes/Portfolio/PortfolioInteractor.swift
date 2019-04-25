@@ -1,16 +1,16 @@
 
-import Service
+import Services
 import Utils
 
 class PortfolioInteractor: PortfolioDataStoring {
 
     let presenter: PortfolioPresentating
-    let artService: ArtService
+    let artWorker: ArtWorker
 
     init(presenter: PortfolioPresentating,
-         artService: ArtService) {
+         artWorker: ArtWorker) {
         self.presenter = presenter
-        self.artService = artService
+        self.artWorker = artWorker
     }
 
     var arts = [Art]()
@@ -20,7 +20,7 @@ class PortfolioInteractor: PortfolioDataStoring {
 extension PortfolioInteractor: PortfolioInteracting {
     func processFetchArtsRequest(_ request: Portfolio.FetchArts.Request) {
         presenter.presentFetchArtsResponse(.init(state: .loading))
-        artService.fetchArt { [weak self] (result) in
+        artWorker.fetchArt { [weak self] (result) in
             guard let self = self else {return}
             do {
                 self.arts = try result.get()

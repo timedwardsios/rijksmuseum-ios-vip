@@ -1,6 +1,6 @@
 
 import UIKit
-import Service
+import Services
 import Utils
 
 class ListingInteractor: ListingDataStore{

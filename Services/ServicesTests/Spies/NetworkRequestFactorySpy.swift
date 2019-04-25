@@ -1,7 +1,7 @@
 
 import Foundation
 import Utils
-@testable import Service
+@testable import Services
 
 class NetworkRequestFactorySpy: NetworkRequestFactory {
 

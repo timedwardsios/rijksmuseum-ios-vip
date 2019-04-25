@@ -1,6 +1,12 @@
 
 import Foundation
 
+protocol NetworkResponse {
+    var data: Data? {get}
+    var urlResponse: URLResponse? {get}
+    var error: Error? {get}
+}
+
 protocol NetworkResponseValidator {
     func validateResponseAndUnwrapData(_ response: NetworkResponse) throws -> Data
 }

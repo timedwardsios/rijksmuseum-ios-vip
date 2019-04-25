@@ -1,6 +1,6 @@
 
 import Foundation
-import Service
+import Services
 import Utils
 
 protocol ListingInteracting {

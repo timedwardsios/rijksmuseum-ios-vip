@@ -64,7 +64,6 @@ extension PortfolioPresenterTests {
         let artSeed = Seeds.Model.ArtSeed()
         let response = Portfolio.FetchArt.Response(state: .loaded([artSeed]))
         sut.presentFetchArt(response: response)
-        XCTAssert(outputMock.presentFetchArt_loaded_value?.count == 1)
         let firstValue = outputMock.presentFetchArt_loaded_value?.first
         XCTAssert(firstValue == artSeed.imageUrl)
     }

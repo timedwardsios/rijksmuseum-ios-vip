@@ -8,13 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B90B1DAD8E3443C5365300D /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB434F98CFA0638795566DD /* Pods_Utils.framework */; };
-		221BDF212270C38E00631270 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF202270C38E00631270 /* NetworkRequest.swift */; };
-		221BDF242270C45300631270 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF232270C45300631270 /* NetworkResponse.swift */; };
 		221BDF262270C5A600631270 /* NetworkRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF252270C5A600631270 /* NetworkRequestMock.swift */; };
-		221BDF282270CC7700631270 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF272270CC7700631270 /* NetworkMethod.swift */; };
 		221BDF2A2270CFFD00631270 /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */; };
 		221BDF432270F89A00631270 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF422270F89A00631270 /* Dependencies.swift */; };
-		2222142222661FF3001F41C8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222142122661FF3001F41C8 /* State.swift */; };
 		222E305022707C97004A5FE9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */; };
 		222E305222707CB8004A5FE9 /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */; };
 		222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305B22707D23004A5FE9 /* NetworkService.swift */; };
@@ -25,6 +21,7 @@
 		224196012262A0720006348F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196002262A0720006348F /* Result.swift */; };
 		224196032262A0820006348F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196022262A0820006348F /* Collection.swift */; };
 		224196052262A08B0006348F /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196042262A08B0006348F /* UITableViewCell.swift */; };
+		2258B96A2272119800516603 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9692272119800516603 /* State.swift */; };
 		2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */; };
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
@@ -55,13 +52,9 @@
 
 /* Begin PBXFileReference section */
 		220A4B5822719CBE00139189 /* TestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		221BDF202270C38E00631270 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		221BDF232270C45300631270 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		221BDF252270C5A600631270 /* NetworkRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestMock.swift; sourceTree = "<group>"; };
-		221BDF272270CC7700631270 /* NetworkMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
 		221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorSpy.swift; sourceTree = "<group>"; };
 		221BDF422270F89A00631270 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
-		2222142122661FF3001F41C8 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
 		222E305B22707D23004A5FE9 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -72,6 +65,7 @@
 		224196002262A0720006348F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		224196042262A08B0006348F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		2258B9692272119800516603 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTask.swift; sourceTree = "<group>"; };
 		2290FCD62271C037009E5B47 /* NetworkSessionDataTaskSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTaskSpy.swift; sourceTree = "<group>"; };
@@ -175,20 +169,10 @@
 			children = (
 				222E305B22707D23004A5FE9 /* NetworkService.swift */,
 				222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */,
-				221BDF272270CC7700631270 /* NetworkMethod.swift */,
-				221BDF202270C38E00631270 /* NetworkRequest.swift */,
-				221BDF232270C45300631270 /* NetworkResponse.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		2290FCC52271BD4B009E5B47 /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
 				222E307422707EF6004A5FE9 /* NetworkSession.swift */,
 				2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */,
 			);
-			path = Interfaces;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		2290FCDA2271C0D8009E5B47 /* Mocks */ = {
@@ -271,9 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				221BDF422270F89A00631270 /* Dependencies.swift */,
-				2222142122661FF3001F41C8 /* State.swift */,
+				2258B9692272119800516603 /* State.swift */,
 				222E305C22707D23004A5FE9 /* Network */,
-				2290FCC52271BD4B009E5B47 /* Interfaces */,
 				22AC8C68212EE7E5000A0BE0 /* Extensions */,
 				222A72CE212EEBC800BA759F /* Resources */,
 			);
@@ -557,21 +540,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221BDF212270C38E00631270 /* NetworkRequest.swift in Sources */,
 				224196012262A0720006348F /* Result.swift in Sources */,
 				222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */,
 				2290FCC42271BD32009E5B47 /* NetworkSessionDataTask.swift in Sources */,
 				221BDF432270F89A00631270 /* Dependencies.swift in Sources */,
 				222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */,
-				221BDF282270CC7700631270 /* NetworkMethod.swift in Sources */,
 				2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */,
 				2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */,
 				224195FF2262A0620006348F /* LocalizedError.swift in Sources */,
-				2222142222661FF3001F41C8 /* State.swift in Sources */,
-				221BDF242270C45300631270 /* NetworkResponse.swift in Sources */,
 				224196032262A0820006348F /* Collection.swift in Sources */,
 				222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */,
 				2289A5C2212F108800787E2B /* UIColor.swift in Sources */,
+				2258B96A2272119800516603 /* State.swift in Sources */,
 				224196052262A08B0006348F /* UITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

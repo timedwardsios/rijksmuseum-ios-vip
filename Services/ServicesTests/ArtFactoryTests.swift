@@ -1,7 +1,7 @@
 
 import XCTest
 import TestingUtils
-@testable import Service
+@testable import Services
 
 class ArtFactoryTests: XCTestCase {
 
@@ -18,12 +18,12 @@ class ArtFactoryTests: XCTestCase {
 extension ArtFactoryTests {
     func test_createArt() throws {
         let data = loadSampleFileData(withName: "collection.json")
-        let art = try XCTAssertUnwrap(sut.createArt(fromJSONData: data))
+        XCTAssertNoThrow(try XCTAssertUnwrap(sut.createArts(fromJSONData: data)))
         XCTAssertEqual(1, jsonDecoderService.decodeArgs.count)
         XCTAssertEqual(data, jsonDecoderService.decodeArgs.last)
     }
 
     func test_createArt_badData() throws {
-        XCTAssertThrowsError(try sut.createArt(fromJSONData: Seeds.data))
+        XCTAssertThrowsError(try sut.createArts(fromJSONData: Seeds.data))
     }
 }

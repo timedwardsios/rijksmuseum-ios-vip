@@ -1,6 +1,6 @@
 
 import XCTest
-import Service
+import Services
 import Utils
 @testable import Rijksmuseum
 
@@ -95,7 +95,6 @@ extension PortfolioInteractorTests {
         // when
         sut.performFetchArt(request: request)
         // then
-        XCTAssert(outputMock.presentFetchArt_loaded_value?.count == 1)
         let value = outputMock.presentFetchArt_loaded_value?.first
         let castValue = value as! Seeds.Model.ArtSeed
         XCTAssert(castValue === artServiceMock.artSeed.first)

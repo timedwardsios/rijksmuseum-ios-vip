@@ -1,14 +1,14 @@
 
-import Service
+import Services
 
 class DependenciesDefault: Dependencies {}
 
-protocol Dependencies: Service.Dependencies {}
+protocol Dependencies: Services.Dependencies {}
 
 internal extension Dependencies {
     func resolve() -> PortfolioViewController {
         let presenter = PortfolioPresenter()
-        let interactor = PortfolioInteractor(presenter: presenter, artService: resolve())
+        let interactor = PortfolioInteractor(presenter: presenter, artWorker: resolve())
         let router = PortfolioRouter(dependencies: self, dataStore: interactor)
         let viewController = PortfolioViewController(interactor: interactor, router: router)
         presenter.view = viewController
