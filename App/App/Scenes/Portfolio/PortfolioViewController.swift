@@ -4,10 +4,10 @@ import Utils
 
 class PortfolioViewController: UICollectionViewController {
 
-    let interactor: PortfolioInteracting
+    let interactor: PortfolioInteractor
     let router: PortfolioRouting
 
-    init(interactor: PortfolioInteracting,
+    init(interactor: PortfolioInteractor,
          router: PortfolioRouting){
         self.interactor = interactor
         self.router = router
@@ -38,7 +38,7 @@ extension PortfolioViewController{
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
-        interactor.processFetchArtsRequest(.init())
+        interactor.processRequest(.fetchArts)
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -84,24 +84,26 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        interactor.processSelectArtRequest(.init(index: indexPath.row))
+//        interactor.processSelectArtRequest(.init(index: indexPath.row))
         router.routeToListing()
     }
 }
 
-extension PortfolioViewController: PortfolioDisplaying {
-    func displayFetchArtsViewModel(_ viewModel: Portfolio.FetchArts.ViewModel) {
+extension PortfolioViewController: PortfolioDisplay {
+
+    func displayViewModel(_ viewModel: PortfolioViewModel) {
         DispatchQueue.main.async { [weak self] in
-            guard let self = self else {return}
-            switch viewModel.state {
-            case .loading:
-                self.refreshControl.beginRefreshingProgramatically()
-            case .loaded(let urls):
-                self.refreshControl.endRefreshing()
-                self.imageUrls = urls
-            case .error(let errorMessage):
-                self.refreshControl.endRefreshing()
-                self.displayErrorMessage(errorMessage)
+            switch viewModel {
+            case .isLoading(let isLoading):
+                if isLoading {
+                    self?.refreshControl.beginRefreshingProgramatically()
+                } else {
+                    self?.refreshControl.endRefreshing()
+                }
+            case .imageUrls(let urls):
+                self?.imageUrls = urls
+            case .errorAlertMessage(let message):
+                self?.displayErrorMessage(message)
             }
         }
     }
@@ -148,6 +150,6 @@ private extension PortfolioViewController {
 // MARK: - Selectors
 @objc extension PortfolioViewController {
     func didPullToRefresh() {
-        interactor.processFetchArtsRequest(.init())
+        interactor.processRequest(.fetchArts)
     }
 }

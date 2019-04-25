@@ -21,7 +21,6 @@
 		224196012262A0720006348F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196002262A0720006348F /* Result.swift */; };
 		224196032262A0820006348F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196022262A0820006348F /* Collection.swift */; };
 		224196052262A08B0006348F /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196042262A08B0006348F /* UITableViewCell.swift */; };
-		2258B96A2272119800516603 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9692272119800516603 /* State.swift */; };
 		2258B9ED2272485200516603 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9E82272485100516603 /* XCTest.swift */; };
 		2258B9EE2272485200516603 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2258B9EA2272485100516603 /* Utilities.h */; };
 		2258B9F02272485200516603 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9EC2272485100516603 /* Seeds.swift */; };
@@ -65,7 +64,6 @@
 		224196002262A0720006348F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		224196042262A08B0006348F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
-		2258B9692272119800516603 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		2258B9E82272485100516603 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		2258B9EA2272485100516603 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		2258B9EB2272485100516603 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				221BDF422270F89A00631270 /* Dependencies.swift */,
-				2258B9692272119800516603 /* State.swift */,
 				222E305C22707D23004A5FE9 /* Network */,
 				22AC8C68212EE7E5000A0BE0 /* Extensions */,
 				222A72CE212EEBC800BA759F /* Resources */,
@@ -534,7 +531,6 @@
 				224196032262A0820006348F /* Collection.swift in Sources */,
 				222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */,
 				2289A5C2212F108800787E2B /* UIColor.swift in Sources */,
-				2258B96A2272119800516603 /* State.swift in Sources */,
 				224196052262A08B0006348F /* UITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

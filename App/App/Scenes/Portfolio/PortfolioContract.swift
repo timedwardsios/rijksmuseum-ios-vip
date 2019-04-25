@@ -3,17 +3,33 @@ import Foundation
 import Services
 import Utils
 
-protocol PortfolioInteracting {
-    func processFetchArtsRequest(_ request: Portfolio.FetchArts.Request)
-    func processSelectArtRequest(_ request: Portfolio.SelectArt.Request)
+protocol PortfolioInteractor {
+    func processRequest(_ request: PortfolioRequest)
 }
 
-protocol PortfolioPresenting : class {
-    func presentFetchArtsResponse(_ response: Portfolio.FetchArts.Response)
+protocol PortfolioPresenter {
+    func presentResponse(_ response: PortfolioResponse)
 }
 
-protocol PortfolioDisplaying : class {
-    func displayFetchArtsViewModel(_ viewModel: Portfolio.FetchArts.ViewModel)
+protocol PortfolioDisplay : class {
+    func displayViewModel(_ viewModel: PortfolioViewModel)
+}
+
+enum PortfolioRequest {
+    case fetchArts
+    case selectArt(index: Int)
+}
+
+enum PortfolioResponse {
+    case didBeginLoading
+    case didFetchArts([Art])
+    case didError(Error)
+}
+
+enum PortfolioViewModel {
+    case isLoading(Bool)
+    case imageUrls([URL])
+    case errorAlertMessage(String)
 }
 
 protocol PortfolioDataStoring {
@@ -22,24 +38,4 @@ protocol PortfolioDataStoring {
 
 protocol PortfolioRouting {
     func routeToListing()
-}
-
-enum Portfolio {
-    enum FetchArts {
-        struct Request {}
-
-        struct Response {
-            let state: State<[Art], Error>
-        }
-
-        struct ViewModel {
-            let state: State<[URL], String>
-        }
-    }
-
-    enum SelectArt  {
-        struct Request {
-            let index: Int
-        }
-    }
 }

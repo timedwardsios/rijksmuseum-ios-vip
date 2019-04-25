@@ -4,16 +4,16 @@ import Services
 import UtilsTestTools
 @testable import App
 
-class PortfolioInteractorTests: XCTestCase {
+class PortfolioInteractorDefaultTests: XCTestCase {
 
-    class PresenterSpy: PortfolioPresenting {
+    class PresenterSpy: PortfolioPresenter {
         var presentFetchArtsResponseArgs = [Portfolio.FetchArts.Response]()
         func presentFetchArtsResponse(_ response: Portfolio.FetchArts.Response) {
             presentFetchArtsResponseArgs.append(response)
         }
     }
 
-    var sut: PortfolioInteractor!
+    var sut: PortfolioInteractorDefault!
     var presenter: PresenterSpy!
     var artWorker: ArtWorkerSpy!
 
@@ -26,7 +26,7 @@ class PortfolioInteractorTests: XCTestCase {
     }
 }
 
-extension PortfolioInteractorTests {
+extension PortfolioInteractorDefaultTests {
     func test_processFetchArtsRequest(){
 //        let response = Portfolio.FetchArts.Response(state: .loaded(<#T##T#>))
         sut.processFetchArtsRequest(.init())
