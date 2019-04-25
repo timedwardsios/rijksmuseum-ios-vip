@@ -22,6 +22,9 @@
 		224196032262A0820006348F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196022262A0820006348F /* Collection.swift */; };
 		224196052262A08B0006348F /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196042262A08B0006348F /* UITableViewCell.swift */; };
 		2258B96A2272119800516603 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9692272119800516603 /* State.swift */; };
+		2258B9ED2272485200516603 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9E82272485100516603 /* XCTest.swift */; };
+		2258B9EE2272485200516603 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2258B9EA2272485100516603 /* Utilities.h */; };
+		2258B9F02272485200516603 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9EC2272485100516603 /* Seeds.swift */; };
 		2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */; };
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
@@ -30,10 +33,7 @@
 		2290FCD92271C037009E5B47 /* NetworkSessionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCD72271C037009E5B47 /* NetworkSessionSpy.swift */; };
 		2290FCDF2271C21B009E5B47 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC8C4C212EE635000A0BE0 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2290FCF32271C21B009E5B47 /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB434F98CFA0638795566DD /* Pods_Utils.framework */; };
-		2290FD052271C243009E5B47 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290FCFD2271C243009E5B47 /* Utilities.h */; };
-		2290FD0A2271C2B0009E5B47 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FD022271C243009E5B47 /* XCTest.swift */; };
-		2290FD0B2271C2B3009E5B47 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FD032271C243009E5B47 /* Seeds.swift */; };
-		2290FD0D2271C314009E5B47 /* TestingUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2290FCF82271C21B009E5B47 /* TestingUtils.framework */; };
+		2290FD0D2271C314009E5B47 /* UtilsTestTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2290FCF82271C21B009E5B47 /* UtilsTestTools.framework */; };
 		2290FD0E2271C31F009E5B47 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AC8C49212EE635000A0BE0 /* Utils.framework */; };
 		22AC8C53212EE635000A0BE0 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AC8C49212EE635000A0BE0 /* Utils.framework */; };
 		22AC8C5A212EE635000A0BE0 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC8C4C212EE635000A0BE0 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,15 +66,15 @@
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		224196042262A08B0006348F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		2258B9692272119800516603 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		2258B9E82272485100516603 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
+		2258B9EA2272485100516603 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		2258B9EB2272485100516603 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2258B9EC2272485100516603 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTask.swift; sourceTree = "<group>"; };
 		2290FCD62271C037009E5B47 /* NetworkSessionDataTaskSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTaskSpy.swift; sourceTree = "<group>"; };
 		2290FCD72271C037009E5B47 /* NetworkSessionSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionSpy.swift; sourceTree = "<group>"; };
-		2290FCF82271C21B009E5B47 /* TestingUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestingUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2290FCFD2271C243009E5B47 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		2290FCFE2271C243009E5B47 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2290FD022271C243009E5B47 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
-		2290FD032271C243009E5B47 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
+		2290FCF82271C21B009E5B47 /* UtilsTestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilsTestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C49212EE635000A0BE0 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C4C212EE635000A0BE0 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		22AC8C4D212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2290FD0D2271C314009E5B47 /* TestingUtils.framework in Frameworks */,
+				2290FD0D2271C314009E5B47 /* UtilsTestTools.framework in Frameworks */,
 				22AC8C53212EE635000A0BE0 /* Utils.framework in Frameworks */,
 				FCE3CC423F108016E928F856 /* Pods_UtilsTests.framework in Frameworks */,
 			);
@@ -175,6 +175,25 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		2258B9E72272485100516603 /* UtilsTestTools */ = {
+			isa = PBXGroup;
+			children = (
+				2258B9EC2272485100516603 /* Seeds.swift */,
+				2258B9E82272485100516603 /* XCTest.swift */,
+				2258B9E92272485100516603 /* Resources */,
+			);
+			path = UtilsTestTools;
+			sourceTree = "<group>";
+		};
+		2258B9E92272485100516603 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2258B9EA2272485100516603 /* Utilities.h */,
+				2258B9EB2272485100516603 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		2290FCDA2271C0D8009E5B47 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,42 +201,6 @@
 				222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		2290FCF92271C243009E5B47 /* TestingUtils */ = {
-			isa = PBXGroup;
-			children = (
-				2290FD032271C243009E5B47 /* Seeds.swift */,
-				2290FD022271C243009E5B47 /* XCTest.swift */,
-				2290FCFC2271C243009E5B47 /* Resources */,
-				2290FCFF2271C243009E5B47 /* Network */,
-			);
-			name = TestingUtils;
-			path = ../TestUtils/TestingUtils;
-			sourceTree = "<group>";
-		};
-		2290FCFC2271C243009E5B47 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2290FCFD2271C243009E5B47 /* Utilities.h */,
-				2290FCFE2271C243009E5B47 /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		2290FCFF2271C243009E5B47 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				2290FD002271C243009E5B47 /* Model */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		2290FD002271C243009E5B47 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		2290FD182271CA46009E5B47 /* Network */ = {
@@ -234,7 +217,7 @@
 			children = (
 				22AC8C4B212EE635000A0BE0 /* Utils */,
 				22AC8C56212EE635000A0BE0 /* UtilsTests */,
-				2290FCF92271C243009E5B47 /* TestingUtils */,
+				2258B9E72272485100516603 /* UtilsTestTools */,
 				22AC8C4A212EE635000A0BE0 /* Products */,
 				A8223029073A0062B1EA3F4B /* Pods */,
 				9B1CB214609DABFA088B4A6C /* Frameworks */,
@@ -246,7 +229,7 @@
 			children = (
 				22AC8C49212EE635000A0BE0 /* Utils.framework */,
 				22AC8C52212EE635000A0BE0 /* UtilsTests.xctest */,
-				2290FCF82271C21B009E5B47 /* TestingUtils.framework */,
+				2290FCF82271C21B009E5B47 /* UtilsTestTools.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -333,7 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2290FCDF2271C21B009E5B47 /* Utils.h in Headers */,
-				2290FD052271C243009E5B47 /* Utilities.h in Headers */,
+				2258B9EE2272485200516603 /* Utilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,9 +331,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2290FCDC2271C21B009E5B47 /* TestingUtils */ = {
+		2290FCDC2271C21B009E5B47 /* UtilsTestTools */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2290FCF52271C21B009E5B47 /* Build configuration list for PBXNativeTarget "TestingUtils" */;
+			buildConfigurationList = 2290FCF52271C21B009E5B47 /* Build configuration list for PBXNativeTarget "UtilsTestTools" */;
 			buildPhases = (
 				2290FCDD2271C21B009E5B47 /* [CP] Check Pods Manifest.lock */,
 				2290FCDE2271C21B009E5B47 /* Headers */,
@@ -362,9 +345,9 @@
 			);
 			dependencies = (
 			);
-			name = TestingUtils;
+			name = UtilsTestTools;
 			productName = Utilities;
-			productReference = 2290FCF82271C21B009E5B47 /* TestingUtils.framework */;
+			productReference = 2290FCF82271C21B009E5B47 /* UtilsTestTools.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		22AC8C48212EE635000A0BE0 /* Utils */ = {
@@ -440,7 +423,7 @@
 			targets = (
 				22AC8C48212EE635000A0BE0 /* Utils */,
 				22AC8C51212EE635000A0BE0 /* UtilsTests */,
-				2290FCDC2271C21B009E5B47 /* TestingUtils */,
+				2290FCDC2271C21B009E5B47 /* UtilsTestTools */,
 			);
 		};
 /* End PBXProject section */
@@ -531,8 +514,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2290FD0A2271C2B0009E5B47 /* XCTest.swift in Sources */,
-				2290FD0B2271C2B3009E5B47 /* Seeds.swift in Sources */,
+				2258B9F02272485200516603 /* Seeds.swift in Sources */,
+				2258B9ED2272485200516603 /* XCTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,7 +576,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "$(SRCROOT)/../TestUtils/TestingUtils/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -621,7 +603,6 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = "$(SRCROOT)/../TestUtils/TestingUtils/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -854,7 +835,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2290FCF52271C21B009E5B47 /* Build configuration list for PBXNativeTarget "TestingUtils" */ = {
+		2290FCF52271C21B009E5B47 /* Build configuration list for PBXNativeTarget "UtilsTestTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2290FCF62271C21B009E5B47 /* Debug */,

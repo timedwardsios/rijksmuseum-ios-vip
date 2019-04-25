@@ -25,10 +25,10 @@
 		2258B9722272181800516603 /* APIRequestFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9712272181800516603 /* APIRequestFactorySpy.swift */; };
 		2258B9742272194F00516603 /* ArtFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9732272194F00516603 /* ArtFactorySpy.swift */; };
 		2258B976227219E700516603 /* ArtMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B975227219E700516603 /* ArtMock.swift */; };
+		2258B9F2227248A300516603 /* UtilsTestTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258B9F1227248A300516603 /* UtilsTestTools.framework */; };
 		22695F4621320A1D004C47A5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4521320A1D004C47A5 /* Utils.framework */; };
 		2273F7C0227119690027C7FC /* APIConfigLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273F7BF227119690027C7FC /* APIConfigLive.swift */; };
 		2290FCB72271AA92009E5B47 /* NetworkRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCB62271AA92009E5B47 /* NetworkRequestMock.swift */; };
-		2290FD102271C3D9009E5B47 /* TestingUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2290FD0F2271C3D9009E5B47 /* TestingUtils.framework */; };
 		22AA6066212F29BF007379B1 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AA605C212F29BE007379B1 /* Services.framework */; };
 		22AA606D212F29BF007379B1 /* Services.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AA605F212F29BE007379B1 /* Services.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22C9BF0A212F2A5A000D15E6 /* APIRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9BF09212F2A5A000D15E6 /* APIRequestFactoryTests.swift */; };
@@ -67,6 +67,7 @@
 		2258B9712272181800516603 /* APIRequestFactorySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestFactorySpy.swift; sourceTree = "<group>"; };
 		2258B9732272194F00516603 /* ArtFactorySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtFactorySpy.swift; sourceTree = "<group>"; };
 		2258B975227219E700516603 /* ArtMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtMock.swift; sourceTree = "<group>"; };
+		2258B9F1227248A300516603 /* UtilsTestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UtilsTestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F3F213202E9004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F41213203BD004C47A5 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4521320A1D004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2290FD102271C3D9009E5B47 /* TestingUtils.framework in Frameworks */,
+				2258B9F2227248A300516603 /* UtilsTestTools.framework in Frameworks */,
 				22AA6066212F29BF007379B1 /* Services.framework in Frameworks */,
 				586E3254FFB5978B74FE7184 /* Pods_ServiceTests.framework in Frameworks */,
 			);
@@ -255,6 +256,7 @@
 		A73DBA6CB8066B3109398F83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2258B9F1227248A300516603 /* UtilsTestTools.framework */,
 				2290FD0F2271C3D9009E5B47 /* TestingUtils.framework */,
 				220A4B5A22719CFD00139189 /* TestUtils.framework */,
 				22695F4521320A1D004C47A5 /* Utils.framework */,

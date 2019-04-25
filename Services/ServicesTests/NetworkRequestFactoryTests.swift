@@ -1,6 +1,6 @@
 
 import XCTest
-import TestingUtils
+import UtilsTestTools
 @testable import Services
 
 class NetworkRequestFactoryTests: XCTestCase {
