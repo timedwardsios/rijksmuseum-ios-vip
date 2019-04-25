@@ -11,10 +11,10 @@ class NetworkServiceSpy: NetworkService {
         self.processRequestResult = processRequestResult
     }
 
-    var performRequestArgs = [NetworkRequest]()
+    var processRequestArgs = [NetworkRequest]()
 
     func processRequest(_ request: NetworkRequest, completion: (Result<Data, Error>) -> Void) {
-        performRequestArgs.append(request)
+        processRequestArgs.append(request)
         completion(processRequestResult)
     }
 }

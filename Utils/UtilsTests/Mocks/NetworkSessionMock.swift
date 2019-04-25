@@ -2,14 +2,14 @@
 import Foundation
 @testable import Utils
 
-class URLSessionMock: Utils.URLSession {
+class NetworkSessionMock: Utils.NetworkSession {
 
-    let dataTask: URLSessionDataTaskSpy
+    let dataTask: NetworkSessionDataTaskSpy
     var data:Data?
     var urlResponse: URLResponse?
     var error:Error?
 
-    init(dataTask: URLSessionDataTaskSpy,
+    init(dataTask: NetworkSessionDataTaskSpy,
          data: Data?,
          urlResponse: URLResponse?,
          error: Error?) {
@@ -21,7 +21,7 @@ class URLSessionMock: Utils.URLSession {
 
     var dataTaskArgs = [URLRequest]()
 
-    func dataTask(with request: URLRequest, completionHandler: @escaping Utils.URLSessionDataTask.Completion) -> Utils.URLSessionDataTask {
+    func dataTask(with request: URLRequest, completionHandler: @escaping Utils.NetworkSessionDataTask.Completion) -> Utils.NetworkSessionDataTask {
         dataTaskArgs.append(request)
         dataTask.completion = {
             completionHandler(self.data, self.urlResponse, self.error)

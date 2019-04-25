@@ -7,7 +7,8 @@ public protocol Dependencies: Utils.Dependencies {}
 public extension Dependencies {
     func resolve() -> ArtService {
         return ArtServiceDefault(apiRequestFactory: resolve(),
-                                 networkService: resolve())
+                                 networkService: resolve(),
+                                 jsonDecoderService: resolve())
     }
 }
 
@@ -18,5 +19,9 @@ private extension Dependencies {
 
     func resolve() -> APIConfig {
         return APIConfigLive()
+    }
+
+    func resolve() -> JSONDecoder {
+        return JSONDecoder()
     }
 }

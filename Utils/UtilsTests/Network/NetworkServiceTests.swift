@@ -7,20 +7,20 @@ class NetworkServiceTests: XCTestCase {
 
     var sut: NetworkServiceDefault!
     var networkResponseValidator: NetworkResponseValidatorSpy!
+    var networkSession: NetworkSessionMock!
     var networkRequest:NetworkRequestMock!
-    var dataTask: URLSessionDataTaskSpy!
-    var urlSession: URLSessionMock!
+    var dataTask: NetworkSessionDataTaskSpy!
 
     override func setUp() {
         super.setUp()
         networkResponseValidator = .init(validateResponseAndUnwrapDataResult: .success(Seeds.data))
         networkRequest = .init(url: Seeds.url, method: .GET)
-        dataTask = URLSessionDataTaskSpy()
-        urlSession = .init(dataTask: dataTask,
+        dataTask = NetworkSessionDataTaskSpy()
+        networkSession = .init(dataTask: dataTask,
                                data: Seeds.data,
                                urlResponse: Seeds.urlResponse,
                                error: nil)
-        sut = .init(urlSession: urlSession,
+        sut = .init(networkSession: networkSession,
                     networkResponseValidator: networkResponseValidator)
     }
 }
@@ -50,10 +50,10 @@ extension NetworkServiceTests {
         sut.processRequest(networkRequest) { (result) in
             // then
             if result.isSuccess {
-                XCTAssertEqual(self.urlSession.dataTaskArgs.count, 1)
-                XCTAssertEqual(self.urlSession.dataTaskArgs.last?.url, self.networkRequest.url)
-                XCTAssertEqual(self.urlSession.dataTaskArgs.last?.httpMethod, self.networkRequest.method.rawValue)
-                XCTAssertEqual(self.urlSession.dataTask.resumeArgs, 1)
+                XCTAssertEqual(self.networkSession.dataTaskArgs.count, 1)
+                XCTAssertEqual(self.networkSession.dataTaskArgs.last?.url, self.networkRequest.url)
+                XCTAssertEqual(self.networkSession.dataTaskArgs.last?.httpMethod, self.networkRequest.method.rawValue)
+                XCTAssertEqual(self.networkSession.dataTask.resumeArgs, 1)
                 exp.fulfill()
             }
         }
@@ -68,8 +68,8 @@ extension NetworkServiceTests {
             // then
             if result.isSuccess {
                 XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.count, 1)
-                XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.data, self.urlSession.data)
-                XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.urlResponse, self.urlSession.urlResponse)
+                XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.data, self.networkSession.data)
+                XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.urlResponse, self.networkSession.urlResponse)
                 exp.fulfill()
             }
         }
@@ -84,7 +84,7 @@ extension NetworkServiceTests {
         sut.processRequest(networkRequest) { (result) in
             // then
             if result.isSuccess {
-                XCTAssertEqual(self.urlSession.dataTaskArgs.last?.httpMethod, self.networkRequest.method.rawValue)
+                XCTAssertEqual(self.networkSession.dataTaskArgs.last?.httpMethod, self.networkRequest.method.rawValue)
                 exp.fulfill()
             }
         }
@@ -99,8 +99,8 @@ extension NetworkServiceTests {
         sut.processRequest(networkRequest) { (result) in
             // then
             if result.isFailure {
-                XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.data, self.urlSession.data)
-                XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.urlResponse, self.urlSession.urlResponse)
+                XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.data, self.networkSession.data)
+                XCTAssertEqual(self.networkResponseValidator.validateResponseAndUnwrapDataArgs.last?.urlResponse, self.networkSession.urlResponse)
                 exp.fulfill()
             }
         }

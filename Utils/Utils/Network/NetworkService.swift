@@ -8,12 +8,12 @@ public protocol NetworkService {
 
 class NetworkServiceDefault{
 
-    let urlSession: URLSession
+    let networkSession: NetworkSession
     let networkResponseValidator: NetworkResponseValidator
 
-    init(urlSession: URLSession,
+    init(networkSession: NetworkSession,
          networkResponseValidator: NetworkResponseValidator){
-        self.urlSession = urlSession
+        self.networkSession = networkSession
         self.networkResponseValidator = networkResponseValidator
     }
 }
@@ -33,7 +33,7 @@ extension NetworkServiceDefault: NetworkService {
     func processRequest(_ request: NetworkRequest, completion: @escaping (Result<Data, Error>) -> Void) {
         var urlRequest = URLRequest(url: request.url)
         urlRequest.httpMethod = request.method.rawValue
-        let dataTask = urlSession.dataTask(with: urlRequest) { [weak self] (data, response, error) in
+        let dataTask = networkSession.dataTask(with: urlRequest) { [weak self] (data, response, error) in
             guard let self = self else {
                 return
             }

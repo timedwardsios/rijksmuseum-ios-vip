@@ -1,9 +1,9 @@
 
 import Foundation
 
-protocol URLSessionDataTask {
+protocol NetworkSessionDataTask {
     typealias Completion = (Data?, URLResponse?, Error?) -> Void
     func resume()
 }
 
-extension Foundation.URLSessionDataTask: URLSessionDataTask{}
+extension URLSessionDataTask: NetworkSessionDataTask{}

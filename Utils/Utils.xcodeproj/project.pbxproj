@@ -15,10 +15,11 @@
 		221BDF2A2270CFFD00631270 /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */; };
 		221BDF432270F89A00631270 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF422270F89A00631270 /* Dependencies.swift */; };
 		2222142222661FF3001F41C8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222142122661FF3001F41C8 /* State.swift */; };
+		222BB7192271CC7C0027F2EB /* DecodableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7182271CC7C0027F2EB /* DecodableMock.swift */; };
 		222E305022707C97004A5FE9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */; };
 		222E305222707CB8004A5FE9 /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */; };
 		222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305B22707D23004A5FE9 /* NetworkService.swift */; };
-		222E307522707EF6004A5FE9 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307422707EF6004A5FE9 /* URLSession.swift */; };
+		222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307422707EF6004A5FE9 /* NetworkSession.swift */; };
 		222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */; };
 		222E308A22709F3A004A5FE9 /* NetworkResponseValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */; };
 		224195FF2262A0620006348F /* LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224195FE2262A0620006348F /* LocalizedError.swift */; };
@@ -29,13 +30,12 @@
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
 		2290FCC22271B8AB009E5B47 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCC12271B8AB009E5B47 /* JSONDecoder.swift */; };
-		2290FCC42271BD32009E5B47 /* URLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCC32271BD32009E5B47 /* URLSessionDataTask.swift */; };
-		2290FCD82271C037009E5B47 /* URLSessionDataTaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCD62271C037009E5B47 /* URLSessionDataTaskSpy.swift */; };
-		2290FCD92271C037009E5B47 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCD72271C037009E5B47 /* URLSessionMock.swift */; };
+		2290FCC42271BD32009E5B47 /* NetworkSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */; };
+		2290FCD82271C037009E5B47 /* NetworkSessionDataTaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCD62271C037009E5B47 /* NetworkSessionDataTaskSpy.swift */; };
+		2290FCD92271C037009E5B47 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCD72271C037009E5B47 /* NetworkSessionMock.swift */; };
 		2290FCDF2271C21B009E5B47 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC8C4C212EE635000A0BE0 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2290FCF32271C21B009E5B47 /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB434F98CFA0638795566DD /* Pods_Utils.framework */; };
 		2290FD052271C243009E5B47 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290FCFD2271C243009E5B47 /* Utilities.h */; };
-		2290FD092271C2A4009E5B47 /* JSONDecoderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCFB2271C243009E5B47 /* JSONDecoderSpy.swift */; };
 		2290FD0A2271C2B0009E5B47 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FD022271C243009E5B47 /* XCTest.swift */; };
 		2290FD0B2271C2B3009E5B47 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FD032271C243009E5B47 /* Seeds.swift */; };
 		2290FD0D2271C314009E5B47 /* TestingUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2290FCF82271C21B009E5B47 /* TestingUtils.framework */; };
@@ -64,10 +64,11 @@
 		221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorSpy.swift; sourceTree = "<group>"; };
 		221BDF422270F89A00631270 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		2222142122661FF3001F41C8 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		222BB7182271CC7C0027F2EB /* DecodableMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableMock.swift; sourceTree = "<group>"; };
 		222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
 		222E305B22707D23004A5FE9 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		222E307422707EF6004A5FE9 /* URLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		222E307422707EF6004A5FE9 /* NetworkSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidator.swift; sourceTree = "<group>"; };
 		222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorTests.swift; sourceTree = "<group>"; };
 		224195FE2262A0620006348F /* LocalizedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedError.swift; sourceTree = "<group>"; };
@@ -75,12 +76,11 @@
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		224196042262A08B0006348F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2290FCC12271B8AB009E5B47 /* JSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
-		2290FCC32271BD32009E5B47 /* URLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTask.swift; sourceTree = "<group>"; };
-		2290FCD62271C037009E5B47 /* URLSessionDataTaskSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskSpy.swift; sourceTree = "<group>"; };
-		2290FCD72271C037009E5B47 /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		2290FCC12271B8AB009E5B47 /* JSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONDecoder.swift; path = ../../../Service/Service/JSONDecoder.swift; sourceTree = "<group>"; };
+		2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTask.swift; sourceTree = "<group>"; };
+		2290FCD62271C037009E5B47 /* NetworkSessionDataTaskSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTaskSpy.swift; sourceTree = "<group>"; };
+		2290FCD72271C037009E5B47 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
 		2290FCF82271C21B009E5B47 /* TestingUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestingUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2290FCFB2271C243009E5B47 /* JSONDecoderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderSpy.swift; sourceTree = "<group>"; };
 		2290FCFD2271C243009E5B47 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		2290FCFE2271C243009E5B47 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2290FD022271C243009E5B47 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */,
-				2290FCD62271C037009E5B47 /* URLSessionDataTaskSpy.swift */,
+				2290FCD62271C037009E5B47 /* NetworkSessionDataTaskSpy.swift */,
 			);
 			path = Spies;
 			sourceTree = "<group>";
@@ -188,8 +188,8 @@
 		2290FCC52271BD4B009E5B47 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				222E307422707EF6004A5FE9 /* URLSession.swift */,
-				2290FCC32271BD32009E5B47 /* URLSessionDataTask.swift */,
+				222E307422707EF6004A5FE9 /* NetworkSession.swift */,
+				2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */,
 				2290FCC12271B8AB009E5B47 /* JSONDecoder.swift */,
 			);
 			path = Interfaces;
@@ -200,7 +200,8 @@
 			children = (
 				221BDF252270C5A600631270 /* NetworkRequestMock.swift */,
 				222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */,
-				2290FCD72271C037009E5B47 /* URLSessionMock.swift */,
+				2290FCD72271C037009E5B47 /* NetworkSessionMock.swift */,
+				222BB7182271CC7C0027F2EB /* DecodableMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -210,20 +211,11 @@
 			children = (
 				2290FD032271C243009E5B47 /* Seeds.swift */,
 				2290FD012271C243009E5B47 /* Extensions */,
-				2290FCFA2271C243009E5B47 /* Spies */,
 				2290FCFC2271C243009E5B47 /* Resources */,
 				2290FCFF2271C243009E5B47 /* Network */,
 			);
 			name = TestingUtils;
 			path = ../TestUtils/TestingUtils;
-			sourceTree = "<group>";
-		};
-		2290FCFA2271C243009E5B47 /* Spies */ = {
-			isa = PBXGroup;
-			children = (
-				2290FCFB2271C243009E5B47 /* JSONDecoderSpy.swift */,
-			);
-			path = Spies;
 			sourceTree = "<group>";
 		};
 		2290FCFC2271C243009E5B47 /* Resources */ = {
@@ -258,6 +250,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2290FD182271CA46009E5B47 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */,
+				222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		22AC8C3F212EE635000A0BE0 = {
 			isa = PBXGroup;
 			children = (
@@ -284,8 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				221BDF422270F89A00631270 /* Dependencies.swift */,
-				222E305C22707D23004A5FE9 /* Network */,
 				2222142122661FF3001F41C8 /* State.swift */,
+				222E305C22707D23004A5FE9 /* Network */,
 				2290FCC52271BD4B009E5B47 /* Interfaces */,
 				22AC8C68212EE7E5000A0BE0 /* Extensions */,
 				222A72CE212EEBC800BA759F /* Resources */,
@@ -296,8 +297,7 @@
 		22AC8C56212EE635000A0BE0 /* UtilsTests */ = {
 			isa = PBXGroup;
 			children = (
-				222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */,
-				222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */,
+				2290FD182271CA46009E5B47 /* Network */,
 				222E305322707CBA004A5FE9 /* Spies */,
 				2290FCDA2271C0D8009E5B47 /* Mocks */,
 				222A72CF212EEBD600BA759F /* Resources */,
@@ -563,7 +563,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2290FD0A2271C2B0009E5B47 /* XCTest.swift in Sources */,
-				2290FD092271C2A4009E5B47 /* JSONDecoderSpy.swift in Sources */,
 				2290FD0B2271C2B3009E5B47 /* Seeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,7 +574,7 @@
 				221BDF212270C38E00631270 /* NetworkRequest.swift in Sources */,
 				224196012262A0720006348F /* Result.swift in Sources */,
 				222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */,
-				2290FCC42271BD32009E5B47 /* URLSessionDataTask.swift in Sources */,
+				2290FCC42271BD32009E5B47 /* NetworkSessionDataTask.swift in Sources */,
 				221BDF432270F89A00631270 /* Dependencies.swift in Sources */,
 				222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */,
 				221BDF282270CC7700631270 /* NetworkMethod.swift in Sources */,
@@ -585,7 +584,7 @@
 				2222142222661FF3001F41C8 /* State.swift in Sources */,
 				221BDF242270C45300631270 /* NetworkResponse.swift in Sources */,
 				224196032262A0820006348F /* Collection.swift in Sources */,
-				222E307522707EF6004A5FE9 /* URLSession.swift in Sources */,
+				222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */,
 				2290FCC22271B8AB009E5B47 /* JSONDecoder.swift in Sources */,
 				2289A5C2212F108800787E2B /* UIColor.swift in Sources */,
 				224196052262A08B0006348F /* UITableViewCell.swift in Sources */,
@@ -599,10 +598,11 @@
 				221BDF262270C5A600631270 /* NetworkRequestMock.swift in Sources */,
 				222E308A22709F3A004A5FE9 /* NetworkResponseValidatorTests.swift in Sources */,
 				221BDF2A2270CFFD00631270 /* NetworkResponseValidatorSpy.swift in Sources */,
+				222BB7192271CC7C0027F2EB /* DecodableMock.swift in Sources */,
 				222E305022707C97004A5FE9 /* NetworkServiceTests.swift in Sources */,
 				222E305222707CB8004A5FE9 /* NetworkResponseMock.swift in Sources */,
-				2290FCD82271C037009E5B47 /* URLSessionDataTaskSpy.swift in Sources */,
-				2290FCD92271C037009E5B47 /* URLSessionMock.swift in Sources */,
+				2290FCD82271C037009E5B47 /* NetworkSessionDataTaskSpy.swift in Sources */,
+				2290FCD92271C037009E5B47 /* NetworkSessionMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

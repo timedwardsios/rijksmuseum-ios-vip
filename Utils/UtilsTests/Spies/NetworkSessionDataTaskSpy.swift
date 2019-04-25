@@ -2,7 +2,7 @@
 import Foundation
 @testable import Utils
 
-class URLSessionDataTaskSpy: Utils.URLSessionDataTask {
+class NetworkSessionDataTaskSpy: Utils.NetworkSessionDataTask {
 
     var completion: (()->Void)?
 

@@ -2,6 +2,8 @@
 import Foundation
 import Utils
 
+protocol APIRequest: NetworkRequest {}
+
 protocol APIRequestFactory {
     func createRequest(withEndpoint apiEndpoint:APIEndpoint) throws -> NetworkRequest
 }

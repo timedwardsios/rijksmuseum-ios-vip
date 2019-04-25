@@ -9,10 +9,13 @@ public protocol ArtService {
 class ArtServiceDefault {
     let apiRequestFactory:APIRequestFactory
     let networkService: NetworkService
+    let jsonDecoderService: JSONDecoderService
     init(apiRequestFactory:APIRequestFactory,
-         networkService: NetworkService){
+         networkService: NetworkService,
+         jsonDecoderService: JSONDecoderService){
         self.apiRequestFactory = apiRequestFactory
         self.networkService = networkService
+        self.jsonDecoderService = jsonDecoderService
     }
 }
 
@@ -41,28 +44,24 @@ extension ArtServiceDefault: ArtService {
         }
 
         networkService.processRequest(request) { (result) in
-            switch result {
-            case .success(let data):
-                let dataResult = ArtServiceDefault.decodeJsonData(data)
-                completion(dataResult)
-            case .failure(let error):
-                completion(.failure(error))
-            }
+//            switch result {
+//            case .success(let data):
+//
+//                if let response = try? jsonDecoder.decode(ArtResponse.self, from: data) {
+//                    return .success(response.artResponses)
+//                } else {
+//                    return .failure(LocalError.json)
+//                }
+//
+//                completion(dataResult)
+//            case .failure(let error):
+//                completion(.failure(error))
+//            }
         }
     }
 }
 
 private extension ArtServiceDefault {
-
-    static func decodeJsonData(_ data:Data)->Result<[Art], Error>{
-        let jsonDecoder = JSONDecoder()
-        if let response = try? jsonDecoder.decode(ArtResponse.self, from: data) {
-            return .success(response.artResponses)
-        } else {
-            return .failure(LocalError.json)
-        }
-    }
-
     struct ArtResponse: Decodable {
         struct ArtResponse: Art, Decodable {
             var id: String
