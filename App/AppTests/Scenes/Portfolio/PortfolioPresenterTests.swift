@@ -2,20 +2,20 @@
 //import XCTest
 //@testable import App
 //
-//class PortfolioPresenterDefaultTests: XCTestCase {
-//    var sut: PortfolioPresenterDefault!
+//class PortfolioPresenterTests: XCTestCase {
+//    var sut: PortfolioPresenter!
 //    var outputMock: OutputMock!
 //    override func setUp() {
 //        super.setUp()
 //        outputMock = OutputMock()
-//        sut = PortfolioPresenterDefault()
+//        sut = PortfolioPresenter()
 //        sut.output = outputMock
 //    }
 //
 //}
 //
-//extension PortfolioPresenterDefaultTests {
-//    class OutputMock: PortfolioPresenterDefaultOutput {
+//extension PortfolioPresenterTests {
+//    class OutputMock: PortfolioPresenterOutput {
 //        var presentFetchArt_loadingArgs = 0
 //        var presentFetchArt_loadedArgs = 0
 //        var presentFetchArt_loaded_value:[URL]?
@@ -37,7 +37,7 @@
 //}
 //
 //
-//extension PortfolioPresenterDefaultTests {
+//extension PortfolioPresenterTests {
 //    func test_didFetchArt(){
 //        // given
 //        let response = Portfolio.FetchArt.Response(state: .loading)

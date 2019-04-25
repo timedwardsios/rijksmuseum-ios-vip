@@ -4,33 +4,60 @@ import Services
 import UtilsTestTools
 @testable import App
 
-class PortfolioInteractorDefaultTests: XCTestCase {
+class PortfolioInteractorTests: XCTestCase {
 
-    class PresenterSpy: PortfolioPresenter {
-        var presentFetchArtsResponseArgs = [Portfolio.FetchArts.Response]()
-        func presentFetchArtsResponse(_ response: Portfolio.FetchArts.Response) {
-            presentFetchArtsResponseArgs.append(response)
-        }
-    }
-
-    var sut: PortfolioInteractorDefault!
-    var presenter: PresenterSpy!
+    var sut: PortfolioInteractor!
+    var presenter: PresenterSpy<PortfolioResponse>!
     var artWorker: ArtWorkerSpy!
+
+    var artMock: ArtMock!
 
     override func setUp() {
         super.setUp()
         presenter = .init()
-        let artMock = ArtMock(id: Seeds.string, title: Seeds.string, artist: Seeds.string, imageUrl: Seeds.url)
+        artMock = .init()
         artWorker = .init(fetchArtResult: .success([artMock]))
-        sut = .init(presenter: presenter, artWorker: artWorker)
+        sut = .init(present: presenter.present,
+                    artWorker: artWorker)
     }
 }
 
-extension PortfolioInteractorDefaultTests {
-    func test_processFetchArtsRequest(){
-//        let response = Portfolio.FetchArts.Response(state: .loaded(<#T##T#>))
-        sut.processFetchArtsRequest(.init())
-        let actual = presenter.presentFetchArtsResponseArgs.last?.state
-        XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, presenter.presentFetchArtsResponseArgs.last?.)
+extension PortfolioInteractorTests {
+
+    func test_fetchArts_presenter() throws {
+        sut.interact(request: .fetchArts)
+
+        XCTAssertEqual(1, artWorker.fetchArtArgs)
+
+        if case .didBeginLoading? = presenter.presentArgs.first {} else {
+            XCTFail()
+        }
+
+        if case .didFetchArts(let art)? = presenter.presentArgs.last {
+            XCTAssertEqual(artMock.id, art.first?.id)
+        } else {
+            XCTFail()
+        }
+    }
+
+    func test_fetchArts_artWorkerError() throws {
+        artWorker.fetchArtResult = .failure(Seeds.error)
+
+        sut.interact(request: .fetchArts)
+
+        if case .didBeginLoading? = presenter.presentArgs.first {} else {
+            XCTFail()
+        }
+
+        if case .didError? = presenter.presentArgs.last {} else {
+            XCTFail()
+        }
+    }
+
+    func test_selectArt_artWorkerError() throws {
+        sut.arts = [artMock]
+        XCTAssertNil(sut.selectedArt)
+        sut.interact(request: .selectArt(index: 0))
+        XCTAssertNotNil(sut.selectedArt)
     }
 }

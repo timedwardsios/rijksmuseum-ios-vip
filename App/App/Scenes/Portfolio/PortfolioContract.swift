@@ -3,18 +3,6 @@ import Foundation
 import Services
 import Utils
 
-protocol PortfolioInteractor {
-    func processRequest(_ request: PortfolioRequest)
-}
-
-protocol PortfolioPresenter {
-    func presentResponse(_ response: PortfolioResponse)
-}
-
-protocol PortfolioDisplay : class {
-    func displayViewModel(_ viewModel: PortfolioViewModel)
-}
-
 enum PortfolioRequest {
     case fetchArts
     case selectArt(index: Int)

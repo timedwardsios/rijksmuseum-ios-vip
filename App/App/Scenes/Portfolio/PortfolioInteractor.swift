@@ -2,14 +2,14 @@
 import Services
 import Utils
 
-class PortfolioInteractorDefault: PortfolioDataStoring {
+class PortfolioInteractor: PortfolioDataStoring {
 
-    let presenter: PortfolioPresenter
+    let present: (PortfolioResponse)->Void
     let artWorker: ArtWorker
 
-    init(presenter: PortfolioPresenter,
+    init(present: @escaping (PortfolioResponse)->Void,
          artWorker: ArtWorker) {
-        self.presenter = presenter
+        self.present = present
         self.artWorker = artWorker
     }
 
@@ -17,18 +17,19 @@ class PortfolioInteractorDefault: PortfolioDataStoring {
     var selectedArt: Art?
 }
 
-extension PortfolioInteractorDefault: PortfolioInteractor {
-    func processRequest(_ request: PortfolioRequest) {
+extension PortfolioInteractor {
+
+    func interact(request: PortfolioRequest) {
         switch request {
         case .fetchArts:
-            presenter.presentResponse(.didBeginLoading)
+            present(.didBeginLoading)
             artWorker.fetchArt { [weak self] (result) in
                 guard let self = self else {return}
                 do {
                     self.arts = try result.get()
-                    self.presenter.presentResponse(.didFetchArts(self.arts))
+                    self.present(.didFetchArts(self.arts))
                 } catch (let error) {
-                    self.presenter.presentResponse(.didError(error))
+                    self.present(.didError(error))
                 }
             }
         case .selectArt(let index):

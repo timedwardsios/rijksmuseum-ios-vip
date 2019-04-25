@@ -1,4 +1,8 @@
+Make mocks instantiate their own seeds instead of doing it in tests
+
 Finish VIP unit testing
+
+Check for retain cylce through functions
 
 Refactor
     Add main thread to DI from VCs
