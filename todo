@@ -1,10 +1,8 @@
-Remove count unit tests
-
 Finish VIP unit testing
+
 Refactor
     Add main thread to DI from VCs
-Write new decoder class and tests
-Move to xibs
+
 Make collection view more declerative
+
 Improve on "Themable" protocol
-Write Realm caching layer

@@ -10,7 +10,7 @@ class PortfolioPresenter{
     }
 }
 
-extension PortfolioPresenter: PortfolioPresentating {
+extension PortfolioPresenter: PortfolioPresenting {
     func presentFetchArtsResponse(_ response: Portfolio.FetchArts.Response) {
         switch response.state {
         case .loading:

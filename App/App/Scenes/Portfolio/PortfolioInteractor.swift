@@ -4,10 +4,10 @@ import Utils
 
 class PortfolioInteractor: PortfolioDataStoring {
 
-    let presenter: PortfolioPresentating
+    let presenter: PortfolioPresenting
     let artWorker: ArtWorker
 
-    init(presenter: PortfolioPresentating,
+    init(presenter: PortfolioPresenting,
          artWorker: ArtWorker) {
         self.presenter = presenter
         self.artWorker = artWorker

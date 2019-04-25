@@ -14,7 +14,9 @@ class PortfolioViewController: UICollectionViewController {
         super.init(collectionViewLayout: .init())
     }
 
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     let refreshControl = UIRefreshControl()
 

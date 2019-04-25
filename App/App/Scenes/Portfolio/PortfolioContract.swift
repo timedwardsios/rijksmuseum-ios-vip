@@ -8,7 +8,7 @@ protocol PortfolioInteracting {
     func processSelectArtRequest(_ request: Portfolio.SelectArt.Request)
 }
 
-protocol PortfolioPresentating : class {
+protocol PortfolioPresenting : class {
     func presentFetchArtsResponse(_ response: Portfolio.FetchArts.Response)
 }
 
