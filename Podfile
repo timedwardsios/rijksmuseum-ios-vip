@@ -26,3 +26,10 @@ target 'Utils' do
         inherit! :search_paths
     end
 end
+
+target 'TestUtils' do
+    project 'TestUtils/TestUtils.xcodeproj'
+    target 'TestUtilsTests' do
+        inherit! :search_paths
+    end
+end

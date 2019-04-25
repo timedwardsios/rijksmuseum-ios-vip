@@ -3,22 +3,21 @@ import Foundation
 import Utils
 @testable import Service
 
-protocol Seedable: Utils.Seedable {}
-
-class APIConfigSeed: APIConfig{
+internal class APIConfigSeed: APIConfig{
     var scheme = "https"
-    var hostname = Seeds.string
+    var host = Seeds.string
     var path = "/" + Seeds.string
     var queryItems = [Seeds.urlQueryItem]
 }
 
-class APIEndpointSeed: APIEndpoint{
+internal class APIEndpointSeed: APIEndpoint{
     var path = "/" + Seeds.string
     var queryItems = [Seeds.urlQueryItem]
 }
 
-enum Seeds: Seedable{
+internal enum Seeds: Seedable {}
 
+internal extension Seedable {
     static var apiConfig: APIConfigSeed {
         return APIConfigSeed()
     }

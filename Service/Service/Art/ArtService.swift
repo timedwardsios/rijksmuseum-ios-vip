@@ -2,12 +2,6 @@
 import Foundation
 import Utils
 
-// To be improved...
-
-enum ArtServiceError: String,LocalizedError{
-    case json = "JSON decoding error"
-}
-
 public protocol ArtService {
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void)
 }
@@ -23,32 +17,34 @@ class ArtServiceDefault {
 }
 
 extension ArtServiceDefault: ArtService {
+    private enum ArtServiceError: String,LocalizedError{
+        case json = "JSON decoding error"
+    }
 
     private struct APIEndpointArt: APIEndpoint{
-
         var path = "/collection"
-
         var queryItems = [URLQueryItem(name: "ps",
                                        value: "100"),
                           URLQueryItem(name: "imgonly",
                                        value: "true"),
                           URLQueryItem(name: "s",
                                        value: "relevance")]
-
     }
 
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
-        let request = try! apiRequestFactory.createRequest(withEndpoint: APIEndpointArt())
+//        do {
+//            let request = try apiRequestFactory.createRequest(withEndpoint: APIEndpointArt())
+//        }
 
-        networkService.processRequest(request) { (result) in
-            switch result {
-            case .success(let data):
-                let dataResult = ArtServiceDefault.decodeJsonData(data)
-                completion(dataResult)
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+//        networkService.processRequest(request) { (result) in
+//            switch result {
+//            case .success(let data):
+//                let dataResult = ArtServiceDefault.decodeJsonData(data)
+//                completion(dataResult)
+//            case .failure(let error):
+//                completion(.failure(error))
+//            }
+//        }
     }
 }
 

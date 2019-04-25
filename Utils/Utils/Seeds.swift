@@ -1,25 +1,19 @@
 
 import Foundation
 
-public protocol Seedable {
-    static var string: String {get}
-    static var urlQueryItem: URLQueryItem {get}
-}
+private struct ErrorSeed: Error {}
+
+
+
+internal enum Seeds: Seedable {}
+
+public protocol Seedable {}
 
 public extension Seedable {
     static var string: String {
         return UUID().uuidString
     }
 
-    static var urlQueryItem: URLQueryItem {
-        return URLQueryItem(name: string,
-                            value: string)
-    }
-}
-
-private struct ErrorSeed: Error {}
-
-private extension Seedable {
     static var error: Error {
         return ErrorSeed()
     }
@@ -37,5 +31,22 @@ private extension Seedable {
                                statusCode: 200,
                                httpVersion: nil,
                                headerFields: nil)!
+    }
+
+    static var urlQueryItem: URLQueryItem {
+        return URLQueryItem(name: string,
+                            value: string)
+    }
+
+
+
+    static var networkRequest: NetworkRequest {
+
+        struct NetworkRequestSeed: NetworkRequest {
+            var url: URL
+            var method: NetworkMethod
+        }
+
+        return NetworkRequestSeed(url: url, method: network)
     }
 }

@@ -3,12 +3,9 @@ import Service
 
 class DependenciesDefault: Dependencies {}
 
-protocol Dependencies: Service.Dependencies {
-    func resolve() -> PortfolioViewController
-    func resolve(art: Art) -> ListingViewController
-}
+protocol Dependencies: Service.Dependencies {}
 
-extension Dependencies {
+internal extension Dependencies {
     func resolve() -> PortfolioViewController {
         let presenter = PortfolioPresenter()
         let interactor = PortfolioInteractor(presenter: presenter, artService: resolve())

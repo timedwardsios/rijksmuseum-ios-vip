@@ -1,7 +1,7 @@
 
 import XCTest
+import TestUtils
 @testable import Service
-import Utils
 
 class APIRequestFactoryTests: XCTestCase {
 
@@ -20,11 +20,12 @@ class APIRequestFactoryTests: XCTestCase {
 extension APIRequestFactoryTests {
 
     func test_createRequest() throws {
+        // when
         let request = try sut.createRequest(withEndpoint: apiEndpoint)
-        let actualComponents = try XCTAssertUnwrap(URLComponents(url: request.url,
-                                                               resolvingAgainstBaseURL: false))
+        // then
+        let actualComponents = try XCTAssertUnwrap(URLComponents(url: request.url, resolvingAgainstBaseURL: false))
         XCTAssertEqual(apiConfig.scheme, actualComponents.scheme)
-        XCTAssertEqual(apiConfig.hostname, actualComponents.host)
+        XCTAssertEqual(apiConfig.host, actualComponents.host)
         XCTAssertTrue(actualComponents.path.contains(apiConfig.path))
         let actualQueryItems = try XCTAssertUnwrap(actualComponents.queryItems)
         XCTAssertTrue(Set(apiConfig.queryItems).isSubset(of: actualQueryItems))
@@ -32,65 +33,48 @@ extension APIRequestFactoryTests {
         XCTAssertTrue(Set(apiEndpoint.queryItems).isSubset(of: actualQueryItems))
     }
 
-    func test_createRequest_noScheme() {
+    func test_createRequest_noConfigScheme() {
+        // given
         apiConfig.scheme = ""
+        // then
         XCTAssertThrowsError(try sut.createRequest(withEndpoint: apiEndpoint))
     }
 
-    func test_createRequest_noHostname() {
-        apiConfig.hostname = ""
+    func test_createRequest_noConfigHostname() {
+        // given
+        apiConfig.host = ""
+        // then
         XCTAssertThrowsError(try sut.createRequest(withEndpoint: apiEndpoint))
     }
 
-//    func test_createRequest_endpoint() throws {
-//        let request = try sut.createRequest(withEndpoint: .art)
-//        let actualComponents = try XCTAssertUnwrap(URLComponents(url: request.url,
-//                                                                 resolvingAgainstBaseURL: false))
-//
-//        XCTAssertEqual(apiConfig.path, actualComponents.path)
-//        XCTAssertEqual(apiConfig.path, actualComponents.path)
-//        let actualQueryItems = try XCTAssertUnwrap(actualComponents.queryItems)
-//        XCTAssertEqual(Set(apiConfig.queryItems), Set(actualQueryItems))
-//    }
+    func test_createRequest_noConfigPath() throws {
+        // given
+        apiConfig.path = ""
+        // then
+        let request = try XCTAssertUnwrap(sut.createRequest(withEndpoint: apiEndpoint))
+        XCTAssertEqual(apiEndpoint.path, request.url.path)
+    }
 
+    func test_createRequest_noConfigQueryItems() throws {
+        // given
+        apiConfig.queryItems = [URLQueryItem]()
+        // then
+        let request = try XCTAssertUnwrap(sut.createRequest(withEndpoint: apiEndpoint))
+        let actualQueryItems = try XCTAssertUnwrap(URLComponents(url: request.url, resolvingAgainstBaseURL: false)?.queryItems)
+        XCTAssertEqual(Set(apiEndpoint.queryItems), Set(actualQueryItems))
+    }
 
-//    func test_performRequest_networkService(){
-//        // given
-//        let correctUrl = URL(string: "https://hostname.com/path/path?key=value&key=value")
-//        let request = APIRequestMock()
-//        // when
-//        sut.performRequest(request: request) { _ in }
-//        // then
-//        XCTAssertEqual(self.networkService.performRequestArgs.count, 1)
-//        XCTAssertEqual(self.networkService.performRequestArgs.last?.0, correctUrl)
-//        XCTAssertEqual(self.networkService.performRequestArgs.last?.1, .GET)
-//    }
-//
-//    func test_performRequest_callback(){
-//        // given
-//        let request = APIRequestMock()
-//        let exp = XCTestExpectation()
-//        // when
-//        sut.performRequest(request: request) { (result) in
-//            // then
-//            XCTAssertEqual(self.networkService.result?.unwrap(), result.unwrap())
-//            exp.fulfill()
-//        }
-//        wait(for: [exp], timeout: 1)
-//    }
-//
-//    func test_performRequest_error(){
-//        // given
-//        networkService.result = .failure(Seeds.error)
-//        let request = APIRequestMock()
-//        let exp = XCTestExpectation()
-//        // when
-//        sut.performRequest(request: request) { (result) in
-//            // then
-//            if result.isFailure {
-//                exp.fulfill()
-//            }
-//        }
-//        wait(for: [exp], timeout: 1)
-//    }
+    func test_createRequest_noEndpointPath() throws {
+        // given
+        apiEndpoint.path = ""
+        // then
+        XCTAssertThrowsError(try sut.createRequest(withEndpoint: apiEndpoint))
+    }
+
+    func test_createRequest_noEndpointQueryItems() throws {
+        apiEndpoint.queryItems = [URLQueryItem]()
+        let request = try XCTAssertUnwrap(sut.createRequest(withEndpoint: apiEndpoint))
+        let actualQueryItems = try XCTAssertUnwrap(URLComponents(url: request.url, resolvingAgainstBaseURL: false)?.queryItems)
+        XCTAssertEqual(Set(apiConfig.queryItems), Set(actualQueryItems))
+    }
 }

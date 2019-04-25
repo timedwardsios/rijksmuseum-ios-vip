@@ -1,19 +1,31 @@
 
 import XCTest
-import Utils
+import TestUtils
 @testable import Service
 
 class ArtServiceNetworkTests: XCTestCase {
+
     var sut: ArtServiceDefault!
-//    var apiRequestFactoryMock: APIRequestFactoryMock!
+    var apiRequestFactoryMock: APIRequestFactoryMock!
+    var networkService: NetworkServiceMock!
+
     override func setUp() {
         super.setUp()
-//        apiRequestFactoryMock = .init()
-//        sut = .init(apiRequestFactory: apiRequestFactoryMock)
+        apiRequestFactoryMock = .init(createRequestReturnValue: network)
+        sut = .init(apiRequestFactory: apiRequestFactoryMock)
     }
 }
 
 extension ArtServiceNetworkTests {
+
+    func test_fetchArt(){
+        // given
+
+        // when
+        sut.fetchArt { (_) in}
+        // then
+    }
+
 //    func test_fetchArt(){
 //        // when
 //        sut.fetchArt(completion: {_ in})
@@ -60,7 +72,7 @@ extension ArtServiceNetworkTests {
 //            // then
 //            exp.fulfill()
 //        })
-//        wait(for: [exp], timeout: 1)
+//        wait()
 //    }
 //
 //    func test_fetchArt_callback_success(){
@@ -73,7 +85,7 @@ extension ArtServiceNetworkTests {
 //                exp.fulfill()
 //            }
 //        })
-//        wait(for: [exp], timeout: 1)
+//        wait()
 //    }
 //
 //    func test_fetchArt_callback_arts(){
@@ -89,7 +101,7 @@ extension ArtServiceNetworkTests {
 //                exp.fulfill()
 //            }
 //        })
-//        wait(for: [exp], timeout: 1)
+//        wait()
 //    }
 //
 //    func test_fetchArt_callback_failure(){
@@ -103,7 +115,7 @@ extension ArtServiceNetworkTests {
 //                exp.fulfill()
 //            }
 //        })
-//        wait(for: [exp], timeout: 1)
+//        wait()
 //    }
 //
 //    func test_fetchArt_callback_jsonError(){
@@ -117,6 +129,6 @@ extension ArtServiceNetworkTests {
 //                exp.fulfill()
 //            }
 //        })
-//        wait(for: [exp], timeout: 1)
+//        wait()
 //    }
 }

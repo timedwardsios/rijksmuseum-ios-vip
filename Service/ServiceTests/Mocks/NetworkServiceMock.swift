@@ -5,16 +5,16 @@ import Utils
 
 class NetworkServiceMock: NetworkService {
     
-    var resultToReturn: Result<Data, Error>
+    var processRequestReturnValue: Result<Data, Error>
 
-    init(resultToReturn: Result<Data, Error>) {
-        self.resultToReturn = resultToReturn
+    init(processRequestReturnValue: Result<Data, Error>) {
+        self.processRequestReturnValue = processRequestReturnValue
     }
 
     var performRequestArgs = [NetworkRequest]()
 
     func processRequest(_ request: NetworkRequest, completion: (Result<Data, Error>) -> Void) {
         performRequestArgs.append(request)
-        completion(resultToReturn)
+        completion(processRequestReturnValue)
     }
 }

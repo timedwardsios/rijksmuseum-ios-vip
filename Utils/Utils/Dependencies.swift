@@ -1,9 +1,7 @@
 
 import Foundation
 
-public protocol Dependencies {
-    func resolve() -> NetworkService
-}
+public protocol Dependencies {}
 
 public extension Dependencies {
     func resolve() -> NetworkService {

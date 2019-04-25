@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B90B1DAD8E3443C5365300D /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB434F98CFA0638795566DD /* Pods_Utils.framework */; };
+		220A4B5922719CBE00139189 /* TestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220A4B5822719CBE00139189 /* TestUtils.framework */; };
 		221BDF1C2270BB2E00631270 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF1B2270BB2E00631270 /* NetworkSessionMock.swift */; };
 		221BDF212270C38E00631270 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF202270C38E00631270 /* NetworkRequest.swift */; };
 		221BDF242270C45300631270 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF232270C45300631270 /* NetworkResponse.swift */; };
@@ -29,12 +30,11 @@
 		224196012262A0720006348F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196002262A0720006348F /* Result.swift */; };
 		224196032262A0820006348F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196022262A0820006348F /* Collection.swift */; };
 		224196052262A08B0006348F /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196042262A08B0006348F /* UITableViewCell.swift */; };
-		2273F7BE227117020027C7FC /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273F7BD227117020027C7FC /* XCTest.swift */; };
 		2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */; };
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
 		22AC8C53212EE635000A0BE0 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AC8C49212EE635000A0BE0 /* Utils.framework */; };
-		22AC8C5A212EE635000A0BE0 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC8C4C212EE635000A0BE0 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22AC8C5A212EE635000A0BE0 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC8C4C212EE635000A0BE0 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FCE3CC423F108016E928F856 /* Pods_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE2A3E55A264A0892929C44 /* Pods_UtilsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		220A4B5822719CBE00139189 /* TestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221BDF1B2270BB2E00631270 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
 		221BDF202270C38E00631270 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		221BDF232270C45300631270 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
@@ -71,9 +72,8 @@
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		224196042262A08B0006348F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2273F7BD227117020027C7FC /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		22AC8C49212EE635000A0BE0 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22AC8C4C212EE635000A0BE0 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		22AC8C4C212EE635000A0BE0 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		22AC8C4D212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AC8C52212EE635000A0BE0 /* UtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C59212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220A4B5922719CBE00139189 /* TestUtils.framework in Frameworks */,
 				22AC8C53212EE635000A0BE0 /* Utils.framework in Frameworks */,
 				FCE3CC423F108016E928F856 /* Pods_UtilsTests.framework in Frameworks */,
 			);
@@ -137,7 +138,7 @@
 		222A72CE212EEBC800BA759F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				22AC8C4C212EE635000A0BE0 /* Utilities.h */,
+				22AC8C4C212EE635000A0BE0 /* Utils.h */,
 				22AC8C4D212EE635000A0BE0 /* Info.plist */,
 			);
 			path = Resources;
@@ -237,7 +238,6 @@
 				224196042262A08B0006348F /* UITableViewCell.swift */,
 				22AC8C66212EE7E5000A0BE0 /* UIColor.swift */,
 				22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */,
-				2273F7BD227117020027C7FC /* XCTest.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -245,6 +245,7 @@
 		9B1CB214609DABFA088B4A6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				220A4B5822719CBE00139189 /* TestUtils.framework */,
 				2273F7B9227112E00027C7FC /* XCTest.framework */,
 				ACC0253969F8083EE6542C2C /* Pods_Utility.framework */,
 				29A45348468C05E17C5C7926 /* Pods_UtilityTests.framework */,
@@ -285,7 +286,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22AC8C5A212EE635000A0BE0 /* Utilities.h in Headers */,
+				22AC8C5A212EE635000A0BE0 /* Utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +433,6 @@
 			files = (
 				221BDF212270C38E00631270 /* NetworkRequest.swift in Sources */,
 				224196012262A0720006348F /* Result.swift in Sources */,
-				2273F7BE227117020027C7FC /* XCTest.swift in Sources */,
 				222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */,
 				221BDF432270F89A00631270 /* Dependencies.swift in Sources */,
 				222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */,
@@ -613,7 +613,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -621,7 +621,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Utilities;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Utils;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -640,7 +640,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -648,7 +648,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Utilities;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Utils;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

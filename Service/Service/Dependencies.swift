@@ -2,9 +2,7 @@
 import Foundation
 import Utils
 
-public protocol Dependencies: Utils.Dependencies {
-    func resolve() -> ArtService
-}
+public protocol Dependencies: Utils.Dependencies {}
 
 public extension Dependencies {
     func resolve() -> ArtService {

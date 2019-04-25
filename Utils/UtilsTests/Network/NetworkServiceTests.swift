@@ -1,5 +1,6 @@
 
 import XCTest
+import TestUtils
 @testable import Utils
 
 class NetworkServiceTests: XCTestCase {
@@ -39,7 +40,7 @@ extension NetworkServiceTests {
                 exp.fulfill()
             }
         }
-        wait(for: [exp], timeout: 1)
+        wait(exp)
     }
 
     func test_processRequest_networkSession(){
@@ -56,7 +57,7 @@ extension NetworkServiceTests {
                 exp.fulfill()
             }
         }
-        wait(for: [exp], timeout: 1)
+        wait(exp)
     }
 
     func test_processRequest_responseValidator(){
@@ -72,7 +73,7 @@ extension NetworkServiceTests {
                 exp.fulfill()
             }
         }
-        wait(for: [exp], timeout: 1)
+        wait(exp)
     }
 
     func test_processRequest_POST(){
@@ -87,7 +88,7 @@ extension NetworkServiceTests {
                 exp.fulfill()
             }
         }
-        wait(for: [exp], timeout: 1)
+        wait(exp)
     }
 
     func test_processRequest_badValidation(){
@@ -103,7 +104,7 @@ extension NetworkServiceTests {
                 exp.fulfill()
             }
         }
-        wait(for: [exp], timeout: 1)
+        wait(exp)
     }
 }
 
