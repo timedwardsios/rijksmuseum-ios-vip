@@ -3,7 +3,7 @@ import Foundation
 import Utils
 @testable import Service
 
-class APIEndpointMock: APIEndpoint {
+class APIRequestMock: APIRequest {
 
     var path: String
     var queryItems: [URLQueryItem]

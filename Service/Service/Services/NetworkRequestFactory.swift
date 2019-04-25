@@ -2,20 +2,25 @@
 import Foundation
 import Utils
 
-protocol APIRequest: NetworkRequest {}
-
-protocol APIRequestFactory {
-    func createRequest(withEndpoint apiEndpoint:APIEndpoint) throws -> NetworkRequest
+protocol APIConfig {
+    var path: String {get}
+    var queryItems: [URLQueryItem] {get}
+    var scheme: String {get}
+    var host: String {get}
 }
 
-class APIRequestFactoryDefault{
+protocol NetworkRequestFactory {
+    func createRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest
+}
+
+class NetworkRequestFactoryDefault{
     let apiConfig: APIConfig
     init(apiConfig:APIConfig){
         self.apiConfig = apiConfig
     }
 }
 
-extension APIRequestFactoryDefault: APIRequestFactory {
+extension NetworkRequestFactoryDefault: NetworkRequestFactory {
     private enum LocalError: String, LocalizedError{
         case unableToConstructURL
         case invalidConfigScheme
@@ -29,7 +34,7 @@ extension APIRequestFactoryDefault: APIRequestFactory {
     }
     
 
-    func createRequest(withEndpoint apiEndpoint: APIEndpoint) throws -> NetworkRequest {
+    func createRequest(fromAPIRequest apiRequest: APIRequest) throws -> NetworkRequest {
 
         if apiConfig.scheme != "http" && apiConfig.scheme != "https" {
             throw LocalError.invalidConfigScheme
@@ -39,7 +44,7 @@ extension APIRequestFactoryDefault: APIRequestFactory {
             throw LocalError.invalidConfigHostname
         }
 
-        if apiEndpoint.path.isEmpty {
+        if apiRequest.path.isEmpty {
             throw LocalError.invalidEndpointPath
         }
 
@@ -49,8 +54,8 @@ extension APIRequestFactoryDefault: APIRequestFactory {
         urlComponents.path = apiConfig.path
         urlComponents.queryItems = apiConfig.queryItems
 
-        urlComponents.path.append(apiEndpoint.path)
-        urlComponents.queryItems?.append(contentsOf: apiEndpoint.queryItems)
+        urlComponents.path.append(apiRequest.path)
+        urlComponents.queryItems?.append(contentsOf: apiRequest.queryItems)
 
         guard let url = urlComponents.url else {
             throw LocalError.unableToConstructURL

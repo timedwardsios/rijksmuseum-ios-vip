@@ -3,7 +3,7 @@ import Foundation
 import Utils
 @testable import Service
 
-class APIRequestFactorySpy: APIRequestFactory {
+class NetworkRequestFactorySpy: NetworkRequestFactory {
 
     var createRequestResult: Result<NetworkRequest, Error>
 
@@ -11,10 +11,10 @@ class APIRequestFactorySpy: APIRequestFactory {
         self.createRequestResult = createRequestResult
     }
 
-    var createRequestArgs = [APIEndpoint]()
+    var createRequestArgs = [APIRequest]()
 
-    func createRequest(withEndpoint apiEndpoint: APIEndpoint) throws -> NetworkRequest {
-        createRequestArgs.append(apiEndpoint)
+    func createRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest {
+        createRequestArgs.append(apiRequest)
         return try createRequestResult.get()
     }
 }

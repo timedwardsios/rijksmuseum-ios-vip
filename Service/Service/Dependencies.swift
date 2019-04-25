@@ -4,17 +4,13 @@ import Utils
 
 public protocol Dependencies: Utils.Dependencies {}
 
-public extension Dependencies {
-    func resolve() -> ArtService {
-        return ArtServiceDefault(apiRequestFactory: resolve(),
-                                 networkService: resolve(),
-                                 jsonDecoderService: resolve())
-    }
-}
-
 private extension Dependencies {
     func resolve() -> APIRequestFactory {
-        return APIRequestFactoryDefault(apiConfig: resolve())
+        return APIRequestFactoryDefault()
+    }
+
+    func resolve() -> NetworkRequestFactory {
+        return NetworkRequestFactoryDefault(apiConfig: resolve())
     }
 
     func resolve() -> APIConfig {
