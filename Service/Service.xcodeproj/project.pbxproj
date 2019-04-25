@@ -11,16 +11,15 @@
 		220A4B632271A7EB00139189 /* APIEndpointMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A4B622271A7EB00139189 /* APIEndpointMock.swift */; };
 		22154539226720DD0062E9C6 /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */; };
 		2215454922672A8D0062E9C6 /* APIRequestFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215454822672A8D0062E9C6 /* APIRequestFactorySpy.swift */; };
-		221BDF2D2270DD1500631270 /* ArtServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2C2270DD1500631270 /* ArtServiceSpy.swift */; };
 		221BDF2F2270DEA100631270 /* NetworkServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */; };
 		221BDF412270F89600631270 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF402270F89600631270 /* Dependencies.swift */; };
 		222BB71B2271E53A0027F2EB /* JSONDecoderServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB71A2271E53A0027F2EB /* JSONDecoderServiceSpy.swift */; };
-		222BB71D2271E54E0027F2EB /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB71C2271E54E0027F2EB /* JSONDecoder.swift */; };
+		222BB71D2271E54E0027F2EB /* JSONDecoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB71C2271E54E0027F2EB /* JSONDecoderService.swift */; };
 		222BB7212271ED2C0027F2EB /* APIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */; };
 		222BB7232271ED4B0027F2EB /* ArtFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7222271ED4B0027F2EB /* ArtFactory.swift */; };
 		222BB7262271F6460027F2EB /* NetworkRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7252271F6460027F2EB /* NetworkRequestFactoryTests.swift */; };
 		2258B95B2271FA7D00516603 /* ArtFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B95A2271FA7D00516603 /* ArtFactoryTests.swift */; };
-		2258B95D2272009400516603 /* ArtMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B95C2272009400516603 /* ArtMock.swift */; };
+		2258B96422720B9400516603 /* collection.json in Resources */ = {isa = PBXBuildFile; fileRef = 2258B95E2272062500516603 /* collection.json */; };
 		22695F4621320A1D004C47A5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4521320A1D004C47A5 /* Utils.framework */; };
 		2273F7C0227119690027C7FC /* APIConfigLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273F7BF227119690027C7FC /* APIConfigLive.swift */; };
 		2290FCB72271AA92009E5B47 /* NetworkRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCB62271AA92009E5B47 /* NetworkRequestMock.swift */; };
@@ -48,17 +47,16 @@
 		220A4B622271A7EB00139189 /* APIEndpointMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpointMock.swift; sourceTree = "<group>"; };
 		22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactory.swift; sourceTree = "<group>"; };
 		2215454822672A8D0062E9C6 /* APIRequestFactorySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestFactorySpy.swift; sourceTree = "<group>"; };
-		221BDF2C2270DD1500631270 /* ArtServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtServiceSpy.swift; sourceTree = "<group>"; };
 		221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceSpy.swift; sourceTree = "<group>"; };
 		221BDF402270F89600631270 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		221F3EC7212F397100907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		222BB71A2271E53A0027F2EB /* JSONDecoderServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderServiceSpy.swift; sourceTree = "<group>"; };
-		222BB71C2271E54E0027F2EB /* JSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		222BB71C2271E54E0027F2EB /* JSONDecoderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderService.swift; sourceTree = "<group>"; };
 		222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestFactory.swift; sourceTree = "<group>"; };
 		222BB7222271ED4B0027F2EB /* ArtFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtFactory.swift; sourceTree = "<group>"; };
 		222BB7252271F6460027F2EB /* NetworkRequestFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactoryTests.swift; sourceTree = "<group>"; };
 		2258B95A2271FA7D00516603 /* ArtFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtFactoryTests.swift; sourceTree = "<group>"; };
-		2258B95C2272009400516603 /* ArtMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtMock.swift; sourceTree = "<group>"; };
+		2258B95E2272062500516603 /* collection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = collection.json; sourceTree = "<group>"; };
 		22695F3F213202E9004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F41213203BD004C47A5 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4521320A1D004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,10 +142,17 @@
 				222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */,
 				22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */,
 				222BB7222271ED4B0027F2EB /* ArtFactory.swift */,
-				2273F7BF227119690027C7FC /* APIConfigLive.swift */,
-				222BB71C2271E54E0027F2EB /* JSONDecoder.swift */,
+				222BB71C2271E54E0027F2EB /* JSONDecoderService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		2258B9602272066F00516603 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				2258B95E2272062500516603 /* collection.json */,
+			);
+			path = Samples;
 			sourceTree = "<group>";
 		};
 		2290FCDB2271C12C009E5B47 /* Mocks */ = {
@@ -156,7 +161,6 @@
 				220A4B602271A6EB00139189 /* APIConfigMock.swift */,
 				220A4B622271A7EB00139189 /* APIEndpointMock.swift */,
 				2290FCB62271AA92009E5B47 /* NetworkRequestMock.swift */,
-				2258B95C2272009400516603 /* ArtMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				221BDF402270F89600631270 /* Dependencies.swift */,
+				2273F7BF227119690027C7FC /* APIConfigLive.swift */,
 				222BB7242271F32B0027F2EB /* Services */,
 				22C9BF06212F2A27000D15E6 /* Resources */,
 			);
@@ -199,6 +204,7 @@
 				2258B95A2271FA7D00516603 /* ArtFactoryTests.swift */,
 				22C9BF14212F2AD9000D15E6 /* Spies */,
 				2290FCDB2271C12C009E5B47 /* Mocks */,
+				2258B9602272066F00516603 /* Samples */,
 				221F3ECB212F3DD000907255 /* Resources */,
 			);
 			path = ServiceTests;
@@ -216,7 +222,6 @@
 		22C9BF14212F2AD9000D15E6 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
-				221BDF2C2270DD1500631270 /* ArtServiceSpy.swift */,
 				2215454822672A8D0062E9C6 /* APIRequestFactorySpy.swift */,
 				221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */,
 				222BB71A2271E53A0027F2EB /* JSONDecoderServiceSpy.swift */,
@@ -347,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2258B96422720B9400516603 /* collection.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2273F7C0227119690027C7FC /* APIConfigLive.swift in Sources */,
-				222BB71D2271E54E0027F2EB /* JSONDecoder.swift in Sources */,
+				222BB71D2271E54E0027F2EB /* JSONDecoderService.swift in Sources */,
 				222BB7232271ED4B0027F2EB /* ArtFactory.swift in Sources */,
 				22154539226720DD0062E9C6 /* NetworkRequestFactory.swift in Sources */,
 				221BDF412270F89600631270 /* Dependencies.swift in Sources */,
@@ -419,8 +425,6 @@
 			files = (
 				2290FCB72271AA92009E5B47 /* NetworkRequestMock.swift in Sources */,
 				2215454922672A8D0062E9C6 /* APIRequestFactorySpy.swift in Sources */,
-				221BDF2D2270DD1500631270 /* ArtServiceSpy.swift in Sources */,
-				2258B95D2272009400516603 /* ArtMock.swift in Sources */,
 				222BB71B2271E53A0027F2EB /* JSONDecoderServiceSpy.swift in Sources */,
 				221BDF2F2270DEA100631270 /* NetworkServiceSpy.swift in Sources */,
 				220A4B632271A7EB00139189 /* APIEndpointMock.swift in Sources */,
@@ -584,7 +588,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Workers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Service;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -610,7 +614,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Workers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Service;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -629,7 +633,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.WorkersTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.ServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -647,7 +651,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.WorkersTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.ServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

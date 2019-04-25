@@ -26,7 +26,7 @@ extension ArtFactoryDefault: ArtFactory {
         do {
             let rootObject = try jsonDecoderService.decode(RootObject.self, from: data)
             return rootObject.artObjects
-        } catch (let error) {
+        } catch {
             throw LocalError.jsonDecodingFailure
         }
     }

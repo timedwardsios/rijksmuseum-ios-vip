@@ -7,7 +7,7 @@ class NetworkServiceTests: XCTestCase {
 
     var sut: NetworkServiceDefault!
     var networkResponseValidator: NetworkResponseValidatorSpy!
-    var networkSession: NetworkSessionMock!
+    var networkSession: NetworkSessionSpy!
     var networkRequest:NetworkRequestMock!
     var dataTask: NetworkSessionDataTaskSpy!
 

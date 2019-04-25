@@ -2,7 +2,7 @@
 import Foundation
 @testable import Utils
 
-class NetworkSessionMock: Utils.NetworkSession {
+class NetworkSessionSpy: Utils.NetworkSession {
 
     let dataTask: NetworkSessionDataTaskSpy
     var data:Data?

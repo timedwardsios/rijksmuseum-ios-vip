@@ -24,7 +24,7 @@ extension NetworkRequestFactoryDefault: NetworkRequestFactory {
     private enum LocalError: String, LocalizedError{
         case unableToConstructURL
         case invalidConfigScheme
-        case invalidConfigHostname
+        case invalidConfigHost
         case invalidEndpointPath
     }
 
@@ -41,7 +41,7 @@ extension NetworkRequestFactoryDefault: NetworkRequestFactory {
         }
 
         if apiConfig.host.isEmpty {
-            throw LocalError.invalidConfigHostname
+            throw LocalError.invalidConfigHost
         }
 
         if apiRequest.path.isEmpty {

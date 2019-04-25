@@ -1,0 +1,5538 @@
+{
+  "elapsedMilliseconds": 0,
+  "count": 415207,
+  "countFacets": {
+    "hasimage": 415207,
+    "ondisplay": 7258
+  },
+  "artObjects": [
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-651-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-651-A"
+      },
+      "id": "en-NG-VG-3-651-A",
+      "objectNumber": "NG-VG-3-651-A",
+      "title": "Afwijzing van de soevereiniteit over de Verenigde Nederlanden door Engeland en Frankrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Afwijzing van de soevereiniteit over de Verenigde Nederlanden door Engeland en Frankrijk, anonymous, 1585",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "197beadd-2d01-4c54-bffd-8144f04e181f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/01vnwH71IfMYDsosPltpROvWfEDyTwTi13PokHuzEUi_Qwk7-2Xs7ZLW0taA4qfDXlcCJMjnUgFZRc9nL2K51bCG-w=s0"
+      },
+      "headerImage": {
+        "guid": "66fd36bf-c7e4-4bda-87cb-b4e417976396",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/nDN7_zVkbCRYl08TIQEJfbc-K-Z_RjFMqNHT2XZnmMr4laf5AxPyinsT--VDBm8LrYNrdxIuyFFvhPOYB69sVueRVdaL=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1004-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1004-A"
+      },
+      "id": "en-NG-VG-3-1004-A",
+      "objectNumber": "NG-VG-3-1004-A",
+      "title": "Sluiting van het Twaalfjarig Bestand tussen de Republiek en Spanje en aansporing tot waakzaamheid",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Sluiting van het Twaalfjarig Bestand tussen de Republiek en Spanje en aansporing tot waakzaamheid, anonymous, 1609",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "c5db530d-1aa4-472d-b95a-1a72cc033933",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/D6MDQ95RJQVD30kp3-ljWGLGQxmLVKzKlY2E0IB5IYfSR2JjU5wPxfZ6JlGMMVkdj5m33ja2VFgml_ps1OzWGYbzBbs=s0"
+      },
+      "headerImage": {
+        "guid": "7d472f91-3e79-4b71-bbfd-3134e43b9d5c",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/jg3f_biD1mDL4LMnXf6pCEX85drYuDPYTCG4WwuobzrpeArPSBTxr-mE9GJdybIuNrpLtSoU6Dso031GMlJqozTk18GQ=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1040",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1040"
+      },
+      "id": "en-NG-VG-3-1040",
+      "objectNumber": "NG-VG-3-1040",
+      "title": "Aansporing tot eensgezindheid",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Aansporing tot eensgezindheid, anonymous, 1612",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "241c9693-9b30-4c73-be53-ced3983dd04f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/gEUtSI74lfV4aIMH6iypmzGoEK4I5xn9QMWTFYZ7-09bM96NSha3XdClHKppVs_cam8u15Wbj4v5mzPatj0ry9U4Dw=s0"
+      },
+      "headerImage": {
+        "guid": "5713d93f-4ce6-45db-abaf-83d030c5c912",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/oLokEUJG31MB29su_xL2tWNLJffGsR1m3sUl7sNgUA6bS-cZST4ldEcJBJeDePcjud_ctZyOazgyjk78XhZN9FnhRQ=s0"
+      },
+      "productionPlaces": [
+        "Hoorn (North Holland)"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1240",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1240"
+      },
+      "id": "en-NG-VG-3-1240",
+      "objectNumber": "NG-VG-3-1240",
+      "title": "Filips IV, koning van Spanje, bereid om of de oorlog tegen Frankrijk voort te zetten, of vrede te sluiten",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Filips IV, koning van Spanje, bereid om of de oorlog tegen Frankrijk voort te zetten, of vrede te sluiten, anonymous, 1655",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "9cb502a8-8e7b-4292-95ee-829b9d840176",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/qDqXj4S567114T3mps78YdcWwxAkcq6fQo_Pj4nBTxSu0jRHkwzCL7l_53xF2-f0twDjsyTbI67CpessNujdIMjCsJw=s0"
+      },
+      "headerImage": {
+        "guid": "58a31e19-86b9-4c98-b31e-a7b291c64520",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/ZhEkjpzwJA99HuD7sPwXOmA9H3hM4YK2uHKgWWIlKFqMBQCNhPv7UPbMAJY7JedWLZW9MNmb5ACPBHJTAnjyH_PFZ7A=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1322",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1322"
+      },
+      "id": "en-NG-VG-3-1322",
+      "objectNumber": "NG-VG-3-1322",
+      "title": "Filips IV, koning van Spanje, rekenpenning geslagen op last van de raad van Financiën",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Filips IV, koning van Spanje, rekenpenning geslagen op last van de raad van Financiën, anonymous, 1665",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "f919ba34-8dbe-4895-b672-5835c33b1fb7",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/994UiR2m9XVgqMgCTmYs4eu9wLfddcs8ci7T2qduMWds9UCFREJy9bBh58lfIZlfvhsJTugjyqKR4RpTfoGPtmrB7A=s0"
+      },
+      "headerImage": {
+        "guid": "15e40b77-9804-4833-81bd-2c526a64b21b",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/i6ScRJjiTTNnqJOFC-bvX8M9nT0v_fj9CRQmdeCjr-sCpWCTg8hGZEJUur7LMJj8n0A43J_V8Ypqadetavv5i-O-D2-t=s0"
+      },
+      "productionPlaces": [
+        "Antwerp"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/BK-NM-12400-28",
+        "web": "https://www.rijksmuseum.nl/en/collection/BK-NM-12400-28"
+      },
+      "id": "en-BK-NM-12400-28",
+      "objectNumber": "BK-NM-12400-28",
+      "title": "Tegel met spreuk die betrekking heeft op het huwelijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Tegel met spreuk die betrekking heeft op het huwelijk, anonymous, 1780",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "ec7a17a2-69b2-45cf-85f2-f9949285957f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2493,
+        "height": 3000,
+        "url": "https://lh6.ggpht.com/k0VV-iRESzB5YXAchEWgUywE7ajPu6ziaMy6iOiOvhg917uRjdPGD9J1ghv3XHllH2NfR9z_gYF8KW0KvO_80IjtaTQ=s0"
+      },
+      "headerImage": {
+        "guid": "8475f761-9c5f-41c0-9b7e-4db9c6334983",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.ggpht.com/TRgXb1enDRbYna7JtMIGjmOwD_r1uRhKZ2PJ0azkwPwu0lEUZE_06tbtOsGJ8K6V7GNBIB5CP4dvvxDVjL1boOIQ-P0=s0"
+      },
+      "productionPlaces": [
+        "Rotterdam"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1888-A-1669",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1888-A-1669"
+      },
+      "id": "en-RP-T-1888-A-1669",
+      "objectNumber": "RP-T-1888-A-1669",
+      "title": "Gezicht te Barsingerhorn",
+      "hasImage": true,
+      "principalOrFirstMaker": "Cornelis Pronk",
+      "longTitle": "Gezicht te Barsingerhorn, Cornelis Pronk, 1730",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "bdc2b22e-770a-4c35-b9fc-5c997f432ac3",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 2086,
+        "url": "https://lh6.ggpht.com/1kb6w3DVdcVEBw_V6Yo-aZ4c3M_ii-fEvE8rfqrmRO7DFYo1QM226BegxYATNYKd70zZ_-5N_mts5IWr-WGGaRggGWZW=s0"
+      },
+      "headerImage": {
+        "guid": "25c091c9-8a38-423b-8fcc-41a927ac979b",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh6.ggpht.com/1XL49ld4NEmMg9KPJYpYRKt1-_9DZZ8CdXYzCS9ar7Oel2U-Q1nmYvzygQ_cjDDI7RUnxtl2YAS8oPoPkUQJmuTuIj8=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-959",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-959"
+      },
+      "id": "en-NG-VG-3-959",
+      "objectNumber": "NG-VG-3-959",
+      "title": "Inname van Sluis met haven en vloot",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Inname van Sluis met haven en vloot, anonymous, 1604",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "666089cb-1393-4d83-ab75-f753f9fde577",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/yljhUIyYXDwt6aZTfhYKBjx8GSPVHLfi73sAtWEoqCJXWBR0teb3jk3t3zWf1z3NdQWSWAfRTFiLlvx3EXKvT2jpYN8=s0"
+      },
+      "headerImage": {
+        "guid": "cd9d75bb-4e9e-4b84-babe-0bf2ce4046c2",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/D_rkLfCySoB-vWGjVreee6SAE9NRh0RPd3wkwtQPKo0nElT7ditPsNDvqELQy5f-fpPDvbMHyzODGjds_5gwLeOg1yhk=s0"
+      },
+      "productionPlaces": [
+        "Netherlands"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1180-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1180-A"
+      },
+      "id": "en-NG-VG-3-1180-A",
+      "objectNumber": "NG-VG-3-1180-A",
+      "title": "Hoop op vrede, rekenpenning geslagen ter ere van Filips IV, koning van Spanje",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Hoop op vrede, rekenpenning geslagen ter ere van Filips IV, koning van Spanje, anonymous, 1642",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "926a88b6-5031-4090-b143-d9b833fc0806",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/oE_jWa8Pou8DZfzQtHwLwYNgUvTmDc6BJz5fIwPhTYtX5NVSrThi5gn_iTS6wbtYnuo14Pouuh7xh-NaHK24GDRmAmnM=s0"
+      },
+      "headerImage": {
+        "guid": "c5b1c6d5-d3c8-44aa-a59c-e6dd4f095387",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/k19fgfLxBMpVQsliAij3_6duumLfJtQ7tTfoPnX2053PVaGEM7MuxN7nuIez96TI_9FFrQUHyTdkdVbOwWUcHBwgn-E=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1187",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1187"
+      },
+      "id": "en-NG-VG-3-1187",
+      "objectNumber": "NG-VG-3-1187",
+      "title": "Ernst, graaf van Isenburg, landvoogd van de provincie Namen",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Ernst, graaf van Isenburg, landvoogd van de provincie Namen, anonymous, 1643",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "d4dafc84-564a-454b-a728-7390d6541e66",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/rcFdeLblL-IZv0PMU12P2M8sl2czUq2EIbJd-UkFzsRyZzS7-R7Q-_5e2u_BbqfpMOP7cUZul6ELPidMWMadDrS5kes=s0"
+      },
+      "headerImage": {
+        "guid": "f43ad075-edec-49ea-a0d1-cdd946681dfb",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/DeIOq9XUL8zm0xpim22WVJpvBLRenMx-4MclRzpDMkRoVuwb0xu9DiunOm3w0TwUflxdsUT0GesNzdxxv8W91ii4vKiP=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-998",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-998"
+      },
+      "id": "en-NG-VG-3-998",
+      "objectNumber": "NG-VG-3-998",
+      "title": "Aanvaarding van de voorstellen voor een bestand tussen de Republiek en Spanje",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Aanvaarding van de voorstellen voor een bestand tussen de Republiek en Spanje, anonymous, 1608",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "998d3f56-4a42-435b-ab46-d57503a667ec",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/hXJ9HvWOoQ02O4gj0CbQObHENu1Li7TgLp3nR-V63WQkYseMw1FhJIp-AFU76soyBqMyKKvl3I0KmlDkMXHL7KqrXJU=s0"
+      },
+      "headerImage": {
+        "guid": "352bcf03-4f54-4574-9800-a90553054e44",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/xpO9JXa-hLlMGPtab-2TOlhtX5DoC56XEm6PlZ6JDW6eapDfH11MqOnUlIDLnmNxRUGlJDciukVV0j01Vgcy0JquhA=s0"
+      },
+      "productionPlaces": [
+        "Utrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1285",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1285"
+      },
+      "id": "en-NG-VG-3-1285",
+      "objectNumber": "NG-VG-3-1285",
+      "title": "Aankomst van Maria Theresia in Parijs, rekenpenning geslagen ter ere van Lodewijk XIV en Maria Theresia, koning en koningin van Frankrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Aankomst van Maria Theresia in Parijs, rekenpenning geslagen ter ere van Lodewijk XIV en Maria Theresia, koning en koningin van Frankrijk, anonymous, 1660",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "177cc04f-a1f8-4ef6-a8f8-67cb784be0c2",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/QaDmaqWaaaDw_u4FsY2U2FEWbVmZmsUgmDixD0QoErtxNvvrraAjqkj9UnMRpslST0BWrEtZBJOTEY6lBxbynIPiWcA=s0"
+      },
+      "headerImage": {
+        "guid": "09703432-1ee1-41f4-b498-0a8cc3c6a26d",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/iQRG-_OUnFcQC3wHsSv5MfOsYSKNRMMOtzyuYClXeTFd_tgSjRdiyVF8-lzMV4jqId1MeLSrtb71O_oKrNrhOmKxhV-z=s0"
+      },
+      "productionPlaces": [
+        "France"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1894-A-2903",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1894-A-2903"
+      },
+      "id": "en-RP-T-1894-A-2903",
+      "objectNumber": "RP-T-1894-A-2903",
+      "title": "Het Huis te Druten in Gelderland",
+      "hasImage": true,
+      "principalOrFirstMaker": "Cornelis Pronk",
+      "longTitle": "Het Huis te Druten in Gelderland, Cornelis Pronk, 1701 - 1759",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "33e8ba3a-0be3-4b08-a328-a6312b2a3b93",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1547,
+        "url": "https://lh6.ggpht.com/2wW9lC7rQZ1QqnC0ZLOHb1JAu9wyLZJtfIpT0UaddJ3iCHdalUuVeRDccTjCks3QIdSU8jBBG4wkw1vkTSmlKrF0ZLI=s0"
+      },
+      "headerImage": {
+        "guid": "00deeb02-ad9a-444a-8d4e-a95b59440ad4",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh4.ggpht.com/VNw0eFFT2fgtoTdACmZhM0j8XTytUlcYjdeeniA7tZbJkogZzrGj0lrJZXOKu21t3PFA7Bz-6qcFOZha7P4tGcCLnjM=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-916",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-916"
+      },
+      "id": "en-NG-VG-3-916",
+      "objectNumber": "NG-VG-3-916",
+      "title": "Maurits, graaf van Nassau, breekt het beleg van 's-Hertogenbosch af, rekenpenning ter ere van Albrecht en Isabella van Oostenrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Maurits, graaf van Nassau, breekt het beleg van 's-Hertogenbosch af, rekenpenning ter ere van Albrecht en Isabella van Oostenrijk, anonymous, 1602",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "dedb22a5-63db-41f3-9280-2e00fdfee7e6",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/_Hib4wFUEKrT_-KXi0WSdE6XnFpQaj-07LncmTkvN9AgCBlUM-gCpYCTFWj_6oDmOfN71NC0g1TqJ7g6dGI9TM7JiA=s0"
+      },
+      "headerImage": {
+        "guid": "1a6ef0eb-9e0a-44b1-bdd4-b1402b27b960",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/ZCwH9cyrtg0-XU3WEGfQUzGoH3aeuickhc8k3mfCkLVGcHrrE14oXkpN825_Hbt34D91E6f9WgbmVWwitk4uiQrfl20=s0"
+      },
+      "productionPlaces": [
+        "Belgium"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1134",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1134"
+      },
+      "id": "en-NG-VG-3-1134",
+      "objectNumber": "NG-VG-3-1134",
+      "title": "Antoine de Locquenghien, zesentwintigste intendant van de vaart van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Antoine de Locquenghien, zesentwintigste intendant van de vaart van Brussel, anonymous, 1631",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "9ed6eead-29ca-4c07-a650-f964ee3f06a6",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/Jd15bM2rtWQ2O7g4ru2dLsnVLGG2EKJmMU6BXpqhs5oMY3VCED8M-4iH_Pg3IYdoRcokwqTZeUnxHYi0B6_6hVsbt-o=s0"
+      },
+      "headerImage": {
+        "guid": "e4415e83-ddf0-4ea5-971b-0be32c764cc9",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/agT7B0bLhKhh6pHhjpPQQscbyeU6dzlgTkFJpnbhCkQDtCJ0B925tl_XRAqYQ58iE4m5IpUPKgTRCSg3mrapqPF0IQ=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1489",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1489"
+      },
+      "id": "en-NG-VG-3-1489",
+      "objectNumber": "NG-VG-3-1489",
+      "title": "Filips Karel Frederik van Spinola, graaf van Brouay, landvoogd van de provincie Namen",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Filips Karel Frederik van Spinola, graaf van Brouay, landvoogd van de provincie Namen, anonymous, 1696",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "67b92220-3499-4907-90a8-29a8a1ea8a8e",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/IXm9CTO1ha4ym1f2RWtKWKJyPRloloRKvbS4GyD1CTzjgGPXw-jW4W3T7LlgiQ0NYN_6Ag6_ylwPRl_HH4ectoIHxqFN=s0"
+      },
+      "headerImage": {
+        "guid": "08e3b417-b52c-4cec-a7b9-3c26104f0498",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/u0TtlPIDSHaV65FgowZ4dHZxzyIjsMgD7bnpK75nNfMBve9h3MdXnLtF0joXRVw8tifjgDvtckm6ZTr_wzYQyUbu3Zc=s0"
+      },
+      "productionPlaces": [
+        "Belgium"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-828",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-828"
+      },
+      "id": "en-NG-VG-3-828",
+      "objectNumber": "NG-VG-3-828",
+      "title": "Sluiting van het drievoudige verbond tussen Engeland, Frankrijk en de Republiek",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Sluiting van het drievoudige verbond tussen Engeland, Frankrijk en de Republiek, anonymous, 1596",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "ca55f772-9c65-4c4b-8c9b-c2504003f42f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/S8S6jgn4cevfxrMKyC5EIt7wMEGfdw_56PTd2bxCCobObgdljUgpQ_5yHdOOgf8R29Ltsb9ai6VVcHusNVppqC_ojb-q=s0"
+      },
+      "headerImage": {
+        "guid": "fee0971e-ef65-4dc2-a686-74373c0598a1",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/JvhcRt050tMVfzl6t1P5w9tzcRmzCIZiT83oOFKPHcAB0d7pwOYzZneArOVy2x5WnnYW_-cdl0-AmYDu2BPIKxCTKSE=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-998-C",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-998-C"
+      },
+      "id": "en-NG-VG-3-998-C",
+      "objectNumber": "NG-VG-3-998-C",
+      "title": "Aanvaarding van de voorstellen voor een bestand tussen de Republiek en Spanje",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Aanvaarding van de voorstellen voor een bestand tussen de Republiek en Spanje, anonymous, 1608",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "fcf86eaf-b687-4302-bb8f-f5e9369a5de9",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/1zzjoFMv_W3Kx6tT0UNWP2h8J3GD6K6SAJm8Owgd7hENJTPbHplUDzq1WmD8CqG1scNg91DPIkry3PMYL8Pk0fT-Jw=s0"
+      },
+      "headerImage": {
+        "guid": "d19ea399-cc17-4d30-90c2-37776ba6649f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/U5d0_fxAvtP5z7E1b309caDoTd8qvrkUNIVKQhjst3JYOJKibi2pL9REvXj0I8uPxi2bo8kfY1haLLaNlCUCYGy2tTo=s0"
+      },
+      "productionPlaces": [
+        "Utrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1330",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1330"
+      },
+      "id": "en-NG-VG-3-1330",
+      "objectNumber": "NG-VG-3-1330",
+      "title": "Aanleg van de citadel van Charleroi, rekenpenning geslagen ter ere van Karel II, koning van Spanje",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Aanleg van de citadel van Charleroi, rekenpenning geslagen ter ere van Karel II, koning van Spanje, anonymous, 1666",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "074313d6-fb44-4d8f-aded-909ade0690dc",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/P9jACOtW0PMl64exrcolAB3OrIqnVZuYXdi1m4cAICsJf4MCbYm0pijZGCAVsrH7ijIrkTwAj9GqAwkuH5z3jooF461H=s0"
+      },
+      "headerImage": {
+        "guid": "37767965-a815-4d8b-8897-09094881cbf1",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/xGCQfTEWviYuE9wasT2DML5YNUBBkXkRgMLLZ_mLhlzgwah8YRAIV9XmOaA8kHnkGSNneGndzFaGFue05qR5hBRKSrs4=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1019-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1019-A"
+      },
+      "id": "en-NG-VG-3-1019-A",
+      "objectNumber": "NG-VG-3-1019-A",
+      "title": "Sluiting van het Twaalfjarig Bestand tussen de Republiek en Spanje, en hernieuwing van het drievoudige verbond tussen Engeland, Frankrijk en de Republiek",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Sluiting van het Twaalfjarig Bestand tussen de Republiek en Spanje, en hernieuwing van het drievoudige verbond tussen Engeland, Frankrijk en de Republiek, anonymous, 1609",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "deb22597-364e-4317-92a4-085b51931e2f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/b9em7YIRh7ZATjYPsmPFEwSq1aT0elDcRlXpp50yeaJcdd7t9lGSbIPESyTQ5X1a5ICxZccvOTSZkWG9dyuznLO0IEE=s0"
+      },
+      "headerImage": {
+        "guid": "a956c30c-6e8d-42f4-8a81-2a66b2b0349e",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/Q-HRExNxwQGawSfeU9UTU8THPMd6Pg-EtZbLYx22-wKrrpKG8-wJG3dsiHbDpUdX7xTGr9CokledgCYSQqm4N9En_Wo=s0"
+      },
+      "productionPlaces": [
+        "Netherlands"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1520",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1520"
+      },
+      "id": "en-NG-VG-3-1520",
+      "objectNumber": "NG-VG-3-1520",
+      "title": "Filips V, koning van Spanje, hertog van Bourgondie en Brabant",
+      "hasImage": true,
+      "principalOrFirstMaker": "Philippe Roëttiers (II)",
+      "longTitle": "Filips V, koning van Spanje, hertog van Bourgondie en Brabant, Philippe Roëttiers (II), 1706",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "f889ac37-79c1-4b65-a851-c42eef5bc744",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/3lMKMMa59JDHmdemMt7xbO7X3kgH-dCSQN3KucCkWMtwEvnZ7YfUxkWcN8gOWXM8BXJnt-eExXFL6_cG1K3Ywtkk8do=s0"
+      },
+      "headerImage": {
+        "guid": "8fc41ddb-a99c-413d-a2ea-2561eed53096",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/gBUgI54kU5DfjRiztPO0kPDYVdCHw6IwqBYfXWn5zmQP87F9iDborKO9B1OTAEliK8Y-VxJQmHKnhgL9TMVRaXansNc=s0"
+      },
+      "productionPlaces": [
+        "Antwerp"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-893",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-893"
+      },
+      "id": "en-NG-VG-3-893",
+      "objectNumber": "NG-VG-3-893",
+      "title": "Albrecht en Isabella van Oostenrijk, rekenpenning van de raad van Financiën",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Albrecht en Isabella van Oostenrijk, rekenpenning van de raad van Financiën, anonymous, 1600",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "9e695c52-62c7-4ace-93ef-8f9da6f26d0b",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/Nk6BFbtcote7uaYM9OMteZZu209iiUL0y3_MUr9X23hUeXNZTeh64WZfnmGKwyWhYeiY3CmwTVZJ72VZlQgEkgqu7fYG=s0"
+      },
+      "headerImage": {
+        "guid": "a3a7abf2-4602-43e4-8860-eacc59e0e2d3",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/C8wyLogFzFuaQJOG2vuktU8UKS5lNibykXz87KF_5ijNRxeZwoNFX8RS8yHPHsW2x0VHlcKfyns748qo87sL4RvpaoI=s0"
+      },
+      "productionPlaces": [
+        "Antwerp"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1364",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1364"
+      },
+      "id": "en-NG-VG-3-1364",
+      "objectNumber": "NG-VG-3-1364",
+      "title": "Versterking van de veredigingswerken van Brussel en bouw van een fort, rekenpenning van Theodore d'Elshout-Van Heusden, heer van Middelswale, magistraat van de schatkist van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Versterking van de veredigingswerken van Brussel en bouw van een fort, rekenpenning van Theodore d'Elshout-Van Heusden, heer van Middelswale, magistraat van de schatkist van Brussel, anonymous, 1671",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "3875fc38-cf48-4dc8-ad58-b83801bf91f5",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/Q1IvgrjiJMbEiIuuUw683B5uz2lm1ZY6aumhetPGhaMJihAj_inwQ4NtpmGSG8C-Ow0pYwATGNHWyHzWYQDP0ilnO20=s0"
+      },
+      "headerImage": {
+        "guid": "76afcb09-5576-444b-98c4-c3c5d80a57fc",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/1fmWf5zYoNkngRavoLDwx8uk4uzA16PUBlHupIV20L9WRC_KAU7A0-NFabN5LXJ8u5vJeOmGkaMzMjol465qlXgC0oF9=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1417",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1417"
+      },
+      "id": "en-NG-VG-3-1417",
+      "objectNumber": "NG-VG-3-1417",
+      "title": "Jean Cools, magistraat van de schatkist van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Jean Cools, magistraat van de schatkist van Brussel, anonymous, 1677",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "e9f8e556-2427-47ea-ba79-0b84a6eb4f38",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/AEQyN-omGbg9Op6S24jLoHE98kRskPaRNT0okg2CRJ-vL32SQxgpcRToMjYof07QFunltfyqk6xamKIuBFx-bvat0Q=s0"
+      },
+      "headerImage": {
+        "guid": "12444697-41af-4cfd-b2ed-34f7e0b963b4",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/M8KTW5HT5gzaREmQKygXHHWQgFCuGjRE0v3owml37j5RZ0bv9FEfjjC7Pc6oKtQFLCe2mFjCZQBFna8XNP-DPIgaxukD=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-643",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-643"
+      },
+      "id": "en-NG-VG-3-643",
+      "objectNumber": "NG-VG-3-643",
+      "title": "Filips II, koning van Spanje",
+      "hasImage": true,
+      "principalOrFirstMaker": "Gerard van Bylaer",
+      "longTitle": "Filips II, koning van Spanje, Gerard van Bylaer, 1585",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "b2550793-9204-4b09-80a4-ddd9fd28e313",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/4JDc5dc7El-PSBZQd9-f2FxIRO3QPJRqy75B98TfdZT4OOFaABF0vzU-ZPQanewxDEzCNmVVG791b9QpCWNXWxw5zZ8=s0"
+      },
+      "headerImage": {
+        "guid": "9a4bc8de-39cb-452c-a8df-d2d084a5c81c",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/HdrXZLk1MYOrSx--BNKFxyPdaZWDbtV6eZ6JlvSmVYMOg8nOE8URAsth8tbYTdqnbq3xQ79Cnjc0cuUCCynqmtbAb4M=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-675",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-675"
+      },
+      "id": "en-NG-VG-3-675",
+      "objectNumber": "NG-VG-3-675",
+      "title": "Aansporing tot eendracht",
+      "hasImage": true,
+      "principalOrFirstMaker": "Paulus van Wtewael",
+      "longTitle": "Aansporing tot eendracht, Paulus van Wtewael, 1587",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "cf0ea331-e6dd-41fe-8e6f-9372665b5c3d",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/J05P0HYYFJWm9Nof3MDLUpi9pjrBRFctDvy67-TMftbSQ-pPCDWiGgIcwOLjVKhOdJt2vjnl1pgBfnec8aJAZrO-sw=s0"
+      },
+      "headerImage": {
+        "guid": "950bc893-a2b6-4b59-9cf4-a60b1eacff77",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/7EhSCUWJuqegWVhtGxU7P-Uih2iKxyxeYyoDfDqbWdGE793E3BQMfLV14TryDLqQBjs0w-395zrUeaD7upX4bCd2LA=s0"
+      },
+      "productionPlaces": [
+        "Hoorn (North Holland)"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-836",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-836"
+      },
+      "id": "en-NG-VG-3-836",
+      "objectNumber": "NG-VG-3-836",
+      "title": "Staten van Walcheren",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Staten van Walcheren, anonymous, 1597",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "81c9043b-c634-48fd-96c5-33ea787d4718",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/eDacgXJbPtfGz-wtux3qxnlh2dt80XNn_SnA8KTGVRdJJ4z46we1vHnNpxErGRGHCVWKrv-mTjnTfwLIPrw4DbXCDw=s0"
+      },
+      "headerImage": {
+        "guid": "e9218806-7a36-4e59-9879-3b17df743b4b",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/MEKaSvDhlQbQVXtUf12RSYioet3BbSLJ8O7HwvSfcgcPGHiW-pKAs8NLLn6HbWB9daZc70RVZ70XrGRXbVHjM9mJ2agB=s0"
+      },
+      "productionPlaces": [
+        "Middelburg"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1131",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1131"
+      },
+      "id": "en-NG-VG-3-1131",
+      "objectNumber": "NG-VG-3-1131",
+      "title": "Overwinning op de Nederlandse vloot onder admiraal de Pater, rekenpenning ter ere van Filips IV, koning van Spanje",
+      "hasImage": true,
+      "principalOrFirstMaker": "Adriaan Waterloos",
+      "longTitle": "Overwinning op de Nederlandse vloot onder admiraal de Pater, rekenpenning ter ere van Filips IV, koning van Spanje, Adriaan Waterloos, 1631",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "0fb8e6a8-d526-4876-be96-1b0017fbc074",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/Ss94QZQj87KkymIQZ-FRFuPvhN89SzBC311mUHQFy6qXLVJkRYmXYOm8rg79Rt-bTTwLyXWjpVsLDYDB2lczvWJjJQ=s0"
+      },
+      "headerImage": {
+        "guid": "357e5b41-54fc-4845-8be7-0ae4b781529d",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/cFN93hmt7IU3Yy2jNsLpyDiyoZ7F1huip6vxYlcEqjVe2JIdGbamcxh2Idl1s-oZwt4kWJFvhGEITrz_SZQCuVOOd9I=s0"
+      },
+      "productionPlaces": [
+        "Antwerp"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1388",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1388"
+      },
+      "id": "en-NG-VG-3-1388",
+      "objectNumber": "NG-VG-3-1388",
+      "title": "Pierre Josse d'Armstorff, zesenveertigste intendant van de vaart van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Pierre Josse d'Armstorff, zesenveertigste intendant van de vaart van Brussel, anonymous, 1673",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "cea7a76a-9730-4b1e-b7f6-8ed432f2da88",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/KEJ7JNh1LCg8-XSccvbfg66tL74TN9XVwZJeTQhXmwFtXZCR_RvpMaaW54MnRp9WNsNmHDhv7_y5hnj3g0ASNmtYHg=s0"
+      },
+      "headerImage": {
+        "guid": "d1471670-e6b7-461d-80af-5f0e6997a43d",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/TtsKZPafHwF9hi0AN0vfHP6ByI-PCdp2z433RHA4Ve-Pugqo0U_KmJXn3tiburshJgBhc70oajg-Q1dRsqTVI37xfm_F=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-618",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-618"
+      },
+      "id": "en-NG-VG-3-618",
+      "objectNumber": "NG-VG-3-618",
+      "title": "Aalst door de Engelsen aan de hertog van Parma verkocht",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Aalst door de Engelsen aan de hertog van Parma verkocht, anonymous, 1584",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "efb1d44c-fb34-4457-b1df-44df7ec2b6e7",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/INh4NAJfw2wErQxKkmNzF8sxmwiThzGxCDpq4rxqd1pqO6oWTQZuUuWtRkJOHZE-JGu2ZOg2Y-gjqJsSqDXA8D-fWIc=s0"
+      },
+      "headerImage": {
+        "guid": "4631e697-6906-4e58-be8d-b1d4835e9958",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/A-7DI7scK3BKNItHAc1FHsSqVdHUg0k_u98AXGaJggrtHePkYm1iGQhdU9gnW0YvswDWaPRZqWwG0jWGC0Zt1vKxvZY=s0"
+      },
+      "productionPlaces": [
+        "Belgium"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-697",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-697"
+      },
+      "id": "en-NG-VG-3-697",
+      "objectNumber": "NG-VG-3-697",
+      "title": "Hendrik van Ruysschenberch, baljuw van Biesse bij Maastricht",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Hendrik van Ruysschenberch, baljuw van Biesse bij Maastricht, anonymous, 1588",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "5a72e3b0-0bb4-4afc-84c6-04ef5c50dc17",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/BGWscDD1NguMR9BVZoF6GiklxPFVSkdAviSWYOVhAjR_Nx0cePK57d6z4u5ptFRoBhn0l3maQLFNl5AQC35EJca5Ml6z=s0"
+      },
+      "headerImage": {
+        "guid": "c0770c5d-90a9-458b-9851-52a1474e4d4d",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/C3tGDX2rTMcFVIGZR93wztvRmsED1epsuCu0105q1tP6S_tBn0CCH6nxJEppFx5i_wc57mF7Dgxre9uy1NZJRpklSts=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1081",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1081"
+      },
+      "id": "en-NG-VG-3-1081",
+      "objectNumber": "NG-VG-3-1081",
+      "title": "Rechtvaardige bestuur van Albrecht en Isabella van Oostenrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Rechtvaardige bestuur van Albrecht en Isabella van Oostenrijk, anonymous, 1621",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "a1f7960a-ab72-4efe-8ff5-faf82c14651f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/osF1ypURuHdeJzaYoIpLvG1cdgPeRzHPhzLmmtCOEsmtkdq0IiLnEaNvtrsqd0fBJ45HgosBjswHNVp4FYr7JV5SwgY=s0"
+      },
+      "headerImage": {
+        "guid": "613bb965-80a8-449a-902d-255e1ff1e6bd",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/uF7O4wjDmEDNU23J9vEnk_lH-_v9jIRRR0wr3OjTnyaaLAwqTO_SKDXOa1mElXVYQDgNWkc10PxbVs8AJwQ-BZqscuE=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1154",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1154"
+      },
+      "id": "en-NG-VG-3-1154",
+      "objectNumber": "NG-VG-3-1154",
+      "title": "Frederik de Marselaer, zevenentwintigste intendant van de vaart van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "Balthasar Laureys",
+      "longTitle": "Frederik de Marselaer, zevenentwintigste intendant van de vaart van Brussel, Balthasar Laureys, 1636",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "2823c42d-81a1-4122-bf46-119d8a7c677a",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/TZPIg7lXP-CMIsciGaMcMHpr4QnFs8K3AQTnR6xH6X6PiAvtSaKCxnxr-nY7Af7T2BxW_th-pByxq7OAQhm_atYbVpk=s0"
+      },
+      "headerImage": {
+        "guid": "848d93c9-8099-4b6e-b5b6-790fbcfd4942",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/HvPzfzYLAqs6OIZCVoIn58gXCtJUJ5nukLchQExoGcqMNPaqRNVrC0eqVDY0U5xcYPFkOZdn9J55TQkusJvc7XjCiVw=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1203",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1203"
+      },
+      "id": "en-NG-VG-3-1203",
+      "objectNumber": "NG-VG-3-1203",
+      "title": "Aansporing tot voorzichtigheid bij de vredesonderhandelingen te Munster",
+      "hasImage": true,
+      "principalOrFirstMaker": "Johannes Looff",
+      "longTitle": "Aansporing tot voorzichtigheid bij de vredesonderhandelingen te Munster, Johannes Looff, 1647",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "f1f02b34-ae53-4d93-b8b1-6c5277e04a67",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/3umXYA6dsjqfRICjGhr-RZrwniRbtL_lL3WgX8fE3OVBs7Lh1mgkJuW91FCmN584nBxIHAVFpw9BuJDP7HAsFhkBl4E=s0"
+      },
+      "headerImage": {
+        "guid": "7af08352-6e0c-46ef-af2c-bf1108fdb8f6",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/7HY8MCOqubsweruZ8OEq1bY35h_6rsWjJAIvaWX2uL9gxrvT_sBAg2ecy4GGKaqcf36L8rP3Ll2D9zG_TU6KsA-LlQ=s0"
+      },
+      "productionPlaces": [
+        "Middelburg"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-NM-4282",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-NM-4282"
+      },
+      "id": "en-NG-NM-4282",
+      "objectNumber": "NG-NM-4282",
+      "title": "Gedichten op het zwaard waarmee Johan van Oldenbarnevelt zou zijn onthoofd",
+      "hasImage": true,
+      "principalOrFirstMaker": "Frans Greenwood",
+      "longTitle": "Gedichten op het zwaard waarmee Johan van Oldenbarnevelt zou zijn onthoofd, Frans Greenwood, 1743 - 1745",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "ec7a7ac6-5259-47b6-9f10-5082243371ca",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2425,
+        "height": 3000,
+        "url": "https://lh3.googleusercontent.com/BvoR_aHyJBTBxziIReHgW-XLKThfeQ8X2jj3tMOD9ioBAkNqCCOPu9SqWJveo-LkZM6QQaW6WCu3cNzpghKUFKpc8BUw=s0"
+      },
+      "headerImage": {
+        "guid": "8bb20187-a509-437b-ab05-a168b8abfc56",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/aghVuCc7jhUprw4lWqzAKWULM6JDFcIlKI4NNw1sonJgr7exE-RfwxPmFFeRiOcduV5cY260Dj7_b3Pra-rekfvO2m0=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-874-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-874-A"
+      },
+      "id": "en-NG-VG-3-874-A",
+      "objectNumber": "NG-VG-3-874-A",
+      "title": "Isabella van Oostenrijk, vorstin der zuidelijke Nederlanden, rekenpenning van de raad van Financiën",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Isabella van Oostenrijk, vorstin der zuidelijke Nederlanden, rekenpenning van de raad van Financiën, anonymous, 1599",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "e4a161fd-2337-4b44-8ef1-a1f41a0c7ebb",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/3R6n8xUnH8aR1vD9mjDhzq2JK81ZBcl2Xk51e5NkIxEnxjcaf9MyXJXE_PiKunmhsGvqZPZSspzdhXDHfdwPrGpN1Is=s0"
+      },
+      "headerImage": {
+        "guid": "c1389d97-a6cd-48a8-a58c-06df9a50295e",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/S-Q5b58VhgHlmqiyxasf7IoG6Ix7rl3Ao2aHNFRsJTFmi8QXnP86YkMGrMltg3DaXXVCzNhu-kuPnyfswvvpx29ya20=s0"
+      },
+      "productionPlaces": [
+        "Antwerp"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1103",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1103"
+      },
+      "id": "en-NG-VG-3-1103",
+      "objectNumber": "NG-VG-3-1103",
+      "title": "Ongunstig verloop van de strijd tegen Spanje",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Ongunstig verloop van de strijd tegen Spanje, anonymous, 1626",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "f30f8e18-851f-481b-9ce5-47fd993cc1a4",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/WxX9q3PLjvNOr3FKjAOifNkYdFBXDKtl6HqovaAtLVX7H_4huWyc5zzsVGGQB5ud8mUjHX9ibjmn5oXk63FxY3eAA84=s0"
+      },
+      "headerImage": {
+        "guid": "1f0ec026-e872-49f7-8243-2329fb2b7c91",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/B5brxiVJG-fFNDx8R8FOAGYQvHCEjR8NEycseVEKcECPIVyErrnfRTwX_9SefxUjKtcoffC7llw1ubMh01jg3U_nnL4=s0"
+      },
+      "productionPlaces": [
+        "Utrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1175",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1175"
+      },
+      "id": "en-NG-VG-3-1175",
+      "objectNumber": "NG-VG-3-1175",
+      "title": "Filips IV, koning van Spanje, rekenpenning geslagen op last van de raad van Financiën",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Filips IV, koning van Spanje, rekenpenning geslagen op last van de raad van Financiën, anonymous, 1640",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "49502403-d622-45f2-b3cc-ed2f3998a94c",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/Ww_LyruwPWVvrDVCwzItNTho3BU7fjc4D8XhNcoVfuadFZCEOuVWzQgsVkhMNwcBRT-kjPzGsTXUqZonUUapsorTJ2s=s0"
+      },
+      "headerImage": {
+        "guid": "5edba2c8-f9d4-4260-8561-0f52780c024e",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/XHzoGNI0hCEgKs3Su5R4QMOcyIaS7wG3NvRC81A9MCBqg1R1UgpoAaq2Sd0JHAzmqweddrQXMtCvDodIyPQxakr6g-A=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1339",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1339"
+      },
+      "id": "en-NG-VG-3-1339",
+      "objectNumber": "NG-VG-3-1339",
+      "title": "Franche Comte in tien dagen veroverd, rekenpenning geslagen ter ere van Lodewijk XIV, koning van Frankrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Franche Comte in tien dagen veroverd, rekenpenning geslagen ter ere van Lodewijk XIV, koning van Frankrijk, anonymous, 1668",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "85416b81-9dcf-4f5a-92c6-3cf447d300a0",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/2X3ze3xArGaQfaOUkTBrGkUxJKtH8Fkqy7Ht2moSJnQQ6nQzNR6h3xmbJuyRLSfM7x2_r7jigRi316lQEksHGZpq88Y=s0"
+      },
+      "headerImage": {
+        "guid": "dc027f4e-3234-4893-bf71-4f58e9239343",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/cZzMNVfGkU7ByzRuqSBmuqtmWSqQzVrYJovVlDNG3ZJqWXZ6u3YiooMVVm-a6sTvxsRuTSYsalOJzkB1m3z_OCFW5B1T=s0"
+      },
+      "productionPlaces": [
+        "France"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1345",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1345"
+      },
+      "id": "en-NG-VG-3-1345",
+      "objectNumber": "NG-VG-3-1345",
+      "title": "Antoine Ferdinand de Brouckhoven, drieenveertigste intendant van de vaart van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Antoine Ferdinand de Brouckhoven, drieenveertigste intendant van de vaart van Brussel, anonymous, 1668",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "126a6e2e-0d0b-446c-8b23-919fc339d503",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/7KOh-rQteySPHCtHehDltjWiFpcfpl7zq-otkCMv_VnEECA-qxzlfnZzwBCFhnJe-ptzp2lMe241Nz0euv-gpk_xhD8=s0"
+      },
+      "headerImage": {
+        "guid": "099dfa0a-b42c-4d24-a379-cfc7a1017daf",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/ICLxo6C871UBmrLhXyyYZv9jODlHwu36dlcRUtuK9JI2IEzBnX445gygF2tlPsBWTTwwgUJKP5jsSEpfHjkZa2JM0L1c=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-852",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-852"
+      },
+      "id": "en-NG-VG-3-852",
+      "objectNumber": "NG-VG-3-852",
+      "title": "Terugkeer van de naar Indië uitgevaren schepen, rekenpenning geslagen op last van de admiraliteit van het Noorderkwartier",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Terugkeer van de naar Indië uitgevaren schepen, rekenpenning geslagen op last van de admiraliteit van het Noorderkwartier, anonymous, 1597",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "6fa973a0-891b-4710-bda3-bf369a2eb163",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/81CskZVE-5fTi209aAb-3cefq4mSKLGx0xd-Zm3f9QrUJoA8-geZNEAemrNlYoJb-wksxmH06HQIIYKG0MfVhBVU8g=s0"
+      },
+      "headerImage": {
+        "guid": "bffb52a3-30dd-4834-96b5-80d0e424eec8",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/FFNDO0qef-4hg1fBJL_BEHIAYGsJgtpJccE71FvZGLuP_sxAXiKcGRepng0SRjMuWunHz-vVcxLRjD5veaQ3boBa3sY=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1320",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1320"
+      },
+      "id": "en-NG-VG-3-1320",
+      "objectNumber": "NG-VG-3-1320",
+      "title": "Albert Francois de Croy, graaf van Meghem, landvoogd van de provincie Namen",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Albert Francois de Croy, graaf van Meghem, landvoogd van de provincie Namen, anonymous, 1664",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "a1d30adf-a48b-4dcc-88ce-8d36c2fc93b4",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/Gmsa-aDDmdpx6AIQrnW-d38P2BFqYfMDdl5nOMRNuA88MUb4UOyAgpYJFuFCfmliAO6ih9bvAbHO4Fz5vxDl648mSg=s0"
+      },
+      "headerImage": {
+        "guid": "b246d31e-4638-4f95-9486-1026d37e799a",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/vPeLvHls5737mjX5S6UKdvHSNt1hGQaHOwtg4fYIvRvLU4A5yHDzOnuhZPQLs5D77MsC_MXnupgC8NIQdEtMAQ5fIKA=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1500",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1500"
+      },
+      "id": "en-NG-VG-3-1500",
+      "objectNumber": "NG-VG-3-1500",
+      "title": "Lodewijk XIV, koning van Frankrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "Monogrammist R (medailleur)",
+      "longTitle": "Lodewijk XIV, koning van Frankrijk, Monogrammist R (medailleur), 1698",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "98e42bed-2c3d-4018-88b3-fce4f014da53",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/2bjUIn1HSYf8aiqg60y12OxabV9AQpn6MkBvBATZjIfsT8mZiLWifm_a8f7mAF8bahJDFuxiKHlsDOKvQ-T277KMGnv5=s0"
+      },
+      "headerImage": {
+        "guid": "01e96ddd-9f18-4f2b-aaa2-3e2000a7664d",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/41FZp1rEh29XS9KJe2a-P0QZvyBFhI8xYKH_nLjK-9GbYIY3pd2aIrjvTpagn-0SKHyjEgE900ieEMQZFQHLoDMiItg=s0"
+      },
+      "productionPlaces": [
+        "France"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-636",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-636"
+      },
+      "id": "en-NG-VG-3-636",
+      "objectNumber": "NG-VG-3-636",
+      "title": "Kamerijk onder Frans protectoraat, rekenpenning ter ere van Catharina de' Medici, koningin van Frankrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Kamerijk onder Frans protectoraat, rekenpenning ter ere van Catharina de' Medici, koningin van Frankrijk, anonymous, 1584",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "1c074e6f-1a9b-440e-a03c-184d223c51a1",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/IwYNX3PveCQZmFUGq3E1hOR07rrUfd8YOPAARSTT4CXN-7I3cytIcJq-S1j0rSX6wQYtfS5vw5URyEwh6itam3aEWhrS=s0"
+      },
+      "headerImage": {
+        "guid": "1e5969f3-2f04-4c16-81a8-427652269f54",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/2XchLSNdCrLpxVAmvhFffhxNiiyvHiZx7DITPz4T7vGfasOnd3BQ8B1wooiwX7K1di6iSvwvw060gvGnd5BVVwOsZMY=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1911-82",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1911-82"
+      },
+      "id": "en-RP-T-1911-82",
+      "objectNumber": "RP-T-1911-82",
+      "title": "Het huis te Zuilen",
+      "hasImage": true,
+      "principalOrFirstMaker": "Abraham de Haen (II)",
+      "longTitle": "Het huis te Zuilen, Abraham de Haen (II), 1734",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "ea426de4-3986-42ae-9e4f-50b30c60b779",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1695,
+        "url": "https://lh6.ggpht.com/dJ2cWn2qiHmWPqls3zIcSXUyR0ehBEHcb7AZgTTpzyf-NkZqOi9bCfVYFczXupEKsm9nrXwVtgpHhF2VxNn789M98er5=s0"
+      },
+      "headerImage": {
+        "guid": "b71c04bb-4042-4ddb-9557-692b664b4f27",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.ggpht.com/G3eGr4c-owYdpQrH6qGHuOIdC2DgDCukBfb7CLQhW-ds-N4Z7AZ1pVzBa_cLNKZp0NK9UtCCTj_PCRZ1cZTSzfcEUg=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1222",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1222"
+      },
+      "id": "en-NG-VG-3-1222",
+      "objectNumber": "NG-VG-3-1222",
+      "title": "Huwelijk van Filips IV, koning van Spanje en Maria Anna, aartshertogin van Oostenrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Huwelijk van Filips IV, koning van Spanje en Maria Anna, aartshertogin van Oostenrijk, anonymous, 1650",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "ef4cf2ed-9447-4a41-865d-7858aadb1d6c",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/pIMFKYATAqyUSmdorC6F1u1h1hn6hJ-sgR6LyqAOyLzz_sTd5MGCCDETmBSS9bBKuIXTfgt5UVYBiQ2mE83pNNfcyg=s0"
+      },
+      "headerImage": {
+        "guid": "8d3d9cc8-9337-4308-970d-ec0defefcacd",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/73b2LOI_7VJiwxfiHhLWw-sxDICWO4kdQUIffY70fXDxL_gnEyZblxJRUMR7Fh_X5vLJmIG4emf5mAZ-sQP8k_COie4=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1295",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1295"
+      },
+      "id": "en-NG-VG-3-1295",
+      "objectNumber": "NG-VG-3-1295",
+      "title": "Antoine Ferdinand de Brouckhoven, magistraat van de schatkist van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Antoine Ferdinand de Brouckhoven, magistraat van de schatkist van Brussel, anonymous, 1661",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "6063244b-dd52-4e92-9df3-38eeed301f34",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/U9MxUrfDV02Bp3noiwT3h3_saaFfCaB0Y_v9Ud5LIiyrwpgnqz2QfrlNHQbAa0UDicMvbXbJCDtsoisUm38_yKTcbg=s0"
+      },
+      "headerImage": {
+        "guid": "a7445242-f397-4226-b2ae-8efbc49aee74",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/Zmtp_cNDHVIX4SNyQ0S8HAj8FflOcPmglOQNOgYnQ7rWdtDTalDKr8TQszX36r-X_JVZjePR0_-DVO7h_eSIufrdyaBw=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1395",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1395"
+      },
+      "id": "en-NG-VG-3-1395",
+      "objectNumber": "NG-VG-3-1395",
+      "title": "Ferdinand de Saint-Victor, zevenenveertigste intendant van de vaart van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Ferdinand de Saint-Victor, zevenenveertigste intendant van de vaart van Brussel, anonymous, 1675",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "b04322b9-3ecb-4f9c-8f96-1f5abbae2415",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/mFWkNwhAtbYEPL6p__gqmO3zVDWEiGT2gvIgZntO9heym3ZZVrLZrnLI2Ylb9NHgy6R6mYNSDBXu0DGW6DOUxWguzQ=s0"
+      },
+      "headerImage": {
+        "guid": "60dd4396-26d3-43c6-be55-63c7bf70a4fe",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/0rNVaUJbfnA0LIgPKDwLYza1gsIkPRntexStffCrlZAYjGxswjznfsiHkE6w2DpH55ANhEWg0uD0sfuk3iPlbmAWoIAL=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1472",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1472"
+      },
+      "id": "en-NG-VG-3-1472",
+      "objectNumber": "NG-VG-3-1472",
+      "title": "Lodewijk XIV, koning van Frankrijk, beschermer van de rust, rekenpenning geslagen op last van de Staten van Bourgondie",
+      "hasImage": true,
+      "principalOrFirstMaker": "Monogrammist B (Frankrijk)",
+      "longTitle": "Lodewijk XIV, koning van Frankrijk, beschermer van de rust, rekenpenning geslagen op last van de Staten van Bourgondie, Monogrammist B (Frankrijk) (possibly), 1688",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "ed117458-ba76-460a-8419-f78132ffd86f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/QlgwWRtxccImXJQxncgtK64adkhbt_rd_mF5wCR-WCaocRlMqbqA3Ge0RwqbcH7tTfQcTyv5VFsKm3FF5HKJ8RowaLw=s0"
+      },
+      "headerImage": {
+        "guid": "7890fe73-013c-4672-aeff-d0e39af27fd8",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/HvMe9d0yrOAQ9hOg65_RUiv6aBoPCXMeUi7_TxZdf8_gzzli4o5FdCMNIh595Y2YvXFTmS7g85kYfIqOmLTjcXxD9KI=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-614-B",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-614-B"
+      },
+      "id": "en-NG-VG-3-614-B",
+      "objectNumber": "NG-VG-3-614-B",
+      "title": "Francois-Hercule, hertog van Anjou, beschermer van Vlaanderen",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Francois-Hercule, hertog van Anjou, beschermer van Vlaanderen, anonymous, 1583",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "2283e8e8-9ea4-46af-940f-de41c3f105db",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/5iHAbz9evnFpa-0twc29EZueQ_s7gLrzSJtEjbpvCOsPpTv1wk7tHD4reX0mZP2Amxn6ShZa2wO2oxlQ7WQZt8lNYyc=s0"
+      },
+      "headerImage": {
+        "guid": "d9747c6a-dff3-465d-9c9a-2c9aea42ff6a",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/Fp0fqa2aOkrD9ykXbDHPAUL25NoANxqQvx6PUUxo1NTjckFEWFjDFfZzHeTXZEhr-AsnVE6gk6aGWiWclFhS-OarQg=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1890-A-2341",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1890-A-2341"
+      },
+      "id": "en-RP-T-1890-A-2341",
+      "objectNumber": "RP-T-1890-A-2341",
+      "title": "Noordeinder Poort te Monnickendam",
+      "hasImage": true,
+      "principalOrFirstMaker": "Cornelis Pronk",
+      "longTitle": "Noordeinder Poort te Monnickendam, Cornelis Pronk, 1701 - 1759",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "2b80917e-c15f-4e92-b482-0a3578c6502c",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1661,
+        "url": "https://lh6.ggpht.com/8z0PHoawW5-YW0EoYRo-EtDwbRyxBakQ4ARvFqjeCdpF0xnJeEemOf_miZlRX8paVqQ_Ni4jCziyx8AmPCHXqRZrB6NO=s0"
+      },
+      "headerImage": {
+        "guid": "9dc4d02f-549f-46da-98e8-a5efd8b6fff5",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/5Pu3wWkg0_xkyKA3Mu2r4JCleTtdEhtJDn-2Gk4HrvlqfAS4DnNcR0uj6wsysPb9U30e7YawW7bVwOuiG6c2FzC5kcQ=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1888-A-1712",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1888-A-1712"
+      },
+      "id": "en-RP-T-1888-A-1712",
+      "objectNumber": "RP-T-1888-A-1712",
+      "title": "Het kasteel Limburg",
+      "hasImage": true,
+      "principalOrFirstMaker": "Cornelis Pronk",
+      "longTitle": "Het kasteel Limburg, Cornelis Pronk, 1729",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "5cb847c5-5339-4043-b61f-26832b2f45d9",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1883,
+        "url": "https://lh3.ggpht.com/LFpXaJEX56lbZB88Sg_nLb7mofUE3w5PaXXoxrGUb9pLR0vHo0h2brHSHDm7J2sVgwQehzw1fjUU5HRlD8_kDJid2BM2=s0"
+      },
+      "headerImage": {
+        "guid": "faf70a6d-70b9-4a63-864a-a34bd77b6c7a",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/ov3FiZiVd2i5_QnkDYBAuH5yuizKLzyXtyQ_ibsvrhY9h_KwvanqdgIy5OlgJSbshGv9jH5_E6ntE1J3rvx3SJGXdQ=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-657",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-657"
+      },
+      "id": "en-NG-VG-3-657",
+      "objectNumber": "NG-VG-3-657",
+      "title": "Engelse hulp aan de opstandelingen",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Engelse hulp aan de opstandelingen, anonymous, 1586",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "60538d5d-8c93-4ef4-943e-9cb002c88401",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/OZTHRis-6byK-K7XPeVSqu4GZ6ogSnNMi2wp9Z5RBG_DfNWPdg3Ke51JRmshkZTWV0PM3sQCB-GkWC9mRarWYqRGl5I=s0"
+      },
+      "headerImage": {
+        "guid": "c3b10b57-8e19-4f58-b6fc-2f679e9a3bbf",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/ShnKi0kEH3Uf86wqbVP-GD6KOeRcwVv6qoJ4D0X2woKI_v7mfs4JRtC1l4RxpTUVUGwRz_u2-0XjjQ7W8nRgffHiYw=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1198",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1198"
+      },
+      "id": "en-NG-VG-3-1198",
+      "objectNumber": "NG-VG-3-1198",
+      "title": "Staten van Walcheren",
+      "hasImage": true,
+      "principalOrFirstMaker": "Johannes Looff",
+      "longTitle": "Staten van Walcheren, Johannes Looff (attributed to), 1646",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "8a695161-05e1-43d8-b09f-0833cb8a00a8",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/kcMCn_U0llPovmMaTHYtRkJAX-gldmXpSsZzHUH7QAeknRGszSPdFhhaqVE_7DmE5MfFhzOYtZstoo4VU46JN7y0uss=s0"
+      },
+      "headerImage": {
+        "guid": "c989b87b-bc74-4b49-ac6b-d2a51e42f118",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/w1APqRONPF5fYHbmNVjY0gUL_JHj26BlMoytILDfNOQVBletpgygjfNKzIrGkL1SEb9NbYapn47wrQCvzgkUZt0h2w=s0"
+      },
+      "productionPlaces": [
+        "Middelburg"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1246",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1246"
+      },
+      "id": "en-NG-VG-3-1246",
+      "objectNumber": "NG-VG-3-1246",
+      "title": "Filips IV, koning van Spanje, rekenpenning geslagen op last van de raad van Financiën",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Filips IV, koning van Spanje, rekenpenning geslagen op last van de raad van Financiën, anonymous, 1655",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "27d38f66-756e-4b46-a390-06c9ecb3b144",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/mMIB8O6tYPtgibxrlrgXlFxrLOt11ff0zUM6XnpiUTqpImjRdtzlRoYNDOMURDs8T8inXhLyS2pCQs2JxpYuR-KmBK0=s0"
+      },
+      "headerImage": {
+        "guid": "5b5810b9-109e-45f6-b947-894ccf90fb28",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/59YDyWyMKV3yU5CRclQ34nlyXSQt6c79-HQESBVGAca0MJKb-AgYspLqjAKnF2aXuaDHSwUmzRs2sTrwBEA_eNuRMg=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-602",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-602"
+      },
+      "id": "en-NG-VG-3-602",
+      "objectNumber": "NG-VG-3-602",
+      "title": "Allegorie op de mislukte Franse aanslag op de stad Antwerpen",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Allegorie op de mislukte Franse aanslag op de stad Antwerpen, anonymous, 1583",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "5f3f6f16-e577-4209-9254-8301a963c427",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/l1G-YETZN99X-kh2FLUhc2Bvlara9ao__JqY8bdOh2Nll5AtBaztfCf6c4dTW0vnLSyAokUYq_00px5FjCF1d7qj-0I=s0"
+      },
+      "headerImage": {
+        "guid": "48276fb0-9f9e-4df9-978e-fde5f502c5e5",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/we0RI-YL2POYi4_yaxNEGWNTycdTs_84sO-Wf2H0vfEM4QbPy6Z1hb7vWFdU5gyVFtcMRBsWB_Jx88aK2rN-zn66dg=s0"
+      },
+      "productionPlaces": [
+        "Ghent"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-804-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-804-A"
+      },
+      "id": "en-NG-VG-3-804-A",
+      "objectNumber": "NG-VG-3-804-A",
+      "title": "Patstelling tussen de Nederlandse en Spaanse legers",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Patstelling tussen de Nederlandse en Spaanse legers, anonymous, 1595",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "7f775467-5e02-4515-89bb-e17386e7b113",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/iFBCSJ6b8QtPqxx_sFrKFCsajw4ofm6HbWpHjrP3hVzOpTOO6OUARnkWBxWD8K57Wo0boah8buwfzKNMxougWW5Lwr4=s0"
+      },
+      "headerImage": {
+        "guid": "859ff59c-2b02-44f3-bcb0-2483fc028897",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/f7FmTXJmbdKE546e936AkpPWpVKQH7lLirbUSSp1vlMPbIfjb4P72GuoUdUIsn7ESZXKKmb7zU9D_UmfmooLAmMedcI=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-814",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-814"
+      },
+      "id": "en-NG-VG-3-814",
+      "objectNumber": "NG-VG-3-814",
+      "title": "Staten van Walcheren",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Staten van Walcheren, anonymous, 1596",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "e0a3af96-ddbd-4d92-b5cf-3cf39758b3c0",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/kEYDKDNk9MetwMjbPm_TuojFaaWjSybmPkRRnbcQcjHQJt3p1ZVCCmkdJ2wbvHft1IN_Tl5D72dJY5BUtVRbe6wSx7-h=s0"
+      },
+      "headerImage": {
+        "guid": "75c2fc52-bb60-4918-b74b-b919776136f8",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/k1AR_TnN-b8uHFFIBlqf6EhJZ0Mq-SjFgP42uVnQBvtrfX8V5VxiJ6ErcTuq-NQABLt0ZhWW9fGxkB4Dp2AEN2EQmA=s0"
+      },
+      "productionPlaces": [
+        "Middelburg"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1024",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1024"
+      },
+      "id": "en-NG-VG-3-1024",
+      "objectNumber": "NG-VG-3-1024",
+      "title": "Moord op Hendrik IV, koning van Frankrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Moord op Hendrik IV, koning van Frankrijk, anonymous, 1610",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "6de5af2f-6c46-4f99-a17d-b6095e5067bf",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/ca-0BG_nM3YPMk8wLYyLH1Wk5ZBmRZ7FV5UH6SYEYKwz1b_c1Ohy2KeL6EEYCBmWfeTwkJPKV_3_H7OByPTW33dy4g=s0"
+      },
+      "headerImage": {
+        "guid": "49f2d298-3982-4431-a8f5-394d9e614324",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/1fed0JbfVO_zGlFmy9eEf--RWIc4Be_5HJ0fEEz3U7HUD6PYhIBiQH6Bl2DSNO9eIJaTUTJt-OhjSKmYUH5lpfmWoA=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1265-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1265-A"
+      },
+      "id": "en-NG-VG-3-1265-A",
+      "objectNumber": "NG-VG-3-1265-A",
+      "title": "Steun van de Verenigde Nederlanden aan Denemarken in de oorlog met Zweden",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Steun van de Verenigde Nederlanden aan Denemarken in de oorlog met Zweden, anonymous, 1658",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "cd4fdf89-3bc7-42ce-8ee5-e58c113076b5",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/z3avDKlWCrQkCwV6NFABnIP1cA9ks_w4fdb3XDGLEF8CFXFm2mU6HAwHkR5AMpiQl6I6T-y3VpTP3GMekJ1TeU0f6XQ=s0"
+      },
+      "headerImage": {
+        "guid": "582b2089-c3d8-4200-a0ee-7857c17be199",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/WdIKDcnexjxcW3_UtKss0BeNa2ojta_OY1AmgSFG6OonSyBHYfIBCbCZigxIa71byWP_MgcGI67AcxyiFTncx9om1GJ-=s0"
+      },
+      "productionPlaces": [
+        "Netherlands"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1527",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1527"
+      },
+      "id": "en-NG-VG-3-1527",
+      "objectNumber": "NG-VG-3-1527",
+      "title": "Jacobus III, penning geslagen om onder zijn partijgangers te verdelen",
+      "hasImage": true,
+      "principalOrFirstMaker": "Norbert Roëttiers",
+      "longTitle": "Jacobus III, penning geslagen om onder zijn partijgangers te verdelen, Norbert Roëttiers, 1708",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "a67d8c78-47bd-4d99-9add-d76c01c9cc5d",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/9LLXN4efFvlGJoH8SvF-Yd3CFiqTKxWTmGVVS_jShdJ6vrOqKk6SlL9Zyl7NAeFvrhgMOVdhLDPkxYqn9h0Kpftd4Mys=s0"
+      },
+      "headerImage": {
+        "guid": "793d57d9-e68b-4344-ab3b-aa528c41d47c",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/7EQd3eEs-hAhMxz2Ks-rjDrA6T7lJ5uR6w5syb64QpmAz84ItBJuAXHPNRWmK8AQyzLxb8FAAIs9HPxLE2oojpeP1w=s0"
+      },
+      "productionPlaces": [
+        "Paris"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-887",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-887"
+      },
+      "id": "en-NG-VG-3-887",
+      "objectNumber": "NG-VG-3-887",
+      "title": "Slag bij Nieuwpoort",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Slag bij Nieuwpoort, anonymous, 1600",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "9295f3d7-4f12-45eb-9aec-aba8fa99ecaa",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/N5LfkLYK-5XT3B02CMkORDOEHCc8h0XY2Yby4qfeYcLI8EreT3eKmB1t_mNG_l2-TGyQ5zsvf3SpCC_tmF9osB-Izqo=s0"
+      },
+      "headerImage": {
+        "guid": "7b058c4b-dcf8-49b2-93c8-132308c15560",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/R8EKFGrs3tu81wC1DwARIN1t-suWToFzo0EEyMl3HpQ8PqWGtZM2B05voI-0K3FVG5PCWe_zXvtqMWFfksDzPKRRha0a=s0"
+      },
+      "productionPlaces": [
+        "Middelburg"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-900",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-900"
+      },
+      "id": "en-NG-VG-3-900",
+      "objectNumber": "NG-VG-3-900",
+      "title": "Inname van Rheinberg door de troepen van Maurits, graaf van Nassau en verdediging van Oostende",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Inname van Rheinberg door de troepen van Maurits, graaf van Nassau en verdediging van Oostende, anonymous, 1601",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "282ff984-eb9e-431d-be2f-b7316b2f7aab",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/qcImedLqEqX9zHTY-amQ17wpwiGlU7U9ZdtLY0TbSfd1zxXBK_F5OvKDZMsHm-tGse7trvGaDwej8fEQtClP1PvEJApI=s0"
+      },
+      "headerImage": {
+        "guid": "b9d49d79-569b-4034-8876-d57357d45485",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/YzGOIUOqElIcP8bqoEgR28OHZa_CYXpfEmneDhQx7-LbIexglFkXNEHcK_rZxSsLIjG9gq6wKRkw26KI_RE5tgl4LIo=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-936",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-936"
+      },
+      "id": "en-NG-VG-3-936",
+      "objectNumber": "NG-VG-3-936",
+      "title": "Allegorische waarschuwing voor de onbetrouwbaarheid der Engelse bondgenoten",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Allegorische waarschuwing voor de onbetrouwbaarheid der Engelse bondgenoten, anonymous, 1603",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "f4a6d414-61c8-460b-aa12-b96ba335a2da",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/bXGlKxARRugzZYG5V1Hdgbo9QqpzsycOSdj3OCsvdlaxOzqJfipeWd3cIBoj79KQNBoOa-fNdwb0vROo_H6J2vjTdg=s0"
+      },
+      "headerImage": {
+        "guid": "6494a8d7-4bbf-47e5-84eb-363ec5f3ce06",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/xok36oHclryzVS0mkFIo9Ppck5YubPJlaZoxnpytVssbiPPDiSlEc0YIM5Ec9Yhx1QU3cTT36sO2vdpIn_JmymTY8Q=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1358-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1358-A"
+      },
+      "id": "en-NG-VG-3-1358-A",
+      "objectNumber": "NG-VG-3-1358-A",
+      "title": "Driehonderdjarige herdenking van het wonder van de mishandelde misbroden te Brussel, rekenpenning van Theodore d'Elshout-Van Heusden, heer van Middelswale, magistraat van de schatkist van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Driehonderdjarige herdenking van het wonder van de mishandelde misbroden te Brussel, rekenpenning van Theodore d'Elshout-Van Heusden, heer van Middelswale, magistraat van de schatkist van Brussel, anonymous, 1670",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "f8a89fd9-55a9-4fe9-8076-b1af878a010e",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/Ze81BCUD3wZN7Ou-i9yCRIaCbRBONocbOQLqvmse2loII9lRVABlVdUPU0HJGh34cn-M3vsUdR7zWdHJKc0ZojGtEBZr=s0"
+      },
+      "headerImage": {
+        "guid": "964ea3b6-0fd6-4562-b6a4-8f4965296580",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/jTeqbzbZ2aDiwF1kfuYZMG7x-BGdFwWEffVvlUA6a4C_SEGS4L-bpFntrYFFhGXmi2C8gmF4oaY9JV8s8PP_1b7cTKo=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1410",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1410"
+      },
+      "id": "en-NG-VG-3-1410",
+      "objectNumber": "NG-VG-3-1410",
+      "title": "Verbranden van de Nederlandse vloot bij Tobago, rekenpenning geslagen ter ere van Lodewijk XIV, koning van Frankrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "Monogrammist N (medailleur)",
+      "longTitle": "Verbranden van de Nederlandse vloot bij Tobago, rekenpenning geslagen ter ere van Lodewijk XIV, koning van Frankrijk, Monogrammist N (medailleur), 1677",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "972d097c-1b74-4365-8797-b705b8eda955",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/yu7c97DPvct18OSeTngy50exNO6n3tIG2abbbMCmBcelOSEdKVng1JV-aF257i2QsChi93vx6ZgDoyvjzPWau2VRNT5R=s0"
+      },
+      "headerImage": {
+        "guid": "31bf0eef-15a3-4580-b9f9-58032c7f1cfb",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/QW55Ko8g6UceWzXZeWHPNSp6_sYRY7rGWTkwVfikr0aAuk_J1u8AfMzK6pRrGn4Ut_V3KaPyh9awqSjpajGEVF1KQIM=s0"
+      },
+      "productionPlaces": [
+        "France"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-985",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-985"
+      },
+      "id": "en-NG-VG-3-985",
+      "objectNumber": "NG-VG-3-985",
+      "title": "Wapenstilstand te land voor de duur van acht maanden gesloten tussen de Republiek en Spanje",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Wapenstilstand te land voor de duur van acht maanden gesloten tussen de Republiek en Spanje, anonymous, 1607",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "dab177de-3207-4900-9a2a-5ae85479a448",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/Qtj9kcO2X0ogsIlkeGDKWJQuSHql_5m1uyvWN1fqNto9pYXVlk3uxC7EKtjuMI12_5trBMggXquKYPiIDvJhYFJ_nHCn=s0"
+      },
+      "headerImage": {
+        "guid": "17ac6918-b8fd-45f3-a462-6fd73eee03e9",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/pZeCdTl1jcP7DFWnGAMqoxtHglKlc2-7BEoXt0KFmG4k9HGC7FBjEyPqTcd_NytOk6r7AAYv2IGYMeXY6a3Wv2iJhHM=s0"
+      },
+      "productionPlaces": [
+        "Middelburg"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1048-C",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1048-C"
+      },
+      "id": "en-NG-VG-3-1048-C",
+      "objectNumber": "NG-VG-3-1048-C",
+      "title": "Macht van de Zeven Verenigde Nederlanden",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Macht van de Zeven Verenigde Nederlanden, anonymous, 1613",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "b341d58f-badd-425f-a3c0-bc23f5539a25",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/gcgtoxoHyYsKVKUjHsKCi6p4twZ60pN361w9Wn9GqMcAnefMe6bz8t8n9d0m-uSYRfUBKRG2cg5_gmjvF4OVI-kX9Q=s0"
+      },
+      "headerImage": {
+        "guid": "c9d298a9-1c8c-4f8e-bd49-e72e96a3387f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/UIzcmNO6NBD_Ox5_PJ3Y0EoGmQjggfY55qZ3TKOfhiAPKB9Cihq-m0mhBMs74i9eJbXpxDxUyApPsb7m3VcxKiib3vo=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1216",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1216"
+      },
+      "id": "en-NG-VG-3-1216",
+      "objectNumber": "NG-VG-3-1216",
+      "title": "Huwelijk van Filips IV, koning van Spanje en Maria Anna, aartshertogin van Oostenrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Huwelijk van Filips IV, koning van Spanje en Maria Anna, aartshertogin van Oostenrijk, anonymous, 1649",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "c6b92f49-1c37-46a2-9063-172eee70aaa3",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/tPqNNMj4iuJziXAVNX_Uhuozm8DmDZ-AFLnONckoO2GWAV6pImOmYpbTCCDReL_xFoS23Hlkl5ZHLG1e3z6ntOPTfA=s0"
+      },
+      "headerImage": {
+        "guid": "4f8d2108-d090-44ac-b284-5c8ae8a36d85",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/-TgSiOw3qSSl-66-Ez_iWXWsdiXRi_r1hueRFKGQEdzwTpYv7XUyKwPfTb2cPLSn8n8ndj5cfQ_6SB7u8w0xzIU7lss=s0"
+      },
+      "productionPlaces": [
+        "Belgium"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1976-188",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1976-188"
+      },
+      "id": "en-RP-P-1976-188",
+      "objectNumber": "RP-P-1976-188",
+      "title": "Gebouwen langs een weg",
+      "hasImage": true,
+      "principalOrFirstMaker": "Willem van Nieulandt (II)",
+      "longTitle": "Gebouwen langs een weg, Willem van Nieulandt (II), 1594 - 1635",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "7308b298-6a1e-4608-a8ae-f3663af54500",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 2026,
+        "url": "https://lh5.ggpht.com/-h_M90r7E0fSp-8AZQIGLtr3UnMelJ6m5X2jJRdI2kuDtXWJCHKfNOFI4a1wFfYmqrQwbdMKGFqVFPhFPGIahEYejVU=s0"
+      },
+      "headerImage": {
+        "guid": "bcace9cd-62e3-4dbb-8f4c-32c3ffe21046",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/BGmVoKxGtf6S3dh25Ulwz4zzV6tOBN7P-10hme0Dvv_Z4K_MmrNnQ5yBbDK42C9EXCcYb4Yi6_GMVko82vaOlbtLkHQ=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/BK-NM-5017",
+        "web": "https://www.rijksmuseum.nl/en/collection/BK-NM-5017"
+      },
+      "id": "en-BK-NM-5017",
+      "objectNumber": "BK-NM-5017",
+      "title": "Botervloot in de vorm van een meloen",
+      "hasImage": true,
+      "principalOrFirstMaker": "Blankenburg",
+      "longTitle": "Botervloot in de vorm van een meloen, Blankenburg, c. 1755 - c. 1760",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "7d9f4c55-b8e1-4f71-bf16-3bfeaebff659",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1809,
+        "url": "https://lh3.ggpht.com/m01psBNipvihlgLjv3p6_tAQgxBP2xbm7rHKu6_uF5sz_4dkfHUaeVCpQKiVUcGhO5lOsxADp1-0aMy4PHAlMljRNSf-=s0"
+      },
+      "headerImage": {
+        "guid": "601e225e-024f-46ed-b62f-4cc88221bae7",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.ggpht.com/WfE-dx6tdPSWA_bc02dMqzWSjAPDELPY2d5RhD2XD8v2otOMPf-ceJris80DahvFDUj1UQ2lxxKioPZBhqgUmRQ3Ctg=s0"
+      },
+      "productionPlaces": [
+        "Amsterdam",
+        "Amsterdam"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1938-307",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1938-307"
+      },
+      "id": "en-RP-P-1938-307",
+      "objectNumber": "RP-P-1938-307",
+      "title": "Buste van een oude man",
+      "hasImage": true,
+      "principalOrFirstMaker": "Jan van Noordt (1623-1676)",
+      "longTitle": "Buste van een oude man, Jan van Noordt (1623-1676), 1644 - 1676",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "3a29acf5-cf7e-404e-b116-98a0c81946a8",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 3960,
+        "height": 5314,
+        "url": "https://lh3.ggpht.com/S8Ny1Mt2b4zm2qWm9WYRS27b7VlY7e7aHHJW9FUwWPqlTk8TGDtg2DkXc__GWRgXpRQABPcTbBrOapfomU-E942FT9eC=s0"
+      },
+      "headerImage": {
+        "guid": "0aaa8bb0-72af-49a0-b09d-21b2a9ef471b",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/NKWE8tdHnDIaU3Lt_RsNmy4QAN0AB3RCg2VjkiLMYj5MdeF2Nb4UP-zIYUDD_f3UUxFvZlsZCEGPqYuc1Tz22RHtrcI=s0"
+      },
+      "productionPlaces": [
+        "Amsterdam"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1888-A-1725",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1888-A-1725"
+      },
+      "id": "en-RP-T-1888-A-1725",
+      "objectNumber": "RP-T-1888-A-1725",
+      "title": "Gezicht op Rhenen",
+      "hasImage": true,
+      "principalOrFirstMaker": "Cornelis Pronk",
+      "longTitle": "Gezicht op Rhenen, Cornelis Pronk, 1701 - 1759",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "716d192d-548d-4549-bb31-2ca048427398",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 968,
+        "url": "https://lh5.ggpht.com/VOFz_CQEPqcb4r4brE4VSuKOYWKcajZzAgumH2C5lcPrZSC717JYC0Yyqq00XtoWDePAn3tLZKQXUf_yMweXHcCw6aE=s0"
+      },
+      "headerImage": {
+        "guid": "547cd1ba-a6c3-47ac-925b-211476c24848",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.ggpht.com/IByt3FYt1vctYUrTvj2HDu_5JH3AC-PzrDyvIyM-qh2G2G5DEvZXCSGUqO7_65UFFbt_8Ub3jQpAX6LCK7JYYNzWcjPM=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1921-391",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1921-391"
+      },
+      "id": "en-RP-T-1921-391",
+      "objectNumber": "RP-T-1921-391",
+      "title": "Kalkovens bij Hillegom",
+      "hasImage": true,
+      "principalOrFirstMaker": "Gerard van Rossum (1698/99-1772)",
+      "longTitle": "Kalkovens bij Hillegom, Gerard van Rossum (1698/99-1772), 1765",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "d42c3f69-ba04-4905-8566-09de3f6aec1c",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1739,
+        "url": "https://lh3.ggpht.com/iLVZ4Jmykha2F5_bqSOSn9OJzSRKgrsYWcWsHw9DRzRl1M9p16txFr2pIlx8A711UxaXfMC2SCAodnUcMe4KHJknGw=s0"
+      },
+      "headerImage": {
+        "guid": "d5a49c7c-7cbb-4982-b56b-89b118b1664e",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/sfIGvbcHbu6aSrlFEpgCJq-StfFPCjHWTzGtm2F5QDMWahl21ZiRG_fYt1U8Fbq5IKxkbZqa7bxTHNNseu5ImkyAfw=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1351-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1351-A"
+      },
+      "id": "en-NG-VG-3-1351-A",
+      "objectNumber": "NG-VG-3-1351-A",
+      "title": "Karel II, koning van Spanje, rekenpenning geslagen op last van de raad van Financiën",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Karel II, koning van Spanje, rekenpenning geslagen op last van de raad van Financiën, anonymous, 1669",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "47594aa3-b507-44c1-b428-fed53b6cae8e",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/r4JAxrcv8KRYjolluibEhlp5djI0baP7xgu0hQX8F8mFrNiFKLARdHwOmtu5cjyNGWirWvcKeJyerNWSgDCrfm4I0s4=s0"
+      },
+      "headerImage": {
+        "guid": "34184a4f-4da8-4ed4-a742-689aaa96fd4e",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/AymzS6aKH0gfOMXOWT2dJEG1YvOSJ848GjZmzK7sh5Gt20jPGjjFtEEZQ00X2jTkXSSKswTiWdxxd0myT6iDd9253Mw=s0"
+      },
+      "productionPlaces": [
+        "Antwerp"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-847-A",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-847-A"
+      },
+      "id": "en-NG-VG-3-847-A",
+      "objectNumber": "NG-VG-3-847-A",
+      "title": "Overwinning in de slag bij Turnhout en het innemen van tien steden en drie versterkingen door Maurits, graaf van Nassau",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Overwinning in de slag bij Turnhout en het innemen van tien steden en drie versterkingen door Maurits, graaf van Nassau, anonymous, 1597",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "b63942c6-5aa9-47b5-9f0b-906b7b8ddf07",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/Qsyfbv9dckaqtESRDAbkmhA2Wc4KXp6DlzkKHAc0-mZea0YbqNCwf8s_KEXbJzj5r67EdAMPXtJsmVUrYnsfnPvJK5g=s0"
+      },
+      "headerImage": {
+        "guid": "687a2adb-e756-4c52-887a-66303ccb99e5",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/vqiphQmBsBs-kUulh8ZuAVg4B9V5kP-Cv7GDLgVwgw33S7DwVWRi1i7YK3jjtIQvM6u_krNkdf3dHqL3GM12UcIuJ8A=s0"
+      },
+      "productionPlaces": [
+        "Dordrecht"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1456",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1456"
+      },
+      "id": "en-NG-VG-3-1456",
+      "objectNumber": "NG-VG-3-1456",
+      "title": "Twintigjarige bestand van Regensburg tussen Frankrijk, de Keizer, Spanje en de Nederlanden, rekenpenning geslagen ter ere van Lodewijk XIV, koning van Frankrijk",
+      "hasImage": true,
+      "principalOrFirstMaker": "Monogrammist CL (medailleur)",
+      "longTitle": "Twintigjarige bestand van Regensburg tussen Frankrijk, de Keizer, Spanje en de Nederlanden, rekenpenning geslagen ter ere van Lodewijk XIV, koning van Frankrijk, Monogrammist CL (medailleur), 1684",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "7bf4e961-3390-491b-8968-8235eda5b5e2",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/JNRZ47exofVGpO0UIaiiCjTXsfFEieuOCZ8LaFThB3qfqTTXC0pmjZjFybDNXN9vFf8PYkyCJNEkw2Wv7p-x9bYjfvw=s0"
+      },
+      "headerImage": {
+        "guid": "c2361238-f303-4f99-aa91-62aab048e63b",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/dObQ05B_bzEjjPDtu9u3j827RiyqAaU0nRD1oeXbpTZE9NHc7Xz_QdhuHLlbIF2FzR5_Lg4pFwwlVLw34JJHdD3O3w=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1463",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1463"
+      },
+      "id": "en-NG-VG-3-1463",
+      "objectNumber": "NG-VG-3-1463",
+      "title": "Jean Heymans, magistraat van de schatkist van Brussel",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Jean Heymans, magistraat van de schatkist van Brussel, anonymous, 1685",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "e23f1b33-cb1f-412c-99e2-042b22748dd7",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/d7ABceHtTudangLI5RfAVpnCZRHoan2wIML90zOt9UFpCjfT_rFlGDJTVNdUHt87uJtXtFGZWnNC4ryySc4drkZn_QU=s0"
+      },
+      "headerImage": {
+        "guid": "1a066802-2675-4eb1-99b5-7f98adbdc33b",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/-sgcBYMR-bbxENZCgwuXIJvIPIKQhmTVvxsST0NlLsmHAv38ltPhma5Deg-WWKnPMhC6TK6B7DLpqkQT11z1uKlv6A0=s0"
+      },
+      "productionPlaces": [
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-668",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-668"
+      },
+      "id": "en-NG-VG-3-668",
+      "objectNumber": "NG-VG-3-668",
+      "title": "Eduard van der Delft van Borghvliet, voorzitter van de raad van Antwerpen",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Eduard van der Delft van Borghvliet, voorzitter van de raad van Antwerpen, anonymous, 1586",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "e348101a-fc93-4181-8161-746eefb542c6",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/BhC-7R-i2Qxq5vCYSLwS7NxCHp2sxAEsOd5nXhNeY4opMBXGT8Vx-WU0Vsr0mYseoRhOnA7sQGWBCD-xTGzfzUO4-I4=s0"
+      },
+      "headerImage": {
+        "guid": "e6a273dc-25c4-42fa-b642-53c350889058",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/Km5NqaTTizPkWd-MM3P-Rvq8sKh_b07G80PuSVdQycpfVLMWnKYshQ0uRe6BqkbwJ8iujU86T9bhP8G43_-HyR0fgw=s0"
+      },
+      "productionPlaces": [
+        "Belgium"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-OB-23.990",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-OB-23.990"
+      },
+      "id": "en-RP-P-OB-23.990",
+      "objectNumber": "RP-P-OB-23.990",
+      "title": "Verklaring van het gedenkteken voor Joannes de Fremery",
+      "hasImage": true,
+      "principalOrFirstMaker": "D.A.M. Sluyter",
+      "longTitle": "Verklaring van het gedenkteken voor Joannes de Fremery, D.A.M. Sluyter, 1819 - 1821",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "7b6a7e53-1af8-45f0-b755-5fda20ddc9fd",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 3960,
+        "height": 2354,
+        "url": "https://lh6.ggpht.com/S5izY1E02cjKHSXQuDPdRk8KK-hmEECvJFx4i_a99akGf-cjyhdKysEH6icrkmd2lHFPrejrT30mmOm0XPL4tcBgFfg=s0"
+      },
+      "headerImage": {
+        "guid": "577e8019-fdcb-493e-bd80-930dd4a7be93",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/rLcVXPn2BWKz0xHzGgq3vRXZ_JsI4zfxNALtkvzmvJtbi5BQf-nMhzc3lZ8MyfKZKmz8R93eYMf1vIve1Ngp3KMGNQ=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/NG-VG-3-1307",
+        "web": "https://www.rijksmuseum.nl/en/collection/NG-VG-3-1307"
+      },
+      "id": "en-NG-VG-3-1307",
+      "objectNumber": "NG-VG-3-1307",
+      "title": "Marcellus Librechts, rentmeester-generaal van de stad Antwerpen",
+      "hasImage": true,
+      "principalOrFirstMaker": "anonymous",
+      "longTitle": "Marcellus Librechts, rentmeester-generaal van de stad Antwerpen, anonymous, 1662",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "19406629-edd9-47de-9060-ff8eb3c84fdf",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1241,
+        "url": "https://lh3.googleusercontent.com/NWu_QZh-Oc6JCV-fK59yUPlHrW6gLGfONbPCw_0pQytubryh5sJVv0c8XX2ccJCKalX0UkkNrInTD7P4noFqnReXm_U=s0"
+      },
+      "headerImage": {
+        "guid": "6b9b5fac-404d-4a71-a3d5-142eadd3d5f0",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/QmyJnLi-EDYqS0JcJ4Ij3cMsddIaP1owftZZsVYjzi4O2qzmEzs-Je4Rw1zeQGCyr2__NAaf9rL8CeYuedgx8mQaXQ=s0"
+      },
+      "productionPlaces": [
+        "Antwerp"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1894-A-2993",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1894-A-2993"
+      },
+      "id": "en-RP-T-1894-A-2993",
+      "objectNumber": "RP-T-1894-A-2993",
+      "title": "De kerk van Huizen",
+      "hasImage": true,
+      "principalOrFirstMaker": "Cornelis Pronk",
+      "longTitle": "De kerk van Huizen, Cornelis Pronk, 1701 - 1759",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "52d248c3-b5a6-4ae1-a422-a054bd61c3ab",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1814,
+        "url": "https://lh6.ggpht.com/qsnwW_aqbCV9Vzj-__U6QAUiKn5Bpq1t4vWke-E_3COw24gLIbE-R3qaJRf443QGtjQvaCWuCGyUOWoEdGPYY-VBycM=s0"
+      },
+      "headerImage": {
+        "guid": "ead9f7af-cfd6-4eff-8ad5-2ad62d60eb57",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/Lj6eUPpz1gEA6n18sC1ID0sZHF4TljPE4usdBkhQ79tlGzA-QcJSAuKQQZEeBennPUUXlcVXnUZCZflWF0HT_NzEkrY=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-T-1888-A-1738",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-T-1888-A-1738"
+      },
+      "id": "en-RP-T-1888-A-1738",
+      "objectNumber": "RP-T-1888-A-1738",
+      "title": "Het Huis te Voorn, bij Utrecht",
+      "hasImage": true,
+      "principalOrFirstMaker": "Cornelis Pronk",
+      "longTitle": "Het Huis te Voorn, bij Utrecht, Cornelis Pronk, 1701 - 1759",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "e63dc28e-0b3e-482d-867e-11c8347c89d3",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1460,
+        "url": "https://lh6.ggpht.com/P3MfNoJCGlON_RUhTmzTJ_pWyXHe3M0I9tgktmG1q3ccv7GrWFAZNoiR3O3DhRBeaD5NKHnIIAFZWMbXo2ZgJycODeXy=s0"
+      },
+      "headerImage": {
+        "guid": "6db8bf8a-56d3-43ef-8bad-c9e3447e1dac",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh4.ggpht.com/UzkRQTDf3t2A7gH4e1Lye6AsF_HpihThiUKW6TG-PIpj61vQwkb6pmLzYoTOdjaMP8lSmxo1oHQKAViild4uZP-Fww=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1878-A-1869XX",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1878-A-1869XX"
+      },
+      "id": "en-RP-P-1878-A-1869XX",
+      "objectNumber": "RP-P-1878-A-1869XX",
+      "title": "Tombe van Thomas van Aquino in Toulouse",
+      "hasImage": true,
+      "principalOrFirstMaker": "Egbert van Panderen",
+      "longTitle": "Tombe van Thomas van Aquino in Toulouse, Egbert van Panderen, 1610",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "574261ac-74dd-4a74-9a6b-340c1131e4a5",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1796,
+        "height": 2500,
+        "url": "https://lh3.ggpht.com/OqhBM8_EimGWXJH8_9dziin80bo-5SpRfMucpJWvIl7j1o7RaeBwESRh3WgGIEaP10AymA5TkmdKpfSoB18331ohqA=s0"
+      },
+      "headerImage": {
+        "guid": "2dd3be34-d6aa-441a-963a-524340b906fe",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/wH-ykdOfe6bGDxOHYEtCkRxEKEfQXbY1AzgCyzwxaKwVK431PX_7tHT9I4x61wEbWdbVKt9HsRkoZKvdRJri7Yv9tZjQ=s0"
+      },
+      "productionPlaces": [
+        "Antwerp"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1976-178",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1976-178"
+      },
+      "id": "en-RP-P-1976-178",
+      "objectNumber": "RP-P-1976-178",
+      "title": "Rustende familie voor een ruïne",
+      "hasImage": true,
+      "principalOrFirstMaker": "Willem van Nieulandt (II)",
+      "longTitle": "Rustende familie voor een ruïne, Willem van Nieulandt (II), 1594 - 1635",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "5ac4ac08-07ea-45a7-b7c9-aa21e6f34a16",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1957,
+        "url": "https://lh3.ggpht.com/cTb6sKMvA2HxoPw9AXDZ0lxuJ01fHB_D0lkdhD8k8nZqKGafRYnj-F-cPTOc5JCVnPLTMs5ss2rbYHtcRC7NqLN3MjU=s0"
+      },
+      "headerImage": {
+        "guid": "b8878b25-619a-4abe-a4f4-39c4c8cc36b9",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.ggpht.com/p9qk67772pLexNPvVwhP1ySpz7bJi0cYBArpqmKjx7_MhjkbUIWnlMcAEXZg92V7OiGPtb5fD8UeQp4UesUJRNDl5HI=s0"
+      },
+      "productionPlaces": [
+        "unknown"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-F-00-1585",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-F-00-1585"
+      },
+      "id": "en-RP-F-00-1585",
+      "objectNumber": "RP-F-00-1585",
+      "title": "Kasteel van Gronsveld met ruïne",
+      "hasImage": true,
+      "principalOrFirstMaker": "anoniem (Monumentenzorg)",
+      "longTitle": "Kasteel van Gronsveld met ruïne, anoniem (Monumentenzorg) (attributed to), c. 1890 - c. 1920",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "e3caa22a-f60a-43dd-ae43-32db133d7349",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1834,
+        "url": "https://lh3.googleusercontent.com/mLTr61Bejeu6yzW2eFFwCVkIotwxNinVU6E5NOQNQ1UMAZa-YM01v1EHk9ASx91QhfKN-lSa6ToS9ImXnqsCkolcItU=s0"
+      },
+      "headerImage": {
+        "guid": "02fef12f-0c28-4b48-8105-27de5f0f9914",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/V1IKVAZ3gs1NglrBEqvtF60P_ZtQoDek_RrtPZZsPAFhcPi2abABbwPC3WAKUMtw7Zaaogdcp5psJrGeal59KRKE_a5g=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-OB-24.324",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-OB-24.324"
+      },
+      "id": "en-RP-P-OB-24.324",
+      "objectNumber": "RP-P-OB-24.324",
+      "title": "Opwekking van Lazarus",
+      "hasImage": true,
+      "principalOrFirstMaker": "Richard van Orley (II)",
+      "longTitle": "Opwekking van Lazarus, Richard van Orley (II), c. 1685 - before 1700",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "9407f62c-a122-4598-b90e-9f42b2724af8",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 2039,
+        "url": "https://lh5.ggpht.com/v_Wp1RtBiJFeFCPjLj6-hj17F43DB0pcmEYwYHFFtzbnbaNaybnurz-LD7H7ahe2yucKe5jMf3r1JpS_5mJ44IxJikc=s0"
+      },
+      "headerImage": {
+        "guid": "3fa21f6b-e679-41d7-83b9-9cedeee252d4",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/O-LEJlEoIEW5pdofJxIsMEvStGSK47O6tKMOs3z8Ln7M9YyfykA_FUX5x_6gTXv4_g7BmJqGxSX0EKEyjwLhabVQYA=s0"
+      },
+      "productionPlaces": [
+        "Brussels",
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-OB-2195",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-OB-2195"
+      },
+      "id": "en-RP-P-OB-2195",
+      "objectNumber": "RP-P-OB-2195",
+      "title": "Christus aan het kruis",
+      "hasImage": true,
+      "principalOrFirstMaker": "Crispijn van de Passe (I)",
+      "longTitle": "Christus aan het kruis, Crispijn van de Passe (I), 1596",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "dae3aa21-4eec-45c4-b1af-7a500b6d15e8",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1891,
+        "height": 2500,
+        "url": "https://lh5.ggpht.com/EzMQ58pPU3Uh87oywLBENnJ0vE094JOEqCFhKR72Wzi96LmAJXgrbdoHRx5kz7vmt2WmxdCXEuV26jdiwirsbfsSblLe=s0"
+      },
+      "headerImage": {
+        "guid": "65b3ce6f-e96c-4c66-8be1-1aa242231d46",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/hQa15LLhuKkW-VuctcEVUu-SxXb1yTQjzqcrIoGGB-Agq3p1J3EHzhdQiKFtqp6Cy1-APLpV9OrUW3yCIJZHui-Ks0yS=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1913-2309",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1913-2309"
+      },
+      "id": "en-RP-P-1913-2309",
+      "objectNumber": "RP-P-1913-2309",
+      "title": "Herder met koe",
+      "hasImage": true,
+      "principalOrFirstMaker": "Anthony Oberman",
+      "longTitle": "Herder met koe, Anthony Oberman, 1810",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "e0b04dff-a829-4234-b816-4a48289e633f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1794,
+        "url": "https://lh3.ggpht.com/UwU7EWKXzpFKYjpRrL3srItTc8jQEeAZrlU-Q06q3vb7w9b_EQXDsU-P9dcO_Tj-qd0-y8K3LdSglUpD_NdPiY4gXJ32=s0"
+      },
+      "headerImage": {
+        "guid": "5a14ba8b-9450-49d1-8919-aef0c404c5f0",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/MJdyLhXkiN298qrgGCSnL-quSmPfFicngelRmsiVTa-EpSoFibGCMfw6ErRyl7XiI0GTmvYE8TEOsQkM77PAjwNo5dU=s0"
+      },
+      "productionPlaces": [
+        "Amsterdam"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1878-A-2302",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1878-A-2302"
+      },
+      "id": "en-RP-P-1878-A-2302",
+      "objectNumber": "RP-P-1878-A-2302",
+      "title": "Portret van schrijfmeester Lieven Willemsz. van Coppenol",
+      "hasImage": true,
+      "principalOrFirstMaker": "Joachim Jan Oortman jr.",
+      "longTitle": "Portret van schrijfmeester Lieven Willemsz. van Coppenol, Joachim Jan Oortman jr., 1809",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "6a3c3e86-a706-414d-8010-9e93eb1154bf",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1886,
+        "height": 2500,
+        "url": "https://lh5.ggpht.com/jg7CLLCi1tgy79-xZ62gvQLqcOnWBGaPgff83nL-E9XHBcqtDubCAHYp7iTlj82X1kaURcl0LP6jiuMWk3_0Twwh4oiH=s0"
+      },
+      "headerImage": {
+        "guid": "a0c25c5c-fd88-4662-852f-9832b3e1f376",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1919,
+        "height": 460,
+        "url": "https://lh6.ggpht.com/buSGVpKKrIHjQb2k6Q5XQAE-pHb4a_ho_lmlElZz-qqbTOl9LBzEU9htTjK2brOPmjjnVm6IDUP6b-_aGPKJk0POSv8=s0"
+      },
+      "productionPlaces": [
+        "Paris"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1988-449X",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1988-449X"
+      },
+      "id": "en-RP-P-1988-449X",
+      "objectNumber": "RP-P-1988-449X",
+      "title": "Romeinse ruïne met drie korinthische zuilen",
+      "hasImage": true,
+      "principalOrFirstMaker": "Bonaventura van Overbeek",
+      "longTitle": "Romeinse ruïne met drie korinthische zuilen, Bonaventura van Overbeek, 1708",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "dfb8ceea-7451-40dd-90d3-aebf97a3657d",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1888,
+        "height": 2500,
+        "url": "https://lh3.googleusercontent.com/xvK9J9YmQi-UkpTWToY286Ugbc9jlTgUkGB_irKjBmp2dHY_DasE2B1e6BvUbScs3pKBlaVQbWpoTpOyF1m3GTBvXtQ=s0"
+      },
+      "headerImage": {
+        "guid": "df0f755a-2f7d-478b-bdc5-3ed084fe8568",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1888,
+        "height": 453,
+        "url": "https://lh3.googleusercontent.com/SyLO4b5xwDMZfmevB-Is0N0HFxZuFWcwg1yvTCjR0KZVYc0___ZxGcSQoDGm1PIsbMQTzC5opAEIyTyNDayu4ryvMak=s0"
+      },
+      "productionPlaces": [
+        "Amsterdam"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1911-455",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1911-455"
+      },
+      "id": "en-RP-P-1911-455",
+      "objectNumber": "RP-P-1911-455",
+      "title": "Drie Maria's bij het graf",
+      "hasImage": true,
+      "principalOrFirstMaker": "Egbert van Panderen",
+      "longTitle": "Drie Maria's bij het graf, Egbert van Panderen, c. 1590 - 1637",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "2767457e-9d0e-4801-a1ee-13f86badd64a",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1639,
+        "height": 2500,
+        "url": "https://lh5.ggpht.com/HA1Dag43TRc-VwxmqxnSE5DlkpJ2oY_13BJdIhKEBnA7nHC36Wki7psjlBxBLpkDmIhYBZDf-RMhen4HMsiJcrkFT6E=s0"
+      },
+      "headerImage": {
+        "guid": "815168a0-b3eb-4b0a-a922-f505d5cf08a3",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh4.ggpht.com/0tKDG-Hd_DkDDJZ7mODDmOwGfRxrG-NxNT0JrVb-HSD_5F5i5SmNJb74KJNvP0al-jzfsUNP5F0wAToTjszhdagbhvAN=s0"
+      },
+      "productionPlaces": [
+        "Antwerp"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1976-193",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1976-193"
+      },
+      "id": "en-RP-P-1976-193",
+      "objectNumber": "RP-P-1976-193",
+      "title": "Landschap met een huis, figuren en vee",
+      "hasImage": true,
+      "principalOrFirstMaker": "Willem van Nieulandt (II)",
+      "longTitle": "Landschap met een huis, figuren en vee, Willem van Nieulandt (II), 1594 - 1635",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "8b44380e-de67-49f6-bab3-daf99c74a9ab",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 2002,
+        "url": "https://lh6.ggpht.com/rcXwUYl_PcBcQDrZmtmRYQv0nDF666P4QNi0XE6Zbr4cFoHCGEDuNdZofz-E6f1lC3BP3ai03rlMcJNJoLcbv5aPLw=s0"
+      },
+      "headerImage": {
+        "guid": "63acc6fd-160d-44dd-9338-3308120f5863",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh5.ggpht.com/hfP__raxd7R7YEz5t1PcI66pKZTpomqor3-QXnRjUE4L-a1O51bSzB8kHng778tQ_139mWCDRxt6hwPlXW6f7rsv8TI=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1907-3276",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1907-3276"
+      },
+      "id": "en-RP-P-1907-3276",
+      "objectNumber": "RP-P-1907-3276",
+      "title": "Portret van Johannes Henricus Nieuwold",
+      "hasImage": true,
+      "principalOrFirstMaker": "Walraad Nieuwhoff",
+      "longTitle": "Portret van Johannes Henricus Nieuwold, Walraad Nieuwhoff, 1800 - 1837",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "0f8a35c1-6777-4156-aa91-9a3216511321",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 3834,
+        "height": 5357,
+        "url": "https://lh6.ggpht.com/7X_GV-UXS9qWytJODA0Lr8PCDNlkWrEke31AT5cqld4u3Lbflz2UctIQOJVc5M_8S_KrnPjulic0TjEce6PXXUkAGBY=s0"
+      },
+      "headerImage": {
+        "guid": "ed27b00e-b6d1-4057-8079-b045d7737f48",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh6.ggpht.com/6zdSPsX4NG9gu6xphWJ6pY_VtX38zSw7w9MSXFgtAstiuiV6QFcJHBYjLwZgvxDymROKoS4uGI2HuZ7IjGjsCAvbmXg=s0"
+      },
+      "productionPlaces": [
+        "Amsterdam"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1877-A-376",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1877-A-376"
+      },
+      "id": "en-RP-P-1877-A-376",
+      "objectNumber": "RP-P-1877-A-376",
+      "title": "Twee liggende koeien",
+      "hasImage": true,
+      "principalOrFirstMaker": "Anthony Oberman",
+      "longTitle": "Twee liggende koeien, Anthony Oberman, 1810",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "4b5cd9db-7164-4d20-8988-54cdc4f9743e",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1711,
+        "url": "https://lh3.ggpht.com/11-J08iHKftWzKow4hGLAfip3OVEeHYW8oj_rrQ5VJXAQLFh5UW_jQFhSaXgSN9WqK2GGHY215MtYDUmPsT-prNPVA=s0"
+      },
+      "headerImage": {
+        "guid": "59448020-c4fd-46ad-8cd5-94e58ee98479",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.ggpht.com/E6-LDAu5uCy-LVKf9-00up1lOmA1DT5cFeiEC291J1DEt9iqjQdIhCoLdiy_3XGpiVuWQC-3TUrc8NOjt0WDxtvXJeI=s0"
+      },
+      "productionPlaces": [
+        "Amsterdam"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-OB-24.301",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-OB-24.301"
+      },
+      "id": "en-RP-P-OB-24.301",
+      "objectNumber": "RP-P-OB-24.301",
+      "title": "Christus geneest de blinde",
+      "hasImage": true,
+      "principalOrFirstMaker": "Jan van Orley",
+      "longTitle": "Christus geneest de blinde, Jan van Orley, c. 1685 - before 1700",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "2dfc76b5-bab1-4c95-ab0d-cd787e878fd5",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 2054,
+        "url": "https://lh3.ggpht.com/gCjjlgaNtHSrTq1bLHTx3B9P0tG-GphaeFzX5oMX7UtIZVWhOkIgCXJplM6Z7U62rbroqtP-MuV0cLTkxoX_CIGkZh0=s0"
+      },
+      "headerImage": {
+        "guid": "661382ae-e186-4a1a-8861-ebd93f8cfb04",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh6.ggpht.com/jSmRCP3M3oBQgsUhYH7jL8EAxm3h57HnqRWKMqLGk_lVXTTS5jN7Oxehqx-gr89PEtUBMlzP55jokkNFq41JyeomuOs=s0"
+      },
+      "productionPlaces": [
+        "Brussels",
+        "Brussels"
+      ]
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1938-2090X",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1938-2090X"
+      },
+      "id": "en-RP-P-1938-2090X",
+      "objectNumber": "RP-P-1938-2090X",
+      "title": "Ruiter die de weg vraagt aan een meisje met hond",
+      "hasImage": true,
+      "principalOrFirstMaker": "Leendert Overbeek",
+      "longTitle": "Ruiter die de weg vraagt aan een meisje met hond, Leendert Overbeek, 1791",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "f9c8eb68-944d-4244-8bac-be83a8c9520f",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1977,
+        "height": 2500,
+        "url": "https://lh3.googleusercontent.com/nq9GXqxd9drERBw1EcLDp5AJxm-qsn_nr8hmmZ-U_CiHoOCN1_zIwPM3WmyCzSTIvbsjare94NcpcEz_GqbG9dM808SM=s0"
+      },
+      "headerImage": {
+        "guid": "224d8c3b-e73b-448a-a604-7a979ce65879",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.googleusercontent.com/1th444HMYe_qSqyfvm5fq6Un8MmIdTO5LnQoY9NzofZI3HTCLAnxEFNiLco2uXVpGFdE7X34Cxua0c-cgsIg9LgOj_F_=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1976-210",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1976-210"
+      },
+      "id": "en-RP-P-1976-210",
+      "objectNumber": "RP-P-1976-210",
+      "title": "Rivierlandschap met stad en twee jagers",
+      "hasImage": true,
+      "principalOrFirstMaker": "Willem van Nieulandt (II)",
+      "longTitle": "Rivierlandschap met stad en twee jagers, Willem van Nieulandt (II), 1594 - 1635",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "c070392f-d375-4e64-a5d2-d115b2a78c71",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 2007,
+        "url": "https://lh4.ggpht.com/DYQtZK_xcun-YdyptJBnRhb_4bG1zCEYFZE-o3Ji_9c5dXTk1t113vvqcuya6tsZbGnsTLWT6Bg8HYLxD-Y_C09GLg=s0"
+      },
+      "headerImage": {
+        "guid": "a61aa364-dd03-4f39-886f-d8a512da8aa8",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh6.ggpht.com/bywPr8bGVOQ1pPr6Ss41n2x3gaKplbJsZ2-z9OKEtzpN_pbsloE0j6489-q274lAuQytkCRfvgYN459n5HLSpHziEQ=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-1976-182",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-1976-182"
+      },
+      "id": "en-RP-P-1976-182",
+      "objectNumber": "RP-P-1976-182",
+      "title": "Landschap met koeiendrijvers",
+      "hasImage": true,
+      "principalOrFirstMaker": "Willem van Nieulandt (II)",
+      "longTitle": "Landschap met koeiendrijvers, Willem van Nieulandt (II), 1594 - 1635",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "d31fc8b9-0f49-43ef-bd22-c1bd4e9947f6",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 2500,
+        "height": 1998,
+        "url": "https://lh4.ggpht.com/rSDM4Cyz4u7GzxtsIGfUaLePSYiWZIp1l1LLzD4BB2sHt4G3YrBzfPYxZEs0MecitA9dp-wSm_B2Hb8DwGMWObYxEcwu=s0"
+      },
+      "headerImage": {
+        "guid": "f9ba0337-39e7-47c6-9bad-eeaf825a3085",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh3.ggpht.com/kmB83yDo9N5hFRX1Dc_UOnqMqgtexTbtTyygTuN3XbTp2M-LWeAT1tEveK8eQ50FYvWMUIDzeBxMZIrQfR2d7U0RWQ=s0"
+      },
+      "productionPlaces": []
+    },
+    {
+      "links": {
+        "self": "https://www.rijksmuseum.nl/api/en/collection/RP-P-OB-24.261",
+        "web": "https://www.rijksmuseum.nl/en/collection/RP-P-OB-24.261"
+      },
+      "id": "en-RP-P-OB-24.261",
+      "objectNumber": "RP-P-OB-24.261",
+      "title": "Drie-eenheid op de wolken",
+      "hasImage": true,
+      "principalOrFirstMaker": "Justus van den Nijpoort",
+      "longTitle": "Drie-eenheid op de wolken, Justus van den Nijpoort, 1635 - 1692",
+      "showImage": true,
+      "permitDownload": true,
+      "webImage": {
+        "guid": "af2fbbd4-2dea-4f8d-b236-1c534521c859",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1372,
+        "height": 2500,
+        "url": "https://lh4.ggpht.com/hWGeIpAT8FDjzjvqrJ5cL_W3eevgg1Yvqd-zJYZmYRt2I4xpIywORJaK3R9bycni--M4xHc6uu37FhI6c7bAXZWtH4g=s0"
+      },
+      "headerImage": {
+        "guid": "b833485e-50a6-4799-a2f6-35d80857f8ae",
+        "offsetPercentageX": 0,
+        "offsetPercentageY": 0,
+        "width": 1920,
+        "height": 460,
+        "url": "https://lh4.ggpht.com/9PJwwxtx3GCzc_bLzaAMPDff67L12xgA32yR0SoJmYNolLYbaDnFKLSbqB9uraeUhFMLoZ2YcVmpHiOSFucLU1prM-E=s0"
+      },
+      "productionPlaces": [
+        "unknown"
+      ]
+    }
+  ],
+  "facets": [
+    {
+      "facets": [
+        {
+          "key": "anonymous",
+          "value": 90321
+        },
+        {
+          "key": "George Hendrik Breitner",
+          "value": 5449
+        },
+        {
+          "key": "Jan Luyken",
+          "value": 4768
+        },
+        {
+          "key": "Reinier Vinkeles (I)",
+          "value": 3909
+        },
+        {
+          "key": "Marius Bauer",
+          "value": 2981
+        },
+        {
+          "key": "Isaac Israels",
+          "value": 2735
+        },
+        {
+          "key": "Daniel Nikolaus Chodowiecki",
+          "value": 2425
+        },
+        {
+          "key": "Bernard Picart",
+          "value": 1996
+        },
+        {
+          "key": "Vincent Samuel Mentzel",
+          "value": 1931
+        },
+        {
+          "key": "Willem Witsen",
+          "value": 1785
+        },
+        {
+          "key": "Johannes Tavenraat",
+          "value": 1738
+        },
+        {
+          "key": "Antonio Tempesta",
+          "value": 1663
+        },
+        {
+          "key": "Carel Adolph Lion Cachet",
+          "value": 1657
+        },
+        {
+          "key": "Rembrandt van Rijn",
+          "value": 1518
+        },
+        {
+          "key": "Simon Fokke",
+          "value": 1398
+        },
+        {
+          "key": "Jacob Houbraken",
+          "value": 1357
+        },
+        {
+          "key": "Meissener Porzellan Manufaktur",
+          "value": 1258
+        },
+        {
+          "key": "Romeyn de Hooghe",
+          "value": 1223
+        },
+        {
+          "key": "Philips Galle",
+          "value": 1181
+        },
+        {
+          "key": "Jacob de Gheyn (II)",
+          "value": 1112
+        },
+        {
+          "key": "anoniem (Monumentenzorg)",
+          "value": 1103
+        },
+        {
+          "key": "Jacques Callot",
+          "value": 1071
+        },
+        {
+          "key": "Stefano della Bella",
+          "value": 1039
+        },
+        {
+          "key": "Wenceslaus Hollar",
+          "value": 1026
+        },
+        {
+          "key": "Crispijn van de Passe (I)",
+          "value": 1024
+        },
+        {
+          "key": "Johann Sadeler (I)",
+          "value": 1009
+        },
+        {
+          "key": "Caspar Luyken",
+          "value": 1005
+        },
+        {
+          "key": "Michel Wolgemut",
+          "value": 997
+        },
+        {
+          "key": "Hendrick Goltzius",
+          "value": 989
+        },
+        {
+          "key": "Frans Hogenberg",
+          "value": 982
+        },
+        {
+          "key": "Anton Mauve",
+          "value": 963
+        },
+        {
+          "key": "Jozef Israëls",
+          "value": 954
+        },
+        {
+          "key": "Adriaen Collaert",
+          "value": 932
+        },
+        {
+          "key": "Jan van de Velde (II)",
+          "value": 895
+        },
+        {
+          "key": "Cornelis Vreedenburgh",
+          "value": 875
+        },
+        {
+          "key": "Willem Diepraam",
+          "value": 847
+        },
+        {
+          "key": "Christoffel van Sichem (II)",
+          "value": 829
+        },
+        {
+          "key": "Gerrit Willem Dijsselhof",
+          "value": 810
+        },
+        {
+          "key": "Leo Gestel",
+          "value": 791
+        },
+        {
+          "key": "Pieter Schenk (I)",
+          "value": 779
+        },
+        {
+          "key": "Anselmus Boëtius de Boodt",
+          "value": 778
+        },
+        {
+          "key": "Willem Cornelis Rip",
+          "value": 777
+        },
+        {
+          "key": "Johannes of Lucas van Doetechum",
+          "value": 745
+        },
+        {
+          "key": "Eva Charlotte Pennink-Boelen",
+          "value": 725
+        },
+        {
+          "key": "unknown",
+          "value": 705
+        },
+        {
+          "key": "Reijer Stolk",
+          "value": 700
+        },
+        {
+          "key": "Hieronymus Wierix",
+          "value": 679
+        },
+        {
+          "key": "Charles Donker",
+          "value": 666
+        },
+        {
+          "key": "Virgilius Solis",
+          "value": 659
+        },
+        {
+          "key": "Jean Lepautre",
+          "value": 651
+        },
+        {
+          "key": "Manufactuur Oud-Loosdrecht",
+          "value": 632
+        },
+        {
+          "key": "Delizy",
+          "value": 629
+        },
+        {
+          "key": "Jan Caspar Philips",
+          "value": 627
+        },
+        {
+          "key": "Boëtius Adamsz. Bolswert",
+          "value": 612
+        },
+        {
+          "key": "Giovanni Battista Piranesi",
+          "value": 609
+        },
+        {
+          "key": "Johannes Wierix",
+          "value": 590
+        },
+        {
+          "key": "Jacob Matham",
+          "value": 575
+        },
+        {
+          "key": "Simon Frisius",
+          "value": 563
+        },
+        {
+          "key": "Albrecht Dürer",
+          "value": 558
+        },
+        {
+          "key": "Jan Veth",
+          "value": 557
+        },
+        {
+          "key": "Claes Jansz. Visscher (II)",
+          "value": 552
+        },
+        {
+          "key": "Richard Nicolaüs Roland Holst",
+          "value": 552
+        },
+        {
+          "key": "Anthonie van den Bos",
+          "value": 545
+        },
+        {
+          "key": "Isaac Weissenbruch",
+          "value": 545
+        },
+        {
+          "key": "Aegidius Sadeler",
+          "value": 544
+        },
+        {
+          "key": "Maria Vos",
+          "value": 544
+        },
+        {
+          "key": "Nicolaes de Bruyn",
+          "value": 537
+        },
+        {
+          "key": "Jan Punt",
+          "value": 534
+        },
+        {
+          "key": "Carel Willink",
+          "value": 532
+        },
+        {
+          "key": "Abraham Rademaker",
+          "value": 524
+        },
+        {
+          "key": "Crispijn van de Passe (II)",
+          "value": 510
+        },
+        {
+          "key": "Cornelis Galle (I)",
+          "value": 508
+        },
+        {
+          "key": "Adrianus Eversen",
+          "value": 504
+        },
+        {
+          "key": "Marcantonio Raimondi",
+          "value": 503
+        },
+        {
+          "key": "William England",
+          "value": 500
+        },
+        {
+          "key": "Jacob Folkema",
+          "value": 485
+        },
+        {
+          "key": "Schelte Adamsz. Bolswert",
+          "value": 485
+        },
+        {
+          "key": "Jacob Gole",
+          "value": 483
+        },
+        {
+          "key": "Jan Brandes",
+          "value": 481
+        },
+        {
+          "key": "Reinjan Mulder",
+          "value": 473
+        },
+        {
+          "key": "Jacob Ernst Marcus",
+          "value": 469
+        },
+        {
+          "key": "Martin Bernigeroth",
+          "value": 466
+        },
+        {
+          "key": "Hendrik Spilman",
+          "value": 455
+        },
+        {
+          "key": "Giorgio Sommer",
+          "value": 452
+        },
+        {
+          "key": "Ludwig Gottlieb Portman",
+          "value": 451
+        },
+        {
+          "key": "Robert Jacob Gordon",
+          "value": 450
+        },
+        {
+          "key": "Édouard Denis Baldus",
+          "value": 450
+        },
+        {
+          "key": "Pieter Tanjé",
+          "value": 448
+        },
+        {
+          "key": "Noach van der Meer (II)",
+          "value": 445
+        },
+        {
+          "key": "Lodewijk Schelfhout",
+          "value": 439
+        },
+        {
+          "key": "Johannes Josephus Aarts",
+          "value": 433
+        },
+        {
+          "key": "Pieter de Jode (II)",
+          "value": 432
+        },
+        {
+          "key": "Ernst Willem Jan Bagelaar",
+          "value": 430
+        },
+        {
+          "key": "Cornelis Springer",
+          "value": 429
+        },
+        {
+          "key": "Hans Collaert (I)",
+          "value": 424
+        },
+        {
+          "key": "Andries Jager",
+          "value": 421
+        },
+        {
+          "key": "Frederick Bloemaert",
+          "value": 420
+        },
+        {
+          "key": "Pieter Nolpe",
+          "value": 411
+        },
+        {
+          "key": "Neue Photographische Gesellschaft",
+          "value": 405
+        },
+        {
+          "key": "Louis Apol",
+          "value": 402
+        }
+      ],
+      "name": "principalMaker",
+      "otherTerms": 406692,
+      "prettyName": 10
+    },
+    {
+      "facets": [
+        {
+          "key": "print",
+          "value": 197246
+        },
+        {
+          "key": "photograph",
+          "value": 63462
+        },
+        {
+          "key": "drawing",
+          "value": 31479
+        },
+        {
+          "key": "photomechanical print",
+          "value": 14302
+        },
+        {
+          "key": "stereograph",
+          "value": 10924
+        },
+        {
+          "key": "carte-de-visite",
+          "value": 5170
+        },
+        {
+          "key": "painting",
+          "value": 4360
+        },
+        {
+          "key": "documentary photographs",
+          "value": 3082
+        },
+        {
+          "key": "text sheet",
+          "value": 2342
+        },
+        {
+          "key": "cabinet photograph",
+          "value": 2323
+        },
+        {
+          "key": "history medal",
+          "value": 2106
+        },
+        {
+          "key": "book",
+          "value": 1908
+        },
+        {
+          "key": "jeton",
+          "value": 1706
+        },
+        {
+          "key": "plate (dishes)",
+          "value": 1687
+        },
+        {
+          "key": "lid",
+          "value": 1017
+        },
+        {
+          "key": "vase",
+          "value": 939
+        },
+        {
+          "key": "furniture",
+          "value": 926
+        },
+        {
+          "key": "miniature",
+          "value": 907
+        },
+        {
+          "key": "tile",
+          "value": 856
+        },
+        {
+          "key": "magazine",
+          "value": 780
+        },
+        {
+          "key": "medal",
+          "value": 755
+        },
+        {
+          "key": "bowl",
+          "value": 739
+        },
+        {
+          "key": "service (set)",
+          "value": 665
+        },
+        {
+          "key": "figure",
+          "value": 576
+        },
+        {
+          "key": "demonstration model",
+          "value": 571
+        },
+        {
+          "key": "dish",
+          "value": 524
+        },
+        {
+          "key": "ship model",
+          "value": 490
+        },
+        {
+          "key": "pot",
+          "value": 471
+        },
+        {
+          "key": "collage",
+          "value": 469
+        },
+        {
+          "key": "jewelry",
+          "value": 444
+        },
+        {
+          "key": "box",
+          "value": 413
+        },
+        {
+          "key": "siege coin",
+          "value": 378
+        },
+        {
+          "key": "manuscript",
+          "value": 344
+        },
+        {
+          "key": "half model",
+          "value": 340
+        },
+        {
+          "key": "coin",
+          "value": 332
+        },
+        {
+          "key": "musical instruments",
+          "value": 319
+        },
+        {
+          "key": "builder's model",
+          "value": 310
+        },
+        {
+          "key": "candlestick",
+          "value": 305
+        },
+        {
+          "key": "Oriental rug",
+          "value": 284
+        },
+        {
+          "key": "poem",
+          "value": 283
+        },
+        {
+          "key": "spoon",
+          "value": 281
+        },
+        {
+          "key": "gameboard",
+          "value": 280
+        },
+        {
+          "key": "goblet",
+          "value": 275
+        },
+        {
+          "key": "flintlock pistol",
+          "value": 272
+        },
+        {
+          "key": "playing card",
+          "value": 258
+        },
+        {
+          "key": "Ektachrome",
+          "value": 256
+        },
+        {
+          "key": "tureen",
+          "value": 249
+        },
+        {
+          "key": "wind instrument",
+          "value": 245
+        },
+        {
+          "key": "cup",
+          "value": 230
+        },
+        {
+          "key": "pipe",
+          "value": 228
+        },
+        {
+          "key": "award medal",
+          "value": 222
+        },
+        {
+          "key": "chest",
+          "value": 190
+        },
+        {
+          "key": "poster",
+          "value": 182
+        },
+        {
+          "key": "chandelier",
+          "value": 181
+        },
+        {
+          "key": "album",
+          "value": 175
+        },
+        {
+          "key": "textile materials",
+          "value": 169
+        },
+        {
+          "key": "table",
+          "value": 166
+        },
+        {
+          "key": "button",
+          "value": 150
+        },
+        {
+          "key": "photomontage",
+          "value": 149
+        },
+        {
+          "key": "salt (condiment vessel)",
+          "value": 136
+        },
+        {
+          "key": "letter",
+          "value": 124
+        },
+        {
+          "key": "tile tableau",
+          "value": 119
+        },
+        {
+          "key": "tea service",
+          "value": 114
+        },
+        {
+          "key": "color slide",
+          "value": 113
+        },
+        {
+          "key": "scrapbook",
+          "value": 112
+        },
+        {
+          "key": "frame",
+          "value": 107
+        },
+        {
+          "key": "case",
+          "value": 106
+        },
+        {
+          "key": "hanging scroll",
+          "value": 102
+        },
+        {
+          "key": "scale model",
+          "value": 102
+        },
+        {
+          "key": "document",
+          "value": 100
+        },
+        {
+          "key": "cloth",
+          "value": 94
+        },
+        {
+          "key": "oboe",
+          "value": 94
+        },
+        {
+          "key": "fully rigged model",
+          "value": 93
+        },
+        {
+          "key": "card game",
+          "value": 90
+        },
+        {
+          "key": "comb",
+          "value": 90
+        },
+        {
+          "key": "contact print",
+          "value": 89
+        },
+        {
+          "key": "stoneware",
+          "value": 87
+        },
+        {
+          "key": "bust",
+          "value": 86
+        },
+        {
+          "key": "brooch",
+          "value": 85
+        },
+        {
+          "key": "lock",
+          "value": 85
+        },
+        {
+          "key": "locket",
+          "value": 84
+        },
+        {
+          "key": "steel (alloy)",
+          "value": 84
+        },
+        {
+          "key": "blueprint",
+          "value": 78
+        },
+        {
+          "key": "sword",
+          "value": 78
+        },
+        {
+          "key": "flintlock gun",
+          "value": 76
+        },
+        {
+          "key": "porcelain card",
+          "value": 73
+        },
+        {
+          "key": "instruction model",
+          "value": 72
+        },
+        {
+          "key": "toy",
+          "value": 71
+        },
+        {
+          "key": "photobooth picture",
+          "value": 70
+        },
+        {
+          "key": "sabre",
+          "value": 69
+        },
+        {
+          "key": "copy",
+          "value": 67
+        },
+        {
+          "key": "drinking glass",
+          "value": 63
+        },
+        {
+          "key": "pendant (jewelry)",
+          "value": 62
+        },
+        {
+          "key": "hanging",
+          "value": 59
+        },
+        {
+          "key": "drum",
+          "value": 56
+        },
+        {
+          "key": "floor tile",
+          "value": 55
+        },
+        {
+          "key": "lampas (textile material)",
+          "value": 55
+        },
+        {
+          "key": "mechanical clock",
+          "value": 54
+        },
+        {
+          "key": "show model",
+          "value": 54
+        },
+        {
+          "key": "chintz",
+          "value": 52
+        }
+      ],
+      "name": "type",
+      "otherTerms": 0,
+      "prettyName": 3
+    },
+    {
+      "facets": [
+        {
+          "key": "19",
+          "value": 151541
+        },
+        {
+          "key": "17",
+          "value": 86015
+        },
+        {
+          "key": "18",
+          "value": 83714
+        },
+        {
+          "key": "20",
+          "value": 44424
+        },
+        {
+          "key": "16",
+          "value": 37586
+        },
+        {
+          "key": "15",
+          "value": 4464
+        },
+        {
+          "key": "21",
+          "value": 4143
+        },
+        {
+          "key": "14",
+          "value": 1459
+        },
+        {
+          "key": "-2",
+          "value": 650
+        },
+        {
+          "key": "13",
+          "value": 274
+        },
+        {
+          "key": "12",
+          "value": 231
+        },
+        {
+          "key": "-1",
+          "value": 138
+        },
+        {
+          "key": "10",
+          "value": 113
+        },
+        {
+          "key": "9",
+          "value": 106
+        },
+        {
+          "key": "11",
+          "value": 102
+        },
+        {
+          "key": "8",
+          "value": 49
+        },
+        {
+          "key": "7",
+          "value": 46
+        },
+        {
+          "key": "3",
+          "value": 42
+        },
+        {
+          "key": "6",
+          "value": 34
+        },
+        {
+          "key": "5",
+          "value": 29
+        },
+        {
+          "key": "2",
+          "value": 24
+        },
+        {
+          "key": "4",
+          "value": 13
+        },
+        {
+          "key": "1",
+          "value": 9
+        },
+        {
+          "key": "35",
+          "value": 1
+        }
+      ],
+      "name": "dating.period",
+      "otherTerms": 0,
+      "prettyName": 4
+    },
+    {
+      "facets": [
+        {
+          "key": "Amsterdam",
+          "value": 63040
+        },
+        {
+          "key": "Netherlands",
+          "value": 35299
+        },
+        {
+          "key": "Paris",
+          "value": 21084
+        },
+        {
+          "key": "Antwerp",
+          "value": 15545
+        },
+        {
+          "key": "Northern Netherlands",
+          "value": 14606
+        },
+        {
+          "key": "Italy",
+          "value": 12452
+        },
+        {
+          "key": "The Hague",
+          "value": 11267
+        },
+        {
+          "key": "France",
+          "value": 10364
+        },
+        {
+          "key": "Japan",
+          "value": 5338
+        },
+        {
+          "key": "Leiden",
+          "value": 5200
+        },
+        {
+          "key": "London",
+          "value": 4874
+        },
+        {
+          "key": "Germany",
+          "value": 4860
+        },
+        {
+          "key": "Berlin",
+          "value": 4545
+        },
+        {
+          "key": "Rotterdam",
+          "value": 4047
+        },
+        {
+          "key": "Utrecht",
+          "value": 3919
+        },
+        {
+          "key": "China",
+          "value": 3826
+        },
+        {
+          "key": "unknown",
+          "value": 3373
+        },
+        {
+          "key": "Southern Netherlands",
+          "value": 3243
+        },
+        {
+          "key": "? Netherlands",
+          "value": 3195
+        },
+        {
+          "key": "Delft",
+          "value": 3193
+        },
+        {
+          "key": "Brussels",
+          "value": 3092
+        },
+        {
+          "key": "Augsburg",
+          "value": 2543
+        },
+        {
+          "key": "? France",
+          "value": 2240
+        },
+        {
+          "key": "Venice",
+          "value": 2168
+        },
+        {
+          "key": "England",
+          "value": 1970
+        },
+        {
+          "key": "? Amsterdam",
+          "value": 1669
+        },
+        {
+          "key": "Europe",
+          "value": 1650
+        },
+        {
+          "key": "Suriname",
+          "value": 1587
+        },
+        {
+          "key": "Dordrecht",
+          "value": 1469
+        },
+        {
+          "key": "? Germany",
+          "value": 1335
+        },
+        {
+          "key": "Vienna",
+          "value": 1149
+        },
+        {
+          "key": "Belgium",
+          "value": 1035
+        },
+        {
+          "key": "New York (city)",
+          "value": 938
+        },
+        {
+          "key": "United States of America",
+          "value": 909
+        },
+        {
+          "key": "Middelburg",
+          "value": 858
+        },
+        {
+          "key": "Arnhem",
+          "value": 854
+        },
+        {
+          "key": "? The Hague",
+          "value": 750
+        },
+        {
+          "key": "Maastricht",
+          "value": 716
+        },
+        {
+          "key": "Sumatra",
+          "value": 678
+        },
+        {
+          "key": "Dutch East Indies, The",
+          "value": 633
+        },
+        {
+          "key": "? Paris",
+          "value": 613
+        },
+        {
+          "key": "Great Britain",
+          "value": 611
+        },
+        {
+          "key": "United Kingdom",
+          "value": 594
+        },
+        {
+          "key": "Spain",
+          "value": 488
+        },
+        {
+          "key": "? Italy",
+          "value": 482
+        },
+        {
+          "key": "Java",
+          "value": 481
+        },
+        {
+          "key": "Batavia",
+          "value": 458
+        },
+        {
+          "key": "? Northern Netherlands",
+          "value": 446
+        },
+        {
+          "key": "Deventer",
+          "value": 435
+        },
+        {
+          "key": "Bruges",
+          "value": 429
+        },
+        {
+          "key": "Switzerland",
+          "value": 381
+        },
+        {
+          "key": "Austria",
+          "value": 282
+        },
+        {
+          "key": "? Antwerp",
+          "value": 271
+        },
+        {
+          "key": "Naples",
+          "value": 267
+        },
+        {
+          "key": "? Brussels",
+          "value": 243
+        },
+        {
+          "key": "? England",
+          "value": 231
+        },
+        {
+          "key": "? Southern Netherlands",
+          "value": 230
+        },
+        {
+          "key": "Flushing",
+          "value": 216
+        },
+        {
+          "key": "Surabaya",
+          "value": 214
+        },
+        {
+          "key": "Holland",
+          "value": 207
+        },
+        {
+          "key": "Ghent",
+          "value": 199
+        },
+        {
+          "key": "? Java",
+          "value": 184
+        },
+        {
+          "key": "Russia",
+          "value": 180
+        },
+        {
+          "key": "Pompeii",
+          "value": 178
+        },
+        {
+          "key": "Cleves",
+          "value": 168
+        },
+        {
+          "key": "? Belgium",
+          "value": 167
+        },
+        {
+          "key": "New York",
+          "value": 161
+        },
+        {
+          "key": "Liège (city)",
+          "value": 158
+        },
+        {
+          "key": "Hoorn (North Holland)",
+          "value": 157
+        },
+        {
+          "key": "Norway",
+          "value": 152
+        },
+        {
+          "key": "? London",
+          "value": 141
+        },
+        {
+          "key": "Enkhuizen",
+          "value": 136
+        },
+        {
+          "key": "Sri Lanka",
+          "value": 126
+        },
+        {
+          "key": "? Rotterdam",
+          "value": 121
+        },
+        {
+          "key": "Singapore",
+          "value": 113
+        },
+        {
+          "key": "Zwickau",
+          "value": 102
+        },
+        {
+          "key": "? United States of America",
+          "value": 95
+        },
+        {
+          "key": "Copenhagen (city)",
+          "value": 94
+        },
+        {
+          "key": "Wijk bij Duurstede",
+          "value": 82
+        },
+        {
+          "key": "Persia",
+          "value": 80
+        },
+        {
+          "key": "? Delft",
+          "value": 78
+        },
+        {
+          "key": "Manchester",
+          "value": 78
+        },
+        {
+          "key": "? Augsburg",
+          "value": 77
+        },
+        {
+          "key": "Thailand",
+          "value": 73
+        },
+        {
+          "key": "Marseille",
+          "value": 72
+        },
+        {
+          "key": "? Utrecht",
+          "value": 70
+        },
+        {
+          "key": "Zeeland",
+          "value": 70
+        },
+        {
+          "key": "Sevilla",
+          "value": 67
+        },
+        {
+          "key": "Birmingham",
+          "value": 62
+        },
+        {
+          "key": "? Spain",
+          "value": 60
+        },
+        {
+          "key": "southeast Asia",
+          "value": 60
+        },
+        {
+          "key": "Karlberg Palace",
+          "value": 58
+        },
+        {
+          "key": "? Venice",
+          "value": 54
+        },
+        {
+          "key": "Poland",
+          "value": 53
+        },
+        {
+          "key": "Voorschoten",
+          "value": 52
+        },
+        {
+          "key": "Den Helder",
+          "value": 50
+        },
+        {
+          "key": "? Europe",
+          "value": 47
+        },
+        {
+          "key": "? Switzerland",
+          "value": 47
+        },
+        {
+          "key": "Glasgow",
+          "value": 46
+        },
+        {
+          "key": "Zeist",
+          "value": 46
+        }
+      ],
+      "name": "place",
+      "otherTerms": 0,
+      "prettyName": 2
+    },
+    {
+      "facets": [
+        {
+          "key": "paper",
+          "value": 301177
+        },
+        {
+          "key": "photographic paper",
+          "value": 50871
+        },
+        {
+          "key": "pencil",
+          "value": 27487
+        },
+        {
+          "key": "chalk",
+          "value": 22599
+        },
+        {
+          "key": "ink",
+          "value": 16857
+        },
+        {
+          "key": "watercolor (paint)",
+          "value": 8363
+        },
+        {
+          "key": "porcelain (material)",
+          "value": 7793
+        },
+        {
+          "key": "glaze",
+          "value": 6291
+        },
+        {
+          "key": "silver (metal)",
+          "value": 5881
+        },
+        {
+          "key": "wood (plant material)",
+          "value": 4894
+        },
+        {
+          "key": "oil paint (paint)",
+          "value": 4627
+        },
+        {
+          "key": "glass",
+          "value": 4403
+        },
+        {
+          "key": "copper (metal)",
+          "value": 4313
+        },
+        {
+          "key": "linen (material)",
+          "value": 4242
+        },
+        {
+          "key": "gold (metal)",
+          "value": 4158
+        },
+        {
+          "key": "earthenware",
+          "value": 3639
+        },
+        {
+          "key": "iron (metal)",
+          "value": 2799
+        },
+        {
+          "key": "silk",
+          "value": 2779
+        },
+        {
+          "key": "deck paint",
+          "value": 2682
+        },
+        {
+          "key": "brass (alloy)",
+          "value": 2509
+        },
+        {
+          "key": "canvas",
+          "value": 2253
+        },
+        {
+          "key": "cobalt (mineral)",
+          "value": 2092
+        },
+        {
+          "key": "baryta paper",
+          "value": 1920
+        },
+        {
+          "key": "panel",
+          "value": 1826
+        },
+        {
+          "key": "bronze (metal)",
+          "value": 1770
+        },
+        {
+          "key": "RC paper",
+          "value": 1599
+        },
+        {
+          "key": "leather",
+          "value": 1534
+        },
+        {
+          "key": "tin glaze",
+          "value": 1486
+        },
+        {
+          "key": "cotton (textile)",
+          "value": 1370
+        },
+        {
+          "key": "metal",
+          "value": 1114
+        },
+        {
+          "key": "stoneware",
+          "value": 1100
+        },
+        {
+          "key": "oak (wood)",
+          "value": 1032
+        },
+        {
+          "key": "graphite (mineral)",
+          "value": 1005
+        },
+        {
+          "key": "parchment (animal material)",
+          "value": 909
+        },
+        {
+          "key": "printing ink",
+          "value": 880
+        },
+        {
+          "key": "wool",
+          "value": 860
+        },
+        {
+          "key": "gilding (material)",
+          "value": 817
+        },
+        {
+          "key": "ivory",
+          "value": 806
+        },
+        {
+          "key": "India ink (ink)",
+          "value": 799
+        },
+        {
+          "key": "paint (coating)",
+          "value": 745
+        },
+        {
+          "key": "tin (metal)",
+          "value": 683
+        },
+        {
+          "key": "prepared paper",
+          "value": 584
+        },
+        {
+          "key": "velvet (fabric weave)",
+          "value": 573
+        },
+        {
+          "key": "Japanese paper (handmade paper)",
+          "value": 545
+        },
+        {
+          "key": "pipe clay",
+          "value": 537
+        },
+        {
+          "key": "gouache (paint)",
+          "value": 520
+        },
+        {
+          "key": "walnut (hardwood)",
+          "value": 514
+        },
+        {
+          "key": "tracing paper",
+          "value": 471
+        },
+        {
+          "key": "textile materials",
+          "value": 455
+        },
+        {
+          "key": "rope",
+          "value": 443
+        },
+        {
+          "key": "lead glaze",
+          "value": 398
+        },
+        {
+          "key": "lacquer (coating)",
+          "value": 385
+        },
+        {
+          "key": "ebony (wood)",
+          "value": 342
+        },
+        {
+          "key": "mother of pearl",
+          "value": 328
+        },
+        {
+          "key": "mahogany (wood)",
+          "value": 302
+        },
+        {
+          "key": "transparant paper",
+          "value": 290
+        },
+        {
+          "key": "marble (rock)",
+          "value": 286
+        },
+        {
+          "key": "photographic film (photographic materials)",
+          "value": 247
+        },
+        {
+          "key": "terracotta (clay material)",
+          "value": 243
+        },
+        {
+          "key": "satin",
+          "value": 216
+        },
+        {
+          "key": "rosewood (wood)",
+          "value": 208
+        },
+        {
+          "key": "bone (material)",
+          "value": 190
+        },
+        {
+          "key": "steel (alloy)",
+          "value": 180
+        },
+        {
+          "key": "silver thread",
+          "value": 176
+        },
+        {
+          "key": "engobe",
+          "value": 175
+        },
+        {
+          "key": "beech (wood)",
+          "value": 170
+        },
+        {
+          "key": "boxwood",
+          "value": 168
+        },
+        {
+          "key": "horn (animal material)",
+          "value": 153
+        },
+        {
+          "key": "gold leaf",
+          "value": 152
+        },
+        {
+          "key": "maple (wood)",
+          "value": 149
+        },
+        {
+          "key": "pine (wood)",
+          "value": 144
+        },
+        {
+          "key": "silver stain",
+          "value": 135
+        },
+        {
+          "key": "linden",
+          "value": 132
+        },
+        {
+          "key": "diamond (mineral)",
+          "value": 124
+        },
+        {
+          "key": "gypsum",
+          "value": 124
+        },
+        {
+          "key": "marbled paper",
+          "value": 118
+        },
+        {
+          "key": "dye",
+          "value": 117
+        },
+        {
+          "key": "pearl",
+          "value": 116
+        },
+        {
+          "key": "chamois (animal material)",
+          "value": 108
+        },
+        {
+          "key": "sandstone",
+          "value": 98
+        },
+        {
+          "key": "soft-paste porcelain",
+          "value": 91
+        },
+        {
+          "key": "batiste",
+          "value": 86
+        },
+        {
+          "key": "watercolor paper",
+          "value": 84
+        },
+        {
+          "key": "metal thread",
+          "value": 83
+        },
+        {
+          "key": "plastic (organic material)",
+          "value": 82
+        },
+        {
+          "key": "elm (wood)",
+          "value": 80
+        },
+        {
+          "key": "bone china (material)",
+          "value": 78
+        },
+        {
+          "key": "clay",
+          "value": 78
+        },
+        {
+          "key": "luster (textile)",
+          "value": 78
+        },
+        {
+          "key": "wax",
+          "value": 77
+        },
+        {
+          "key": "looking glasses",
+          "value": 75
+        },
+        {
+          "key": "varnish",
+          "value": 72
+        },
+        {
+          "key": "China paper",
+          "value": 68
+        },
+        {
+          "key": "cloth",
+          "value": 68
+        },
+        {
+          "key": "boxwood (hardwood)",
+          "value": 66
+        },
+        {
+          "key": "ruby (mineral)",
+          "value": 65
+        },
+        {
+          "key": "satinwood (wood)",
+          "value": 64
+        },
+        {
+          "key": "amalgam",
+          "value": 62
+        },
+        {
+          "key": "concretionary stone",
+          "value": 62
+        },
+        {
+          "key": "hardboard",
+          "value": 52
+        }
+      ],
+      "name": "material",
+      "otherTerms": 0,
+      "prettyName": 5
+    },
+    {
+      "facets": [
+        {
+          "key": "etching",
+          "value": 110512
+        },
+        {
+          "key": "engraving",
+          "value": 87703
+        },
+        {
+          "key": "albumen print",
+          "value": 29303
+        },
+        {
+          "key": "letterpress printing",
+          "value": 21106
+        },
+        {
+          "key": "brush",
+          "value": 20535
+        },
+        {
+          "key": "pen",
+          "value": 15804
+        },
+        {
+          "key": "gelatin silver print",
+          "value": 13811
+        },
+        {
+          "key": "collotype",
+          "value": 7232
+        },
+        {
+          "key": "vitrification",
+          "value": 6267
+        },
+        {
+          "key": "painting",
+          "value": 5831
+        },
+        {
+          "key": "striking (metalworking)",
+          "value": 5484
+        },
+        {
+          "key": "drypoint",
+          "value": 4698
+        },
+        {
+          "key": "gilding",
+          "value": 4503
+        },
+        {
+          "key": "colour woodcut",
+          "value": 3303
+        },
+        {
+          "key": "printing",
+          "value": 2414
+        },
+        {
+          "key": "steel engraving",
+          "value": 2094
+        },
+        {
+          "key": "founding",
+          "value": 2046
+        },
+        {
+          "key": "salted paper print",
+          "value": 1350
+        },
+        {
+          "key": "glassblowing",
+          "value": 1261
+        },
+        {
+          "key": "bobbin lace",
+          "value": 1234
+        },
+        {
+          "key": "writing (processes)",
+          "value": 1184
+        },
+        {
+          "key": "cutting",
+          "value": 1125
+        },
+        {
+          "key": "cyanotype",
+          "value": 825
+        },
+        {
+          "key": "embroidering",
+          "value": 640
+        },
+        {
+          "key": "forging",
+          "value": 626
+        },
+        {
+          "key": "damask",
+          "value": 502
+        },
+        {
+          "key": "collage",
+          "value": 456
+        },
+        {
+          "key": "drawing",
+          "value": 435
+        },
+        {
+          "key": "carbon print",
+          "value": 432
+        },
+        {
+          "key": "counterproof",
+          "value": 430
+        },
+        {
+          "key": "lacquering",
+          "value": 383
+        },
+        {
+          "key": "inkjet print",
+          "value": 377
+        },
+        {
+          "key": "grinding",
+          "value": 343
+        },
+        {
+          "key": "tapestry",
+          "value": 257
+        },
+        {
+          "key": "ferrotyping",
+          "value": 232
+        },
+        {
+          "key": "printing block",
+          "value": 216
+        },
+        {
+          "key": "polishing",
+          "value": 215
+        },
+        {
+          "key": "photolithography",
+          "value": 190
+        },
+        {
+          "key": "perforating",
+          "value": 170
+        },
+        {
+          "key": "snipping",
+          "value": 154
+        },
+        {
+          "key": "sawing",
+          "value": 137
+        },
+        {
+          "key": "Valenciennes lace",
+          "value": 135
+        },
+        {
+          "key": "inlay (process)",
+          "value": 132
+        },
+        {
+          "key": "soldering",
+          "value": 125
+        },
+        {
+          "key": "pencil",
+          "value": 120
+        },
+        {
+          "key": "Mechlin (lace)",
+          "value": 112
+        },
+        {
+          "key": "manuscript",
+          "value": 111
+        },
+        {
+          "key": "filigree",
+          "value": 107
+        },
+        {
+          "key": "knitting",
+          "value": 107
+        },
+        {
+          "key": "mixed lace",
+          "value": 107
+        },
+        {
+          "key": "Alençon lace",
+          "value": 105
+        },
+        {
+          "key": "filing",
+          "value": 88
+        },
+        {
+          "key": "Lille lace",
+          "value": 83
+        },
+        {
+          "key": "twill",
+          "value": 80
+        },
+        {
+          "key": "sewing",
+          "value": 79
+        },
+        {
+          "key": "Binche lace",
+          "value": 77
+        },
+        {
+          "key": "braiding",
+          "value": 73
+        },
+        {
+          "key": "old Flemish lace",
+          "value": 73
+        },
+        {
+          "key": "decorated paper",
+          "value": 71
+        },
+        {
+          "key": "lampas (textile material)",
+          "value": 68
+        },
+        {
+          "key": "ambrotype",
+          "value": 66
+        },
+        {
+          "key": "Brussels bobbin lace",
+          "value": 65
+        },
+        {
+          "key": "Venetian raised work",
+          "value": 65
+        },
+        {
+          "key": "Brussels point de gaze",
+          "value": 64
+        },
+        {
+          "key": "marbled paper",
+          "value": 62
+        },
+        {
+          "key": "block printing (relief printing process)",
+          "value": 57
+        },
+        {
+          "key": "Cluny lace",
+          "value": 54
+        },
+        {
+          "key": "Woodburygravure",
+          "value": 54
+        },
+        {
+          "key": "combed marbled paper",
+          "value": 52
+        },
+        {
+          "key": "Brussels appliqué",
+          "value": 49
+        },
+        {
+          "key": "agate marbled paper",
+          "value": 47
+        },
+        {
+          "key": "torchon lace",
+          "value": 44
+        },
+        {
+          "key": "scoring",
+          "value": 43
+        },
+        {
+          "key": "chintz",
+          "value": 40
+        },
+        {
+          "key": "flat Venetian (needle point)",
+          "value": 40
+        },
+        {
+          "key": "mixed Brussels",
+          "value": 38
+        },
+        {
+          "key": "tape lace (bobbin lace)",
+          "value": 38
+        },
+        {
+          "key": "chalk",
+          "value": 37
+        },
+        {
+          "key": "crocheting",
+          "value": 37
+        },
+        {
+          "key": "photochrom",
+          "value": 37
+        },
+        {
+          "key": "Venetian rose point",
+          "value": 35
+        },
+        {
+          "key": "spanish marbled paper",
+          "value": 33
+        },
+        {
+          "key": "granulation",
+          "value": 32
+        },
+        {
+          "key": "blonde (lace)",
+          "value": 31
+        },
+        {
+          "key": "blow molding",
+          "value": 31
+        },
+        {
+          "key": "tape lace (mixed lace)",
+          "value": 31
+        },
+        {
+          "key": "Argentan lace",
+          "value": 30
+        },
+        {
+          "key": "Paris lace",
+          "value": 30
+        },
+        {
+          "key": "niello (technique)",
+          "value": 29
+        },
+        {
+          "key": "hammering",
+          "value": 27
+        },
+        {
+          "key": "ciselé velvet",
+          "value": 24
+        },
+        {
+          "key": "gluing",
+          "value": 23
+        },
+        {
+          "key": "East European lace",
+          "value": 21
+        },
+        {
+          "key": "Russian lace",
+          "value": 20
+        },
+        {
+          "key": "brocatelle",
+          "value": 20
+        },
+        {
+          "key": "die cutting",
+          "value": 20
+        },
+        {
+          "key": "snail marbled paper",
+          "value": 20
+        },
+        {
+          "key": "velvet (fabric weave)",
+          "value": 19
+        },
+        {
+          "key": "Bucks point (lace)",
+          "value": 18
+        },
+        {
+          "key": "samite",
+          "value": 18
+        }
+      ],
+      "name": "technique",
+      "otherTerms": 0,
+      "prettyName": 8
+    },
+    {
+      "facets": [
+        {
+          "key": " #737C84",
+          "value": 61511
+        },
+        {
+          "key": "#FBF6E1",
+          "value": 47404
+        },
+        {
+          "key": " #2F4F4F",
+          "value": 40735
+        },
+        {
+          "key": " #E0CC91",
+          "value": 36575
+        },
+        {
+          "key": " #000000",
+          "value": 22500
+        },
+        {
+          "key": " #FBF6E1",
+          "value": 22448
+        },
+        {
+          "key": " #B5BFCC",
+          "value": 12850
+        },
+        {
+          "key": "#737C84",
+          "value": 12000
+        },
+        {
+          "key": " #B35A1F",
+          "value": 8438
+        },
+        {
+          "key": "#E0CC91",
+          "value": 8075
+        },
+        {
+          "key": " #F6ECF3",
+          "value": 7621
+        },
+        {
+          "key": "#000000",
+          "value": 3238
+        },
+        {
+          "key": "#B5BFCC",
+          "value": 3044
+        },
+        {
+          "key": "#F6ECF3",
+          "value": 1998
+        },
+        {
+          "key": " #981313",
+          "value": 1884
+        },
+        {
+          "key": " #F49B7A",
+          "value": 1691
+        },
+        {
+          "key": "#2F4F4F",
+          "value": 1407
+        },
+        {
+          "key": " #DDA5AA",
+          "value": 1050
+        },
+        {
+          "key": " #E09714",
+          "value": 835
+        },
+        {
+          "key": "#B35A1F",
+          "value": 723
+        },
+        {
+          "key": " #367614",
+          "value": 710
+        },
+        {
+          "key": " #4019B1",
+          "value": 694
+        },
+        {
+          "key": " #4279DB",
+          "value": 691
+        },
+        {
+          "key": " #DE4153",
+          "value": 328
+        },
+        {
+          "key": " #62AD77",
+          "value": 237
+        },
+        {
+          "key": " #8268DC",
+          "value": 220
+        },
+        {
+          "key": " #850085",
+          "value": 186
+        },
+        {
+          "key": "#981313",
+          "value": 185
+        },
+        {
+          "key": "#DDA5AA",
+          "value": 136
+        },
+        {
+          "key": " #DF4C93",
+          "value": 111
+        },
+        {
+          "key": " #FFEB00",
+          "value": 89
+        },
+        {
+          "key": "#4279DB",
+          "value": 74
+        }
+      ],
+      "name": "normalized32Colors.hex",
+      "otherTerms": 300159,
+      "prettyName": 9
+    }
+  ]
+}

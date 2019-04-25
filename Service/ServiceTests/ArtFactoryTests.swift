@@ -17,6 +17,13 @@ class ArtFactoryTests: XCTestCase {
 
 extension ArtFactoryTests {
     func test_createArt() throws {
-        let art = try XCTAssertUnwrap(sut.createArt(fromJSONData: Seeds.data))
+        let data = loadSampleFileData(withName: "collection.json")
+        let art = try XCTAssertUnwrap(sut.createArt(fromJSONData: data))
+        XCTAssertEqual(1, jsonDecoderService.decodeArgs.count)
+        XCTAssertEqual(data, jsonDecoderService.decodeArgs.last)
+    }
+
+    func test_createArt_badData() throws {
+        XCTAssertThrowsError(try sut.createArt(fromJSONData: Seeds.data))
     }
 }
