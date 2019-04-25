@@ -2,64 +2,34 @@
 import Foundation
 import Utils
 
-public protocol ArtService {
-    func fetchArt(completion: @escaping (Result<[Art], Error>)->Void)
+public protocol JSONDecodeService {
+    func decodeData<T:Decodable>(_ data: Data, fromType type:T)
 }
 
-class ArtServiceDefault {
-    let apiRequestFactory:APIRequestFactory
-    let networkService: NetworkService
-    init(apiRequestFactory:APIRequestFactory,
-         networkService: NetworkService){
-        self.apiRequestFactory = apiRequestFactory
-        self.networkService = networkService
+class JSONDecodeServiceDefault {
+    let jsonDecoder: JSONDecoder
+    init(jsonDecoder: JSONDecoder){
+        self.jsonDecoder = jsonDecoder
     }
 }
 
-extension ArtServiceDefault: ArtService {
-    private enum LocalError: String,LocalizedError{
-        case failedToCreateNetworkRequest
-        case json
-    }
-
-    private struct APIEndpointArt: APIEndpoint{
-        var path = "/collection"
-        var queryItems = [URLQueryItem(name: "ps",
-                                       value: "100"),
-                          URLQueryItem(name: "imgonly",
-                                       value: "true"),
-                          URLQueryItem(name: "s",
-                                       value: "relevance")]
-    }
-
-    func fetchArt(completion: @escaping (Result<[Art], Error>)->Void) {
-
-        let apiEndpoint = APIEndpointArt()
-        guard let request = try? apiRequestFactory.createRequest(withEndpoint: apiEndpoint) else {
-            completion(.failure(LocalError.failedToCreateNetworkRequest))
-            return
-        }
-
-        networkService.processRequest(request) { (result) in
-            switch result {
-            case .success(let data):
-                let dataResult = ArtServiceDefault.decodeJsonData(data)
-                completion(dataResult)
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+extension JSONDecodeServiceDefault: JSONDecodeService {
+    func decodeData<T>(_ data: Data, fromType type: T) where T : Decodable {
+        //
     }
 }
 
-private extension ArtServiceDefault {
+private extension JSONDecodeServiceDefault {
+    enum LocalError: String,LocalizedError{
+        case unknown
+    }
 
     static func decodeJsonData(_ data:Data)->Result<[Art], Error>{
         let jsonDecoder = JSONDecoder()
         if let response = try? jsonDecoder.decode(ArtResponse.self, from: data) {
             return .success(response.artResponses)
         } else {
-            return .failure(LocalError.json)
+            return .failure(LocalError.unknown)
         }
     }
 

@@ -1,9 +1,9 @@
 
 import XCTest
-import TestUtils
+import TestingUtils
 @testable import Service
 
-class APIRequestFactoryDefaultTests: XCTestCase {
+class APIRequestFactoryTests: XCTestCase {
 
     var sut: APIRequestFactoryDefault!
     var apiConfig: APIConfigMock!
@@ -22,7 +22,7 @@ class APIRequestFactoryDefaultTests: XCTestCase {
     }
 }
 
-extension APIRequestFactoryDefaultTests {
+extension APIRequestFactoryTests {
 
     func test_createRequest() throws {
         // when

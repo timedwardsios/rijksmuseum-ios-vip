@@ -5,14 +5,14 @@ public protocol Dependencies {}
 
 public extension Dependencies {
     func resolve() -> NetworkService {
-        return NetworkServiceDefault(networkSession: resolve(),
+        return NetworkServiceDefault(urlSession: resolve(),
                                      networkResponseValidator: resolve())
     }
 }
 
 private extension Dependencies {
-    func resolve() -> NetworkSession {
-        return URLSession.shared
+    func resolve() -> URLSession {
+        return Foundation.URLSession.shared
     }
 
     func resolve() -> NetworkResponseValidatorDefault {

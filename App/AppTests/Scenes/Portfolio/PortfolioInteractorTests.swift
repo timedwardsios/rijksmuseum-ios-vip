@@ -7,11 +7,11 @@ import Utils
 class PortfolioInteractorTests: XCTestCase {
     var sut: PortfolioInteractor!
     var outputMock: OutputMock!
-    var artServiceMock: ArtServiceMock!
+    var artServiceMock: ArtServiceSpy!
     override func setUp() {
         super.setUp()
         outputMock = OutputMock()
-        artServiceMock = ArtServiceMock()
+        artServiceMock = ArtServiceSpy()
         sut = PortfolioInteractor(output: outputMock,
                                   artService: artServiceMock)
     }
@@ -38,7 +38,7 @@ extension PortfolioInteractorTests {
         }
     }
 
-    class ArtServiceMock: ArtService {
+    class ArtServiceSpy: ArtService {
         var active = true
         var artSeed = [Seeds.Model.ArtSeed()]
         var errorSeed = Seeds.ErrorSeed.generic

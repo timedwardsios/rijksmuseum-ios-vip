@@ -1,9 +1,9 @@
 
 import XCTest
-import TestUtils
+import TestingUtils
 @testable import Utils
 
-class NetworkResponseValidatorDefaultTests: XCTestCase {
+class NetworkResponseValidatorTests: XCTestCase {
 
     var sut: NetworkResponseValidatorDefault!
     var response: NetworkResponseMock!
@@ -15,7 +15,7 @@ class NetworkResponseValidatorDefaultTests: XCTestCase {
     }
 }
 
-extension NetworkResponseValidatorDefaultTests {
+extension NetworkResponseValidatorTests {
     func test_validateResponse(){
         // then
         XCTAssertNoThrow(try sut.validateResponseAndUnwrapData(response))

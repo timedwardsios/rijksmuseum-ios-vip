@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "22AC8C48212EE635000A0BE0"
-               BuildableName = "TestUtils.framework"
-               BlueprintName = "TestUtils"
-               ReferencedContainer = "container:TestUtils.xcodeproj">
+               BlueprintIdentifier = "2290FCDC2271C21B009E5B47"
+               BuildableName = "TestingUtils.framework"
+               BlueprintName = "TestingUtils"
+               ReferencedContainer = "container:Utils.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "22AC8C48212EE635000A0BE0"
-            BuildableName = "TestUtils.framework"
-            BlueprintName = "TestUtils"
-            ReferencedContainer = "container:TestUtils.xcodeproj">
+            BlueprintIdentifier = "2290FCDC2271C21B009E5B47"
+            BuildableName = "TestingUtils.framework"
+            BlueprintName = "TestingUtils"
+            ReferencedContainer = "container:Utils.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "22AC8C48212EE635000A0BE0"
-            BuildableName = "TestUtils.framework"
-            BlueprintName = "TestUtils"
-            ReferencedContainer = "container:TestUtils.xcodeproj">
+            BlueprintIdentifier = "2290FCDC2271C21B009E5B47"
+            BuildableName = "TestingUtils.framework"
+            BlueprintName = "TestingUtils"
+            ReferencedContainer = "container:Utils.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

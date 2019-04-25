@@ -8,23 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0B90B1DAD8E3443C5365300D /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB434F98CFA0638795566DD /* Pods_Utils.framework */; };
-		220A4B5922719CBE00139189 /* TestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 220A4B5822719CBE00139189 /* TestUtils.framework */; };
-		221BDF1C2270BB2E00631270 /* NetworkSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF1B2270BB2E00631270 /* NetworkSessionMock.swift */; };
 		221BDF212270C38E00631270 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF202270C38E00631270 /* NetworkRequest.swift */; };
 		221BDF242270C45300631270 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF232270C45300631270 /* NetworkResponse.swift */; };
 		221BDF262270C5A600631270 /* NetworkRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF252270C5A600631270 /* NetworkRequestMock.swift */; };
 		221BDF282270CC7700631270 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF272270CC7700631270 /* NetworkMethod.swift */; };
-		221BDF2A2270CFFD00631270 /* NetworkResponseValidatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF292270CFFD00631270 /* NetworkResponseValidatorMock.swift */; };
+		221BDF2A2270CFFD00631270 /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */; };
 		221BDF432270F89A00631270 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF422270F89A00631270 /* Dependencies.swift */; };
 		2222142222661FF3001F41C8 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222142122661FF3001F41C8 /* State.swift */; };
-		222E305022707C97004A5FE9 /* NetworkServiceDefaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E304F22707C97004A5FE9 /* NetworkServiceDefaultTests.swift */; };
+		222E305022707C97004A5FE9 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */; };
 		222E305222707CB8004A5FE9 /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */; };
-		222E306622707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E306522707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift */; };
 		222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305B22707D23004A5FE9 /* NetworkService.swift */; };
-		222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307422707EF6004A5FE9 /* NetworkSession.swift */; };
-		222E307722707F16004A5FE9 /* NetworkSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307622707F16004A5FE9 /* NetworkSessionDataTask.swift */; };
+		222E307522707EF6004A5FE9 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307422707EF6004A5FE9 /* URLSession.swift */; };
 		222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */; };
-		222E308A22709F3A004A5FE9 /* NetworkResponseValidatorDefaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308922709F3A004A5FE9 /* NetworkResponseValidatorDefaultTests.swift */; };
+		222E308A22709F3A004A5FE9 /* NetworkResponseValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */; };
 		224195FF2262A0620006348F /* LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224195FE2262A0620006348F /* LocalizedError.swift */; };
 		224196012262A0720006348F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196002262A0720006348F /* Result.swift */; };
 		224196032262A0820006348F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196022262A0820006348F /* Collection.swift */; };
@@ -32,6 +28,18 @@
 		2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */; };
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
+		2290FCC22271B8AB009E5B47 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCC12271B8AB009E5B47 /* JSONDecoder.swift */; };
+		2290FCC42271BD32009E5B47 /* URLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCC32271BD32009E5B47 /* URLSessionDataTask.swift */; };
+		2290FCD82271C037009E5B47 /* URLSessionDataTaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCD62271C037009E5B47 /* URLSessionDataTaskSpy.swift */; };
+		2290FCD92271C037009E5B47 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCD72271C037009E5B47 /* URLSessionMock.swift */; };
+		2290FCDF2271C21B009E5B47 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC8C4C212EE635000A0BE0 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2290FCF32271C21B009E5B47 /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB434F98CFA0638795566DD /* Pods_Utils.framework */; };
+		2290FD052271C243009E5B47 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2290FCFD2271C243009E5B47 /* Utilities.h */; };
+		2290FD092271C2A4009E5B47 /* JSONDecoderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCFB2271C243009E5B47 /* JSONDecoderSpy.swift */; };
+		2290FD0A2271C2B0009E5B47 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FD022271C243009E5B47 /* XCTest.swift */; };
+		2290FD0B2271C2B3009E5B47 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FD032271C243009E5B47 /* Seeds.swift */; };
+		2290FD0D2271C314009E5B47 /* TestingUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2290FCF82271C21B009E5B47 /* TestingUtils.framework */; };
+		2290FD0E2271C31F009E5B47 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AC8C49212EE635000A0BE0 /* Utils.framework */; };
 		22AC8C53212EE635000A0BE0 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AC8C49212EE635000A0BE0 /* Utils.framework */; };
 		22AC8C5A212EE635000A0BE0 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC8C4C212EE635000A0BE0 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FCE3CC423F108016E928F856 /* Pods_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE2A3E55A264A0892929C44 /* Pods_UtilsTests.framework */; };
@@ -49,27 +57,34 @@
 
 /* Begin PBXFileReference section */
 		220A4B5822719CBE00139189 /* TestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		221BDF1B2270BB2E00631270 /* NetworkSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionMock.swift; sourceTree = "<group>"; };
 		221BDF202270C38E00631270 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		221BDF232270C45300631270 /* NetworkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		221BDF252270C5A600631270 /* NetworkRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestMock.swift; sourceTree = "<group>"; };
 		221BDF272270CC7700631270 /* NetworkMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
-		221BDF292270CFFD00631270 /* NetworkResponseValidatorMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorMock.swift; sourceTree = "<group>"; };
+		221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorSpy.swift; sourceTree = "<group>"; };
 		221BDF422270F89A00631270 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		2222142122661FF3001F41C8 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
-		222E304F22707C97004A5FE9 /* NetworkServiceDefaultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceDefaultTests.swift; sourceTree = "<group>"; };
+		222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
 		222E305B22707D23004A5FE9 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		222E306522707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTaskMock.swift; sourceTree = "<group>"; };
-		222E307422707EF6004A5FE9 /* NetworkSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
-		222E307622707F16004A5FE9 /* NetworkSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTask.swift; sourceTree = "<group>"; };
+		222E307422707EF6004A5FE9 /* URLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidator.swift; sourceTree = "<group>"; };
-		222E308922709F3A004A5FE9 /* NetworkResponseValidatorDefaultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorDefaultTests.swift; sourceTree = "<group>"; };
+		222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorTests.swift; sourceTree = "<group>"; };
 		224195FE2262A0620006348F /* LocalizedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedError.swift; sourceTree = "<group>"; };
 		224196002262A0720006348F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		224196042262A08B0006348F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2290FCC12271B8AB009E5B47 /* JSONDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		2290FCC32271BD32009E5B47 /* URLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTask.swift; sourceTree = "<group>"; };
+		2290FCD62271C037009E5B47 /* URLSessionDataTaskSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionDataTaskSpy.swift; sourceTree = "<group>"; };
+		2290FCD72271C037009E5B47 /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		2290FCF82271C21B009E5B47 /* TestingUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestingUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2290FCFB2271C243009E5B47 /* JSONDecoderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderSpy.swift; sourceTree = "<group>"; };
+		2290FCFD2271C243009E5B47 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		2290FCFE2271C243009E5B47 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2290FD022271C243009E5B47 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
+		2290FD032271C243009E5B47 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		22AC8C49212EE635000A0BE0 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C4C212EE635000A0BE0 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		22AC8C4D212EE635000A0BE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +117,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2290FCF22271C21B009E5B47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2290FD0E2271C31F009E5B47 /* Utils.framework in Frameworks */,
+				2290FCF32271C21B009E5B47 /* Pods_Utils.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22AC8C46212EE635000A0BE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220A4B5922719CBE00139189 /* TestUtils.framework in Frameworks */,
+				2290FD0D2271C314009E5B47 /* TestingUtils.framework in Frameworks */,
 				22AC8C53212EE635000A0BE0 /* Utils.framework in Frameworks */,
 				FCE3CC423F108016E928F856 /* Pods_UtilsTests.framework in Frameworks */,
 			);
@@ -123,16 +147,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		221BDF222270C40A00631270 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				221BDF272270CC7700631270 /* NetworkMethod.swift */,
-				221BDF202270C38E00631270 /* NetworkRequest.swift */,
-				221BDF232270C45300631270 /* NetworkResponse.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		222A72CE212EEBC800BA759F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,16 +164,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		222E305322707CBA004A5FE9 /* Mocks */ = {
+		222E305322707CBA004A5FE9 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
-				222E306522707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift */,
-				221BDF1B2270BB2E00631270 /* NetworkSessionMock.swift */,
-				221BDF292270CFFD00631270 /* NetworkResponseValidatorMock.swift */,
-				221BDF252270C5A600631270 /* NetworkRequestMock.swift */,
-				222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */,
+				221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */,
+				2290FCD62271C037009E5B47 /* URLSessionDataTaskSpy.swift */,
 			);
-			path = Mocks;
+			path = Spies;
 			sourceTree = "<group>";
 		};
 		222E305C22707D23004A5FE9 /* Network */ = {
@@ -167,21 +178,84 @@
 			children = (
 				222E305B22707D23004A5FE9 /* NetworkService.swift */,
 				222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */,
-				222E307622707F16004A5FE9 /* NetworkSessionDataTask.swift */,
-				222E307422707EF6004A5FE9 /* NetworkSession.swift */,
-				221BDF222270C40A00631270 /* Model */,
+				221BDF272270CC7700631270 /* NetworkMethod.swift */,
+				221BDF202270C38E00631270 /* NetworkRequest.swift */,
+				221BDF232270C45300631270 /* NetworkResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		222E307822708578004A5FE9 /* Network */ = {
+		2290FCC52271BD4B009E5B47 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				222E304F22707C97004A5FE9 /* NetworkServiceDefaultTests.swift */,
-				222E308922709F3A004A5FE9 /* NetworkResponseValidatorDefaultTests.swift */,
-				222E305322707CBA004A5FE9 /* Mocks */,
+				222E307422707EF6004A5FE9 /* URLSession.swift */,
+				2290FCC32271BD32009E5B47 /* URLSessionDataTask.swift */,
+				2290FCC12271B8AB009E5B47 /* JSONDecoder.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		2290FCDA2271C0D8009E5B47 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				221BDF252270C5A600631270 /* NetworkRequestMock.swift */,
+				222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */,
+				2290FCD72271C037009E5B47 /* URLSessionMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2290FCF92271C243009E5B47 /* TestingUtils */ = {
+			isa = PBXGroup;
+			children = (
+				2290FD032271C243009E5B47 /* Seeds.swift */,
+				2290FD012271C243009E5B47 /* Extensions */,
+				2290FCFA2271C243009E5B47 /* Spies */,
+				2290FCFC2271C243009E5B47 /* Resources */,
+				2290FCFF2271C243009E5B47 /* Network */,
+			);
+			name = TestingUtils;
+			path = ../TestUtils/TestingUtils;
+			sourceTree = "<group>";
+		};
+		2290FCFA2271C243009E5B47 /* Spies */ = {
+			isa = PBXGroup;
+			children = (
+				2290FCFB2271C243009E5B47 /* JSONDecoderSpy.swift */,
+			);
+			path = Spies;
+			sourceTree = "<group>";
+		};
+		2290FCFC2271C243009E5B47 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2290FCFD2271C243009E5B47 /* Utilities.h */,
+				2290FCFE2271C243009E5B47 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2290FCFF2271C243009E5B47 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2290FD002271C243009E5B47 /* Model */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		2290FD002271C243009E5B47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2290FD012271C243009E5B47 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2290FD022271C243009E5B47 /* XCTest.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		22AC8C3F212EE635000A0BE0 = {
@@ -189,6 +263,7 @@
 			children = (
 				22AC8C4B212EE635000A0BE0 /* Utils */,
 				22AC8C56212EE635000A0BE0 /* UtilsTests */,
+				2290FCF92271C243009E5B47 /* TestingUtils */,
 				22AC8C4A212EE635000A0BE0 /* Products */,
 				A8223029073A0062B1EA3F4B /* Pods */,
 				9B1CB214609DABFA088B4A6C /* Frameworks */,
@@ -200,6 +275,7 @@
 			children = (
 				22AC8C49212EE635000A0BE0 /* Utils.framework */,
 				22AC8C52212EE635000A0BE0 /* UtilsTests.xctest */,
+				2290FCF82271C21B009E5B47 /* TestingUtils.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +286,7 @@
 				221BDF422270F89A00631270 /* Dependencies.swift */,
 				222E305C22707D23004A5FE9 /* Network */,
 				2222142122661FF3001F41C8 /* State.swift */,
+				2290FCC52271BD4B009E5B47 /* Interfaces */,
 				22AC8C68212EE7E5000A0BE0 /* Extensions */,
 				222A72CE212EEBC800BA759F /* Resources */,
 			);
@@ -219,7 +296,10 @@
 		22AC8C56212EE635000A0BE0 /* UtilsTests */ = {
 			isa = PBXGroup;
 			children = (
-				222E307822708578004A5FE9 /* Network */,
+				222E304F22707C97004A5FE9 /* NetworkServiceTests.swift */,
+				222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */,
+				222E305322707CBA004A5FE9 /* Spies */,
+				2290FCDA2271C0D8009E5B47 /* Mocks */,
 				222A72CF212EEBD600BA759F /* Resources */,
 			);
 			path = UtilsTests;
@@ -279,6 +359,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2290FCDE2271C21B009E5B47 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2290FCDF2271C21B009E5B47 /* Utils.h in Headers */,
+				2290FD052271C243009E5B47 /* Utilities.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22AC8C44212EE635000A0BE0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +379,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		2290FCDC2271C21B009E5B47 /* TestingUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2290FCF52271C21B009E5B47 /* Build configuration list for PBXNativeTarget "TestingUtils" */;
+			buildPhases = (
+				2290FCDD2271C21B009E5B47 /* [CP] Check Pods Manifest.lock */,
+				2290FCDE2271C21B009E5B47 /* Headers */,
+				2290FCE02271C21B009E5B47 /* Sources */,
+				2290FCF22271C21B009E5B47 /* Frameworks */,
+				2290FCF42271C21B009E5B47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestingUtils;
+			productName = Utilities;
+			productReference = 2290FCF82271C21B009E5B47 /* TestingUtils.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		22AC8C48212EE635000A0BE0 /* Utils */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22AC8C5D212EE635000A0BE0 /* Build configuration list for PBXNativeTarget "Utils" */;
@@ -363,11 +471,19 @@
 			targets = (
 				22AC8C48212EE635000A0BE0 /* Utils */,
 				22AC8C51212EE635000A0BE0 /* UtilsTests */,
+				2290FCDC2271C21B009E5B47 /* TestingUtils */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2290FCF42271C21B009E5B47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22AC8C47212EE635000A0BE0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,6 +501,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2290FCDD2271C21B009E5B47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Utils-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3002C7A8CEBBDA7962144EF8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,6 +558,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2290FCE02271C21B009E5B47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2290FD0A2271C2B0009E5B47 /* XCTest.swift in Sources */,
+				2290FD092271C2A4009E5B47 /* JSONDecoderSpy.swift in Sources */,
+				2290FD0B2271C2B3009E5B47 /* Seeds.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		22AC8C45212EE635000A0BE0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,17 +575,18 @@
 				221BDF212270C38E00631270 /* NetworkRequest.swift in Sources */,
 				224196012262A0720006348F /* Result.swift in Sources */,
 				222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */,
+				2290FCC42271BD32009E5B47 /* URLSessionDataTask.swift in Sources */,
 				221BDF432270F89A00631270 /* Dependencies.swift in Sources */,
 				222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */,
 				221BDF282270CC7700631270 /* NetworkMethod.swift in Sources */,
 				2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */,
-				222E307722707F16004A5FE9 /* NetworkSessionDataTask.swift in Sources */,
 				2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */,
 				224195FF2262A0620006348F /* LocalizedError.swift in Sources */,
 				2222142222661FF3001F41C8 /* State.swift in Sources */,
 				221BDF242270C45300631270 /* NetworkResponse.swift in Sources */,
 				224196032262A0820006348F /* Collection.swift in Sources */,
-				222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */,
+				222E307522707EF6004A5FE9 /* URLSession.swift in Sources */,
+				2290FCC22271B8AB009E5B47 /* JSONDecoder.swift in Sources */,
 				2289A5C2212F108800787E2B /* UIColor.swift in Sources */,
 				224196052262A08B0006348F /* UITableViewCell.swift in Sources */,
 			);
@@ -452,12 +597,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				221BDF262270C5A600631270 /* NetworkRequestMock.swift in Sources */,
-				222E308A22709F3A004A5FE9 /* NetworkResponseValidatorDefaultTests.swift in Sources */,
-				221BDF2A2270CFFD00631270 /* NetworkResponseValidatorMock.swift in Sources */,
-				222E305022707C97004A5FE9 /* NetworkServiceDefaultTests.swift in Sources */,
+				222E308A22709F3A004A5FE9 /* NetworkResponseValidatorTests.swift in Sources */,
+				221BDF2A2270CFFD00631270 /* NetworkResponseValidatorSpy.swift in Sources */,
+				222E305022707C97004A5FE9 /* NetworkServiceTests.swift in Sources */,
 				222E305222707CB8004A5FE9 /* NetworkResponseMock.swift in Sources */,
-				222E306622707DA9004A5FE9 /* NetworkSessionDataTaskMock.swift in Sources */,
-				221BDF1C2270BB2E00631270 /* NetworkSessionMock.swift in Sources */,
+				2290FCD82271C037009E5B47 /* URLSessionDataTaskSpy.swift in Sources */,
+				2290FCD92271C037009E5B47 /* URLSessionMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +617,62 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2290FCF62271C21B009E5B47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABD0268A9FCE4910813A7939 /* Pods-Utils.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P2H55DCRCL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = "$(SRCROOT)/../TestUtils/TestingUtils/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--PLATFORM-DIR--Developer-Library-Frameworks--PLATFORM-DIR--Developer-Library-Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2290FCF72271C21B009E5B47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 998C6B9114AC87B6607542DA /* Pods-Utils.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = P2H55DCRCL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = "$(SRCROOT)/../TestUtils/TestingUtils/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--PLATFORM-DIR--Developer-Library-Frameworks--PLATFORM-DIR--Developer-Library-Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		22AC8C5B212EE635000A0BE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -689,6 +890,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2290FCF52271C21B009E5B47 /* Build configuration list for PBXNativeTarget "TestingUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2290FCF62271C21B009E5B47 /* Debug */,
+				2290FCF72271C21B009E5B47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22AC8C43212EE635000A0BE0 /* Build configuration list for PBXProject "Utils" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

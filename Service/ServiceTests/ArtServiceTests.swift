@@ -1,29 +1,58 @@
 
 import XCTest
-import TestUtils
+import Utils
+import TestingUtils
 @testable import Service
 
-class ArtServiceNetworkTests: XCTestCase {
+class ArtServiceTests: XCTestCase {
 
     var sut: ArtServiceDefault!
-    var apiRequestFactoryMock: APIRequestFactoryMock!
-    var networkService: NetworkServiceMock!
+    var networkRequest: NetworkRequestMock!
+    var apiRequestFactory: APIRequestFactorySpy!
+    var networkService: NetworkServiceSpy!
 
     override func setUp() {
         super.setUp()
-//        apiRequestFactoryMock = .init(createRequestReturnValue: network)
-//        sut = .init(apiRequestFactory: apiRequestFactoryMock)
+        networkRequest = .init(url: Seeds.url,
+                               method: .GET)
+        apiRequestFactory = .init(createRequestResult: .success(networkRequest))
+        networkService = .init(processRequestResult: .success(Seeds.data))
+        sut = .init(apiRequestFactory: apiRequestFactory,
+                    networkService: networkService)
     }
 }
 
-extension ArtServiceNetworkTests {
+extension ArtServiceTests {
 
-    func test_fetchArt(){
-        // given
+    func test_fetchArt_callback() {
+//        let exp = XCTestExpectation()
+//        sut.fetchArt { (result) in
+//            if let arts = result.unwrap() {
+//                
+//                exp.fulfill()
+//            }
+//        }
+//        wait(exp)
+    }
 
-        // when
-//        sut.fetchArt { (_) in}
-        // then
+    func test_fetchArt_apiRequestFactory() {
+        let exp = XCTestExpectation()
+        sut.fetchArt { (_) in
+            XCTAssertEqual(self.apiRequestFactory.createRequestArgs.count, 1)
+            XCTAssertEqual(self.apiRequestFactory.createRequestArgs.first?.path, "/collection")
+            exp.fulfill()
+        }
+        wait(exp)
+    }
+
+    func test_fetchArt_networkService() {
+        let exp = XCTestExpectation()
+        sut.fetchArt { (_) in
+            XCTAssertEqual(self.networkService.performRequestArgs.count, 1)
+            XCTAssertEqual(self.networkService.performRequestArgs.first?.url, self.networkRequest.url)
+            exp.fulfill()
+        }
+        wait(exp)
     }
 
 //    func test_fetchArt(){
