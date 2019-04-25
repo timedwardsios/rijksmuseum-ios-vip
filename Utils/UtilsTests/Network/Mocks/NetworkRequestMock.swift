@@ -3,6 +3,7 @@ import Foundation
 @testable import Utils
 
 class NetworkRequestMock: NetworkRequest {
+    
     var url: URL
     var method: NetworkMethod
 

@@ -3,7 +3,7 @@ import XCTest
 import TestUtils
 @testable import Utils
 
-class NetworkServiceTests: XCTestCase {
+class NetworkServiceDefaultTests: XCTestCase {
 
     var sut: NetworkServiceDefault!
     var networkResponseValidator: NetworkResponseValidatorMock!
@@ -25,7 +25,7 @@ class NetworkServiceTests: XCTestCase {
     }
 }
 
-extension NetworkServiceTests {
+extension NetworkServiceDefaultTests {
 
     func test_processRequest_callback(){
         // given

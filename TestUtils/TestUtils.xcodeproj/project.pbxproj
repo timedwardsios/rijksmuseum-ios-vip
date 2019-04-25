@@ -10,6 +10,7 @@
 		220A4B3022719AC000139189 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 220A4B1922719AC000139189 /* Utilities.h */; };
 		220A4B3C22719AC000139189 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A4B2822719AC000139189 /* XCTest.swift */; };
 		220A4B5722719B7200139189 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2273F7B9227112E00027C7FC /* XCTest.framework */; };
+		220A4B5F2271A64B00139189 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A4B5E2271A64B00139189 /* Seeds.swift */; };
 		22AC8C53212EE635000A0BE0 /* TestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AC8C49212EE635000A0BE0 /* TestUtils.framework */; };
 		365F8834ABAC8C42F740D0B1 /* Pods_TestUtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A34F87042DC24D962441646 /* Pods_TestUtilsTests.framework */; };
 		C628290D5685AF412DD085B8 /* Pods_TestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6DDC9870455C6665796B91D /* Pods_TestUtils.framework */; };
@@ -32,6 +33,7 @@
 		220A4B1A22719AC000139189 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		220A4B2822719AC000139189 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		220A4B4522719ACA00139189 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		220A4B5E2271A64B00139189 /* Seeds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		22AC8C49212EE635000A0BE0 /* TestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C52212EE635000A0BE0 /* TestUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,7 @@
 		220A4B1622719AC000139189 /* TestUtils */ = {
 			isa = PBXGroup;
 			children = (
+				220A4B5E2271A64B00139189 /* Seeds.swift */,
 				220A4B2522719AC000139189 /* Extensions */,
 				220A4B1822719AC000139189 /* Resources */,
 			);
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220A4B5F2271A64B00139189 /* Seeds.swift in Sources */,
 				220A4B3C22719AC000139189 /* XCTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

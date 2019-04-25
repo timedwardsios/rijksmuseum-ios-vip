@@ -1,20 +1,15 @@
 
 import Foundation
 
-private struct ErrorSeed: Error {}
+public enum Seeds {}
 
-
-
-internal enum Seeds: Seedable {}
-
-public protocol Seedable {}
-
-public extension Seedable {
+public extension Seeds {
     static var string: String {
         return UUID().uuidString
     }
 
     static var error: Error {
+        struct ErrorSeed: Error {}
         return ErrorSeed()
     }
 
@@ -36,17 +31,5 @@ public extension Seedable {
     static var urlQueryItem: URLQueryItem {
         return URLQueryItem(name: string,
                             value: string)
-    }
-
-
-
-    static var networkRequest: NetworkRequest {
-
-        struct NetworkRequestSeed: NetworkRequest {
-            var url: URL
-            var method: NetworkMethod
-        }
-
-        return NetworkRequestSeed(url: url, method: network)
     }
 }

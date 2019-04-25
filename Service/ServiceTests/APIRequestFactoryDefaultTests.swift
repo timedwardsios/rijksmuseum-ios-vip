@@ -3,21 +3,26 @@ import XCTest
 import TestUtils
 @testable import Service
 
-class APIRequestFactoryTests: XCTestCase {
+class APIRequestFactoryDefaultTests: XCTestCase {
 
     var sut: APIRequestFactoryDefault!
-    var apiConfig: APIConfigSeed!
-    var apiEndpoint: APIEndpointSeed!
+    var apiConfig: APIConfigMock!
+    var apiEndpoint: APIEndpointMock!
 
     override func setUp() {
         super.setUp()
-        apiConfig = Seeds.apiConfig
+        apiConfig = APIConfigMock(path: "/" + Seeds.string,
+                                  queryItems: [Seeds.urlQueryItem],
+                                  scheme: "https",
+                                  host: Seeds.string)
         sut = .init(apiConfig: apiConfig)
-        apiEndpoint = Seeds.apiEndpoint
+
+        apiEndpoint = APIEndpointMock(path: "/" + Seeds.string,
+                                      queryItems: [Seeds.urlQueryItem])
     }
 }
 
-extension APIRequestFactoryTests {
+extension APIRequestFactoryDefaultTests {
 
     func test_createRequest() throws {
         // when

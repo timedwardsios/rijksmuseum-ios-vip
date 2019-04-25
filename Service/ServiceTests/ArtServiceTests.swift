@@ -11,8 +11,8 @@ class ArtServiceNetworkTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        apiRequestFactoryMock = .init(createRequestReturnValue: network)
-        sut = .init(apiRequestFactory: apiRequestFactoryMock)
+//        apiRequestFactoryMock = .init(createRequestReturnValue: network)
+//        sut = .init(apiRequestFactory: apiRequestFactoryMock)
     }
 }
 
@@ -22,7 +22,7 @@ extension ArtServiceNetworkTests {
         // given
 
         // when
-        sut.fetchArt { (_) in}
+//        sut.fetchArt { (_) in}
         // then
     }
 

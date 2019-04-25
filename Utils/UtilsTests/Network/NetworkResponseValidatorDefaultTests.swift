@@ -1,5 +1,6 @@
 
 import XCTest
+import TestUtils
 @testable import Utils
 
 class NetworkResponseValidatorDefaultTests: XCTestCase {
