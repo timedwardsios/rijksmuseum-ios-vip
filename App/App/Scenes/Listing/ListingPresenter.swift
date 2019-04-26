@@ -12,10 +12,7 @@ class ListingPresenter {
 }
 
 extension ListingPresenter: ListingPresenting {
-    func presentResponse(_ response: ListingResponse) {
-        switch response {
-        case .didLoadArt(let art):
-            display?.displayViewModel(.imageUrl(art.imageUrl))
-        }
+    func didLoadArt(_ art: Art) {
+        display?.displayImageURL(art.imageUrl)
     }
 }

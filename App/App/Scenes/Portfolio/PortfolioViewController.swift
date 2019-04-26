@@ -39,7 +39,7 @@ extension PortfolioViewController{
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
-        interactor.processRequest(.fetchArts)
+        interactor.fetchArts()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -85,27 +85,34 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        interactor.processRequest(.selectArt(index: indexPath.row))
+        interactor.selectArt(atIndex: indexPath.row)
         router.routeToListing()
     }
 }
 
 extension PortfolioViewController: PortfolioDisplaying {
-    
-    func displayViewModel(_ viewModel: PortfolioViewModel) {
+    func displayIsLoading(_ isLoading: Bool) {
         DispatchQueue.main.async { [weak self] in
-            switch viewModel {
-            case .isLoading(let isLoading):
-                if isLoading {
-                    self?.refreshControl.beginRefreshingProgramatically()
-                } else {
-                    self?.refreshControl.endRefreshing()
-                }
-            case .imageUrls(let urls):
-                self?.imageUrls = urls
-            case .errorAlertMessage(let message):
-                self?.displayErrorMessage(message)
+            if isLoading {
+                self?.refreshControl.beginRefreshingProgramatically()
+            } else {
+                self?.refreshControl.endRefreshing()
             }
+        }
+    }
+
+    func displayImageUrls(_ urls: [URL]) {
+        DispatchQueue.main.async { [weak self] in
+            self?.imageUrls = urls
+        }
+    }
+
+    func displayErrorMessage(_ message: String) {
+        DispatchQueue.main.async {
+            let alertViewController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertViewController.addAction(okAction)
+            self.present(alertViewController, animated: true)
         }
     }
 }
@@ -137,20 +144,11 @@ private extension PortfolioViewController {
                                                right: gutterSize)
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
     }
-
-    func displayErrorMessage(_ message: String) {
-        DispatchQueue.main.async {
-            let alertViewController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default)
-            alertViewController.addAction(okAction)
-            self.present(alertViewController, animated: true)
-        }
-    }
 }
 
 // MARK: - Selectors
 @objc extension PortfolioViewController {
     func didPullToRefresh() {
-        interactor.processRequest(.fetchArts)
+        interactor.fetchArts()
     }
 }

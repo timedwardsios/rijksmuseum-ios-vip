@@ -4,25 +4,13 @@ import Services
 import Utils
 
 protocol ListingInteracting {
-    func processRequest(_ request: ListingRequest)
+    func loadArt()
 }
 
 protocol ListingPresenting {
-    func presentResponse(_ response: ListingResponse)
+    func didLoadArt(_ art:Art)
 }
 
 protocol ListingDisplaying: class {
-    func displayViewModel(_ viewModel: ListingViewModel)
-}
-
-enum ListingRequest {
-    case loadArt
-}
-
-enum ListingResponse {
-    case didLoadArt(Art)
-}
-
-enum ListingViewModel {
-    case imageUrl(URL)
+    func displayImageURL(_ url:URL)
 }

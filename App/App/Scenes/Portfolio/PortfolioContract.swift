@@ -4,15 +4,20 @@ import Services
 import Utils
 
 protocol PortfolioInteracting {
-    func processRequest(_ request: PortfolioRequest)
+    func fetchArts()
+    func selectArt(atIndex index: Int)
 }
 
 protocol PortfolioPresenting {
-    func presentResponse(_ response: PortfolioResponse)
+    func didBeginLoading()
+    func didFetchArts(_ arts:[Art])
+    func didError(_ error:Error)
 }
 
 protocol PortfolioDisplaying: class {
-    func displayViewModel(_ viewModel: PortfolioViewModel)
+    func displayIsLoading(_ isLoading: Bool)
+    func displayImageUrls(_ urls:[URL])
+    func displayErrorMessage(_ message: String)
 }
 
 protocol PortfolioRouting {
@@ -21,21 +26,4 @@ protocol PortfolioRouting {
 
 protocol PortfolioDataStore {
     var selectedArt: Art? {get}
-}
-
-enum PortfolioRequest {
-    case fetchArts
-    case selectArt(index: Int)
-}
-
-enum PortfolioResponse {
-    case didBeginLoading
-    case didFetchArts([Art])
-    case didError(Error)
-}
-
-enum PortfolioViewModel {
-    case isLoading(Bool)
-    case imageUrls([URL])
-    case errorAlertMessage(String)
 }

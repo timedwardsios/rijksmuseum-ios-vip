@@ -16,7 +16,7 @@ class ListingInteractor {
 }
 
 extension ListingInteractor: ListingInteracting {
-    func processRequest(_ request: ListingRequest) {
-        presenter.presentResponse(.didLoadArt(art))
+    func loadArt() {
+        presenter.didLoadArt(art)
     }
 }

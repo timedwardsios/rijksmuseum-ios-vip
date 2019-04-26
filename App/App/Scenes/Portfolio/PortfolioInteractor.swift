@@ -18,22 +18,21 @@ class PortfolioInteractor: PortfolioDataStore {
 }
 
 extension PortfolioInteractor: PortfolioInteracting {
-    
-    func processRequest(_ request: PortfolioRequest) {
-        switch request {
-        case .fetchArts:
-            presenter.presentResponse(.didBeginLoading)
-            artWorker.fetchArt { [weak self] (result) in
-                guard let self = self else {return}
-                do {
-                    self.arts = try result.get()
-                    self.presenter.presentResponse(.didFetchArts(self.arts))
-                } catch (let error) {
-                    self.presenter.presentResponse(.didError(error))
-                }
+    func fetchArts() {
+        presenter.didBeginLoading()
+        artWorker.fetchArt { [weak self] (result) in
+            guard let self = self else {return}
+            do {
+                self.arts = try result.get()
+                self.presenter.didFetchArts(self.arts)
+            } catch (let error) {
+                self.presenter.didError(error)
             }
-        case .selectArt(let index):
-            self.selectedArt = arts[safe: index]
         }
+    }
+
+    func selectArt(atIndex index: Int) {
+        self.selectedArt = arts[safe: index]
+
     }
 }

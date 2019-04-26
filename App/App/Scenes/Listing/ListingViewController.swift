@@ -19,7 +19,7 @@ class ListingViewController: UIViewController{
         super.viewDidLoad()
         setupSubviews()
         title = "Rijksmuseum"
-        interactor.processRequest(.loadArt)
+        interactor.loadArt()
     }
 }
 
@@ -33,11 +33,9 @@ private extension ListingViewController {
 }
 
 extension ListingViewController: ListingDisplaying {
-
-    func displayViewModel(_ viewModel: ListingViewModel) {
-        switch viewModel {
-        case .imageUrl(let url):
-            imageView.sd_setImage(with: url,
+    func displayImageURL(_ url: URL) {
+        DispatchQueue.main.async {
+            self.imageView.sd_setImage(with: url,
                                   completed: nil)
         }
     }
