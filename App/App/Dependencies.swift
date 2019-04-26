@@ -10,9 +10,10 @@ internal extension Dependencies {
         let presenter = PortfolioPresenter()
         let interactor = PortfolioInteractor(presentResponse: presenter.presentResponse,
                                              artWorker: resolve())
-        let router = PortfolioRouter(dependencies: self, dataStore: interactor)
+        let router = PortfolioRouter(dependencies: self,
+                                     dataStore: interactor)
         let viewController = PortfolioViewController(processRequest: interactor.processRequest,
-                                                     router: router)
+                                                     followRoute: router.followRoute)
         presenter.displayViewModel = viewController.displayViewModel
         router.viewController = viewController
         return viewController
@@ -20,11 +21,10 @@ internal extension Dependencies {
 
     func resolve(art: Art) -> ListingViewController {
         let presenter = ListingPresenter()
-        let interactor = ListingInteractor(presenter: presenter, art: art)
-        let router = ListingRouter(dependencies: self, dataStore: interactor)
-        let viewController = ListingViewController(interactor: interactor, router: router)
-        presenter.view = viewController
-        router.viewController = viewController
+        let interactor = ListingInteractor(presentResponse: presenter.presentResponse,
+                                           art: art)
+        let viewController = ListingViewController(processRequest: interactor.processRequest)
+        presenter.displayViewModel = viewController.displayViewModel
         return viewController
     }
 }

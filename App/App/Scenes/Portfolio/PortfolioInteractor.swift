@@ -2,7 +2,7 @@
 import Services
 import Utils
 
-class PortfolioInteractor: PortfolioDataStoring {
+class PortfolioInteractor: PortfolioDataStore {
 
     let presentResponse: (PortfolioResponse)->Void
     let artWorker: ArtWorker
@@ -18,7 +18,6 @@ class PortfolioInteractor: PortfolioDataStoring {
 }
 
 extension PortfolioInteractor {
-
     func processRequest(request: PortfolioRequest) {
         switch request {
         case .fetchArts:

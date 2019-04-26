@@ -1,5 +1,6 @@
-Do routing and data store
 Finish VIP unit testing
+
+Introduce equatable
 
 Update tests to use structs for mocks
 

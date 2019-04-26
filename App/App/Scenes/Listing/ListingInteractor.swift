@@ -3,20 +3,20 @@ import UIKit
 import Services
 import Utils
 
-class ListingInteractor: ListingDataStore{
+class ListingInteractor {
 
-    let presenter: ListingPresentating
+    let presentResponse: (ListingResponse)->Void
     let art: Art
 
-    init(presenter: ListingPresentating,
+    init(presentResponse: @escaping (ListingResponse)->Void,
          art:Art) {
-        self.presenter = presenter
+        self.presentResponse = presentResponse
         self.art = art
     }
 }
 
-extension ListingInteractor: ListingInteracting {
-    func loadArtRequest(_ request: Listing.LoadArt.Request) {
-        presenter.loadArtResponse(.init(art: art))
+extension ListingInteractor {
+    func processRequest(request: ListingRequest) {
+        presentResponse(.didLoadArt(art))
     }
 }

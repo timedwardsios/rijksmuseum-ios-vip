@@ -5,12 +5,12 @@ import Utils
 class PortfolioViewController: UICollectionViewController {
 
     let processRequest: (PortfolioRequest)->Void
-    let router: PortfolioRouting
+    let followRoute: (PortfolioRoute)->Void
 
     init(processRequest: @escaping (PortfolioRequest)->Void,
-         router: PortfolioRouting){
+         followRoute: @escaping (PortfolioRoute)->Void){
         self.processRequest = processRequest
-        self.router = router
+        self.followRoute = followRoute
         super.init(collectionViewLayout: .init())
     }
 
@@ -85,7 +85,7 @@ extension PortfolioViewController {
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         processRequest(.selectArt(index: indexPath.row))
-        router.routeToListing()
+        followRoute(.listing)
     }
 }
 

@@ -20,10 +20,10 @@ enum PortfolioViewModel {
     case errorAlertMessage(String)
 }
 
-protocol PortfolioDataStoring {
-    var selectedArt: Art? {get}
+enum PortfolioRoute {
+    case listing
 }
 
-protocol PortfolioRouting {
-    func routeToListing()
+protocol PortfolioDataStore {
+    var selectedArt: Art? {get}
 }
