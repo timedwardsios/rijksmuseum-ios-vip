@@ -7,50 +7,51 @@ class NetworkResponseValidatorTests: XCTestCase {
 
     var sut: NetworkResponseValidatorDefault!
 
-    var response: NetworkResponseMock!
+    var responseMock: NetworkResponseMock!
 
     override func setUp() {
         super.setUp()
         sut = .init()
-        response = .init()
+        responseMock = .init()
     }
 }
 
 extension NetworkResponseValidatorTests {
-    func test_validateResponse(){
+    func test_validateResponse() throws {
         // then
-        XCTAssertNoThrow(try sut.validateResponseAndUnwrapData(response))
+        let data = try sut.validateResponseAndUnwrapData(responseMock)
+        XCTAssertEqual(responseMock.data, data)
     }
 
     func test_validateResponse_noData(){
         // given
-        response.data = nil
+        responseMock.data = nil
         // then
-        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(response))
+        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(responseMock))
     }
 
     func test_validateResponse_noInternalURLResponse(){
         // given
-        response.urlResponse = nil
+        responseMock.urlResponse = nil
         // then
-        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(response))
+        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(responseMock))
     }
 
     func test_validateResponse_badStatusCode(){
         // given
-        response.urlResponse = HTTPURLResponse(url: Seeds.url,
+        responseMock.urlResponse = HTTPURLResponse(url: Seeds.url,
                                                statusCode: 404,
                                                httpVersion: nil,
                                                headerFields: nil)
         // then
-        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(response))
+        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(responseMock))
     }
 
     func test_validateResponse_error(){
         // given
-        response.error = Seeds.error
+        responseMock.error = Seeds.error
         // then
-        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(response))
+        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(responseMock))
     }
 }
 

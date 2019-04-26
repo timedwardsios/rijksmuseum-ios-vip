@@ -4,18 +4,18 @@ import Services
 import Utils
 
 class ListingPresenter {
-    var displayViewModel: ((ListingViewModel)->Void)?
+    weak var display: ListingDisplaying?
 
-    init(displayViewModel: ((ListingViewModel)->Void)? = nil) {
-        self.displayViewModel = displayViewModel
+    init(display: ListingDisplaying? = nil){
+        self.display = display
     }
 }
 
-extension ListingPresenter {
-    func presentResponse(response: ListingResponse) {
+extension ListingPresenter: ListingPresenting {
+    func presentResponse(_ response: ListingResponse) {
         switch response {
         case .didLoadArt(let art):
-            displayViewModel?(.imageUrl(art.imageUrl))
+            display?.displayViewModel(.imageUrl(art.imageUrl))
         }
     }
 }

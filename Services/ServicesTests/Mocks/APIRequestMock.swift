@@ -3,7 +3,7 @@ import Foundation
 import UtilsTestTools
 @testable import Services
 
-class APIRequestMock: APIRequest {
+struct APIRequestMock: APIRequest, Equatable {
     var path = "/" + Seeds.string
     var queryItems = [Seeds.urlQueryItem]
 }

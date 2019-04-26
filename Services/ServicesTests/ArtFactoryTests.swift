@@ -7,12 +7,12 @@ class ArtFactoryTests: XCTestCase {
 
     var sut: ArtFactoryDefault!
     
-    var jsonDecoderService: JSONDecoderServiceSpy!
+    var jsonDecoderServiceSpy: JSONDecoderServiceSpy!
 
     override func setUp() {
         super.setUp()
-        jsonDecoderService = .init()
-        sut = .init(jsonDecoderService: jsonDecoderService)
+        jsonDecoderServiceSpy = .init()
+        sut = .init(jsonDecoderService: jsonDecoderServiceSpy)
     }
 }
 
@@ -20,8 +20,7 @@ extension ArtFactoryTests {
     func test_createArt() throws {
         let data = loadSampleFileData(withName: "collection.json")
         XCTAssertNoThrow(try XCTAssertUnwrap(sut.createArts(fromJSONData: data)))
-        XCTAssertEqual(1, jsonDecoderService.decodeArgs.count)
-        XCTAssertEqual(data, jsonDecoderService.decodeArgs.last)
+        XCTAssertEqual([data], jsonDecoderServiceSpy.decodeArgs)
     }
 
     func test_createArt_badData() throws {

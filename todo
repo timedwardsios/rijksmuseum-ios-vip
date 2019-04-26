@@ -1,9 +1,3 @@
-Introduce equatable to tests
-
-Update tests to use structs for mocks
-
-Check for retain cylce through functions
-
 Refactor
     Add main thread to DI from VCs
 

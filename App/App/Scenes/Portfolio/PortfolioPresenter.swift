@@ -3,26 +3,26 @@ import Services
 import Utils
 
 class PortfolioPresenter{
-    var displayViewModel: ((PortfolioViewModel)->Void)?
+    weak var display: PortfolioDisplaying?
 
-    init(displayViewModel: ((PortfolioViewModel)->Void)? = nil) {
-        self.displayViewModel = displayViewModel
+    init(display: PortfolioDisplaying? = nil){
+        self.display = display
     }
 }
 
-extension PortfolioPresenter {
+extension PortfolioPresenter: PortfolioPresenting {
 
-    func presentResponse(response: PortfolioResponse) {
+    func presentResponse(_ response: PortfolioResponse) {
         switch response {
         case .didBeginLoading:
-            displayViewModel?(.isLoading(true))
+            display?.displayViewModel(.isLoading(true))
         case .didFetchArts(let arts):
-            displayViewModel?(.isLoading(false))
+            display?.displayViewModel(.isLoading(false))
             let imageUrls = arts.map({$0.imageUrl})
-            displayViewModel?(.imageUrls(imageUrls))
+            display?.displayViewModel(.imageUrls(imageUrls))
         case .didError(let error):
-            displayViewModel?(.isLoading(false))
-            displayViewModel?(.errorAlertMessage(error.localizedDescription))
+            display?.displayViewModel(.isLoading(false))
+            display?.displayViewModel(.errorAlertMessage(error.localizedDescription))
         }
     }
 }

@@ -3,7 +3,7 @@ import Foundation
 import UtilsTestTools
 @testable import Utils
 
-class NetworkRequestMock: NetworkRequest {
+struct NetworkRequestMock: NetworkRequest {
     var url = Seeds.url
     var method = NetworkMethod.GET
 }

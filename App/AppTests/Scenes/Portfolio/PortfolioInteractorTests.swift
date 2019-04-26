@@ -3,67 +3,43 @@ import XCTest
 import UtilsTestTools
 @testable import App
 
-extension PortfolioResponse: Equatable {
-    public static func == (lhs: PortfolioResponse, rhs: PortfolioResponse) -> Bool {
-        switch (lhs, rhs) {
-        case (.didBeginLoading, .didBeginLoading):
-            return true
-        case (.didFetchArts(let artsLeft), .didFetchArts(let artsRight)):
-            if let artsLeft = artsLeft as? [ArtMock],
-                let artsRight = artsRight as? [ArtMock],
-                artsLeft == artsRight {
-                return true
-            }
-            return false
-        case (.didError, .didError):
-            return true
-        default:
-            return false
-        }
-    }
-}
-
 class PortfolioInteractorTests: XCTestCase {
 
     var sut: PortfolioInteractor!
 
-    var presenterSpy: PresenterSpy<PortfolioResponse>!
     var artWorker: ArtWorkerSpy!
+
+    var presenterSpy: PortfolioPresenterSpy!
 
     var artMock: ArtMock!
 
     override func setUp() {
         super.setUp()
-        presenterSpy = .init()
         artMock = .init()
+        presenterSpy = .init()
         artWorker = .init(fetchArtResult: .success([artMock]))
-        sut = .init(presentResponse: presenterSpy.presentResponse,
-                    artWorker: artWorker)
+        sut = .init(presenter: presenterSpy, artWorker: artWorker)
     }
 }
 
 extension PortfolioInteractorTests {
 
     func test_fetchArts() throws {
-        sut.processRequest(request: .fetchArts)
+        sut.processRequest(.fetchArts)
         XCTAssertEqual(1, artWorker.fetchArtArgs)
-        XCTAssertEqual(2, presenterSpy.presentResponseArgs.count)
-        XCTAssertEqual(.didBeginLoading, presenterSpy.presentResponseArgs.first)
-        XCTAssertEqual(.didFetchArts([artMock]), presenterSpy.presentResponseArgs.last)
+        XCTAssertEqual([.didBeginLoading, .didFetchArts([artMock])], presenterSpy.presentResponseArgs)
     }
 
     func test_fetchArts_artWorkerError() throws {
         artWorker.fetchArtResult = .failure(Seeds.error)
-        sut.processRequest(request: .fetchArts)
-        XCTAssertEqual(2, presenterSpy.presentResponseArgs.count)
-        XCTAssertEqual(.didBeginLoading, presenterSpy.presentResponseArgs.first)
-        XCTAssertEqual(.didError(Seeds.error), presenterSpy.presentResponseArgs.last)
+        sut.processRequest(.fetchArts)
+        XCTAssertEqual([.didBeginLoading, .didError(Seeds.error)], presenterSpy.presentResponseArgs)
     }
 
     func test_selectArt() throws {
         sut.arts = [artMock]
         XCTAssertNil(sut.selectedArt)
-        sut.processRequest(request: .selectArt(index: 0))
+        sut.processRequest(.selectArt(index: 0))
         XCTAssertNotNil(sut.selectedArt)
     }
 }

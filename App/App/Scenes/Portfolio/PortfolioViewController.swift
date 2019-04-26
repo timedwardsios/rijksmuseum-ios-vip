@@ -4,13 +4,13 @@ import Utils
 
 class PortfolioViewController: UICollectionViewController {
 
-    let processRequest: (PortfolioRequest)->Void
-    let followRoute: (PortfolioRoute)->Void
+    let interactor: PortfolioInteracting
+    let router: PortfolioRouting
 
-    init(processRequest: @escaping (PortfolioRequest)->Void,
-         followRoute: @escaping (PortfolioRoute)->Void){
-        self.processRequest = processRequest
-        self.followRoute = followRoute
+    init(interactor: PortfolioInteracting,
+        router: PortfolioRouting){
+        self.interactor = interactor
+        self.router = router
         super.init(collectionViewLayout: .init())
     }
 
@@ -29,6 +29,7 @@ class PortfolioViewController: UICollectionViewController {
 
 // MARK: - Overrides
 extension PortfolioViewController{
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         setupSubviews()
@@ -38,7 +39,7 @@ extension PortfolioViewController{
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
-        processRequest(.fetchArts)
+        interactor.processRequest(.fetchArts)
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -84,13 +85,14 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        processRequest(.selectArt(index: indexPath.row))
-        followRoute(.listing)
+        interactor.processRequest(.selectArt(index: indexPath.row))
+        router.routeToListing()
     }
 }
 
-extension PortfolioViewController {
-    func displayViewModel(viewModel: PortfolioViewModel) {
+extension PortfolioViewController: PortfolioDisplaying {
+    
+    func displayViewModel(_ viewModel: PortfolioViewModel) {
         DispatchQueue.main.async { [weak self] in
             switch viewModel {
             case .isLoading(let isLoading):
@@ -149,6 +151,6 @@ private extension PortfolioViewController {
 // MARK: - Selectors
 @objc extension PortfolioViewController {
     func didPullToRefresh() {
-        processRequest(.fetchArts)
+        interactor.processRequest(.fetchArts)
     }
 }

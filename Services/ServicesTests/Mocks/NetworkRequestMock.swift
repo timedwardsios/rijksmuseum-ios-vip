@@ -4,7 +4,7 @@ import UtilsTestTools
 import Utils
 @testable import Services
 
-class NetworkRequestMock: NetworkRequest {
+struct NetworkRequestMock: NetworkRequest, Equatable {
     var url = Seeds.url
     var method = NetworkMethod.GET
 }

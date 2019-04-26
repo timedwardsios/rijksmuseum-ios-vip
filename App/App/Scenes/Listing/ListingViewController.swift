@@ -4,12 +4,12 @@ import SDWebImage
 
 class ListingViewController: UIViewController{
 
-    let processRequest: (ListingRequest)->Void
+    let interactor: ListingInteracting
 
     let imageView = UIImageView()
 
-    init(processRequest: @escaping (ListingRequest)->Void) {
-        self.processRequest = processRequest
+    init(interactor: ListingInteracting) {
+        self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -19,7 +19,7 @@ class ListingViewController: UIViewController{
         super.viewDidLoad()
         setupSubviews()
         title = "Rijksmuseum"
-        processRequest(.loadArt)
+        interactor.processRequest(.loadArt)
     }
 }
 
@@ -32,8 +32,9 @@ private extension ListingViewController {
     }
 }
 
-extension ListingViewController {
-    func displayViewModel(viewModel: ListingViewModel) {
+extension ListingViewController: ListingDisplaying {
+
+    func displayViewModel(_ viewModel: ListingViewModel) {
         switch viewModel {
         case .imageUrl(let url):
             imageView.sd_setImage(with: url,

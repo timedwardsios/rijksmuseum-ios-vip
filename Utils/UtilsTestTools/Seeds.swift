@@ -8,10 +8,10 @@ public extension Seeds {
         return UUID().uuidString
     }
 
+    struct ErrorSeed: LocalizedError {
+        var errorDescription = UUID().uuidString
+    }
     static var error: Error {
-        struct ErrorSeed: LocalizedError {
-            var errorDescription = UUID().uuidString
-        }
         return ErrorSeed()
     }
 

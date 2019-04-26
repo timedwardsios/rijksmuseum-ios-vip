@@ -7,30 +7,30 @@ class ArtWorkerTests: XCTestCase {
 
     var sut: ArtWorkerDefault!
 
-    var apiRequestFactory: APIRequestFactorySpy!
-    var networkRequestFactory: NetworkRequestFactorySpy!
-    var networkService: NetworkServiceSpy!
-    var artFactory: ArtFactorySpy!
+    var apiRequestFactorySpy: APIRequestFactorySpy!
+    var networkRequestFactorySpy: NetworkRequestFactorySpy!
+    var networkServiceSpy: NetworkServiceSpy!
+    var artFactorySpy: ArtFactorySpy!
 
-    var apiRequest: APIRequestMock!
-    var networkRequest: NetworkRequestMock!
-    var art: ArtMock!
+    var apiRequestMock: APIRequestMock!
+    var networkRequestMock: NetworkRequestMock!
+    var artMock: ArtMock!
 
     override func setUp() {
         super.setUp()
 
-        apiRequest = .init()
-        networkRequest = .init()
-        art = .init()
+        apiRequestMock = .init()
+        networkRequestMock = .init()
+        artMock = .init()
 
-        apiRequestFactory = .init(createRequestResult: apiRequest)
-        networkRequestFactory = .init(createRequestResult: .success(networkRequest))
-        networkService = .init(processRequestResult: .success(Seeds.data))
-        artFactory = .init(createArtsResult: .success([art]))
-        sut = .init(apiRequestFactory: apiRequestFactory,
-                    networkRequestFactory: networkRequestFactory,
-                    networkService: networkService,
-                    artFactory: artFactory)
+        apiRequestFactorySpy = .init(createRequestResult: apiRequestMock)
+        networkRequestFactorySpy = .init(createRequestResult: .success(networkRequestMock))
+        networkServiceSpy = .init(processRequestResult: .success(Seeds.data))
+        artFactorySpy = .init(createArtsResult: .success([artMock]))
+        sut = .init(apiRequestFactory: apiRequestFactorySpy,
+                    networkRequestFactory: networkRequestFactorySpy,
+                    networkService: networkServiceSpy,
+                    artFactory: artFactorySpy)
     }
 }
 
@@ -38,11 +38,11 @@ extension ArtWorkerTests {
     func test_fetchArt(){
         let exp = XCTestExpectation()
         sut.fetchArt { (result) in
-            XCTAssertEqual(self.art.id, result.unwrap()?.first?.id)
-            XCTAssertEqual(APIEndpoint.art, self.apiRequestFactory.createRequestArgs.last)
-            XCTAssertEqual(self.apiRequest.path, self.networkRequestFactory.createRequestArgs.last?.path)
-            XCTAssertEqual(self.networkRequest.url, self.networkService.processRequestArgs.last?.url)
-            XCTAssertEqual(self.networkService.processRequestResult.unwrap(), self.artFactory.createArtsArgs.last)
+            XCTAssertEqual([self.artMock], result.unwrap() as? [ArtMock])
+            XCTAssertEqual([APIEndpoint.art], self.apiRequestFactorySpy.createRequestArgs)
+            XCTAssertEqual([self.apiRequestMock], self.networkRequestFactorySpy.createRequestArgs as? [APIRequestMock])
+            XCTAssertEqual([self.networkRequestMock], self.networkServiceSpy.processRequestArgs as? [NetworkRequestMock])
+            XCTAssertEqual([self.networkServiceSpy.processRequestResult.unwrap()], self.artFactorySpy.createArtsArgs)
             exp.fulfill()
         }
         wait(exp)
@@ -50,7 +50,7 @@ extension ArtWorkerTests {
 
     func test_fetchArt_networkRequestError(){
         let exp = XCTestExpectation()
-        networkRequestFactory.createRequestResult = .failure(Seeds.error)
+        networkRequestFactorySpy.createRequestResult = .failure(Seeds.error)
         sut.fetchArt { (result) in
             XCTAssertTrue(result.isFailure)
             exp.fulfill()
@@ -60,7 +60,7 @@ extension ArtWorkerTests {
 
     func test_fetchArt_networkServiceError(){
         let exp = XCTestExpectation()
-        networkService.processRequestResult = .failure(Seeds.error)
+        networkServiceSpy.processRequestResult = .failure(Seeds.error)
         sut.fetchArt { (result) in
             XCTAssertTrue(result.isFailure)
             exp.fulfill()
@@ -70,7 +70,7 @@ extension ArtWorkerTests {
 
     func test_fetchArt_artFactoryError(){
         let exp = XCTestExpectation()
-        artFactory.createArtsResult = .failure(Seeds.error)
+        artFactorySpy.createArtsResult = .failure(Seeds.error)
         sut.fetchArt { (result) in
             XCTAssertTrue(result.isFailure)
             exp.fulfill()

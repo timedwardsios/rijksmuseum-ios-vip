@@ -5,18 +5,18 @@ import Utils
 
 class ListingInteractor {
 
-    let presentResponse: (ListingResponse)->Void
+    let presenter: ListingPresenting
     let art: Art
 
-    init(presentResponse: @escaping (ListingResponse)->Void,
+    init(presenter: ListingPresenting,
          art:Art) {
-        self.presentResponse = presentResponse
+        self.presenter = presenter
         self.art = art
     }
 }
 
-extension ListingInteractor {
-    func processRequest(request: ListingRequest) {
-        presentResponse(.didLoadArt(art))
+extension ListingInteractor: ListingInteracting {
+    func processRequest(_ request: ListingRequest) {
+        presenter.presentResponse(.didLoadArt(art))
     }
 }
