@@ -1,6 +1,4 @@
-Finish VIP unit testing
-
-Introduce equatable
+Introduce equatable to tests
 
 Update tests to use structs for mocks
 

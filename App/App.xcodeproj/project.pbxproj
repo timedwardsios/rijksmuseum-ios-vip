@@ -34,6 +34,8 @@
 		22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */; };
 		22BC0419227340E400032509 /* InteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC0418227340E400032509 /* InteractorSpy.swift */; };
 		22BC041B2273411D00032509 /* DisplaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC041A2273411D00032509 /* DisplaySpy.swift */; };
+		22BC041F2273A11C00032509 /* ListingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC041E2273A11C00032509 /* ListingInteractorTests.swift */; };
+		22BC04212273A27300032509 /* ListingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04202273A27300032509 /* ListingPresenterTests.swift */; };
 		5A8C1210C1A4D88029384924 /* Pods_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D423CE397C56E04579F7E1E1 /* Pods_AppTests.framework */; };
 		D32F2D023CE356875C5E4FD7 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB77412EEC4466EA87789A04 /* Pods_App.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +92,8 @@
 		22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22BC0418227340E400032509 /* InteractorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorSpy.swift; sourceTree = "<group>"; };
 		22BC041A2273411D00032509 /* DisplaySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplaySpy.swift; sourceTree = "<group>"; };
+		22BC041E2273A11C00032509 /* ListingInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingInteractorTests.swift; sourceTree = "<group>"; };
+		22BC04202273A27300032509 /* ListingPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPresenterTests.swift; sourceTree = "<group>"; };
 		22C9BF19212F2DFE000D15E6 /* Workers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Workers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D88AEE212EF67E006E96AF /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		230A03C686A9C5E28B0806F6 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "../Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 			children = (
 				221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */,
 				221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */,
+				22BC041E2273A11C00032509 /* ListingInteractorTests.swift */,
+				22BC04202273A27300032509 /* ListingPresenterTests.swift */,
 			);
 			path = Portfolio;
 			sourceTree = "<group>";
@@ -503,10 +509,12 @@
 				2258B9FA2272754800516603 /* PresenterSpy.swift in Sources */,
 				22BC0419227340E400032509 /* InteractorSpy.swift in Sources */,
 				2258B98422723F5000516603 /* ArtWorkerSpy.swift in Sources */,
+				22BC04212273A27300032509 /* ListingPresenterTests.swift in Sources */,
 				2258B9F422724B7B00516603 /* ArtMock.swift in Sources */,
 				221830F2210FDA5900FA1E13 /* PortfolioPresenterTests.swift in Sources */,
 				22BC041B2273411D00032509 /* DisplaySpy.swift in Sources */,
 				221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */,
+				22BC041F2273A11C00032509 /* ListingInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

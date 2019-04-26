@@ -56,7 +56,7 @@ extension PortfolioPresenterTests {
         XCTAssertEqual(.imageUrls([URL]()), displaySpy.displayViewModelArgs.last)
     }
 
-    func test_didFetchArts_error(){
+    func test_didError(){
         let error = Seeds.error
         sut.presentResponse(response: .didError(error))
         XCTAssertEqual(2, displaySpy.displayViewModelArgs.count)

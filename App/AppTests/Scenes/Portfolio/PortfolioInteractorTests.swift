@@ -8,7 +8,7 @@ extension PortfolioResponse: Equatable {
         switch (lhs, rhs) {
         case (.didBeginLoading, .didBeginLoading):
             return true
-        case (PortfolioResponse.didFetchArts(let artsLeft), PortfolioResponse.didFetchArts(let artsRight)):
+        case (.didFetchArts(let artsLeft), .didFetchArts(let artsRight)):
             if let artsLeft = artsLeft as? [ArtMock],
                 let artsRight = artsRight as? [ArtMock],
                 artsLeft == artsRight {
@@ -49,7 +49,7 @@ extension PortfolioInteractorTests {
         XCTAssertEqual(1, artWorker.fetchArtArgs)
         XCTAssertEqual(2, presenterSpy.presentResponseArgs.count)
         XCTAssertEqual(.didBeginLoading, presenterSpy.presentResponseArgs.first)
-        XCTAssertEqual(PortfolioResponse.didFetchArts([artMock]), presenterSpy.presentResponseArgs.last)
+        XCTAssertEqual(.didFetchArts([artMock]), presenterSpy.presentResponseArgs.last)
     }
 
     func test_fetchArts_artWorkerError() throws {
