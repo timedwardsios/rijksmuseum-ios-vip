@@ -3,7 +3,7 @@ import Foundation
 import UtilsTestTools
 @testable import Services
 
-class ArtMock: Art {
+struct ArtMock: Art, Equatable {
     var id = Seeds.string
     var title = Seeds.string
     var artist = Seeds.string

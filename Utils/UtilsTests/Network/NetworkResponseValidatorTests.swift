@@ -6,12 +6,13 @@ import UtilsTestTools
 class NetworkResponseValidatorTests: XCTestCase {
 
     var sut: NetworkResponseValidatorDefault!
+
     var response: NetworkResponseMock!
 
     override func setUp() {
         super.setUp()
         sut = .init()
-        response = .init(data: Seeds.data, urlResponse: Seeds.urlResponse, error: nil)
+        response = .init()
     }
 }
 

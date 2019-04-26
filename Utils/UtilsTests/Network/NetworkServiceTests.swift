@@ -8,13 +8,14 @@ class NetworkServiceTests: XCTestCase {
     var sut: NetworkServiceDefault!
     var networkResponseValidator: NetworkResponseValidatorSpy!
     var networkSession: NetworkSessionSpy!
-    var networkRequest:NetworkRequestMock!
     var dataTask: NetworkSessionDataTaskSpy!
+
+    var networkRequest:NetworkRequestMock!
 
     override func setUp() {
         super.setUp()
         networkResponseValidator = .init(validateResponseAndUnwrapDataResult: .success(Seeds.data))
-        networkRequest = .init(url: Seeds.url, method: .GET)
+        networkRequest = .init()
         dataTask = NetworkSessionDataTaskSpy()
         networkSession = .init(dataTask: dataTask,
                                data: Seeds.data,

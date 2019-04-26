@@ -6,6 +6,7 @@ import UtilsTestTools
 class ArtFactoryTests: XCTestCase {
 
     var sut: ArtFactoryDefault!
+    
     var jsonDecoderService: JSONDecoderServiceSpy!
 
     override func setUp() {

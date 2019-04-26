@@ -6,6 +6,7 @@ import UtilsTestTools
 class ArtWorkerTests: XCTestCase {
 
     var sut: ArtWorkerDefault!
+
     var apiRequestFactory: APIRequestFactorySpy!
     var networkRequestFactory: NetworkRequestFactorySpy!
     var networkService: NetworkServiceSpy!
@@ -18,20 +19,14 @@ class ArtWorkerTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        apiRequest = .init(path: Seeds.string, queryItems: [Seeds.urlQueryItem])
-
-        networkRequest = .init(url: Seeds.url, method: .GET)
-
-        art = .init(id: Seeds.string, title: Seeds.string, artist: Seeds.string, imageUrl: Seeds.url)
+        apiRequest = .init()
+        networkRequest = .init()
+        art = .init()
 
         apiRequestFactory = .init(createRequestResult: apiRequest)
-
         networkRequestFactory = .init(createRequestResult: .success(networkRequest))
-
         networkService = .init(processRequestResult: .success(Seeds.data))
-
         artFactory = .init(createArtsResult: .success([art]))
-
         sut = .init(apiRequestFactory: apiRequestFactory,
                     networkRequestFactory: networkRequestFactory,
                     networkService: networkService,

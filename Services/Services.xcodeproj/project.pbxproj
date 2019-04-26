@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		220A4B612271A6EB00139189 /* APIConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A4B602271A6EB00139189 /* APIConfigMock.swift */; };
-		220A4B632271A7EB00139189 /* APIEndpointMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A4B622271A7EB00139189 /* APIEndpointMock.swift */; };
+		220A4B632271A7EB00139189 /* APIRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A4B622271A7EB00139189 /* APIRequestMock.swift */; };
 		22154539226720DD0062E9C6 /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */; };
 		2215454922672A8D0062E9C6 /* NetworkRequestFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215454822672A8D0062E9C6 /* NetworkRequestFactorySpy.swift */; };
 		221BDF2F2270DEA100631270 /* NetworkServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */; };
@@ -49,7 +49,7 @@
 /* Begin PBXFileReference section */
 		220A4B5A22719CFD00139189 /* TestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220A4B602271A6EB00139189 /* APIConfigMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfigMock.swift; sourceTree = "<group>"; };
-		220A4B622271A7EB00139189 /* APIEndpointMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpointMock.swift; sourceTree = "<group>"; };
+		220A4B622271A7EB00139189 /* APIRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestMock.swift; sourceTree = "<group>"; };
 		22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactory.swift; sourceTree = "<group>"; };
 		2215454822672A8D0062E9C6 /* NetworkRequestFactorySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactorySpy.swift; sourceTree = "<group>"; };
 		221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceSpy.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				220A4B602271A6EB00139189 /* APIConfigMock.swift */,
-				220A4B622271A7EB00139189 /* APIEndpointMock.swift */,
+				220A4B622271A7EB00139189 /* APIRequestMock.swift */,
 				2290FCB62271AA92009E5B47 /* NetworkRequestMock.swift */,
 				2258B975227219E700516603 /* ArtMock.swift */,
 			);
@@ -453,7 +453,7 @@
 				2215454922672A8D0062E9C6 /* NetworkRequestFactorySpy.swift in Sources */,
 				222BB71B2271E53A0027F2EB /* JSONDecoderServiceSpy.swift in Sources */,
 				221BDF2F2270DEA100631270 /* NetworkServiceSpy.swift in Sources */,
-				220A4B632271A7EB00139189 /* APIEndpointMock.swift in Sources */,
+				220A4B632271A7EB00139189 /* APIRequestMock.swift in Sources */,
 				2258B970227217C300516603 /* ArtWorkerTests.swift in Sources */,
 				2258B95B2271FA7D00516603 /* ArtFactoryTests.swift in Sources */,
 				2258B976227219E700516603 /* ArtMock.swift in Sources */,

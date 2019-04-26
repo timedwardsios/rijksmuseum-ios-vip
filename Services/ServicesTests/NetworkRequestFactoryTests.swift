@@ -6,19 +6,15 @@ import UtilsTestTools
 class NetworkRequestFactoryTests: XCTestCase {
 
     var sut: NetworkRequestFactoryDefault!
+
     var apiConfig: APIConfigMock!
     var apiRequest: APIRequestMock!
 
     override func setUp() {
         super.setUp()
-        apiConfig = APIConfigMock(path: "/" + Seeds.string,
-                                  queryItems: [Seeds.urlQueryItem],
-                                  scheme: "https",
-                                  host: Seeds.string)
+        apiConfig = .init()
         sut = .init(apiConfig: apiConfig)
-
-        apiRequest = APIRequestMock(path: "/" + Seeds.string,
-                                      queryItems: [Seeds.urlQueryItem])
+        apiRequest = .init()
     }
 }
 

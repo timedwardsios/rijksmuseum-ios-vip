@@ -1,22 +1,11 @@
 
 import Foundation
-import Utils
+import UtilsTestTools
 @testable import Services
 
 class ArtMock: Art {
-    
-    var id: String
-    var title: String
-    var artist: String
-    var imageUrl: URL
-    
-    init(id: String,
-         title: String,
-         artist: String,
-         imageUrl: URL) {
-        self.id = id
-        self.title = title
-        self.artist = artist
-        self.imageUrl = imageUrl
-    }
+    var id = Seeds.string
+    var title = Seeds.string
+    var artist = Seeds.string
+    var imageUrl = Seeds.url
 }

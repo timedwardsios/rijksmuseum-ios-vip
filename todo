@@ -1,6 +1,6 @@
-Make mocks instantiate their own seeds instead of doing it in tests
-
 Finish VIP unit testing
+
+Update tests to use structs for mocks
 
 Check for retain cylce through functions
 

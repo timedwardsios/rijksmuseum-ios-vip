@@ -1,18 +1,10 @@
 
 import Foundation
+import UtilsTestTools
 @testable import Utils
 
 class NetworkResponseMock: NetworkResponse {
-    
-    var data: Data?
-    var urlResponse: URLResponse?
-    var error: Error?
-
-    init(data: Data?,
-         urlResponse: URLResponse?,
-        error: Error?) {
-        self.data = data
-        self.urlResponse = urlResponse
-        self.error = error
-    }
+    var data: Data? = Seeds.data
+    var urlResponse: URLResponse? = Seeds.urlResponse
+    var error: Error? = nil
 }
