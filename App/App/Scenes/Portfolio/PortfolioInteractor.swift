@@ -4,12 +4,12 @@ import Utils
 
 class PortfolioInteractor: PortfolioDataStoring {
 
-    let present: (PortfolioResponse)->Void
+    let presentResponse: (PortfolioResponse)->Void
     let artWorker: ArtWorker
 
-    init(present: @escaping (PortfolioResponse)->Void,
+    init(presentResponse: @escaping (PortfolioResponse)->Void,
          artWorker: ArtWorker) {
-        self.present = present
+        self.presentResponse = presentResponse
         self.artWorker = artWorker
     }
 
@@ -19,17 +19,17 @@ class PortfolioInteractor: PortfolioDataStoring {
 
 extension PortfolioInteractor {
 
-    func interact(request: PortfolioRequest) {
+    func processRequest(request: PortfolioRequest) {
         switch request {
         case .fetchArts:
-            present(.didBeginLoading)
+            presentResponse(.didBeginLoading)
             artWorker.fetchArt { [weak self] (result) in
                 guard let self = self else {return}
                 do {
                     self.arts = try result.get()
-                    self.present(.didFetchArts(self.arts))
+                    self.presentResponse(.didFetchArts(self.arts))
                 } catch (let error) {
-                    self.present(.didError(error))
+                    self.presentResponse(.didError(error))
                 }
             }
         case .selectArt(let index):

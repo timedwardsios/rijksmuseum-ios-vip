@@ -9,7 +9,9 @@ public extension Seeds {
     }
 
     static var error: Error {
-        struct ErrorSeed: Error {}
+        struct ErrorSeed: LocalizedError {
+            var errorDescription = UUID().uuidString
+        }
         return ErrorSeed()
     }
 

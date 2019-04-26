@@ -4,12 +4,12 @@ import Utils
 
 class PortfolioViewController: UICollectionViewController {
 
-    let interact: (PortfolioRequest)->Void
+    let processRequest: (PortfolioRequest)->Void
     let router: PortfolioRouting
 
-    init(interact: @escaping (PortfolioRequest)->Void,
+    init(processRequest: @escaping (PortfolioRequest)->Void,
          router: PortfolioRouting){
-        self.interact = interact
+        self.processRequest = processRequest
         self.router = router
         super.init(collectionViewLayout: .init())
     }
@@ -38,7 +38,7 @@ extension PortfolioViewController{
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
-        interact(.fetchArts)
+        processRequest(.fetchArts)
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -84,13 +84,13 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-//        interactor.processSelectArtRequest(.init(index: indexPath.row))
+        processRequest(.selectArt(index: indexPath.row))
         router.routeToListing()
     }
 }
 
 extension PortfolioViewController {
-    func display(viewModel: PortfolioViewModel) {
+    func displayViewModel(viewModel: PortfolioViewModel) {
         DispatchQueue.main.async { [weak self] in
             switch viewModel {
             case .isLoading(let isLoading):
@@ -149,6 +149,6 @@ private extension PortfolioViewController {
 // MARK: - Selectors
 @objc extension PortfolioViewController {
     func didPullToRefresh() {
-        interact(.fetchArts)
+        processRequest(.fetchArts)
     }
 }

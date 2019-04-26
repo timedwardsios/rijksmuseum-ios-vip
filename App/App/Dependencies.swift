@@ -8,10 +8,12 @@ protocol Dependencies: Services.Dependencies {}
 internal extension Dependencies {
     func resolve() -> PortfolioViewController {
         let presenter = PortfolioPresenter()
-        let interactor = PortfolioInteractor(present: presenter.present, artWorker: resolve())
+        let interactor = PortfolioInteractor(presentResponse: presenter.presentResponse,
+                                             artWorker: resolve())
         let router = PortfolioRouter(dependencies: self, dataStore: interactor)
-        let viewController = PortfolioViewController(interact: interactor.interact, router: router)
-        presenter.display = viewController.display
+        let viewController = PortfolioViewController(processRequest: interactor.processRequest,
+                                                     router: router)
+        presenter.displayViewModel = viewController.displayViewModel
         router.viewController = viewController
         return viewController
     }

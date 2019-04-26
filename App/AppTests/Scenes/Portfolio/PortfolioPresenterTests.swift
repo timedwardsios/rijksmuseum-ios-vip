@@ -1,84 +1,66 @@
-//
-//import XCTest
-//@testable import App
-//
-//class PortfolioPresenterTests: XCTestCase {
-//    var sut: PortfolioPresenter!
-//    var outputMock: OutputMock!
-//    override func setUp() {
-//        super.setUp()
-//        outputMock = OutputMock()
-//        sut = PortfolioPresenter()
-//        sut.output = outputMock
-//    }
-//
-//}
-//
-//extension PortfolioPresenterTests {
-//    class OutputMock: PortfolioPresenterOutput {
-//        var presentFetchArt_loadingArgs = 0
-//        var presentFetchArt_loadedArgs = 0
-//        var presentFetchArt_loaded_value:[URL]?
-//        var presentFetchArt_errorArgs = 0
-//        var presentFetchArt_error_value:String?
-//        func displayFetchArt(viewModel: Portfolio.FetchArt.ViewModel) {
-//            switch viewModel.state {
-//            case .loading:
-//                presentFetchArt_loadingArgs += 1
-//            case .loaded(let imageUrls):
-//                presentFetchArt_loadedArgs += 1
-//                presentFetchArt_loaded_value = imageUrls
-//            case .error(let errorMessage):
-//                presentFetchArt_errorArgs += 1
-//                presentFetchArt_error_value = errorMessage
-//            }
-//        }
-//    }
-//}
-//
-//
-//extension PortfolioPresenterTests {
-//    func test_didFetchArt(){
-//        // given
-//        let response = Portfolio.FetchArt.Response(state: .loading)
-//        // when
-//        sut.presentFetchArt(response: response)
-//    }
-//
-//    func test_didFetchArt_viewController_loading(){
-//        // given
-//        let response = Portfolio.FetchArt.Response(state: .loading)
-//        // when
-//        sut.presentFetchArt(response: response)
-//        XCTAssert(outputMock.presentFetchArt_loadingArgs == 1)
-//    }
-//
-//    func test_didFetchArt_viewController_loaded(){
-//        let artSeed = Seeds.Model.ArtSeed()
-//        let response = Portfolio.FetchArt.Response(state: .loaded([artSeed]))
-//        sut.presentFetchArt(response: response)
-//        XCTAssert(outputMock.presentFetchArt_loadedArgs == 1)
-//    }
-//
-//    func test_didFetchArt_viewController_loaded_value(){
-//        let artSeed = Seeds.Model.ArtSeed()
-//        let response = Portfolio.FetchArt.Response(state: .loaded([artSeed]))
-//        sut.presentFetchArt(response: response)
-//        let firstValue = outputMock.presentFetchArt_loaded_value?.first
-//        XCTAssert(firstValue == artSeed.imageUrl)
-//    }
-//
-//    func test_didFetchArt_viewController_error(){
-//        let errorSeed = Seeds.ErrorSeed.generic
-//        let response = Portfolio.FetchArt.Response(state: .error(errorSeed))
-//        sut.presentFetchArt(response: response)
-//        XCTAssert(outputMock.presentFetchArt_errorArgs == 1)
-//    }
-//
-//    func test_didFetchArt_viewController_error_value(){
-//        let errorSeed = Seeds.ErrorSeed.generic
-//        let response = Portfolio.FetchArt.Response(state: .error(errorSeed))
-//        sut.presentFetchArt(response: response)
-//        XCTAssert(outputMock.presentFetchArt_error_value == errorSeed.message)
-//    }
-//}
+
+import XCTest
+import UtilsTestTools
+@testable import App
+
+extension PortfolioViewModel: Equatable {
+    public static func == (lhs: PortfolioViewModel, rhs: PortfolioViewModel) -> Bool {
+        switch (lhs, rhs) {
+        case (.isLoading(let isLoadingLeft), .isLoading(let isLoadingRight)):
+            return isLoadingLeft == isLoadingRight
+        case (.imageUrls(let imageUrlsLeft), .imageUrls(let imageUrlsRight)):
+            return imageUrlsLeft == imageUrlsRight
+        case (.errorAlertMessage(let messageLeft), .errorAlertMessage(let messageRight)):
+            return messageLeft == messageRight
+        default:
+            return false
+        }
+    }
+}
+
+class PortfolioPresenterTests: XCTestCase {
+
+    var sut: PortfolioPresenter!
+
+    var displaySpy: DisplaySpy<PortfolioViewModel>!
+
+    var artMock: ArtMock!
+
+    override func setUp() {
+        super.setUp()
+        artMock = .init()
+        displaySpy = .init()
+        sut = .init(displayViewModel: displaySpy.displayViewModel)
+    }
+}
+
+extension PortfolioPresenterTests {
+
+    func test_didBeginLoading(){
+        sut.presentResponse(response: .didBeginLoading)
+        XCTAssertEqual(1, displaySpy.displayViewModelArgs.count)
+        XCTAssertEqual(.isLoading(true), displaySpy.displayViewModelArgs.last)
+    }
+
+    func test_didFetchArts(){
+        sut.presentResponse(response: .didFetchArts([artMock]))
+        XCTAssertEqual(2, displaySpy.displayViewModelArgs.count)
+        XCTAssertEqual(.isLoading(false), displaySpy.displayViewModelArgs.first)
+        XCTAssertEqual(.imageUrls([artMock.imageUrl]), displaySpy.displayViewModelArgs.last)
+    }
+
+    func test_didFetchArts_empty(){
+        sut.presentResponse(response: .didFetchArts([ArtMock]()))
+        XCTAssertEqual(2, displaySpy.displayViewModelArgs.count)
+        XCTAssertEqual(.isLoading(false), displaySpy.displayViewModelArgs.first)
+        XCTAssertEqual(.imageUrls([URL]()), displaySpy.displayViewModelArgs.last)
+    }
+
+    func test_didFetchArts_error(){
+        let error = Seeds.error
+        sut.presentResponse(response: .didError(error))
+        XCTAssertEqual(2, displaySpy.displayViewModelArgs.count)
+        XCTAssertEqual(.isLoading(false), displaySpy.displayViewModelArgs.first)
+        XCTAssertEqual(.errorAlertMessage(error.localizedDescription), displaySpy.displayViewModelArgs.last)
+    }
+}

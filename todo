@@ -1,3 +1,4 @@
+Do routing and data store
 Finish VIP unit testing
 
 Update tests to use structs for mocks
