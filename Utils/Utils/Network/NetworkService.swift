@@ -19,10 +19,20 @@ public protocol NetworkService {
                         completion: @escaping (Result<Data, Error>) -> Void)
 }
 
-class NetworkServiceDefault{
+private struct NetworkResponseDefault: NetworkResponse {
+    var data: Data?
+    var urlResponse: URLResponse?
+    var error: Swift.Error?
+}
 
-    let networkSession: NetworkSession
-    let networkResponseValidator: NetworkResponseValidator
+private enum LocalError: String, LocalizedError{
+    case badValidation = "Failed to validate network response"
+}
+
+internal class NetworkServiceDefault {
+
+    private let networkSession: NetworkSession
+    private let networkResponseValidator: NetworkResponseValidator
 
     init(networkSession: NetworkSession,
          networkResponseValidator: NetworkResponseValidator){
@@ -32,17 +42,7 @@ class NetworkServiceDefault{
 }
 
 extension NetworkServiceDefault: NetworkService {
-    enum LocalError: String, LocalizedError{
-        case badValidation = "Failed to validate network response"
-    }
-
-    private struct NetworkResponseDefault: NetworkResponse {
-        var data: Data?
-        var urlResponse: URLResponse?
-        var error: Swift.Error?
-    }
-
-
+    
     func processRequest(_ request: NetworkRequest, completion: @escaping (Result<Data, Error>) -> Void) {
         var urlRequest = URLRequest(url: request.url)
         urlRequest.httpMethod = request.method.rawValue

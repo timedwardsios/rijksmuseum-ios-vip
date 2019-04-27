@@ -1,7 +1,7 @@
 
 import Foundation
 
-protocol NetworkSession {
+internal protocol NetworkSession {
     typealias DataTask = NetworkSessionDataTask
     func dataTask(with request: URLRequest,
                   completionHandler: @escaping DataTask.Completion) -> DataTask

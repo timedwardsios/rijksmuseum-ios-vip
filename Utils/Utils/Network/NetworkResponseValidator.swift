@@ -1,24 +1,25 @@
 
 import Foundation
 
-protocol NetworkResponse {
+internal protocol NetworkResponse {
     var data: Data? {get}
     var urlResponse: URLResponse? {get}
     var error: Error? {get}
 }
 
-protocol NetworkResponseValidator {
+internal protocol NetworkResponseValidator {
     func validateResponseAndUnwrapData(_ response: NetworkResponse) throws -> Data
+}
+
+private enum LocalError: String, LocalizedError{
+    case noData = "No data"
+    case invalidResponseFormat = "Invalid response format"
+    case badStatusCode = "Invalid status code"
 }
 
 class NetworkResponseValidatorDefault{}
 
 extension NetworkResponseValidatorDefault: NetworkResponseValidator {
-    enum LocalError: String, LocalizedError{
-        case noData = "No data"
-        case invalidResponseFormat = "Invalid response format"
-        case badStatusCode = "Invalid status code"
-    }
 
     func validateResponseAndUnwrapData(_ response: NetworkResponse) throws -> Data {
         guard let data = response.data else {
