@@ -6,7 +6,13 @@ public protocol ArtWorker {
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void)
 }
 
-class ArtWorkerDefault {
+private enum LocalError: String, LocalizedError{
+    case networkRequestCreationFailure
+    case networkServiceFailure
+    case artFactoryFailure
+}
+
+internal class ArtWorkerDefault {
     let apiRequestFactory: APIRequestFactory
     let networkRequestFactory: NetworkRequestFactory
     let networkService: NetworkService
@@ -45,13 +51,5 @@ extension ArtWorkerDefault: ArtWorker {
             completion(.success(arts))
         }
 
-    }
-}
-
-private extension ArtWorkerDefault {
-    private enum LocalError: String, LocalizedError{
-        case networkRequestCreationFailure
-        case networkServiceFailure
-        case artFactoryFailure
     }
 }

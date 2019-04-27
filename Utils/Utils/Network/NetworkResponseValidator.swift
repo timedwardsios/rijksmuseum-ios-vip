@@ -17,7 +17,7 @@ private enum LocalError: String, LocalizedError{
     case badStatusCode = "Invalid status code"
 }
 
-class NetworkResponseValidatorDefault{}
+internal class NetworkResponseValidatorDefault{}
 
 extension NetworkResponseValidatorDefault: NetworkResponseValidator {
 

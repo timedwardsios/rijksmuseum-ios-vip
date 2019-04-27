@@ -2,27 +2,28 @@
 import Foundation
 import Utils
 
-enum APIEndpoint {
+internal enum APIEndpoint {
     case art
 }
 
-protocol APIRequest {
+internal protocol APIRequest {
     var path: String {get}
     var queryItems: [URLQueryItem] {get}
 }
 
-protocol APIRequestFactory {
+internal protocol APIRequestFactory {
     func createRequest(fromAPIEndpoint apiEndpoint:APIEndpoint) -> APIRequest
 }
 
-class APIRequestFactoryDefault{}
+private struct Request: APIRequest {
+    var path: String
+    var queryItems: [URLQueryItem]
+}
+
+internal class APIRequestFactoryDefault{}
 
 extension APIRequestFactoryDefault: APIRequestFactory {
-    private struct Request: APIRequest {
-        var path: String
-        var queryItems: [URLQueryItem]
-    }
-
+    
     func createRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest {
         switch apiEndpoint {
         case .art:

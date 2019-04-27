@@ -2,38 +2,38 @@
 import Foundation
 import Utils
 
-protocol APIConfig {
+internal protocol APIConfig {
     var path: String {get}
     var queryItems: [URLQueryItem] {get}
     var scheme: String {get}
     var host: String {get}
 }
 
-protocol NetworkRequestFactory {
+internal protocol NetworkRequestFactory {
     func createRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest
 }
 
-class NetworkRequestFactoryDefault{
+private struct APINetworkRequest: NetworkRequest {
+    var url: URL
+    var method: NetworkMethod
+}
+
+internal class NetworkRequestFactoryDefault{
     let apiConfig: APIConfig
     init(apiConfig:APIConfig){
         self.apiConfig = apiConfig
     }
 }
 
+private enum LocalError: String, LocalizedError{
+    case unableToConstructURL
+    case invalidConfigScheme
+    case invalidConfigHost
+    case invalidEndpointPath
+}
+
 extension NetworkRequestFactoryDefault: NetworkRequestFactory {
-    private enum LocalError: String, LocalizedError{
-        case unableToConstructURL
-        case invalidConfigScheme
-        case invalidConfigHost
-        case invalidEndpointPath
-    }
-
-    private struct APINetworkRequest: NetworkRequest {
-        var url: URL
-        var method: NetworkMethod
-    }
     
-
     func createRequest(fromAPIRequest apiRequest: APIRequest) throws -> NetworkRequest {
 
         if apiConfig.scheme != "http" && apiConfig.scheme != "https" {

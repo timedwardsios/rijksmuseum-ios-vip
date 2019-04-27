@@ -1,5 +1,6 @@
 
 import UIKit
+import SDWebImage
 import Utils
 
 class PortfolioViewController: UICollectionViewController, StoryboardLoadable {
@@ -7,6 +8,7 @@ class PortfolioViewController: UICollectionViewController, StoryboardLoadable {
     var interactor: PortfolioInteracting?
     var router: PortfolioRouting?
 
+    private let dataSource = DataSource<URL, PortfolioImageCell>()
     private let refreshControl = UIRefreshControl()
     private var imageUrls = [URL]()
 }
@@ -23,29 +25,13 @@ extension PortfolioViewController{
         collectionView.refreshControl = refreshControl
         view.backgroundColor = .init(hex: "343537")
         interactor?.fetchArts()
-    }
-}
 
-// MARK: - UICollectionViewDataSource
-extension PortfolioViewController {
-    override func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        return imageUrls.count
-    }
-
-    override func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let reuseId = PortfolioImageCell.reuseIdentifier
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId,
-                                                      for: indexPath)
-        guard let imageViewCell = cell as? PortfolioImageCell else {
+        dataSource.configureCell = { (cell: PortfolioImageCell, item: URL) -> PortfolioImageCell in
+            cell.imageView.sd_setImage(with: item)
             return cell
         }
-        guard imageUrls.indices.contains(indexPath.row) else {
-            return imageViewCell
-        }
-        imageViewCell.setImageURL(imageUrls[safe: indexPath.row])
-        return imageViewCell
+
+        collectionView.dataSource = dataSource
     }
 }
 
@@ -81,7 +67,8 @@ extension PortfolioViewController: PortfolioDisplaying {
 
     func displayImageUrls(_ urls: [URL]) {
         DispatchQueue.main.async { [weak self] in
-            self?.imageUrls = urls
+
+            self?.dataSource.items = urls
             self?.collectionView.reloadData()
         }
     }
