@@ -3,13 +3,7 @@ import UIKit
 import TinyConstraints
 import SDWebImage
 
-public class ImageViewCell: UICollectionViewCell {
-    public var imageUrl:URL?{
-        didSet{
-            imageView.sd_cancelCurrentImageLoad()
-            imageView.sd_setImage(with: imageUrl, completed: nil)
-        }
-    }
+class ImageViewCell: UICollectionViewCell {
 
     private let imageView = UIImageView()
 
@@ -22,9 +16,14 @@ public class ImageViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func setImageURL(_ url:URL?) {
+        imageView.sd_cancelCurrentImageLoad()
+        imageView.sd_setImage(with: url, completed: nil)
+    }
+
     private func setupSubviews(){
         contentView.backgroundColor = .lightGray
-
+        
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         addSubview(imageView)

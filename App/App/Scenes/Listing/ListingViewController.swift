@@ -4,22 +4,15 @@ import SDWebImage
 
 class ListingViewController: UIViewController{
 
-    let interactor: ListingInteracting
+    var interactor: ListingInteracting?
 
-    let imageView = UIImageView()
-
-    init(interactor: ListingInteracting) {
-        self.interactor = interactor
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {fatalError()}
+    private let imageView = UIImageView()
 
     override func viewDidLoad(){
         super.viewDidLoad()
         setupSubviews()
         title = "Rijksmuseum"
-        interactor.loadArt()
+        interactor?.loadArt()
     }
 }
 

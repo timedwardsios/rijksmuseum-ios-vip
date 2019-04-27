@@ -4,23 +4,12 @@ import Utils
 
 class PortfolioViewController: UICollectionViewController {
 
-    let interactor: PortfolioInteracting
-    let router: PortfolioRouting
+    var interactor: PortfolioInteracting?
+    var router: PortfolioRouting?
 
-    init(interactor: PortfolioInteracting,
-        router: PortfolioRouting){
-        self.interactor = interactor
-        self.router = router
-        super.init(collectionViewLayout: .init())
-    }
+    private let refreshControl = UIRefreshControl()
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    let refreshControl = UIRefreshControl()
-
-    var imageUrls = [URL](){
+    private var imageUrls = [URL](){
         didSet{
             collectionView.reloadData()
         }
@@ -39,7 +28,7 @@ extension PortfolioViewController{
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
-        interactor.fetchArts()
+        interactor?.fetchArts()
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -66,7 +55,7 @@ extension PortfolioViewController {
         guard imageUrls.indices.contains(indexPath.row) else {
             return imageViewCell
         }
-        imageViewCell.imageUrl = imageUrls[indexPath.row]
+        imageViewCell.setImageURL(imageUrls[safe: indexPath.row])
         return imageViewCell
     }
 }
@@ -85,8 +74,8 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        interactor.selectArt(atIndex: indexPath.row)
-        router.routeToListing()
+        interactor?.selectArt(atIndex: indexPath.row)
+        router?.routeToListing()
     }
 }
 
@@ -117,7 +106,6 @@ extension PortfolioViewController: PortfolioDisplaying {
     }
 }
 
-// MARK: - Private methods
 private extension PortfolioViewController {
 
     func setupSubviews(){
@@ -144,11 +132,8 @@ private extension PortfolioViewController {
                                                right: gutterSize)
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
     }
-}
 
-// MARK: - Selectors
-@objc extension PortfolioViewController {
-    func didPullToRefresh() {
-        interactor.fetchArts()
+    @objc func didPullToRefresh() {
+        interactor?.fetchArts()
     }
 }

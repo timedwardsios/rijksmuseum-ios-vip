@@ -37,6 +37,7 @@
 		22BC04262273C3BE00032509 /* PortfolioDisplaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04252273C3BE00032509 /* PortfolioDisplaySpy.swift */; };
 		22BC04282273C4D100032509 /* ListingPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04272273C4D100032509 /* ListingPresenterSpy.swift */; };
 		22BC042A2273C4E600032509 /* ListingDisplaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04292273C4E600032509 /* ListingDisplaySpy.swift */; };
+		22F55BD9227458AC00B8544A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F55BD8227458AC00B8544A /* Main.storyboard */; };
 		5A8C1210C1A4D88029384924 /* Pods_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D423CE397C56E04579F7E1E1 /* Pods_AppTests.framework */; };
 		D32F2D023CE356875C5E4FD7 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB77412EEC4466EA87789A04 /* Pods_App.framework */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		22BC04292273C4E600032509 /* ListingDisplaySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingDisplaySpy.swift; sourceTree = "<group>"; };
 		22C9BF19212F2DFE000D15E6 /* Workers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Workers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D88AEE212EF67E006E96AF /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22F55BD8227458AC00B8544A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = App/Scenes/Portfolio/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		230A03C686A9C5E28B0806F6 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "../Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 		69D1288B754CBC0298CD5852 /* Pods-App-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-AppTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-App-AppTests/Pods-App-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C3A0B5AD9C72E3216153767 /* Pods-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AppTests/Pods-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		22AC8C80212EEA02000A0BE0 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
+				22F55BD8227458AC00B8544A /* Main.storyboard */,
 				2222141F22661377001F41C8 /* PortfolioContract.swift */,
 				22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */,
 				22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */,
@@ -414,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22AC8C93212EEA02000A0BE0 /* Rijksmuseum-Bold.ttf in Resources */,
+				22F55BD9227458AC00B8544A /* Main.storyboard in Resources */,
 				22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */,
 				22AC8C8F212EEA02000A0BE0 /* LaunchScreen.storyboard in Resources */,
 				22AC8C92212EEA02000A0BE0 /* Rijksmuseum-Normal.ttf in Resources */,

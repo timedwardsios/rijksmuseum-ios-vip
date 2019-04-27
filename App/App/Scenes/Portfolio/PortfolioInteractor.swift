@@ -4,8 +4,8 @@ import Utils
 
 class PortfolioInteractor: PortfolioDataStore {
 
-    let presenter: PortfolioPresenting
-    let artWorker: ArtWorker
+    private let presenter: PortfolioPresenting
+    private let artWorker: ArtWorker
 
     init(presenter: PortfolioPresenting,
          artWorker: ArtWorker) {
@@ -13,8 +13,8 @@ class PortfolioInteractor: PortfolioDataStore {
         self.artWorker = artWorker
     }
 
-    var arts = [Art]()
-    var selectedArt: Art?
+    private var arts = [Art]()
+    private(set) var selectedArt: Art?
 }
 
 extension PortfolioInteractor: PortfolioInteracting {

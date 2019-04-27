@@ -5,8 +5,8 @@ import Utils
 
 class ListingInteractor {
 
-    let presenter: ListingPresenting
-    let art: Art
+    private let presenter: ListingPresenting
+    private let art: Art
 
     init(presenter: ListingPresenting,
          art:Art) {

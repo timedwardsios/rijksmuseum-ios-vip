@@ -4,9 +4,10 @@ import Services
 import Utils
 
 class ListingPresenter {
-    weak var display: ListingDisplaying?
 
-    init(display: ListingDisplaying? = nil){
+    private weak var display: ListingDisplaying?
+
+    init(display: ListingDisplaying){
         self.display = display
     }
 }

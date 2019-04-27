@@ -1,30 +1,31 @@
 
+import UIKit
+import Utils
 import Services
 
 class DependenciesDefault: Dependencies {}
 
 protocol Dependencies: Services.Dependencies {}
 
-internal extension Dependencies {
+extension Dependencies {
+    
     func resolve() -> PortfolioViewController {
-        let presenter = PortfolioPresenter()
-        let interactor = PortfolioInteractor(presenter: presenter,
-                                             artWorker: resolve())
+        let viewController = UIStoryboard.main.instantiateViewController(forType: PortfolioViewController.self)!
+        let presenter = PortfolioPresenter(display: viewController)
+        let interactor = PortfolioInteractor(presenter: presenter, artWorker: resolve())
         let router = PortfolioRouter(dependencies: self,
-                                     dataStore: interactor)
-        let viewController = PortfolioViewController(interactor: interactor,
-                                                     router: router)
-        presenter.display = viewController
-        router.viewController = viewController
+                                     dataStore: interactor,
+                                     viewController: viewController)
+        viewController.interactor = interactor
+        viewController.router = router
         return viewController
     }
 
     func resolve(art: Art) -> ListingViewController {
-        let presenter = ListingPresenter()
-        let interactor = ListingInteractor(presenter: presenter,
-                                           art: art)
-        let viewController = ListingViewController(interactor: interactor)
-        presenter.display = viewController
+        let viewController = UIStoryboard.main.instantiateViewController(forType: ListingViewController.self)!
+        let presenter = ListingPresenter(display: viewController)
+        let interactor = ListingInteractor(presenter: presenter, art: art)
+        viewController.interactor = interactor
         return viewController
     }
 }

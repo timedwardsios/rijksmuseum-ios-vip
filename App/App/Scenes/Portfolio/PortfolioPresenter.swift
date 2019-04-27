@@ -3,9 +3,10 @@ import Services
 import Utils
 
 class PortfolioPresenter{
-    weak var display: PortfolioDisplaying?
 
-    init(display: PortfolioDisplaying? = nil){
+    private weak var display: PortfolioDisplaying?
+
+    init(display: PortfolioDisplaying){
         self.display = display
     }
 }
