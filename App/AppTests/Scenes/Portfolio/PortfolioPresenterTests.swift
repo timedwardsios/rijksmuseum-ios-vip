@@ -22,23 +22,26 @@ class PortfolioPresenterTests: XCTestCase {
 extension PortfolioPresenterTests {
 
     func test_didBeginLoading(){
-        sut.presentResponse(.didBeginLoading)
-        XCTAssertEqual([.isLoading(true)], displaySpy.displayViewModelArgs)
+        sut.didBeginLoading()
+        XCTAssertEqual([true], displaySpy.displayIsLoadingArgs)
     }
 
     func test_didFetchArts(){
-        sut.presentResponse(.didFetchArts([artMock]))
-        XCTAssertEqual([.isLoading(false), .imageUrls([artMock.imageUrl])], displaySpy.displayViewModelArgs)
+        sut.didFetchArts([artMock])
+        XCTAssertEqual([false], displaySpy.displayIsLoadingArgs)
+        XCTAssertEqual([[artMock.imageUrl]], displaySpy.displayImageUrlsArgs)
     }
 
     func test_didFetchArts_empty(){
-        sut.presentResponse(.didFetchArts([ArtMock]()))
-        XCTAssertEqual([.isLoading(false), .imageUrls([URL]())], displaySpy.displayViewModelArgs)
+        sut.didFetchArts([ArtMock]())
+        XCTAssertEqual([false], displaySpy.displayIsLoadingArgs)
+        XCTAssertEqual([[URL]()], displaySpy.displayImageUrlsArgs)
     }
 
     func test_didError(){
         let error = Seeds.error
-        sut.presentResponse(.didError(error))
-        XCTAssertEqual([.isLoading(false), .errorAlertMessage(error.localizedDescription)], displaySpy.displayViewModelArgs)
+        sut.didError(error)
+        XCTAssertEqual([false], displaySpy.displayIsLoadingArgs)
+        XCTAssertEqual([error.localizedDescription], displaySpy.displayErrorMessageArgs)
     }
 }

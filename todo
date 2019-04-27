@@ -1,6 +1,5 @@
-Refactor
-    Add main thread to DI from VCs
 
 Make collection view more declerative
 
-Improve on "Themable" protocol
+Refactor
+    Add main thread to DI from VCs

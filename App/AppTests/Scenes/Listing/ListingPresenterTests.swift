@@ -23,7 +23,7 @@ class ListingPresenterTests: XCTestCase {
 extension ListingPresenterTests {
 
     func test_didLoadArt(){
-        sut.presentResponse(.didLoadArt(artMock))
-        XCTAssertEqual([.imageUrl(artMock.imageUrl)], displaySpy.displayViewModelArgs)
+        sut.didLoadArt(artMock)
+        XCTAssertEqual([artMock.imageUrl], displaySpy.displayImageURLArgs)
     }
 }

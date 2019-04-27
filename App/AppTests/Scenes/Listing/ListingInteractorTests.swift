@@ -22,7 +22,7 @@ class ListingInteractorTests: XCTestCase {
 extension ListingInteractorTests {
     
     func test_loadArt() throws {
-        sut.processRequest(.loadArt)
-        XCTAssertEqual([.didLoadArt(artMock)], presenterSpy.presentResponseArgs)
+        sut.loadArt()
+        XCTAssertEqual([artMock], presenterSpy.didLoadArtArgs as? [ArtMock])
     }
 }
