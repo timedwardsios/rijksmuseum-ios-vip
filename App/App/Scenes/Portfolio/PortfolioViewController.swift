@@ -2,18 +2,13 @@
 import UIKit
 import Utils
 
-class PortfolioViewController: UICollectionViewController {
+class PortfolioViewController: UICollectionViewController, StoryboardLoadable {
 
     var interactor: PortfolioInteracting?
     var router: PortfolioRouting?
 
     private let refreshControl = UIRefreshControl()
-
-    private var imageUrls = [URL](){
-        didSet{
-            collectionView.reloadData()
-        }
-    }
+    private var imageUrls = [URL]()
 }
 
 // MARK: - Overrides
@@ -21,19 +16,13 @@ extension PortfolioViewController{
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        setupSubviews()
-        title = "Rijksmuseum"
-        collectionView.dataSource = self
-        collectionView.delegate = self
         refreshControl.addTarget(self,
                                  action: #selector(didPullToRefresh),
                                  for: .valueChanged)
+        refreshControl.tintColor = .white
+        collectionView.refreshControl = refreshControl
+        view.backgroundColor = .init(hex: "343537")
         interactor?.fetchArts()
-    }
-
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        updateCollectionViewLayout()
     }
 }
 
@@ -46,10 +35,10 @@ extension PortfolioViewController {
 
     override func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let reuseId = ImageViewCell.reuseIdentifier
+        let reuseId = PortfolioImageCell.reuseIdentifier
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId,
                                                       for: indexPath)
-        guard let imageViewCell = cell as? ImageViewCell else {
+        guard let imageViewCell = cell as? PortfolioImageCell else {
             return cell
         }
         guard imageUrls.indices.contains(indexPath.row) else {
@@ -93,6 +82,7 @@ extension PortfolioViewController: PortfolioDisplaying {
     func displayImageUrls(_ urls: [URL]) {
         DispatchQueue.main.async { [weak self] in
             self?.imageUrls = urls
+            self?.collectionView.reloadData()
         }
     }
 
@@ -107,31 +97,6 @@ extension PortfolioViewController: PortfolioDisplaying {
 }
 
 private extension PortfolioViewController {
-
-    func setupSubviews(){
-        view.backgroundColor = UIColor(hex: "343537")
-        refreshControl.tintColor = .white
-        collectionView.refreshControl = refreshControl
-        collectionView.alwaysBounceVertical = true
-        collectionView.register(ImageViewCell.self,
-                                forCellWithReuseIdentifier: ImageViewCell.reuseIdentifier)
-        view.addSubview(collectionView)
-        collectionView.edges(to: view)
-    }
-
-    func updateCollectionViewLayout(){
-        let flowLayout = UICollectionViewFlowLayout()
-        let gutterSize = CGFloat(8)
-        let cellSize = CGFloat(83.75)
-        flowLayout.itemSize = CGSize(width: cellSize, height: cellSize)
-        flowLayout.minimumLineSpacing = CGFloat(gutterSize)
-        flowLayout.minimumInteritemSpacing = CGFloat(gutterSize)
-        flowLayout.sectionInset = UIEdgeInsets(top: gutterSize,
-                                               left: gutterSize,
-                                               bottom: gutterSize,
-                                               right: gutterSize)
-        collectionView.setCollectionViewLayout(flowLayout, animated: false)
-    }
 
     @objc func didPullToRefresh() {
         interactor?.fetchArts()

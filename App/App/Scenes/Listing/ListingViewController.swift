@@ -1,27 +1,17 @@
 
 import UIKit
+import Utils
 import SDWebImage
 
-class ListingViewController: UIViewController{
+class ListingViewController: UIViewController, StoryboardLoadable {
 
     var interactor: ListingInteracting?
 
-    private let imageView = UIImageView()
+    @IBOutlet weak var imageView: UIImageView!
 
     override func viewDidLoad(){
         super.viewDidLoad()
-        setupSubviews()
-        title = "Rijksmuseum"
         interactor?.loadArt()
-    }
-}
-
-private extension ListingViewController {
-    func setupSubviews(){
-        view.backgroundColor = UIColor(hex: "343537")
-        imageView.contentMode = .scaleAspectFit
-        view.addSubview(imageView)
-        imageView.edges(to: view)
     }
 }
 

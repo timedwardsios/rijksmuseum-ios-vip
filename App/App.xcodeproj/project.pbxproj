@@ -12,7 +12,6 @@
 		2215452322671C460062E9C6 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1152130B1830031A401 /* ListingViewController.swift */; };
 		2215452422671C460062E9C6 /* ListingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1142130B1830031A401 /* ListingInteractor.swift */; };
 		2215452522671C460062E9C6 /* ListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1132130B1830031A401 /* ListingPresenter.swift */; };
-		2215453E226721AB0062E9C6 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215453D226721AB0062E9C6 /* ImageViewCell.swift */; };
 		221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */; };
 		221830F2210FDA5900FA1E13 /* PortfolioPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */; };
 		2222142022661377001F41C8 /* PortfolioContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222141F22661377001F41C8 /* PortfolioContract.swift */; };
@@ -38,6 +37,7 @@
 		22BC04282273C4D100032509 /* ListingPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04272273C4D100032509 /* ListingPresenterSpy.swift */; };
 		22BC042A2273C4E600032509 /* ListingDisplaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04292273C4E600032509 /* ListingDisplaySpy.swift */; };
 		22F55BD9227458AC00B8544A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F55BD8227458AC00B8544A /* Main.storyboard */; };
+		22F55BE32274B93100B8544A /* PortfolioImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F55BE22274B93000B8544A /* PortfolioImageCell.swift */; };
 		5A8C1210C1A4D88029384924 /* Pods_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D423CE397C56E04579F7E1E1 /* Pods_AppTests.framework */; };
 		D32F2D023CE356875C5E4FD7 /* Pods_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB77412EEC4466EA87789A04 /* Pods_App.framework */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,6 @@
 /* Begin PBXFileReference section */
 		0B943DC2858758823077F507 /* Pods-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-App/Pods-App.debug.xcconfig"; sourceTree = "<group>"; };
 		221545202267181C0062E9C6 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
-		2215453D226721AB0062E9C6 /* ImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
 		221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterTests.swift; sourceTree = "<group>"; };
 		221DB1102130ABE20031A401 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +98,8 @@
 		22BC04292273C4E600032509 /* ListingDisplaySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingDisplaySpy.swift; sourceTree = "<group>"; };
 		22C9BF19212F2DFE000D15E6 /* Workers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Workers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D88AEE212EF67E006E96AF /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22F55BD8227458AC00B8544A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = App/Scenes/Portfolio/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		22F55BD8227458AC00B8544A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = App/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		22F55BE22274B93000B8544A /* PortfolioImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioImageCell.swift; sourceTree = "<group>"; };
 		230A03C686A9C5E28B0806F6 /* Pods-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App.release.xcconfig"; path = "../Pods/Target Support Files/Pods-App/Pods-App.release.xcconfig"; sourceTree = "<group>"; };
 		69D1288B754CBC0298CD5852 /* Pods-App-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-AppTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-App-AppTests/Pods-App-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C3A0B5AD9C72E3216153767 /* Pods-AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AppTests/Pods-AppTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,14 +133,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2215453F226721F90062E9C6 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2215453D226721AB0062E9C6 /* ImageViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		22154540226722030062E9C6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,10 +223,10 @@
 		22AC8C73212EEA02000A0BE0 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				221545202267181C0062E9C6 /* Dependencies.swift */,
 				22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */,
+				221545202267181C0062E9C6 /* Dependencies.swift */,
+				22F55BD8227458AC00B8544A /* Main.storyboard */,
 				22154540226722030062E9C6 /* Scenes */,
-				2215453F226721F90062E9C6 /* Views */,
 				22AC8C74212EEA02000A0BE0 /* Resources */,
 			);
 			path = App;
@@ -264,12 +256,12 @@
 		22AC8C80212EEA02000A0BE0 /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
-				22F55BD8227458AC00B8544A /* Main.storyboard */,
 				2222141F22661377001F41C8 /* PortfolioContract.swift */,
 				22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */,
 				22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */,
 				22AC8C82212EEA02000A0BE0 /* PortfolioViewController.swift */,
 				22AC8C81212EEA02000A0BE0 /* PortfolioRouter.swift */,
+				22F55BE22274B93000B8544A /* PortfolioImageCell.swift */,
 			);
 			path = Portfolio;
 			sourceTree = "<group>";
@@ -503,6 +495,7 @@
 			files = (
 				22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */,
 				2215452522671C460062E9C6 /* ListingPresenter.swift in Sources */,
+				22F55BE32274B93100B8544A /* PortfolioImageCell.swift in Sources */,
 				2215452322671C460062E9C6 /* ListingViewController.swift in Sources */,
 				2215452222671C460062E9C6 /* ListingContract.swift in Sources */,
 				221545212267181C0062E9C6 /* Dependencies.swift in Sources */,
@@ -512,7 +505,6 @@
 				22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */,
 				22AC8C96212EEA02000A0BE0 /* PortfolioViewController.swift in Sources */,
 				22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */,
-				2215453E226721AB0062E9C6 /* ImageViewCell.swift in Sources */,
 				22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

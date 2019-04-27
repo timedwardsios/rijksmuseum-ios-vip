@@ -8,9 +8,13 @@ class DependenciesDefault: Dependencies {}
 protocol Dependencies: Services.Dependencies {}
 
 extension Dependencies {
-    
+
+    func resolve() -> UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: Bundle.main)
+    }
+
     func resolve() -> PortfolioViewController {
-        let viewController = UIStoryboard.main.instantiateViewController(forType: PortfolioViewController.self)!
+        let viewController = PortfolioViewController.fromStoryboard(resolve())
         let presenter = PortfolioPresenter(display: viewController)
         let interactor = PortfolioInteractor(presenter: presenter, artWorker: resolve())
         let router = PortfolioRouter(dependencies: self,
@@ -22,7 +26,7 @@ extension Dependencies {
     }
 
     func resolve(art: Art) -> ListingViewController {
-        let viewController = UIStoryboard.main.instantiateViewController(forType: ListingViewController.self)!
+        let viewController = ListingViewController.fromStoryboard(resolve())
         let presenter = ListingPresenter(display: viewController)
         let interactor = ListingInteractor(presenter: presenter, art: art)
         viewController.interactor = interactor

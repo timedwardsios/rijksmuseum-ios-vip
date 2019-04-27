@@ -1,6 +1,6 @@
-Sort access control
-
 Make collection view more declerative
+Sort alert stuff
+Add SwiftLint
 
 Refactor
     Add main thread to DI from VCs
