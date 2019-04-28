@@ -1,11 +1,10 @@
-
 import UIKit
 
 public extension UIColor {
     convenience init(fromHex hexString: String, alpha: CGFloat) {
         var hexString = hexString.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
-        if (hexString.hasPrefix("#")) {
+        if hexString.hasPrefix("#") {
             hexString.remove(at: hexString.startIndex)
         }
 

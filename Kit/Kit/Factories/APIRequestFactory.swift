@@ -1,4 +1,3 @@
-
 import Foundation
 import Utils
 
@@ -12,13 +11,13 @@ internal protocol APIRequest {
 }
 
 internal protocol APIRequestFactory {
-    func apiRequest(fromAPIEndpoint apiEndpoint:APIEndpoint) -> APIRequest
+    func apiRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest
 }
 
-internal class APIRequestFactoryDefault{}
+internal class APIRequestFactoryDefault {}
 
 extension APIRequestFactoryDefault: APIRequestFactory {
-    
+
     func apiRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest {
         switch apiEndpoint {
         case .art:

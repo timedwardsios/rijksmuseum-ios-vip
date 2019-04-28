@@ -1,9 +1,8 @@
-
 import Foundation
 import Utils
 
 public protocol ArtWorker {
-    func fetchArt(completion: @escaping (Result<[Art], Error>)->Void)
+    func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void)
 }
 
 internal class ArtWorkerDefault {
@@ -14,7 +13,7 @@ internal class ArtWorkerDefault {
     init(apiRequestFactory: APIRequestFactory,
          networkRequestFactory: NetworkRequestFactory,
          networkService: NetworkService,
-         artFactory: ArtsFactory){
+         artFactory: ArtsFactory) {
         self.apiRequestFactory = apiRequestFactory
         self.networkRequestFactory = networkRequestFactory
         self.networkService = networkService
@@ -44,7 +43,8 @@ private extension ArtWorkerDefault {
         return networkRequestFactory.networkRequest(fromAPIRequest: apiRequest)
     }
 
-    func startFetchingWithNetworkRequest(_ networkRequest: NetworkRequest, completion:@escaping (Result<[Art], Error>)->Void) {
+    func startFetchingWithNetworkRequest(_ networkRequest: NetworkRequest,
+                                         completion:@escaping (Result<[Art], Error>) -> Void) {
 
         networkService.processNetworkRequest(networkRequest) { [weak self] (result) in
 

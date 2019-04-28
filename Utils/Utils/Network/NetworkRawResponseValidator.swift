@@ -1,4 +1,3 @@
-
 import Foundation
 
 internal protocol NetworkRawResponse {
@@ -11,7 +10,7 @@ internal protocol NetworkRawResponseValidator {
     func validateResponse(_ response: NetworkRawResponse) -> Result<Data, Error>
 }
 
-internal class NetworkRawResponseValidatorDefault{}
+internal class NetworkRawResponseValidatorDefault {}
 
 extension NetworkRawResponseValidatorDefault: NetworkRawResponseValidator {
 

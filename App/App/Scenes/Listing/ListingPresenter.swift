@@ -1,4 +1,3 @@
-
 import UIKit
 import Kit
 import Utils
@@ -7,7 +6,7 @@ class ListingPresenter {
 
     private weak var display: ListingDisplaying?
 
-    init(display: ListingDisplaying){
+    init(display: ListingDisplaying) {
         self.display = display
     }
 }
@@ -21,7 +20,7 @@ extension ListingPresenter: ListingPresenting {
 
 private extension ListingPresenter {
 
-    func getImageURLFromArt(_ art:Art) -> URL {
+    func getImageURLFromArt(_ art: Art) -> URL {
         return art.imageURL
     }
 }

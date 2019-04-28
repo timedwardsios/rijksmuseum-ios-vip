@@ -1,4 +1,3 @@
-
 import UIKit
 import Utils
 import SDWebImage
@@ -9,7 +8,7 @@ class ListingViewController: UIViewController, StoryboardLoadable {
 
     @IBOutlet weak var imageView: UIImageView!
 
-    override func viewDidLoad(){
+    override func viewDidLoad() {
         super.viewDidLoad()
         interactor?.loadArt()
     }
@@ -25,7 +24,7 @@ extension ListingViewController: ListingDisplaying {
 
 private extension ListingViewController {
 
-    func setImageURL(_ url:URL) {
+    func setImageURL(_ url: URL) {
         self.imageView.sd_setImage(with: url)
     }
 }

@@ -1,4 +1,3 @@
-
 import Kit
 import Utils
 
@@ -31,13 +30,13 @@ extension PortfolioInteractor: PortfolioInteracting {
 
 private extension PortfolioInteractor {
 
-    func commandArtWorkerBeginFetchingArts(){
+    func commandArtWorkerBeginFetchingArts() {
         artWorker.fetchArt { [weak self] (result) in
             self?.artWorkerDidFetchArts(result: result)
         }
     }
 
-    func artWorkerDidFetchArts(result: Result<[Art], Error>){
+    func artWorkerDidFetchArts(result: Result<[Art], Error>) {
         switch result {
         case .success(let arts):
             self.arts = arts

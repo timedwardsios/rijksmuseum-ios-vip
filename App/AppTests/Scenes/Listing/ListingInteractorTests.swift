@@ -1,4 +1,3 @@
-
 import XCTest
 import TestTools
 @testable import App
@@ -20,7 +19,7 @@ class ListingInteractorTests: XCTestCase {
 }
 
 extension ListingInteractorTests {
-    
+
     func test_loadArt() throws {
         sut.loadArt()
         XCTAssertEqual([artMock], presenterSpy.didLoadArtArgs as? [ArtMock])

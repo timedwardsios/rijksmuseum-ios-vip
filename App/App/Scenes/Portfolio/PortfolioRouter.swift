@@ -1,9 +1,8 @@
-
 import UIKit
 
 import Kit
 
-class PortfolioRouter{
+class PortfolioRouter {
 
     private let dependencies: Dependencies
     private let dataStore: PortfolioDataStore
@@ -11,7 +10,7 @@ class PortfolioRouter{
 
     init(dependencies: Dependencies,
          dataStore: PortfolioDataStore,
-         viewController: UIViewController){
+         viewController: UIViewController) {
         self.dependencies = dependencies
         self.viewController = viewController
         self.dataStore = dataStore
@@ -19,7 +18,7 @@ class PortfolioRouter{
 }
 
 extension PortfolioRouter: PortfolioRouting {
-    
+
     func routeToListing() {
         guard let art = dataStore.selectedArt else {
             return

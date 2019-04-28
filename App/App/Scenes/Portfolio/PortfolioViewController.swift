@@ -1,4 +1,3 @@
-
 import UIKit
 import SDWebImage
 import Utils
@@ -11,7 +10,7 @@ class PortfolioViewController: UICollectionViewController, StoryboardLoadable {
     private let dataSource = UICollectionViewGenericDataSource<URL, PortfolioImageCell>()
     private let refreshControl = UIRefreshControl()
 
-    override func viewDidLoad(){
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupDataSource()
         setupRefreshControl()
@@ -55,13 +54,13 @@ extension PortfolioViewController {
 }
 
 private extension PortfolioViewController {
-    func setupRefreshControl(){
+    func setupRefreshControl() {
         refreshControl.addTarget(self, action: #selector(refreshControlDidPullToRefresh), for: .valueChanged)
         refreshControl.tintColor = .white
         collectionView.refreshControl = refreshControl
     }
 
-    func setupDataSource(){
+    func setupDataSource() {
         dataSource.configureCellClosure = configureCell
         collectionView.dataSource = dataSource
     }
@@ -80,7 +79,7 @@ private extension PortfolioViewController {
         return cell
     }
 
-    func setImageURLs(_ urls:[URL]) {
+    func setImageURLs(_ urls: [URL]) {
         dataSource.items = urls
         collectionView.reloadData()
     }

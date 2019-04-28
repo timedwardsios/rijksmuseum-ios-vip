@@ -1,4 +1,3 @@
-
 import Foundation
 import Kit
 import Utils
@@ -10,13 +9,13 @@ protocol PortfolioInteracting {
 
 protocol PortfolioPresenting {
     func didBeginLoading()
-    func didFetchArts(_ arts:[Art])
-    func didError(_ error:Error)
+    func didFetchArts(_ arts: [Art])
+    func didError(_ error: Error)
 }
 
 protocol PortfolioDisplaying: class {
     func displayIsLoading(_ isLoading: Bool)
-    func displayImageURLs(_ urls:[URL])
+    func displayImageURLs(_ urls: [URL])
     func displayErrorMessage(_ message: String)
 }
 

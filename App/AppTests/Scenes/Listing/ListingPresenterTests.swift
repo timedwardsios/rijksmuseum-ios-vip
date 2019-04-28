@@ -1,4 +1,3 @@
-
 import XCTest
 import TestTools
 @testable import App
@@ -21,7 +20,7 @@ class ListingPresenterTests: XCTestCase {
 
 extension ListingPresenterTests {
 
-    func test_didLoadArt(){
+    func test_didLoadArt() {
         sut.didLoadArt(artMock)
         XCTAssertEqual([artMock.imageURL], displaySpy.displayImageURLArgs)
     }

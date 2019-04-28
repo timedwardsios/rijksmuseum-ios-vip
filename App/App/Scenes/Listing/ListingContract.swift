@@ -1,4 +1,3 @@
-
 import Foundation
 import Kit
 import Utils
@@ -8,9 +7,9 @@ protocol ListingInteracting {
 }
 
 protocol ListingPresenting {
-    func didLoadArt(_ art:Art)
+    func didLoadArt(_ art: Art)
 }
 
 protocol ListingDisplaying: class {
-    func displayImageURL(_ url:URL)
+    func displayImageURL(_ url: URL)
 }

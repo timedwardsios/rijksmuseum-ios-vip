@@ -1,4 +1,3 @@
-
 import XCTest
 import TestTools
 @testable import Utils
@@ -23,7 +22,7 @@ extension NetworkResponseValidatorTests {
         XCTAssertEqual(responseMock.data, data)
     }
 
-    func test_validateResponse_noData(){
+    func test_validateResponse_noData() {
         // given
         responseMock.data = nil
         // then
@@ -31,14 +30,14 @@ extension NetworkResponseValidatorTests {
         XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
     }
 
-    func test_validateResponse_noInternalURLResponse(){
+    func test_validateResponse_noInternalURLResponse() {
         // given
         responseMock.urlResponse = nil
         // then
         XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
     }
 
-    func test_validateResponse_badStatusCode(){
+    func test_validateResponse_badStatusCode() {
         // given
         responseMock.urlResponse = HTTPURLResponse(url: Seeds.url,
                                                statusCode: 404,
@@ -48,11 +47,10 @@ extension NetworkResponseValidatorTests {
         XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
     }
 
-    func test_validateResponse_error(){
+    func test_validateResponse_error() {
         // given
         responseMock.error = Seeds.error
         // then
         XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
     }
 }
-

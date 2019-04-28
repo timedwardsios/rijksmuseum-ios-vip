@@ -1,9 +1,7 @@
-
 import Foundation
 
 public protocol NetworkService {
-    func processNetworkRequest(_ request: NetworkRequest,
-                        completion: @escaping (Result<Data, Error>) -> Void)
+    func processNetworkRequest(_ request: NetworkRequest, completion: @escaping (Result<Data, Error>) -> Void)
 }
 
 internal class NetworkServiceDefault {
@@ -12,7 +10,7 @@ internal class NetworkServiceDefault {
     private let networkRawResponseValidator: NetworkRawResponseValidator
 
     init(networkSession: NetworkSession,
-         networkRawResponseValidator: NetworkRawResponseValidator){
+         networkRawResponseValidator: NetworkRawResponseValidator) {
         self.networkSession = networkSession
         self.networkRawResponseValidator = networkRawResponseValidator
     }
@@ -47,7 +45,8 @@ private extension NetworkServiceDefault {
         return urlRequest
     }
 
-    func dataTaskFromURLRequest(_ urlRequest: URLRequest, completion: @escaping (Result<Data, Error>)->Void) -> NetworkSessionDataTask{
+    func dataTaskFromURLRequest(_ urlRequest: URLRequest,
+                                completion: @escaping (Result<Data, Error>) -> Void) -> NetworkSessionDataTask {
 
         let dataTask = networkSession.dataTask(with: urlRequest) { [weak self] in
             guard let self = self else {

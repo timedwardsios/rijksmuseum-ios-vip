@@ -1,4 +1,3 @@
-
 import Foundation
 import Utils
 
@@ -10,12 +9,12 @@ internal protocol APIConfig {
 }
 
 internal protocol NetworkRequestFactory {
-    func networkRequest(fromAPIRequest apiRequest:APIRequest) -> Result<NetworkRequest, Error>
+    func networkRequest(fromAPIRequest apiRequest: APIRequest) -> Result<NetworkRequest, Error>
 }
 
-internal class NetworkRequestFactoryDefault{
+internal class NetworkRequestFactoryDefault {
     let apiConfig: APIConfig
-    init(apiConfig:APIConfig){
+    init(apiConfig: APIConfig) {
         self.apiConfig = apiConfig
     }
 }
@@ -27,7 +26,7 @@ extension NetworkRequestFactoryDefault: NetworkRequestFactory {
 }
 
 private extension NetworkRequestFactoryDefault {
-    enum LocalError: String, LocalizedError{
+    enum LocalError: String, LocalizedError {
         case unableToConstructURL
         case invalidScheme
         case invalidHost
@@ -42,7 +41,7 @@ private extension NetworkRequestFactoryDefault {
 
 private extension NetworkRequestFactoryDefault {
 
-    func networkRequestResultFromAPIRequest(_ apiRequest:APIRequest) -> Result<NetworkRequest, Error> {
+    func networkRequestResultFromAPIRequest(_ apiRequest: APIRequest) -> Result<NetworkRequest, Error> {
         return Result {
             try validateAPIConfig(apiConfig)
 
@@ -103,7 +102,7 @@ private extension NetworkRequestFactoryDefault {
 // MARK: - Creation
 private extension NetworkRequestFactoryDefault {
 
-    func urlComponentsFromAPIConfig(_ apiConfig:APIConfig) -> URLComponents {
+    func urlComponentsFromAPIConfig(_ apiConfig: APIConfig) -> URLComponents {
         var urlComponents = URLComponents()
         urlComponents.scheme = apiConfig.scheme
         urlComponents.host = apiConfig.host
@@ -112,7 +111,7 @@ private extension NetworkRequestFactoryDefault {
         return urlComponents
     }
 
-    func extendURLComponents(_ urlComponents:URLComponents, usingAPIRequest apiRequest: APIRequest) -> URLComponents {
+    func extendURLComponents(_ urlComponents: URLComponents, usingAPIRequest apiRequest: APIRequest) -> URLComponents {
         var newURLComponents = urlComponents
         newURLComponents.path.append(apiRequest.path)
         newURLComponents.queryItems?.append(contentsOf: apiRequest.queryItems)

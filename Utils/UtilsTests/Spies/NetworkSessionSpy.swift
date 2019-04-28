@@ -1,13 +1,12 @@
-
 import Foundation
 @testable import Utils
 
 class NetworkSessionSpy: Utils.NetworkSession {
 
     let dataTask: NetworkSessionDataTaskSpy
-    var data:Data?
+    var data: Data?
     var urlResponse: URLResponse?
-    var error:Error?
+    var error: Error?
 
     init(dataTask: NetworkSessionDataTaskSpy,
          data: Data?,
@@ -21,7 +20,8 @@ class NetworkSessionSpy: Utils.NetworkSession {
 
     var dataTaskArgs = [URLRequest]()
 
-    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkSessionDataTask {
+    func dataTask(with request: URLRequest,
+                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkSessionDataTask {
         dataTaskArgs.append(request)
         dataTask.completion = {
             completionHandler(self.data, self.urlResponse, self.error)

@@ -1,4 +1,3 @@
-
 import XCTest
 import TestTools
 @testable import Kit
@@ -6,7 +5,7 @@ import TestTools
 class ArtFactoryTests: XCTestCase {
 
     var sut: ArtsFactoryDefault!
-    
+
     var jsonDecoderServiceSpy: JSONDecoderServiceSpy!
 
     override func setUp() {

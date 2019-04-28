@@ -1,4 +1,3 @@
-
 import XCTest
 import TestTools
 @testable import Kit
@@ -24,7 +23,8 @@ extension NetworkRequestFactoryTests {
         // when
         let request = try sut.networkRequest(fromAPIRequest: apiRequest).get()
         // then
-        let actualComponents = try XCTAssertUnwrapOptional(URLComponents(url: request.url, resolvingAgainstBaseURL: false))
+        let actualComponents = try XCTAssertUnwrapOptional(URLComponents(url: request.url,
+                                                                         resolvingAgainstBaseURL: false))
         XCTAssertEqual(apiConfigMock.scheme, actualComponents.scheme)
         XCTAssertEqual(apiConfigMock.host, actualComponents.host)
         XCTAssertTrue(actualComponents.path.contains(apiConfigMock.path))
@@ -65,7 +65,8 @@ extension NetworkRequestFactoryTests {
         sut = .init(apiConfig: apiConfigMock)
         // then
         let request = try sut.networkRequest(fromAPIRequest: apiRequest).get()
-        let actualQueryItems = try XCTAssertUnwrapOptional(URLComponents(url: request.url, resolvingAgainstBaseURL: false)?.queryItems)
+        let actualQueryItems = try XCTAssertUnwrapOptional(URLComponents(url: request.url,
+                                                                         resolvingAgainstBaseURL: false)?.queryItems)
         XCTAssertEqual(Set(apiRequest.queryItems), Set(actualQueryItems))
     }
 
@@ -79,7 +80,8 @@ extension NetworkRequestFactoryTests {
     func test_createRequest_noRequestQueryItems() throws {
         apiRequest.queryItems = [URLQueryItem]()
         let request = try sut.networkRequest(fromAPIRequest: apiRequest).get()
-        let actualQueryItems = try XCTAssertUnwrapOptional(URLComponents(url: request.url, resolvingAgainstBaseURL: false)?.queryItems)
+        let actualQueryItems = try XCTAssertUnwrapOptional(URLComponents(url: request.url,
+                                                                         resolvingAgainstBaseURL: false)?.queryItems)
         XCTAssertEqual(Set(apiConfigMock.queryItems), Set(actualQueryItems))
     }
 }

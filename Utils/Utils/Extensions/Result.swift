@@ -1,7 +1,6 @@
-
 public extension Result {
 
-    func unwrapWithErrorHandler<T>(_ errorHandler: ((Result<T, Error>)->Void)) -> Success? {
+    func unwrapWithErrorHandler<T>(_ errorHandler: ((Result<T, Error>) -> Void)) -> Success? {
         switch self {
         case .success(let value):
             return value

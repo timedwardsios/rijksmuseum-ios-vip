@@ -1,4 +1,3 @@
-
 import UIKit
 import Kit
 import Utils
@@ -9,7 +8,7 @@ class ListingInteractor {
     private let art: Art
 
     init(presenter: ListingPresenting,
-         art:Art) {
+         art: Art) {
         self.presenter = presenter
         self.art = art
     }

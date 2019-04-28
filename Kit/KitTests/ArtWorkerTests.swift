@@ -1,4 +1,3 @@
-
 import XCTest
 import TestTools
 @testable import Kit
@@ -35,20 +34,21 @@ class ArtWorkerTests: XCTestCase {
 }
 
 extension ArtWorkerTests {
-    func test_fetchArt(){
+    func test_fetchArt() {
         let exp = XCTestExpectation()
         sut.fetchArt { (result) in
             XCTAssertEqual([self.artMock], result.unwrap() as? [ArtMock])
             XCTAssertEqual([APIEndpoint.art], self.apiRequestFactorySpy.createRequestArgs)
             XCTAssertEqual([self.apiRequestMock], self.networkRequestFactorySpy.networkRequestArgs as? [APIRequestMock])
-            XCTAssertEqual([self.networkRequestMock], self.networkServiceSpy.processRequestArgs as? [NetworkRequestMock])
+            XCTAssertEqual([self.networkRequestMock],
+                           self.networkServiceSpy.processRequestArgs as? [NetworkRequestMock])
             XCTAssertEqual([self.networkServiceSpy.processRequestResult.unwrap()], self.artFactorySpy.artsArgs)
             exp.fulfill()
         }
         wait(for: exp)
     }
 
-    func test_fetchArt_networkRequestError(){
+    func test_fetchArt_networkRequestError() {
         let exp = XCTestExpectation()
         networkRequestFactorySpy.networkRequestResult = .failure(Seeds.error)
         sut.fetchArt { (result) in
@@ -58,7 +58,7 @@ extension ArtWorkerTests {
         wait(for: exp)
     }
 
-    func test_fetchArt_networkServiceError(){
+    func test_fetchArt_networkServiceError() {
         let exp = XCTestExpectation()
         networkServiceSpy.processRequestResult = .failure(Seeds.error)
         sut.fetchArt { (result) in
@@ -68,7 +68,7 @@ extension ArtWorkerTests {
         wait(for: exp)
     }
 
-    func test_fetchArt_artFactoryError(){
+    func test_fetchArt_artFactoryError() {
         let exp = XCTestExpectation()
         artFactorySpy.artsResult = .failure(Seeds.error)
         sut.fetchArt { (result) in

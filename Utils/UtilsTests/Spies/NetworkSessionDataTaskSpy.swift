@@ -1,10 +1,9 @@
-
 import Foundation
 @testable import Utils
 
 class NetworkSessionDataTaskSpy: Utils.NetworkSessionDataTask {
 
-    var completion: (()->Void)?
+    var completion: (() -> Void)?
 
     var resumeArgs = 0
 

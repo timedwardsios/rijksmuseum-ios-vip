@@ -1,4 +1,3 @@
-
 import XCTest
 import TestTools
 @testable import Kit
@@ -14,7 +13,7 @@ class APIRequestFactoryTests: XCTestCase {
 }
 
 extension APIRequestFactoryTests {
-    
+
     func test_createRequest() {
         let request = sut.apiRequest(fromAPIEndpoint: .art)
         XCTAssertEqual("/collection", request.path)

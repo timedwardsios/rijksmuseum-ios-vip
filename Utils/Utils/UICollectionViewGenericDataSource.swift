@@ -1,11 +1,11 @@
-
 import UIKit
 
-public class UICollectionViewGenericDataSource<ItemType, CellType: UICollectionViewCell>: NSObject, UICollectionViewDataSource {
+public class UICollectionViewGenericDataSource<ItemType, CellType: UICollectionViewCell>: NSObject,
+                                                                                          UICollectionViewDataSource {
 
     public var items = [ItemType]()
 
-    public var configureCellClosure:((_ cell: CellType, _ item:ItemType)->CellType)?
+    public var configureCellClosure:((_ cell: CellType, _ item: ItemType) -> CellType)?
 
     override public init() {}
 
@@ -24,7 +24,8 @@ private extension UICollectionViewGenericDataSource {
         return items.count
     }
 
-    func cellForIndexPath(indexPath: IndexPath, ofCollectionView collectionView: UICollectionView) -> UICollectionViewCell {
+    func cellForIndexPath(indexPath: IndexPath,
+                          ofCollectionView collectionView: UICollectionView) -> UICollectionViewCell {
 
         let dequeuedCell = dequeuedCellFromIndexPath(indexPath, ofCollectionView: collectionView)
 
@@ -44,7 +45,8 @@ private extension UICollectionViewGenericDataSource {
 
 private extension UICollectionViewGenericDataSource {
 
-    func dequeuedCellFromIndexPath(_ indexPath:IndexPath, ofCollectionView collectionView: UICollectionView) -> UICollectionViewCell {
+    func dequeuedCellFromIndexPath(_ indexPath: IndexPath,
+                                   ofCollectionView collectionView: UICollectionView) -> UICollectionViewCell {
         return collectionView.dequeueReusableCell(withReuseIdentifier: CellType.reuseIdentifier,
                                                   for: indexPath)
     }
@@ -58,7 +60,7 @@ private extension UICollectionViewGenericDataSource {
         return untypedCell as? CellType
     }
 
-    func configureCell(_ cell:CellType, usingItem item: ItemType) -> CellType {
+    func configureCell(_ cell: CellType, usingItem item: ItemType) -> CellType {
         if let configureCellClosure = configureCellClosure {
             return configureCellClosure(cell, item)
         }

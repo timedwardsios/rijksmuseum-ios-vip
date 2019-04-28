@@ -1,10 +1,9 @@
-
 import Foundation
 import Utils
 @testable import Kit
 
 class NetworkServiceSpy: NetworkService {
-    
+
     var processRequestResult: Result<Data, Error>
 
     init(processRequestResult: Result<Data, Error>) {

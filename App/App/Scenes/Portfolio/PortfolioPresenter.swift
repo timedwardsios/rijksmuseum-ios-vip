@@ -1,12 +1,11 @@
-
 import Kit
 import Utils
 
-class PortfolioPresenter{
+class PortfolioPresenter {
 
     private weak var display: PortfolioDisplaying?
 
-    init(display: PortfolioDisplaying){
+    init(display: PortfolioDisplaying) {
         self.display = display
     }
 }
@@ -36,7 +35,7 @@ private extension PortfolioPresenter {
         return arts.map({$0.imageURL})
     }
 
-    func getErrorMessageFromError(_ error:Error) -> String {
+    func getErrorMessageFromError(_ error: Error) -> String {
         return error.localizedDescription
     }
 }

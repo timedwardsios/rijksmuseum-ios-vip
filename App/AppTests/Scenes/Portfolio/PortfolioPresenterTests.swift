@@ -1,4 +1,3 @@
-
 import XCTest
 import TestTools
 @testable import App
@@ -21,24 +20,24 @@ class PortfolioPresenterTests: XCTestCase {
 
 extension PortfolioPresenterTests {
 
-    func test_didBeginLoading(){
+    func test_didBeginLoading() {
         sut.didBeginLoading()
         XCTAssertEqual([true], displaySpy.displayIsLoadingArgs)
     }
 
-    func test_didFetchArts(){
+    func test_didFetchArts() {
         sut.didFetchArts([artMock])
         XCTAssertEqual([false], displaySpy.displayIsLoadingArgs)
         XCTAssertEqual([[artMock.imageURL]], displaySpy.displayImageURLsArgs)
     }
 
-    func test_didFetchArts_empty(){
+    func test_didFetchArts_empty() {
         sut.didFetchArts([ArtMock]())
         XCTAssertEqual([false], displaySpy.displayIsLoadingArgs)
         XCTAssertEqual([[URL]()], displaySpy.displayImageURLsArgs)
     }
 
-    func test_didError(){
+    func test_didError() {
         let error = Seeds.error
         sut.didError(error)
         XCTAssertEqual([false], displaySpy.displayIsLoadingArgs)
