@@ -43,6 +43,21 @@ extension NetworkServiceDefault: NetworkService {
 
         let urlRequest = urlRequestForNetworkRequest(networkRequest)
 
+        let dataTask = dataTaskFromURLRequest(urlRequest, completion: completion)
+
+        startDataTask(dataTask)
+    }
+}
+
+private extension NetworkServiceDefault {
+
+    func urlRequestForNetworkRequest(_ networkRequest: NetworkRequest) -> URLRequest {
+        var urlRequest = URLRequest(url: networkRequest.url)
+        urlRequest.httpMethod = networkRequest.method.rawValue
+        return urlRequest
+    }
+
+    func dataTaskFromURLRequest(_ urlRequest: URLRequest, completion: @escaping (Result<Data, Error>)->Void) -> NetworkSessionDataTask{
         let dataTask = networkSession.dataTask(with: urlRequest) { [weak self] in
             guard let self = self else {
                 return
@@ -55,15 +70,10 @@ extension NetworkServiceDefault: NetworkService {
             }
             completion(validationResult)
         }
-        dataTask.resume()
+        return dataTask
     }
-}
 
-private extension NetworkServiceDefault {
-
-    func urlRequestForNetworkRequest(_ networkRequest: NetworkRequest) -> URLRequest {
-        var urlRequest = URLRequest(url: networkRequest.url)
-        urlRequest.httpMethod = networkRequest.method.rawValue
-        return urlRequest
+    func startDataTask(_ dataTask: NetworkSessionDataTask) {
+        dataTask.resume()
     }
 }
