@@ -19,7 +19,7 @@ class NetworkResponseValidatorTests: XCTestCase {
 extension NetworkResponseValidatorTests {
     func test_validateResponse() throws {
         // then
-        let data = try sut.validateResponseAndUnwrapData(responseMock)
+        let data = try sut.validateResponse(responseMock).get()
         XCTAssertEqual(responseMock.data, data)
     }
 
@@ -27,14 +27,15 @@ extension NetworkResponseValidatorTests {
         // given
         responseMock.data = nil
         // then
-        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(responseMock))
+        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
+        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
     }
 
     func test_validateResponse_noInternalURLResponse(){
         // given
         responseMock.urlResponse = nil
         // then
-        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(responseMock))
+        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
     }
 
     func test_validateResponse_badStatusCode(){
@@ -44,14 +45,14 @@ extension NetworkResponseValidatorTests {
                                                httpVersion: nil,
                                                headerFields: nil)
         // then
-        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(responseMock))
+        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
     }
 
     func test_validateResponse_error(){
         // given
         responseMock.error = Seeds.error
         // then
-        XCTAssertThrowsError(try sut.validateResponseAndUnwrapData(responseMock))
+        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
     }
 }
 

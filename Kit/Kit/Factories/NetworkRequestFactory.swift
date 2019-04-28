@@ -10,7 +10,7 @@ internal protocol APIConfig {
 }
 
 internal protocol NetworkRequestFactory {
-    func networkRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest
+    func networkRequest(fromAPIRequest apiRequest:APIRequest) -> Result<NetworkRequest, Error>
 }
 
 internal class NetworkRequestFactoryDefault{
@@ -21,23 +21,12 @@ internal class NetworkRequestFactoryDefault{
 }
 
 extension NetworkRequestFactoryDefault: NetworkRequestFactory {
-    
-    func networkRequest(fromAPIRequest apiRequest: APIRequest) throws -> NetworkRequest {
-
-        try validateAPIConfig(apiConfig)
-
-        try validateAPIRequest(apiRequest)
-
-        let networkRequestURL = try urlFromAPIConfig(apiConfig, apiRequest: apiRequest)
-
-        let networkRequest = networkRequestFromURL(networkRequestURL, networkMethod: .GET)
-
-        return networkRequest
+    func networkRequest(fromAPIRequest apiRequest: APIRequest) -> Result<NetworkRequest, Error> {
+        return networkRequestResultFromAPIRequest(apiRequest)
     }
 }
 
 private extension NetworkRequestFactoryDefault {
-
     enum LocalError: String, LocalizedError{
         case unableToConstructURL
         case invalidScheme
@@ -48,6 +37,21 @@ private extension NetworkRequestFactoryDefault {
     struct NetworkRequestForAPI: NetworkRequest {
         var url: URL
         var method: NetworkMethod
+    }
+}
+
+private extension NetworkRequestFactoryDefault {
+
+    func networkRequestResultFromAPIRequest(_ apiRequest:APIRequest) -> Result<NetworkRequest, Error> {
+        return Result {
+            try validateAPIConfig(apiConfig)
+
+            try validateAPIRequest(apiRequest)
+
+            let networkRequestURL = try urlFromAPIConfig(apiConfig, apiRequest: apiRequest)
+
+            return networkRequestFromURL(networkRequestURL, networkMethod: .GET)
+        }
     }
 
     func validateAPIConfig(_ config: APIConfig) throws {

@@ -5,16 +5,16 @@ import Utils
 
 class NetworkRequestFactorySpy: NetworkRequestFactory {
 
-    var createRequestResult: Result<NetworkRequest, Error>
+    var networkRequestResult: Result<NetworkRequest, Error>
 
-    init(createRequestResult: Result<NetworkRequest, Error>) {
-        self.createRequestResult = createRequestResult
+    init(networkRequestResult: Result<NetworkRequest, Error>) {
+        self.networkRequestResult = networkRequestResult
     }
 
-    var createRequestArgs = [APIRequest]()
+    var networkRequestArgs = [APIRequest]()
 
-    func networkRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest {
-        createRequestArgs.append(apiRequest)
-        return try createRequestResult.get()
+    func networkRequest(fromAPIRequest apiRequest: APIRequest) -> Result<NetworkRequest, Error> {
+        networkRequestArgs.append(apiRequest)
+        return networkRequestResult
     }
 }

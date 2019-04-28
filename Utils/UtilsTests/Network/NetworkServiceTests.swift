@@ -18,11 +18,11 @@ class NetworkServiceTests: XCTestCase {
         networkRequestMock = .init()
         dataTaskSpy = NetworkSessionDataTaskSpy()
         networkSessionSpy = .init(dataTask: dataTaskSpy,
-                               data: Seeds.data,
-                               urlResponse: Seeds.urlResponse,
-                               error: nil)
+                                  data: Seeds.data,
+                                  urlResponse: Seeds.urlResponse,
+                                  error: nil)
         sut = .init(networkSession: networkSessionSpy,
-                    networkResponseValidator: networkResponseValidatorSpy)
+                    networkRawResponseValidator: networkResponseValidatorSpy)
     }
 }
 
@@ -34,7 +34,7 @@ extension NetworkServiceTests {
         // when
         sut.processNetworkRequest(networkRequestMock) { (result) in
             // then
-            XCTAssertEqual(self.networkResponseValidatorSpy.validateResponseAndUnwrapDataResult.unwrap(), result.unwrap())
+            XCTAssertEqual(self.networkResponseValidatorSpy.validateResponseResult.unwrap(), result.unwrap())
             exp.fulfill()
         }
         wait(for: exp)
@@ -60,9 +60,9 @@ extension NetworkServiceTests {
         // when
         sut.processNetworkRequest(networkRequestMock) { (result) in
             // then
-            XCTAssertEqual(1, self.networkResponseValidatorSpy.validateResponseAndUnwrapDataArgs.count)
-            XCTAssertEqual(self.networkSessionSpy.data, self.networkResponseValidatorSpy.validateResponseAndUnwrapDataArgs.last?.data)
-            XCTAssertEqual(self.networkSessionSpy.urlResponse, self.networkResponseValidatorSpy.validateResponseAndUnwrapDataArgs.last?.urlResponse)
+            XCTAssertEqual(1, self.networkResponseValidatorSpy.validateResponseArgs.count)
+            XCTAssertEqual(self.networkSessionSpy.data, self.networkResponseValidatorSpy.validateResponseArgs.last?.data)
+            XCTAssertEqual(self.networkSessionSpy.urlResponse, self.networkResponseValidatorSpy.validateResponseArgs.last?.urlResponse)
             exp.fulfill()
         }
         wait(for: exp)
@@ -84,12 +84,12 @@ extension NetworkServiceTests {
     func test_processRequest_badValidation(){
         // given
         let exp = XCTestExpectation()
-        networkResponseValidatorSpy.validateResponseAndUnwrapDataResult = .failure(Seeds.error)
+        networkResponseValidatorSpy.validateResponseResult = .failure(Seeds.error)
         // when
         sut.processNetworkRequest(networkRequestMock) { (result) in
             // then
-            XCTAssertEqual(self.networkSessionSpy.data, self.networkResponseValidatorSpy.validateResponseAndUnwrapDataArgs.last?.data)
-            XCTAssertEqual(self.networkSessionSpy.urlResponse, self.networkResponseValidatorSpy.validateResponseAndUnwrapDataArgs.last?.urlResponse)
+            XCTAssertEqual(self.networkSessionSpy.data, self.networkResponseValidatorSpy.validateResponseArgs.last?.data)
+            XCTAssertEqual(self.networkSessionSpy.urlResponse, self.networkResponseValidatorSpy.validateResponseArgs.last?.urlResponse)
             exp.fulfill()
         }
         wait(for: exp)

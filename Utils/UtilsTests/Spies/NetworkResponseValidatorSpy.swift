@@ -4,16 +4,16 @@ import Foundation
 
 class NetworkResponseValidatorSpy: NetworkRawResponseValidator {
 
-    var validateResponseAndUnwrapDataResult: Result<Data, Error>
+    var validateResponseResult: Result<Data, Error>
 
     init(validateResponseAndUnwrapDataResult: Result<Data, Error>) {
-        self.validateResponseAndUnwrapDataResult = validateResponseAndUnwrapDataResult
+        self.validateResponseResult = validateResponseAndUnwrapDataResult
     }
 
-    var validateResponseAndUnwrapDataArgs = [NetworkRawResponse]()
+    var validateResponseArgs = [NetworkRawResponse]()
 
-    func validateResponseAndUnwrapData(_ response: NetworkRawResponse) throws -> Data {
-        validateResponseAndUnwrapDataArgs.append(response)
-        return try validateResponseAndUnwrapDataResult.get()
+    func validateResponse(_ response: NetworkRawResponse) -> Result<Data, Error> {
+        validateResponseArgs.append(response)
+        return validateResponseResult
     }
 }

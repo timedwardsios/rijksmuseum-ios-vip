@@ -24,8 +24,8 @@ private extension Dependencies {
         return NetworkRequestFactoryDefault(apiConfig: resolve())
     }
 
-    func resolve() -> ArtFactory {
-        return ArtFactoryDefault(jsonDecoderService: resolve())
+    func resolve() -> ArtsFactory {
+        return ArtsFactoryDefault(jsonDecoderService: resolve())
     }
 
     func resolve() -> APIConfig {

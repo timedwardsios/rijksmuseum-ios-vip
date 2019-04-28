@@ -23,7 +23,6 @@ extension PortfolioViewController{
                                  for: .valueChanged)
         refreshControl.tintColor = .white
         collectionView.refreshControl = refreshControl
-        view.backgroundColor = .init(fromHex: "343537")
         interactor?.fetchArts()
 
         dataSource.configureCell = { (cell: PortfolioImageCell, item: URL) -> PortfolioImageCell in

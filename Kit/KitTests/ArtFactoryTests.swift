@@ -5,7 +5,7 @@ import TestTools
 
 class ArtFactoryTests: XCTestCase {
 
-    var sut: ArtFactoryDefault!
+    var sut: ArtsFactoryDefault!
     
     var jsonDecoderServiceSpy: JSONDecoderServiceSpy!
 
@@ -24,6 +24,6 @@ extension ArtFactoryTests {
     }
 
     func test_createArt_badData() throws {
-        XCTAssertThrowsError(try sut.arts(fromJSONData: Seeds.data))
+        XCTAssertTrue(sut.arts(fromJSONData: Seeds.data).isFailure)
     }
 }

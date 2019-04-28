@@ -35,8 +35,11 @@ private extension NetworkServiceDefault {
     struct NetworkRawResponseDefault: NetworkRawResponse {
         var data: Data?
         var urlResponse: URLResponse?
-        var error: Swift.Error?
+        var error: Error?
     }
+}
+
+private extension NetworkServiceDefault {
 
     func urlRequestForNetworkRequest(_ networkRequest: NetworkRequest) -> URLRequest {
         var urlRequest = URLRequest(url: networkRequest.url)
@@ -45,6 +48,7 @@ private extension NetworkServiceDefault {
     }
 
     func dataTaskFromURLRequest(_ urlRequest: URLRequest, completion: @escaping (Result<Data, Error>)->Void) -> NetworkSessionDataTask{
+
         let dataTask = networkSession.dataTask(with: urlRequest) { [weak self] in
             guard let self = self else {
                 return
@@ -52,9 +56,8 @@ private extension NetworkServiceDefault {
 
             let networkRawResponse = NetworkRawResponseDefault(data: $0, urlResponse: $1, error: $2)
 
-            let validationResult = Result {
-                try self.networkRawResponseValidator.validateResponse(networkRawResponse)
-            }
+            let validationResult = self.networkRawResponseValidator.validateResponse(networkRawResponse)
+
             completion(validationResult)
         }
         return dataTask

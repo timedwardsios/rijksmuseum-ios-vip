@@ -10,11 +10,11 @@ internal class ArtWorkerDefault {
     let apiRequestFactory: APIRequestFactory
     let networkRequestFactory: NetworkRequestFactory
     let networkService: NetworkService
-    let artFactory: ArtFactory
+    let artFactory: ArtsFactory
     init(apiRequestFactory: APIRequestFactory,
          networkRequestFactory: NetworkRequestFactory,
          networkService: NetworkService,
-         artFactory: ArtFactory){
+         artFactory: ArtsFactory){
         self.apiRequestFactory = apiRequestFactory
         self.networkRequestFactory = networkRequestFactory
         self.networkService = networkService
@@ -26,7 +26,7 @@ extension ArtWorkerDefault: ArtWorker {
 
     func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void) {
 
-        guard let networkRequest = getNetworkRequestResult().unwrapWithErrorHandler(completion) else {
+        guard let networkRequest = createNetworkRequestResult().unwrapWithErrorHandler(completion) else {
             return
         }
 
@@ -36,12 +36,12 @@ extension ArtWorkerDefault: ArtWorker {
 
 private extension ArtWorkerDefault {
 
-    func getNetworkRequestResult() -> Result<NetworkRequest, Error> {
-        let artEndpoint = apiEndpoint()
+    func createNetworkRequestResult() -> Result<NetworkRequest, Error> {
+        let artEndpoint = APIEndpoint.art
 
-        let apiRequest = apiRequestFromAPIEndpoint(artEndpoint)
+        let apiRequest = apiRequestFactory.apiRequest(fromAPIEndpoint: artEndpoint)
 
-        return networkRequestFromAPIRequest(apiRequest)
+        return networkRequestFactory.networkRequest(fromAPIRequest: apiRequest)
     }
 
     func startFetchingWithNetworkRequest(_ networkRequest: NetworkRequest, completion:@escaping (Result<[Art], Error>)->Void) {
@@ -52,32 +52,11 @@ private extension ArtWorkerDefault {
                 return
             }
 
-            guard let art = self?.artFactoryResultFromData(data).unwrapWithErrorHandler(completion) else {
+            guard let art = self?.artFactory.arts(fromJSONData: data).unwrapWithErrorHandler(completion) else {
                 return
             }
 
             completion(.success(art))
         }
     }
-
-    func apiEndpoint() -> APIEndpoint {
-        return .art
-    }
-
-    func apiRequestFromAPIEndpoint(_ apiEndpoint: APIEndpoint) -> APIRequest {
-        return apiRequestFactory.apiRequest(fromAPIEndpoint: apiEndpoint)
-    }
-
-    func networkRequestFromAPIRequest(_ apiRequest: APIRequest) -> Result<NetworkRequest, Error> {
-        return Result {
-            try networkRequestFactory.networkRequest(fromAPIRequest: apiRequest)
-        }
-    }
-
-    func artFactoryResultFromData(_ data: Data) -> Result<[Art], Error> {
-        return Result{
-            try artFactory.arts(fromJSONData: data)
-        }
-    }
-
 }

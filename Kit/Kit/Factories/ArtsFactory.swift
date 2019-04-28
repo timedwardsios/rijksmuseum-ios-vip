@@ -2,27 +2,32 @@
 import Foundation
 import Utils
 
-internal protocol ArtFactory {
-    func arts(fromJSONData data:Data) throws -> [Art]
+internal protocol ArtsFactory {
+    func arts(fromJSONData data:Data) -> Result<[Art], Error>
 }
 
-internal class ArtFactoryDefault{
+internal class ArtsFactoryDefault{
     let jsonDecoderService: JSONDecoderService
     init(jsonDecoderService: JSONDecoderService){
         self.jsonDecoderService = jsonDecoderService
     }
 }
 
-extension ArtFactoryDefault: ArtFactory {
+extension ArtsFactoryDefault: ArtsFactory {
 
-    func arts(fromJSONData data: Data) throws -> [Art] {
-        let rootJSON = try rootJSONFromData(data)
-        let arts = artsFromRootJSON(rootJSON)
-        return arts
+    func arts(fromJSONData data: Data) -> Result<[Art], Error> {
+        return artsResultFromJSONData(data)
     }
 }
 
-private extension ArtFactoryDefault {
+private extension ArtsFactoryDefault {
+
+    func artsResultFromJSONData(_ data:Data) -> Result<[Art], Error> {
+        return Result{
+            let rootJSON = try rootJSONFromData(data)
+            return artsFromRootJSON(rootJSON)
+        }
+    }
 
     func rootJSONFromData(_ data:Data) throws -> RootJSON {
         return try jsonDecoderService.decode(RootJSON.self, from: data)

@@ -8,22 +8,15 @@ internal protocol NetworkRawResponse {
 }
 
 internal protocol NetworkRawResponseValidator {
-    func validateResponse(_ response: NetworkRawResponse) throws -> Data
+    func validateResponse(_ response: NetworkRawResponse) -> Result<Data, Error>
 }
 
 internal class NetworkRawResponseValidatorDefault{}
 
 extension NetworkRawResponseValidatorDefault: NetworkRawResponseValidator {
 
-    func validateResponse(_ rawResponse: NetworkRawResponse) throws -> Data {
-
-        try checkErrorInResponse(rawResponse)
-
-        try checkStatusCodeInResponse(rawResponse)
-
-        let data = try unwrapDataFromResponse(rawResponse)
-
-        return data
+    func validateResponse(_ response: NetworkRawResponse) -> Result<Data, Error> {
+        return getDataResultFromResponse(response)
     }
 }
 
@@ -33,6 +26,19 @@ private extension NetworkRawResponseValidatorDefault {
         case noData = "No data"
         case invalidResponseFormat = "Invalid response format"
         case badStatusCode = "Invalid status code"
+    }
+}
+
+private extension NetworkRawResponseValidatorDefault {
+
+    func getDataResultFromResponse(_ response: NetworkRawResponse) -> Result<Data, Error> {
+        return Result {
+            try checkErrorInResponse(response)
+
+            try checkStatusCodeInResponse(response)
+
+            return try unwrapDataFromResponse(response)
+        }
     }
 
     func checkErrorInResponse(_ response: NetworkRawResponse) throws {

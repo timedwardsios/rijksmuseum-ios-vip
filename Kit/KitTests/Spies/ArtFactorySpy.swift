@@ -3,18 +3,18 @@ import Foundation
 import Utils
 @testable import Kit
 
-class ArtFactorySpy: ArtFactory {
+class ArtFactorySpy: ArtsFactory {
 
-    var createArtsResult: Result<[Art], Error>
+    var artsResult: Result<[Art], Error>
 
-    init(createArtsResult: Result<[Art], Error>) {
-        self.createArtsResult = createArtsResult
+    init(artsResult: Result<[Art], Error>) {
+        self.artsResult = artsResult
     }
 
-    var createArtsArgs = [Data]()
+    var artsArgs = [Data]()
 
-    func arts(fromJSONData data: Data) throws -> [Art] {
-        createArtsArgs.append(data)
-        return try createArtsResult.get()
+    func arts(fromJSONData data: Data) -> Result<[Art], Error> {
+        artsArgs.append(data)
+        return artsResult
     }
 }
