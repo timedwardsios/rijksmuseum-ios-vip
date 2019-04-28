@@ -1,6 +1,6 @@
 
 import XCTest
-import UtilsTestTools
+import TestTools
 @testable import Services
 
 class ArtWorkerTests: XCTestCase {

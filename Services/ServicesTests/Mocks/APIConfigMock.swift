@@ -1,6 +1,6 @@
 
 import Foundation
-import UtilsTestTools
+import TestTools
 @testable import Services
 
 struct APIConfigMock: APIConfig {

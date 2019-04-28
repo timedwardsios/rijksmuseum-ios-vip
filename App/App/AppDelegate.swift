@@ -19,7 +19,7 @@ extension AppDelegate: UIApplicationDelegate {
 
 private extension AppDelegate{
     func setupAppearance(){
-        UINavigationBar.appearance().barTintColor = UIColor(hex: "40474f")
+        UINavigationBar.appearance().barTintColor = UIColor(fromHex: "40474f")
         UINavigationBar.appearance().titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
             NSAttributedString.Key.font: UIFont(name: "Rijksmuseum-Bold", size: 21) as Any

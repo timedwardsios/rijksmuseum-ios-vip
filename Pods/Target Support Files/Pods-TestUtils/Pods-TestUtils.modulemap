@@ -1,6 +1,0 @@
-framework module Pods_TestUtils {
-  umbrella header "Pods-TestUtils-umbrella.h"
-
-  export *
-  module * { export * }
-}

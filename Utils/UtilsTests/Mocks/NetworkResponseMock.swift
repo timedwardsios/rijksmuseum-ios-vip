@@ -1,6 +1,6 @@
 
 import Foundation
-import UtilsTestTools
+import TestTools
 @testable import Utils
 
 struct NetworkResponseMock: NetworkResponse {

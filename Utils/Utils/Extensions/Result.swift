@@ -1,24 +1,5 @@
 
-public extension Result where Success == Void {
-    static var success: Result {
-        return .success(())
-    }
-}
-
 public extension Result {
-    var isSuccess: Bool {
-        if case .success(_) = self {
-            return true
-        }
-        return false
-    }
-
-    var isFailure: Bool {
-        if case .failure(_) = self {
-            return true
-        }
-        return false
-    }
 
     func unwrap() -> Success? {
         if case .success(let success) = self {
@@ -32,5 +13,13 @@ public extension Result {
             return failure
         }
         return nil
+    }
+
+    var isSuccess: Bool {
+        return unwrap() != nil
+    }
+
+    var isFailure: Bool {
+        return unwrap() == nil
     }
 }

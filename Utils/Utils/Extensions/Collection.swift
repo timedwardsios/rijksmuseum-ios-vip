@@ -2,7 +2,10 @@
 import Foundation
 
 public extension Collection {
-    subscript (safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
+    subscript (optionalAt index: Index) -> Element? {
+        if indices.contains(index) {
+            return self[index]
+        }
+        return nil
     }
 }

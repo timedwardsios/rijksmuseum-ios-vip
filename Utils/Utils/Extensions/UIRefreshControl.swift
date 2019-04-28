@@ -2,7 +2,7 @@
 import UIKit
 
 public extension UIRefreshControl {
-    func beginRefreshingProgramatically(){
+    func beginRefreshingWithAnimation(){
         guard let scrollView = self.superview as? UIScrollView else {
             return
         }

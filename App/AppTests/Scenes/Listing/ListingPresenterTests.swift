@@ -1,6 +1,6 @@
 
 import XCTest
-import UtilsTestTools
+import TestTools
 @testable import App
 
 class ListingPresenterTests: XCTestCase {
@@ -15,7 +15,6 @@ class ListingPresenterTests: XCTestCase {
         super.setUp()
         artMock = .init()
         displaySpy = .init()
-        sut = .init()
         sut = .init(display: displaySpy)
     }
 }

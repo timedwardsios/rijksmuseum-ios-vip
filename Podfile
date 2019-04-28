@@ -1,11 +1,13 @@
+
 platform:ios, '12.2'
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 use_frameworks!
 
 workspace 'Rijksmuseum'
 
+pod 'SwiftLint'
+
 target 'App' do
-    pod "TinyConstraints"
     pod "SDWebImage"
     project 'App/App.xcodeproj'
     target 'AppTests' do
@@ -13,9 +15,9 @@ target 'App' do
     end
 end
 
-target 'Service' do
-    project 'Service/Service.xcodeproj'
-    target 'ServiceTests' do
+target 'Services' do
+    project 'Services/Services.xcodeproj'
+    target 'ServicesTests' do
         inherit! :search_paths
     end
 end
@@ -27,9 +29,9 @@ target 'Utils' do
     end
 end
 
-target 'TestUtils' do
-    project 'TestUtils/TestUtils.xcodeproj'
-    target 'TestUtilsTests' do
+target 'TestTools' do
+    project 'TestTools/TestTools.xcodeproj'
+    target 'TestToolsTests' do
         inherit! :search_paths
     end
 end

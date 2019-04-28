@@ -32,7 +32,7 @@ extension PortfolioInteractor: PortfolioInteracting {
     }
 
     func selectArt(atIndex index: Int) {
-        self.selectedArt = arts[safe: index]
+        self.selectedArt = arts[optionalAt: index]
 
     }
 }

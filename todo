@@ -1,6 +1,4 @@
-Make collection view more declerative
-Sort alert stuff
-Add SwiftLint
-
 Refactor
-    Add main thread to DI from VCs
+Add main thread to DI from VCs
+
+Do SwiftLint
