@@ -45,7 +45,7 @@ extension ArtWorkerTests {
             XCTAssertEqual([self.networkServiceSpy.processRequestResult.unwrap()], self.artFactorySpy.createArtsArgs)
             exp.fulfill()
         }
-        wait(exp)
+        wait(for: exp)
     }
 
     func test_fetchArt_networkRequestError(){
@@ -55,7 +55,7 @@ extension ArtWorkerTests {
             XCTAssertTrue(result.isFailure)
             exp.fulfill()
         }
-        wait(exp)
+        wait(for: exp)
     }
 
     func test_fetchArt_networkServiceError(){
@@ -65,7 +65,7 @@ extension ArtWorkerTests {
             XCTAssertTrue(result.isFailure)
             exp.fulfill()
         }
-        wait(exp)
+        wait(for: exp)
     }
 
     func test_fetchArt_artFactoryError(){
@@ -75,6 +75,6 @@ extension ArtWorkerTests {
             XCTAssertTrue(result.isFailure)
             exp.fulfill()
         }
-        wait(exp)
+        wait(for: exp)
     }
 }

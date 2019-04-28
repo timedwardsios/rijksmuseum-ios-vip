@@ -5,6 +5,7 @@ import Utils
 public protocol Dependencies: Utils.Dependencies {}
 
 public extension Dependencies {
+
     func resolve() -> ArtWorker {
         return ArtWorkerDefault(apiRequestFactory: resolve(),
                                 networkRequestFactory: resolve(),
@@ -14,6 +15,7 @@ public extension Dependencies {
 }
 
 private extension Dependencies {
+
     func resolve() -> APIRequestFactory {
         return APIRequestFactoryDefault()
     }

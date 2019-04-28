@@ -23,6 +23,7 @@
 		224196012262A0720006348F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196002262A0720006348F /* Result.swift */; };
 		224196032262A0820006348F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196022262A0820006348F /* Collection.swift */; };
 		224196052262A08B0006348F /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196042262A08B0006348F /* UITableViewCell.swift */; };
+		2253927022760417007AEF1F /* JSONDecoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253926F22760417007AEF1F /* JSONDecoderService.swift */; };
 		2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */; };
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
@@ -31,7 +32,7 @@
 		2290FCD92271C037009E5B47 /* NetworkSessionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCD72271C037009E5B47 /* NetworkSessionSpy.swift */; };
 		22AC8C5A212EE635000A0BE0 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AC8C4C212EE635000A0BE0 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22F55BE12274A33800B8544A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F55BE02274A33800B8544A /* UIViewController.swift */; };
-		22F55BE72274CFD900B8544A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F55BE62274CFD900B8544A /* DataSource.swift */; };
+		22F55BE72274CFD900B8544A /* UICollectionViewGenericDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F55BE62274CFD900B8544A /* UICollectionViewGenericDataSource.swift */; };
 		FCE3CC423F108016E928F856 /* Pods_UtilsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE2A3E55A264A0892929C44 /* Pods_UtilsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		224196002262A0720006348F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		224196042262A08B0006348F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		2253926F22760417007AEF1F /* JSONDecoderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderService.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTask.swift; sourceTree = "<group>"; };
 		2290FCD62271C037009E5B47 /* NetworkSessionDataTaskSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTaskSpy.swift; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 		22AC8C66212EE7E5000A0BE0 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIRefreshControl.swift; sourceTree = "<group>"; };
 		22F55BE02274A33800B8544A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		22F55BE62274CFD900B8544A /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		22F55BE62274CFD900B8544A /* UICollectionViewGenericDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewGenericDataSource.swift; sourceTree = "<group>"; };
 		241D503FFCFA1169E746C5E3 /* Pods-UtilsTestTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilsTestTools.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UtilsTestTools/Pods-UtilsTestTools.release.xcconfig"; sourceTree = "<group>"; };
 		28B206192FAA275D0525E194 /* Pods-UtilityTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilityTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-UtilityTests/Pods-UtilityTests.release.xcconfig"; sourceTree = "<group>"; };
 		29A45348468C05E17C5C7926 /* Pods_UtilityTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UtilityTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +153,7 @@
 			path = Spies;
 			sourceTree = "<group>";
 		};
-		222E305C22707D23004A5FE9 /* Network */ = {
+		222E305C22707D23004A5FE9 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
 				222E305B22707D23004A5FE9 /* NetworkService.swift */,
@@ -159,7 +161,7 @@
 				222E307422707EF6004A5FE9 /* NetworkSession.swift */,
 				2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */,
 			);
-			path = Network;
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 		2290FCDA2271C0D8009E5B47 /* Mocks */ = {
@@ -204,8 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				221BDF422270F89A00631270 /* Dependencies.swift */,
-				22F55BE62274CFD900B8544A /* DataSource.swift */,
-				222E305C22707D23004A5FE9 /* Network */,
+				22F55BE62274CFD900B8544A /* UICollectionViewGenericDataSource.swift */,
+				2253926F22760417007AEF1F /* JSONDecoderService.swift */,
+				222E305C22707D23004A5FE9 /* NetworkService */,
 				22AC8C68212EE7E5000A0BE0 /* Extensions */,
 				222A72CE212EEBC800BA759F /* Resources */,
 			);
@@ -472,7 +475,8 @@
 				22F55BE12274A33800B8544A /* UIViewController.swift in Sources */,
 				224196012262A0720006348F /* Result.swift in Sources */,
 				222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */,
-				22F55BE72274CFD900B8544A /* DataSource.swift in Sources */,
+				22F55BE72274CFD900B8544A /* UICollectionViewGenericDataSource.swift in Sources */,
+				2253927022760417007AEF1F /* JSONDecoderService.swift in Sources */,
 				22013ACC2275BF5200B200D6 /* UIAlertController.swift in Sources */,
 				2290FCC42271BD32009E5B47 /* NetworkSessionDataTask.swift in Sources */,
 				221BDF432270F89A00631270 /* Dependencies.swift in Sources */,

@@ -1,7 +1,8 @@
 
 import Foundation
 
-internal struct APIConfigLive: APIConfig{
+internal struct APIConfigLive: APIConfig {
+
     let scheme = "https"
     let host = "www.rijksmuseum.nl"
     let path = "/api/en"
