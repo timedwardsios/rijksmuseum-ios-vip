@@ -29,13 +29,13 @@ extension PortfolioPresenterTests {
     func test_didFetchArts(){
         sut.didFetchArts([artMock])
         XCTAssertEqual([false], displaySpy.displayIsLoadingArgs)
-        XCTAssertEqual([[artMock.imageUrl]], displaySpy.displayImageUrlsArgs)
+        XCTAssertEqual([[artMock.imageURL]], displaySpy.displayImageURLsArgs)
     }
 
     func test_didFetchArts_empty(){
         sut.didFetchArts([ArtMock]())
         XCTAssertEqual([false], displaySpy.displayIsLoadingArgs)
-        XCTAssertEqual([[URL]()], displaySpy.displayImageUrlsArgs)
+        XCTAssertEqual([[URL]()], displaySpy.displayImageURLsArgs)
     }
 
     func test_didError(){

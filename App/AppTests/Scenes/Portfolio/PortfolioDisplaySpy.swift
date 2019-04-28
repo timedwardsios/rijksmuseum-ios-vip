@@ -5,15 +5,15 @@ import Foundation
 class PortfolioDisplaySpy: PortfolioDisplaying {
 
     var displayIsLoadingArgs = [Bool]()
-    var displayImageUrlsArgs = [[URL]]()
+    var displayImageURLsArgs = [[URL]]()
     var displayErrorMessageArgs = [String]()
 
     func displayIsLoading(_ isLoading: Bool) {
         displayIsLoadingArgs.append(isLoading)
     }
 
-    func displayImageUrls(_ urls: [URL]) {
-        displayImageUrlsArgs.append(urls)
+    func displayImageURLs(_ urls: [URL]) {
+        displayImageURLsArgs.append(urls)
     }
 
     func displayErrorMessage(_ message: String) {

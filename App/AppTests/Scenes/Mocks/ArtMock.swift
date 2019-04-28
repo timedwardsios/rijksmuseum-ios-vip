@@ -7,5 +7,5 @@ struct ArtMock: Art, Equatable {
     var id = Seeds.string
     var title = Seeds.string
     var artist = Seeds.string
-    var imageUrl = Seeds.url
+    var imageURL = Seeds.url
 }

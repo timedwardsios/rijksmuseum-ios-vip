@@ -46,14 +46,14 @@ private struct RootJSON: Decodable {
         var id: String
         var title: String
         var artist: String
-        var imageUrl: URL
+        var imageURL: URL
 
         enum CodingKeys: String, CodingKey {
             case remoteId = "objectNumber"
             case title = "title"
             case artist = "principalOrFirstMaker"
             case imageDict = "webImage"
-            case imageUrl = "url"
+            case imageURL = "url"
         }
 
         init(from decoder: Decoder) throws {
@@ -62,7 +62,7 @@ private struct RootJSON: Decodable {
             self.title = try container.decode(String.self, forKey: .title)
             self.artist = try container.decode(String.self, forKey: .artist)
             let webImage = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .imageDict)
-            self.imageUrl = try webImage.decode(URL.self, forKey: .imageUrl)
+            self.imageURL = try webImage.decode(URL.self, forKey: .imageURL)
         }
     }
 

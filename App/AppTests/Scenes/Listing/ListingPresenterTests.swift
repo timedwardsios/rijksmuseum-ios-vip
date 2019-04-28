@@ -23,6 +23,6 @@ extension ListingPresenterTests {
 
     func test_didLoadArt(){
         sut.didLoadArt(artMock)
-        XCTAssertEqual([artMock.imageUrl], displaySpy.displayImageURLArgs)
+        XCTAssertEqual([artMock.imageURL], displaySpy.displayImageURLArgs)
     }
 }

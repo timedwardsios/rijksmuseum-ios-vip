@@ -19,8 +19,8 @@ extension PortfolioPresenter: PortfolioPresenting {
 
     func didFetchArts(_ arts: [Art]) {
         display?.displayIsLoading(false)
-        let imageUrls = getImageUrlsFromArts(arts)
-        display?.displayImageUrls(imageUrls)
+        let imageURLs = getImageURLsFromArts(arts)
+        display?.displayImageURLs(imageURLs)
     }
 
     func didError(_ error: Error) {
@@ -32,8 +32,8 @@ extension PortfolioPresenter: PortfolioPresenting {
 
 private extension PortfolioPresenter {
 
-    func getImageUrlsFromArts(_ arts: [Art]) -> [URL] {
-        return arts.map({$0.imageUrl})
+    func getImageURLsFromArts(_ arts: [Art]) -> [URL] {
+        return arts.map({$0.imageURL})
     }
 
     func getErrorMessageFromError(_ error:Error) -> String {

@@ -26,7 +26,7 @@ extension PortfolioViewController: PortfolioDisplaying {
         }
     }
 
-    func displayImageUrls(_ urls: [URL]) {
+    func displayImageURLs(_ urls: [URL]) {
         DispatchQueue.main.async { [weak self] in
             self?.setImageURLs(urls)
         }

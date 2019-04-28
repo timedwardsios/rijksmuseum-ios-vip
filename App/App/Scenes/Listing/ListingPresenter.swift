@@ -22,6 +22,6 @@ extension ListingPresenter: ListingPresenting {
 private extension ListingPresenter {
 
     func getImageURLFromArt(_ art:Art) -> URL {
-        return art.imageUrl
+        return art.imageURL
     }
 }

@@ -16,7 +16,7 @@ protocol PortfolioPresenting {
 
 protocol PortfolioDisplaying: class {
     func displayIsLoading(_ isLoading: Bool)
-    func displayImageUrls(_ urls:[URL])
+    func displayImageURLs(_ urls:[URL])
     func displayErrorMessage(_ message: String)
 }
 
