@@ -1,7 +1,7 @@
 
 import Foundation
 import Utils
-@testable import Services
+@testable import Kit
 
 class ArtFactorySpy: ArtFactory {
 

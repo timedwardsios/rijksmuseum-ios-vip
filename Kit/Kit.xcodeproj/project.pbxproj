@@ -14,7 +14,6 @@
 		2215454922672A8D0062E9C6 /* NetworkRequestFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215454822672A8D0062E9C6 /* NetworkRequestFactorySpy.swift */; };
 		221BDF2F2270DEA100631270 /* NetworkServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */; };
 		222BB71B2271E53A0027F2EB /* JSONDecoderServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB71A2271E53A0027F2EB /* JSONDecoderServiceSpy.swift */; };
-		222BB71D2271E54E0027F2EB /* JSONDecoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB71C2271E54E0027F2EB /* JSONDecoderService.swift */; };
 		222BB7212271ED2C0027F2EB /* APIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */; };
 		222BB7232271ED4B0027F2EB /* ArtFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7222271ED4B0027F2EB /* ArtFactory.swift */; };
 		222BB7262271F6460027F2EB /* NetworkRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7252271F6460027F2EB /* NetworkRequestFactoryTests.swift */; };
@@ -56,7 +55,6 @@
 		221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceSpy.swift; sourceTree = "<group>"; };
 		221F3EC7212F397100907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		222BB71A2271E53A0027F2EB /* JSONDecoderServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderServiceSpy.swift; sourceTree = "<group>"; };
-		222BB71C2271E54E0027F2EB /* JSONDecoderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONDecoderService.swift; path = ../../Utils/Utils/JSONDecoderService.swift; sourceTree = "<group>"; };
 		222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestFactory.swift; sourceTree = "<group>"; };
 		222BB7222271ED4B0027F2EB /* ArtFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtFactory.swift; sourceTree = "<group>"; };
 		222BB7252271F6460027F2EB /* NetworkRequestFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactoryTests.swift; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 			children = (
 				2258B967227210C000516603 /* Dependencies.swift */,
 				2273F7BF227119690027C7FC /* APIConfigLive.swift */,
-				222BB71C2271E54E0027F2EB /* JSONDecoderService.swift */,
 				2258B96E2272179300516603 /* Workers */,
 				2258B96D2272178E00516603 /* Factories */,
 				22C9BF06212F2A27000D15E6 /* Resources */,
@@ -484,7 +481,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2273F7C0227119690027C7FC /* APIConfigLive.swift in Sources */,
-				222BB71D2271E54E0027F2EB /* JSONDecoderService.swift in Sources */,
 				2258B96C227211CF00516603 /* ArtWorker.swift in Sources */,
 				222BB7232271ED4B0027F2EB /* ArtFactory.swift in Sources */,
 				2258B968227210C000516603 /* Dependencies.swift in Sources */,

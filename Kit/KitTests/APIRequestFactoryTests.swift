@@ -1,7 +1,7 @@
 
 import XCTest
 import TestTools
-@testable import Services
+@testable import Kit
 
 class APIRequestFactoryTests: XCTestCase {
 
@@ -16,7 +16,7 @@ class APIRequestFactoryTests: XCTestCase {
 extension APIRequestFactoryTests {
     
     func test_createRequest() {
-        let request = sut.createRequest(fromAPIEndpoint: .art)
+        let request = sut.createAPIRequest(fromAPIEndpoint: .art)
         XCTAssertEqual("/collection", request.path)
         XCTAssertEqual(3, request.queryItems.count)
     }

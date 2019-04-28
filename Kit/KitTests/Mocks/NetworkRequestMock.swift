@@ -2,7 +2,7 @@
 import Foundation
 import TestTools
 import Utils
-@testable import Services
+@testable import Kit
 
 struct NetworkRequestMock: NetworkRequest, Equatable {
     var url = Seeds.url

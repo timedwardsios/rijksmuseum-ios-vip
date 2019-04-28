@@ -1,7 +1,7 @@
 
 import Foundation
 import TestTools
-@testable import Services
+@testable import Kit
 
 struct APIRequestMock: APIRequest, Equatable {
     var path = "/" + Seeds.string

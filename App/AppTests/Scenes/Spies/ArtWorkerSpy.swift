@@ -1,6 +1,6 @@
 
 import Foundation
-@testable import Services
+@testable import Kit
 
 class ArtWorkerSpy: ArtWorker {
 

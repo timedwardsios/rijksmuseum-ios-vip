@@ -1,7 +1,7 @@
 
 import UIKit
 import Utils
-import Services
+import Kit
 
 class DependenciesDefault: Dependencies {}
 

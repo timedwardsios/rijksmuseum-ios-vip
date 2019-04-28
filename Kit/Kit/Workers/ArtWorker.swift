@@ -30,9 +30,9 @@ internal class ArtWorkerDefault {
 
 extension ArtWorkerDefault: ArtWorker {
     func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void) {
-        let apiRequest = apiRequestFactory.createRequest(fromAPIEndpoint: .art)
+        let apiRequest = apiRequestFactory.createAPIRequest(fromAPIEndpoint: .art)
 
-        guard let networkRequest = try? networkRequestFactory.createRequest(fromAPIRequest: apiRequest) else {
+        guard let networkRequest = try? networkRequestFactory.createNetworkRequest(fromAPIRequest: apiRequest) else {
             completion(.failure(LocalError.networkRequestCreationFailure))
             return
         }

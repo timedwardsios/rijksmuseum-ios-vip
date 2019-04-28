@@ -1,7 +1,7 @@
 
 import Foundation
 import Utils
-@testable import Services
+@testable import Kit
 
 class NetworkRequestFactorySpy: NetworkRequestFactory {
 
@@ -13,7 +13,7 @@ class NetworkRequestFactorySpy: NetworkRequestFactory {
 
     var createRequestArgs = [APIRequest]()
 
-    func createRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest {
+    func createNetworkRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest {
         createRequestArgs.append(apiRequest)
         return try createRequestResult.get()
     }

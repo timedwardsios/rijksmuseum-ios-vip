@@ -1,7 +1,7 @@
 
 import XCTest
 import TestTools
-@testable import Services
+@testable import Kit
 
 class ArtWorkerTests: XCTestCase {
 

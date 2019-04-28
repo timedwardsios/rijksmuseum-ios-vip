@@ -1,5 +1,5 @@
 import UIKit
-import Services
+import Kit
 
 @UIApplicationMain
 class AppDelegate: UIResponder {

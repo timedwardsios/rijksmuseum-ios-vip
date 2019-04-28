@@ -1,6 +1,6 @@
 
 import UIKit
-import Services
+import Kit
 import Utils
 
 class ListingInteractor {

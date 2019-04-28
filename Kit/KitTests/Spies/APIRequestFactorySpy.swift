@@ -1,7 +1,7 @@
 
 import Foundation
 import Utils
-@testable import Services
+@testable import Kit
 
 class APIRequestFactorySpy: APIRequestFactory {
 
@@ -13,7 +13,7 @@ class APIRequestFactorySpy: APIRequestFactory {
 
     var createRequestArgs = [APIEndpoint]()
 
-    func createRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest {
+    func createAPIRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest {
         createRequestArgs.append(apiEndpoint)
         return createRequestResult
     }
