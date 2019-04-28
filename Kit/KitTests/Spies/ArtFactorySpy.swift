@@ -13,7 +13,7 @@ class ArtFactorySpy: ArtFactory {
 
     var createArtsArgs = [Data]()
 
-    func createArts(fromJSONData data: Data) throws -> [Art] {
+    func arts(fromJSONData data: Data) throws -> [Art] {
         createArtsArgs.append(data)
         return try createArtsResult.get()
     }

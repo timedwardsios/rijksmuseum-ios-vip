@@ -22,7 +22,7 @@ extension NetworkRequestFactoryTests {
 
     func test_createRequest() throws {
         // when
-        let request = try sut.createNetworkRequest(fromAPIRequest: apiRequest)
+        let request = try sut.networkRequest(fromAPIRequest: apiRequest)
         // then
         let actualComponents = try XCTAssertUnwrapOptional(URLComponents(url: request.url, resolvingAgainstBaseURL: false))
         XCTAssertEqual(apiConfigMock.scheme, actualComponents.scheme)
@@ -39,7 +39,7 @@ extension NetworkRequestFactoryTests {
         apiConfigMock.scheme = ""
         sut = .init(apiConfig: apiConfigMock)
         // then
-        XCTAssertThrowsError(try sut.createNetworkRequest(fromAPIRequest: apiRequest))
+        XCTAssertThrowsError(try sut.networkRequest(fromAPIRequest: apiRequest))
     }
 
     func test_createRequest_noConfigHostname() {
@@ -47,7 +47,7 @@ extension NetworkRequestFactoryTests {
         apiConfigMock.host = ""
         sut = .init(apiConfig: apiConfigMock)
         // then
-        XCTAssertThrowsError(try sut.createNetworkRequest(fromAPIRequest: apiRequest))
+        XCTAssertThrowsError(try sut.networkRequest(fromAPIRequest: apiRequest))
     }
 
     func test_createRequest_noConfigPath() throws {
@@ -55,7 +55,7 @@ extension NetworkRequestFactoryTests {
         apiConfigMock.path = ""
         sut = .init(apiConfig: apiConfigMock)
         // then
-        let request = try XCTAssertUnwrapOptional(sut.createNetworkRequest(fromAPIRequest: apiRequest))
+        let request = try XCTAssertUnwrapOptional(sut.networkRequest(fromAPIRequest: apiRequest))
         XCTAssertEqual(apiRequest.path, request.url.path)
     }
 
@@ -64,7 +64,7 @@ extension NetworkRequestFactoryTests {
         apiConfigMock.queryItems = [URLQueryItem]()
         sut = .init(apiConfig: apiConfigMock)
         // then
-        let request = try XCTAssertUnwrapOptional(sut.createNetworkRequest(fromAPIRequest: apiRequest))
+        let request = try XCTAssertUnwrapOptional(sut.networkRequest(fromAPIRequest: apiRequest))
         let actualQueryItems = try XCTAssertUnwrapOptional(URLComponents(url: request.url, resolvingAgainstBaseURL: false)?.queryItems)
         XCTAssertEqual(Set(apiRequest.queryItems), Set(actualQueryItems))
     }
@@ -73,12 +73,12 @@ extension NetworkRequestFactoryTests {
         // given
         apiRequest.path = ""
         // then
-        XCTAssertThrowsError(try sut.createNetworkRequest(fromAPIRequest: apiRequest))
+        XCTAssertThrowsError(try sut.networkRequest(fromAPIRequest: apiRequest))
     }
 
     func test_createRequest_noRequestQueryItems() throws {
         apiRequest.queryItems = [URLQueryItem]()
-        let request = try XCTAssertUnwrapOptional(sut.createNetworkRequest(fromAPIRequest: apiRequest))
+        let request = try XCTAssertUnwrapOptional(sut.networkRequest(fromAPIRequest: apiRequest))
         let actualQueryItems = try XCTAssertUnwrapOptional(URLComponents(url: request.url, resolvingAgainstBaseURL: false)?.queryItems)
         XCTAssertEqual(Set(apiConfigMock.queryItems), Set(actualQueryItems))
     }

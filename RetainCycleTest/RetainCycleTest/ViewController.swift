@@ -17,14 +17,18 @@ class ViewController: UIViewController {
 }
 
 class FirstClass {
+
     let secondClass = SecondClass()
 
     init() {
-        secondClass.doTheThing(completion: completion)
-    }
-
-    func completion(){
-        print("COMPLETION")
+        secondClass.doTheThing { (result) in
+            switch result {
+            case .success(let s):
+                print("RESULT: " + String(s))
+            case .failure(let e):
+                print(e.localizedDescription)
+            }
+        }
     }
 
     deinit {
@@ -33,9 +37,32 @@ class FirstClass {
 }
 
 class SecondClass {
-    func doTheThing(completion: @escaping ()->Void) {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (_) in
-            completion()
+
+    var results = [Result<String, Error>]()
+
+    init() {
+        for _ in 1...100 {
+            struct Err: Error {}
+            results.append(.failure(Err()))
         }
+    }
+
+
+    func doTheThing(completion: @escaping (Result<Int, Error>)->Void) {
+        for result in results {
+            let _ = result.unwrap(errorHandler: completion)
+        }
+    }
+}
+
+public extension Result {
+    func unwrap<T>(errorHandler: ((Result<T, Error>)->Void)) -> Success? {
+        switch self {
+        case .success(let value):
+            return value
+        case .failure(let error):
+            errorHandler(.failure(error))
+        }
+        return nil
     }
 }

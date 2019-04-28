@@ -10,12 +10,7 @@ internal protocol APIConfig {
 }
 
 internal protocol NetworkRequestFactory {
-    func createNetworkRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest
-}
-
-private struct NetworkRequestForAPI: NetworkRequest {
-    var url: URL
-    var method: NetworkMethod
+    func networkRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest
 }
 
 internal class NetworkRequestFactoryDefault{
@@ -25,30 +20,35 @@ internal class NetworkRequestFactoryDefault{
     }
 }
 
-private enum LocalError: String, LocalizedError{
-    case unableToConstructURL
-    case invalidScheme
-    case invalidHost
-    case invalidPath
-}
-
 extension NetworkRequestFactoryDefault: NetworkRequestFactory {
     
-    func createNetworkRequest(fromAPIRequest apiRequest: APIRequest) throws -> NetworkRequest {
+    func networkRequest(fromAPIRequest apiRequest: APIRequest) throws -> NetworkRequest {
 
         try validateAPIConfig(apiConfig)
 
         try validateAPIRequest(apiRequest)
 
-        let finalURL = try createURLUsingAPIConfig(apiConfig, apiRequest: apiRequest)
+        let networkRequestURL = try urlFromAPIConfig(apiConfig, apiRequest: apiRequest)
 
-        let networkRequest = createNetworkRequestUsingURL(finalURL, networkMethod: .GET)
+        let networkRequest = networkRequestFromURL(networkRequestURL, networkMethod: .GET)
 
         return networkRequest
     }
 }
 
 private extension NetworkRequestFactoryDefault {
+
+    enum LocalError: String, LocalizedError{
+        case unableToConstructURL
+        case invalidScheme
+        case invalidHost
+        case invalidPath
+    }
+
+    struct NetworkRequestForAPI: NetworkRequest {
+        var url: URL
+        var method: NetworkMethod
+    }
 
     func validateAPIConfig(_ config: APIConfig) throws {
         try validateURLScheme(apiConfig.scheme)
@@ -59,18 +59,18 @@ private extension NetworkRequestFactoryDefault {
         try validateURLPath(apiRequest.path)
     }
 
-    func createURLUsingAPIConfig(_ config: APIConfig, apiRequest: APIRequest) throws -> URL {
+    func urlFromAPIConfig(_ config: APIConfig, apiRequest: APIRequest) throws -> URL {
 
-        let urlComponents = createURLComponentsUsingAPIConfig(apiConfig)
+        let urlComponents = urlComponentsFromAPIConfig(apiConfig)
 
         let urlComponentsExtended = extendURLComponents(urlComponents, usingAPIRequest: apiRequest)
 
-        let finalURL = try createURLUsingURLComponents(urlComponentsExtended)
+        let finalURL = try urlFromURLComponents(urlComponentsExtended)
 
         return finalURL
     }
 
-    func createNetworkRequestUsingURL(_ url: URL, networkMethod: NetworkMethod) -> NetworkRequest {
+    func networkRequestFromURL(_ url: URL, networkMethod: NetworkMethod) -> NetworkRequest {
         return NetworkRequestForAPI(url: url, method: networkMethod)
     }
 }
@@ -99,7 +99,7 @@ private extension NetworkRequestFactoryDefault {
 // MARK: - Creation
 private extension NetworkRequestFactoryDefault {
 
-    func createURLComponentsUsingAPIConfig(_ apiConfig:APIConfig) -> URLComponents {
+    func urlComponentsFromAPIConfig(_ apiConfig:APIConfig) -> URLComponents {
         var urlComponents = URLComponents()
         urlComponents.scheme = apiConfig.scheme
         urlComponents.host = apiConfig.host
@@ -115,7 +115,7 @@ private extension NetworkRequestFactoryDefault {
         return newURLComponents
     }
 
-    func createURLUsingURLComponents(_ urlComponents: URLComponents) throws -> URL {
+    func urlFromURLComponents(_ urlComponents: URLComponents) throws -> URL {
         guard let url = urlComponents.url else {
             throw LocalError.unableToConstructURL
         }

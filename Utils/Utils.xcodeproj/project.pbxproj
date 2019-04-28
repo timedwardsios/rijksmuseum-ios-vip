@@ -24,6 +24,8 @@
 		224196032262A0820006348F /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196022262A0820006348F /* Collection.swift */; };
 		224196052262A08B0006348F /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196042262A08B0006348F /* UITableViewCell.swift */; };
 		2253927022760417007AEF1F /* JSONDecoderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253926F22760417007AEF1F /* JSONDecoderService.swift */; };
+		2253927722762E30007AEF1F /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253927622762E30007AEF1F /* NetworkMethod.swift */; };
+		2253927A22762E5E007AEF1F /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253927922762E5E007AEF1F /* NetworkRequest.swift */; };
 		2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C65212EE7E5000A0BE0 /* UICollectionReusableView.swift */; };
 		2289A5C2212F108800787E2B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C66212EE7E5000A0BE0 /* UIColor.swift */; };
 		2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C67212EE7E5000A0BE0 /* UIRefreshControl.swift */; };
@@ -65,6 +67,8 @@
 		224196022262A0820006348F /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		224196042262A08B0006348F /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		2253926F22760417007AEF1F /* JSONDecoderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderService.swift; sourceTree = "<group>"; };
+		2253927622762E30007AEF1F /* NetworkMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
+		2253927922762E5E007AEF1F /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTask.swift; sourceTree = "<group>"; };
 		2290FCD62271C037009E5B47 /* NetworkSessionDataTaskSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTaskSpy.swift; sourceTree = "<group>"; };
@@ -153,15 +157,25 @@
 			path = Spies;
 			sourceTree = "<group>";
 		};
-		222E305C22707D23004A5FE9 /* NetworkService */ = {
+		222E305C22707D23004A5FE9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				222E305B22707D23004A5FE9 /* NetworkService.swift */,
 				222E308722709F2B004A5FE9 /* NetworkRawResponseValidator.swift */,
 				222E307422707EF6004A5FE9 /* NetworkSession.swift */,
 				2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */,
+				2253927822762E38007AEF1F /* Public Model */,
 			);
-			path = NetworkService;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2253927822762E38007AEF1F /* Public Model */ = {
+			isa = PBXGroup;
+			children = (
+				2253927622762E30007AEF1F /* NetworkMethod.swift */,
+				2253927922762E5E007AEF1F /* NetworkRequest.swift */,
+			);
+			path = "Public Model";
 			sourceTree = "<group>";
 		};
 		2290FCDA2271C0D8009E5B47 /* Mocks */ = {
@@ -208,7 +222,7 @@
 				221BDF422270F89A00631270 /* Dependencies.swift */,
 				22F55BE62274CFD900B8544A /* UICollectionViewGenericDataSource.swift */,
 				2253926F22760417007AEF1F /* JSONDecoderService.swift */,
-				222E305C22707D23004A5FE9 /* NetworkService */,
+				222E305C22707D23004A5FE9 /* Network */,
 				22AC8C68212EE7E5000A0BE0 /* Extensions */,
 				222A72CE212EEBC800BA759F /* Resources */,
 			);
@@ -485,8 +499,10 @@
 				2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */,
 				224195FF2262A0620006348F /* LocalizedError.swift in Sources */,
 				224196032262A0820006348F /* Collection.swift in Sources */,
+				2253927722762E30007AEF1F /* NetworkMethod.swift in Sources */,
 				222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */,
 				2289A5C2212F108800787E2B /* UIColor.swift in Sources */,
+				2253927A22762E5E007AEF1F /* NetworkRequest.swift in Sources */,
 				224196052262A08B0006348F /* UITableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,19 +2,8 @@
 import Foundation
 import Utils
 
-public protocol Art {
-    var id: String{get}
-    var title: String{get}
-    var artist: String{get}
-    var imageUrl: URL{get}
-}
-
 internal protocol ArtFactory {
-    func createArts(fromJSONData data:Data) throws -> [Art]
-}
-
-private enum LocalError: String, LocalizedError{
-    case jsonDecodingFailure
+    func arts(fromJSONData data:Data) throws -> [Art]
 }
 
 internal class ArtFactoryDefault{
@@ -26,18 +15,29 @@ internal class ArtFactoryDefault{
 
 extension ArtFactoryDefault: ArtFactory {
 
-    func createArts(fromJSONData data: Data) throws -> [Art] {
-        do {
-            let rootObject = try jsonDecoderService.decode(RootObject.self, from: data)
-            return rootObject.artObjects
-        } catch {
-            throw LocalError.jsonDecodingFailure
-        }
+    func arts(fromJSONData data: Data) throws -> [Art] {
+        let rootJSON = try rootJSONFromData(data)
+        let arts = artsFromRootJSON(rootJSON)
+        return arts
     }
 }
 
-private struct RootObject: Decodable {
-    struct ArtObject: Art, Decodable {
+private extension ArtFactoryDefault {
+
+    func rootJSONFromData(_ data:Data) throws -> RootJSON {
+        return try jsonDecoderService.decode(RootJSON.self, from: data)
+    }
+
+    func artsFromRootJSON(_ rootJSON: RootJSON) -> [Art] {
+        return rootJSON.artJSONs
+    }
+}
+
+
+private struct RootJSON: Decodable {
+
+    struct ArtJSON: Art, Decodable {
+
         var id: String
         var title: String
         var artist: String
@@ -61,7 +61,7 @@ private struct RootObject: Decodable {
         }
     }
 
-    let artObjects: [ArtObject]
+    let artJSONs: [ArtJSON]
 
     private enum CodingKeys: String, CodingKey {
         case artObjects = "artObjects"
@@ -69,6 +69,6 @@ private struct RootObject: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        artObjects = try container.decode([ArtObject].self, forKey: .artObjects)
+        artJSONs = try container.decode([ArtJSON].self, forKey: .artObjects)
     }
 }

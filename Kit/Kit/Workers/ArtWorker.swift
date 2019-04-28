@@ -6,12 +6,6 @@ public protocol ArtWorker {
     func fetchArt(completion: @escaping (Result<[Art], Error>)->Void)
 }
 
-private enum LocalError: String, LocalizedError{
-    case networkRequestCreationFailure
-    case networkServiceFailure
-    case artFactoryFailure
-}
-
 internal class ArtWorkerDefault {
     let apiRequestFactory: APIRequestFactory
     let networkRequestFactory: NetworkRequestFactory
@@ -29,27 +23,61 @@ internal class ArtWorkerDefault {
 }
 
 extension ArtWorkerDefault: ArtWorker {
-    func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void) {
-        let apiRequest = apiRequestFactory.createAPIRequest(fromAPIEndpoint: .art)
 
-        guard let networkRequest = try? networkRequestFactory.createNetworkRequest(fromAPIRequest: apiRequest) else {
-            completion(.failure(LocalError.networkRequestCreationFailure))
+    func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void) {
+
+        guard let networkRequest = getNetworkRequestResult().unwrapWithErrorHandler(completion) else {
             return
         }
 
-        networkService.processNetworkRequest(networkRequest) { [weak self] (result) in
-            guard let data = result.unwrap() else {
-                completion(.failure(LocalError.networkServiceFailure))
-                return
-            }
-
-            guard let arts = try? self?.artFactory.createArts(fromJSONData: data) else {
-                completion(.failure(LocalError.networkServiceFailure))
-                return
-            }
-
-            completion(.success(arts))
-        }
-
+        startFetchingWithNetworkRequest(networkRequest, completion: completion)
     }
+}
+
+private extension ArtWorkerDefault {
+
+    func getNetworkRequestResult() -> Result<NetworkRequest, Error> {
+        let artEndpoint = apiEndpoint()
+
+        let apiRequest = apiRequestFromAPIEndpoint(artEndpoint)
+
+        return networkRequestFromAPIRequest(apiRequest)
+    }
+
+    func startFetchingWithNetworkRequest(_ networkRequest: NetworkRequest, completion:@escaping (Result<[Art], Error>)->Void) {
+
+        networkService.processNetworkRequest(networkRequest) { [weak self] (result) in
+
+            guard let data = result.unwrapWithErrorHandler(completion) else {
+                return
+            }
+
+            guard let art = self?.artFactoryResultFromData(data).unwrapWithErrorHandler(completion) else {
+                return
+            }
+
+            completion(.success(art))
+        }
+    }
+
+    func apiEndpoint() -> APIEndpoint {
+        return .art
+    }
+
+    func apiRequestFromAPIEndpoint(_ apiEndpoint: APIEndpoint) -> APIRequest {
+        return apiRequestFactory.apiRequest(fromAPIEndpoint: apiEndpoint)
+    }
+
+    func networkRequestFromAPIRequest(_ apiRequest: APIRequest) -> Result<NetworkRequest, Error> {
+        return Result {
+            try networkRequestFactory.networkRequest(fromAPIRequest: apiRequest)
+        }
+    }
+
+    func artFactoryResultFromData(_ data: Data) -> Result<[Art], Error> {
+        return Result{
+            try artFactory.arts(fromJSONData: data)
+        }
+    }
+
 }

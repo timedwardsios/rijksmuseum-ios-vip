@@ -13,7 +13,7 @@ class APIRequestFactorySpy: APIRequestFactory {
 
     var createRequestArgs = [APIEndpoint]()
 
-    func createAPIRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest {
+    func apiRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest {
         createRequestArgs.append(apiEndpoint)
         return createRequestResult
     }

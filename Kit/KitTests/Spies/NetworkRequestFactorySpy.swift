@@ -13,7 +13,7 @@ class NetworkRequestFactorySpy: NetworkRequestFactory {
 
     var createRequestArgs = [APIRequest]()
 
-    func createNetworkRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest {
+    func networkRequest(fromAPIRequest apiRequest:APIRequest) throws -> NetworkRequest {
         createRequestArgs.append(apiRequest)
         return try createRequestResult.get()
     }

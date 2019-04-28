@@ -12,29 +12,29 @@ internal protocol APIRequest {
 }
 
 internal protocol APIRequestFactory {
-    func createAPIRequest(fromAPIEndpoint apiEndpoint:APIEndpoint) -> APIRequest
-}
-
-private struct Request: APIRequest {
-    var path: String
-    var queryItems: [URLQueryItem]
+    func apiRequest(fromAPIEndpoint apiEndpoint:APIEndpoint) -> APIRequest
 }
 
 internal class APIRequestFactoryDefault{}
 
 extension APIRequestFactoryDefault: APIRequestFactory {
     
-    func createAPIRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest {
+    func apiRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest {
         switch apiEndpoint {
         case .art:
-            return createArtAPIRequest()
+            return artAPIRequest()
         }
     }
 }
 
 private extension APIRequestFactoryDefault {
 
-    func createArtAPIRequest() -> APIRequest {
+    struct Request: APIRequest {
+        var path: String
+        var queryItems: [URLQueryItem]
+    }
+
+    func artAPIRequest() -> APIRequest {
         let path = "/collection"
         let itemCountQueryItem = URLQueryItem(name: "ps", value: "100")
         let imageFilterQueryItem = URLQueryItem(name: "imgonly", value: "true")

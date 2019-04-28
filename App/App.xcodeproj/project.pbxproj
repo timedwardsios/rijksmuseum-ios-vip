@@ -16,7 +16,7 @@
 		221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */; };
 		221830F2210FDA5900FA1E13 /* PortfolioPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */; };
 		2222142022661377001F41C8 /* PortfolioContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222141F22661377001F41C8 /* PortfolioContract.swift */; };
-		2258B966227210A600516603 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258B965227210A600516603 /* Services.framework */; };
+		2253927C2276595E007AEF1F /* Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2253927B2276595E007AEF1F /* Kit.framework */; };
 		2258B98422723F5000516603 /* ArtWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B98322723F5000516603 /* ArtWorkerSpy.swift */; };
 		2258B9F422724B7B00516603 /* ArtMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9F322724B7B00516603 /* ArtMock.swift */; };
 		22695F4821320A27004C47A5 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22695F4721320A27004C47A5 /* Utils.framework */; };
@@ -65,6 +65,7 @@
 		221DB1162130B1830031A401 /* ListingContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingContract.swift; sourceTree = "<group>"; };
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2222141F22661377001F41C8 /* PortfolioContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioContract.swift; sourceTree = "<group>"; };
+		2253927B2276595E007AEF1F /* Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258B965227210A600516603 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258B98322723F5000516603 /* ArtWorkerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkerSpy.swift; sourceTree = "<group>"; };
 		2258B9852272401900516603 /* TestingUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestingUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2258B966227210A600516603 /* Services.framework in Frameworks */,
+				2253927C2276595E007AEF1F /* Kit.framework in Frameworks */,
 				22695F4821320A27004C47A5 /* Utils.framework in Frameworks */,
 				D32F2D023CE356875C5E4FD7 /* Pods_App.framework in Frameworks */,
 			);
@@ -289,6 +290,7 @@
 		A10F01533FEF44811CAB0213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2253927B2276595E007AEF1F /* Kit.framework */,
 				22013B0A2275C67F00B200D6 /* TestTools.framework */,
 				2258B9F72272658900516603 /* UtilsTestTools.framework */,
 				2258B9F522724D6500516603 /* UtilsTestTools.framework */,

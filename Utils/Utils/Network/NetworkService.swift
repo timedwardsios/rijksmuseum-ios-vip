@@ -1,28 +1,9 @@
 
 import Foundation
 
-public enum NetworkMethod: String {
-    case GET
-    case POST
-    case PUT
-    case PATCH
-    case DELETE
-}
-
-public protocol NetworkRequest {
-    var url: URL {get}
-    var method: NetworkMethod {get}
-}
-
 public protocol NetworkService {
     func processNetworkRequest(_ request: NetworkRequest,
                         completion: @escaping (Result<Data, Error>) -> Void)
-}
-
-private struct NetworkRawResponseDefault: NetworkRawResponse {
-    var data: Data?
-    var urlResponse: URLResponse?
-    var error: Swift.Error?
 }
 
 internal class NetworkServiceDefault {
@@ -50,6 +31,12 @@ extension NetworkServiceDefault: NetworkService {
 }
 
 private extension NetworkServiceDefault {
+
+    struct NetworkRawResponseDefault: NetworkRawResponse {
+        var data: Data?
+        var urlResponse: URLResponse?
+        var error: Swift.Error?
+    }
 
     func urlRequestForNetworkRequest(_ networkRequest: NetworkRequest) -> URLRequest {
         var urlRequest = URLRequest(url: networkRequest.url)

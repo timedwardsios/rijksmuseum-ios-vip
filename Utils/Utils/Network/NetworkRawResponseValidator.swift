@@ -11,12 +11,6 @@ internal protocol NetworkRawResponseValidator {
     func validateResponse(_ response: NetworkRawResponse) throws -> Data
 }
 
-private enum LocalError: String, LocalizedError {
-    case noData = "No data"
-    case invalidResponseFormat = "Invalid response format"
-    case badStatusCode = "Invalid status code"
-}
-
 internal class NetworkRawResponseValidatorDefault{}
 
 extension NetworkRawResponseValidatorDefault: NetworkRawResponseValidator {
@@ -34,6 +28,12 @@ extension NetworkRawResponseValidatorDefault: NetworkRawResponseValidator {
 }
 
 private extension NetworkRawResponseValidatorDefault {
+
+    enum LocalError: String, LocalizedError {
+        case noData = "No data"
+        case invalidResponseFormat = "Invalid response format"
+        case badStatusCode = "Invalid status code"
+    }
 
     func checkErrorInResponse(_ response: NetworkRawResponse) throws {
         if let error = response.error {

@@ -5,7 +5,7 @@ import Kit
 
 class DependenciesDefault: Dependencies {}
 
-protocol Dependencies: Services.Dependencies {}
+protocol Dependencies: Kit.Dependencies {}
 
 extension Dependencies {
 
