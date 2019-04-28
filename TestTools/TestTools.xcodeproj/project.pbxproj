@@ -155,6 +155,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 22013AD42275C43900B200D6;
 			productRefGroup = 22013ADF2275C43900B200D6 /* Products */;

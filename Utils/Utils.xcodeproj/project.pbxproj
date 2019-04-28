@@ -17,7 +17,7 @@
 		222E305222707CB8004A5FE9 /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */; };
 		222E306D22707E1F004A5FE9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E305B22707D23004A5FE9 /* NetworkService.swift */; };
 		222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E307422707EF6004A5FE9 /* NetworkSession.swift */; };
-		222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */; };
+		222E308822709F2B004A5FE9 /* NetworkRawResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308722709F2B004A5FE9 /* NetworkRawResponseValidator.swift */; };
 		222E308A22709F3A004A5FE9 /* NetworkResponseValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */; };
 		224195FF2262A0620006348F /* LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224195FE2262A0620006348F /* LocalizedError.swift */; };
 		224196012262A0720006348F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224196002262A0720006348F /* Result.swift */; };
@@ -57,7 +57,7 @@
 		222E305122707CB8004A5FE9 /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
 		222E305B22707D23004A5FE9 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		222E307422707EF6004A5FE9 /* NetworkSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
-		222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidator.swift; sourceTree = "<group>"; };
+		222E308722709F2B004A5FE9 /* NetworkRawResponseValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRawResponseValidator.swift; sourceTree = "<group>"; };
 		222E308922709F3A004A5FE9 /* NetworkResponseValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorTests.swift; sourceTree = "<group>"; };
 		224195FE2262A0620006348F /* LocalizedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedError.swift; sourceTree = "<group>"; };
 		224196002262A0720006348F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				222E305B22707D23004A5FE9 /* NetworkService.swift */,
-				222E308722709F2B004A5FE9 /* NetworkResponseValidator.swift */,
+				222E308722709F2B004A5FE9 /* NetworkRawResponseValidator.swift */,
 				222E307422707EF6004A5FE9 /* NetworkSession.swift */,
 				2290FCC32271BD32009E5B47 /* NetworkSessionDataTask.swift */,
 			);
@@ -476,7 +476,7 @@
 				22013ACC2275BF5200B200D6 /* UIAlertController.swift in Sources */,
 				2290FCC42271BD32009E5B47 /* NetworkSessionDataTask.swift in Sources */,
 				221BDF432270F89A00631270 /* Dependencies.swift in Sources */,
-				222E308822709F2B004A5FE9 /* NetworkResponseValidator.swift in Sources */,
+				222E308822709F2B004A5FE9 /* NetworkRawResponseValidator.swift in Sources */,
 				2289A5C5212F10A800787E2B /* UIRefreshControl.swift in Sources */,
 				2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */,
 				224195FF2262A0620006348F /* LocalizedError.swift in Sources */,

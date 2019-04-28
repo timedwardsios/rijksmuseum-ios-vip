@@ -7,7 +7,7 @@ public extension Dependencies {
 
     func resolve() -> NetworkService {
         return NetworkServiceDefault(networkSession: resolve(),
-                                     networkResponseValidator: resolve())
+                                     networkRawResponseValidator: resolve())
     }
 }
 
@@ -17,7 +17,7 @@ private extension Dependencies {
         return URLSession.shared
     }
 
-    func resolve() -> NetworkResponseValidatorDefault {
-        return NetworkResponseValidatorDefault()
+    func resolve() -> NetworkRawResponseValidatorDefault {
+        return NetworkRawResponseValidatorDefault()
     }
 }

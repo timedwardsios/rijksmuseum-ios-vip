@@ -13,7 +13,7 @@ public func XCTAssertUnwrapOptional<T>(_ variable: T?, message: String = "Unexpe
 }
 
 public extension XCTestCase {
-    func waitForExpectation(_ expectation:XCTestExpectation){
+    func wait(for expectation:XCTestExpectation){
         let timeout = TimeInterval(1)
         wait(for: [expectation], timeout: timeout)
     }

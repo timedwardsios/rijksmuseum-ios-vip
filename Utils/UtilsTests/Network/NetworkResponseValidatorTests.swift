@@ -5,7 +5,7 @@ import TestTools
 
 class NetworkResponseValidatorTests: XCTestCase {
 
-    var sut: NetworkResponseValidatorDefault!
+    var sut: NetworkRawResponseValidatorDefault!
 
     var responseMock: NetworkResponseMock!
 

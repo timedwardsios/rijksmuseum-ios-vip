@@ -2,7 +2,7 @@
 import Foundation
 @testable import Utils
 
-class NetworkResponseValidatorSpy: NetworkResponseValidator {
+class NetworkResponseValidatorSpy: NetworkRawResponseValidator {
 
     var validateResponseAndUnwrapDataResult: Result<Data, Error>
 
@@ -10,9 +10,9 @@ class NetworkResponseValidatorSpy: NetworkResponseValidator {
         self.validateResponseAndUnwrapDataResult = validateResponseAndUnwrapDataResult
     }
 
-    var validateResponseAndUnwrapDataArgs = [NetworkResponse]()
+    var validateResponseAndUnwrapDataArgs = [NetworkRawResponse]()
 
-    func validateResponseAndUnwrapData(_ response: NetworkResponse) throws -> Data {
+    func validateResponseAndUnwrapData(_ response: NetworkRawResponse) throws -> Data {
         validateResponseAndUnwrapDataArgs.append(response)
         return try validateResponseAndUnwrapDataResult.get()
     }

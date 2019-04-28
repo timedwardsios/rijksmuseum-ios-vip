@@ -37,7 +37,7 @@ extension ArtWorkerDefault: ArtWorker {
             return
         }
 
-        networkService.processRequest(networkRequest) { [weak self] (result) in
+        networkService.processNetworkRequest(networkRequest) { [weak self] (result) in
             guard let data = result.unwrap() else {
                 completion(.failure(LocalError.networkServiceFailure))
                 return

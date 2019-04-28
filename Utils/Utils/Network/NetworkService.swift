@@ -15,50 +15,55 @@ public protocol NetworkRequest {
 }
 
 public protocol NetworkService {
-    func processRequest(_ request: NetworkRequest,
+    func processNetworkRequest(_ request: NetworkRequest,
                         completion: @escaping (Result<Data, Error>) -> Void)
 }
 
-private struct NetworkResponseDefault: NetworkResponse {
+private struct NetworkRawResponseDefault: NetworkRawResponse {
     var data: Data?
     var urlResponse: URLResponse?
     var error: Swift.Error?
 }
 
-private enum LocalError: String, LocalizedError{
-    case badValidation = "Failed to validate network response"
-}
-
 internal class NetworkServiceDefault {
 
     private let networkSession: NetworkSession
-    private let networkResponseValidator: NetworkResponseValidator
+    private let networkRawResponseValidator: NetworkRawResponseValidator
 
     init(networkSession: NetworkSession,
-         networkResponseValidator: NetworkResponseValidator){
+         networkRawResponseValidator: NetworkRawResponseValidator){
         self.networkSession = networkSession
-        self.networkResponseValidator = networkResponseValidator
+        self.networkRawResponseValidator = networkRawResponseValidator
     }
 }
 
 extension NetworkServiceDefault: NetworkService {
-    
-    func processRequest(_ request: NetworkRequest, completion: @escaping (Result<Data, Error>) -> Void) {
-        var urlRequest = URLRequest(url: request.url)
-        urlRequest.httpMethod = request.method.rawValue
-        let dataTask = networkSession.dataTask(with: urlRequest) { [weak self] (data, response, error) in
+
+    func processNetworkRequest(_ networkRequest: NetworkRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+
+        let urlRequest = urlRequestForNetworkRequest(networkRequest)
+
+        let dataTask = networkSession.dataTask(with: urlRequest) { [weak self] in
             guard let self = self else {
                 return
             }
-            let networkResponse = NetworkResponseDefault(data: data, urlResponse: response, error: error)
-            do {
-                let data = try self.networkResponseValidator.validateResponseAndUnwrapData(networkResponse)
-                completion(.success(data))
-            } catch {
-                completion(.failure(LocalError.badValidation))
-            }
-        }
 
+            let networkRawResponse = NetworkRawResponseDefault(data: $0, urlResponse: $1, error: $2)
+
+            let validationResult = Result {
+                try self.networkRawResponseValidator.validateResponse(networkRawResponse)
+            }
+            completion(validationResult)
+        }
         dataTask.resume()
+    }
+}
+
+private extension NetworkServiceDefault {
+
+    func urlRequestForNetworkRequest(_ networkRequest: NetworkRequest) -> URLRequest {
+        var urlRequest = URLRequest(url: networkRequest.url)
+        urlRequest.httpMethod = networkRequest.method.rawValue
+        return urlRequest
     }
 }
