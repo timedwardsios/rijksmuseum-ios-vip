@@ -10,64 +10,25 @@ class PortfolioViewController: UICollectionViewController, StoryboardLoadable {
 
     private let dataSource = UICollectionViewGenericDataSource<URL, PortfolioImageCell>()
     private let refreshControl = UIRefreshControl()
-    private var imageUrls = [URL]()
-}
 
-// MARK: - Overrides
-extension PortfolioViewController{
-    
     override func viewDidLoad(){
         super.viewDidLoad()
-        refreshControl.addTarget(self,
-                                 action: #selector(didPullToRefresh),
-                                 for: .valueChanged)
-        refreshControl.tintColor = .white
-        collectionView.refreshControl = refreshControl
+        setupDataSource()
+        setupRefreshControl()
         interactor?.fetchArts()
-
-        dataSource.configureCell = { (cell: PortfolioImageCell, item: URL) -> PortfolioImageCell in
-            cell.imageView.sd_setImage(with: item)
-            return cell
-        }
-
-        collectionView.dataSource = dataSource
-    }
-}
-
-// MARK: - UICollectionViewDelegate
-extension PortfolioViewController {
-    override func collectionView(_ collectionView: UICollectionView,
-                        didHighlightItemAt indexPath: IndexPath) {
-        collectionView.cellForItem(at: indexPath)?.alpha = 0.5
-    }
-
-    override func collectionView(_ collectionView: UICollectionView,
-                        didUnhighlightItemAt indexPath: IndexPath) {
-        collectionView.cellForItem(at: indexPath)?.alpha = 1
-    }
-
-    override func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        interactor?.selectArt(atIndex: indexPath.row)
-        router?.routeToListing()
     }
 }
 
 extension PortfolioViewController: PortfolioDisplaying {
     func displayIsLoading(_ isLoading: Bool) {
         DispatchQueue.main.async { [weak self] in
-            if isLoading {
-                self?.refreshControl.beginRefreshingWithAnimation()
-            } else {
-                self?.refreshControl.endRefreshing()
-            }
+            self?.setIsLoading(isLoading)
         }
     }
 
     func displayImageUrls(_ urls: [URL]) {
         DispatchQueue.main.async { [weak self] in
-            self?.dataSource.items = urls
-            self?.collectionView.reloadData()
+            self?.setImageURLs(urls)
         }
     }
 
@@ -79,9 +40,56 @@ extension PortfolioViewController: PortfolioDisplaying {
     }
 }
 
-private extension PortfolioViewController {
+extension PortfolioViewController {
+    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        collectionView.cellForItem(at: indexPath)?.alpha = 0.5
+    }
 
-    @objc func didPullToRefresh() {
+    override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        collectionView.cellForItem(at: indexPath)?.alpha = 1
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectURLAtIndex(indexPath)
+    }
+}
+
+private extension PortfolioViewController {
+    func setupRefreshControl(){
+        refreshControl.addTarget(self, action: #selector(refreshControlDidPullToRefresh), for: .valueChanged)
+        refreshControl.tintColor = .white
+        collectionView.refreshControl = refreshControl
+    }
+
+    func setupDataSource(){
+        dataSource.configureCellClosure = configureCell
+        collectionView.dataSource = dataSource
+    }
+
+    @objc func refreshControlDidPullToRefresh() {
         interactor?.fetchArts()
+    }
+
+    func didSelectURLAtIndex(_ indexPath: IndexPath) {
+        interactor?.selectArt(atIndex: indexPath.row)
+        router?.routeToListing()
+    }
+
+    func configureCell(_ cell: PortfolioImageCell, withURL url: URL) -> PortfolioImageCell {
+        cell.imageView.sd_setImage(with: url)
+        return cell
+    }
+
+    func setImageURLs(_ urls:[URL]) {
+        dataSource.items = urls
+        collectionView.reloadData()
+    }
+
+    func setIsLoading(_ isLoading: Bool) {
+        if isLoading {
+            refreshControl.beginRefreshingWithAnimation()
+        } else {
+            refreshControl.endRefreshing()
+        }
     }
 }

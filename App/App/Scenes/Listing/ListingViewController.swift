@@ -17,9 +17,15 @@ class ListingViewController: UIViewController, StoryboardLoadable {
 
 extension ListingViewController: ListingDisplaying {
     func displayImageURL(_ url: URL) {
-        DispatchQueue.main.async {
-            self.imageView.sd_setImage(with: url,
-                                  completed: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.setImageURL(url)
         }
+    }
+}
+
+private extension ListingViewController {
+
+    func setImageURL(_ url:URL) {
+        self.imageView.sd_setImage(with: url)
     }
 }

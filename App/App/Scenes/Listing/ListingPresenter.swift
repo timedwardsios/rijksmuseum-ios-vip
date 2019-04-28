@@ -14,6 +14,14 @@ class ListingPresenter {
 
 extension ListingPresenter: ListingPresenting {
     func didLoadArt(_ art: Art) {
-        display?.displayImageURL(art.imageUrl)
+        let imageURL = getImageURLFromArt(art)
+        display?.displayImageURL(imageURL)
+    }
+}
+
+private extension ListingPresenter {
+
+    func getImageURLFromArt(_ art:Art) -> URL {
+        return art.imageUrl
     }
 }
