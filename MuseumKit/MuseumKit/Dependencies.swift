@@ -9,8 +9,8 @@ public class Dependencies {
 
 public extension Dependencies {
 
-    func resolve() -> ArtWorker {
-        return ArtWorkerDefault(apiRequestFactory: resolve(),
+    func resolve() -> ArtService {
+        return ArtServiceDefault(apiRequestFactory: resolve(),
                                 networkRequestFactory: resolve(),
                                 networkService: timKitDependencies.resolve(),
                                 artFactory: resolve())

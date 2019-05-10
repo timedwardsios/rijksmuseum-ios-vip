@@ -10,7 +10,7 @@ extension Dependencies {
     func resolve() -> PortfolioViewController {
         let viewController = PortfolioViewController.from(storyboard: resolve())
         let presenter = PortfolioPresenter(display: viewController)
-        let interactor = PortfolioInteractor(presenter: presenter, artWorker: museumKitDependencies.resolve())
+        let interactor = PortfolioInteractor(presenter: presenter, artService: museumKitDependencies.resolve())
         let router = PortfolioRouter(dependencies: self,
                                      dataStore: interactor,
                                      viewController: viewController)

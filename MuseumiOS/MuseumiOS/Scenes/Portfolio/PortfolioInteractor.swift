@@ -4,12 +4,12 @@ import TimKit
 class PortfolioInteractor: PortfolioDataStore {
 
     private let presenter: PortfolioPresenting
-    private let artWorker: ArtWorker
+    private let artService: ArtService
 
     init(presenter: PortfolioPresenting,
-         artWorker: ArtWorker) {
+         artService: ArtService) {
         self.presenter = presenter
-        self.artWorker = artWorker
+        self.artService = artService
     }
 
     private var arts = [Art]()
@@ -20,7 +20,7 @@ extension PortfolioInteractor: PortfolioInteracting {
 
     func fetchArts() {
         presenter.didBeginLoading()
-        commandArtWorkerBeginFetchingArts()
+        commandArtServiceBeginFetchingArts()
     }
 
     func selectArt(atIndex index: Int) {
@@ -30,13 +30,13 @@ extension PortfolioInteractor: PortfolioInteracting {
 
 private extension PortfolioInteractor {
 
-    func commandArtWorkerBeginFetchingArts() {
-        artWorker.fetchArt { [weak self] (result) in
-            self?.artWorkerDidFetchArts(result: result)
+    func commandArtServiceBeginFetchingArts() {
+        artService.fetchArt { [weak self] (result) in
+            self?.artServiceDidFetchArts(result: result)
         }
     }
 
-    func artWorkerDidFetchArts(result: Result<[Art], Error>) {
+    func artServiceDidFetchArts(result: Result<[Art], Error>) {
         switch result {
         case .success(let arts):
             self.arts = arts

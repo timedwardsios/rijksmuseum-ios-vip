@@ -1,11 +1,11 @@
 import Foundation
 import TimKit
 
-public protocol ArtWorker {
+public protocol ArtService {
     func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void)
 }
 
-internal class ArtWorkerDefault {
+internal class ArtServiceDefault {
     let apiRequestFactory: APIRequestFactory
     let networkRequestFactory: NetworkRequestFactory
     let networkService: NetworkService
@@ -21,7 +21,7 @@ internal class ArtWorkerDefault {
     }
 }
 
-extension ArtWorkerDefault: ArtWorker {
+extension ArtServiceDefault: ArtService {
 
     func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void) {
 
@@ -33,7 +33,7 @@ extension ArtWorkerDefault: ArtWorker {
     }
 }
 
-private extension ArtWorkerDefault {
+private extension ArtServiceDefault {
 
     func createNetworkRequestResult() -> Result<NetworkRequest, Error> {
         let artEndpoint = APIEndpoint.art

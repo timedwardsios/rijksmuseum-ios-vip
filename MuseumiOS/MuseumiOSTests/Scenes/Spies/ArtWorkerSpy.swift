@@ -1,7 +1,7 @@
 import Foundation
 @testable import MuseumKit
 
-class ArtWorkerSpy: ArtWorker {
+class ArtServiceSpy: ArtService {
 
     var fetchArtResult: Result<[Art], Error>
 

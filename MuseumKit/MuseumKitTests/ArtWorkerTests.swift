@@ -2,9 +2,9 @@ import XCTest
 import TestTools
 @testable import MuseumKit
 
-class ArtWorkerTests: XCTestCase {
+class ArtServiceTests: XCTestCase {
 
-    var sut: ArtWorkerDefault!
+    var sut: ArtServiceDefault!
 
     var apiRequestFactorySpy: APIRequestFactorySpy!
     var networkRequestFactorySpy: NetworkRequestFactorySpy!
@@ -33,7 +33,7 @@ class ArtWorkerTests: XCTestCase {
     }
 }
 
-extension ArtWorkerTests {
+extension ArtServiceTests {
     func test_fetchArt() {
         let exp = XCTestExpectation()
         sut.fetchArt { (result) in

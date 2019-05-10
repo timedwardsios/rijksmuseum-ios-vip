@@ -30,6 +30,7 @@
 		22AA606D212F29BF007379B1 /* Services.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AA605F212F29BE007379B1 /* Services.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B0C7CE22861EEF00717751 /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0C7CD22861EEF00717751 /* TimKit.framework */; };
 		22C9BF0A212F2A5A000D15E6 /* APIRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C9BF09212F2A5A000D15E6 /* APIRequestFactoryTests.swift */; };
+		22D13E0422863AF500DFE4C4 /* ArtService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D13E0222863A8C00DFE4C4 /* ArtService.swift */; };
 		8959AD701B3FB55918BF6E10 /* Pods_Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8FCF1184A6142FF7807533D /* Pods_Services.framework */; };
 		F390F55E7982B94F0F91AA97 /* Pods_ServicesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8C68E7665DCFCE77236815C /* Pods_ServicesTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		22C9BF09212F2A5A000D15E6 /* APIRequestFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestFactoryTests.swift; sourceTree = "<group>"; };
 		22C9BF15212F2CC7000D15E6 /* TinyConstraints.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TinyConstraints.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22C9BF17212F2CCD000D15E6 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22D13E0222863A8C00DFE4C4 /* ArtService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtService.swift; sourceTree = "<group>"; };
 		310D4C16A8B2BFEEC22B4CAE /* Pods_ServiceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServiceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB441384C43DC37AA1A1445 /* Pods-Services.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Services.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Services/Pods-Services.debug.xcconfig"; sourceTree = "<group>"; };
 		43EAF5ACEE744A2DE375DBBD /* Pods-Service.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Service.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Service/Pods-Service.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				2258B967227210C000516603 /* Dependencies.swift */,
 				2273F7BF227119690027C7FC /* APIConfigLive.swift */,
+				22D13E0322863A8C00DFE4C4 /* Services */,
 				2258B96D2272178E00516603 /* Factories */,
 				2253927322762D6B007AEF1F /* Public Model */,
 				22C9BF06212F2A27000D15E6 /* Resources */,
@@ -258,6 +261,14 @@
 				2258B9732272194F00516603 /* ArtFactorySpy.swift */,
 			);
 			path = Spies;
+			sourceTree = "<group>";
+		};
+		22D13E0322863A8C00DFE4C4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				22D13E0222863A8C00DFE4C4 /* ArtService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A73DBA6CB8066B3109398F83 /* Frameworks */ = {
@@ -484,6 +495,7 @@
 			files = (
 				2273F7C0227119690027C7FC /* APIConfigLive.swift in Sources */,
 				222BB7232271ED4B0027F2EB /* ArtsFactory.swift in Sources */,
+				22D13E0422863AF500DFE4C4 /* ArtService.swift in Sources */,
 				2253927222762D60007AEF1F /* Art.swift in Sources */,
 				2258B968227210C000516603 /* Dependencies.swift in Sources */,
 				22154539226720DD0062E9C6 /* NetworkRequestFactory.swift in Sources */,
