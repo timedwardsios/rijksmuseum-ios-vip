@@ -5,13 +5,13 @@
       location = "group:todo">
    </FileRef>
    <FileRef
-      location = "group:App/App.xcodeproj">
+      location = "group:MuseumiOS/MuseumiOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Kit/Kit.xcodeproj">
+      location = "group:MuseumKit/MuseumKit.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Utils/Utils.xcodeproj">
+      location = "group:TimKit/TimKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:TestTools/TestTools.xcodeproj">
