@@ -1,23 +1,20 @@
 import Foundation
 import TimKit
 
-public class Dependencies {
-    private let timKitDependencies = TimKit.Dependencies()
+public let dependencies: Dependencies = DependenciesDefault()
 
-    public init() {}
+public protocol Dependencies {
+    func resolve() -> ArtService
 }
 
-public extension Dependencies {
+private class DependenciesDefault: Dependencies {
 
     func resolve() -> ArtService {
         return ArtServiceDefault(apiRequestFactory: resolve(),
                                 networkRequestFactory: resolve(),
-                                networkService: timKitDependencies.resolve(),
+                                networkService: TimKit.dependencies.resolve(),
                                 artFactory: resolve())
     }
-}
-
-private extension Dependencies {
 
     func resolve() -> APIRequestFactory {
         return APIRequestFactoryDefault()

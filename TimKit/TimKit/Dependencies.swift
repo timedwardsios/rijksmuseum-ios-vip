@@ -1,18 +1,17 @@
 import Foundation
 
-public class Dependencies {
-    public init() {}
+public let dependencies: Dependencies = DependenciesDefault()
+
+public protocol Dependencies {
+    func resolve() -> NetworkService
 }
 
-public extension Dependencies {
+class DependenciesDefault: Dependencies {
 
     func resolve() -> NetworkService {
         return NetworkServiceDefault(networkSession: resolve(),
                                      networkRawResponseValidator: resolve())
     }
-}
-
-private extension Dependencies {
 
     func resolve() -> NetworkSession {
         return URLSession.shared

@@ -3,9 +3,6 @@ import MuseumKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
-
-    let dependencies = Dependencies()
-
     let window = UIWindow()
 }
 

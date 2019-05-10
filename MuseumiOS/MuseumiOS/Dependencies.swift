@@ -1,16 +1,19 @@
 import UIKit
-import TimKit
 import MuseumKit
 
-class Dependencies {
-    let museumKitDependencies = MuseumKit.Dependencies()
+let dependencies: Dependencies = DependenciesDefault()
+
+protocol Dependencies {
+    func resolve() -> PortfolioViewController
+    func resolve(art: Art) -> ListingViewController
 }
 
-extension Dependencies {
+private class DependenciesDefault: Dependencies {
+
     func resolve() -> PortfolioViewController {
         let viewController = PortfolioViewController.from(storyboard: resolve())
         let presenter = PortfolioPresenter(display: viewController)
-        let interactor = PortfolioInteractor(presenter: presenter, artService: museumKitDependencies.resolve())
+        let interactor = PortfolioInteractor(presenter: presenter, artService: MuseumKit.dependencies.resolve())
         let router = PortfolioRouter(dependencies: self,
                                      dataStore: interactor,
                                      viewController: viewController)
@@ -26,9 +29,6 @@ extension Dependencies {
         viewController.interactor = interactor
         return viewController
     }
-}
-
-private extension Dependencies {
 
     func resolve() -> UIStoryboard {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
