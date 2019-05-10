@@ -1,6 +1,8 @@
 import Foundation
 
-public protocol Dependencies {}
+public class Dependencies {
+    public init() {}
+}
 
 public extension Dependencies {
 

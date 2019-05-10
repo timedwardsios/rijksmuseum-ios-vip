@@ -4,7 +4,7 @@ import Kit
 @UIApplicationMain
 class AppDelegate: UIResponder {
 
-    let dependenciesDefault = DependenciesDefault()
+    let dependencies = Dependencies()
 
     let window = UIWindow()
 }
@@ -20,7 +20,7 @@ extension AppDelegate: UIApplicationDelegate {
 private extension AppDelegate {
 
     func setupRootViewController() {
-        let portfolioViewController: PortfolioViewController = dependenciesDefault.resolve()
+        let portfolioViewController: PortfolioViewController = dependencies.resolve()
         let navController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navController
         window.makeKeyAndVisible()

@@ -2,20 +2,17 @@ import UIKit
 import Utils
 import Kit
 
-class DependenciesDefault: Dependencies {}
+class Dependencies {
+    let kitDependencies = Kit.Dependencies()
 
-protocol Dependencies: Kit.Dependencies {}
+    init() {}
+}
 
 extension Dependencies {
-
-    func resolve() -> UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
-    }
-
     func resolve() -> PortfolioViewController {
         let viewController = PortfolioViewController.from(storyboard: resolve())
         let presenter = PortfolioPresenter(display: viewController)
-        let interactor = PortfolioInteractor(presenter: presenter, artWorker: resolve())
+        let interactor = PortfolioInteractor(presenter: presenter, artWorker: kitDependencies.resolve())
         let router = PortfolioRouter(dependencies: self,
                                      dataStore: interactor,
                                      viewController: viewController)
@@ -30,5 +27,12 @@ extension Dependencies {
         let interactor = ListingInteractor(presenter: presenter, art: art)
         viewController.interactor = interactor
         return viewController
+    }
+}
+
+private extension Dependencies {
+
+    func resolve() -> UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
 }

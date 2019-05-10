@@ -1,14 +1,18 @@
 import Foundation
 import Utils
 
-public protocol Dependencies: Utils.Dependencies {}
+public class Dependencies {
+    private let utilDependencies = Utils.Dependencies()
+
+    public init() {}
+}
 
 public extension Dependencies {
 
     func resolve() -> ArtWorker {
         return ArtWorkerDefault(apiRequestFactory: resolve(),
                                 networkRequestFactory: resolve(),
-                                networkService: resolve(),
+                                networkService: utilDependencies.resolve(),
                                 artFactory: resolve())
     }
 }
