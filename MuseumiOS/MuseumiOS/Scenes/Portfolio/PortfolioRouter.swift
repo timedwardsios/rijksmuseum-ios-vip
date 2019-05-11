@@ -4,14 +4,11 @@ import MuseumKit
 
 class PortfolioRouter {
 
-    private let dependencies: Dependencies
     private let dataStore: PortfolioDataStore
     private weak var viewController: UIViewController?
 
-    init(dependencies: Dependencies,
-         dataStore: PortfolioDataStore,
+    init(dataStore: PortfolioDataStore,
          viewController: UIViewController) {
-        self.dependencies = dependencies
         self.viewController = viewController
         self.dataStore = dataStore
     }

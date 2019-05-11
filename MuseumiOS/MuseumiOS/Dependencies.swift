@@ -14,8 +14,7 @@ private class DependenciesDefault: Dependencies {
         let viewController = PortfolioViewController.from(storyboard: resolve())
         let presenter = PortfolioPresenter(display: viewController)
         let interactor = PortfolioInteractor(presenter: presenter, artService: MuseumKit.dependencies.resolve())
-        let router = PortfolioRouter(dependencies: self,
-                                     dataStore: interactor,
+        let router = PortfolioRouter(dataStore: interactor,
                                      viewController: viewController)
         viewController.interactor = interactor
         viewController.router = router
