@@ -1,16 +1,33 @@
 import Foundation
 
-public let dependencies: Dependencies = DependenciesDefault()
-
-public protocol Dependencies {
+public protocol DependencyContainer {
     func resolve() -> NetworkService
+    func resolve() -> ConfigService
 }
 
-class DependenciesDefault: Dependencies {
+public class Dependencies {
+    public init() {}
+}
 
-    func resolve() -> NetworkService {
+extension Dependencies: DependencyContainer {
+    public func resolve() -> NetworkService {
         return NetworkServiceDefault(networkSession: resolve(),
                                      networkRawResponseValidator: resolve())
+    }
+
+    public func resolve() -> ConfigService {
+        return ConfigServiceDefault(fileManager: resolve(),
+                                    propertyListDecoderService: resolve())
+    }
+}
+
+private extension Dependencies {
+    func resolve() -> FileManager {
+        return FileManager.default
+    }
+
+    func resolve() -> PropertyListDecoder {
+        return PropertyListDecoder()
     }
 
     func resolve() -> NetworkSession {

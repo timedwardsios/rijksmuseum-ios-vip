@@ -6,15 +6,15 @@ public protocol ArtService {
 }
 
 internal class ArtServiceDefault {
-    let apiRequestFactory: APIRequestFactory
+    let apiRequestConfig: APIRequestConfig
     let networkRequestFactory: NetworkRequestFactory
     let networkService: NetworkService
     let artFactory: ArtsFactory
-    init(apiRequestFactory: APIRequestFactory,
+    init(apiRequestConfig: APIRequestConfig,
          networkRequestFactory: NetworkRequestFactory,
          networkService: NetworkService,
          artFactory: ArtsFactory) {
-        self.apiRequestFactory = apiRequestFactory
+        self.apiRequestConfig = apiRequestConfig
         self.networkRequestFactory = networkRequestFactory
         self.networkService = networkService
         self.artFactory = artFactory
@@ -36,11 +36,8 @@ extension ArtServiceDefault: ArtService {
 private extension ArtServiceDefault {
 
     func createNetworkRequestResult() -> Result<NetworkRequest, Error> {
-        let artEndpoint = APIEndpoint.art
 
-        let apiRequest = apiRequestFactory.apiRequest(fromAPIEndpoint: artEndpoint)
-
-        return networkRequestFactory.networkRequest(fromAPIRequest: apiRequest)
+        return networkRequestFactory.networkRequest(fromAPIRequest: apiRequestConfig.collection)
     }
 
     func startFetchingWithNetworkRequest(_ networkRequest: NetworkRequest,

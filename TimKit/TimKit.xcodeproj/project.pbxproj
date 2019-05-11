@@ -10,6 +10,7 @@
 		22013ACC2275BF5200B200D6 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22013ACB2275BF5200B200D6 /* UIAlertController.swift */; };
 		22013B052275C57200B200D6 /* Pods_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22013B042275C57200B200D6 /* Pods_Utils.framework */; };
 		22013B072275C5F500B200D6 /* TestTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22013B062275C5F500B200D6 /* TestTools.framework */; };
+		221AE96422873DBD00973131 /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AE96322873DBD00973131 /* ConfigService.swift */; };
 		221BDF262270C5A600631270 /* NetworkRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF252270C5A600631270 /* NetworkRequestMock.swift */; };
 		221BDF2A2270CFFD00631270 /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */; };
 		221BDF432270F89A00631270 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF422270F89A00631270 /* Dependencies.swift */; };
@@ -53,6 +54,7 @@
 		22013B042275C57200B200D6 /* Pods_Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22013B062275C5F500B200D6 /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220A4B5822719CBE00139189 /* TestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		221AE96322873DBD00973131 /* ConfigService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
 		221BDF252270C5A600631270 /* NetworkRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestMock.swift; sourceTree = "<group>"; };
 		221BDF292270CFFD00631270 /* NetworkResponseValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorSpy.swift; sourceTree = "<group>"; };
 		221BDF422270F89A00631270 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				221BDF422270F89A00631270 /* Dependencies.swift */,
+				221AE96322873DBD00973131 /* ConfigService.swift */,
 				22F55BE62274CFD900B8544A /* UICollectionViewGenericDataSource.swift */,
 				2253926F22760417007AEF1F /* JSONDecoderService.swift */,
 				222E305C22707D23004A5FE9 /* Network */,
@@ -499,6 +502,7 @@
 				2289A5C0212F108500787E2B /* UICollectionReusableView.swift in Sources */,
 				224195FF2262A0620006348F /* LocalizedError.swift in Sources */,
 				224196032262A0820006348F /* Collection.swift in Sources */,
+				221AE96422873DBD00973131 /* ConfigService.swift in Sources */,
 				2253927722762E30007AEF1F /* NetworkMethod.swift in Sources */,
 				222E307522707EF6004A5FE9 /* NetworkSession.swift in Sources */,
 				2289A5C2212F108800787E2B /* UIColor.swift in Sources */,

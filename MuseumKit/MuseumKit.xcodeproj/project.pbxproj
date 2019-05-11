@@ -12,11 +12,10 @@
 		220A4B632271A7EB00139189 /* APIRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A4B622271A7EB00139189 /* APIRequestMock.swift */; };
 		22154539226720DD0062E9C6 /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */; };
 		2215454922672A8D0062E9C6 /* NetworkRequestFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215454822672A8D0062E9C6 /* NetworkRequestFactorySpy.swift */; };
-		221AE9522286DB2300973131 /* ConfigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AE9512286DB2300973131 /* ConfigFactory.swift */; };
-		221AE9562286DF8500973131 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 221AE9552286DF8500973131 /* config.json */; };
+		221AE95E2287268200973131 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 221AE95D2287268200973131 /* config.plist */; };
+		221AE96022872AC700973131 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AE95F22872AC700973131 /* Config.swift */; };
 		221BDF2F2270DEA100631270 /* NetworkServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */; };
 		222BB71B2271E53A0027F2EB /* JSONDecoderServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB71A2271E53A0027F2EB /* JSONDecoderServiceSpy.swift */; };
-		222BB7212271ED2C0027F2EB /* APIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */; };
 		222BB7232271ED4B0027F2EB /* ArtsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7222271ED4B0027F2EB /* ArtsFactory.swift */; };
 		222BB7262271F6460027F2EB /* NetworkRequestFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7252271F6460027F2EB /* NetworkRequestFactoryTests.swift */; };
 		2253927222762D60007AEF1F /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2253927122762D60007AEF1F /* Art.swift */; };
@@ -54,12 +53,11 @@
 		220A4B622271A7EB00139189 /* APIRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestMock.swift; sourceTree = "<group>"; };
 		22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactory.swift; sourceTree = "<group>"; };
 		2215454822672A8D0062E9C6 /* NetworkRequestFactorySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactorySpy.swift; sourceTree = "<group>"; };
-		221AE9512286DB2300973131 /* ConfigFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFactory.swift; sourceTree = "<group>"; };
-		221AE9552286DF8500973131 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		221AE95D2287268200973131 /* config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = config.plist; path = MuseumKit/Resources/config.plist; sourceTree = SOURCE_ROOT; };
+		221AE95F22872AC700973131 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceSpy.swift; sourceTree = "<group>"; };
 		221F3EC7212F397100907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		222BB71A2271E53A0027F2EB /* JSONDecoderServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderServiceSpy.swift; sourceTree = "<group>"; };
-		222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestFactory.swift; sourceTree = "<group>"; };
 		222BB7222271ED4B0027F2EB /* ArtsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtsFactory.swift; sourceTree = "<group>"; };
 		222BB7252271F6460027F2EB /* NetworkRequestFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactoryTests.swift; sourceTree = "<group>"; };
 		2253927122762D60007AEF1F /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
@@ -178,8 +176,6 @@
 		2258B96D2272178E00516603 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				221AE9512286DB2300973131 /* ConfigFactory.swift */,
-				222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */,
 				22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */,
 				222BB7222271ED4B0027F2EB /* ArtsFactory.swift */,
 			);
@@ -221,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				2258B967227210C000516603 /* Dependencies.swift */,
+				221AE95F22872AC700973131 /* Config.swift */,
 				22D13E0322863A8C00DFE4C4 /* Services */,
 				2258B96D2272178E00516603 /* Factories */,
 				2253927322762D6B007AEF1F /* Public Model */,
@@ -247,7 +244,7 @@
 		22C9BF06212F2A27000D15E6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				221AE9552286DF8500973131 /* config.json */,
+				221AE95D2287268200973131 /* config.plist */,
 				22AA605F212F29BE007379B1 /* Services.h */,
 				22AA6060212F29BE007379B1 /* Info.plist */,
 			);
@@ -397,7 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221AE9562286DF8500973131 /* config.json in Resources */,
+				221AE95E2287268200973131 /* config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,9 +498,8 @@
 				22D13E0422863AF500DFE4C4 /* ArtService.swift in Sources */,
 				2253927222762D60007AEF1F /* Art.swift in Sources */,
 				2258B968227210C000516603 /* Dependencies.swift in Sources */,
-				221AE9522286DB2300973131 /* ConfigFactory.swift in Sources */,
+				221AE96022872AC700973131 /* Config.swift in Sources */,
 				22154539226720DD0062E9C6 /* NetworkRequestFactory.swift in Sources */,
-				222BB7212271ED2C0027F2EB /* APIRequestFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

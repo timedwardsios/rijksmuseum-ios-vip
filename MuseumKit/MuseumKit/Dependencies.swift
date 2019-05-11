@@ -1,28 +1,32 @@
 import Foundation
 import TimKit
 
-public let dependencies: Dependencies = DependenciesDefault()
-
-public protocol Dependencies {
+public protocol DependencyContainer {
     func resolve() -> ArtService
 }
 
-private class DependenciesDefault: Dependencies {
+public class Dependencies {
 
-    func resolve() -> ArtService {
-        return ArtServiceDefault(apiRequestFactory: resolve(),
-                                networkRequestFactory: resolve(),
-                                networkService: TimKit.dependencies.resolve(),
-                                artFactory: resolve())
+    let timKitDependencyContainer: TimKit.DependencyContainer
+
+    public init(timKitDependencyContainer: TimKit.DependencyContainer) {
+        self.timKitDependencyContainer = timKitDependencyContainer
     }
+}
 
-    func resolve() -> APIRequestFactory {
-        return APIRequestFactoryDefault()
+extension Dependencies: DependencyContainer {
+
+    public func resolve() -> ArtService {
+        return ArtServiceDefault(apiRequestConfig: config.apiRequestConfig,
+                                 networkRequestFactory: resolve(),
+                                 networkService: timKitDependencyContainer.resolve(),
+                                 artFactory: resolve())
     }
+}
 
+private extension Dependencies {
     func resolve() -> NetworkRequestFactory {
-        let apiBaseConfig = (resolve() as Config).apiBase
-        return NetworkRequestFactoryDefault(apiBaseConfig: apiBaseConfig)
+        return NetworkRequestFactoryDefault(baseAPIConfig: config.apiBaseConfig)
     }
 
     func resolve() -> ArtsFactory {
@@ -33,17 +37,12 @@ private class DependenciesDefault: Dependencies {
         return JSONDecoder()
     }
 
+    func resolve() -> Bundle {
+        return Bundle(for: type(of: self))
+    }
+
     func resolve() -> Config {
-        let configService: ConfigFactory = resolve()
-        return configService.getConfig()
-    }
-
-    func resolve() -> ConfigFactory {
-        return ConfigFactoryDefault(jsonDecoderService: resolve(),
-                                    fileManager: resolve())
-    }
-
-    func resolve() -> FileManager {
-        return FileManager.default
+        let configService: ConfigService = timKitDependencyContainer.resolve()
+        return configService.getConfig(forBundle: resolve())
     }
 }

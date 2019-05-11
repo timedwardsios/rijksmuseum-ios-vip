@@ -1,8 +1,6 @@
 import UIKit
 import MuseumKit
 
-let dependencies: Dependencies = DependenciesDefault()
-
 protocol Dependencies {
     func resolve() -> PortfolioViewController
     func resolve(art: Art) -> ListingViewController

@@ -6,9 +6,9 @@ internal protocol NetworkRequestFactory {
 }
 
 internal class NetworkRequestFactoryDefault {
-    let apiBaseConfig: APIBaseConfig
-    init(apiBaseConfig: APIBaseConfig) {
-        self.apiBaseConfig = apiBaseConfig
+    let baseAPIConfig: APIBaseConfig
+    init(baseAPIConfig: APIBaseConfig) {
+        self.baseAPIConfig = baseAPIConfig
     }
 }
 
@@ -36,19 +36,19 @@ private extension NetworkRequestFactoryDefault {
 
     func networkRequestResultFromAPIRequest(_ apiRequest: APIRequest) -> Result<NetworkRequest, Error> {
         return Result {
-            try validateAPIBaseConfig(apiBaseConfig)
+            try validateAPIBaseConfig(baseAPIConfig)
 
             try validateAPIRequest(apiRequest)
 
-            let networkRequestURL = try urlFromAPIBaseConfig(apiBaseConfig, apiRequest: apiRequest)
+            let networkRequestURL = try urlFromAPIBaseConfig(baseAPIConfig, apiRequest: apiRequest)
 
             return networkRequestFromURL(networkRequestURL, networkMethod: .GET)
         }
     }
 
     func validateAPIBaseConfig(_ config: APIBaseConfig) throws {
-        try validateURLScheme(apiBaseConfig.scheme)
-        try validateURLHost(apiBaseConfig.host)
+        try validateURLScheme(baseAPIConfig.scheme)
+        try validateURLHost(baseAPIConfig.host)
     }
 
     func validateAPIRequest(_ apiRequest: APIRequest) throws {
@@ -57,7 +57,7 @@ private extension NetworkRequestFactoryDefault {
 
     func urlFromAPIBaseConfig(_ config: APIBaseConfig, apiRequest: APIRequest) throws -> URL {
 
-        let urlComponents = urlComponentsFromAPIBaseConfig(apiBaseConfig)
+        let urlComponents = urlComponentsFromAPIBaseConfig(baseAPIConfig)
 
         let urlComponentsExtended = extendURLComponents(urlComponents, usingAPIRequest: apiRequest)
 
@@ -80,7 +80,7 @@ private extension NetworkRequestFactoryDefault {
     }
 
     func validateURLHost(_ host: String) throws {
-        if apiBaseConfig.host.isEmpty {
+        if baseAPIConfig.host.isEmpty {
             throw LocalError.invalidHost
         }
     }
@@ -96,22 +96,27 @@ private extension NetworkRequestFactoryDefault {
 private extension NetworkRequestFactoryDefault {
 
     func urlComponentsFromAPIBaseConfig(_ apiBaseConfig: APIBaseConfig) -> URLComponents {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = apiBaseConfig.scheme
-        urlComponents.host = apiBaseConfig.host
-        urlComponents.path = apiBaseConfig.path
+        var newURLComponents = URLComponents()
+        newURLComponents.scheme = apiBaseConfig.scheme
+        newURLComponents.host = apiBaseConfig.host
+        newURLComponents.path = apiBaseConfig.path
 
-        urlComponents.queryItems = apiBaseConfig.queryItems.map({
+        newURLComponents.queryItems = apiBaseConfig.queryItems.map({
             return URLQueryItem(name: $0.key, value: $0.value)
         })
 
-        return urlComponents
+        return newURLComponents
     }
 
     func extendURLComponents(_ urlComponents: URLComponents, usingAPIRequest apiRequest: APIRequest) -> URLComponents {
         var newURLComponents = urlComponents
         newURLComponents.path.append(apiRequest.path)
-        newURLComponents.queryItems?.append(contentsOf: apiRequest.queryItems)
+
+        let newQueryItems = apiRequest.queryItems.map({
+            return URLQueryItem(name: $0.key, value: $0.value)
+        })
+
+        newURLComponents.queryItems?.append(contentsOf: newQueryItems)
         return newURLComponents
     }
 
