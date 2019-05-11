@@ -12,6 +12,8 @@
 		220A4B632271A7EB00139189 /* APIRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220A4B622271A7EB00139189 /* APIRequestMock.swift */; };
 		22154539226720DD0062E9C6 /* NetworkRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */; };
 		2215454922672A8D0062E9C6 /* NetworkRequestFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2215454822672A8D0062E9C6 /* NetworkRequestFactorySpy.swift */; };
+		221AE9522286DB2300973131 /* ConfigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AE9512286DB2300973131 /* ConfigFactory.swift */; };
+		221AE9562286DF8500973131 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 221AE9552286DF8500973131 /* config.json */; };
 		221BDF2F2270DEA100631270 /* NetworkServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */; };
 		222BB71B2271E53A0027F2EB /* JSONDecoderServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB71A2271E53A0027F2EB /* JSONDecoderServiceSpy.swift */; };
 		222BB7212271ED2C0027F2EB /* APIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */; };
@@ -25,7 +27,6 @@
 		2258B9722272181800516603 /* APIRequestFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9712272181800516603 /* APIRequestFactorySpy.swift */; };
 		2258B9742272194F00516603 /* ArtFactorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9732272194F00516603 /* ArtFactorySpy.swift */; };
 		2258B976227219E700516603 /* ArtMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B975227219E700516603 /* ArtMock.swift */; };
-		2273F7C0227119690027C7FC /* APIConfigLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2273F7BF227119690027C7FC /* APIConfigLive.swift */; };
 		2290FCB72271AA92009E5B47 /* NetworkRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2290FCB62271AA92009E5B47 /* NetworkRequestMock.swift */; };
 		22AA606D212F29BF007379B1 /* Services.h in Headers */ = {isa = PBXBuildFile; fileRef = 22AA605F212F29BE007379B1 /* Services.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22B0C7CE22861EEF00717751 /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0C7CD22861EEF00717751 /* TimKit.framework */; };
@@ -53,6 +54,8 @@
 		220A4B622271A7EB00139189 /* APIRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestMock.swift; sourceTree = "<group>"; };
 		22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactory.swift; sourceTree = "<group>"; };
 		2215454822672A8D0062E9C6 /* NetworkRequestFactorySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestFactorySpy.swift; sourceTree = "<group>"; };
+		221AE9512286DB2300973131 /* ConfigFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFactory.swift; sourceTree = "<group>"; };
+		221AE9552286DF8500973131 /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
 		221BDF2E2270DEA100631270 /* NetworkServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceSpy.swift; sourceTree = "<group>"; };
 		221F3EC7212F397100907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		222BB71A2271E53A0027F2EB /* JSONDecoderServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecoderServiceSpy.swift; sourceTree = "<group>"; };
@@ -71,7 +74,6 @@
 		22695F3F213202E9004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F41213203BD004C47A5 /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4521320A1D004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2273F7BF227119690027C7FC /* APIConfigLive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfigLive.swift; sourceTree = "<group>"; };
 		2290FCB62271AA92009E5B47 /* NetworkRequestMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestMock.swift; sourceTree = "<group>"; };
 		2290FD0F2271C3D9009E5B47 /* TestingUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestingUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AA605C212F29BE007379B1 /* MuseumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuseumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 		2258B96D2272178E00516603 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				221AE9512286DB2300973131 /* ConfigFactory.swift */,
 				222BB7202271ED2C0027F2EB /* APIRequestFactory.swift */,
 				22154538226720DD0062E9C6 /* NetworkRequestFactory.swift */,
 				222BB7222271ED4B0027F2EB /* ArtsFactory.swift */,
@@ -218,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				2258B967227210C000516603 /* Dependencies.swift */,
-				2273F7BF227119690027C7FC /* APIConfigLive.swift */,
 				22D13E0322863A8C00DFE4C4 /* Services */,
 				2258B96D2272178E00516603 /* Factories */,
 				2253927322762D6B007AEF1F /* Public Model */,
@@ -245,6 +247,7 @@
 		22C9BF06212F2A27000D15E6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				221AE9552286DF8500973131 /* config.json */,
 				22AA605F212F29BE007379B1 /* Services.h */,
 				22AA6060212F29BE007379B1 /* Info.plist */,
 			);
@@ -394,6 +397,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221AE9562286DF8500973131 /* config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,11 +497,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2273F7C0227119690027C7FC /* APIConfigLive.swift in Sources */,
 				222BB7232271ED4B0027F2EB /* ArtsFactory.swift in Sources */,
 				22D13E0422863AF500DFE4C4 /* ArtService.swift in Sources */,
 				2253927222762D60007AEF1F /* Art.swift in Sources */,
 				2258B968227210C000516603 /* Dependencies.swift in Sources */,
+				221AE9522286DB2300973131 /* ConfigFactory.swift in Sources */,
 				22154539226720DD0062E9C6 /* NetworkRequestFactory.swift in Sources */,
 				222BB7212271ED2C0027F2EB /* APIRequestFactory.swift in Sources */,
 			);

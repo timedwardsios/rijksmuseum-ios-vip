@@ -1,21 +1,14 @@
 import Foundation
 import TimKit
 
-internal protocol APIConfig {
-    var path: String {get}
-    var queryItems: [URLQueryItem] {get}
-    var scheme: String {get}
-    var host: String {get}
-}
-
 internal protocol NetworkRequestFactory {
     func networkRequest(fromAPIRequest apiRequest: APIRequest) -> Result<NetworkRequest, Error>
 }
 
 internal class NetworkRequestFactoryDefault {
-    let apiConfig: APIConfig
-    init(apiConfig: APIConfig) {
-        self.apiConfig = apiConfig
+    let apiBaseConfig: APIBaseConfig
+    init(apiBaseConfig: APIBaseConfig) {
+        self.apiBaseConfig = apiBaseConfig
     }
 }
 
@@ -43,28 +36,28 @@ private extension NetworkRequestFactoryDefault {
 
     func networkRequestResultFromAPIRequest(_ apiRequest: APIRequest) -> Result<NetworkRequest, Error> {
         return Result {
-            try validateAPIConfig(apiConfig)
+            try validateAPIBaseConfig(apiBaseConfig)
 
             try validateAPIRequest(apiRequest)
 
-            let networkRequestURL = try urlFromAPIConfig(apiConfig, apiRequest: apiRequest)
+            let networkRequestURL = try urlFromAPIBaseConfig(apiBaseConfig, apiRequest: apiRequest)
 
             return networkRequestFromURL(networkRequestURL, networkMethod: .GET)
         }
     }
 
-    func validateAPIConfig(_ config: APIConfig) throws {
-        try validateURLScheme(apiConfig.scheme)
-        try validateURLHost(apiConfig.host)
+    func validateAPIBaseConfig(_ config: APIBaseConfig) throws {
+        try validateURLScheme(apiBaseConfig.scheme)
+        try validateURLHost(apiBaseConfig.host)
     }
 
     func validateAPIRequest(_ apiRequest: APIRequest) throws {
         try validateURLPath(apiRequest.path)
     }
 
-    func urlFromAPIConfig(_ config: APIConfig, apiRequest: APIRequest) throws -> URL {
+    func urlFromAPIBaseConfig(_ config: APIBaseConfig, apiRequest: APIRequest) throws -> URL {
 
-        let urlComponents = urlComponentsFromAPIConfig(apiConfig)
+        let urlComponents = urlComponentsFromAPIBaseConfig(apiBaseConfig)
 
         let urlComponentsExtended = extendURLComponents(urlComponents, usingAPIRequest: apiRequest)
 
@@ -87,7 +80,7 @@ private extension NetworkRequestFactoryDefault {
     }
 
     func validateURLHost(_ host: String) throws {
-        if apiConfig.host.isEmpty {
+        if apiBaseConfig.host.isEmpty {
             throw LocalError.invalidHost
         }
     }
@@ -102,12 +95,16 @@ private extension NetworkRequestFactoryDefault {
 // MARK: - Creation
 private extension NetworkRequestFactoryDefault {
 
-    func urlComponentsFromAPIConfig(_ apiConfig: APIConfig) -> URLComponents {
+    func urlComponentsFromAPIBaseConfig(_ apiBaseConfig: APIBaseConfig) -> URLComponents {
         var urlComponents = URLComponents()
-        urlComponents.scheme = apiConfig.scheme
-        urlComponents.host = apiConfig.host
-        urlComponents.path = apiConfig.path
-        urlComponents.queryItems = apiConfig.queryItems
+        urlComponents.scheme = apiBaseConfig.scheme
+        urlComponents.host = apiBaseConfig.host
+        urlComponents.path = apiBaseConfig.path
+
+        urlComponents.queryItems = apiBaseConfig.queryItems.map({
+            return URLQueryItem(name: $0.key, value: $0.value)
+        })
+
         return urlComponents
     }
 

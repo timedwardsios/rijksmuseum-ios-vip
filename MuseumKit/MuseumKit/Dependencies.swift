@@ -21,18 +21,29 @@ private class DependenciesDefault: Dependencies {
     }
 
     func resolve() -> NetworkRequestFactory {
-        return NetworkRequestFactoryDefault(apiConfig: resolve())
+        let apiBaseConfig = (resolve() as Config).apiBase
+        return NetworkRequestFactoryDefault(apiBaseConfig: apiBaseConfig)
     }
 
     func resolve() -> ArtsFactory {
         return ArtsFactoryDefault(jsonDecoderService: resolve())
     }
 
-    func resolve() -> APIConfig {
-        return APIConfigLive()
-    }
-
     func resolve() -> JSONDecoder {
         return JSONDecoder()
+    }
+
+    func resolve() -> Config {
+        let configService: ConfigFactory = resolve()
+        return configService.getConfig()
+    }
+
+    func resolve() -> ConfigFactory {
+        return ConfigFactoryDefault(jsonDecoderService: resolve(),
+                                    fileManager: resolve())
+    }
+
+    func resolve() -> FileManager {
+        return FileManager.default
     }
 }
