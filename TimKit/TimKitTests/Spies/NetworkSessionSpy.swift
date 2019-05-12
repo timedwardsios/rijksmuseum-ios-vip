@@ -1,7 +1,7 @@
 import Foundation
 @testable import TimKit
 
-class NetworkSessionSpy: Utils.NetworkSession {
+class NetworkSessionSpy: TimKit.NetworkSession {
 
     let dataTask: NetworkSessionDataTaskSpy
     var data: Data?

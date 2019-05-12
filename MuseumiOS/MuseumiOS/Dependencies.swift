@@ -1,33 +1,31 @@
 import UIKit
 import MuseumKit
 
-protocol Dependencies {
-    func resolve() -> PortfolioViewController
-    func resolve(art: Art) -> ListingViewController
-}
+class Dependencies {
 
-private class DependenciesDefault: Dependencies {
+    private let museumKitDependencies = MuseumKit.Dependencies()
 
-    func resolve() -> PortfolioViewController {
-        let viewController = PortfolioViewController.from(storyboard: resolve())
+    var portfolioViewController: PortfolioViewController {
+        let viewController = PortfolioViewController.from(storyboard: storyboard)
         let presenter = PortfolioPresenter(display: viewController)
-        let interactor = PortfolioInteractor(presenter: presenter, artService: MuseumKit.dependencies.resolve())
-        let router = PortfolioRouter(dataStore: interactor,
+        let interactor = PortfolioInteractor(presenter: presenter, artService: museumKitDependencies.artService)
+        let router = PortfolioRouter(dependencies: self,
+                                     dataStore: interactor,
                                      viewController: viewController)
         viewController.interactor = interactor
         viewController.router = router
         return viewController
     }
 
-    func resolve(art: Art) -> ListingViewController {
-        let viewController = ListingViewController.from(storyboard: resolve())
+    func listingViewController(art: Art) -> ListingViewController {
+        let viewController = ListingViewController.from(storyboard: storyboard)
         let presenter = ListingPresenter(display: viewController)
         let interactor = ListingInteractor(presenter: presenter, art: art)
         viewController.interactor = interactor
         return viewController
     }
 
-    func resolve() -> UIStoryboard {
+    private lazy var storyboard: UIStoryboard = {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
-    }
+    }()
 }

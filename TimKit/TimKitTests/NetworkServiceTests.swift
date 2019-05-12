@@ -13,7 +13,7 @@ class NetworkServiceTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        networkResponseValidatorSpy = .init(validateResponseAndUnwrapDataResult: .success(Seeds.data))
+        networkResponseValidatorSpy = .init(validateResponseResult: .success(Seeds.data))
         networkRequestMock = .init()
         dataTaskSpy = NetworkSessionDataTaskSpy()
         networkSessionSpy = .init(dataTask: dataTaskSpy,

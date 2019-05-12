@@ -1,10 +1,17 @@
 import Foundation
 
-public protocol NetworkService {
-    func processNetworkRequest(_ request: NetworkRequest, completion: @escaping (Result<Data, Error>) -> Void)
+private struct NetworkRawResponseDefault: NetworkRawResponse {
+    var data: Data?
+    var urlResponse: URLResponse?
+    var error: Error?
 }
 
-internal class NetworkServiceDefault {
+public protocol NetworkService {
+    func processNetworkRequest(_ request: NetworkRequest,
+                               completion: @escaping (Result<Data, Error>) -> Void) -> NetworkSessionDataTask
+}
+
+class NetworkServiceDefault {
 
     private let networkSession: NetworkSession
     private let networkRawResponseValidator: NetworkRawResponseValidator
@@ -18,22 +25,16 @@ internal class NetworkServiceDefault {
 
 extension NetworkServiceDefault: NetworkService {
 
-    func processNetworkRequest(_ networkRequest: NetworkRequest, completion: @escaping (Result<Data, Error>) -> Void) {
+    func processNetworkRequest(_ networkRequest: NetworkRequest,
+                               completion: @escaping (Result<Data, Error>) -> Void) -> NetworkSessionDataTask {
 
         let urlRequest = urlRequestForNetworkRequest(networkRequest)
 
         let dataTask = dataTaskFromURLRequest(urlRequest, completion: completion)
 
         startDataTask(dataTask)
-    }
-}
 
-private extension NetworkServiceDefault {
-
-    struct NetworkRawResponseDefault: NetworkRawResponse {
-        var data: Data?
-        var urlResponse: URLResponse?
-        var error: Error?
+        return dataTask
     }
 }
 

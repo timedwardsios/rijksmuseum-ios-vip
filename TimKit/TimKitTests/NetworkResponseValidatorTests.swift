@@ -26,15 +26,15 @@ extension NetworkResponseValidatorTests {
         // given
         responseMock.data = nil
         // then
-        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
-        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
+        XCTAssertNil(sut.validateResponse(responseMock).unwrap())
+        XCTAssertNil(sut.validateResponse(responseMock).unwrap())
     }
 
     func test_validateResponse_noInternalURLResponse() {
         // given
         responseMock.urlResponse = nil
         // then
-        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
+        XCTAssertNil(sut.validateResponse(responseMock).unwrap())
     }
 
     func test_validateResponse_badStatusCode() {
@@ -44,13 +44,13 @@ extension NetworkResponseValidatorTests {
                                                httpVersion: nil,
                                                headerFields: nil)
         // then
-        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
+        XCTAssertNil(sut.validateResponse(responseMock).unwrap())
     }
 
     func test_validateResponse_error() {
         // given
         responseMock.error = Seeds.error
         // then
-        XCTAssertTrue(sut.validateResponse(responseMock).isFailure)
+        XCTAssertNil(sut.validateResponse(responseMock).unwrap())
     }
 }

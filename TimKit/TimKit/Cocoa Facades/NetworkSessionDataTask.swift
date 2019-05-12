@@ -1,7 +1,8 @@
 import Foundation
 
-internal protocol NetworkSessionDataTask {
+public protocol NetworkSessionDataTask {
     func resume()
+    func cancel()
 }
 
 extension URLSessionDataTask: NetworkSessionDataTask {}

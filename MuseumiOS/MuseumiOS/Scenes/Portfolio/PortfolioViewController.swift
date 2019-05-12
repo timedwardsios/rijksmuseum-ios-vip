@@ -74,9 +74,8 @@ private extension PortfolioViewController {
         router?.routeToListing()
     }
 
-    func configureCell(_ cell: PortfolioImageCell, withURL url: URL) -> PortfolioImageCell {
+    func configureCell(_ cell: PortfolioImageCell, withURL url: URL) {
         cell.imageView.sd_setImage(with: url)
-        return cell
     }
 
     func setImageURLs(_ urls: [URL]) {

@@ -5,7 +5,7 @@ public class UICollectionViewGenericDataSource<ItemType, CellType: UICollectionV
 
     public var items = [ItemType]()
 
-    public var configureCellClosure:((_ cell: CellType, _ item: ItemType) -> CellType)?
+    public var configureCellClosure:((_ cell: CellType, _ item: ItemType) -> Void)?
 
     override public init() {}
 
@@ -37,9 +37,9 @@ private extension UICollectionViewGenericDataSource {
             return dequeuedCell
         }
 
-        let configuredCell = configureCell(typedCell, usingItem: item)
+        configureCell(typedCell, usingItem: item)
 
-        return configuredCell
+        return typedCell
     }
 }
 
@@ -60,10 +60,9 @@ private extension UICollectionViewGenericDataSource {
         return untypedCell as? CellType
     }
 
-    func configureCell(_ cell: CellType, usingItem item: ItemType) -> CellType {
+    func configureCell(_ cell: CellType, usingItem item: ItemType) {
         if let configureCellClosure = configureCellClosure {
             return configureCellClosure(cell, item)
         }
-        return cell
     }
 }

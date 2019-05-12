@@ -1,6 +1,6 @@
 import Foundation
 
-internal protocol NetworkSession {
+protocol NetworkSession {
     func dataTask(with request: URLRequest,
                   completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkSessionDataTask
 }

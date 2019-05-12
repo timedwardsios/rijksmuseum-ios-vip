@@ -5,8 +5,8 @@ class NetworkResponseValidatorSpy: NetworkRawResponseValidator {
 
     var validateResponseResult: Result<Data, Error>
 
-    init(validateResponseAndUnwrapDataResult: Result<Data, Error>) {
-        self.validateResponseResult = validateResponseAndUnwrapDataResult
+    init(validateResponseResult: Result<Data, Error>) {
+        self.validateResponseResult = validateResponseResult
     }
 
     var validateResponseArgs = [NetworkRawResponse]()

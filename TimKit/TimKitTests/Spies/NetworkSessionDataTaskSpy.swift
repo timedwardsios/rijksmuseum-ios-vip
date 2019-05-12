@@ -1,7 +1,7 @@
 import Foundation
 @testable import TimKit
 
-class NetworkSessionDataTaskSpy: Utils.NetworkSessionDataTask {
+class NetworkSessionDataTaskSpy: TimKit.NetworkSessionDataTask {
 
     var completion: (() -> Void)?
 

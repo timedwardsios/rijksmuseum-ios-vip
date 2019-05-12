@@ -1,48 +1,35 @@
 import Foundation
 import TimKit
 
-public protocol DependencyContainer {
-    func resolve() -> ArtService
-}
-
 public class Dependencies {
+    private let timKitDependencies = TimKit.Dependencies()
 
-    let timKitDependencyContainer: TimKit.DependencyContainer
+    public init() {}
 
-    public init(timKitDependencyContainer: TimKit.DependencyContainer) {
-        self.timKitDependencyContainer = timKitDependencyContainer
-    }
-}
-
-extension Dependencies: DependencyContainer {
-
-    public func resolve() -> ArtService {
+    public var artService: ArtService {
         return ArtServiceDefault(apiRequestConfig: config.apiRequestConfig,
-                                 networkRequestFactory: resolve(),
-                                 networkService: timKitDependencyContainer.resolve(),
-                                 artFactory: resolve())
+                                 networkRequestFactory: networkRequestFactory,
+                                 networkService: timKitDependencies.networkService,
+                                 artFactory: artsFactory)
     }
-}
 
-private extension Dependencies {
-    func resolve() -> NetworkRequestFactory {
+    private var networkRequestFactory: NetworkRequestFactory {
         return NetworkRequestFactoryDefault(baseAPIConfig: config.apiBaseConfig)
     }
 
-    func resolve() -> ArtsFactory {
-        return ArtsFactoryDefault(jsonDecoderService: resolve())
+    private var artsFactory: ArtsFactory {
+        return ArtsFactoryDefault(jsonDecoderService: jsonDecoderService)
     }
 
-    func resolve() -> JSONDecoder {
+    private var jsonDecoderService: JSONDecoderService {
         return JSONDecoder()
     }
 
-    func resolve() -> Bundle {
+    private lazy var bundle: Bundle = {
         return Bundle(for: type(of: self))
-    }
+    }()
 
-    func resolve() -> Config {
-        let configService: ConfigService = timKitDependencyContainer.resolve()
-        return configService.getConfig(forBundle: resolve())
-    }
+    private lazy var config: Config = {
+        return try! timKitDependencies.configLoader.getConfig(forBundle: bundle)
+    }()
 }

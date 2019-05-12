@@ -3,6 +3,7 @@ import TimKit
 
 public protocol ArtService {
     func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void)
+    func cancelAllTasks()
 }
 
 internal class ArtServiceDefault {
@@ -19,21 +20,35 @@ internal class ArtServiceDefault {
         self.networkService = networkService
         self.artFactory = artFactory
     }
+
+    var currentTask: NetworkSessionDataTask?
 }
 
 extension ArtServiceDefault: ArtService {
 
     func fetchArt(completion: @escaping (Result<[Art], Error>) -> Void) {
 
-        guard let networkRequest = createNetworkRequestResult().unwrapWithErrorHandler(completion) else {
-            return
-        }
+        let networkRequestResult = createNetworkRequestResult()
 
-        startFetchingWithNetworkRequest(networkRequest, completion: completion)
+        switch networkRequestResult {
+        case .success(let networkRequest):
+            startFetchingWithNetworkRequest(networkRequest, completion: completion)
+        case .failure(let error):
+            completion(.failure(error))
+        }
+    }
+
+    func cancelAllTasks() {
+        cancelCurrentTask()
     }
 }
 
 private extension ArtServiceDefault {
+
+    func cancelCurrentTask() {
+        currentTask?.cancel()
+        currentTask = nil
+    }
 
     func createNetworkRequestResult() -> Result<NetworkRequest, Error> {
 
@@ -43,17 +58,30 @@ private extension ArtServiceDefault {
     func startFetchingWithNetworkRequest(_ networkRequest: NetworkRequest,
                                          completion:@escaping (Result<[Art], Error>) -> Void) {
 
-        networkService.processNetworkRequest(networkRequest) { [weak self] (result) in
+        currentTask = networkService.processNetworkRequest(networkRequest) { [weak self] (result) in
 
-            guard let data = result.unwrapWithErrorHandler(completion) else {
-                return
-            }
+            self?.didFetchWithResult(result, completion: completion)
+        }
+    }
 
-            guard let art = self?.artFactory.arts(fromJSONData: data).unwrapWithErrorHandler(completion) else {
-                return
-            }
+    func didFetchWithResult(_ result: Result<Data, Error>, completion: (Result<[Art], Error>) -> Void) {
+        switch result {
+        case .success(let data):
+            createArtsFromData(data, completion: completion)
+        case .failure(let error):
+            completion(.failure(error))
+        }
+    }
 
+    func createArtsFromData(_ data: Data, completion: (Result<[Art], Error>) -> Void) {
+
+        let artResult = artFactory.arts(fromJSONData: data)
+
+        switch artResult {
+        case .success(let art):
             completion(.success(art))
+        case .failure(let error):
+            completion(.failure(error))
         }
     }
 }
