@@ -1,4 +1,4 @@
-import MuseumKit
+
 @testable import App
 
 class ListingPresenterSpy: ListingPresenting {

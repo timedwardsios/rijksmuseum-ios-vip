@@ -2,19 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:todo">
-   </FileRef>
-   <FileRef
-      location = "group:MuseumiOS/MuseumiOS.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:MuseumKit/MuseumKit.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TimKit/TimKit.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:TestTools/TestTools.xcodeproj">
+      location = "group:MuseumiOS/MuseumiOS.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

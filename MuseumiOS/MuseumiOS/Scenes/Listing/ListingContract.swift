@@ -1,5 +1,5 @@
 import Foundation
-import MuseumKit
+
 import TimKit
 
 protocol ListingInteracting {

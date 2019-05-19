@@ -7,33 +7,28 @@
 		<key>scheme</key>
 		<string>https</string>
 		<key>host</key>
-		<string>www.rijksmuseum.nl</string>
+		<string>api.idagio.com</string>
 		<key>path</key>
-		<string>/api/en</string>
+		<string>/v1.8/lucene</string>
 		<key>queryItems</key>
-		<dict>
-			<key>key</key>
-			<string>VV23OnI1</string>
-			<key>format</key>
-			<string>json</string>
-		</dict>
+		<dict/>
 	</dict>
-	<key>apiRequestConfig</key>
+	<key>apiRequestTemplates</key>
 	<dict>
-		<key>collection</key>
+		<key>search</key>
 		<dict>
 			<key>path</key>
-			<string>/collection</string>
+			<string>/search</string>
+			<key>method</key>
+			<string>GET</string>
 			<key>queryItems</key>
-			<dict>
-				<key>ps</key>
-				<string>100</string>
-				<key>imgonly</key>
-				<string>true</string>
-				<key>s</key>
-				<string>relevance</string>
-			</dict>
+			<dict/>
 		</dict>
+	</dict>
+	<key>apiQueryStringKeys</key>
+	<dict>
+		<key>searchTerm</key>
+		<string>term</string>
 	</dict>
 </dict>
 </plist>

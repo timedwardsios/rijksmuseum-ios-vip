@@ -1,0 +1,6 @@
+framework module Pods_MuseumKitTests {
+  umbrella header "Pods-MuseumKitTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

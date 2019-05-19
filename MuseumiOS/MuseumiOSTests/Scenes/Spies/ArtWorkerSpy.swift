@@ -1,5 +1,5 @@
 import Foundation
-@testable import MuseumKit
+@testable 
 
 class ArtServiceSpy: ArtService {
 

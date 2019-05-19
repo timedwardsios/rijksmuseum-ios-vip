@@ -4,16 +4,12 @@ import TimKit
 
 class APIRequestFactorySpy: APIRequestFactory {
 
-    var createRequestResult: APIRequest
+    var constructAPIRequestResult = APIRequestMock()
 
-    init(createRequestResult: APIRequest) {
-        self.createRequestResult = createRequestResult
-    }
+    var constructAPIRequestArgs = [APIOperation]()
 
-    var createRequestArgs = [APIEndpoint]()
-
-    func apiRequest(fromAPIEndpoint apiEndpoint: APIEndpoint) -> APIRequest {
-        createRequestArgs.append(apiEndpoint)
-        return createRequestResult
+    func constructAPIRequest(fromOperation operation: APIOperation) -> APIRequest {
+        constructAPIRequestArgs.append(operation)
+        return constructAPIRequestResult
     }
 }

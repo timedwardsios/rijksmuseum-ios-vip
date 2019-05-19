@@ -1,5 +1,4 @@
 import UIKit
-import MuseumKit
 
 class Dependencies {
 

@@ -1,37 +1,27 @@
 
 platform:ios, '12.2'
+
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+
 use_frameworks!
 
 workspace 'Rijksmuseum'
 
-pod 'SwiftLint'
+target 'MuseumiOS' do
 
-target 'App' do
     pod "SDWebImage"
-    project 'App/App.xcodeproj'
-    target 'AppTests' do
+
+    project 'MuseumiOS/MuseumiOS.xcodeproj'
+
+    target 'MuseumiOSTests' do
         inherit! :search_paths
     end
 end
 
-target 'Services' do
-    project 'Services/Services.xcodeproj'
-    target 'ServicesTests' do
-        inherit! :search_paths
-    end
-end
+target 'MuseumKit' do
+    project 'MuseumKit/MuseumKit.xcodeproj'
 
-target 'Utils' do
-    project 'Utils/Utils.xcodeproj'
-    target 'UtilsTests' do
-        inherit! :search_paths
-    end
-end
-
-target 'TestTools' do
-    project 'TestTools/TestTools.xcodeproj'
-    target 'TestToolsTests' do
+    target 'MuseumKitTests' do
         inherit! :search_paths
     end
 end

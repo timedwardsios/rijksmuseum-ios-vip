@@ -1,0 +1,6 @@
+framework module TimKit {
+  umbrella header "TimKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
