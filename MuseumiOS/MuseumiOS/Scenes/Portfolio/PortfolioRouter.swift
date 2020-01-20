@@ -2,14 +2,11 @@ import UIKit
 
 class PortfolioRouter {
 
-    private let dependencies: Dependencies
     private let dataStore: PortfolioDataStore
     private weak var viewController: UIViewController?
 
-    init(dependencies: Dependencies,
-         dataStore: PortfolioDataStore,
+    init(dataStore: PortfolioDataStore,
          viewController: UIViewController) {
-        self.dependencies = dependencies
         self.viewController = viewController
         self.dataStore = dataStore
     }
@@ -21,7 +18,7 @@ extension PortfolioRouter: PortfolioRouting {
         guard let art = dataStore.selectedArt else {
             return
         }
-        let listingViewController: ListingViewController = dependencies.listingViewController(art: art)
+        let listingViewController: ListingViewController = resolve(art: art)
         viewController?.navigationController?.pushViewController(listingViewController, animated: true)
     }
 }

@@ -217,8 +217,8 @@
 		22AC8C73212EEA02000A0BE0 /* MuseumiOS */ = {
 			isa = PBXGroup;
 			children = (
-				22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */,
 				221545202267181C0062E9C6 /* Dependencies.swift */,
+				22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */,
 				2219679A2286204000BF00FB /* Main.storyboard */,
 				22154540226722030062E9C6 /* Scenes */,
 				22AC8C74212EEA02000A0BE0 /* Resources */,

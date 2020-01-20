@@ -1,4 +1,5 @@
 import Foundation
+import TimKit
 
 struct APIConfigDefault: APIConfig {
 
