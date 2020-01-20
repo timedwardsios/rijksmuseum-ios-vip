@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		220B73C5228DC83900AF8A8D /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73B5228DC83800AF8A8D /* Artist.swift */; };
 		220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73B6228DC83800AF8A8D /* Dependencies.swift */; };
-		220B73C7228DC83900AF8A8D /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 220B73B8228DC83800AF8A8D /* config.plist */; };
 		220B73C8228DC83900AF8A8D /* IdagioKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 220B73B9228DC83800AF8A8D /* IdagioKit.h */; };
 		220B73CA228DC83900AF8A8D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73BC228DC83800AF8A8D /* Config.swift */; };
 		220B73CB228DC83900AF8A8D /* ConfigDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73BD228DC83800AF8A8D /* ConfigDecodable.swift */; };
@@ -54,7 +53,6 @@
 		156F76EFC615814BAAA7A3C2 /* Pods_MuseumKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220B73B5228DC83800AF8A8D /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		220B73B6228DC83800AF8A8D /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
-		220B73B8228DC83800AF8A8D /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		220B73B9228DC83800AF8A8D /* IdagioKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdagioKit.h; sourceTree = "<group>"; };
 		220B73BA228DC83800AF8A8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		220B73BC228DC83800AF8A8D /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 		220B73B7228DC83800AF8A8D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				220B73B8228DC83800AF8A8D /* config.plist */,
 				220B73B9228DC83800AF8A8D /* IdagioKit.h */,
 				220B73BA228DC83800AF8A8D /* Info.plist */,
 			);
@@ -352,7 +349,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220B73C7228DC83900AF8A8D /* config.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
