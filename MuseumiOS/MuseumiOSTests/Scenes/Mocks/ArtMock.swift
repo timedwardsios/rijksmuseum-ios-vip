@@ -1,5 +1,5 @@
 import Foundation
-import TimTestTools
+import TestKit
 @testable 
 
 struct ArtMock: Art, Equatable {

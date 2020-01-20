@@ -1,6 +1,0 @@
-framework module Pods_MuseumiOS {
-  umbrella header "Pods-MuseumiOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

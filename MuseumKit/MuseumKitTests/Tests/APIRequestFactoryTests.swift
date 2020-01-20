@@ -1,5 +1,5 @@
 import XCTest
-import TimTestTools
+import TestKit
 import TimKit
 @testable import MuseumKit
 

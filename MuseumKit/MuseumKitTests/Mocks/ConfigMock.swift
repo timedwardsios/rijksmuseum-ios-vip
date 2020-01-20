@@ -1,5 +1,5 @@
 import Foundation
-import TimTestTools
+import TestKit
 @testable import MuseumKit
 
 struct ConfigMock: Config {

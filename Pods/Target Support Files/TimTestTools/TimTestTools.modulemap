@@ -1,6 +1,0 @@
-framework module TimTestTools {
-  umbrella header "TimTestTools-umbrella.h"
-
-  export *
-  module * { export * }
-}

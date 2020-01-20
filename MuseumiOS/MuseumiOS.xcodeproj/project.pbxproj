@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,9 +38,8 @@
 		22BC04262273C3BE00032509 /* PortfolioDisplaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04252273C3BE00032509 /* PortfolioDisplaySpy.swift */; };
 		22BC04282273C4D100032509 /* ListingPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04272273C4D100032509 /* ListingPresenterSpy.swift */; };
 		22BC042A2273C4E600032509 /* ListingDisplaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04292273C4E600032509 /* ListingDisplaySpy.swift */; };
+		22C327E523D5D3D8001CCB5B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 22C327E423D5D3D8001CCB5B /* SDWebImage */; };
 		22F55BE32274B93100B8544A /* PortfolioImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F55BE22274B93000B8544A /* PortfolioImageCell.swift */; };
-		6712F0A43DE6A5FB30479A35 /* Pods_MuseumiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6797E6C03BE93F8117088ED0 /* Pods_MuseumiOSTests.framework */; };
-		B6A38AE49B192505533ABBA1 /* Pods_MuseumiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F092BC9D8DB77CB029D29AF /* Pods_MuseumiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		146A4850051929737D10D145 /* Pods-MuseumiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumiOS.release.xcconfig"; path = "Target Support Files/Pods-MuseumiOS/Pods-MuseumiOS.release.xcconfig"; sourceTree = "<group>"; };
 		22013B0A2275C67F00B200D6 /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221545202267181C0062E9C6 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
@@ -105,11 +103,8 @@
 		22C9BF19212F2DFE000D15E6 /* Workers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Workers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D88AEE212EF67E006E96AF /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F55BE22274B93000B8544A /* PortfolioImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioImageCell.swift; sourceTree = "<group>"; };
-		546DA6D949ED614C575ABF14 /* Pods-MuseumiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumiOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MuseumiOSTests/Pods-MuseumiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5F092BC9D8DB77CB029D29AF /* Pods_MuseumiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6797E6C03BE93F8117088ED0 /* Pods_MuseumiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6DF3713B8B00E10A1792777 /* Pods-MuseumiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumiOS.debug.xcconfig"; path = "Target Support Files/Pods-MuseumiOS/Pods-MuseumiOS.debug.xcconfig"; sourceTree = "<group>"; };
-		EA2F05284CFE599D7CBFDFD7 /* Pods-MuseumiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumiOSTests.release.xcconfig"; path = "Target Support Files/Pods-MuseumiOSTests/Pods-MuseumiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +112,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C327E523D5D3D8001CCB5B /* SDWebImage in Frameworks */,
 				22B0C7CA22861EE600717751 /* MuseumKit.framework in Frameworks */,
 				22B0C7CC22861EE600717751 /* TimKit.framework in Frameworks */,
-				B6A38AE49B192505533ABBA1 /* Pods_MuseumiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22013B0B2275C67F00B200D6 /* TestTools.framework in Frameworks */,
-				6712F0A43DE6A5FB30479A35 /* Pods_MuseumiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +194,6 @@
 				22706C9B20FE5110006E27EE /* MuseumiOSTests */,
 				22706C8220FE510E006E27EE /* Products */,
 				A10F01533FEF44811CAB0213 /* Frameworks */,
-				F83734917D39F3445A16ACD1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -314,18 +307,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F83734917D39F3445A16ACD1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E6DF3713B8B00E10A1792777 /* Pods-MuseumiOS.debug.xcconfig */,
-				146A4850051929737D10D145 /* Pods-MuseumiOS.release.xcconfig */,
-				546DA6D949ED614C575ABF14 /* Pods-MuseumiOSTests.debug.xcconfig */,
-				EA2F05284CFE599D7CBFDFD7 /* Pods-MuseumiOSTests.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,18 +314,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22706CA120FE5110006E27EE /* Build configuration list for PBXNativeTarget "MuseumiOS" */;
 			buildPhases = (
-				410E3E7AACB484EC768DAE4C /* [CP] Check Pods Manifest.lock */,
 				22706C7D20FE510E006E27EE /* Sources */,
 				22706C7E20FE510E006E27EE /* Frameworks */,
 				22706C7F20FE510E006E27EE /* Resources */,
 				22013ACD2275C23D00B200D6 /* ShellScript */,
-				04D6FC10531FDFA9734B494E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MuseumiOS;
+			packageProductDependencies = (
+				22C327E423D5D3D8001CCB5B /* SDWebImage */,
+			);
 			productName = Rijksmuseum;
 			productReference = 22706C8120FE510E006E27EE /* Rijksmuseum.app */;
 			productType = "com.apple.product-type.application";
@@ -353,12 +335,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22706CA420FE5110006E27EE /* Build configuration list for PBXNativeTarget "MuseumiOSTests" */;
 			buildPhases = (
-				51011E20188ADAE17991F35F /* [CP] Check Pods Manifest.lock */,
 				22706C9420FE510F006E27EE /* Sources */,
 				22706C9520FE510F006E27EE /* Frameworks */,
 				22706C9620FE510F006E27EE /* Resources */,
 				22013AD32275C2AA00B200D6 /* ShellScript */,
-				C9C37ED1FAA9204260A0A0C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -400,6 +380,9 @@
 				Base,
 			);
 			mainGroup = 22706C7820FE510E006E27EE;
+			packageReferences = (
+				22C327E323D5D3D8001CCB5B /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 22706C8220FE510E006E27EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -433,30 +416,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04D6FC10531FDFA9734B494E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuseumiOS/Pods-MuseumiOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/TimKit/TimKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TimKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuseumiOS/Pods-MuseumiOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		22013ACD2275C23D00B200D6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,72 +449,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		410E3E7AACB484EC768DAE4C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MuseumiOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		51011E20188ADAE17991F35F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MuseumiOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9C37ED1FAA9204260A0A0C4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MuseumiOSTests/Pods-MuseumiOSTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/TimTestTools/TimTestTools.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TimTestTools.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MuseumiOSTests/Pods-MuseumiOSTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -655,6 +548,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -675,6 +569,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timwredwards.$(TARGET_NAME)";
 				PRODUCT_MODULE_NAME = "";
 				PRODUCT_NAME = Rijksmuseum;
 				SDKROOT = iphoneos;
@@ -718,6 +613,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -731,6 +627,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/$(TARGETNAME)/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.timwredwards.$(TARGET_NAME)";
 				PRODUCT_MODULE_NAME = "";
 				PRODUCT_NAME = Rijksmuseum;
 				SDKROOT = iphoneos;
@@ -742,17 +639,16 @@
 		};
 		22706CA220FE5110006E27EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6DF3713B8B00E10A1792777 /* Pods-MuseumiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2H55DCRCL;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Rijksmuseum;
 				PRODUCT_MODULE_NAME = App;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -762,17 +658,16 @@
 		};
 		22706CA320FE5110006E27EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 146A4850051929737D10D145 /* Pods-MuseumiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2H55DCRCL;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.Rijksmuseum;
 				PRODUCT_MODULE_NAME = App;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -781,7 +676,6 @@
 		};
 		22706CA520FE5110006E27EE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 546DA6D949ED614C575ABF14 /* Pods-MuseumiOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -791,7 +685,6 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.RijksmuseumTests;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -802,7 +695,6 @@
 		};
 		22706CA620FE5110006E27EE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA2F05284CFE599D7CBFDFD7 /* Pods-MuseumiOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -812,7 +704,6 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.timwredwards.RijksmuseumTests;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -852,6 +743,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22C327E323D5D3D8001CCB5B /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22C327E423D5D3D8001CCB5B /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22C327E323D5D3D8001CCB5B /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		22AC8C79212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld */ = {

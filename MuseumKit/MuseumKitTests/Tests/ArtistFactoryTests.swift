@@ -1,5 +1,5 @@
 import XCTest
-import TimTestTools
+import TestKit
 @testable import MuseumKit
 
 class ArtistFactoryTests: XCTestCase {
