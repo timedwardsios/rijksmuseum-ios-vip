@@ -1,4 +1,4 @@
-
+import MuseumKit
 import TimKit
 
 class PortfolioInteractor: PortfolioDataStore {
@@ -36,7 +36,7 @@ private extension PortfolioInteractor {
         }
     }
 
-    func artServiceDidFetchArts(result: Result<[Art], Error>) {
+    func artServiceDidFetchArts(result: Result<[Art], ArtServiceError>) {
         switch result {
         case .success(let arts):
             self.arts = arts

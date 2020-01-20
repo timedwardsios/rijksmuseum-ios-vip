@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		220B73C5228DC83900AF8A8D /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73B5228DC83800AF8A8D /* Artist.swift */; };
 		220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73B6228DC83800AF8A8D /* Dependencies.swift */; };
 		220B73C8228DC83900AF8A8D /* IdagioKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 220B73B9228DC83800AF8A8D /* IdagioKit.h */; };
-		220B73CA228DC83900AF8A8D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73BC228DC83800AF8A8D /* Config.swift */; };
-		220B73CB228DC83900AF8A8D /* ConfigDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73BD228DC83800AF8A8D /* ConfigDecodable.swift */; };
+		220B73CA228DC83900AF8A8D /* APIConfigDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73BC228DC83800AF8A8D /* APIConfigDefault.swift */; };
 		220B73CC228DC83900AF8A8D /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73BE228DC83800AF8A8D /* APIRequest.swift */; };
-		220B73CD228DC83900AF8A8D /* ArtistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73C0228DC83800AF8A8D /* ArtistService.swift */; };
 		220B73CE228DC83900AF8A8D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73C1228DC83800AF8A8D /* APIService.swift */; };
 		220B73CF228DC83900AF8A8D /* APIRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73C2228DC83800AF8A8D /* APIRequestFactory.swift */; };
 		220B73D0228DC83900AF8A8D /* URLRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73C3228DC83800AF8A8D /* URLRequestFactory.swift */; };
@@ -37,6 +34,10 @@
 		220B73FB228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73FA228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift */; };
 		221967EE228890B200BF00FB /* MuseumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221967E4228890B200BF00FB /* MuseumKit.framework */; };
 		2219683F2288985700BF00FB /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2219683E2288985700BF00FB /* TimKit.framework */; };
+		2239FE6223D617EB008E9867 /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE6123D617EB008E9867 /* Art.swift */; };
+		2239FE6423D6180D008E9867 /* ArtService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE6323D6180D008E9867 /* ArtService.swift */; };
+		2239FE6623D6181D008E9867 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE6523D6181D008E9867 /* Artist.swift */; };
+		2239FE6823D6193C008E9867 /* ArtsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE6723D6193C008E9867 /* ArtsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,14 +52,11 @@
 
 /* Begin PBXFileReference section */
 		156F76EFC615814BAAA7A3C2 /* Pods_MuseumKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		220B73B5228DC83800AF8A8D /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		220B73B6228DC83800AF8A8D /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		220B73B9228DC83800AF8A8D /* IdagioKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdagioKit.h; sourceTree = "<group>"; };
 		220B73BA228DC83800AF8A8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		220B73BC228DC83800AF8A8D /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		220B73BD228DC83800AF8A8D /* ConfigDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigDecodable.swift; sourceTree = "<group>"; };
+		220B73BC228DC83800AF8A8D /* APIConfigDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfigDefault.swift; sourceTree = "<group>"; };
 		220B73BE228DC83800AF8A8D /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		220B73C0228DC83800AF8A8D /* ArtistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistService.swift; sourceTree = "<group>"; };
 		220B73C1228DC83800AF8A8D /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		220B73C2228DC83800AF8A8D /* APIRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestFactory.swift; sourceTree = "<group>"; };
 		220B73C3228DC83800AF8A8D /* URLRequestFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestFactory.swift; sourceTree = "<group>"; };
@@ -85,6 +83,10 @@
 		221967ED228890B200BF00FB /* MuseumKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2219683E2288985700BF00FB /* TimKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221968402288986C00BF00FB /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2239FE6123D617EB008E9867 /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Art.swift; path = "../../../../../tmp/oldmuseum/rijksmuseum-ios-vip-example/MuseumKit/MuseumKit/Public Model/Art.swift"; sourceTree = "<group>"; };
+		2239FE6323D6180D008E9867 /* ArtService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtService.swift; path = "../../../../../tmp/oldmuseum/rijksmuseum-ios-vip-example/MuseumKit/MuseumKit/Services/ArtService.swift"; sourceTree = "<group>"; };
+		2239FE6523D6181D008E9867 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artist.swift; path = ../../../../../.Trash/Artist.swift; sourceTree = "<group>"; };
+		2239FE6723D6193C008E9867 /* ArtsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtsFactory.swift; path = "../../../../../tmp/oldmuseum/rijksmuseum-ios-vip-example/MuseumKit/MuseumKit/Factories/ArtsFactory.swift"; sourceTree = "<group>"; };
 		F1C1B841E2B07E3FAB720F12 /* Pods_MuseumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,7 +125,8 @@
 		220B73B4228DC83800AF8A8D /* Public model */ = {
 			isa = PBXGroup;
 			children = (
-				220B73B5228DC83800AF8A8D /* Artist.swift */,
+				2239FE6523D6181D008E9867 /* Artist.swift */,
+				2239FE6123D617EB008E9867 /* Art.swift */,
 			);
 			path = "Public model";
 			sourceTree = "<group>";
@@ -140,9 +143,8 @@
 		220B73BB228DC83800AF8A8D /* Internal model */ = {
 			isa = PBXGroup;
 			children = (
-				220B73BC228DC83800AF8A8D /* Config.swift */,
-				220B73BD228DC83800AF8A8D /* ConfigDecodable.swift */,
 				220B73BE228DC83800AF8A8D /* APIRequest.swift */,
+				220B73BC228DC83800AF8A8D /* APIConfigDefault.swift */,
 			);
 			path = "Internal model";
 			sourceTree = "<group>";
@@ -150,7 +152,8 @@
 		220B73BF228DC83800AF8A8D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				220B73C0228DC83800AF8A8D /* ArtistService.swift */,
+				2239FE6723D6193C008E9867 /* ArtsFactory.swift */,
+				2239FE6323D6180D008E9867 /* ArtService.swift */,
 				220B73C1228DC83800AF8A8D /* APIService.swift */,
 				220B73C2228DC83800AF8A8D /* APIRequestFactory.swift */,
 				220B73C3228DC83800AF8A8D /* URLRequestFactory.swift */,
@@ -408,14 +411,15 @@
 			files = (
 				220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */,
 				220B73CE228DC83900AF8A8D /* APIService.swift in Sources */,
-				220B73CB228DC83900AF8A8D /* ConfigDecodable.swift in Sources */,
-				220B73CD228DC83900AF8A8D /* ArtistService.swift in Sources */,
 				220B73D0228DC83900AF8A8D /* URLRequestFactory.swift in Sources */,
-				220B73C5228DC83900AF8A8D /* Artist.swift in Sources */,
+				2239FE6823D6193C008E9867 /* ArtsFactory.swift in Sources */,
+				2239FE6423D6180D008E9867 /* ArtService.swift in Sources */,
+				2239FE6623D6181D008E9867 /* Artist.swift in Sources */,
+				2239FE6223D617EB008E9867 /* Art.swift in Sources */,
 				220B73CF228DC83900AF8A8D /* APIRequestFactory.swift in Sources */,
 				220B73D1228DC83900AF8A8D /* ArtistFactory.swift in Sources */,
 				220B73CC228DC83900AF8A8D /* APIRequest.swift in Sources */,
-				220B73CA228DC83900AF8A8D /* Config.swift in Sources */,
+				220B73CA228DC83900AF8A8D /* APIConfigDefault.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

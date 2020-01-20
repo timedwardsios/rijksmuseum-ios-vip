@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22013B0B2275C67F00B200D6 /* TestTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22013B0A2275C67F00B200D6 /* TestTools.framework */; };
 		221545212267181C0062E9C6 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221545202267181C0062E9C6 /* Dependencies.swift */; };
 		2215452222671C460062E9C6 /* ListingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1162130B1830031A401 /* ListingContract.swift */; };
 		2215452322671C460062E9C6 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1152130B1830031A401 /* ListingViewController.swift */; };
@@ -18,6 +17,7 @@
 		2219679B2286204000BF00FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219679A2286204000BF00FB /* Main.storyboard */; };
 		221AE96822877BB600973131 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AE96722877BB600973131 /* Config.swift */; };
 		2222142022661377001F41C8 /* PortfolioContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222141F22661377001F41C8 /* PortfolioContract.swift */; };
+		2239FE7223D6306B008E9867 /* TestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2239FE7123D6306B008E9867 /* TestKit.framework */; };
 		2258B98422723F5000516603 /* ArtWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B98322723F5000516603 /* ArtWorkerSpy.swift */; };
 		2258B9F422724B7B00516603 /* ArtMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9F322724B7B00516603 /* ArtMock.swift */; };
 		22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C75212EEA02000A0BE0 /* Assets.xcassets */; };
@@ -31,7 +31,6 @@
 		22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */; };
 		22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */; };
 		22B0C7CA22861EE600717751 /* MuseumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0C7C922861EE600717751 /* MuseumKit.framework */; };
-		22B0C7CC22861EE600717751 /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0C7CB22861EE600717751 /* TimKit.framework */; };
 		22BC041F2273A11C00032509 /* ListingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC041E2273A11C00032509 /* ListingInteractorTests.swift */; };
 		22BC04212273A27300032509 /* ListingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04202273A27300032509 /* ListingPresenterTests.swift */; };
 		22BC04242273C39900032509 /* PortfolioPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04232273C39900032509 /* PortfolioPresenterSpy.swift */; };
@@ -66,6 +65,7 @@
 		221DB1162130B1830031A401 /* ListingContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingContract.swift; sourceTree = "<group>"; };
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2222141F22661377001F41C8 /* PortfolioContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioContract.swift; sourceTree = "<group>"; };
+		2239FE7123D6306B008E9867 /* TestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2253927B2276595E007AEF1F /* Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258B965227210A600516603 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258B98322723F5000516603 /* ArtWorkerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkerSpy.swift; sourceTree = "<group>"; };
@@ -114,7 +114,6 @@
 			files = (
 				22C327E523D5D3D8001CCB5B /* SDWebImage in Frameworks */,
 				22B0C7CA22861EE600717751 /* MuseumKit.framework in Frameworks */,
-				22B0C7CC22861EE600717751 /* TimKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22013B0B2275C67F00B200D6 /* TestTools.framework in Frameworks */,
+				2239FE7223D6306B008E9867 /* TestKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +283,7 @@
 		A10F01533FEF44811CAB0213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2239FE7123D6306B008E9867 /* TestKit.framework */,
 				22B0C7C922861EE600717751 /* MuseumKit.framework */,
 				22B0C7CB22861EE600717751 /* TimKit.framework */,
 				2253927B2276595E007AEF1F /* Kit.framework */,
@@ -314,10 +314,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22706CA120FE5110006E27EE /* Build configuration list for PBXNativeTarget "MuseumiOS" */;
 			buildPhases = (
+				2239FE6B23D62378008E9867 /* Swiftlint */,
 				22706C7D20FE510E006E27EE /* Sources */,
 				22706C7E20FE510E006E27EE /* Frameworks */,
 				22706C7F20FE510E006E27EE /* Resources */,
-				22013ACD2275C23D00B200D6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -335,10 +335,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22706CA420FE5110006E27EE /* Build configuration list for PBXNativeTarget "MuseumiOSTests" */;
 			buildPhases = (
+				2239FE6C23D6238D008E9867 /* ShellScript */,
 				22706C9420FE510F006E27EE /* Sources */,
 				22706C9520FE510F006E27EE /* Frameworks */,
 				22706C9620FE510F006E27EE /* Resources */,
-				22013AD32275C2AA00B200D6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -416,7 +416,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		22013ACD2275C23D00B200D6 /* ShellScript */ = {
+		2239FE6B23D62378008E9867 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -425,15 +425,16 @@
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		22013AD32275C2AA00B200D6 /* ShellScript */ = {
+		2239FE6C23D6238D008E9867 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,7 +449,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -566,7 +567,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/$(TARGETNAME)/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timwredwards.$(TARGET_NAME)";
@@ -625,7 +626,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/$(TARGETNAME)/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timwredwards.$(TARGET_NAME)";
 				PRODUCT_MODULE_NAME = "";
@@ -644,7 +645,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2H55DCRCL;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -663,7 +663,6 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2H55DCRCL;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

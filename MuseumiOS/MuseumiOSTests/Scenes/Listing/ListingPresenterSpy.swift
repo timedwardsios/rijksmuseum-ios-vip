@@ -1,4 +1,3 @@
-
 @testable import App
 
 class ListingPresenterSpy: ListingPresenting {

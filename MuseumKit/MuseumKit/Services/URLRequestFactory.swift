@@ -1,6 +1,38 @@
 import Foundation
 import TimKit
 
+protocol APIConfig {
+
+    var scheme: String { get }
+
+    var host: String { get }
+
+    var path: String { get }
+
+    var queryItems: [String: String] {get}
+}
+
+enum HTTPMethod: String {
+    case CONNECT
+    case DELETE
+    case GET
+    case HEAD
+    case OPTIONS
+    case PATCH
+    case POST
+    case PUT
+    case TRACE
+}
+
+protocol APIRequest {
+
+    var path: String {get}
+
+    var queryItems: [String: String] {get}
+
+    var method: HTTPMethod {get}
+}
+
 enum URLRequestFactoryError: LocalizedError {
 
     case unableToConstructURL
@@ -17,9 +49,9 @@ protocol URLRequestFactory {
 }
 
 class URLRequestFactoryDefault {
-    let baseAPIConfig: APIBaseConfig
-    init(baseAPIConfig: APIBaseConfig) {
-        self.baseAPIConfig = baseAPIConfig
+    let apiConfig: APIConfig
+    init(apiConfig: APIConfig) {
+        self.apiConfig = apiConfig
     }
 }
 
@@ -27,7 +59,7 @@ extension URLRequestFactoryDefault: URLRequestFactory {
 
     func constructURLRequestFromAPIRequest(_ apiRequest: APIRequest) throws -> URLRequest {
 
-        try validateAPIBaseConfig(baseAPIConfig)
+        try validateAPIBaseConfig(apiConfig)
 
         try validateAPIRequest(apiRequest)
 
@@ -40,11 +72,11 @@ extension URLRequestFactoryDefault: URLRequestFactory {
 // MARK: - Validation
 private extension URLRequestFactoryDefault {
 
-    func validateAPIBaseConfig(_ config: APIBaseConfig) throws {
+    func validateAPIBaseConfig(_ config: APIConfig) throws {
 
-        try validateURLScheme(baseAPIConfig.scheme)
+        try validateURLScheme(apiConfig.scheme)
 
-        try validateURLHost(baseAPIConfig.host)
+        try validateURLHost(apiConfig.host)
     }
 
     func validateAPIRequest(_ apiRequest: APIRequest) throws {
@@ -61,7 +93,7 @@ private extension URLRequestFactoryDefault {
 
     func validateURLHost(_ host: String) throws {
 
-        if baseAPIConfig.host.isEmpty {
+        if apiConfig.host.isEmpty {
 
             throw URLRequestFactoryError.invalidHost
         }
@@ -81,7 +113,7 @@ private extension URLRequestFactoryDefault {
 
     func urlRequestFromAPIRequest(_ apiRequest: APIRequest) throws -> URLRequest {
 
-        var urlComponents = urlComponentsFromAPIBaseConfig(baseAPIConfig)
+        var urlComponents = urlComponentsFromAPIBaseConfig(apiConfig)
 
         urlComponents = extendURLComponents(urlComponents, usingAPIRequest: apiRequest)
 
@@ -92,7 +124,7 @@ private extension URLRequestFactoryDefault {
         return urlRequest
     }
 
-    func urlComponentsFromAPIBaseConfig(_ apiBaseConfig: APIBaseConfig) -> URLComponents {
+    func urlComponentsFromAPIBaseConfig(_ apiBaseConfig: APIConfig) -> URLComponents {
 
         var newURLComponents = URLComponents()
 
@@ -113,9 +145,7 @@ private extension URLRequestFactoryDefault {
 
         newURLComponents.path.append(apiRequest.path)
 
-        let newQueryItems = apiRequest.queryItems.map({
-            return URLQueryItem(name: $0.key, value: $0.value)
-        })
+        let newQueryItems = apiRequest.queryItems.map({ URLQueryItem(name: $0.key, value: $0.value) })
 
         newURLComponents.queryItems?.append(contentsOf: newQueryItems)
         return newURLComponents
@@ -134,7 +164,7 @@ private extension URLRequestFactoryDefault {
 
         var urlRequest = URLRequest(url: url)
 
-        urlRequest.httpMethod = apiRequest.method
+        urlRequest.httpMethod = apiRequest.method.rawValue
 
         return urlRequest
     }

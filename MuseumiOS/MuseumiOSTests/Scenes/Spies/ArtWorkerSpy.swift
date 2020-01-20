@@ -1,5 +1,4 @@
 import Foundation
-@testable 
 
 class ArtServiceSpy: ArtService {
 

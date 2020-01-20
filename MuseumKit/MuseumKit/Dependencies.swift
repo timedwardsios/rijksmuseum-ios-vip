@@ -7,10 +7,9 @@ public class Dependencies {
 
     public init() {}
 
-    public var artistService: ArtistService {
-        return ArtistServiceDefault(apiRequestFactory: apiRequestFactory,
-                                    apiService: apiService,
-                                    artistFactory: artistFactory)
+    public var artService: ArtService {
+        return ArtServiceDefault(apiService: apiService,
+                                 artFactory: artFactory)
     }
 
     private var apiService: APIService {
@@ -19,26 +18,17 @@ public class Dependencies {
                                  networkResponseValidator: timKitDependencies.networkResponseValidator)
     }
 
-    private var apiRequestFactory: APIRequestFactory {
-        return APIRequestFactoryDefault(apiRequestTemplates: config.apiRequestTemplates,
-                                        apiQueryStringKeys: config.apiQueryStringKeys)
-    }
-
     private var urlRequestFactory: URLRequestFactory {
-        return URLRequestFactoryDefault(baseAPIConfig: config.apiBaseConfig)
+        return URLRequestFactoryDefault(apiConfig: APIConfigDefault())
     }
 
-    private var artistFactory: ArtistFactory {
-        return ArtistFactoryDefault(jsonDecoderService: jsonDecoderService)
+    private var artFactory: ArtFactory {
+        return ArtFactoryDefault(jsonDecoderService: jsonDecoderService)
     }
 
     private var jsonDecoderService: JSONDecoderService {
         return JSONDecoder()
     }
-
-    private lazy var config: Config = {
-        return try! timKitDependencies.configLoader.getConfig(forBundle: bundle) as ConfigDecodable
-    }()
 
     private lazy var bundle: Bundle = {
         return Bundle(for: type(of: self))
