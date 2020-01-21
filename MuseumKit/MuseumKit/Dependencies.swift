@@ -5,8 +5,12 @@ public func resolve() -> APIService {
     resolve(apiConfig: resolve())
 }
 
+public func resolve() -> ArtContainer {
+    Model()
+}
+
 func resolve() -> APIConfig {
-    return try! APIConfig(
+    try! APIConfig(
         scheme: "https",
         host: "www.rijksmuseum.nl",
         path: "/api/en",
@@ -18,5 +22,5 @@ func resolve() -> APIConfig {
 }
 
 func resolve() -> JSONDecoderService {
-    return JSONDecoder()
+    JSONDecoder()
 }

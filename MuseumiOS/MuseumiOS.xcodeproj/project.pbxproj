@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		220B689F23D71C240058D31F /* PortfolioRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B689E23D71C240058D31F /* PortfolioRowView.swift */; };
-		220B68A123D753990058D31F /* PortfolioCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B68A023D753990058D31F /* PortfolioCellView.swift */; };
 		221545212267181C0062E9C6 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221545202267181C0062E9C6 /* Dependencies.swift */; };
 		2215452222671C460062E9C6 /* ListingContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1162130B1830031A401 /* ListingContract.swift */; };
 		2215452322671C460062E9C6 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1152130B1830031A401 /* ListingViewController.swift */; };
@@ -16,7 +15,6 @@
 		2215452522671C460062E9C6 /* ListingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221DB1132130B1830031A401 /* ListingPresenter.swift */; };
 		221830E6210F1F7600FA1E13 /* PortfolioInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */; };
 		221830F2210FDA5900FA1E13 /* PortfolioPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */; };
-		2219679B2286204000BF00FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2219679A2286204000BF00FB /* Main.storyboard */; };
 		221AE96822877BB600973131 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AE96722877BB600973131 /* Config.swift */; };
 		2222142022661377001F41C8 /* PortfolioContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2222141F22661377001F41C8 /* PortfolioContract.swift */; };
 		2239B3BF23D7143F00441C50 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239B3BE23D7143F00441C50 /* PortfolioView.swift */; };
@@ -34,7 +32,7 @@
 		22AC8C98212EEA02000A0BE0 /* PortfolioPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */; };
 		22AC8C99212EEA02000A0BE0 /* PortfolioInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */; };
 		22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */; };
-		22B07AE223D78CFF00D442E7 /* PortfolioCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B07AE123D78CFF00D442E7 /* PortfolioCollectionView.swift */; };
+		22B07AE823D7A0FF00D442E7 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 22B07AE723D7A0FF00D442E7 /* SDWebImageSwiftUI */; };
 		22B0C7CA22861EE600717751 /* MuseumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0C7C922861EE600717751 /* MuseumKit.framework */; };
 		22BC041F2273A11C00032509 /* ListingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC041E2273A11C00032509 /* ListingInteractorTests.swift */; };
 		22BC04212273A27300032509 /* ListingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04202273A27300032509 /* ListingPresenterTests.swift */; };
@@ -42,7 +40,6 @@
 		22BC04262273C3BE00032509 /* PortfolioDisplaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04252273C3BE00032509 /* PortfolioDisplaySpy.swift */; };
 		22BC04282273C4D100032509 /* ListingPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04272273C4D100032509 /* ListingPresenterSpy.swift */; };
 		22BC042A2273C4E600032509 /* ListingDisplaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BC04292273C4E600032509 /* ListingDisplaySpy.swift */; };
-		22C327E523D5D3D8001CCB5B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 22C327E423D5D3D8001CCB5B /* SDWebImage */; };
 		22F55BE32274B93100B8544A /* PortfolioImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F55BE22274B93000B8544A /* PortfolioImageCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,11 +56,9 @@
 /* Begin PBXFileReference section */
 		22013B0A2275C67F00B200D6 /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220B689E23D71C240058D31F /* PortfolioRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioRowView.swift; sourceTree = "<group>"; };
-		220B68A023D753990058D31F /* PortfolioCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioCellView.swift; sourceTree = "<group>"; };
 		221545202267181C0062E9C6 /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		221830E5210F1F7600FA1E13 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
 		221830F1210FDA5900FA1E13 /* PortfolioPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterTests.swift; sourceTree = "<group>"; };
-		2219679A2286204000BF00FB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		221AE96722877BB600973131 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		221DB1102130ABE20031A401 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221DB1132130B1830031A401 /* ListingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingPresenter.swift; sourceTree = "<group>"; };
@@ -101,7 +96,6 @@
 		22AC8C84212EEA02000A0BE0 /* PortfolioPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenter.swift; sourceTree = "<group>"; };
 		22AC8C85212EEA02000A0BE0 /* PortfolioInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioInteractor.swift; sourceTree = "<group>"; };
 		22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22B07AE123D78CFF00D442E7 /* PortfolioCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioCollectionView.swift; sourceTree = "<group>"; };
 		22B0C7C922861EE600717751 /* MuseumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuseumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B0C7CB22861EE600717751 /* TimKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BC041E2273A11C00032509 /* ListingInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingInteractorTests.swift; sourceTree = "<group>"; };
@@ -122,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22C327E523D5D3D8001CCB5B /* SDWebImage in Frameworks */,
+				22B07AE823D7A0FF00D442E7 /* SDWebImageSwiftUI in Frameworks */,
 				22B0C7CA22861EE600717751 /* MuseumKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,11 +224,7 @@
 				221545202267181C0062E9C6 /* Dependencies.swift */,
 				22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */,
 				2239B3C023D7150D00441C50 /* SceneDelegate.swift */,
-				2239B3BE23D7143F00441C50 /* PortfolioView.swift */,
-				22B07AE123D78CFF00D442E7 /* PortfolioCollectionView.swift */,
-				220B689E23D71C240058D31F /* PortfolioRowView.swift */,
-				220B68A023D753990058D31F /* PortfolioCellView.swift */,
-				2219679A2286204000BF00FB /* Main.storyboard */,
+				22B07AE523D798CA00D442E7 /* Views */,
 				22154540226722030062E9C6 /* Scenes */,
 				22AC8C74212EEA02000A0BE0 /* Resources */,
 			);
@@ -274,6 +264,15 @@
 				22F55BE22274B93000B8544A /* PortfolioImageCell.swift */,
 			);
 			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		22B07AE523D798CA00D442E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2239B3BE23D7143F00441C50 /* PortfolioView.swift */,
+				220B689E23D71C240058D31F /* PortfolioRowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		22BC04222273C33800032509 /* Listing */ = {
@@ -340,7 +339,7 @@
 			);
 			name = MuseumiOS;
 			packageProductDependencies = (
-				22C327E423D5D3D8001CCB5B /* SDWebImage */,
+				22B07AE723D7A0FF00D442E7 /* SDWebImageSwiftUI */,
 			);
 			productName = Rijksmuseum;
 			productReference = 22706C8120FE510E006E27EE /* Rijksmuseum.app */;
@@ -396,7 +395,7 @@
 			);
 			mainGroup = 22706C7820FE510E006E27EE;
 			packageReferences = (
-				22C327E323D5D3D8001CCB5B /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				22B07AE623D7A0FF00D442E7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 22706C8220FE510E006E27EE /* Products */;
 			projectDirPath = "";
@@ -414,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22AC8C93212EEA02000A0BE0 /* Rijksmuseum-Bold.ttf in Resources */,
-				2219679B2286204000BF00FB /* Main.storyboard in Resources */,
 				22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */,
 				22AC8C8F212EEA02000A0BE0 /* LaunchScreen.storyboard in Resources */,
 				22AC8C92212EEA02000A0BE0 /* Rijksmuseum-Normal.ttf in Resources */,
@@ -482,8 +480,6 @@
 				2222142022661377001F41C8 /* PortfolioContract.swift in Sources */,
 				220B689F23D71C240058D31F /* PortfolioRowView.swift in Sources */,
 				2239B3C123D7150D00441C50 /* SceneDelegate.swift in Sources */,
-				22B07AE223D78CFF00D442E7 /* PortfolioCollectionView.swift in Sources */,
-				220B68A123D753990058D31F /* PortfolioCellView.swift in Sources */,
 				22AC8C95212EEA02000A0BE0 /* PortfolioRouter.swift in Sources */,
 				2215452422671C460062E9C6 /* ListingInteractor.swift in Sources */,
 				2239B3BF23D7143F00441C50 /* PortfolioView.swift in Sources */,
@@ -760,21 +756,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		22C327E323D5D3D8001CCB5B /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		22B07AE623D7A0FF00D442E7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:SDWebImage/SDWebImage.git";
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.5.1;
+				minimumVersion = 0.10.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		22C327E423D5D3D8001CCB5B /* SDWebImage */ = {
+		22B07AE723D7A0FF00D442E7 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 22C327E323D5D3D8001CCB5B /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
+			package = 22B07AE623D7A0FF00D442E7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 

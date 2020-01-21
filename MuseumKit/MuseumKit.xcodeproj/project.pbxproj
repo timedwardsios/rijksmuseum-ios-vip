@@ -30,6 +30,7 @@
 		2219683F2288985700BF00FB /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2219683E2288985700BF00FB /* TimKit.framework */; };
 		2239FE9223D6555E008E9867 /* FetchArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8E23D6555E008E9867 /* FetchArt.swift */; };
 		2239FE9323D6555E008E9867 /* ArrayArt+InitFromJSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8F23D6555E008E9867 /* ArrayArt+InitFromJSONData.swift */; };
+		22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B07AEB23D7A3FB00D442E7 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		221968402288986C00BF00FB /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2239FE8E23D6555E008E9867 /* FetchArt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchArt.swift; sourceTree = "<group>"; };
 		2239FE8F23D6555E008E9867 /* ArrayArt+InitFromJSONData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArrayArt+InitFromJSONData.swift"; sourceTree = "<group>"; };
+		22B07AEB23D7A3FB00D442E7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F1C1B841E2B07E3FAB720F12 /* Pods_MuseumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				220B73B6228DC83800AF8A8D /* Dependencies.swift */,
+				22B07AEB23D7A3FB00D442E7 /* Model.swift */,
 				2239FE8D23D6555E008E9867 /* UseCases */,
 				220B73B7228DC83800AF8A8D /* Resources */,
 			);
@@ -372,6 +375,7 @@
 				220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */,
 				2239FE9223D6555E008E9867 /* FetchArt.swift in Sources */,
 				2239FE9323D6555E008E9867 /* ArrayArt+InitFromJSONData.swift in Sources */,
+				22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +467,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/$(TARGETNAME)/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -525,7 +529,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/$(TARGETNAME)/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timwredwards.$(TARGET_NAME)";

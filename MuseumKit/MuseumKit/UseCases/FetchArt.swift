@@ -1,9 +1,13 @@
 import Foundation
 import TimKit
 
+public protocol ArtContainer {
+    var arts: [Art] {get}
+}
+
 public protocol Art {
 
-    var id: String { get }
+    var identifier: String { get }
 
     var title: String { get }
 
@@ -12,11 +16,21 @@ public protocol Art {
     var imageURL: URL { get }
 }
 
+
+
+
 public enum FetchArtError: LocalizedError {
     case requestError(Error), fetchError(Error), decodingError(Error)
 }
 
+
+
+
+
+
+
 public func fetchArt(apiService: APIService = resolve(),
+                     artContainer: ArtContainer = resolve(),
                      completion: @escaping (Result<[Art], Error>) -> Void) {
 
     do {

@@ -1,16 +1,11 @@
-//
-//  SceneDelegate.swift
-//  test
-//
-//  Created by Tim Edwards on 19.11.19.
-//  Copyright © 2019 Tim Edwards. All rights reserved.
-//
-
 import SwiftUI
+import MuseumKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+
+    var model = Model()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -18,7 +13,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Use a UIHostingController as window root view controller.
-        var portfolioView = PortfolioView()
+
+        let portfolioView = PortfolioView(model: model)
+
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: portfolioView)
@@ -26,9 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.makeKeyAndVisible()
         }
 
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-            portfolioView.arts = [ArtTmp()]
-        }
+        fetchArt()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
