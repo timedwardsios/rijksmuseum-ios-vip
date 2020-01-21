@@ -1,6 +1,4 @@
-Mac
-Linting
-Mocking frameworks
 SwiftUI
 Combine
-Check out PromiseKit?
+Mocking frameworks
+Linting

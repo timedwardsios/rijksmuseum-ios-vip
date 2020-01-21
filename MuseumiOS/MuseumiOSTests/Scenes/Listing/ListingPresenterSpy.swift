@@ -1,4 +1,5 @@
-@testable import App
+@testable import MuseumiOS
+import MuseumKit
 
 class ListingPresenterSpy: ListingPresenting {
 

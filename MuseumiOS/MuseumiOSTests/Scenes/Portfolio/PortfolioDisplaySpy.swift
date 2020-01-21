@@ -1,5 +1,5 @@
 import Foundation
-@testable import App
+@testable import MuseumiOS
 
 class PortfolioDisplaySpy: PortfolioDisplaying {
 

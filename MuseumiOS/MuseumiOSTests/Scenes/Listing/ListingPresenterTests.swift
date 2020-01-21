@@ -1,6 +1,6 @@
 import XCTest
 import TestKit
-@testable import App
+@testable import MuseumiOS
 
 class ListingPresenterTests: XCTestCase {
 

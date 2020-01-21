@@ -1,5 +1,6 @@
 import Foundation
 import TestKit
+import MuseumKit
 
 struct ArtMock: Art, Equatable {
     var identifier = Seeds.string
