@@ -119,7 +119,7 @@ extension APIServiceTests {
     func test_performAPIRequest_networkResponseValidatorFailure() {
         // given
         let exp = expectation(description: "Should callback")
-        let error = NetworkResponseValidatorError.rawResponseError(Seeds.error)
+        let error = APIResponseValidatorError.rawResponseError(Seeds.error)
         networkResponseValidatorSpy.validateResponseResult = .failure(error)
         // when
         sut.performAPIRequest(apiRequestMock) { (result) in

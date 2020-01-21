@@ -2,7 +2,7 @@ import Foundation
 import TestKit
 @testable import TimKit
 
-class NetworkSessionSpy: TimKit.NetworkSession {
+class NetworkSessionSpy: TimKit.APISession {
 
     var dataTask: NetworkSessionDataTaskSpy
 
@@ -17,7 +17,7 @@ class NetworkSessionSpy: TimKit.NetworkSession {
     var dataTaskArgs = [URLRequest]()
 
     func dataTask(with request: URLRequest,
-                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkSessionDataTask {
+                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> APISessionDataTask {
 
         dataTaskArgs.append(request)
 

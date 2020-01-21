@@ -2,13 +2,13 @@ import Foundation
 import TestKit
 @testable import TimKit
 
-class NetworkResponseValidatorSpy: NetworkResponseValidator {
+class NetworkResponseValidatorSpy: APIResponseValidator {
 
     var validateResponseResult: Result<Data, Error> = .success(Seeds.data)
 
-    var validateResponseArgs = [NetworkResponse]()
+    var validateResponseArgs = [APIResponse]()
 
-    func validateResponse(_ response: NetworkResponse) throws -> Data {
+    func validateResponse(_ response: APIResponse) throws -> Data {
 
         validateResponseArgs.append(response)
 

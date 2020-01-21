@@ -2,13 +2,21 @@ import Foundation
 import TimKit
 
 public func resolve() -> ArtService {
-    return ArtServiceDefault(apiService: resolve(apiConfig: APIConfigDefault()))
+    return ArtServiceDefault(apiService: resolve(apiConfig: resolve()))
 }
 
 private func resolve() -> APIConfig {
-    return APIConfigDefault()
+    return try! APIConfig(
+        scheme: "https",
+        host: "www.rijksmuseum.nl",
+        path: "/api/en",
+        queryItems: [
+            "key": "VV23OnI1",
+            "format": "json"
+        ]
+    )
 }
 
-internal func resolve() -> JSONDecoderService {
+func resolve() -> JSONDecoderService {
     return JSONDecoder()
 }

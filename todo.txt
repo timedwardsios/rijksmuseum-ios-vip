@@ -7,4 +7,3 @@ Mocking
 SwiftUI
 Arch
 Remove errors?
-Look at dependecy mgmt

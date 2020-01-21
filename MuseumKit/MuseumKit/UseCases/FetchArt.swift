@@ -1,24 +1,19 @@
 import Foundation
 import TimKit
 
-struct FetchArtAPIRequest: APIRequest {
+public protocol Art {
 
-    var path = "/collection"
+    var identifier: String { get }
 
-    var queryItems = [
-        "ps": "100",
-        "imgonly": "true",
-        "s": "relevance"
-    ]
+    var title: String { get }
 
-    var method = HTTPMethod.GET
+    var artist: String { get }
+
+    var imageURL: URL { get }
 }
 
 public enum ArtServiceError: LocalizedError {
-
-    case fetchFailure(Error)
-
-    case artistCreationFailure(Error)
+    case requestError(Error), fetchError(Error), decodingError(Error)
 }
 
 public protocol ArtService {
@@ -38,10 +33,24 @@ extension ArtServiceDefault: ArtService {
 
     func fetchArt(completion: @escaping (Result<[Art], ArtServiceError>) -> Void) {
 
-        apiService.performAPIRequest(FetchArtAPIRequest(), completion: {[weak self] (result) in
+        do {
+            let fetchArtAPIRequest = try APIRequest(
+                path: "/collection",
+                queryItems: [
+                    "ps": "100",
+                    "imgonly": "true",
+                    "s": "relevance"
+                ],
+                method: APIMethod.GET
+            )
 
-            self?.didFetchWithResult(result, completion: completion)
-        })
+            apiService.performAPIRequest(fetchArtAPIRequest) { [weak self] (result) in
+                self?.didFetchWithResult(result, completion: completion)
+            }
+        } catch let error {
+            completion(.failure(.requestError(error)))
+            return
+        }
     }
 }
 
@@ -58,7 +67,7 @@ private extension ArtServiceDefault {
 
         case .failure(let error):
 
-            completion(.failure(.fetchFailure(error)))
+            completion(.failure(.fetchError(error)))
         }
     }
 
@@ -70,7 +79,7 @@ private extension ArtServiceDefault {
             completion(.success(arts))
 
         } catch let error {
-            completion(.failure(.artistCreationFailure(error)))
+            completion(.failure(.decodingError(error)))
         }
     }
 }
