@@ -16,8 +16,8 @@ public enum FetchArtError: LocalizedError {
     case requestError(Error), fetchError(Error), decodingError(Error)
 }
 
-public func fetchArt(apiService: APIService = Dependencies.resolve(),
-              completion: @escaping (Result<[Art], Error>) -> Void) {
+public func fetchArt(apiService: APIService = resolve(),
+                     completion: @escaping (Result<[Art], Error>) -> Void) {
 
     do {
         let apiRequest = try getAPIRequest()
