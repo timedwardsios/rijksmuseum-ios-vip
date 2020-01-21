@@ -3,7 +3,7 @@ import TimKit
 
 public protocol Art {
 
-    var identifier: String { get }
+    var id: String { get }
 
     var title: String { get }
 

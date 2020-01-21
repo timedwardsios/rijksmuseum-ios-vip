@@ -1,21 +1,27 @@
-//
-//  Portfolio.swift
-//  MuseumiOS
-//
-//  Created by Tim Edwards on 21.01.20.
-//  Copyright © 2020 Tim Edwards. All rights reserved.
-//
-
 import SwiftUI
+import MuseumKit
 
 struct PortfolioView: View {
+
+    var arts = [Art]() {
+        didSet{
+            print("sdfsd")
+        }
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            GeometryReader { geometry in
+                PortfolioCollectionView(width: geometry.size.width)
+            }
+            .padding(.horizontal, 5)
+            .navigationBarTitle("Rijksmuseum")
+        }
     }
 }
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioView()
+        PortfolioView(arts: .init())
     }
 }

@@ -10,7 +10,7 @@ extension Array where Element == Art {
 
 private struct ArtJSON: Art, Decodable {
 
-    var identifier: String
+    var id: String
     var title: String
     var artist: String
     var imageURL: URL
@@ -26,7 +26,7 @@ private struct ArtJSON: Art, Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.identifier = try container.decode(String.self, forKey: .id)
+        self.id = try container.decode(String.self, forKey: .id)
         self.title = try container.decode(String.self, forKey: .title)
         self.artist = try container.decode(String.self, forKey: .artist)
         let webImage = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .imageDict)

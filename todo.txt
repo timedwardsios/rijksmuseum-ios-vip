@@ -1,4 +1,5 @@
 SwiftUI
 Combine
+Seeds
 Mocking frameworks
 Linting

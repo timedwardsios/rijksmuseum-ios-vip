@@ -18,11 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Use a UIHostingController as window root view controller.
+        var portfolioView = PortfolioView()
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: PortfolioView())
+            window.rootViewController = UIHostingController(rootView: portfolioView)
             self.window = window
             window.makeKeyAndVisible()
+        }
+
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+            portfolioView.arts = [ArtTmp()]
         }
     }
 
