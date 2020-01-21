@@ -1,22 +1,27 @@
 import Foundation
 import TimKit
 
-public func resolve() -> ArtService {
-    return ArtServiceDefault(apiService: resolve(apiConfig: resolve()))
-}
+public protocol Dependencies: TimKit.Dependencies {}
 
-private func resolve() -> APIConfig {
-    return try! APIConfig(
-        scheme: "https",
-        host: "www.rijksmuseum.nl",
-        path: "/api/en",
-        queryItems: [
-            "key": "VV23OnI1",
-            "format": "json"
-        ]
-    )
-}
+extension Dependencies {
 
-func resolve() -> JSONDecoderService {
-    return JSONDecoder()
+//    static func resolve() -> APIService {
+//        resolve(apiConfig: resolve())
+//    }
+
+    static func resolve() -> APIConfig {
+        return try! APIConfig(
+            scheme: "https",
+            host: "www.rijksmuseum.nl",
+            path: "/api/en",
+            queryItems: [
+                "key": "VV23OnI1",
+                "format": "json"
+            ]
+        )
+    }
+
+    static func resolve() -> JSONDecoderService {
+        return JSONDecoder()
+    }
 }

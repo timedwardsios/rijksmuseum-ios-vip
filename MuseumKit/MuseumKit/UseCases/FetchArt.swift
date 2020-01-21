@@ -12,74 +12,44 @@ public protocol Art {
     var imageURL: URL { get }
 }
 
-public enum ArtServiceError: LocalizedError {
+public enum FetchArtError: LocalizedError {
     case requestError(Error), fetchError(Error), decodingError(Error)
 }
 
-public protocol ArtService {
-    func fetchArt(completion: @escaping (Result<[Art], ArtServiceError>) -> Void)
-}
+public func fetchArt(apiService: APIService = Dependencies.resolve(),
+              completion: @escaping (Result<[Art], Error>) -> Void) {
 
-class ArtServiceDefault {
+    do {
+        let apiRequest = try getAPIRequest()
+        apiService.performAPIRequest(apiRequest) {
 
-    let apiService: APIService
-
-    init(apiService: APIService) {
-        self.apiService = apiService
-    }
-}
-
-extension ArtServiceDefault: ArtService {
-
-    func fetchArt(completion: @escaping (Result<[Art], ArtServiceError>) -> Void) {
-
-        do {
-            let fetchArtAPIRequest = try APIRequest(
-                path: "/collection",
-                queryItems: [
-                    "ps": "100",
-                    "imgonly": "true",
-                    "s": "relevance"
-                ],
-                method: APIMethod.GET
-            )
-
-            apiService.performAPIRequest(fetchArtAPIRequest) { [weak self] (result) in
-                self?.didFetchWithResult(result, completion: completion)
+            let result = $0.flatMap { data in
+                Result {
+                    try [Art](fromJSONData: data)
+                }
             }
-        } catch let error {
-            completion(.failure(.requestError(error)))
-            return
+
+            switch result {
+            case .success(let arts):
+                completion(.success(arts))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
+    } catch let error {
+        completion(.failure(FetchArtError.requestError(error)))
+        return
     }
 }
 
-private extension ArtServiceDefault {
-
-
-    func didFetchWithResult(_ result: Result<Data, APIServiceError>,
-                            completion: (Result<[Art], ArtServiceError>) -> Void) {
-
-        switch result {
-        case .success(let data):
-
-            createArtistsFromData(data, completion: completion)
-
-        case .failure(let error):
-
-            completion(.failure(.fetchError(error)))
-        }
-    }
-
-    func createArtistsFromData(_ data: Data, completion: (Result<[Art], ArtServiceError>) -> Void) {
-
-        do {
-            let arts: [Art] = try .init(fromJSONData: data)
-
-            completion(.success(arts))
-
-        } catch let error {
-            completion(.failure(.decodingError(error)))
-        }
-    }
+private func getAPIRequest() throws -> APIRequest {
+    return try APIRequest(
+        path: "/collection",
+        queryItems: [
+            "ps": "100",
+            "imgonly": "true",
+            "s": "relevance"
+        ],
+        method: APIMethod.GET
+    )
 }

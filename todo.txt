@@ -1,9 +1,6 @@
-Move API to TimKit
-Move config to code
-Fix API
 Mac
 Linting
-Mocking
+Mocking frameworks
 SwiftUI
-Arch
-Remove errors?
+Combine
+Check out PromiseKit?

@@ -4,7 +4,7 @@ import MuseumKit
 func resolve() -> PortfolioViewController {
     let viewController = PortfolioViewController.from(storyboard: resolve())
     let presenter = PortfolioPresenter(display: viewController)
-    let interactor = PortfolioInteractor(presenter: presenter, artService: resolve())
+    let interactor = PortfolioInteractor(presenter: presenter)
     let router = PortfolioRouter(dataStore: interactor,
                                  viewController: viewController)
     viewController.interactor = interactor

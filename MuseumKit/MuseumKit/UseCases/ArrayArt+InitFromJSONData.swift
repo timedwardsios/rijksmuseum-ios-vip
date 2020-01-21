@@ -3,7 +3,7 @@ import TimKit
 
 extension Array where Element == Art {
     init(fromJSONData jsonData: Data,
-         jsonDecoderService: JSONDecoderService = resolve()) throws {
+         jsonDecoderService: JSONDecoderService = DependenciesDefault.resolve()) throws {
         self = try jsonDecoderService.decode(RootJSON.self, from: jsonData).artJSONs
     }
 }
