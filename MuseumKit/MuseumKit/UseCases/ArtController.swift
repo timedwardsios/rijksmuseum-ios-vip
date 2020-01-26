@@ -1,65 +1,20 @@
 import Foundation
 import TimKit
 
-public protocol Art {
-    var id: String { get }
-    var title: String { get }
-    var artist: String { get }
-    var imageURL: URL { get }
+
+private struct FetchArtAPIOperation: APIOperation<T> {
+
 }
 
-
-
-
-
-
-
-
-
-public protocol ArtController {
-    func fetchArt()
+private struct FetchArtAPIRequest: APIRequest {
+    var path = "/collection"
+    let queryItems = [
+        "ps": "100",
+        "imgonly": "true",
+        "s": "relevance"
+    ]
+    let method = APIMethod.GET
 }
-
-class ArtControllerDefault {
-
-    let apiService: APIService
-    let model: Model
-
-    init(apiService: APIService,
-         model: Model) {
-        self.apiService = apiService
-        self.model = model
-    }
-}
-
-extension ArtControllerDefault: ArtController {
-    
-    func fetchArt() {
-
-
-        let request = try! APIRequest(
-            path: "/collection",
-            queryItems: [
-                "ps": "100",
-                "imgonly": "true",
-                "s": "relevance"
-            ],
-            method: APIMethod.GET
-        )
-
-        let artAPIOperation = APIOperation.init(request: request, responseFormat: RootJSON.self)
-
-        apiService.performAPIOperation(artAPIOperation) {
-            switch $0 {
-            case let .success(data):
-                print(data)
-            case let .failure(error):
-                print(error)
-            }
-        }
-    }
-}
-
 
 private struct ArtJSON: Art, Decodable {
 
@@ -100,3 +55,50 @@ private struct RootJSON: Decodable {
         artJSONs = try container.decode([ArtJSON].self, forKey: .artArray)
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+public protocol ArtController {
+    func fetchArt()
+}
+
+class ArtControllerDefault {
+
+    let apiService: APIService
+    let model: Model
+
+    init(apiService: APIService,
+         model: Model) {
+        self.apiService = apiService
+        self.model = model
+    }
+}
+
+extension ArtControllerDefault: ArtController {
+    
+    func fetchArt() {
+
+        let artAPIOperation = APIOperation.init(request: FetchArtAPIRequest(), responseFormat: RootJSON.self)
+
+        apiService.performAPIOperation(artAPIOperation) {
+            switch $0 {
+            case let .success(data):
+                print(data)
+            case let .failure(error):
+                print(error)
+            }
+        }
+    }
+}
+
+
+
