@@ -28,8 +28,7 @@
 		220B73FB228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73FA228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift */; };
 		221967EE228890B200BF00FB /* MuseumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221967E4228890B200BF00FB /* MuseumKit.framework */; };
 		2219683F2288985700BF00FB /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2219683E2288985700BF00FB /* TimKit.framework */; };
-		2239FE9223D6555E008E9867 /* FetchArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8E23D6555E008E9867 /* FetchArt.swift */; };
-		2239FE9323D6555E008E9867 /* ArrayArt+InitFromJSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8F23D6555E008E9867 /* ArrayArt+InitFromJSONData.swift */; };
+		2239FE9223D6555E008E9867 /* ArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8E23D6555E008E9867 /* ArtController.swift */; };
 		22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B07AEB23D7A3FB00D442E7 /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +69,7 @@
 		221967ED228890B200BF00FB /* MuseumKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2219683E2288985700BF00FB /* TimKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221968402288986C00BF00FB /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2239FE8E23D6555E008E9867 /* FetchArt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchArt.swift; sourceTree = "<group>"; };
-		2239FE8F23D6555E008E9867 /* ArrayArt+InitFromJSONData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArrayArt+InitFromJSONData.swift"; sourceTree = "<group>"; };
+		2239FE8E23D6555E008E9867 /* ArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtController.swift; sourceTree = "<group>"; };
 		22B07AEB23D7A3FB00D442E7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F1C1B841E2B07E3FAB720F12 /* Pods_MuseumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -203,8 +201,7 @@
 		2239FE8D23D6555E008E9867 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				2239FE8E23D6555E008E9867 /* FetchArt.swift */,
-				2239FE8F23D6555E008E9867 /* ArrayArt+InitFromJSONData.swift */,
+				2239FE8E23D6555E008E9867 /* ArtController.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -373,8 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */,
-				2239FE9223D6555E008E9867 /* FetchArt.swift in Sources */,
-				2239FE9323D6555E008E9867 /* ArrayArt+InitFromJSONData.swift in Sources */,
+				2239FE9223D6555E008E9867 /* ArtController.swift in Sources */,
 				22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

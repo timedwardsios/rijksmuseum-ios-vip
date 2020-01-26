@@ -1,7 +1,7 @@
 import Foundation
 import TimKit
 
-public class Model: ObservableObject, HasArts {
+public class Model: ObservableObject {
 
     public init() {}
 

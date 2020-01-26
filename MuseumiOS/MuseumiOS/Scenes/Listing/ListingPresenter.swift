@@ -3,12 +3,7 @@ import MuseumKit
 import TimKit
 
 class ListingPresenter {
-
-    private weak var display: ListingDisplaying?
-
-    init(display: ListingDisplaying) {
-        self.display = display
-    }
+    weak var display: ListingDisplaying?
 }
 
 extension ListingPresenter: ListingPresenting {

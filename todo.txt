@@ -1,3 +1,7 @@
+queuing in apiservice
+
+Router or Coordinator?
+
 Arch
     Web requests update DB -> bind database to UI through MVVM + Combine
     Needs proper design work for services etc.
@@ -12,8 +16,9 @@ Testing
     Dependencies should definitely be injected through constructors, don't use singletons.
 
 Look at typealiases and API design, maybe that can be improved.
+Use https://github.com/tuist/tuist/
 
-Keep functionality in protocol extensions?
+Use Controllers for types
     Controllers are easily unit-tested.
     "Use cases" are functions on a logic module i.e. ViewModel or Interactor.
     Use-cases uses "Services"
