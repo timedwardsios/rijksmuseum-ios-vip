@@ -7,9 +7,24 @@ struct PortfolioRowView: View {
     let art: Art
 
     var body: some View {
-        HStack(spacing: 0) {
-            WebImage(url: art.imageURL)
-                .indicator(.activity)
+        HStack {
+
+            VStack {
+                WebImage(url: art.imageURL)
+                    .resizable()
+                    .indicator(.activity)
+                    .scaledToFill()
+                    .frame(width: 66, height: 66)
+                }
+            .frame(width: 66, height: 66)
+            .clipped()
+            .cornerRadius(5)
+            .shadow(radius: 2)
+
+            VStack(alignment: .leading) {
+                Text(art.title).font(.headline)
+                Text(art.artist).font(.subheadline)
+            }
         }
     }
 }

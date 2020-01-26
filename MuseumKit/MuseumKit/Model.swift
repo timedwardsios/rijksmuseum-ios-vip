@@ -1,6 +1,9 @@
 import Foundation
 import TimKit
 
-class Model: ObservableObject, ArtContainer {
-    @Published var arts = [Art]()
+public class Model: ObservableObject, HasArts {
+
+    public init() {}
+
+    @Published public var arts = [Art]()
 }

@@ -5,8 +5,10 @@ public func resolve() -> APIService {
     resolve(apiConfig: resolve())
 }
 
-public func resolve() -> ArtContainer {
-    Model()
+
+private let model = Model()
+public func resolve() -> Model {
+    return model
 }
 
 func resolve() -> APIConfig {

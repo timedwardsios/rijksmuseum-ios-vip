@@ -1,5 +1,23 @@
-SwiftUI
-Combine
-Seeds
-Mocking frameworks
-Linting
+Arch
+    Web requests update DB -> bind database to UI through MVVM + Combine
+    Needs proper design work for services etc.
+    Can't use use-case functions as they are impossible to mock! They are a dependency!
+    Can we improve on using do / catch / Result?
+    Log on the service level. Only bubble up typed errors if info is needed futher up the chain.
+
+Testing
+    Mocking frameworks
+    Write flexible dependency injection framework using Swinject.
+    Swinject is useful for recreating dependencies when logout etc. Needs more research!
+    Dependencies should definitely be injected through constructors, don't use singletons.
+
+Look at typealiases and API design, maybe that can be improved.
+
+Keep functionality in protocol extensions?
+    Controllers are easily unit-tested.
+    "Use cases" are functions on a logic module i.e. ViewModel or Interactor.
+    Use-cases uses "Services"
+
+Add strict linting rules
+
+Readme - explain over-engineering

@@ -1,6 +1,6 @@
 import Foundation
 import MuseumKit
-@testable import MuseumiOS
+//@testable import MuseumiOS
 
 //class ArtServiceSpy: ArtService {
 //

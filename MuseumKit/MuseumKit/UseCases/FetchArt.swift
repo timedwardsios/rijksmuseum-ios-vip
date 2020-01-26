@@ -1,13 +1,13 @@
 import Foundation
 import TimKit
 
-public protocol ArtContainer {
-    var arts: [Art] {get}
+public protocol HasArts: class {
+    var arts: [Art] {get set}
 }
 
 public protocol Art {
 
-    var identifier: String { get }
+    var id: String { get }
 
     var title: String { get }
 
@@ -30,28 +30,31 @@ public enum FetchArtError: LocalizedError {
 
 
 public func fetchArt(apiService: APIService = resolve(),
-                     artContainer: ArtContainer = resolve(),
-                     completion: @escaping (Result<[Art], Error>) -> Void) {
+                     model: HasArts = resolve()) {
 
     do {
         let apiRequest = try getAPIRequest()
         apiService.performAPIRequest(apiRequest) {
 
-            let result = $0.flatMap { data in
-                Result {
-                    try [Art](fromJSONData: data)
-                }
-            }
+            do {
+                let data = try $0.get()
+                let arts = try [Art](fromJSONData: data)
 
-            switch result {
-            case .success(let arts):
-                completion(.success(arts))
-            case .failure(let error):
-                completion(.failure(error))
-            }
+                DispatchQueue.main.async {
+                    model.arts = arts
+                }
+            } catch {}
+
+            //            switch result {
+            //            case .success(let arts):
+            //                artContainer.arts = arts
+            //            case .failure(let error):
+            //                completion(.failure(error))
+            //            }
         }
     } catch let error {
-        completion(.failure(FetchArtError.requestError(error)))
+        //        completion(.failure(FetchArtError.requestError(error)))
+        //        ??????
         return
     }
 }
