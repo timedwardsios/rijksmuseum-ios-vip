@@ -10,7 +10,7 @@ public struct Dependencies {
     }
 
     private let _model = Model()
-    func resolve() -> Model { _model }
+    public func resolve() -> Model { _model }
 }
 
 private extension Dependencies {

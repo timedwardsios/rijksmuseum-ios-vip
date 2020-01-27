@@ -8,9 +8,9 @@ protocol PortfolioInteracting {
 }
 
 protocol PortfolioPresenting {
-    func didBeginLoading()
-    func didFetchArts(_ arts: [Art])
-    func didError(_ error: Error)
+    func presentLoading()
+    func presentArts(_ arts: [Art])
+    func presentError(_ error: Error)
 }
 
 protocol PortfolioDisplaying: class {
@@ -19,10 +19,6 @@ protocol PortfolioDisplaying: class {
     func displayErrorMessage(_ message: String)
 }
 
-protocol PortfolioRouting {
-    func routeToListing()
-}
-
-protocol PortfolioDataStore {
-    var selectedArt: Art? {get}
+protocol PortfolioRouter {
+    func displayDetailsForArt(_ art: Art)
 }

@@ -1,46 +1,44 @@
 import MuseumKit
 import TimKit
 
-class PortfolioInteractor: PortfolioDataStore {
+class PortfolioInteractor {
 
     private let presenter: PortfolioPresenting
     private let artController: ArtController
+    private let router: PortfolioRouter
+    private let model: Model
 
     init(presenter: PortfolioPresenting,
-         artController: ArtController) {
+         artController: ArtController,
+         router: PortfolioRouter,
+         model: Model) {
         self.presenter = presenter
         self.artController = artController
+        self.router = router
+        self.model = model
     }
 
     private var arts = [Art]()
-    private(set) var selectedArt: Art?
 }
 
 extension PortfolioInteractor: PortfolioInteracting {
 
     func fetchArts() {
-        presenter.didBeginLoading()
-        commandArtServiceBeginFetchingArts()
+        presenter.presentLoading()
+        artController.fetchArt() {
+            switch $0 {
+            case let .success(arts):
+                self.arts = arts
+                self.presenter.presentArts(arts)
+            case let .failure(error):
+                print(error)
+            }
+        }
     }
 
     func selectArt(atIndex index: Int) {
-        self.selectedArt = arts[optionalAt: index]
-    }
-}
-
-private extension PortfolioInteractor {
-
-    func commandArtServiceBeginFetchingArts() {
-        artController.fetchArt()
-    }
-
-    func artServiceDidFetchArts(result: Result<[Art], Error>) {
-        switch result {
-        case .success(let arts):
-            self.arts = arts
-            self.presenter.didFetchArts(self.arts)
-        case .failure(let error):
-            self.presenter.didError(error)
+        if let art = arts[optionalAt: index] {
+            router.displayDetailsForArt(art)
         }
     }
 }

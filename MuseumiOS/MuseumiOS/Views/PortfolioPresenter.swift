@@ -8,17 +8,17 @@ class PortfolioPresenter {
 
 extension PortfolioPresenter: PortfolioPresenting {
 
-    func didBeginLoading() {
+    func presentLoading() {
         display?.displayIsLoading(true)
     }
 
-    func didFetchArts(_ arts: [Art]) {
+    func presentArts(_ arts: [Art]) {
         display?.displayIsLoading(false)
         let imageURLs = getImageURLsFromArts(arts)
         display?.displayImageURLs(imageURLs)
     }
 
-    func didError(_ error: Error) {
+    func presentError(_ error: Error) {
         display?.displayIsLoading(false)
         let errorMessage = getErrorMessageFromError(error)
         display?.displayErrorMessage(errorMessage)

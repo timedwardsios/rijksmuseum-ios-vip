@@ -1,7 +1,7 @@
 import UIKit
 import SDWebImage
 
-class PortfolioImageCell: UICollectionViewCell {
+class ImageCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
 

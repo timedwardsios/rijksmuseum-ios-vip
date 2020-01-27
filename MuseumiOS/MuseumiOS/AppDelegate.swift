@@ -8,15 +8,16 @@ class AppDelegate: UIResponder {
 }
 
 extension AppDelegate: UIApplicationDelegate {
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         setupRootViewController()
         return true
     }
 }
 
 private extension AppDelegate {
-
     func setupRootViewController() {
         let portfolioViewController: PortfolioViewController = dependencies.resolve()
         let navController = UINavigationController(rootViewController: portfolioViewController)

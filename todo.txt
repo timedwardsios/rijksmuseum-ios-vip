@@ -1,10 +1,8 @@
-queuing in apiservice
-
-Router or Coordinator?
+Learn combine
+Use protocols for dependency mgmt?
 
 Arch
     Web requests update DB -> bind database to UI through MVVM + Combine
-    Needs proper design work for services etc.
     Can't use use-case functions as they are impossible to mock! They are a dependency!
     Can we improve on using do / catch / Result?
     Log on the service level. Only bubble up typed errors if info is needed futher up the chain.

@@ -1,12 +1,58 @@
 import Foundation
 import TimKit
 
+import Combine
 
-private struct FetchArtAPIOperation: APIOperation<T> {
-
+public protocol ArtController {
+    func fetchArt(_ handler: @escaping ResultHandler<[Art]>)
 }
 
-private struct FetchArtAPIRequest: APIRequest {
+class ArtControllerDefault {
+
+    let apiService: APIService
+    let model: Model
+
+    init(apiService: APIService,
+         model: Model) {
+        self.apiService = apiService
+        self.model = model
+    }
+
+    var cancellable: AnyCancellable?
+}
+
+extension ArtControllerDefault: ArtController {
+    
+    func fetchArt(_ handler: @escaping ResultHandler<[Art]>) {
+
+        let future = Future<[Art], Error> { callback in
+            self.apiService.performAPIOperation(FetchArtAPIOperation()) {
+                print("wtf m8")
+                let artResult = $0.map({ $0.artJSONs as [Art] })
+                callback(artResult)
+                callback(artResult)
+                callback(artResult)
+                callback(artResult)
+            }
+        }
+
+        
+        cancellable = future.sink(
+            receiveCompletion: {
+                switch $0 {
+                case .finished:
+                    print("Finished")
+                case let .failure(error):
+                    print(error.localizedDescription)
+                }
+        },
+            receiveValue: {
+                print($0)
+        })
+    }
+}
+
+private struct FetchArtAPIOperation: APIOperation {
     var path = "/collection"
     let queryItems = [
         "ps": "100",
@@ -14,6 +60,7 @@ private struct FetchArtAPIRequest: APIRequest {
         "s": "relevance"
     ]
     let method = APIMethod.GET
+    let responseType = RootJSON.self
 }
 
 private struct ArtJSON: Art, Decodable {
@@ -55,50 +102,3 @@ private struct RootJSON: Decodable {
         artJSONs = try container.decode([ArtJSON].self, forKey: .artArray)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-public protocol ArtController {
-    func fetchArt()
-}
-
-class ArtControllerDefault {
-
-    let apiService: APIService
-    let model: Model
-
-    init(apiService: APIService,
-         model: Model) {
-        self.apiService = apiService
-        self.model = model
-    }
-}
-
-extension ArtControllerDefault: ArtController {
-    
-    func fetchArt() {
-
-        let artAPIOperation = APIOperation.init(request: FetchArtAPIRequest(), responseFormat: RootJSON.self)
-
-        apiService.performAPIOperation(artAPIOperation) {
-            switch $0 {
-            case let .success(data):
-                print(data)
-            case let .failure(error):
-                print(error)
-            }
-        }
-    }
-}
-
-
-

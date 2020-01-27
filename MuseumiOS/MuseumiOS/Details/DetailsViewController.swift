@@ -2,18 +2,20 @@ import UIKit
 import TimKit
 import SDWebImage
 
-class ListingViewController: UIViewController, StoryboardLoadable {
+class DetailsViewController: UIViewController {
 
-    let interactor: ListingInteracting
+    let interactor: DetailsInteracting
 
-    init(interactor: ListingInteractor) {
+    required init?(coder: NSCoder, interactor: DetailsInteracting) {
         self.interactor = interactor
-        super.init(nibName: nil, bundle: nil)
+        super.init(coder: coder)
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    @IBOutlet weak var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,17 +23,10 @@ class ListingViewController: UIViewController, StoryboardLoadable {
     }
 }
 
-extension ListingViewController: ListingDisplaying {
+extension DetailsViewController: DetailsDisplaying {
     func displayImageURL(_ url: URL) {
         DispatchQueue.main.async { [weak self] in
-            self?.setImageURL(url)
+            self?.imageView.sd_setImage(with: url)
         }
-    }
-}
-
-private extension ListingViewController {
-
-    func setImageURL(_ url: URL) {
-//        self.imageView.sd_setImage(with: url)
     }
 }
