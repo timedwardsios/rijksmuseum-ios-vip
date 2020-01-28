@@ -19,6 +19,7 @@ extension AppDelegate: UIApplicationDelegate {
 
 private extension AppDelegate {
     func setupRootViewController() {
+//        let coordinator = CoordinatorDefault()
         let portfolioViewController: PortfolioViewController = dependencies.resolve()
         let navController = UINavigationController(rootViewController: portfolioViewController)
         window.rootViewController = navController

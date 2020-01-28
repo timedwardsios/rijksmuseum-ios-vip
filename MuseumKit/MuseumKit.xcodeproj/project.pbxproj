@@ -29,6 +29,7 @@
 		221967EE228890B200BF00FB /* MuseumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221967E4228890B200BF00FB /* MuseumKit.framework */; };
 		2219683F2288985700BF00FB /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2219683E2288985700BF00FB /* TimKit.framework */; };
 		2239FE9223D6555E008E9867 /* ArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8E23D6555E008E9867 /* ArtController.swift */; };
+		223BE3A223DF783000BA1F7A /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BE3A123DF783000BA1F7A /* APIConfig.swift */; };
 		22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B07AEB23D7A3FB00D442E7 /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +70,8 @@
 		221967ED228890B200BF00FB /* MuseumKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2219683E2288985700BF00FB /* TimKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221968402288986C00BF00FB /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2239FE8E23D6555E008E9867 /* ArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtController.swift; sourceTree = "<group>"; };
+		2239FE8E23D6555E008E9867 /* ArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ArtController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		223BE3A123DF783000BA1F7A /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		22B07AEB23D7A3FB00D442E7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F1C1B841E2B07E3FAB720F12 /* Pods_MuseumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				220B73B6228DC83800AF8A8D /* Dependencies.swift */,
+				223BE3A123DF783000BA1F7A /* APIConfig.swift */,
 				22B07AEB23D7A3FB00D442E7 /* Model.swift */,
 				2239FE8D23D6555E008E9867 /* UseCases */,
 				220B73B7228DC83800AF8A8D /* Resources */,
@@ -371,6 +374,7 @@
 			files = (
 				220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */,
 				2239FE9223D6555E008E9867 /* ArtController.swift in Sources */,
+				223BE3A223DF783000BA1F7A /* APIConfig.swift in Sources */,
 				22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

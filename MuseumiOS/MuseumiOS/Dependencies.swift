@@ -1,24 +1,26 @@
 import UIKit
 import MuseumKit
+import Combine
 
 let dependencies = Dependencies()
 
 struct Dependencies {
 
-    static let coordinator = CoordinatorDefault()
-
-    func resolve() -> PortfolioRouter { Self.coordinator }
+    //    static let coordinator = CoordinatorDefault()
 
     func resolve() -> PortfolioViewController {
-        let presenter = PortfolioPresenter()
-        let interactor = PortfolioInteractor(presenter: presenter,
-                                             artController: MuseumKit.dependencies.resolve(),
-                                             router: resolve(),
-                                             model: MuseumKit.dependencies.resolve())
-        let viewController = Self.storyboard.instantiateViewController(identifier: PortfolioViewController.id) {
-            PortfolioViewController(coder: $0, interactor: interactor)
+
+        let viewModel = PortfolioViewModelDefault()
+
+        let viewController = Self.storyboard.instantiateViewController(
+            identifier: PortfolioViewController.id
+        ) {
+            PortfolioViewController(
+                coder: $0,
+                viewModelPublisher: viewModel.publisher
+            )
         }
-        presenter.display = viewController
+
         return viewController
     }
 

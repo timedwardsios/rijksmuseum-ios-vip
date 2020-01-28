@@ -1,5 +1,6 @@
 import Foundation
 import TimKit
+import Combine
 
 public protocol Art {
     var id: String { get }
@@ -9,8 +10,5 @@ public protocol Art {
 }
 
 public class Model: ObservableObject {
-
-    public init() {}
-
     @Published public var arts = [Art]()
 }
