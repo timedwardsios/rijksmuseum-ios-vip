@@ -2,12 +2,45 @@ import Foundation
 import TimKit
 import Combine
 
-public func FetchArt() -> AnyPublisher<[Art], Error> {
-    let apiService: APIService = TimKit.dependencies.resolve(apiConfig: APIConfigDefault())
-    let apiOperation = FetchArtAPIOperation()
-    return apiService.performAPIOperation(apiOperation)
-        .map { $0.artJSONs }
-        .eraseToAnyPublisher()
+public protocol ArtController {
+    func updateArt() -> AnyPublisher<Bool, Error>
+}
+
+class ArtControllerDefault {
+
+    let apiService: APIService
+    let model: Model
+
+    init(apiService: APIService,
+         model: Model) {
+        self.apiService = apiService
+        self.model = model
+    }
+
+    private var tokens = Set<AnyCancellable>()
+}
+
+extension ArtControllerDefault: ArtController {
+
+    func updateArt() -> AnyPublisher<Bool, Error> {
+
+        let activityPublisher = CurrentValueSubject<Bool, Error>(false)
+
+        apiService.publisher(forAPIOperation: FetchArtAPIOperation())
+            .map { $0.artJSONs }
+            .handleEvents(receiveSubscription: { _ in
+                activityPublisher.send(true)
+            }, receiveCompletion: { _ in
+                activityPublisher.send(false)
+            }, receiveCancel: {
+                activityPublisher.send(false)
+            })
+            .assertNoFailure()
+            .assign(to: \.arts, on: model)
+            .store(in: &tokens)
+
+        return activityPublisher.eraseToAnyPublisher()
+    }
 }
 
 private struct FetchArtAPIOperation: APIOperation {
@@ -18,7 +51,7 @@ private struct FetchArtAPIOperation: APIOperation {
         "s": "relevance"
     ]
     let method = HTTPMethod.GET
-    let responseType = RootJSON.self
+    let decodableType = RootJSON.self
 }
 
 private struct ArtJSON: Art, Decodable {

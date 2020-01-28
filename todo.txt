@@ -1,6 +1,7 @@
 Use protocols for dependency mgmt?
 Make GenericDataSource work with combine
 Remove networkservice?
+2 spaces for tabs
 
 Arch
     Web requests update DB -> bind database to UI through MVVM + Combine

@@ -9,6 +9,6 @@ public protocol Art {
     var imageURL: URL { get }
 }
 
-public class Model: ObservableObject {
+public class Model {
     @Published public var arts = [Art]()
 }

@@ -5,19 +5,13 @@ import Combine
 
 class PortfolioViewController: UICollectionViewController {
 
-    private var viewModelCancellable: Cancellable?
     private let viewModel: PortfolioViewModel
 
-    required init?(
-        coder: NSCoder,
-        viewModelPublisher: CurrentValueSubject<PortfolioViewModel, Never>
-    ) {
-        self.viewModel = viewModelPublisher.value
-        super.init(coder: coder)
-        viewModelCancellable = viewModelPublisher
-            .receive(on: RunLoop.main)
-            .sink(receiveValue: processViewModel)
+    var tokens = Set<AnyCancellable>()
 
+    required init?(coder: NSCoder, viewModel: PortfolioViewModel) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
@@ -32,31 +26,17 @@ class PortfolioViewController: UICollectionViewController {
     private let refreshControl = UIRefreshControl()
 }
 
-//extension PortfolioViewDefault: PortfolioDisplaying {
-//    func displayIsLoading(_ isLoading: Bool) {
-//        DispatchQueue.main.async { [weak self] in
-//            if isLoading {
-//                self?.refreshControl.beginRefreshingWithAnimation()
-//            } else {
-//                self?.refreshControl.endRefreshing()
-//            }
-//        }
-//    }
-//
-//    func displayErrorMessage(_ message: String) {
-//        DispatchQueue.main.async { [weak self] in
-//            let alertViewController = UIAlertController(intent: .error(message: message))
-//            self?.present(alertViewController, animated: true)
-//        }
-//    }
-//}
-
 extension PortfolioViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
         setupRefreshControl()
         setupDataSource()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         viewModel.updateArts()
     }
 
@@ -69,11 +49,30 @@ extension PortfolioViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.selectArt(atIndex: indexPath.row)
+        //        viewModel.selectArt(atIndex: indexPath.row)
     }
 }
 
 private extension PortfolioViewController {
+
+    func setupBindings() {
+        viewModel.$isFetching
+            .receive(on: RunLoop.main)
+            .sink {
+                if $0 == true {
+                    self.refreshControl.beginRefreshingWithAnimation()
+                } else {
+                    self.refreshControl.endRefreshing()
+                }
+        }.store(in: &tokens)
+
+        viewModel.$imageURLs
+            .receive(on: RunLoop.main)
+            .sink {
+                self.dataSource.items = $0
+                self.collectionView.reloadData()
+        }.store(in: &tokens)
+    }
 
     func setupRefreshControl() {
         refreshControl.addTarget(
@@ -89,13 +88,6 @@ private extension PortfolioViewController {
         collectionView.dataSource = dataSource
         dataSource.configureCellClosure = {
             $0.imageView.sd_setImage(with: $1)
-        }
-    }
-
-    func processViewModel(viewModel: PortfolioViewModel) {
-        self.dataSource.items = viewModel.imageURLs
-        if isViewLoaded {
-            collectionView.reloadData()
         }
     }
 }

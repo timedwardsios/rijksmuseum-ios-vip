@@ -3,43 +3,35 @@ import MuseumKit
 import TimKit
 import Combine
 
-protocol PortfolioViewModel {
-//    var isLoading: Bool { get }
-//    var alert: Alert? { get }
-    var imageURLs: [URL] { get }
+class PortfolioViewModel {
 
-    func updateArts()
-    func selectArt(atIndex index: Int)
-}
+    @Published private(set) var isFetching = false
+    @Published private(set) var imageURLs = [URL]()
+    @Published private(set) var alert: Alert?
 
-class PortfolioViewModelDefault: PortfolioViewModel {
+    private var tokens = Set<AnyCancellable>()
 
-    lazy var publisher = CurrentValueSubject<PortfolioViewModel, Never>(self)
+    private let artController: ArtController
 
-    // TODO: bind this to the global model.
+    init(artController: ArtController,
+         model: Model) {
+        self.artController = artController
 
-    var imageURLs = [URL]() {
-        didSet {
-            publisher.send(self)
-        }
-    }
-
-    var tokens = Set<AnyCancellable>()
-}
-
-extension PortfolioViewModelDefault {
-    func updateArts() {
-        FetchArt()
+        model.$arts
             .map { $0.map { $0.imageURL } }
-            //                        .handleEvents(receiveCompletion: {
-            //                            if case let (.failure(error)) = $0 {
-            //                                self.view?.showAlert(.error(error.localizedDescription))
-            //                            }
-            //                        })
+            .assign(to: \.imageURLs, on: self)
+            .store(in: &tokens)
+    }
+}
 
-            // TODO: there must be a way to bind this to publisher.send
-            .replaceError(with: [URL]())
-            .assign(to: \.imageURLs, on: self).store(in: &tokens)
+// TODO: Error alerts
+extension PortfolioViewModel {
+    func updateArts() {
+        artController
+            .updateArt()
+            .assertNoFailure()
+            .assign(to: \.isFetching, on: self)
+            .store(in: &tokens)
     }
 
     func selectArt(atIndex index: Int) {

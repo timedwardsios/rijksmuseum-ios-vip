@@ -10,14 +10,15 @@ struct Dependencies {
 
     func resolve() -> PortfolioViewController {
 
-        let viewModel = PortfolioViewModelDefault()
+        let viewModel = PortfolioViewModel(artController: MuseumKit.dependencies.resolve(),
+                                           model: MuseumKit.dependencies.resolve())
 
         let viewController = Self.storyboard.instantiateViewController(
             identifier: PortfolioViewController.id
         ) {
             PortfolioViewController(
                 coder: $0,
-                viewModelPublisher: viewModel.publisher
+                viewModel: viewModel
             )
         }
 
