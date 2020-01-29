@@ -3,7 +3,7 @@ import SDWebImage
 import TimKit
 import Combine
 
-class PortfolioViewController: UICollectionViewController {
+class PortfolioViewController: UICollectionViewController, AlertSubscriber {
 
     private let viewModel: PortfolioViewModel
 
@@ -18,10 +18,7 @@ class PortfolioViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private let dataSource = UICollectionViewGenericDataSource(
-        itemType: URL.self,
-        cellType: ImageCell.self
-    )
+    private lazy var dataSource = UICollectionViewItemSource<URL, ImageCell>(collectionView: collectionView)
 
     private let refreshControl = UIRefreshControl()
 }
@@ -30,9 +27,9 @@ extension PortfolioViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBindings()
-        setupRefreshControl()
-        setupDataSource()
+        setup()
+        bindInput()
+        bindOutput()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -55,16 +52,16 @@ extension PortfolioViewController {
 
 private extension PortfolioViewController {
 
-    func setupBindings() {
-        viewModel.$pullToRefreshIsRefreshing
+    func setup() {
+        refreshControl.tintColor = .white
+        collectionView.refreshControl = refreshControl
+        collectionView.dataSource = dataSource
+    }
+
+    func bindInput() {
+        viewModel.$isRefreshing
             .receive(on: RunLoop.main)
-            .sink {
-                if $0 == true {
-                    self.refreshControl.beginRefreshingWithAnimation()
-                } else {
-                    self.refreshControl.endRefreshing()
-                }
-        }.store(in: &tokens)
+            .subscribe(refreshControl)
 
         viewModel.$imageURLs
             .receive(on: RunLoop.main)
@@ -75,34 +72,12 @@ private extension PortfolioViewController {
 
         viewModel.$alert
             .receive(on: RunLoop.main)
-        .print()
-            .compactMap { $0 }
-            .sink {
-                let alertController = UIAlertController(alert: $0)
-                self.present(alertController, animated: true)
-        }.store(in: &tokens)
+            .subscribe(self)
     }
 
-    func setupRefreshControl() {
-        refreshControl.addTarget(
-            self,
-            action: #selector(refreshControlDidPullToRefresh),
-            for: .valueChanged
-        )
-        refreshControl.tintColor = .white
-        collectionView.refreshControl = refreshControl
-    }
-
-    func setupDataSource() {
-        collectionView.dataSource = dataSource
-        dataSource.configureCellClosure = {
-            $0.imageView.sd_setImage(with: $1)
-        }
-    }
-}
-
-@objc private extension PortfolioViewController {
-    func refreshControlDidPullToRefresh() {
-        viewModel.pullToRefreshIsRefreshing = true
+    func bindOutput() {
+        refreshControl.isRefreshingPublisher
+            .assign(to: \.isRefreshing, on: viewModel)
+            .store(in: &tokens)
     }
 }

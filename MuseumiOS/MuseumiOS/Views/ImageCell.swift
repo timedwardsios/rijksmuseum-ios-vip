@@ -1,12 +1,12 @@
+import TimKit
 import UIKit
 import SDWebImage
 
-class ImageCell: UICollectionViewCell {
+class ImageCell: UICollectionViewCell, ItemConfigurable {
 
     @IBOutlet weak var imageView: UIImageView!
 
-    func setImageURL(_ url: URL?) {
-        imageView?.sd_cancelCurrentImageLoad()
-        imageView?.sd_setImage(with: url, completed: nil)
+    func configure(with item: URL) {
+        imageView?.sd_setImage(with: item, completed: nil)
     }
 }

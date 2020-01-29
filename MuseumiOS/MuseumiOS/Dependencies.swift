@@ -16,7 +16,7 @@ struct Dependencies {
         let viewModel = PortfolioViewModel(artController: MuseumKit.dependencies.resolve())
 
         let viewController = Self.storyboard.instantiateViewController(
-            identifier: PortfolioViewController.id
+            identifier: PortfolioViewController.reuseIdentifier
         ) {
             PortfolioViewController(
                 coder: $0,
@@ -31,7 +31,7 @@ struct Dependencies {
         let presenter = DetailsPresenter()
         let interactor = DetailsInteractor(presenter: presenter,
                                            art: art)
-        let viewController = Self.storyboard.instantiateViewController(identifier: DetailsViewController.id) {
+        let viewController = Self.storyboard.instantiateViewController(identifier: DetailsViewController.reuseIdentifier) {
             DetailsViewController(coder: $0, interactor: interactor)
         }
         presenter.display = viewController

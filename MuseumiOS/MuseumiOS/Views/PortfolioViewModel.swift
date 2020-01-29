@@ -3,11 +3,13 @@ import MuseumKit
 import TimKit
 import Combine
 
+// refelects view state
+
 class PortfolioViewModel {
 
     @Published var viewDidAppear = false
 
-    @Published var pullToRefreshIsRefreshing = false
+    @Published var isRefreshing = false
 
     @Published var imageURLs = [URL]()
 
@@ -26,7 +28,7 @@ private extension PortfolioViewModel {
 
     func bind() {
         $viewDidAppear
-            .merge(with: $pullToRefreshIsRefreshing)
+            .merge(with: $isRefreshing)
             .scan(false, { $0 != $1 })
             .filter { $0 == true }
             .map {_ in }
@@ -38,16 +40,16 @@ private extension PortfolioViewModel {
         artController.fetchArt()
             .map { $0.map { $0.imageURL } }
             .handleEvents(receiveSubscription: { _ in
-                self.pullToRefreshIsRefreshing = true
+                self.isRefreshing = true
             }, receiveCompletion: {
-                self.pullToRefreshIsRefreshing = false
+                self.isRefreshing = false
                 if case let .failure(error) = $0 {
                     self.alert = .error(error) {
                         self.alert = nil
                     }
                 }
             }, receiveCancel: {
-                self.pullToRefreshIsRefreshing = false
+                self.isRefreshing = false
             })
             .replaceError(with: [])
             .assign(to: \PortfolioViewModel.imageURLs, on: self)
