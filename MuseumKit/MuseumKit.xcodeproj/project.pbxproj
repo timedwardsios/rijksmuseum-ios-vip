@@ -102,7 +102,7 @@
 				220B73B6228DC83800AF8A8D /* Dependencies.swift */,
 				223BE3A123DF783000BA1F7A /* APIConfig.swift */,
 				22B07AEB23D7A3FB00D442E7 /* Model.swift */,
-				2239FE8D23D6555E008E9867 /* UseCases */,
+				2239FE8D23D6555E008E9867 /* Controllers */,
 				220B73B7228DC83800AF8A8D /* Resources */,
 			);
 			path = MuseumKit;
@@ -201,12 +201,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2239FE8D23D6555E008E9867 /* UseCases */ = {
+		2239FE8D23D6555E008E9867 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				2239FE8E23D6555E008E9867 /* ArtController.swift */,
 			);
-			path = UseCases;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		CCCBA98A3DCDD6CB9B3253AE /* Frameworks */ = {

@@ -10,8 +10,10 @@ struct Dependencies {
 
     func resolve() -> PortfolioViewController {
 
-        let viewModel = PortfolioViewModel(artController: MuseumKit.dependencies.resolve(),
-                                           model: MuseumKit.dependencies.resolve())
+//        let viewModel = PortfolioViewModel(artController: MuseumKit.dependencies.resolve(),
+//                                           arts: MuseumKit.dependencies.resolve())
+        let model: Model = MuseumKit.dependencies.resolve()
+        let viewModel = PortfolioViewModel(artController: MuseumKit.dependencies.resolve())
 
         let viewController = Self.storyboard.instantiateViewController(
             identifier: PortfolioViewController.id

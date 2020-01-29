@@ -11,8 +11,7 @@ public struct Dependencies {
 
     public func resolve() -> ArtController {
         ArtControllerDefault(
-            apiService: TimKit.dependencies.resolve(apiConfig: resolve()),
-            model: resolve()
+            apiService: TimKit.dependencies.resolve(apiConfig: resolve())
         )
     }
 

@@ -37,7 +37,7 @@ extension PortfolioViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.updateArts()
+        viewModel.viewDidAppear = true
     }
 
     override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -56,7 +56,7 @@ extension PortfolioViewController {
 private extension PortfolioViewController {
 
     func setupBindings() {
-        viewModel.$isFetching
+        viewModel.$pullToRefreshIsRefreshing
             .receive(on: RunLoop.main)
             .sink {
                 if $0 == true {
@@ -71,6 +71,15 @@ private extension PortfolioViewController {
             .sink {
                 self.dataSource.items = $0
                 self.collectionView.reloadData()
+        }.store(in: &tokens)
+
+        viewModel.$alert
+            .receive(on: RunLoop.main)
+        .print()
+            .compactMap { $0 }
+            .sink {
+                let alertController = UIAlertController(alert: $0)
+                self.present(alertController, animated: true)
         }.store(in: &tokens)
     }
 
@@ -94,6 +103,6 @@ private extension PortfolioViewController {
 
 @objc private extension PortfolioViewController {
     func refreshControlDidPullToRefresh() {
-        viewModel.updateArts()
+        viewModel.pullToRefreshIsRefreshing = true
     }
 }

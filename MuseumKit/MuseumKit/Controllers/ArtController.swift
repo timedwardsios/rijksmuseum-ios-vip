@@ -3,43 +3,23 @@ import TimKit
 import Combine
 
 public protocol ArtController {
-    func updateArt() -> AnyPublisher<Bool, Error>
+    func fetchArt() -> AnyPublisher<[Art], Error>
 }
 
 class ArtControllerDefault {
 
     let apiService: APIService
-    let model: Model
 
-    init(apiService: APIService,
-         model: Model) {
+    init(apiService: APIService) {
         self.apiService = apiService
-        self.model = model
     }
-
-    private var tokens = Set<AnyCancellable>()
 }
 
 extension ArtControllerDefault: ArtController {
-
-    func updateArt() -> AnyPublisher<Bool, Error> {
-
-        let activityPublisher = CurrentValueSubject<Bool, Error>(false)
-
+    func fetchArt() -> AnyPublisher<[Art], Error> {
         apiService.publisher(forAPIOperation: FetchArtAPIOperation())
-            .map { $0.artJSONs }
-            .handleEvents(receiveSubscription: { _ in
-                activityPublisher.send(true)
-            }, receiveCompletion: { _ in
-                activityPublisher.send(false)
-            }, receiveCancel: {
-                activityPublisher.send(false)
-            })
-            .assertNoFailure()
-            .assign(to: \.arts, on: model)
-            .store(in: &tokens)
-
-        return activityPublisher.eraseToAnyPublisher()
+            .map { $0.artJSONs as [Art] }
+            .eraseToAnyPublisher()
     }
 }
 

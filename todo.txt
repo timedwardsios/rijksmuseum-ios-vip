@@ -1,6 +1,5 @@
 Use protocols for dependency mgmt?
 Make GenericDataSource work with combine
-Remove networkservice?
 2 spaces for tabs
 
 Arch
