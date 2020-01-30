@@ -2,12 +2,13 @@ import UIKit
 import SDWebImage
 import TimKit
 import Combine
+import CombineCocoa
 
 class PortfolioViewController: UICollectionViewController, AlertSubscriber {
 
     private let viewModel: PortfolioViewModel
 
-    var tokens = Set<AnyCancellable>()
+    private var tokens = Set<AnyCancellable>()
 
     required init?(coder: NSCoder, viewModel: PortfolioViewModel) {
         self.viewModel = viewModel
@@ -18,22 +19,27 @@ class PortfolioViewController: UICollectionViewController, AlertSubscriber {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private lazy var dataSource = UICollectionViewItemSource<URL, ImageCell>(collectionView: collectionView)
+    private lazy var collectionViewSource: UICollectionViewProxy<URL, ImageCell> = .init(collectionView: collectionView)
 
-    private let refreshControl = UIRefreshControl()
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .white
+        collectionView.refreshControl = refreshControl
+        return refreshControl
+    }()
 }
 
 extension PortfolioViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         bindInput()
         bindOutput()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        // TODO: Publisher
         viewModel.viewDidAppear = true
     }
 
@@ -52,12 +58,6 @@ extension PortfolioViewController {
 
 private extension PortfolioViewController {
 
-    func setup() {
-        refreshControl.tintColor = .white
-        collectionView.refreshControl = refreshControl
-        collectionView.dataSource = dataSource
-    }
-
     func bindInput() {
         viewModel.$isRefreshing
             .receive(on: RunLoop.main)
@@ -65,10 +65,7 @@ private extension PortfolioViewController {
 
         viewModel.$imageURLs
             .receive(on: RunLoop.main)
-            .sink {
-                self.dataSource.items = $0
-                self.collectionView.reloadData()
-        }.store(in: &tokens)
+            .subscribe(collectionViewSource)
 
         viewModel.$alert
             .receive(on: RunLoop.main)
@@ -78,6 +75,10 @@ private extension PortfolioViewController {
     func bindOutput() {
         refreshControl.isRefreshingPublisher
             .assign(to: \.isRefreshing, on: viewModel)
+            .store(in: &tokens)
+
+        collectionViewSource.$selectedItem
+            .assign(to: \.selectedURL, on: viewModel)
             .store(in: &tokens)
     }
 }

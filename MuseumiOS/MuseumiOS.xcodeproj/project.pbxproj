@@ -10,21 +10,6 @@
 		221545212267181C0062E9C6 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221545202267181C0062E9C6 /* Dependencies.swift */; };
 		221AE96822877BB600973131 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221AE96722877BB600973131 /* Config.swift */; };
 		2239FE7223D6306B008E9867 /* TestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2239FE7123D6306B008E9867 /* TestKit.framework */; };
-		2245846D23E1AFE5007B51BF /* CombineControlTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245845D23E1AFE4007B51BF /* CombineControlTarget.swift */; };
-		2245846E23E1AFE5007B51BF /* UISlider+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245845F23E1AFE4007B51BF /* UISlider+Combine.swift */; };
-		2245846F23E1AFE5007B51BF /* UISwitch+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846023E1AFE4007B51BF /* UISwitch+Combine.swift */; };
-		2245847023E1AFE5007B51BF /* UIGestureRecognizer+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846123E1AFE4007B51BF /* UIGestureRecognizer+Combine.swift */; };
-		2245847123E1AFE5007B51BF /* UIPageControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846223E1AFE4007B51BF /* UIPageControl+Combine.swift */; };
-		2245847223E1AFE5007B51BF /* UIStepper+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846323E1AFE4007B51BF /* UIStepper+Combine.swift */; };
-		2245847323E1AFE5007B51BF /* UIButton+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846423E1AFE4007B51BF /* UIButton+Combine.swift */; };
-		2245847423E1AFE5007B51BF /* UISegmentedControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846523E1AFE4007B51BF /* UISegmentedControl+Combine.swift */; };
-		2245847523E1AFE5007B51BF /* UIScrollView+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846623E1AFE4007B51BF /* UIScrollView+Combine.swift */; };
-		2245847623E1AFE5007B51BF /* UIDatePicker+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846723E1AFE4007B51BF /* UIDatePicker+Combine.swift */; };
-		2245847723E1AFE5007B51BF /* UIRefreshControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846823E1AFE4007B51BF /* UIRefreshControl+Combine.swift */; };
-		2245847823E1AFE5007B51BF /* UITextField+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846923E1AFE4007B51BF /* UITextField+Combine.swift */; };
-		2245847923E1AFE5007B51BF /* UIBarButtonItem+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846A23E1AFE4007B51BF /* UIBarButtonItem+Combine.swift */; };
-		2245847A23E1AFE5007B51BF /* CombineControlProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846B23E1AFE4007B51BF /* CombineControlProperty.swift */; };
-		2245847B23E1AFE5007B51BF /* CombineControlEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2245846C23E1AFE4007B51BF /* CombineControlEvent.swift */; };
 		2258B98422723F5000516603 /* ArtWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B98322723F5000516603 /* ArtWorkerSpy.swift */; };
 		2258B9F422724B7B00516603 /* ArtMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2258B9F322724B7B00516603 /* ArtMock.swift */; };
 		225B02F623DF1B0100D46A07 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B02F523DF1B0100D46A07 /* Router.swift */; };
@@ -32,6 +17,7 @@
 		229CFC7523DDC86900239309 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229CFC6F23DDC86900239309 /* PortfolioViewModel.swift */; };
 		229CFC7623DDC86900239309 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229CFC7023DDC86900239309 /* ImageCell.swift */; };
 		229CFC7923DDC86900239309 /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229CFC7323DDC86900239309 /* PortfolioView.swift */; };
+		22A2149D23E248CE003F7858 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 22A2149C23E248CE003F7858 /* CombineCocoa */; };
 		22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C75212EEA02000A0BE0 /* Assets.xcassets */; };
 		22AC8C8F212EEA02000A0BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C76212EEA02000A0BE0 /* LaunchScreen.storyboard */; };
 		22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C79212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld */; };
@@ -69,21 +55,6 @@
 		221DB1162130B1830031A401 /* DetailsContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsContract.swift; sourceTree = "<group>"; };
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2239FE7123D6306B008E9867 /* TestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2245845D23E1AFE4007B51BF /* CombineControlTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineControlTarget.swift; sourceTree = "<group>"; };
-		2245845F23E1AFE4007B51BF /* UISlider+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Combine.swift"; sourceTree = "<group>"; };
-		2245846023E1AFE4007B51BF /* UISwitch+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Combine.swift"; sourceTree = "<group>"; };
-		2245846123E1AFE4007B51BF /* UIGestureRecognizer+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Combine.swift"; sourceTree = "<group>"; };
-		2245846223E1AFE4007B51BF /* UIPageControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPageControl+Combine.swift"; sourceTree = "<group>"; };
-		2245846323E1AFE4007B51BF /* UIStepper+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStepper+Combine.swift"; sourceTree = "<group>"; };
-		2245846423E1AFE4007B51BF /* UIButton+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Combine.swift"; sourceTree = "<group>"; };
-		2245846523E1AFE4007B51BF /* UISegmentedControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Combine.swift"; sourceTree = "<group>"; };
-		2245846623E1AFE4007B51BF /* UIScrollView+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Combine.swift"; sourceTree = "<group>"; };
-		2245846723E1AFE4007B51BF /* UIDatePicker+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Combine.swift"; sourceTree = "<group>"; };
-		2245846823E1AFE4007B51BF /* UIRefreshControl+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+Combine.swift"; sourceTree = "<group>"; };
-		2245846923E1AFE4007B51BF /* UITextField+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Combine.swift"; sourceTree = "<group>"; };
-		2245846A23E1AFE4007B51BF /* UIBarButtonItem+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Combine.swift"; sourceTree = "<group>"; };
-		2245846B23E1AFE4007B51BF /* CombineControlProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineControlProperty.swift; sourceTree = "<group>"; };
-		2245846C23E1AFE4007B51BF /* CombineControlEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineControlEvent.swift; sourceTree = "<group>"; };
 		2253927B2276595E007AEF1F /* Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258B965227210A600516603 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258B98322723F5000516603 /* ArtWorkerSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtWorkerSpy.swift; sourceTree = "<group>"; };
@@ -132,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				229CFC6D23DDC3C400239309 /* SDWebImage in Frameworks */,
+				22A2149D23E248CE003F7858 /* CombineCocoa in Frameworks */,
 				22B0C7CA22861EE600717751 /* MuseumKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,37 +152,6 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
-		2245845C23E1AFE4007B51BF /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				2245845D23E1AFE4007B51BF /* CombineControlTarget.swift */,
-				2245846B23E1AFE4007B51BF /* CombineControlProperty.swift */,
-				2245846C23E1AFE4007B51BF /* CombineControlEvent.swift */,
-				2245845E23E1AFE4007B51BF /* Controls */,
-			);
-			name = Sources;
-			path = ../../CombineCocoa/Sources;
-			sourceTree = "<group>";
-		};
-		2245845E23E1AFE4007B51BF /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				2245845F23E1AFE4007B51BF /* UISlider+Combine.swift */,
-				2245846023E1AFE4007B51BF /* UISwitch+Combine.swift */,
-				2245846123E1AFE4007B51BF /* UIGestureRecognizer+Combine.swift */,
-				2245846223E1AFE4007B51BF /* UIPageControl+Combine.swift */,
-				2245846323E1AFE4007B51BF /* UIStepper+Combine.swift */,
-				2245846423E1AFE4007B51BF /* UIButton+Combine.swift */,
-				2245846523E1AFE4007B51BF /* UISegmentedControl+Combine.swift */,
-				2245846623E1AFE4007B51BF /* UIScrollView+Combine.swift */,
-				2245846723E1AFE4007B51BF /* UIDatePicker+Combine.swift */,
-				2245846823E1AFE4007B51BF /* UIRefreshControl+Combine.swift */,
-				2245846923E1AFE4007B51BF /* UITextField+Combine.swift */,
-				2245846A23E1AFE4007B51BF /* UIBarButtonItem+Combine.swift */,
-			);
-			path = Controls;
-			sourceTree = "<group>";
-		};
 		2258B9FB2272754D00516603 /* Spies */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				22E3652823DEF0C9000DAFE3 /* Main.storyboard */,
-				2245845C23E1AFE4007B51BF /* Sources */,
 				22AC8C73212EEA02000A0BE0 /* MuseumiOS */,
 				22706C9B20FE5110006E27EE /* MuseumiOSTests */,
 				22706C8220FE510E006E27EE /* Products */,
@@ -368,6 +308,7 @@
 			name = MuseumiOS;
 			packageProductDependencies = (
 				229CFC6C23DDC3C400239309 /* SDWebImage */,
+				22A2149C23E248CE003F7858 /* CombineCocoa */,
 			);
 			productName = Rijksmuseum;
 			productReference = 22706C8120FE510E006E27EE /* Rijksmuseum.app */;
@@ -424,6 +365,7 @@
 			mainGroup = 22706C7820FE510E006E27EE;
 			packageReferences = (
 				229CFC6B23DDC3C400239309 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				22A2149B23E248CE003F7858 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 			);
 			productRefGroup = 22706C8220FE510E006E27EE /* Products */;
 			projectDirPath = "";
@@ -501,31 +443,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				229CFC7523DDC86900239309 /* PortfolioViewModel.swift in Sources */,
-				2245847923E1AFE5007B51BF /* UIBarButtonItem+Combine.swift in Sources */,
-				2245847323E1AFE5007B51BF /* UIButton+Combine.swift in Sources */,
 				221545212267181C0062E9C6 /* Dependencies.swift in Sources */,
 				229CFC7623DDC86900239309 /* ImageCell.swift in Sources */,
 				22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */,
-				2245846D23E1AFE5007B51BF /* CombineControlTarget.swift in Sources */,
 				22F8404823DE142800F30D17 /* DetailsPresenter.swift in Sources */,
-				2245847723E1AFE5007B51BF /* UIRefreshControl+Combine.swift in Sources */,
-				2245846E23E1AFE5007B51BF /* UISlider+Combine.swift in Sources */,
-				2245847A23E1AFE5007B51BF /* CombineControlProperty.swift in Sources */,
-				2245847223E1AFE5007B51BF /* UIStepper+Combine.swift in Sources */,
-				2245847623E1AFE5007B51BF /* UIDatePicker+Combine.swift in Sources */,
-				2245847823E1AFE5007B51BF /* UITextField+Combine.swift in Sources */,
 				22F8404923DE142800F30D17 /* DetailsViewController.swift in Sources */,
 				22F8404623DE142800F30D17 /* DetailsContract.swift in Sources */,
 				221AE96822877BB600973131 /* Config.swift in Sources */,
-				2245847523E1AFE5007B51BF /* UIScrollView+Combine.swift in Sources */,
-				2245847B23E1AFE5007B51BF /* CombineControlEvent.swift in Sources */,
 				229CFC7923DDC86900239309 /* PortfolioView.swift in Sources */,
-				2245847023E1AFE5007B51BF /* UIGestureRecognizer+Combine.swift in Sources */,
-				2245847123E1AFE5007B51BF /* UIPageControl+Combine.swift in Sources */,
 				22AC8C91212EEA02000A0BE0 /* Rijksmuseum.xcdatamodeld in Sources */,
-				2245847423E1AFE5007B51BF /* UISegmentedControl+Combine.swift in Sources */,
 				22F8404723DE142800F30D17 /* DetailsInteractor.swift in Sources */,
-				2245846F23E1AFE5007B51BF /* UISwitch+Combine.swift in Sources */,
 				225B02F623DF1B0100D46A07 /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -795,6 +722,14 @@
 				minimumVersion = 5.5.2;
 			};
 		};
+		22A2149B23E248CE003F7858 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -802,6 +737,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 229CFC6B23DDC3C400239309 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		22A2149C23E248CE003F7858 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22A2149B23E248CE003F7858 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -7,6 +7,8 @@ import Combine
 
 class PortfolioViewModel {
 
+    @Published private var arts = [Art]()
+
     @Published var viewDidAppear = false
 
     @Published var isRefreshing = false
@@ -14,6 +16,8 @@ class PortfolioViewModel {
     @Published var imageURLs = [URL]()
 
     @Published var alert: Alert?
+
+    @Published var selectedURL: URL? = nil
 
     private var tokens = Set<AnyCancellable>()
 
@@ -31,14 +35,17 @@ private extension PortfolioViewModel {
             .merge(with: $isRefreshing)
             .scan(false, { $0 != $1 })
             .filter { $0 == true }
-            .map {_ in }
-            .sink(receiveValue: updateArts)
+            .sink { _ in self.updateArts() }
+            .store(in: &tokens)
+
+        $arts
+            .map { $0.map { $0.imageURL } }
+            .assign(to: \PortfolioViewModel.imageURLs, on: self)
             .store(in: &tokens)
     }
 
     func updateArts() {
         artController.fetchArt()
-            .map { $0.map { $0.imageURL } }
             .handleEvents(receiveSubscription: { _ in
                 self.isRefreshing = true
             }, receiveCompletion: {
@@ -52,13 +59,7 @@ private extension PortfolioViewModel {
                 self.isRefreshing = false
             })
             .replaceError(with: [])
-            .assign(to: \PortfolioViewModel.imageURLs, on: self)
+            .assign(to: \.arts, on: self)
             .store(in: &tokens)
-    }
-
-    func selectArt(atIndex index: Int) {
-        //        if let art = arts[optionalAt: index] {
-        //            router.routeToArtDetails(forArt: art)
-        //        }
     }
 }
