@@ -1,9 +1,9 @@
-Maybe view should call the viewmodel?
+Selection
+Try selected cell in collection proxy again
+
+Error alerting
 
 Use protocols for dependency mgmt?
-Make GenericDataSource work with combine
-2 spaces for tabs
-Move to collectionview manually
 
 Arch
     Web requests update DB -> bind database to UI through MVVM + Combine

@@ -1,5 +1,6 @@
 import UIKit
 import SDWebImage
+import MuseumKit
 import TimKit
 import Combine
 import CombineCocoa
@@ -15,12 +16,14 @@ class PortfolioViewController: UICollectionViewController, AlertSubscriber {
         super.init(coder: coder)
     }
 
+    let viewDidAppearPublisher = PassthroughSubject<(isBeingPresented: Bool, isMovingToParent: Bool), Never>()
+
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private lazy var collectionViewSource: UICollectionViewSource
-        <PortfolioViewModel.Item, ImageCell> = .init(collectionView: collectionView)
+    private lazy var collectionViewProxy: UICollectionViewProxy<PortfolioCell> =
+        .init(collectionView: collectionView)
 
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -34,13 +37,12 @@ extension PortfolioViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindInput()
-        bindOutput()
+        bind()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.updateArts()
+        viewDidAppearPublisher.send((isBeingPresented, isMovingToParent))
     }
 
     override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -50,36 +52,36 @@ extension PortfolioViewController {
     override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         collectionView.cellForItem(at: indexPath)?.alpha = 1
     }
-
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        viewModel.selectArt(atIndex: indexPath.row)
-    }
 }
 
 private extension PortfolioViewController {
 
-    func bindInput() {
-        viewModel.$isRefreshing
+    func bind() {
+
+        viewModel.$isLoading
             .receive(on: RunLoop.main)
             .subscribe(refreshControl)
 
-        viewModel.$items
-            .receive(on: RunLoop.main)
-            .subscribe(collectionViewSource)
-
-        viewModel.$alert
+        viewModel.alertPublisher
             .receive(on: RunLoop.main)
             .subscribe(self)
+
+        viewDidAppearPublisher
+            .compactMap { $0.0 || $0.1 }
+            .merge(with: refreshControl.isRefreshingPublisher)
+            .receive(on: RunLoop.main)
+            .filter { $0 == true }
+            .flatMap { _ in self.viewModel.updateItems }
+            .subscribe(collectionViewProxy)
+
+        collectionViewProxy.didSelectPublisher
+            .sink(receiveValue: didSelectCellWithModel)
+            .store(in: &tokens)
     }
 
-    func bindOutput() {
-        refreshControl.isRefreshingPublisher
-            .filter { $0 == true }
-            .sink { _ in self.viewModel.updateArts() }
-            .store(in: &tokens)
-
-        collectionViewSource.$selectedItem
-            .assign(to: \.selectedURL, on: viewModel)
-            .store(in: &tokens)
+    func didSelectCellWithModel(_ portfolioCellModel: PortfolioCellModel) {
+        let detailsViewController: DetailsViewController
+        detailsViewController = dependencies.resolve(imageURL: portfolioCellModel.imageURL)
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }

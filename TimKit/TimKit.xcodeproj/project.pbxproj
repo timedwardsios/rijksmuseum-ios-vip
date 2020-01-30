@@ -28,7 +28,7 @@
 		2285026D22879BCC0059AD7C /* config_empty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2285023722879B5F0059AD7C /* config_empty.plist */; };
 		2285026F22879BCC0059AD7C /* ConfigLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285023922879B5F0059AD7C /* ConfigLoaderTests.swift */; };
 		22A214A023E25795003F7858 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A2149F23E25795003F7858 /* ReuseIdentifiable.swift */; };
-		22A890B923E21010001B614A /* ItemConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A890B823E21010001B614A /* ItemConfigurable.swift */; };
+		22A890B923E21010001B614A /* ViewModelSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A890B823E21010001B614A /* ViewModelSettable.swift */; };
 		22AA3B4623E25EFD00A6AD4E /* SimpleSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA3B4523E25EFD00A6AD4E /* SimpleSubscriber.swift */; };
 		22B3038723E1F50100980E16 /* UIViewController+AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B3038623E1F50100980E16 /* UIViewController+AlertPresentable.swift */; };
 		22B3038923E1F5A600980E16 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B3038823E1F5A600980E16 /* Alert.swift */; };
@@ -76,7 +76,7 @@
 		2285023922879B5F0059AD7C /* ConfigLoaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigLoaderTests.swift; sourceTree = "<group>"; };
 		2285023B22879B5F0059AD7C /* NetworkResponseValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorTests.swift; sourceTree = "<group>"; };
 		22A2149F23E25795003F7858 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
-		22A890B823E21010001B614A /* ItemConfigurable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemConfigurable.swift; sourceTree = "<group>"; };
+		22A890B823E21010001B614A /* ViewModelSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelSettable.swift; sourceTree = "<group>"; };
 		22AA3B4523E25EFD00A6AD4E /* SimpleSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleSubscriber.swift; sourceTree = "<group>"; };
 		22AC8C49212EE635000A0BE0 /* TimKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TimKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22AC8C52212EE635000A0BE0 /* TimKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +133,7 @@
 		2285020F22879B5F0059AD7C /* ItemSource */ = {
 			isa = PBXGroup;
 			children = (
-				22A890B823E21010001B614A /* ItemConfigurable.swift */,
+				22A890B823E21010001B614A /* ViewModelSettable.swift */,
 				2285021022879B5F0059AD7C /* UICollectionViewItemSource.swift */,
 			);
 			path = ItemSource;
@@ -422,7 +422,7 @@
 				22FD87CC23D66CC1002ED427 /* APIModel.swift in Sources */,
 				22A214A023E25795003F7858 /* ReuseIdentifiable.swift in Sources */,
 				2285024C22879B5F0059AD7C /* UIRefreshControl+IsAnimating.swift in Sources */,
-				22A890B923E21010001B614A /* ItemConfigurable.swift in Sources */,
+				22A890B923E21010001B614A /* ViewModelSettable.swift in Sources */,
 				22B3038723E1F50100980E16 /* UIViewController+AlertPresentable.swift in Sources */,
 				2285025022879B5F0059AD7C /* UIAlertController+Alert.swift in Sources */,
 				223BE3A423DF804100BA1F7A /* Hostname.swift in Sources */,
