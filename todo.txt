@@ -1,8 +1,9 @@
+Maybe view should call the viewmodel?
+
 Use protocols for dependency mgmt?
 Make GenericDataSource work with combine
 2 spaces for tabs
 Move to collectionview manually
-Do combinecocoa properly?
 
 Arch
     Web requests update DB -> bind database to UI through MVVM + Combine

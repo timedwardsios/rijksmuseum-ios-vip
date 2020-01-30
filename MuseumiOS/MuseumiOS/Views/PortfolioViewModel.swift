@@ -5,47 +5,40 @@ import Combine
 
 // refelects view state
 
+// how to keep reference to art but only expose imageurls?
+
+/*
+ combine is for data sending
+ events should be done through functions
+ an alert is an event, it's not data
+ the view is a function of the state
+ the viewmodel holds the state
+ we use protocols
+ */
+
+
 class PortfolioViewModel {
 
-    @Published private var arts = [Art]()
+    typealias Item = StringIdentifiable & RemoteImage
 
-    @Published var viewDidAppear = false
+    @Published private(set) var isRefreshing = false
 
-    @Published var isRefreshing = false
+    @Published private(set) var alert: Alert?
 
-    @Published var imageURLs = [URL]()
-
-    @Published var alert: Alert?
-
-    @Published var selectedURL: URL? = nil
+    @Published private(set) var items = [Item]()
 
     private var tokens = Set<AnyCancellable>()
 
     let artController: ArtController
     init(artController: ArtController) {
         self.artController = artController
-        bind()
     }
 }
 
-private extension PortfolioViewModel {
-
-    func bind() {
-        $viewDidAppear
-            .merge(with: $isRefreshing)
-            .scan(false, { $0 != $1 })
-            .filter { $0 == true }
-            .sink { _ in self.updateArts() }
-            .store(in: &tokens)
-
-        $arts
-            .map { $0.map { $0.imageURL } }
-            .assign(to: \PortfolioViewModel.imageURLs, on: self)
-            .store(in: &tokens)
-    }
-
+extension PortfolioViewModel {
     func updateArts() {
         artController.fetchArt()
+            .map { $0 as [Item] }
             .handleEvents(receiveSubscription: { _ in
                 self.isRefreshing = true
             }, receiveCompletion: {
@@ -59,7 +52,12 @@ private extension PortfolioViewModel {
                 self.isRefreshing = false
             })
             .replaceError(with: [])
-            .assign(to: \.arts, on: self)
+            .assign(to: \.items, on: self)
             .store(in: &tokens)
+    }
+
+    func selectItem(withID id: String) {
+        let item = items.first(where: { $0.id == id })
+        print(item)
     }
 }

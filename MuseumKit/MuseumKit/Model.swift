@@ -2,11 +2,17 @@ import Foundation
 import TimKit
 import Combine
 
-public protocol Art {
+public protocol StringIdentifiable {
     var id: String { get }
+}
+
+public protocol RemoteImage {
+    var imageURL: URL { get }
+}
+
+public protocol Art: StringIdentifiable, RemoteImage {
     var title: String { get }
     var artist: String { get }
-    var imageURL: URL { get }
 }
 
 public class Model {

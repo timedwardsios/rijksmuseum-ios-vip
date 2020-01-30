@@ -19,7 +19,8 @@ class PortfolioViewController: UICollectionViewController, AlertSubscriber {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private lazy var collectionViewSource: UICollectionViewProxy<URL, ImageCell> = .init(collectionView: collectionView)
+    private lazy var collectionViewSource: UICollectionViewSource
+        <PortfolioViewModel.Item, ImageCell> = .init(collectionView: collectionView)
 
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -39,8 +40,7 @@ extension PortfolioViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // TODO: Publisher
-        viewModel.viewDidAppear = true
+        viewModel.updateArts()
     }
 
     override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
@@ -63,7 +63,7 @@ private extension PortfolioViewController {
             .receive(on: RunLoop.main)
             .subscribe(refreshControl)
 
-        viewModel.$imageURLs
+        viewModel.$items
             .receive(on: RunLoop.main)
             .subscribe(collectionViewSource)
 
@@ -74,7 +74,8 @@ private extension PortfolioViewController {
 
     func bindOutput() {
         refreshControl.isRefreshingPublisher
-            .assign(to: \.isRefreshing, on: viewModel)
+            .filter { $0 == true }
+            .sink { _ in self.viewModel.updateArts() }
             .store(in: &tokens)
 
         collectionViewSource.$selectedItem
