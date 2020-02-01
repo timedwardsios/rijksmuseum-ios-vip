@@ -1,21 +1,21 @@
 import UIKit
 import Combine
 
-public protocol SimpleSubscriber: Subscriber where Failure == Never {
-    associatedtype Input
-    func recieve(_ input: Self.Input)
+public protocol SimpleSubscriber: Subscriber where Failure == Never, Input == I {
+    associatedtype I
+    func recieve(_ input: I)
 }
 
-extension SimpleSubscriber {
+public extension SimpleSubscriber {
 
-    public func receive(subscription: Subscription) {
+    func receive(subscription: Subscription) {
         subscription.request(.unlimited)
     }
 
-    public func receive(_ input: Self.Input) -> Subscribers.Demand {
+    func receive(_ input: I) -> Subscribers.Demand {
         recieve(input)
         return .unlimited
     }
 
-    public func receive(completion: Subscribers.Completion<Never>) {}
+    func receive(completion: Subscribers.Completion<Never>) {}
 }

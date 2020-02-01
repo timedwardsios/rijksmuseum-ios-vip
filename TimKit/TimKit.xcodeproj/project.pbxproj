@@ -10,9 +10,10 @@
 		221968762288C08500BF00FB /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221968752288C08500BF00FB /* NetworkResponseMock.swift */; };
 		2226ACB023E4E438002AEF97 /* WebModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226ACAD23E4E438002AEF97 /* WebModel.swift */; };
 		2226ACBD23E50273002AEF97 /* WebRequest+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226ACBC23E50273002AEF97 /* WebRequest+URLRequest.swift */; };
+		2236148F23E5D078003B6122 /* UICollectionViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236148E23E5D078003B6122 /* UICollectionViewProxy.swift */; };
 		2237159E23E1F22C0039E6BC /* UIRefreshControl+BeginRefreshing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237159D23E1F22C0039E6BC /* UIRefreshControl+BeginRefreshing.swift */; };
 		2239FE8423D65455008E9867 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8323D65455008E9867 /* WebService.swift */; };
-		2285023C22879B5F0059AD7C /* UICollectionViewItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285021022879B5F0059AD7C /* UICollectionViewItemSource.swift */; };
+		2285023C22879B5F0059AD7C /* UITableViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285021022879B5F0059AD7C /* UITableViewProxy.swift */; };
 		2285024122879B5F0059AD7C /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285021522879B5F0059AD7C /* Dependencies.swift */; };
 		2285024222879B5F0059AD7C /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2285021722879B5F0059AD7C /* Utils.h */; };
 		2285024822879B5F0059AD7C /* Collection+OptionalAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285021F22879B5F0059AD7C /* Collection+OptionalAt.swift */; };
@@ -50,11 +51,12 @@
 		221968752288C08500BF00FB /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
 		2226ACAD23E4E438002AEF97 /* WebModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebModel.swift; sourceTree = "<group>"; };
 		2226ACBC23E50273002AEF97 /* WebRequest+URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebRequest+URLRequest.swift"; sourceTree = "<group>"; };
+		2236148E23E5D078003B6122 /* UICollectionViewProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewProxy.swift; sourceTree = "<group>"; };
 		2237159D23E1F22C0039E6BC /* UIRefreshControl+BeginRefreshing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+BeginRefreshing.swift"; sourceTree = "<group>"; };
 		2239FE6D23D623DB008E9867 /* TestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2239FE8323D65455008E9867 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; tabWidth = 4; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2285021022879B5F0059AD7C /* UICollectionViewItemSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewItemSource.swift; sourceTree = "<group>"; };
+		2285021022879B5F0059AD7C /* UITableViewProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewProxy.swift; sourceTree = "<group>"; };
 		2285021522879B5F0059AD7C /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		2285021722879B5F0059AD7C /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		2285021822879B5F0059AD7C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,7 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				22A890B823E21010001B614A /* ViewModelSettable.swift */,
-				2285021022879B5F0059AD7C /* UICollectionViewItemSource.swift */,
+				2285021022879B5F0059AD7C /* UITableViewProxy.swift */,
+				2236148E23E5D078003B6122 /* UICollectionViewProxy.swift */,
 			);
 			path = ItemSource;
 			sourceTree = "<group>";
@@ -418,12 +421,13 @@
 				2285024922879B5F0059AD7C /* UIColor+Hex.swift in Sources */,
 				22A214A023E25795003F7858 /* ReuseIdentifiable.swift in Sources */,
 				2285024C22879B5F0059AD7C /* UIRefreshControl+IsAnimating.swift in Sources */,
+				2236148F23E5D078003B6122 /* UICollectionViewProxy.swift in Sources */,
 				22A890B923E21010001B614A /* ViewModelSettable.swift in Sources */,
 				2226ACB023E4E438002AEF97 /* WebModel.swift in Sources */,
 				22B3038723E1F50100980E16 /* UIViewController+AlertPresentable.swift in Sources */,
 				2285025022879B5F0059AD7C /* UIAlertController+Alert.swift in Sources */,
 				2285024822879B5F0059AD7C /* Collection+OptionalAt.swift in Sources */,
-				2285023C22879B5F0059AD7C /* UICollectionViewItemSource.swift in Sources */,
+				2285023C22879B5F0059AD7C /* UITableViewProxy.swift in Sources */,
 				2237159E23E1F22C0039E6BC /* UIRefreshControl+BeginRefreshing.swift in Sources */,
 				22AA3B4623E25EFD00A6AD4E /* SimpleSubscriber.swift in Sources */,
 			);

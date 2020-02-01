@@ -5,13 +5,14 @@ import TimKit
 import Combine
 import CombineCocoa
 
-class PortfolioView: UICollectionViewController, AlertSubscriber {
+class PortfolioView: UITableViewController, AlertSubscriber {
 
-    private let viewModel: PortfolioView.Model
+    private let viewModel: PortfolioViewModel
 
-    private var tokens = Set<AnyCancellable>()
+    // all cancelled on deinit
+    private var tokens: Set<AnyCancellable> = []
 
-    required init?(coder: NSCoder, viewModel: PortfolioView.Model) {
+    required init?(coder: NSCoder, viewModel: PortfolioViewModel) {
         self.viewModel = viewModel
         super.init(coder: coder)
     }
@@ -20,36 +21,31 @@ class PortfolioView: UICollectionViewController, AlertSubscriber {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private lazy var collectionViewProxy: UICollectionViewProxy<PortfolioCell> =
-        .init(collectionView: collectionView)
-
-    private lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .white
-        collectionView.refreshControl = refreshControl
-        return refreshControl
-    }()
+    private lazy var collectionViewProxy: UITableViewProxy<PortfolioCell> =
+        .init(tableView: tableView)
 }
 
 extension PortfolioView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .white
+        tableView.refreshControl = refreshControl
         bind()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        viewDidAppearPublisher.send((isBeingPresented, isMovingToParent))
-        viewModel.refreshArts()
+        viewModel.didPullToRefresh()
     }
 
-    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        collectionView.cellForItem(at: indexPath)?.alpha = 0.5
+    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.alpha = 0.5
     }
 
-    override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        collectionView.cellForItem(at: indexPath)?.alpha = 1
+    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.alpha = 1
     }
 }
 
@@ -57,28 +53,38 @@ private extension PortfolioView {
 
     func bind() {
 
-//        viewModel.$isLoading
-//            .receive(on: RunLoop.main)
-//            .subscribe(refreshControl)
+        //        viewModel.$isLoading
+        //            .receive(on: RunLoop.main)
+        //            .subscribe(refreshControl)
 
-//        viewModel.alertPublisher
-//            .receive(on: RunLoop.main)
-//            .subscribe(self)
+        //        viewModel.alertPublisher
+        //            .receive(on: RunLoop.main)
+        //            .subscribe(self)
 
-//        viewDidAppearPublisher
-//            .compactMap { $0.0 || $0.1 }
-//            .merge(with: refreshControl.isRefreshingPublisher)
-//            .receive(on: RunLoop.main)
-//            .filter { $0 == true }
-//            .flatMap { _ in self.viewModel.updateItems }
-//            .subscribe(collectionViewProxy)
+        //        viewDidAppearPublisher
+        //            .compactMap { $0.0 || $0.1 }
+        //            .merge(with: refreshControl.isRefreshingPublisher)
+        //            .receive(on: RunLoop.main)
+        //            .filter { $0 == true }
+        //            .flatMap { _ in self.viewModel.updateItems }
+        //            .subscribe(collectionViewProxy)
+
+
+        viewModel.portfolioCellModels
+            .receive(on: RunLoop.main)
+            .subscribe(collectionViewProxy)
+
+        refreshControl?.isRefreshingPublisher
+            .filter { $0 == true }
+            .sink { _ in self.viewModel.didPullToRefresh() }
+            .store(in: &tokens)
 
         collectionViewProxy.didSelectPublisher
             .sink(receiveValue: didSelectCellWithModel)
             .store(in: &tokens)
     }
 
-    func didSelectCellWithModel(_ portfolioCellModel: PortfolioCell.Model) {
+    func didSelectCellWithModel(_ portfolioCellModel: PortfolioCellModel) {
         let detailsViewController: DetailsView
         detailsViewController = dependencies.resolve(imageURL: portfolioCellModel.imageURL)
         navigationController?.pushViewController(detailsViewController, animated: true)

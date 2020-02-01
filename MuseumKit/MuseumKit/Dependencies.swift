@@ -12,12 +12,11 @@ public extension Dependencies {
     func resolve() -> ArtInteractor {
         ArtInteractorDefault(museumWebService: resolve(), state: resolve())
     }
+
+    func resolve() -> State { state }
 }
 
 private extension Dependencies {
-
-    func resolve() -> State { state }
-
     func resolve() -> MuseumWebService {
         MuseumWebServiceDefault(config: resolve(), urlSession: resolve(), jsonDecoder: resolve())
     }

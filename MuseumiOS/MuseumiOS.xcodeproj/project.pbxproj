@@ -233,8 +233,8 @@
 		22B07AE523D798CA00D442E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				229CFC7323DDC86900239309 /* PortfolioView.swift */,
 				229CFC6F23DDC86900239309 /* PortfolioViewModel.swift */,
+				229CFC7323DDC86900239309 /* PortfolioView.swift */,
 				228E134823E34D2D00F70E22 /* PortfolioCellModel.swift */,
 				229CFC7023DDC86900239309 /* PortfolioCell.swift */,
 			);

@@ -2,11 +2,16 @@ import TimKit
 import UIKit
 import SDWebImage
 
-class PortfolioCell: UICollectionViewCell, ViewModelSettable {
+class PortfolioCell: UITableViewCell, ViewModelSettable {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var mainImageView: UIImageView!
 
-    func setViewModel(_ viewModel: PortfolioCell.Model) {
-        imageView.sd_setImage(with: viewModel.imageURL)
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+    }
+
+    func setViewModel(_ viewModel: PortfolioCellModel) {
+        mainImageView.sd_setImage(with: viewModel.imageURL)
     }
 }
