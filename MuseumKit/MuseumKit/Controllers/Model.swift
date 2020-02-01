@@ -9,6 +9,10 @@ public protocol Art {
     var imageURL: URL { get }
 }
 
-public class Model {
-    @Published public var arts = [Art]()
+public class State {
+    @Published public var arts = [Art]() {
+        didSet {
+            
+        }
+    }
 }

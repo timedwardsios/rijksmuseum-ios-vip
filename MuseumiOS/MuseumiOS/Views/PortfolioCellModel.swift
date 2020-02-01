@@ -1,14 +1,17 @@
 import Foundation
 import MuseumKit
 
-class PortfolioCellModel: Identifiable {
+extension PortfolioCell {
 
-    private let art: Art
-    init(art: Art) {
-        self.art = art
-    }
+    class Model: Identifiable {
 
-    var imageURL: URL {
-        art.imageURL
+        private let art: Art
+        init(art: Art) {
+            self.art = art
+        }
+
+        var imageURL: URL {
+            art.imageURL
+        }
     }
 }

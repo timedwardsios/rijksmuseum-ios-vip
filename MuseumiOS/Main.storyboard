@@ -10,7 +10,7 @@
         <!--Collection-->
         <scene sceneID="N1K-3b-8KN">
             <objects>
-                <collectionViewController storyboardIdentifier="PortfolioViewController" title="Collection" id="bu5-oo-gU0" customClass="PortfolioViewController" customModule="MuseumiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="PortfolioView" title="Collection" id="bu5-oo-gU0" customClass="PortfolioView" customModule="MuseumiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="mJW-8d-3HC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--Details-->
         <scene sceneID="0Xg-tW-9up">
             <objects>
-                <viewController storyboardIdentifier="DetailsViewController" title="Details" id="Hqa-vg-WN5" customClass="DetailsViewController" customModule="MuseumiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsView" title="Details" id="Hqa-vg-WN5" customClass="DetailsView" customModule="MuseumiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Aif-Zg-zAh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

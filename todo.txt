@@ -1,9 +1,20 @@
-Selection
-Try selected cell in collection proxy again
+Questions:
+How to bind AppState to view..?
+Where to store CancelBag?
 
-Error alerting
+CancelBag is stored on view, view binds to everything else
+Bind to model in interactor
+Interactors are the glue, they know everything
+
+Add caching
+Fix routing
+Move images to manual loading and caching
+
+Copy stuff from other project
+    Loadable
 
 Use protocols for dependency mgmt?
+    Needs more research
 
 Arch
     Web requests update DB -> bind database to UI through MVVM + Combine

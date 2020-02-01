@@ -3,11 +3,13 @@ import MuseumKit
 import TimKit
 import Combine
 
-class DetailsViewModel {
+extension DetailsView {
+    class Model {
 
-    @Published var imageURL: URL
+        @Published var imageURL: URL
 
-    init(imageURL: URL) {
-        self.imageURL = imageURL
+        init(imageURL: URL) {
+            self.imageURL = imageURL
+        }
     }
 }

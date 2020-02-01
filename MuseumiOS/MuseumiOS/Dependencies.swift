@@ -8,17 +8,17 @@ struct Dependencies {
 
     //    static let coordinator = CoordinatorDefault()
 
-    func resolve() -> PortfolioViewController {
-        let viewModel = PortfolioViewModel(artController: MuseumKit.dependencies.resolve())
-        return Self.storyboard.instantiateViewController(identifier: PortfolioViewController.reuseIdentifier) {
-            PortfolioViewController(coder: $0, viewModel: viewModel)
+    func resolve() -> PortfolioView {
+        let viewModel = PortfolioView.Model(artInteractor: MuseumKit.dependencies.resolve())
+        return Self.storyboard.instantiateViewController(identifier: PortfolioView.reuseIdentifier) {
+            PortfolioView(coder: $0, viewModel: viewModel)
         }
     }
 
-    func resolve(imageURL: URL) -> DetailsViewController {
-        let viewModel = DetailsViewModel(imageURL: imageURL)
-        return Self.storyboard.instantiateViewController(identifier: DetailsViewController.reuseIdentifier) {
-            DetailsViewController(coder: $0, viewModel: viewModel)
+    func resolve(imageURL: URL) -> DetailsView {
+        let viewModel = DetailsView.Model(imageURL: imageURL)
+        return Self.storyboard.instantiateViewController(identifier: DetailsView.reuseIdentifier) {
+            DetailsView(coder: $0, viewModel: viewModel)
         }
     }
 

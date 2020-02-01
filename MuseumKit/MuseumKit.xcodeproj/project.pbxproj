@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73B6228DC83800AF8A8D /* Dependencies.swift */; };
-		220B73C8228DC83900AF8A8D /* IdagioKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 220B73B9228DC83800AF8A8D /* IdagioKit.h */; };
+		220B73C8228DC83900AF8A8D /* MuseumKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 220B73B9228DC83800AF8A8D /* MuseumKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		220B73E7228DC84600AF8A8D /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73D4228DC84600AF8A8D /* NetworkResponseMock.swift */; };
 		220B73E8228DC84600AF8A8D /* ConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73D5228DC84600AF8A8D /* ConfigMock.swift */; };
 		220B73E9228DC84600AF8A8D /* ArtistMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73D6228DC84600AF8A8D /* ArtistMock.swift */; };
@@ -28,8 +28,8 @@
 		220B73FB228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73FA228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift */; };
 		221967EE228890B200BF00FB /* MuseumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221967E4228890B200BF00FB /* MuseumKit.framework */; };
 		2219683F2288985700BF00FB /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2219683E2288985700BF00FB /* TimKit.framework */; };
-		2239FE9223D6555E008E9867 /* ArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8E23D6555E008E9867 /* ArtController.swift */; };
-		223BE3A223DF783000BA1F7A /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BE3A123DF783000BA1F7A /* APIConfig.swift */; };
+		2226ACBB23E4FF5C002AEF97 /* ArtInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226ACBA23E4FF5C002AEF97 /* ArtInteractor.swift */; };
+		2239FE9223D6555E008E9867 /* MuseumWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8E23D6555E008E9867 /* MuseumWebService.swift */; };
 		22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B07AEB23D7A3FB00D442E7 /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,7 @@
 /* Begin PBXFileReference section */
 		156F76EFC615814BAAA7A3C2 /* Pods_MuseumKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220B73B6228DC83800AF8A8D /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
-		220B73B9228DC83800AF8A8D /* IdagioKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdagioKit.h; sourceTree = "<group>"; };
+		220B73B9228DC83800AF8A8D /* MuseumKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuseumKit.h; sourceTree = "<group>"; };
 		220B73BA228DC83800AF8A8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		220B73D4228DC84600AF8A8D /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
 		220B73D5228DC84600AF8A8D /* ConfigMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigMock.swift; sourceTree = "<group>"; };
@@ -70,8 +70,8 @@
 		221967ED228890B200BF00FB /* MuseumKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2219683E2288985700BF00FB /* TimKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221968402288986C00BF00FB /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2239FE8E23D6555E008E9867 /* ArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ArtController.swift; sourceTree = "<group>"; tabWidth = 4; };
-		223BE3A123DF783000BA1F7A /* APIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		2226ACBA23E4FF5C002AEF97 /* ArtInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInteractor.swift; sourceTree = "<group>"; };
+		2239FE8E23D6555E008E9867 /* MuseumWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MuseumWebService.swift; sourceTree = "<group>"; tabWidth = 4; };
 		22B07AEB23D7A3FB00D442E7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F1C1B841E2B07E3FAB720F12 /* Pods_MuseumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -100,8 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				220B73B6228DC83800AF8A8D /* Dependencies.swift */,
-				223BE3A123DF783000BA1F7A /* APIConfig.swift */,
-				22B07AEB23D7A3FB00D442E7 /* Model.swift */,
 				2239FE8D23D6555E008E9867 /* Controllers */,
 				220B73B7228DC83800AF8A8D /* Resources */,
 			);
@@ -111,7 +109,7 @@
 		220B73B7228DC83800AF8A8D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				220B73B9228DC83800AF8A8D /* IdagioKit.h */,
+				220B73B9228DC83800AF8A8D /* MuseumKit.h */,
 				220B73BA228DC83800AF8A8D /* Info.plist */,
 			);
 			path = Resources;
@@ -204,7 +202,9 @@
 		2239FE8D23D6555E008E9867 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2239FE8E23D6555E008E9867 /* ArtController.swift */,
+				22B07AEB23D7A3FB00D442E7 /* Model.swift */,
+				2239FE8E23D6555E008E9867 /* MuseumWebService.swift */,
+				2226ACBA23E4FF5C002AEF97 /* ArtInteractor.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				220B73C8228DC83900AF8A8D /* IdagioKit.h in Headers */,
+				220B73C8228DC83900AF8A8D /* MuseumKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,9 +372,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2226ACBB23E4FF5C002AEF97 /* ArtInteractor.swift in Sources */,
 				220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */,
-				2239FE9223D6555E008E9867 /* ArtController.swift in Sources */,
-				223BE3A223DF783000BA1F7A /* APIConfig.swift in Sources */,
+				2239FE9223D6555E008E9867 /* MuseumWebService.swift in Sources */,
 				22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -3,15 +3,15 @@ import TimKit
 import Combine
 import SDWebImage
 
-class DetailsViewController: UIViewController {
+class DetailsView: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
 
-    private let viewModel: DetailsViewModel
+    private let viewModel: DetailsView.Model
 
     private var tokens = Set<AnyCancellable>()
 
-    required init?(coder: NSCoder, viewModel: DetailsViewModel) {
+    required init?(coder: NSCoder, viewModel: DetailsView.Model) {
         self.viewModel = viewModel
         super.init(coder: coder)
     }
@@ -21,14 +21,14 @@ class DetailsViewController: UIViewController {
     }
 }
 
-extension DetailsViewController {
+extension DetailsView {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
     }
 }
 
-private extension DetailsViewController {
+private extension DetailsView {
     func bind() {
         viewModel.$imageURL
             .receive(on: RunLoop.main)

@@ -5,15 +5,26 @@ import Combine
 public let dependencies = Dependencies()
 
 public struct Dependencies {
+    private let state = State()
+}
 
-    private let _model = Model()
-    public func resolve() -> Model { _model }
+public extension Dependencies {
+    func resolve() -> ArtInteractor {
+        ArtInteractorDefault(museumWebService: resolve(), state: resolve())
+    }
+}
 
-    public func resolve() -> ArtController {
-        ArtControllerDefault(
-            apiService: TimKit.dependencies.resolve(apiConfig: resolve())
-        )
+private extension Dependencies {
+
+    func resolve() -> State { state }
+
+    func resolve() -> MuseumWebService {
+        MuseumWebServiceDefault(config: resolve(), urlSession: resolve(), jsonDecoder: resolve())
     }
 
-    func resolve() -> APIConfig { APIConfigDefault() }
+    func resolve() -> WebServiceConfig { MuseumAPIConfig() }
+
+
+    func resolve() -> URLSession { Foundation.URLSession.shared }
+    func resolve() -> JSONDecoder { Foundation.JSONDecoder() }
 }
