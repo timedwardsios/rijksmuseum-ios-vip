@@ -9,13 +9,12 @@ class ArtCollectionViewController: UIViewController, AlertSubscriber {
 
     private var tokens: Set<AnyCancellable> = []
 
-    private let presenter: ArtCollectionPresenter
+    private let interactor: ArtCollectionInteractor
 
-    init(presenter: ArtCollectionPresenter) {
-        self.presenter = presenter
+    init(interactor: ArtCollectionInteractor) {
+        self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
-        bindInput()
-        bindOutput()
+        bind()
     }
 
     @available(*, unavailable) required init?(coder aDecoder: NSCoder) { fatalError() }
@@ -40,36 +39,25 @@ class ArtCollectionViewController: UIViewController, AlertSubscriber {
 extension ArtCollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.isAppeared = true
+        interactor.isAppeared = true
     }
 }
 
 private extension ArtCollectionViewController {
 
-    func bindInput() {
-        presenter.$model
+    func bind() {
+        
+        interactor.$arts
             .receive(on: RunLoop.main)
-            .map { $0.arts }
             .assign(to: \.arts, on: tableViewProxy)
             .store(in: &tokens)
-    }
-
-    func bindOutput() {
-
-        //        viewModel.$isLoading
-        //            .receive(on: RunLoop.main)
-        //            .subscribe(refreshControl)
-
-        //        viewModel.alertPublisher
-        //            .receive(on: RunLoop.main)
-        //            .subscribe(self)
 
         refreshControl.isRefreshingPublisher
-            .assign(to: \.isRequestingRefresh, on: presenter)
+            .assign(to: \.isRequestingRefresh, on: interactor)
             .store(in: &tokens)
 
         tableViewProxy.$selectedArt
-            .assign(to: \.selectedArt, on: presenter)
+            .assign(to: \.selectedArt, on: interactor)
             .store(in: &tokens)
     }
 }

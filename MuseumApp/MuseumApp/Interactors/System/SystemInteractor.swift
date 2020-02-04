@@ -1,7 +1,7 @@
 import MuseumKit
 import Combine
 
-public protocol SystemEventHandler {
+public protocol SystemInteractor {
 
     func didStart()
 
@@ -12,7 +12,7 @@ public protocol SystemEventHandler {
     func didBecomeActive()
 }
 
-class SystemEventHandlerDefault {
+class SystemInteractorDefault {
 
     var appState: AppState
 
@@ -21,10 +21,10 @@ class SystemEventHandlerDefault {
     }
 }
 
-extension SystemEventHandlerDefault: SystemEventHandler {
+extension SystemInteractorDefault: SystemInteractor {
 
     func didStart() {
-        appState.currentRoute = .artCollection
+        appState.routePublisher.send(.artCollection)
     }
 
     func didOpenURL(_ url: URL) {
@@ -33,20 +33,20 @@ extension SystemEventHandlerDefault: SystemEventHandler {
         }
     }
 
-    func willResignActive() {
-        appState.isActive = false
-    }
-
     func didBecomeActive() {
         appState.isActive = true
     }
+
+    func willResignActive() {
+        appState.isActive = false
+    }
 }
 
-private extension SystemEventHandlerDefault {
+private extension SystemInteractorDefault {
     func handleDeepLink(_ deepLink: DeepLink) {
         switch deepLink {
         case .showArtWithID(let id):
-            appState.currentRoute = .artDetails(selectedArtID: id)
+            appState.routePublisher.send(.artDetails(artID: id))
         }
     }
 }

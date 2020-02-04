@@ -6,11 +6,11 @@ import TimKit
 class AppDelegate: UIResponder {
 
     let dependencies: Dependencies
-    let systemEventHandler: SystemEventHandler
+    let systemInteractor: SystemInteractor
 
     override init() {
         self.dependencies = Dependencies()
-        self.systemEventHandler = dependencies.systemEventHandler
+        self.systemInteractor = dependencies.systemInteractor
         super.init()
     }
 }
@@ -19,22 +19,22 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        systemEventHandler.didStart()
+        systemInteractor.didStart()
         return true
     }
 
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        systemEventHandler.didOpenURL(url)
+        systemInteractor.didOpenURL(url)
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        systemEventHandler.willResignActive()
+        systemInteractor.willResignActive()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        systemEventHandler.didBecomeActive()
+        systemInteractor.didBecomeActive()
     }
 }

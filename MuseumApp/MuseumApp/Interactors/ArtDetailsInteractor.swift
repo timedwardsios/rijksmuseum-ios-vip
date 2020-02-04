@@ -3,9 +3,9 @@ import MuseumKit
 import TimKit
 import Combine
 
-public class ArtDetailsPresenter {
+public class ArtDetailsInteractor {
 
-    public let model = PassthroughSubject<Model, Never>()
+    //    @Published public var imageURL: URL
 
     // TODO: finish this
     // get it from routing
@@ -22,8 +22,6 @@ public class ArtDetailsPresenter {
     }
 }
 
-public extension ArtDetailsPresenter {
-    struct Model {
-        public let imageURL: URL?
-    }
+extension ArtDetailsInteractor {
+    struct Routing { }
 }

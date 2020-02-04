@@ -3,15 +3,14 @@ import MuseumKit
 
 struct Dependencies {
 
-    let router: Router
-    let systemEventHandler: SystemEventHandler
+    let coordinator: Coordinator
+    let systemInteractor: SystemInteractor
 
     init() {
         let appState = AppState()
         let services = Services()
         let interactors = Interactors(appState: appState, services: services)
-        let presenters = Presenters(appState: appState, interactors: interactors)
-        self.systemEventHandler = presenters.systemEventHandler
-        self.router = Router(appState: appState, presenters: presenters)
+        self.coordinator = Coordinator(appState: appState, interactors: interactors)
+        self.systemInteractor = interactors.systemInteractor
     }
 }

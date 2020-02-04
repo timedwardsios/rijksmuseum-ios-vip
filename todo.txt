@@ -3,31 +3,29 @@ CurrentValueSubject is pushing a new AppState and the AppState is doing diffing 
 I think he used appstate bc it's faster?
 We're using @Published instead for now
 
-move systemhandler to enum
+TODO:
+Each interactor has a routing type they can add information too, the router consumes this and performs actions
+When going back, the routing data is reset
 
+handle failures, use loadable
 
+Known issues:
+Deeplinking pushing VC's multiple times
 
+Ideas:
+Split up appstate?
+Use structs for model, make publisher useful?
+Enum for events
 
-What if view forwarded events to interactor, it got split into workers, and then updated the state.
+routing is done on per-view basis
 
-The state is bound to presenter.
-
-Presenter updates the UI.
-
-Look at reducer pattern.
-
-
-
+ArtFlowCoordinator instead of Router?
 
 
 
 "CancelBag" to keep structs
 
-Fix routing
-
 Copy over loadable
-
-Move Model over to struct, and use removeDuplicates to avoid setting state twice?
 
 Mock data for the entire app is good. Speeds up development and testing.
 
@@ -40,10 +38,6 @@ Add caching
 Add UserDefaults for settings
 
 Move images to manual loading and caching
-
-Fix routing
-Look up router in MVVM
-FlowCoordinator?
 
 Write unit tests
 Mocking frameworks

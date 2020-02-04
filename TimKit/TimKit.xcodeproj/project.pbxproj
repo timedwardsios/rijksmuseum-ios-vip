@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220D60DD23EA1875000AD95B /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220D60DC23EA1875000AD95B /* Loadable.swift */; };
 		221968762288C08500BF00FB /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221968752288C08500BF00FB /* NetworkResponseMock.swift */; };
 		2226ACB023E4E438002AEF97 /* WebModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226ACAD23E4E438002AEF97 /* WebModel.swift */; };
 		2226ACBD23E50273002AEF97 /* WebRequest+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226ACBC23E50273002AEF97 /* WebRequest+URLRequest.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		22013B062275C5F500B200D6 /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		220A4B5822719CBE00139189 /* TestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		220D60DC23EA1875000AD95B /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		221968752288C08500BF00FB /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
 		2226ACAD23E4E438002AEF97 /* WebModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebModel.swift; sourceTree = "<group>"; };
 		2226ACBC23E50273002AEF97 /* WebRequest+URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebRequest+URLRequest.swift"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		22AA3B4723E25F9D00A6AD4E /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				220D60DC23EA1875000AD95B /* Loadable.swift */,
 				2285021F22879B5F0059AD7C /* Collection+OptionalAt.swift */,
 				227715E423E87A10002CA8AA /* UIImageView+Subscriber.swift */,
 			);
@@ -398,6 +401,7 @@
 				2226ACBD23E50273002AEF97 /* WebRequest+URLRequest.swift in Sources */,
 				22B3038923E1F5A600980E16 /* Alert.swift in Sources */,
 				227715E523E87A10002CA8AA /* UIImageView+Subscriber.swift in Sources */,
+				220D60DD23EA1875000AD95B /* Loadable.swift in Sources */,
 				2285024922879B5F0059AD7C /* UIColor+Hex.swift in Sources */,
 				22A214A023E25795003F7858 /* ReuseIdentifiable.swift in Sources */,
 				2285024C22879B5F0059AD7C /* UIRefreshControl+Subscriber.swift in Sources */,

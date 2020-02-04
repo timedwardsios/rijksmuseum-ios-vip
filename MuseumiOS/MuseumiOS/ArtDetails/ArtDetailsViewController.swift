@@ -17,12 +17,12 @@ class ArtDetailsViewController: UIViewController {
     private var tokens = Set<AnyCancellable>()
 
     private let artID: String
-    private let presenter: ArtDetailsPresenter
+    private let interactor: ArtDetailsInteractor
 
     init(artID: String,
-         presenter: ArtDetailsPresenter) {
+         interactor: ArtDetailsInteractor) {
         self.artID = artID
-        self.presenter = presenter
+        self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -39,12 +39,12 @@ extension ArtDetailsViewController {
 
 private extension ArtDetailsViewController {
     func bind() {
-        presenter.model
-            .receive(on: RunLoop.main)
-            .compactMap { $0.imageURL }
-            // Uncomment after loading images manually
-//            .subscribe(imageView)
-            .sink {self.imageView.sd_setImage(with: $0)}
-            .store(in: &tokens)
+//        interactor.arts
+//            .receive(on: RunLoop.main)
+//            .compactMap { $0.imageURL }
+//            // Uncomment after loading images manually
+////            .subscribe(imageView)
+//            .sink {self.imageView.sd_setImage(with: $0)}
+//            .store(in: &tokens)
     }
 }
