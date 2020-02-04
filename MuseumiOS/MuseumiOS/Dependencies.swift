@@ -1,27 +1,17 @@
-import UIKit
+import MuseumApp
 import MuseumKit
-import Combine
-
-let dependencies = Dependencies()
 
 struct Dependencies {
-    
-    //    static let coordinator = CoordinatorDefault()
-    
-    func resolve() -> PortfolioView {
-        let viewModel = PortfolioViewModel(state: MuseumKit.dependencies.resolve(),
-                                           artInteractor: MuseumKit.dependencies.resolve())
-        return Self.storyboard.instantiateViewController(identifier: PortfolioView.reuseIdentifier) {
-            PortfolioView(coder: $0, viewModel: viewModel)
-        }
+
+    let router: Router
+    let systemEventHandler: SystemEventHandler
+
+    init() {
+        let appState = AppState()
+        let services = Services()
+        let interactors = Interactors(appState: appState, services: services)
+        let presenters = Presenters(appState: appState, interactors: interactors)
+        self.systemEventHandler = presenters.systemEventHandler
+        self.router = Router(appState: appState, presenters: presenters)
     }
-    
-    func resolve(imageURL: URL) -> DetailsView {
-        let viewModel = DetailsView.Model(imageURL: imageURL)
-        return Self.storyboard.instantiateViewController(identifier: DetailsView.reuseIdentifier) {
-            DetailsView(coder: $0, viewModel: viewModel)
-        }
-    }
-    
-    static let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 }

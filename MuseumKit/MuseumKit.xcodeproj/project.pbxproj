@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73B6228DC83800AF8A8D /* Dependencies.swift */; };
 		220B73C8228DC83900AF8A8D /* MuseumKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 220B73B9228DC83800AF8A8D /* MuseumKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		220B73E7228DC84600AF8A8D /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73D4228DC84600AF8A8D /* NetworkResponseMock.swift */; };
 		220B73E8228DC84600AF8A8D /* ConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73D5228DC84600AF8A8D /* ConfigMock.swift */; };
@@ -28,9 +27,9 @@
 		220B73FB228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73FA228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift */; };
 		221967EE228890B200BF00FB /* MuseumKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221967E4228890B200BF00FB /* MuseumKit.framework */; };
 		2219683F2288985700BF00FB /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2219683E2288985700BF00FB /* TimKit.framework */; };
-		2226ACBB23E4FF5C002AEF97 /* ArtInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226ACBA23E4FF5C002AEF97 /* ArtInteractor.swift */; };
 		2239FE9223D6555E008E9867 /* MuseumWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8E23D6555E008E9867 /* MuseumWebService.swift */; };
 		22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B07AEB23D7A3FB00D442E7 /* Model.swift */; };
+		22F38EC723E6570900A549BB /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F38EC623E6570900A549BB /* Services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		156F76EFC615814BAAA7A3C2 /* Pods_MuseumKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		220B73B6228DC83800AF8A8D /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		220B73B9228DC83800AF8A8D /* MuseumKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuseumKit.h; sourceTree = "<group>"; };
 		220B73BA228DC83800AF8A8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		220B73D4228DC84600AF8A8D /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
@@ -70,9 +68,9 @@
 		221967ED228890B200BF00FB /* MuseumKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2219683E2288985700BF00FB /* TimKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221968402288986C00BF00FB /* TestTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2226ACBA23E4FF5C002AEF97 /* ArtInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtInteractor.swift; sourceTree = "<group>"; };
 		2239FE8E23D6555E008E9867 /* MuseumWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MuseumWebService.swift; sourceTree = "<group>"; tabWidth = 4; };
 		22B07AEB23D7A3FB00D442E7 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		22F38EC623E6570900A549BB /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Services.swift; path = MuseumKit/Services.swift; sourceTree = "<group>"; };
 		F1C1B841E2B07E3FAB720F12 /* Pods_MuseumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,8 +97,8 @@
 		220B73B3228DC83800AF8A8D /* MuseumKit */ = {
 			isa = PBXGroup;
 			children = (
-				220B73B6228DC83800AF8A8D /* Dependencies.swift */,
-				2239FE8D23D6555E008E9867 /* Controllers */,
+				22B07AEB23D7A3FB00D442E7 /* Model.swift */,
+				2239FE8D23D6555E008E9867 /* Services */,
 				220B73B7228DC83800AF8A8D /* Resources */,
 			);
 			path = MuseumKit;
@@ -183,6 +181,7 @@
 		221967DA228890B200BF00FB = {
 			isa = PBXGroup;
 			children = (
+				22F38EC623E6570900A549BB /* Services.swift */,
 				220B73B3228DC83800AF8A8D /* MuseumKit */,
 				220B73D2228DC84600AF8A8D /* MuseumKitTests */,
 				221967E5228890B200BF00FB /* Products */,
@@ -199,14 +198,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2239FE8D23D6555E008E9867 /* Controllers */ = {
+		2239FE8D23D6555E008E9867 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				22B07AEB23D7A3FB00D442E7 /* Model.swift */,
 				2239FE8E23D6555E008E9867 /* MuseumWebService.swift */,
-				2226ACBA23E4FF5C002AEF97 /* ArtInteractor.swift */,
 			);
-			path = Controllers;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CCCBA98A3DCDD6CB9B3253AE /* Frameworks */ = {
@@ -372,9 +369,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2226ACBB23E4FF5C002AEF97 /* ArtInteractor.swift in Sources */,
-				220B73C6228DC83900AF8A8D /* Dependencies.swift in Sources */,
 				2239FE9223D6555E008E9867 /* MuseumWebService.swift in Sources */,
+				22F38EC723E6570900A549BB /* Services.swift in Sources */,
 				22B07AEC23D7A3FB00D442E7 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

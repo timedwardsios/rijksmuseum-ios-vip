@@ -43,7 +43,7 @@ private extension MuseumWebServiceDefault {
     }
 }
 
-struct MuseumAPIConfig: WebServiceConfig {
+struct MuseumWebServiceConfig: WebServiceConfig {
     var urlScheme: URLScheme = .https
 
     var hostname = "www.rijksmuseum.nl"

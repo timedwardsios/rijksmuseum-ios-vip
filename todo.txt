@@ -1,41 +1,53 @@
-Questions:
-How to bind AppState to view..?
-Where to store CancelBag?
+Notes:
+CurrentValueSubject is pushing a new AppState and the AppState is doing diffing on the view level
+I think he used appstate bc it's faster?
+We're using @Published instead for now
 
-CancelBag is stored on view, view binds to everything else
-Bind to model in interactor
-Interactors are the glue, they know everything
+move systemhandler to enum
+
+
+
+
+What if view forwarded events to interactor, it got split into workers, and then updated the state.
+
+The state is bound to presenter.
+
+Presenter updates the UI.
+
+Look at reducer pattern.
+
+
+
+
+
+
+"CancelBag" to keep structs
+
+Fix routing
+
+Copy over loadable
+
+Move Model over to struct, and use removeDuplicates to avoid setting state twice?
+
+Mock data for the entire app is good. Speeds up development and testing.
+
+Use config for everything
+
+Add search
 
 Add caching
-Fix routing
+
+Add UserDefaults for settings
+
 Move images to manual loading and caching
 
-Copy stuff from other project
-    Loadable
+Fix routing
+Look up router in MVVM
+FlowCoordinator?
 
-Use protocols for dependency mgmt?
-    Needs more research
-
-Arch
-    Web requests update DB -> bind database to UI through MVVM + Combine
-    Can't use use-case functions as they are impossible to mock! They are a dependency!
-    Can we improve on using do / catch / Result?
-    Log on the service level. Only bubble up typed errors if info is needed futher up the chain.
-
-Testing
-    Mocking frameworks
-    Write flexible dependency injection framework using Swinject.
-    Swinject is useful for recreating dependencies when logout etc. Needs more research!
-    Dependencies should definitely be injected through constructors, don't use singletons.
-
-Look at typealiases and API design, maybe that can be improved.
-Use https://github.com/tuist/tuist/
-
-Use Controllers for types
-    Controllers are easily unit-tested.
-    "Use cases" are functions on a logic module i.e. ViewModel or Interactor.
-    Use-cases uses "Services"
+Write unit tests
+Mocking frameworks
 
 Add strict linting rules
 
-Readme - explain over-engineering
+Readme - explain over-engineering reasons

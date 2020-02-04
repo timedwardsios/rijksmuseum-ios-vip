@@ -1,28 +1,40 @@
 import UIKit
-import MuseumKit
+import MuseumApp
+import TimKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
-    let dependencies = Dependencies()
-    let window = UIWindow()
-}
 
-extension AppDelegate: UIApplicationDelegate {
-    func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-    ) -> Bool {
-        setupRootViewController()
-        return true
+    let dependencies: Dependencies
+    let systemEventHandler: SystemEventHandler
+
+    override init() {
+        self.dependencies = Dependencies()
+        self.systemEventHandler = dependencies.systemEventHandler
+        super.init()
     }
 }
 
-private extension AppDelegate {
-    func setupRootViewController() {
-//        let coordinator = CoordinatorDefault()
-        let portfolioViewController: PortfolioView = dependencies.resolve()
-        let navController = UINavigationController(rootViewController: portfolioViewController)
-        window.rootViewController = navController
-        window.makeKeyAndVisible()
+extension AppDelegate: UIApplicationDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        systemEventHandler.didStart()
+        return true
+    }
+
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        systemEventHandler.didOpenURL(url)
+        return true
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        systemEventHandler.willResignActive()
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        systemEventHandler.didBecomeActive()
     }
 }

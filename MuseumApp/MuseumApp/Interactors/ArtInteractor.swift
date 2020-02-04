@@ -1,5 +1,6 @@
-import Foundation
 import TimKit
+import Foundation
+import MuseumKit
 import Combine
 
 // [NOUN]Interactor
@@ -7,16 +8,16 @@ public protocol ArtInteractor {
     func loadArt() -> AnyCancellable
 }
 
-struct ArtInteractorDefault {
+class ArtInteractorDefault {
 
     let museumWebService: MuseumWebService
 
-    let state: State
+    let appState: AppState
 
     init(museumWebService: MuseumWebService,
-         state: State) {
+         appState: AppState) {
         self.museumWebService = museumWebService
-        self.state = state
+        self.appState = appState
     }
 }
 
@@ -27,7 +28,7 @@ extension ArtInteractorDefault: ArtInteractor {
                 print(error.localizedDescription)
             }
         }, receiveValue: {
-            self.state.arts = $0
+            self.appState.arts = $0
         })
     }
 }
