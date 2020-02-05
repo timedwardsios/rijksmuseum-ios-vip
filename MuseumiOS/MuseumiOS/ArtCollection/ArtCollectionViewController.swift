@@ -5,7 +5,7 @@ import TinyConstraints
 import MuseumApp
 import TimKit
 
-class ArtCollectionViewController: UIViewController, AlertSubscriber {
+class ArtCollectionViewController: UIViewController {
 
     private var tokens: Set<AnyCancellable> = []
 
@@ -46,15 +46,25 @@ extension ArtCollectionViewController {
 private extension ArtCollectionViewController {
 
     func bind() {
-        
         interactor.$arts
             .receive(on: RunLoop.main)
             .assign(to: \.arts, on: tableViewProxy)
             .store(in: &tokens)
 
-        refreshControl.isRefreshingPublisher
-            .assign(to: \.isRequestingRefresh, on: interactor)
-            .store(in: &tokens)
+        interactor.$isRequestingRefresh
+            .receive(on: RunLoop.main)
+            .print()
+            .subscribe(refreshControl)
+
+
+
+
+
+
+
+//        refreshControl.isRefreshingPublisher
+//            .assign(to: \.isRequestingRefresh, on: interactor)
+//            .store(in: &tokens)
 
         tableViewProxy.$selectedArt
             .assign(to: \.selectedArt, on: interactor)

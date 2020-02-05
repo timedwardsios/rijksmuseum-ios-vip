@@ -21,7 +21,9 @@ struct MuseumWebServiceDefault: MuseumWebService {
 
 extension MuseumWebServiceDefault {
     func fetchArt() -> AnyPublisher<[Art], Error> {
-        self.performRequest(AllArt())
+        // TODO: remove fake pause
+        sleep(3)
+        return self.performRequest(AllArt())
             .map { $0.artJSONs as [Art] }
             .eraseToAnyPublisher()
     }

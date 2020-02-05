@@ -22,6 +22,6 @@ public class ArtDetailsInteractor {
     }
 }
 
-extension ArtDetailsInteractor {
-    struct Routing { }
+public extension ArtDetailsInteractor {
+    struct Model { }
 }

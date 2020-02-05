@@ -27,6 +27,7 @@ public class Coordinator {
 
     func bind() {
         appState.routePublisher
+            .receive(on: RunLoop.main)
             .sink {
                 switch $0 {
                 case .artCollection:

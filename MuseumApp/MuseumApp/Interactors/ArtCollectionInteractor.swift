@@ -1,11 +1,11 @@
 import Foundation
 import MuseumKit
 import Combine
+import TimKit
 
 public class ArtCollectionInteractor {
 
-    @Published public private(set) var arts: [Art] = []
-
+    @Published public var arts: [Art] = []
     @Published public var isAppeared = false
     @Published public var isRequestingRefresh = false
     @Published public var selectedArt: Art? = nil
@@ -22,17 +22,28 @@ public class ArtCollectionInteractor {
     }
 
     func bind() {
-        appState.$arts
-            .assign(to: \.arts, on: self)
+        appState.$arts.sink {
+            switch $0 {
+            case .loading:
+                self.isRequestingRefresh = true
+            case .success(let arts):
+                self.arts = arts
+                self.isRequestingRefresh = false
+            case .failure(let error):
+                self.appState.routePublisher.send(.alert(.error(error)))
+                self.isRequestingRefresh = false
+            default: break
+            } }
             .store(in: &tokens)
 
-        $isAppeared
-            .merge(with: $isRequestingRefresh)
+        $isRequestingRefresh
+            .removeDuplicates()
+            .merge(with: $isAppeared)
             .filter { $0 == true }
+//        .print()
             .setFailureType(to: Error.self)
             .flatMap { _ in self.museumWebService.fetchArt() }
-            .assertNoFailure()
-            .assign(to: \.arts, on: appState)
+            .sinkToLoadable { self.appState.arts = $0 }
             .store(in: &tokens)
 
         $selectedArt
@@ -40,11 +51,5 @@ public class ArtCollectionInteractor {
             .map { .artDetails(artID: $0) }
             .subscribe(appState.routePublisher)
             .store(in: &tokens)
-    }
-}
-
-extension ArtCollectionInteractor {
-    struct Routing {
-        var selectedArtID: String? = nil
     }
 }

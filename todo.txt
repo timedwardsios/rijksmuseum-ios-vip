@@ -1,31 +1,10 @@
-Notes:
-CurrentValueSubject is pushing a new AppState and the AppState is doing diffing on the view level
-I think he used appstate bc it's faster?
-We're using @Published instead for now
-
 TODO:
-Each interactor has a routing type they can add information too, the router consumes this and performs actions
-When going back, the routing data is reset
 
-handle failures, use loadable
+fix loading
 
-Known issues:
-Deeplinking pushing VC's multiple times
+handle failures properly
 
-Ideas:
-Split up appstate?
-Use structs for model, make publisher useful?
-Enum for events
-
-routing is done on per-view basis
-
-ArtFlowCoordinator instead of Router?
-
-
-
-"CancelBag" to keep structs
-
-Copy over loadable
+Router presenting alerts?
 
 Mock data for the entire app is good. Speeds up development and testing.
 
@@ -40,7 +19,10 @@ Add UserDefaults for settings
 Move images to manual loading and caching
 
 Write unit tests
-Mocking frameworks
+
+Check out mocking frameworks
+
+Improve logging
 
 Add strict linting rules
 
