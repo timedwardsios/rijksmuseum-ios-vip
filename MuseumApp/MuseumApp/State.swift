@@ -6,7 +6,11 @@ public class AppState {
 
     public init() { }
 
-    @Published var arts: Loadable<[Art]> = .notRequested
+    @Published var arts: Loadable<[Art]> = .notRequested {
+        didSet {
+            print(arts)
+        }
+    }
 
     @Published public var isActive: Bool = false
 

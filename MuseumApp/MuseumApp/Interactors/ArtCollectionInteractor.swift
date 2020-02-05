@@ -17,33 +17,38 @@ public class ArtCollectionInteractor {
     init(appState: AppState,
          museumWebService: MuseumWebService) {
         self.appState = appState
-        self.museumWebService = museumWebService
-        bind()
+        self.museumWebService = museumWebServiceq
+        bindInput()
+        bindOutput()
     }
 
-    func bind() {
-        appState.$arts.sink {
-            switch $0 {
-            case .loading:
-                self.isRequestingRefresh = true
-            case .success(let arts):
-                self.arts = arts
-                self.isRequestingRefresh = false
-            case .failure(let error):
-                self.appState.routePublisher.send(.alert(.error(error)))
-                self.isRequestingRefresh = false
-            default: break
-            } }
+    func bindInput() {
+        appState.$arts
+            .sink {
+                switch $0 {
+                case .loading:
+                    // this isn't being called :(
+                    // can we do something in webservice to forward a loading state?
+                    self.isRequestingRefresh = true
+                case .success(let arts):
+                    self.arts = arts
+                    self.isRequestingRefresh = false
+                case .failure(let error):
+                    self.appState.routePublisher.send(.alert(.error(error)))
+                    self.isRequestingRefresh = false
+                default: break
+                } }
             .store(in: &tokens)
+    }
 
+    func bindOutput() {
         $isRequestingRefresh
             .removeDuplicates()
             .merge(with: $isAppeared)
             .filter { $0 == true }
-//        .print()
             .setFailureType(to: Error.self)
             .flatMap { _ in self.museumWebService.fetchArt() }
-            .sinkToLoadable { self.appState.arts = $0 }
+            .assignToLoadable(to: \.arts, on: appState)
             .store(in: &tokens)
 
         $selectedArt

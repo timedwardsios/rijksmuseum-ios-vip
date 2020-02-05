@@ -7,7 +7,6 @@ public enum Loadable<T> {
     case loading
     case success(T)
     case failure(Error)
-    case cancelled
 
     var value: T? {
         switch self {
@@ -25,17 +24,18 @@ public enum Loadable<T> {
 
 public extension Publisher {
     func sinkToLoadable(_ completion: @escaping (Loadable<Output>) -> Void) -> AnyCancellable {
-        handleEvents(receiveCancel: {
-            completion(.cancelled)
-        }, receiveRequest: { _ in
-            completion(.loading)
+        sink(receiveCompletion: {
+            if case let .failure(error) = $0 {
+                completion(.failure(error))
+            }
+        }, receiveValue: {
+            completion(.success($0))
         })
-            .sink(receiveCompletion: {
-                if case let .failure(error) = $0 {
-                    completion(.failure(error))
-                }
-            }, receiveValue: {
-                completion(.success($0))
-            })
+    }
+
+    func assignToLoadable<Root>(to keyPath: ReferenceWritableKeyPath<Root, Loadable<Self.Output>>, on object: Root) -> AnyCancellable {
+        sinkToLoadable { value in
+            object[keyPath: keyPath] = value
+        }
     }
 }

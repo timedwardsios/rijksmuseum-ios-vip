@@ -2,6 +2,8 @@ TODO:
 
 fix loading
 
+Rename to VM and Reducer becomes interactor
+
 handle failures properly
 
 Router presenting alerts?

@@ -28,7 +28,6 @@ class ArtCollectionViewController: UIViewController {
 
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .white
         tableView.refreshControl = refreshControl
         return refreshControl
     }()
@@ -53,18 +52,11 @@ private extension ArtCollectionViewController {
 
         interactor.$isRequestingRefresh
             .receive(on: RunLoop.main)
-            .print()
             .subscribe(refreshControl)
 
-
-
-
-
-
-
-//        refreshControl.isRefreshingPublisher
-//            .assign(to: \.isRequestingRefresh, on: interactor)
-//            .store(in: &tokens)
+        refreshControl.isRefreshingPublisher
+            .assign(to: \.isRequestingRefresh, on: interactor)
+            .store(in: &tokens)
 
         tableViewProxy.$selectedArt
             .assign(to: \.selectedArt, on: interactor)
