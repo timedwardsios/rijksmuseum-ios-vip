@@ -1,15 +1,24 @@
 import MuseumKit
 
-public struct Interactors {
+public struct ViewModels {
 
+    public let artCollectionViewModel: ArtCollectionViewModel
+    public let artDetailsInteractor: ArtDetailsViewModel
+
+    public init(appState: AppState,
+                interactors: Interactors) {
+        self.artCollectionViewModel = .init(appState: appState, artInteractor: interactors.artInteractor)
+        self.artDetailsInteractor = .init(appState: appState)
+    }
+}
+
+public struct Interactors {
     public let systemInteractor: SystemInteractor
-    public let artCollectionInteractor: ArtCollectionInteractor
-    public let artDetailsInteractor: ArtDetailsInteractor
+    public let artInteractor: ArtInteractor
 
     public init(appState: AppState,
                 services: Services) {
         self.systemInteractor = SystemInteractorDefault(appState: appState)
-        self.artCollectionInteractor = .init(appState: appState, museumWebService: services.museumWebService)
-        self.artDetailsInteractor = .init(appState: appState)
+        self.artInteractor = ArtInteractorDefault(appState: appState, museumWebService: services.museumWebService)
     }
 }

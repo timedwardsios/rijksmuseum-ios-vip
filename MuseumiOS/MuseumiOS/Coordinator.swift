@@ -4,26 +4,22 @@ import Combine
 
 public class Coordinator {
 
-    private var tokens: Set<AnyCancellable> = []
+    private var subscriptions: Set<AnyCancellable> = []
 
     var window: UIWindow?
     var navController: UINavigationController?
 
     private let appState: AppState
-    private let interactors: Interactors
+    private let viewModels: ViewModels
 
     init(appState: AppState,
-         interactors: Interactors) {
+         viewModels: ViewModels) {
         self.appState = appState
-        self.interactors = interactors
+        self.viewModels = viewModels
         bind()
     }
 
-    /*
-     Note the "previous" value of route is unreliable as we have no way of hooking into "back"
-     navigation events: https://github.com/ReSwift/ReSwift-Router/issues/17
-     This somewhat breaks our idea of centralised state but with UIKit there's no alternative.
-     */
+
 
     func bind() {
         appState.routePublisher
@@ -31,21 +27,14 @@ public class Coordinator {
             .sink {
                 switch $0 {
                 case .artCollection:
-                    let artCollection = ArtCollectionViewController(
-                        interactor: self.interactors.artCollectionInteractor
-                    )
-                    self.navController = UINavigationController(
-                        rootViewController: artCollection
-                    )
+                    let artCollection = ArtCollectionViewController(viewModel: self.viewModels.artCollectionViewModel)
+                    self.navController = UINavigationController(rootViewController: artCollection)
                     self.window = UIWindow()
                     self.window?.rootViewController = self.navController
                     self.window?.makeKeyAndVisible()
 
                 case .artDetails(let artID):
-                    let detailsViewController = ArtDetailsViewController(
-                        artID: artID,
-                        interactor: self.interactors.artDetailsInteractor
-                    )
+                    let detailsViewController = ArtDetailsViewController(artID: artID, viewModel: self.viewModels.artDetailsInteractor)
                     self.navController?.popToRootViewController(animated: false)
                     self.navController?.pushViewController(detailsViewController, animated: true)
 
@@ -53,6 +42,6 @@ public class Coordinator {
                     let alertController = UIAlertController(alert: alert)
                     self.navController?.present(alertController, animated: true)
                 } }
-            .store(in: &tokens)
+            .store(in: &subscriptions)
     }
 }

@@ -26,6 +26,8 @@ Check out mocking frameworks
 
 Improve logging
 
+"final class"
+
 Add strict linting rules
 
 Readme - explain over-engineering reasons

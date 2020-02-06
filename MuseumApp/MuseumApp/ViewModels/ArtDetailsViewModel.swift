@@ -3,7 +3,7 @@ import MuseumKit
 import TimKit
 import Combine
 
-public class ArtDetailsInteractor {
+public class ArtDetailsViewModel {
 
     //    @Published public var imageURL: URL
 
@@ -20,8 +20,4 @@ public class ArtDetailsInteractor {
 //            .map { $0.first{ $0.id == self.id } }
 //        .removeDuplicates(by: <#T##(Art?, Art?) -> Bool#>)
     }
-}
-
-public extension ArtDetailsInteractor {
-    struct Model { }
 }

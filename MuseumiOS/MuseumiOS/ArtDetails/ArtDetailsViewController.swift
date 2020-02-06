@@ -14,15 +14,15 @@ class ArtDetailsViewController: UIViewController {
         return imageView
     }()
 
-    private var tokens = Set<AnyCancellable>()
+    private var subscriptions = Set<AnyCancellable>()
 
     private let artID: String
-    private let interactor: ArtDetailsInteractor
+    private let viewModel: ArtDetailsViewModel
 
     init(artID: String,
-         interactor: ArtDetailsInteractor) {
+         viewModel: ArtDetailsViewModel) {
         self.artID = artID
-        self.interactor = interactor
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -45,6 +45,6 @@ private extension ArtDetailsViewController {
 //            // Uncomment after loading images manually
 ////            .subscribe(imageView)
 //            .sink {self.imageView.sd_setImage(with: $0)}
-//            .store(in: &tokens)
+//            .store(in: &subscriptions)
     }
 }

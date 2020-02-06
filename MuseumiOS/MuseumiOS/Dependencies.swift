@@ -10,7 +10,8 @@ struct Dependencies {
         let appState = AppState()
         let services = Services()
         let interactors = Interactors(appState: appState, services: services)
-        self.coordinator = Coordinator(appState: appState, interactors: interactors)
+        let viewModels = ViewModels(appState: appState, interactors: interactors)
+        self.coordinator = Coordinator(appState: appState, viewModels: viewModels)
         self.systemInteractor = interactors.systemInteractor
     }
 }

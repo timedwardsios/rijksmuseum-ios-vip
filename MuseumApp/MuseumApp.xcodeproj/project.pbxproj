@@ -11,9 +11,9 @@
 		2237A30423E8C9A800FFF8C2 /* MuseumKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2237A30223E8C9A800FFF8C2 /* MuseumKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2237A30723E8C9C100FFF8C2 /* TimKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2237A30623E8C9C100FFF8C2 /* TimKit.framework */; };
 		2237A30823E8C9C100FFF8C2 /* TimKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2237A30623E8C9C100FFF8C2 /* TimKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		22387B9D23E98E9900937F59 /* ArtCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22387B9C23E98E9900937F59 /* ArtCollectionInteractor.swift */; };
-		22387B9F23E9913400937F59 /* ArtDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22387B9E23E9913400937F59 /* ArtDetailsInteractor.swift */; };
-		2263F8CA23E9973000C34647 /* ArtReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2263F8C923E9973000C34647 /* ArtReducer.swift */; };
+		22387B9D23E98E9900937F59 /* ArtCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */; };
+		22387B9F23E9913400937F59 /* ArtDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */; };
+		2265A4BB23ECB7F500097D6F /* ArtReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265A4BA23ECB7F500097D6F /* ArtReducer.swift */; };
 		22BBE0C123E81C1C004D8D81 /* MuseumApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBE0B723E81C1C004D8D81 /* MuseumApp.framework */; };
 		22BBE0C623E81C1C004D8D81 /* MuseumAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0C523E81C1C004D8D81 /* MuseumAppTests.swift */; };
 		22BBE0C823E81C1C004D8D81 /* MuseumApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,9 +51,9 @@
 /* Begin PBXFileReference section */
 		2237A30223E8C9A800FFF8C2 /* MuseumKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuseumKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2237A30623E8C9C100FFF8C2 /* TimKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		22387B9C23E98E9900937F59 /* ArtCollectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCollectionInteractor.swift; sourceTree = "<group>"; };
-		22387B9E23E9913400937F59 /* ArtDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetailsInteractor.swift; sourceTree = "<group>"; };
-		2263F8C923E9973000C34647 /* ArtReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtReducer.swift; sourceTree = "<group>"; };
+		22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCollectionViewModel.swift; sourceTree = "<group>"; };
+		22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewModel.swift; sourceTree = "<group>"; };
+		2265A4BA23ECB7F500097D6F /* ArtReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtReducer.swift; sourceTree = "<group>"; };
 		22BBE0B723E81C1C004D8D81 /* MuseumApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuseumApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuseumApp.h; sourceTree = "<group>"; };
 		22BBE0BB23E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,13 +107,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2265814123E9AFD7005AF00F /* System */ = {
+		2265814123E9AFD7005AF00F /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				2265A4BA23ECB7F500097D6F /* ArtReducer.swift */,
 				22BBE0EB23E81DAF004D8D81 /* SystemInteractor.swift */,
 				22BBE0ED23E81DB7004D8D81 /* DeepLink.swift */,
 			);
-			path = System;
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 		22BBE0AD23E81C1C004D8D81 = {
@@ -141,8 +142,8 @@
 			children = (
 				22BBE11923E831BC004D8D81 /* Interactors.swift */,
 				22BBE0DF23E81C6F004D8D81 /* State.swift */,
-				22BBE11523E8316F004D8D81 /* Interactors */,
-				22BBE0F023E81DEC004D8D81 /* UNUSED */,
+				22BBE11523E8316F004D8D81 /* ViewModels */,
+				2265814123E9AFD7005AF00F /* Interactors */,
 				22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */,
 				22BBE0BB23E81C1C004D8D81 /* Info.plist */,
 			);
@@ -156,14 +157,6 @@
 				22BBE0C723E81C1C004D8D81 /* Info.plist */,
 			);
 			path = MuseumAppTests;
-			sourceTree = "<group>";
-		};
-		22BBE0F023E81DEC004D8D81 /* UNUSED */ = {
-			isa = PBXGroup;
-			children = (
-				2263F8C923E9973000C34647 /* ArtReducer.swift */,
-			);
-			path = UNUSED;
 			sourceTree = "<group>";
 		};
 		22BBE10523E81ED5004D8D81 /* Portfolio */ = {
@@ -232,14 +225,13 @@
 			path = MuseumiOSTests;
 			sourceTree = "<group>";
 		};
-		22BBE11523E8316F004D8D81 /* Interactors */ = {
+		22BBE11523E8316F004D8D81 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				22387B9C23E98E9900937F59 /* ArtCollectionInteractor.swift */,
-				22387B9E23E9913400937F59 /* ArtDetailsInteractor.swift */,
-				2265814123E9AFD7005AF00F /* System */,
+				22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */,
+				22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */,
 			);
-			path = Interactors;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,12 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22387B9F23E9913400937F59 /* ArtDetailsInteractor.swift in Sources */,
-				2263F8CA23E9973000C34647 /* ArtReducer.swift in Sources */,
+				2265A4BB23ECB7F500097D6F /* ArtReducer.swift in Sources */,
+				22387B9F23E9913400937F59 /* ArtDetailsViewModel.swift in Sources */,
 				22BBE11A23E831BC004D8D81 /* Interactors.swift in Sources */,
 				22BBE0EE23E81DB8004D8D81 /* DeepLink.swift in Sources */,
 				22BBE0EC23E81DAF004D8D81 /* SystemInteractor.swift in Sources */,
-				22387B9D23E98E9900937F59 /* ArtCollectionInteractor.swift in Sources */,
+				22387B9D23E98E9900937F59 /* ArtCollectionViewModel.swift in Sources */,
 				22BBE0E023E81C6F004D8D81 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

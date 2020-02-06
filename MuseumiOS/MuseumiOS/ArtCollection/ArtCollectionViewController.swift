@@ -7,12 +7,12 @@ import TimKit
 
 class ArtCollectionViewController: UIViewController {
 
-    private var tokens: Set<AnyCancellable> = []
+    private var subscriptions: Set<AnyCancellable> = []
 
-    private let interactor: ArtCollectionInteractor
+    private let viewModel: ArtCollectionViewModel
 
-    init(interactor: ArtCollectionInteractor) {
-        self.interactor = interactor
+    init(viewModel: ArtCollectionViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         bind()
     }
@@ -38,28 +38,28 @@ class ArtCollectionViewController: UIViewController {
 extension ArtCollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        interactor.isAppeared = true
+        viewModel.isAppeared = true
     }
 }
 
 private extension ArtCollectionViewController {
 
     func bind() {
-        interactor.$arts
+        viewModel.$arts
             .receive(on: RunLoop.main)
             .assign(to: \.arts, on: tableViewProxy)
-            .store(in: &tokens)
+            .store(in: &subscriptions)
 
-        interactor.$isRequestingRefresh
+        viewModel.$isRequestingRefresh
             .receive(on: RunLoop.main)
             .subscribe(refreshControl)
 
         refreshControl.isRefreshingPublisher
-            .assign(to: \.isRequestingRefresh, on: interactor)
-            .store(in: &tokens)
+            .assign(to: \.isRequestingRefresh, on: viewModel)
+            .store(in: &subscriptions)
 
         tableViewProxy.$selectedArt
-            .assign(to: \.selectedArt, on: interactor)
-            .store(in: &tokens)
+            .assign(to: \.selectedArt, on: viewModel)
+            .store(in: &subscriptions)
     }
 }

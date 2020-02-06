@@ -3,21 +3,21 @@ import MuseumKit
 import Combine
 import TimKit
 
-public class ArtCollectionInteractor {
+public class ArtCollectionViewModel {
 
     @Published public var arts: [Art] = []
     @Published public var isAppeared = false
     @Published public var isRequestingRefresh = false
     @Published public var selectedArt: Art? = nil
 
-    private var tokens: Set<AnyCancellable> = []
+    private var subscriptions: Set<AnyCancellable> = []
 
     private var appState: AppState
-    private let museumWebService: MuseumWebService
+    private let artInteractor: ArtInteractor
     init(appState: AppState,
-         museumWebService: MuseumWebService) {
+         artInteractor: ArtInteractor) {
         self.appState = appState
-        self.museumWebService = museumWebServiceq
+        self.artInteractor = artInteractor
         bindInput()
         bindOutput()
     }
@@ -38,23 +38,22 @@ public class ArtCollectionInteractor {
                     self.isRequestingRefresh = false
                 default: break
                 } }
-            .store(in: &tokens)
+            .store(in: &subscriptions)
     }
 
     func bindOutput() {
         $isRequestingRefresh
             .removeDuplicates()
             .merge(with: $isAppeared)
-            .filter { $0 == true }
-            .setFailureType(to: Error.self)
-            .flatMap { _ in self.museumWebService.fetchArt() }
-            .assignToLoadable(to: \.arts, on: appState)
-            .store(in: &tokens)
+            .contains(true)
+            .map { _ in self.artInteractor.fetchArts() }
+            .sink { $0.store(in: &self.subscriptions) }
+            .store(in: &subscriptions)
 
         $selectedArt
             .compactMap { $0?.id }
             .map { .artDetails(artID: $0) }
             .subscribe(appState.routePublisher)
-            .store(in: &tokens)
+            .store(in: &subscriptions)
     }
 }
