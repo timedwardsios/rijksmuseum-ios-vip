@@ -30,10 +30,10 @@ public extension WebService {
     func performRequest<R: WebRequest>(_ apiRequest: R) -> AnyPublisher<R.JSONType, Error> {
         Just(apiRequest)
             .tryMap { try $0.urlRequest(givenConfig: self.config) }
-            .mapError { WebServiceError .requestError($0) }
+            .mapError { WebServiceError.requestError($0) }
             .flatMap {
                 self.urlSession.dataTaskPublisher(for: $0)
-                    .mapError { WebServiceError .urlError($0) }}
+                    .mapError { WebServiceError.urlError($0) }}
             .validateRespsonse()
             .decode(type: R.JSONType.self, decoder: jsonDecoder)
             .eraseToAnyPublisher()

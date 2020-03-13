@@ -13,17 +13,18 @@ public protocol MuseumWebService: WebService {
 // MuseumWebServiceDefault: a concrete type for calling from interactors
 
 struct MuseumWebServiceDefault: MuseumWebService {
+
     let config: WebServiceConfig, urlSession: URLSession, jsonDecoder: JSONDecoder
+
     init(config: WebServiceConfig, urlSession: URLSession, jsonDecoder: JSONDecoder) {
         self.config = config; self.urlSession = urlSession; self.jsonDecoder = jsonDecoder
     }
 }
 
 extension MuseumWebServiceDefault {
+
     func fetchArt() -> AnyPublisher<[Art], Error> {
-        // TODO: remove fake pause
-        sleep(3)
-        return self.performRequest(AllArt())
+        performRequest(AllArt())
             .map { $0.artJSONs as [Art] }
             .eraseToAnyPublisher()
     }

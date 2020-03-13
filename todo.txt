@@ -1,5 +1,7 @@
 TODO:
 
+Could ArtCollection requests be seperate structs, incompasing JSON decoding also?
+
 fix loading
 
 Rename to VM and Reducer becomes interactor
@@ -31,3 +33,4 @@ Improve logging
 Add strict linting rules
 
 Readme - explain over-engineering reasons
+
