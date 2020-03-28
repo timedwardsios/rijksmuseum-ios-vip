@@ -1,15 +1,14 @@
 import UIKit
 import Combine
-import CombineCocoa
 import TinyConstraints
 import MuseumApp
-import TimKit
+import Utils
 
 class ArtCollectionViewController: UIViewController {
 
-    private var subscriptions: Set<AnyCancellable> = []
-
     private let viewModel: ArtCollectionViewModel
+
+    private var subscriptions: Set<AnyCancellable> = []
 
     init(viewModel: ArtCollectionViewModel) {
         self.viewModel = viewModel
@@ -29,10 +28,11 @@ class ArtCollectionViewController: UIViewController {
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshControlDidChangeValue), for: .valueChanged)
         return refreshControl
     }()
 
-    private lazy var tableViewProxy = PortfolioTableViewProxy(tableView: tableView)
+    private lazy var dataSource = ArtCollectionDataSource(tableView: tableView)
 }
 
 extension ArtCollectionViewController {
@@ -42,23 +42,25 @@ extension ArtCollectionViewController {
     }
 }
 
+@objc extension ArtCollectionViewController {
+    func refreshControlDidChangeValue() {
+        viewModel.isRequestingRefresh = refreshControl.isRefreshing
+    }
+}
+
 private extension ArtCollectionViewController {
 
     func bind() {
         viewModel.$arts
             .receive(on: RunLoop.main)
-            .assign(to: \.arts, on: tableViewProxy)
+            .assign(to: \.arts, on: dataSource)
             .store(in: &subscriptions)
 
         viewModel.$isRequestingRefresh
             .receive(on: RunLoop.main)
             .subscribe(refreshControl)
 
-        refreshControl.isRefreshingPublisher
-            .assign(to: \.isRequestingRefresh, on: viewModel)
-            .store(in: &subscriptions)
-
-        tableViewProxy.$selectedArt
+        dataSource.$selectedArt
             .assign(to: \.selectedArt, on: viewModel)
             .store(in: &subscriptions)
     }

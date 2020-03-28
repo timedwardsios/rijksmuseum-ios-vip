@@ -1,7 +1,7 @@
 import Foundation
-import MuseumKit
+import MuseumDomain
 import Combine
-import TimKit
+import Utils
 
 public class ArtCollectionViewModel {
 
@@ -13,16 +13,25 @@ public class ArtCollectionViewModel {
     private var subscriptions: Set<AnyCancellable> = []
 
     private var appState: AppState
-    private let artInteractor: ArtInteractor
+    private let artService: ArtService
     init(appState: AppState,
-         artInteractor: ArtInteractor) {
+         artInteractor: ArtService) {
         self.appState = appState
-        self.artInteractor = artInteractor
-        bindInput()
-        bindOutput()
+        self.artService = artInteractor
+        bind()
     }
 
-    func bindInput() {
+    func bind() {
+
+        $isRequestingRefresh
+            .removeDuplicates()
+            .merge(with: $isAppeared)
+            .filter { $0 == true }
+            .sink { _ in
+                self.artService.updateArts()
+                    .store(in: &self.subscriptions)
+        }.store(in: &subscriptions)
+
         appState.$arts
             .sink {
                 switch $0 {
@@ -38,16 +47,6 @@ public class ArtCollectionViewModel {
                     self.isRequestingRefresh = false
                 default: break
                 } }
-            .store(in: &subscriptions)
-    }
-
-    func bindOutput() {
-        $isRequestingRefresh
-            .removeDuplicates()
-            .merge(with: $isAppeared)
-            .contains(true)
-            .map { _ in self.artInteractor.fetchArts() }
-            .sink { $0.store(in: &self.subscriptions) }
             .store(in: &subscriptions)
 
         $selectedArt

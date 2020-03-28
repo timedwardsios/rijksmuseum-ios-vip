@@ -1,4 +1,4 @@
-import MuseumKit
+import MuseumDomain
 import Combine
 
 public protocol SystemInteractor {

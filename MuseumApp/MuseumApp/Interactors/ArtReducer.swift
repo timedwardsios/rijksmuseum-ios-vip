@@ -1,29 +1,29 @@
-import TimKit
+import Utils
 import Foundation
-import MuseumKit
+import MuseumDomain
 import Combine
 
-public protocol ArtInteractor {
-    func fetchArts() -> AnyCancellable
+public protocol ArtService {
+    func updateArts() -> AnyCancellable
 }
 
-class ArtInteractorDefault {
+class ArtServiceDefault {
 
     let appState: AppState
-    let museumWebService: MuseumWebService
+    let museumWebRepository: MuseumWebRepository
 
     init(appState: AppState,
-         museumWebService: MuseumWebService) {
+         museumWebRepository: MuseumWebRepository) {
         self.appState = appState
-        self.museumWebService = museumWebService
+        self.museumWebRepository = museumWebRepository
     }
 }
 
-extension ArtInteractorDefault: ArtInteractor {
+extension ArtServiceDefault: ArtService {
 
-    func fetchArts() -> AnyCancellable {
+    func updateArts() -> AnyCancellable {
         appState.arts = .loading
-        return museumWebService.fetchArt()
+        return museumWebRepository.fetchArt()
             .assignToLoadable(to: \.arts, on: appState)
     }
 }

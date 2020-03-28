@@ -1,4 +1,4 @@
-import MuseumKit
+import MuseumDomain
 
 public struct ViewModels {
 
@@ -14,11 +14,11 @@ public struct ViewModels {
 
 public struct Interactors {
     public let systemInteractor: SystemInteractor
-    public let artInteractor: ArtInteractor
+    public let artInteractor: ArtService
 
     public init(appState: AppState,
                 services: Services) {
         self.systemInteractor = SystemInteractorDefault(appState: appState)
-        self.artInteractor = ArtInteractorDefault(appState: appState, museumWebService: services.museumWebService)
+        self.artInteractor = ArtServiceDefault(appState: appState, museumWebRepository: services.museumWebRepository)
     }
 }

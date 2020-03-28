@@ -1,6 +1,6 @@
 import Foundation
-import MuseumKit
-import TimKit
+import MuseumDomain
+import Utils
 import Combine
 
 public class ArtDetailsViewModel {

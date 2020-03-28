@@ -1,5 +1,5 @@
 import MuseumApp
-import MuseumKit
+import MuseumDomain
 
 struct Dependencies {
 

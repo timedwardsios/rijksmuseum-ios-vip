@@ -19,8 +19,6 @@ public class Coordinator {
         bind()
     }
 
-
-
     func bind() {
         appState.routePublisher
             .receive(on: RunLoop.main)

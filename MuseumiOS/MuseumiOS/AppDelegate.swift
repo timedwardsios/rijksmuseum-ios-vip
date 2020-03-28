@@ -1,6 +1,6 @@
 import UIKit
 import MuseumApp
-import TimKit
+import Utils
 
 @UIApplicationMain
 class AppDelegate: UIResponder {

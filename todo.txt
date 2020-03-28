@@ -34,3 +34,14 @@ Add strict linting rules
 
 Readme - explain over-engineering reasons
 
+
+You can't do behavioural tests, if you don't have event handlers
+
+Write behavaioural tests
+
+file types order swiftlint
+
+rename update -> fetch
+
+
+URLRequest init instead of WebRequest func

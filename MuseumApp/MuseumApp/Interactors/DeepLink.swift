@@ -1,4 +1,4 @@
-import MuseumKit
+import MuseumDomain
 import Combine
 
 enum DeepLink {

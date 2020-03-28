@@ -11,10 +11,10 @@
       location = "group:MuseumiOS/MuseumiOS/../../MuseumApp/MuseumApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:MuseumKit/MuseumKit.xcodeproj">
+      location = "container:/Users/Tim/dev/rijksmuseum-ios-vip-example/MuseumDomain/MuseumDomain.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:TimKit/TimKit.xcodeproj">
+      location = "group:Utils/Utils.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:TimKit/../TestKit/TestKit.xcodeproj">

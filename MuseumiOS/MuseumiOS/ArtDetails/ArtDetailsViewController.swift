@@ -1,5 +1,5 @@
 import UIKit
-import TimKit
+import Utils
 import Combine
 import SDWebImage
 import MuseumApp
@@ -43,7 +43,7 @@ private extension ArtDetailsViewController {
 //            .receive(on: RunLoop.main)
 //            .compactMap { $0.imageURL }
 //            // Uncomment after loading images manually
-////            .subscribe(imageView)
+//            .subscribe(imageView)
 //            .sink {self.imageView.sd_setImage(with: $0)}
 //            .store(in: &subscriptions)
     }
