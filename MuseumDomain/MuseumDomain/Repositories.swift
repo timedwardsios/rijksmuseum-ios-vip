@@ -1,14 +1,11 @@
 import Foundation
+import Utils
 
-public struct Repositories {
+public struct Services {
 
-    public let museumWebRepository: MuseumWebRepository
+    public let webService: WebService
 
     public init() {
-        self.museumWebRepository = MuseumWebRepositoryDefault(
-            config: MuseumWebRepositoryConfig(),
-            webSession: URLSession.shared,
-            jsonDecoder: .init()
-        )
+        self.webService = WebServiceDefault.init(webSession: URLSession.shared, jsonDecoder: .init())
     }
 }

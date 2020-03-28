@@ -10,9 +10,8 @@
 		220D60DD23EA1875000AD95B /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220D60DC23EA1875000AD95B /* Loadable.swift */; };
 		221968762288C08500BF00FB /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221968752288C08500BF00FB /* NetworkResponseMock.swift */; };
 		2226ACB023E4E438002AEF97 /* WebModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226ACAD23E4E438002AEF97 /* WebModel.swift */; };
-		2226ACBD23E50273002AEF97 /* WebRequest+URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226ACBC23E50273002AEF97 /* WebRequest+URLRequest.swift */; };
 		2237159E23E1F22C0039E6BC /* UIRefreshControl+BeginRefreshing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237159D23E1F22C0039E6BC /* UIRefreshControl+BeginRefreshing.swift */; };
-		2239FE8423D65455008E9867 /* WebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8323D65455008E9867 /* WebRepository.swift */; };
+		2239FE8423D65455008E9867 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239FE8323D65455008E9867 /* WebService.swift */; };
 		226737E6242FB22200B9B89E /* WebSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226737E5242FB22200B9B89E /* WebSession.swift */; };
 		227715E523E87A10002CA8AA /* UIImageView+Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227715E423E87A10002CA8AA /* UIImageView+Subscriber.swift */; };
 		2285024222879B5F0059AD7C /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2285021722879B5F0059AD7C /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,9 +45,8 @@
 		220D60DC23EA1875000AD95B /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		221968752288C08500BF00FB /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
 		2226ACAD23E4E438002AEF97 /* WebModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebModel.swift; sourceTree = "<group>"; };
-		2226ACBC23E50273002AEF97 /* WebRequest+URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebRequest+URLRequest.swift"; sourceTree = "<group>"; };
 		2237159D23E1F22C0039E6BC /* UIRefreshControl+BeginRefreshing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+BeginRefreshing.swift"; sourceTree = "<group>"; };
-		2239FE8323D65455008E9867 /* WebRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = WebRepository.swift; sourceTree = "<group>"; tabWidth = 4; };
+		2239FE8323D65455008E9867 /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; tabWidth = 4; };
 		226737E5242FB22200B9B89E /* WebSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSession.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		227715E423E87A10002CA8AA /* UIImageView+Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Subscriber.swift"; sourceTree = "<group>"; };
@@ -94,9 +92,8 @@
 		227FFFF622881EAD00029CE1 /* Web */ = {
 			isa = PBXGroup;
 			children = (
-				2239FE8323D65455008E9867 /* WebRepository.swift */,
 				2226ACAD23E4E438002AEF97 /* WebModel.swift */,
-				2226ACBC23E50273002AEF97 /* WebRequest+URLRequest.swift */,
+				2239FE8323D65455008E9867 /* WebService.swift */,
 				226737E5242FB22200B9B89E /* WebSession.swift */,
 			);
 			path = Web;
@@ -375,8 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2239FE8423D65455008E9867 /* WebRepository.swift in Sources */,
-				2226ACBD23E50273002AEF97 /* WebRequest+URLRequest.swift in Sources */,
+				2239FE8423D65455008E9867 /* WebService.swift in Sources */,
 				22B3038923E1F5A600980E16 /* Alert.swift in Sources */,
 				227715E523E87A10002CA8AA /* UIImageView+Subscriber.swift in Sources */,
 				220D60DD23EA1875000AD95B /* Loadable.swift in Sources */,

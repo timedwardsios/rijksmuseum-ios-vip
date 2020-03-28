@@ -30,10 +30,8 @@
 		222FD85A242FACEB008A45E9 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD852242FACEB008A45E9 /* Repositories.swift */; };
 		222FD85B242FACEB008A45E9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD853242FACEB008A45E9 /* Model.swift */; };
 		222FD85C242FACEB008A45E9 /* MuseumKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 222FD855242FACEB008A45E9 /* MuseumKit.h */; };
-		222FD85F242FACEB008A45E9 /* MuseumWebRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD859242FACEB008A45E9 /* MuseumWebRepository.swift */; };
-		2239EC57242FB4F40067859A /* MuseumWebRepositoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC56242FB4F40067859A /* MuseumWebRepositoryConfig.swift */; };
-		2239EC59242FB6AD0067859A /* AllArtWebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC58242FB6AD0067859A /* AllArtWebRequest.swift */; };
-		2239EC5B242FB7C00067859A /* ArtRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5A242FB7C00067859A /* ArtRepository.swift */; };
+		2239EC61242FBE080067859A /* MuseumWebRepositoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5D242FBE070067859A /* MuseumWebRepositoryConfig.swift */; };
+		2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5E242FBE070067859A /* CollectionWebRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,10 +84,8 @@
 		222FD853242FACEB008A45E9 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		222FD855242FACEB008A45E9 /* MuseumKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuseumKit.h; sourceTree = "<group>"; };
 		222FD856242FACEB008A45E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		222FD859242FACEB008A45E9 /* MuseumWebRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuseumWebRepository.swift; sourceTree = "<group>"; };
-		2239EC56242FB4F40067859A /* MuseumWebRepositoryConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuseumWebRepositoryConfig.swift; sourceTree = "<group>"; };
-		2239EC58242FB6AD0067859A /* AllArtWebRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllArtWebRequest.swift; sourceTree = "<group>"; };
-		2239EC5A242FB7C00067859A /* ArtRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtRepository.swift; sourceTree = "<group>"; };
+		2239EC5D242FBE070067859A /* MuseumWebRepositoryConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuseumWebRepositoryConfig.swift; sourceTree = "<group>"; };
+		2239EC5E242FBE070067859A /* CollectionWebRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionWebRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +197,8 @@
 			children = (
 				222FD852242FACEB008A45E9 /* Repositories.swift */,
 				222FD853242FACEB008A45E9 /* Model.swift */,
-				222FD858242FACEB008A45E9 /* MuseumWebRepository */,
+				2239EC5E242FBE070067859A /* CollectionWebRequest.swift */,
+				2239EC5D242FBE070067859A /* MuseumWebRepositoryConfig.swift */,
 				222FD854242FACEB008A45E9 /* Resources */,
 			);
 			path = MuseumDomain;
@@ -214,17 +211,6 @@
 				222FD856242FACEB008A45E9 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		222FD858242FACEB008A45E9 /* MuseumWebRepository */ = {
-			isa = PBXGroup;
-			children = (
-				222FD859242FACEB008A45E9 /* MuseumWebRepository.swift */,
-				2239EC5A242FB7C00067859A /* ArtRepository.swift */,
-				2239EC58242FB6AD0067859A /* AllArtWebRequest.swift */,
-				2239EC56242FB4F40067859A /* MuseumWebRepositoryConfig.swift */,
-			);
-			path = MuseumWebRepository;
 			sourceTree = "<group>";
 		};
 		CCCBA98A3DCDD6CB9B3253AE /* Frameworks */ = {
@@ -388,12 +374,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222FD85F242FACEB008A45E9 /* MuseumWebRepository.swift in Sources */,
-				2239EC5B242FB7C00067859A /* ArtRepository.swift in Sources */,
+				2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */,
+				2239EC61242FBE080067859A /* MuseumWebRepositoryConfig.swift in Sources */,
 				222FD85A242FACEB008A45E9 /* Repositories.swift in Sources */,
-				2239EC57242FB4F40067859A /* MuseumWebRepositoryConfig.swift in Sources */,
 				222FD85B242FACEB008A45E9 /* Model.swift in Sources */,
-				2239EC59242FB6AD0067859A /* AllArtWebRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
