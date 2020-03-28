@@ -32,7 +32,7 @@ public class Coordinator {
                     self.window?.makeKeyAndVisible()
 
                 case .artDetails(let artID):
-                    let detailsViewController = ArtDetailsViewController(artID: artID, viewModel: self.viewModels.artDetailsInteractor)
+                    let detailsViewController = ArtDetailsViewController(artID: artID, viewModel: self.viewModels.artDetailsViewModel)
                     self.navController?.popToRootViewController(animated: false)
                     self.navController?.pushViewController(detailsViewController, animated: true)
 

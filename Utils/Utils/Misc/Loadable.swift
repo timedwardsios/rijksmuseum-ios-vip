@@ -33,7 +33,7 @@ public extension Publisher {
         })
     }
 
-    func assignToLoadable<Root>(to keyPath: ReferenceWritableKeyPath<Root, Loadable<Self.Output>>, on object: Root) -> AnyCancellable {
+    func assignLoadable<Root>(to keyPath: ReferenceWritableKeyPath<Root, Loadable<Self.Output>>, on object: Root) -> AnyCancellable {
         sinkToLoadable { value in
             object[keyPath: keyPath] = value
         }

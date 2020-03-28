@@ -4,14 +4,14 @@ import MuseumDomain
 struct Dependencies {
 
     let coordinator: Coordinator
-    let systemInteractor: SystemInteractor
+    let systemController: SystemController
 
     init() {
         let appState = AppState()
         let services = Services()
-        let interactors = Interactors(appState: appState, services: services)
-        let viewModels = ViewModels(appState: appState, interactors: interactors)
+        let controllers = Controllers(appState: appState, services: services)
+        let viewModels = ViewModels(appState: appState, controllers: controllers)
         self.coordinator = Coordinator(appState: appState, viewModels: viewModels)
-        self.systemInteractor = interactors.systemInteractor
+        self.systemController = controllers.systemController
     }
 }

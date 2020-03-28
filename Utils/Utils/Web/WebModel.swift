@@ -9,5 +9,16 @@ public protocol WebRequest {
     var url: URL { get }
     var httpMethod: HTTPMethod {get}
     var headers: [String: String] {get}
+    var queryItems: [String: String] {get}
     var jsonType: JSONType.Type {get}
+}
+
+public extension WebRequest {
+    var httpMethod: HTTPMethod {
+        .GET
+    }
+
+    var headers: [String : String] {
+        [:]
+    }
 }

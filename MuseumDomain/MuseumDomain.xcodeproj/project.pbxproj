@@ -30,7 +30,6 @@
 		222FD85A242FACEB008A45E9 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD852242FACEB008A45E9 /* Repositories.swift */; };
 		222FD85B242FACEB008A45E9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD853242FACEB008A45E9 /* Model.swift */; };
 		222FD85C242FACEB008A45E9 /* MuseumKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 222FD855242FACEB008A45E9 /* MuseumKit.h */; };
-		2239EC61242FBE080067859A /* MuseumWebRepositoryConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5D242FBE070067859A /* MuseumWebRepositoryConfig.swift */; };
 		2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5E242FBE070067859A /* CollectionWebRequest.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,7 +83,6 @@
 		222FD853242FACEB008A45E9 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		222FD855242FACEB008A45E9 /* MuseumKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuseumKit.h; sourceTree = "<group>"; };
 		222FD856242FACEB008A45E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2239EC5D242FBE070067859A /* MuseumWebRepositoryConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuseumWebRepositoryConfig.swift; sourceTree = "<group>"; };
 		2239EC5E242FBE070067859A /* CollectionWebRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionWebRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,10 +193,9 @@
 		222FD851242FACEB008A45E9 /* MuseumDomain */ = {
 			isa = PBXGroup;
 			children = (
-				222FD852242FACEB008A45E9 /* Repositories.swift */,
 				222FD853242FACEB008A45E9 /* Model.swift */,
-				2239EC5E242FBE070067859A /* CollectionWebRequest.swift */,
-				2239EC5D242FBE070067859A /* MuseumWebRepositoryConfig.swift */,
+				222FD852242FACEB008A45E9 /* Repositories.swift */,
+				2239EC65242FD0F30067859A /* WebRequests */,
 				222FD854242FACEB008A45E9 /* Resources */,
 			);
 			path = MuseumDomain;
@@ -211,6 +208,14 @@
 				222FD856242FACEB008A45E9 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2239EC65242FD0F30067859A /* WebRequests */ = {
+			isa = PBXGroup;
+			children = (
+				2239EC5E242FBE070067859A /* CollectionWebRequest.swift */,
+			);
+			path = WebRequests;
 			sourceTree = "<group>";
 		};
 		CCCBA98A3DCDD6CB9B3253AE /* Frameworks */ = {
@@ -375,7 +380,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */,
-				2239EC61242FBE080067859A /* MuseumWebRepositoryConfig.swift in Sources */,
 				222FD85A242FACEB008A45E9 /* Repositories.swift in Sources */,
 				222FD85B242FACEB008A45E9 /* Model.swift in Sources */,
 			);

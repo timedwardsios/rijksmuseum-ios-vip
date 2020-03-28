@@ -13,22 +13,23 @@ public class ArtCollectionViewModel {
     private var subscriptions: Set<AnyCancellable> = []
 
     private var appState: AppState
-    private let artService: ArtService
+    private let artController: ArtController
     init(appState: AppState,
-         artInteractor: ArtService) {
+         artController: ArtController) {
         self.appState = appState
-        self.artService = artInteractor
+        self.artController = artController
         bind()
     }
 
     func bind() {
 
-        $isRequestingRefresh
+        $isAppeared
             .removeDuplicates()
-            .merge(with: $isAppeared)
+            .merge(with: $isRequestingRefresh)
+            .removeDuplicates()
             .filter { $0 == true }
             .sink { _ in
-                self.artService.updateArts()
+                self.artController.fetchArts()
                     .store(in: &self.subscriptions)
         }.store(in: &subscriptions)
 
@@ -36,8 +37,6 @@ public class ArtCollectionViewModel {
             .sink {
                 switch $0 {
                 case .loading:
-                    // this isn't being called :(
-                    // can we do something in webservice to forward a loading state?
                     self.isRequestingRefresh = true
                 case .success(let arts):
                     self.arts = arts

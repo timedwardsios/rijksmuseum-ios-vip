@@ -1,12 +1,6 @@
 TODO:
 
-Could ArtCollection requests be seperate structs, incompasing JSON decoding also?
-
-fix loading
-
-Rename to VM and Reducer becomes interactor
-
-handle failures properly
+Logging
 
 Router presenting alerts?
 
@@ -35,13 +29,13 @@ Add strict linting rules
 Readme - explain over-engineering reasons
 
 
+
+
+
+
 You can't do behavioural tests, if you don't have event handlers
 
 Write behavaioural tests
 
 file types order swiftlint
 
-rename update -> fetch
-
-
-URLRequest init instead of WebRequest func

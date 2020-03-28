@@ -6,11 +6,11 @@ import Utils
 class AppDelegate: UIResponder {
 
     let dependencies: Dependencies
-    let systemInteractor: SystemInteractor
+    let systemController: SystemController
 
     override init() {
         self.dependencies = Dependencies()
-        self.systemInteractor = dependencies.systemInteractor
+        self.systemController = dependencies.systemController
         super.init()
     }
 }
@@ -19,22 +19,14 @@ extension AppDelegate: UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        systemInteractor.didStart()
+        systemController.didStart()
         return true
     }
 
     func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        systemInteractor.didOpenURL(url)
+        systemController.didOpenURL(url)
         return true
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        systemInteractor.willResignActive()
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        systemInteractor.didBecomeActive()
     }
 }

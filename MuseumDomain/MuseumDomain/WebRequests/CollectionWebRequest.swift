@@ -2,40 +2,43 @@ import Foundation
 import Utils
 import Combine
 
-struct AllArtWebRequest: WebRequest {
+public struct CollectionWebRequest: WebRequest {
 
-    let path = "/collection"
+    public let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection")!
 
-    let queryItems = [
+    public let queryItems = [
+        "key": "VV23OnI1",
+        "format": "json",
         "ps": "100",
         "imgonly": "true",
         "s": "relevance"
     ]
 
-    var jsonType = RootJSON.self
+    public let jsonType = RootJSON.self
+
+    public init() {}
 }
 
-// TODO: Reconsider if types need to be protocols, can we simply use concrete types as our model?
-private struct RootJSON: Decodable {
+public struct RootJSON: Decodable {
 
-    let artJSONs: [ArtJSON]
+    public let artJSONs: [ArtJSON]
 
     private enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         artJSONs = try container.decode([ArtJSON].self, forKey: .artArray)
     }
 }
 
-private struct ArtJSON: Art, Decodable {
+public struct ArtJSON: Art, Decodable {
 
-    var id: String
-    var title: String
-    var artist: String
-    var imageURL: URL
+    public var id: String
+    public var title: String
+    public var artist: String
+    public var imageURL: URL
 
     enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
@@ -46,7 +49,7 @@ private struct ArtJSON: Art, Decodable {
         case imageURL = "url"
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
         self.title = try container.decode(String.self, forKey: .title)
