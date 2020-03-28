@@ -5,7 +5,7 @@ import Combine
 
 public class ArtDetailsViewModel {
 
-    //    @Published public var imageURL: URL
+//    @Published public var imageURL: URL
 
     // TODO: finish this
     // get it from routing

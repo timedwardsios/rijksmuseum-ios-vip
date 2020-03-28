@@ -1,8 +1,8 @@
 TODO:
 
-Logging
+Finish details
 
-Router presenting alerts?
+Logging
 
 Mock data for the entire app is good. Speeds up development and testing.
 

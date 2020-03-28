@@ -17,7 +17,6 @@
 		22BBE0C823E81C1C004D8D81 /* MuseumApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BBE0E023E81C6F004D8D81 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0DF23E81C6F004D8D81 /* AppState.swift */; };
 		22BBE0EC23E81DAF004D8D81 /* SystemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0EB23E81DAF004D8D81 /* SystemController.swift */; };
-		22BBE11A23E831BC004D8D81 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE11923E831BC004D8D81 /* Controllers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +48,7 @@
 		22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCollectionViewModel.swift; sourceTree = "<group>"; };
 		22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewModel.swift; sourceTree = "<group>"; };
 		2265A4BA23ECB7F500097D6F /* ArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtController.swift; sourceTree = "<group>"; };
+		22A388D8243000E30071EA44 /* ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
 		22BBE0B723E81C1C004D8D81 /* MuseumApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuseumApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuseumApp.h; sourceTree = "<group>"; };
 		22BBE0BB23E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,6 +108,23 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		22A388D6242FEEE40071EA44 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */,
+				22BBE0BB23E81C1C004D8D81 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		22A388D7242FEEF00071EA44 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				22BBE0C723E81C1C004D8D81 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		22BBE0AD23E81C1C004D8D81 = {
 			isa = PBXGroup;
 			children = (
@@ -131,12 +148,12 @@
 		22BBE0B923E81C1C004D8D81 /* MuseumApp */ = {
 			isa = PBXGroup;
 			children = (
+				22A388D8243000E30071EA44 /* ViewModels.swift */,
 				22BBE11923E831BC004D8D81 /* Controllers.swift */,
 				22BBE0DF23E81C6F004D8D81 /* AppState.swift */,
 				22BBE11523E8316F004D8D81 /* ViewModels */,
 				2265814123E9AFD7005AF00F /* Controllers */,
-				22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */,
-				22BBE0BB23E81C1C004D8D81 /* Info.plist */,
+				22A388D6242FEEE40071EA44 /* Resources */,
 			);
 			path = MuseumApp;
 			sourceTree = "<group>";
@@ -145,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				22BBE0C523E81C1C004D8D81 /* MuseumAppTests.swift */,
-				22BBE0C723E81C1C004D8D81 /* Info.plist */,
+				22A388D7242FEEF00071EA44 /* Resources */,
 			);
 			path = MuseumAppTests;
 			sourceTree = "<group>";
@@ -337,7 +354,6 @@
 			files = (
 				2265A4BB23ECB7F500097D6F /* ArtController.swift in Sources */,
 				22387B9F23E9913400937F59 /* ArtDetailsViewModel.swift in Sources */,
-				22BBE11A23E831BC004D8D81 /* Controllers.swift in Sources */,
 				22BBE0EC23E81DAF004D8D81 /* SystemController.swift in Sources */,
 				22387B9D23E98E9900937F59 /* ArtCollectionViewModel.swift in Sources */,
 				22BBE0E023E81C6F004D8D81 /* AppState.swift in Sources */,
@@ -414,6 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/$(TARGETNAME)/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -471,6 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/$(TARGETNAME)/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -492,7 +510,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MuseumApp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,7 +534,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MuseumApp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -539,7 +555,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2H55DCRCL;
-				INFOPLIST_FILE = MuseumAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,7 +573,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2H55DCRCL;
-				INFOPLIST_FILE = MuseumAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

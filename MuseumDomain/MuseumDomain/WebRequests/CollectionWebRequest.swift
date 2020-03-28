@@ -14,7 +14,7 @@ public struct CollectionWebRequest: WebRequest {
         "s": "relevance"
     ]
 
-    public let jsonType = RootJSON.self
+    public let responseJSONFormat = RootJSON.self
 
     public init() {}
 }

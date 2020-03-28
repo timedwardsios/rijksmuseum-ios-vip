@@ -14,8 +14,8 @@ public class ArtCollectionViewModel {
 
     private var appState: AppState
     private let artController: ArtController
-    init(appState: AppState,
-         artController: ArtController) {
+    public init(appState: AppState,
+                artController: ArtController = .init()) {
         self.appState = appState
         self.artController = artController
         bind()
@@ -42,7 +42,7 @@ public class ArtCollectionViewModel {
                     self.arts = arts
                     self.isRequestingRefresh = false
                 case .failure(let error):
-                    self.appState.routePublisher.send(.alert(.error(error)))
+                    self.appState.currentRoute = .alert(.error(error))
                     self.isRequestingRefresh = false
                 default: break
                 } }
@@ -51,7 +51,7 @@ public class ArtCollectionViewModel {
         $selectedArt
             .compactMap { $0?.id }
             .map { .artDetails(artID: $0) }
-            .subscribe(appState.routePublisher)
+            .assign(to: \.currentRoute, on: appState)
             .store(in: &subscriptions)
     }
 }

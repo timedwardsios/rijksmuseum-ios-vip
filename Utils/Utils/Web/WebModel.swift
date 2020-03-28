@@ -10,7 +10,7 @@ public protocol WebRequest {
     var httpMethod: HTTPMethod {get}
     var headers: [String: String] {get}
     var queryItems: [String: String] {get}
-    var jsonType: JSONType.Type {get}
+    var responseJSONFormat: JSONType.Type {get}
 }
 
 public extension WebRequest {

@@ -1,5 +1,4 @@
 import Utils
-import Foundation
 import MuseumDomain
 import Combine
 
@@ -13,7 +12,7 @@ class ArtControllerDefault {
     let webService: WebService
 
     init(appState: AppState,
-         webService: WebService) {
+         webService: WebService = .init()) {
         self.appState = appState
         self.webService = webService
     }

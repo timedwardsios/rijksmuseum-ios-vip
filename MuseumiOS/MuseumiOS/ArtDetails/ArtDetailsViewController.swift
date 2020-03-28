@@ -39,10 +39,9 @@ extension ArtDetailsViewController {
 
 private extension ArtDetailsViewController {
     func bind() {
-//        interactor.arts
+//        viewModel.arts
 //            .receive(on: RunLoop.main)
 //            .compactMap { $0.imageURL }
-//            // Uncomment after loading images manually
 //            .subscribe(imageView)
 //            .sink {self.imageView.sd_setImage(with: $0)}
 //            .store(in: &subscriptions)

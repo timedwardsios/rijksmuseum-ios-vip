@@ -27,7 +27,6 @@
 		221967EE228890B200BF00FB /* MuseumDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221967E4228890B200BF00FB /* MuseumDomain.framework */; };
 		22217F37242FA9FD00E103A1 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22217F36242FA9FD00E103A1 /* Utils.framework */; };
 		22217F38242FA9FD00E103A1 /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22217F36242FA9FD00E103A1 /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		222FD85A242FACEB008A45E9 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD852242FACEB008A45E9 /* Repositories.swift */; };
 		222FD85B242FACEB008A45E9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD853242FACEB008A45E9 /* Model.swift */; };
 		222FD85C242FACEB008A45E9 /* MuseumKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 222FD855242FACEB008A45E9 /* MuseumKit.h */; };
 		2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5E242FBE070067859A /* CollectionWebRequest.swift */; };
@@ -79,7 +78,7 @@
 		221967E4228890B200BF00FB /* MuseumDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuseumDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221967ED228890B200BF00FB /* MuseumDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22217F36242FA9FD00E103A1 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		222FD852242FACEB008A45E9 /* Repositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		222FD852242FACEB008A45E9 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		222FD853242FACEB008A45E9 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		222FD855242FACEB008A45E9 /* MuseumKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuseumKit.h; sourceTree = "<group>"; };
 		222FD856242FACEB008A45E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -194,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				222FD853242FACEB008A45E9 /* Model.swift */,
-				222FD852242FACEB008A45E9 /* Repositories.swift */,
+				222FD852242FACEB008A45E9 /* Services.swift */,
 				2239EC65242FD0F30067859A /* WebRequests */,
 				222FD854242FACEB008A45E9 /* Resources */,
 			);
@@ -380,7 +379,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */,
-				222FD85A242FACEB008A45E9 /* Repositories.swift in Sources */,
 				222FD85B242FACEB008A45E9 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

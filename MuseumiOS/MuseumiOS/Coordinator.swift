@@ -7,32 +7,39 @@ public class Coordinator {
     private var subscriptions: Set<AnyCancellable> = []
 
     var window: UIWindow?
+    
     var navController: UINavigationController?
 
     private let appState: AppState
-    private let viewModels: ViewModels
 
-    init(appState: AppState,
-         viewModels: ViewModels) {
+    init(appState: AppState) {
         self.appState = appState
-        self.viewModels = viewModels
         bind()
     }
 
     func bind() {
-        appState.routePublisher
+
+        appState.$lifecycle
+            .receive(on: RunLoop.main)
+            .filter { $0 == .launched }
+            .sink { _ in
+                self.window = UIWindow()
+                self.window?.makeKeyAndVisible()
+                self.window?.rootViewController = self.navController
+        }.store(in: &subscriptions)
+
+
+        appState.$currentRoute
             .receive(on: RunLoop.main)
             .sink {
                 switch $0 {
                 case .artCollection:
-                    let artCollection = ArtCollectionViewController(viewModel: self.viewModels.artCollectionViewModel)
+                    let viewModel = ArtCollectionViewModel(appState: appState)
+                    let artCollection = ArtCollectionViewController(viewModel: <#T##ArtCollectionViewModel#>)
                     self.navController = UINavigationController(rootViewController: artCollection)
-                    self.window = UIWindow()
-                    self.window?.rootViewController = self.navController
-                    self.window?.makeKeyAndVisible()
 
                 case .artDetails(let artID):
-                    let detailsViewController = ArtDetailsViewController(artID: artID, viewModel: self.viewModels.artDetailsViewModel)
+                    let detailsViewController = ArtDetailsViewController()
                     self.navController?.popToRootViewController(animated: false)
                     self.navController?.pushViewController(detailsViewController, animated: true)
 
