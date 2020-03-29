@@ -20,7 +20,10 @@ class ArtCollectionDataSource: NSObject {
     init(tableView: UITableView) {
         self.tableView = tableView
         super.init()
-        tableView.register(ArtCollectionCell.self, forCellReuseIdentifier: ArtCollectionCell.reuseIdentifier)
+        tableView.register(
+            ArtCollectionCell.self,
+            forCellReuseIdentifier: ArtCollectionCell.reuseIdentifier
+        )
         tableView.dataSource = self
         tableView.delegate = self
     }

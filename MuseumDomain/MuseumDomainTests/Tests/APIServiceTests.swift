@@ -62,7 +62,9 @@ extension APIServiceTests {
 
             // then
             XCTAssertEqual(1, self.urlRequestFactorySpy.constructURLRequestFromAPIRequestArgs.count)
-            let lastRequest = self.urlRequestFactorySpy.constructURLRequestFromAPIRequestArgs.last as? APIRequestMock
+            let lastRequest = self.urlRequestFactorySpy
+                .constructURLRequestFromAPIRequestArgs
+                .last as? APIRequestMock
             XCTAssertEqual(self.apiRequestMock, lastRequest)
 
             exp.fulfill()
@@ -108,7 +110,8 @@ extension APIServiceTests {
     func test_performAPIRequest_urlRequestFactoryFailure() {
         // given
         let exp = expectation(description: "Should callback")
-        urlRequestFactorySpy.constructURLRequestFromAPIRequestResult = .failure(URLRequestFactoryError.invalidPath)
+        urlRequestFactorySpy.constructURLRequestFromAPIRequestResult =
+            .failure(URLRequestFactoryError.invalidPath)
         // when
         sut.performAPIRequest(apiRequestMock) { result in
             // then

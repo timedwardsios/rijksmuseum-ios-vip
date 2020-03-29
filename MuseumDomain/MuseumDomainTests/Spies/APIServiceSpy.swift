@@ -11,7 +11,10 @@ class APIServiceSpy: APIService {
         self.performAPIRequestResult = performAPIRequestResult
     }
 
-    func performAPIRequest(_ apiRequest: APIRequest, completion: @escaping (Result<Data, APIServiceError>) -> Void) {
+    func performAPIRequest(
+        _ apiRequest: APIRequest,
+        completion: @escaping (Result<Data, APIServiceError>) -> Void
+    ) {
         performAPIRequestArgs.append(apiRequest)
 
         completion(performAPIRequestResult)

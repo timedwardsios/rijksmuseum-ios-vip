@@ -25,7 +25,9 @@ enum WebServiceError: LocalizedError {
 }
 
 public protocol WebService {
-    func publisher<R: WebRequest>(forWebRequest webRequest: R) -> AnyPublisher<R.ResponseJSONType, Error>
+    func publisher<R: WebRequest>(
+        forWebRequest webRequest: R
+    ) -> AnyPublisher<R.ResponseJSONType, Error>
 }
 
 public class WebServiceDefault {
@@ -42,7 +44,9 @@ public class WebServiceDefault {
 }
 
 extension WebServiceDefault: WebService {
-    public func publisher<R: WebRequest>(forWebRequest webRequest: R) -> AnyPublisher<R.ResponseJSONType, Error> {
+    public func publisher<R: WebRequest>(
+        forWebRequest webRequest: R
+    ) -> AnyPublisher<R.ResponseJSONType, Error> {
         Just(webRequest)
             .convertToURLRequest()
             .flatMap {
@@ -73,17 +77,20 @@ private extension Publisher where Output == URLSession.DataTaskPublisher.Output 
 private extension Publisher where Output: WebRequest {
     func convertToURLRequest() -> AnyPublisher<URLRequest, Error> {
         tryMap {
-            guard var urlComponents = URLComponents(url: $0.url, resolvingAgainstBaseURL: true) else {
+
+            let baseURLComponents = URLComponents(url: $0.url, resolvingAgainstBaseURL: true)
+
+            guard var urlComponents = baseURLComponents else {
                 throw WebServiceError.urlComponentsError
             }
 
             urlComponents.queryItems = $0.queryItems.map { URLQueryItem(name: $0, value: $1) }
 
-            guard let url = urlComponents.url else {
+            guard let finalURL = urlComponents.url else {
                 throw WebServiceError.urlGenerationError
             }
 
-            var urlRequest = URLRequest(url: url)
+            var urlRequest = URLRequest(url: finalURL)
             urlRequest.httpMethod = $0.httpMethod.rawValue
             urlRequest.allHTTPHeaderFields = $0.headers
 

@@ -19,7 +19,11 @@ class ArtCollectionViewController: UIViewController {
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(refreshControlDidChangeValue), for: .valueChanged)
+        refreshControl.addTarget(
+            self,
+            action: #selector(refreshControlDidChangeValue),
+            for: .valueChanged
+        )
         return refreshControl
     }()
 
