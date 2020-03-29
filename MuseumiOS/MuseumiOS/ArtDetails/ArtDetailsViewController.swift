@@ -5,7 +5,6 @@ import UIKit
 import Utils
 
 class ArtDetailsViewController: UIViewController {
-
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         view.addSubview(imageView)

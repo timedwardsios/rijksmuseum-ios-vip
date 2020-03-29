@@ -357,7 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
 		};
 		22C327DC23D5CEED001CCB5B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -375,7 +375,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

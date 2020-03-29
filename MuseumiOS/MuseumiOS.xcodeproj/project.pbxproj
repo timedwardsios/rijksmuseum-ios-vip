@@ -6,6 +6,31 @@
 	objectVersion = 52;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		2242F29B2430B86E00D2E0DC /* Periphery */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2242F29C2430B86E00D2E0DC /* Build configuration list for PBXAggregateTarget "Periphery" */;
+			buildPhases = (
+				2242F29F2430B88600D2E0DC /* Periphery */,
+			);
+			dependencies = (
+			);
+			name = Periphery;
+			productName = Cleanup;
+		};
+		2242F2A12430BE6800D2E0DC /* SwiftFormat */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2242F2A22430BE6800D2E0DC /* Build configuration list for PBXAggregateTarget "SwiftFormat" */;
+			buildPhases = (
+				2242F2A52430BE7300D2E0DC /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = SwiftFormat;
+			productName = SwiftFormat;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		220BDB3723E8A608009ED431 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220BDB3623E8A608009ED431 /* Coordinator.swift */; };
 		220DF1BA23E624E1009C2580 /* ArtCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DF1B923E624E1009C2580 /* ArtCollectionDataSource.swift */; };
@@ -218,6 +243,12 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Tim Edwards";
 				TargetAttributes = {
+					2242F29B2430B86E00D2E0DC = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					2242F2A12430BE6800D2E0DC = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 					22706C8020FE510E006E27EE = {
 						CreatedOnToolsVersion = 9.4.1;
 						LastSwiftMigration = 1020;
@@ -242,6 +273,8 @@
 			projectRoot = "";
 			targets = (
 				22706C8020FE510E006E27EE /* MuseumiOS */,
+				2242F29B2430B86E00D2E0DC /* Periphery */,
+				2242F2A12430BE6800D2E0DC /* SwiftFormat */,
 			);
 		};
 /* End PBXProject section */
@@ -275,7 +308,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
+		};
+		2242F29F2430B88600D2E0DC /* Periphery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Periphery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "../Tools/periphery-v1.6.0/periphery scan --workspace ../Museum.xcworkspace --schemes MuseumiOS --targets Utils,MuseumDomain,MuseumApp,MuseumiOS --format xcode\n";
+		};
+		2242F2A52430BE7300D2E0DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "../Tools/swiftformat-v0.44.6/swiftformat --swiftversion 5 .\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -307,6 +375,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2242F29D2430B86E00D2E0DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2H55DCRCL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2242F29E2430B86E00D2E0DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2H55DCRCL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2242F2A32430BE6800D2E0DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2H55DCRCL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2242F2A42430BE6800D2E0DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P2H55DCRCL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		22706C9F20FE5110006E27EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -467,6 +571,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2242F29C2430B86E00D2E0DC /* Build configuration list for PBXAggregateTarget "Periphery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2242F29D2430B86E00D2E0DC /* Debug */,
+				2242F29E2430B86E00D2E0DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2242F2A22430BE6800D2E0DC /* Build configuration list for PBXAggregateTarget "SwiftFormat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2242F2A32430BE6800D2E0DC /* Debug */,
+				2242F2A42430BE6800D2E0DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22706C7C20FE510E006E27EE /* Build configuration list for PBXProject "MuseumiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

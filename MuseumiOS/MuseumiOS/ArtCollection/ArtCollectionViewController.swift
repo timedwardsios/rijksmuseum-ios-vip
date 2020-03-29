@@ -5,7 +5,6 @@ import UIKit
 import Utils
 
 class ArtCollectionViewController: UIViewController {
-
     private let viewModel: ArtCollectionViewModel
 
     private var subscriptions: Set<AnyCancellable> = []
@@ -51,7 +50,6 @@ extension ArtCollectionViewController {
 }
 
 private extension ArtCollectionViewController {
-
     func bind() {
         viewModel.$arts
             .receive(on: RunLoop.main)

@@ -3,6 +3,7 @@ import Foundation
 import Utils
 
 public struct CollectionWebRequest: WebRequest {
+    public typealias JSONType = RootJSON
 
     public let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection")!
 
@@ -13,8 +14,6 @@ public struct CollectionWebRequest: WebRequest {
         "imgonly": "true",
         "s": "relevance",
     ]
-
-    public let responseJSONFormat = RootJSON.self
 
     public init() {}
 }

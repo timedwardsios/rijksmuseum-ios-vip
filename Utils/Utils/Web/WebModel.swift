@@ -1,13 +1,11 @@
 import Foundation
 
 public protocol WebRequest {
-    associatedtype JSONType: Decodable
-
+    associatedtype ResponseJSONType: Decodable
     var url: URL { get }
     var httpMethod: HTTPMethod { get }
     var headers: [String: String] { get }
     var queryItems: [String: String] { get }
-    var responseJSONFormat: JSONType.Type { get }
 }
 
 public enum HTTPMethod: String {

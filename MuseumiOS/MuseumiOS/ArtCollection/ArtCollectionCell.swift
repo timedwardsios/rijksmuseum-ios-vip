@@ -5,7 +5,6 @@ import TinyConstraints
 import UIKit
 
 class ArtCollectionCell: UITableViewCell {
-
     struct Model {
         let title: String
         let artist: String

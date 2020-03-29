@@ -3,7 +3,6 @@ import MuseumApp
 import UIKit
 
 public class Coordinator {
-
     private var subscriptions: Set<AnyCancellable> = []
 
     var window: UIWindow?
@@ -18,7 +17,6 @@ public class Coordinator {
     }
 
     func bind() {
-
         appState.$lifecycle
             .receive(on: RunLoop.main)
             .filter { $0 == .launched }

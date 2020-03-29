@@ -4,7 +4,6 @@ import MuseumDomain
 import UIKit
 
 class ArtCollectionDataSource: NSObject {
-
     var arts = [Art]() {
         didSet {
             tableView.reloadData()
@@ -27,7 +26,6 @@ class ArtCollectionDataSource: NSObject {
 }
 
 extension ArtCollectionDataSource: UITableViewDataSource {
-
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         Self.rowHeight
     }

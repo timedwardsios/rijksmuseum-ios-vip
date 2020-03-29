@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:todo.txt">
+      location = "group:Docs/todo.txt">
    </FileRef>
    <FileRef
       location = "group:MuseumiOS/MuseumiOS/../../.swiftlint.yml">

@@ -4,7 +4,6 @@ import Utils
 
 @UIApplicationMain
 class AppDelegate: UIResponder {
-
     let appState: AppState
     let systemController: SystemController
     let coordinator: Coordinator
@@ -25,7 +24,6 @@ class AppDelegate: UIResponder {
 }
 
 extension AppDelegate: UIApplicationDelegate {
-
     func application(_: UIApplication,
                      didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         systemController.didFinishLaunching()
