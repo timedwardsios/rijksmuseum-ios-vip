@@ -4,11 +4,11 @@ public extension UIRefreshControl {
 
     func beginRefreshingWithAnimation() {
 
-        guard let scrollView = self.superview as? UIScrollView else {
+        guard let scrollView = superview as? UIScrollView else {
             return
         }
 
-        let offset = CGPoint(x: 0, y: scrollView.contentOffset.y - self.frame.height)
+        let offset = CGPoint(x: 0, y: scrollView.contentOffset.y - frame.height)
 
         UIView.animate(
             withDuration: 0,

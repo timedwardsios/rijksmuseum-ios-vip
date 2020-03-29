@@ -32,7 +32,7 @@ class ArtCollectionViewController: UIViewController {
         bind()
     }
 
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable) required init?(coder _: NSCoder) {
         fatalError("Not implemented")
     }
 }

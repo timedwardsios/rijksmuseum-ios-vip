@@ -62,7 +62,7 @@ extension ArtistServiceTests {
                 return
             }
 
-            guard case .search(let actualSearchTerm) = lastRequest else {
+            guard case let .search(actualSearchTerm) = lastRequest else {
                 XCTFail("Should have search operation")
                 return
             }

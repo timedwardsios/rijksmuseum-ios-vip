@@ -1,6 +1,6 @@
-import Utils
-import MuseumDomain
 import Combine
+import MuseumDomain
+import Utils
 
 public protocol ArtController {
     func fetchArts() -> AnyCancellable

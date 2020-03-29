@@ -1,5 +1,5 @@
-@testable import Utils
 import TestKit
+@testable import Utils
 import XCTest
 
 class NetworkResponseValidatorTests: XCTestCase {

@@ -11,7 +11,7 @@ public struct CollectionWebRequest: WebRequest {
         "format": "json",
         "ps": "100",
         "imgonly": "true",
-        "s": "relevance"
+        "s": "relevance",
     ]
 
     public let responseJSONFormat = RootJSON.self
@@ -38,7 +38,7 @@ public struct ArtJSON: Art, Decodable {
     enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
         case id = "objectNumber"
-        case title = "title"
+        case title
         case artist = "principalOrFirstMaker"
         case imageDict = "webImage"
         case imageURL = "url"
@@ -51,10 +51,10 @@ public struct ArtJSON: Art, Decodable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(String.self, forKey: .id)
-        self.title = try container.decode(String.self, forKey: .title)
-        self.artist = try container.decode(String.self, forKey: .artist)
+        id = try container.decode(String.self, forKey: .id)
+        title = try container.decode(String.self, forKey: .title)
+        artist = try container.decode(String.self, forKey: .artist)
         let webImage = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .imageDict)
-        self.imageURL = try webImage.decode(URL.self, forKey: .imageURL)
+        imageURL = try webImage.decode(URL.self, forKey: .imageURL)
     }
 }

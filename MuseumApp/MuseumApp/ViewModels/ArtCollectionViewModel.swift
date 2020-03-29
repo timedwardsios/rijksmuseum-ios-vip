@@ -1,6 +1,6 @@
+import Combine
 import Foundation
 import MuseumDomain
-import Combine
 import Utils
 
 public class ArtCollectionViewModel {
@@ -47,10 +47,10 @@ public class ArtCollectionViewModel {
                 switch $0 {
                 case .loading:
                     self.isRequestingRefresh = true
-                case .success(let arts):
+                case let .success(arts):
                     self.arts = arts
                     self.isRequestingRefresh = false
-                case .failure(let error):
+                case let .failure(error):
                     self.appState.currentRoute = .alert(.error(error))
                     self.isRequestingRefresh = false
                 default:

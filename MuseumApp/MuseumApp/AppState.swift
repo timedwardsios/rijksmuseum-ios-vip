@@ -1,6 +1,6 @@
+import Combine
 import MuseumDomain
 import Utils
-import Combine
 
 public class AppState {
 
@@ -10,7 +10,7 @@ public class AppState {
 
     @Published public var currentRoute: Route = .artCollection
 
-    public init() { }
+    public init() {}
 }
 
 public extension AppState {

@@ -28,11 +28,11 @@ class ArtCollectionDataSource: NSObject {
 
 extension ArtCollectionDataSource: UITableViewDataSource {
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         Self.rowHeight
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         arts.count
     }
 
@@ -41,9 +41,9 @@ extension ArtCollectionDataSource: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: ArtCollectionCell.reuseIdentifier,
                 for: indexPath
-                ) as? ArtCollectionCell,
+            ) as? ArtCollectionCell,
             let art = arts[optionalAt: indexPath.row] else {
-                return UITableViewCell()
+            return UITableViewCell()
         }
 
         cell.model = .init(title: art.title, artist: art.artist, imageURL: art.imageURL)
@@ -53,7 +53,7 @@ extension ArtCollectionDataSource: UITableViewDataSource {
 }
 
 extension ArtCollectionDataSource: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let art = arts[optionalAt: indexPath.row] {
             selectedArt = art
         }

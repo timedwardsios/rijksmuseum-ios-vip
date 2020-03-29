@@ -38,13 +38,13 @@ public class Coordinator {
                     let artCollection = ArtCollectionViewController(viewModel: viewModel)
                     self.navController = UINavigationController(rootViewController: artCollection)
 
-                case .artDetails(let artID):
+                case let .artDetails(artID):
                     let viewModel = ArtDetailsViewModel(artID: artID, appState: self.appState)
                     let detailsViewController = ArtDetailsViewController(viewModel: viewModel)
                     self.navController?.popToRootViewController(animated: false)
                     self.navController?.pushViewController(detailsViewController, animated: true)
 
-                case .alert(let alert):
+                case let .alert(alert):
                     let alertController = UIAlertController(alert: alert)
                     self.navController?.present(alertController, animated: true)
                 }

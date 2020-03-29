@@ -1,5 +1,5 @@
-@testable import MuseumDomain
 import Foundation
+@testable import MuseumDomain
 import TestKit
 
 struct APIBaseConfigMock: APIBaseConfig {

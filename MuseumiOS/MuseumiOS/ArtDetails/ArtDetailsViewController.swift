@@ -23,7 +23,7 @@ class ArtDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
+    @available(*, unavailable) required init?(coder _: NSCoder) {
         fatalError("Not implemented")
     }
 }

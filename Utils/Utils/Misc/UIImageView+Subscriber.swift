@@ -6,9 +6,9 @@ extension UIImageView: Subscriber {
         subscription.request(.unlimited)
     }
 
-    public func receive(_ input: UIImage) -> Subscribers.Demand {
+    public func receive(_: UIImage) -> Subscribers.Demand {
         .unlimited
     }
 
-    public func receive(completion: Subscribers.Completion<Never>) {}
+    public func receive(completion _: Subscribers.Completion<Never>) {}
 }

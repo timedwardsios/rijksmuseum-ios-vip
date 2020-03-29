@@ -18,5 +18,5 @@ extension UIRefreshControl: Subscriber {
         return .unlimited
     }
 
-    public func receive(completion: Subscribers.Completion<Never>) { }
+    public func receive(completion _: Subscribers.Completion<Never>) {}
 }

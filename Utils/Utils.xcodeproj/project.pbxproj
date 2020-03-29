@@ -344,8 +344,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 		226CDF4F24302DE200EFF664 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -363,8 +362,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 		22C327D923D5CCE1001CCB5B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;

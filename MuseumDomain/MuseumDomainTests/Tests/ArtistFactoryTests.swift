@@ -24,7 +24,7 @@ extension ArtistFactoryTests {
             return
         }
         // when then
-        XCTAssertNoThrow(try sut.constructArtists(fromJSONData: data) )
+        XCTAssertNoThrow(try sut.constructArtists(fromJSONData: data))
         XCTAssertEqual([data], jsonDecoderServiceSpy.decodeArgs)
     }
 

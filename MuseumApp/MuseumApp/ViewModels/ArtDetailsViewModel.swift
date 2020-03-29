@@ -1,7 +1,7 @@
+import Combine
 import Foundation
 import MuseumDomain
 import Utils
-import Combine
 
 public class ArtDetailsViewModel {
 

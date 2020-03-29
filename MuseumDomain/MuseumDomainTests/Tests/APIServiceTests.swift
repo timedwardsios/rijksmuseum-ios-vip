@@ -44,7 +44,7 @@ extension APIServiceTests {
         sut.performAPIRequest(apiRequestMock) { result in
 
             // then
-            guard case .success(let data) = result else {
+            guard case let .success(data) = result else {
                 XCTFail("Callback should contain data")
                 return
             }

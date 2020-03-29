@@ -1,5 +1,5 @@
-import MuseumDomain
 import Combine
+import MuseumDomain
 
 public protocol SystemController {
 
@@ -44,12 +44,12 @@ private extension SystemControllerDefault {
     func handleDeepLink(withURL url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
             let queryItems = components.queryItems else {
-                return
+            return
         }
 
         for queryItem in queryItems {
             switch (queryItem.name, queryItem.value) {
-            case ("showArtWithID", let value?):
+            case let ("showArtWithID", value?):
                 appState.currentRoute = .artDetails(artID: value)
                 return
             default:

@@ -63,7 +63,7 @@ private extension Publisher where Output == URLSession.DataTaskPublisher.Output 
             guard let response = $0.1 as? HTTPURLResponse else {
                 throw WebServiceError.responseError
             }
-            guard 200..<300 ~= response.statusCode else {
+            guard 200 ..< 300 ~= response.statusCode else {
                 throw WebServiceError.statusCodeError
             }
             return $0.0
