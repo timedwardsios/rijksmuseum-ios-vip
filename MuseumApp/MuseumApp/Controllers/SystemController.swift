@@ -10,7 +10,6 @@ public protocol SystemController {
     func willEnterForeground()
 
     func didOpenURL(_ url: URL)
-
 }
 
 public class SystemControllerDefault {
@@ -53,7 +52,8 @@ private extension SystemControllerDefault {
             case ("showArtWithID", let value?):
                 appState.currentRoute = .artDetails(artID: value)
                 return
-            default: break
+            default:
+                break
             }
         }
     }

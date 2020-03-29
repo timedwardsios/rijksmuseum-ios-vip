@@ -15,8 +15,7 @@ class ArtControllerDefault {
         self.init(appState: appState, webService: WebServiceDefault())
     }
 
-    init(appState: AppState,
-         webService: WebService) {
+    init(appState: AppState, webService: WebService) {
         self.appState = appState
         self.webService = webService
     }

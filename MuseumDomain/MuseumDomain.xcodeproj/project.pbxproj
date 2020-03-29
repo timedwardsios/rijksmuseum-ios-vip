@@ -249,7 +249,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 221967F8228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumDomain" */;
 			buildPhases = (
-				22C327DB23D5CEE0001CCB5B /* Swiftlint */,
+				226CDF4C24302D9400EFF664 /* SwiftFormat */,
+				22C327DB23D5CEE0001CCB5B /* SwiftLint */,
 				221967DF228890B200BF00FB /* Headers */,
 				221967E0228890B200BF00FB /* Sources */,
 				221967E1228890B200BF00FB /* Frameworks */,
@@ -269,7 +270,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 221967FB228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumDomainTests" */;
 			buildPhases = (
-				22C327DC23D5CEED001CCB5B /* Swiftlint */,
+				226CDF4D24302DA100EFF664 /* SwiftFormat */,
+				22C327DC23D5CEED001CCB5B /* SwiftLint */,
 				221967E9228890B200BF00FB /* Sources */,
 				221967EA228890B200BF00FB /* Frameworks */,
 				221967EB228890B200BF00FB /* Resources */,
@@ -341,7 +343,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		22C327DB23D5CEE0001CCB5B /* Swiftlint */ = {
+		226CDF4C24302D9400EFF664 /* SwiftFormat */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -350,7 +352,45 @@
 			);
 			inputPaths = (
 			);
-			name = Swiftlint;
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+		226CDF4D24302DA100EFF664 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+		22C327DB23D5CEE0001CCB5B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -359,7 +399,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		22C327DC23D5CEED001CCB5B /* Swiftlint */ = {
+		22C327DC23D5CEED001CCB5B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,7 +408,7 @@
 			);
 			inputPaths = (
 			);
-			name = Swiftlint;
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (

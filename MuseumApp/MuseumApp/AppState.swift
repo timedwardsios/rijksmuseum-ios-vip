@@ -4,15 +4,14 @@ import Combine
 
 public class AppState {
 
-    public init() { }
-
     @Published var arts: Loadable<[Art]> = .notRequested
 
     @Published public var lifecycle: Lifecycle = .launching
 
     @Published public var currentRoute: Route = .artCollection
-}
 
+    public init() { }
+}
 
 public extension AppState {
 

@@ -11,8 +11,8 @@ public class ArtDetailsViewModel {
 
     let artID: String
     let appState: AppState
-    public init(artID: String,
-                appState: AppState) {
+
+    public init(artID: String, appState: AppState) {
         self.artID = artID
         self.appState = appState
         bind()
@@ -21,7 +21,7 @@ public class ArtDetailsViewModel {
     func bind() {
         appState.$arts
             .compactMap { $0.value }
-            .compactMap { $0.first{ $0.id == self.artID } }
+            .compactMap { $0.first { $0.id == self.artID } }
             .map { $0.imageURL }
             .assign(to: \.imageURL, on: self)
             .store(in: &subscriptions)

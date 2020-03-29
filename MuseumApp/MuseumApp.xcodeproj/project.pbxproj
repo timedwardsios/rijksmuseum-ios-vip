@@ -13,7 +13,6 @@
 		22387B9F23E9913400937F59 /* ArtDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */; };
 		2265A4BB23ECB7F500097D6F /* ArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265A4BA23ECB7F500097D6F /* ArtController.swift */; };
 		22BBE0C123E81C1C004D8D81 /* MuseumApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBE0B723E81C1C004D8D81 /* MuseumApp.framework */; };
-		22BBE0C623E81C1C004D8D81 /* MuseumAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0C523E81C1C004D8D81 /* MuseumAppTests.swift */; };
 		22BBE0C823E81C1C004D8D81 /* MuseumApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BBE0E023E81C6F004D8D81 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0DF23E81C6F004D8D81 /* AppState.swift */; };
 		22BBE0EC23E81DAF004D8D81 /* SystemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0EB23E81DAF004D8D81 /* SystemController.swift */; };
@@ -52,7 +51,6 @@
 		22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuseumApp.h; sourceTree = "<group>"; };
 		22BBE0BB23E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22BBE0C023E81C1C004D8D81 /* MuseumAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		22BBE0C523E81C1C004D8D81 /* MuseumAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumAppTests.swift; sourceTree = "<group>"; };
 		22BBE0C723E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22BBE0DF23E81C6F004D8D81 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		22BBE0EB23E81DAF004D8D81 /* SystemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemController.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 		22BBE0C423E81C1C004D8D81 /* MuseumAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				22BBE0C523E81C1C004D8D81 /* MuseumAppTests.swift */,
 				22A388D7242FEEF00071EA44 /* Resources */,
 			);
 			path = MuseumAppTests;
@@ -256,6 +253,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22BBE0CB23E81C1C004D8D81 /* Build configuration list for PBXNativeTarget "MuseumApp" */;
 			buildPhases = (
+				226CDF4724302D2200EFF664 /* SwiftFormat */,
+				226CDF4824302D3A00EFF664 /* SwiftLint */,
 				22BBE0B223E81C1C004D8D81 /* Headers */,
 				22BBE0B323E81C1C004D8D81 /* Sources */,
 				22BBE0B423E81C1C004D8D81 /* Frameworks */,
@@ -275,6 +274,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22BBE0CE23E81C1C004D8D81 /* Build configuration list for PBXNativeTarget "MuseumAppTests" */;
 			buildPhases = (
+				226CDF4A24302D6B00EFF664 /* SwiftFormat */,
+				226CDF4924302D5100EFF664 /* SwiftLint */,
 				22BBE0BC23E81C1C004D8D81 /* Sources */,
 				22BBE0BD23E81C1C004D8D81 /* Frameworks */,
 				22BBE0BE23E81C1C004D8D81 /* Resources */,
@@ -343,6 +344,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		226CDF4724302D2200EFF664 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+		226CDF4824302D3A00EFF664 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+		226CDF4924302D5100EFF664 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		226CDF4A24302D6B00EFF664 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "
+";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22BBE0B323E81C1C004D8D81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -360,7 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22BBE0C623E81C1C004D8D81 /* MuseumAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

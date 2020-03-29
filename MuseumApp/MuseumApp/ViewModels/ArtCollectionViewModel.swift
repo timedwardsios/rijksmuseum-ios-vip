@@ -11,7 +11,7 @@ public class ArtCollectionViewModel {
 
     @Published public var isRequestingRefresh = false
 
-    @Published public var selectedArt: Art? = nil
+    @Published public var selectedArt: Art?
 
     private var subscriptions: Set<AnyCancellable> = []
 
@@ -20,12 +20,10 @@ public class ArtCollectionViewModel {
     private let artController: ArtController
 
     public convenience init(appState: AppState) {
-        self.init(appState: appState,
-                  artController: ArtControllerDefault(appState: appState))
+        self.init(appState: appState, artController: ArtControllerDefault(appState: appState))
     }
 
-    public init(appState: AppState,
-                artController: ArtController) {
+    public init(appState: AppState, artController: ArtController) {
         self.appState = appState
         self.artController = artController
         bind()
@@ -41,7 +39,8 @@ public class ArtCollectionViewModel {
             .sink { _ in
                 self.artController.fetchArts()
                     .store(in: &self.subscriptions)
-        }.store(in: &subscriptions)
+            }
+            .store(in: &subscriptions)
 
         appState.$arts
             .sink {
@@ -54,8 +53,10 @@ public class ArtCollectionViewModel {
                 case .failure(let error):
                     self.appState.currentRoute = .alert(.error(error))
                     self.isRequestingRefresh = false
-                default: break
-                } }
+                default:
+                    break
+                }
+            }
             .store(in: &subscriptions)
 
         $selectedArt
