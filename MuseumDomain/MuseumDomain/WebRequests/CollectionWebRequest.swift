@@ -3,7 +3,7 @@ import Foundation
 import Utils
 
 public struct CollectionWebRequest: WebRequest {
-    public typealias JSONType = RootJSON
+    public typealias ResponseJSONType = RootJSON
 
     public let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection")!
 

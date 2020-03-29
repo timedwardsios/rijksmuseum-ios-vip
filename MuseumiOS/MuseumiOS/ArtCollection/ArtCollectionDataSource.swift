@@ -4,6 +4,9 @@ import MuseumDomain
 import UIKit
 
 class ArtCollectionDataSource: NSObject {
+
+    private static let rowHeight = CGFloat(66)
+
     var arts = [Art]() {
         didSet {
             tableView.reloadData()
@@ -11,8 +14,6 @@ class ArtCollectionDataSource: NSObject {
     }
 
     @Published var selectedArt: Art?
-
-    private static let rowHeight = CGFloat(66)
 
     private let tableView: UITableView
 
@@ -26,6 +27,7 @@ class ArtCollectionDataSource: NSObject {
 }
 
 extension ArtCollectionDataSource: UITableViewDataSource {
+
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         Self.rowHeight
     }

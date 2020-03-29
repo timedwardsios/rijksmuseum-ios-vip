@@ -10,9 +10,11 @@ class AppDelegate: UIResponder {
 
     convenience override init() {
         let appState = AppState()
-        self.init(appState: AppState(),
-                  systemController: SystemControllerDefault(appState: appState),
-                  coordinator: Coordinator(appState: appState))
+        self.init(
+            appState: AppState(),
+            systemController: SystemControllerDefault(appState: appState),
+            coordinator: Coordinator(appState: appState)
+        )
     }
 
     init(appState: AppState, systemController: SystemController, coordinator: Coordinator) {
@@ -24,8 +26,10 @@ class AppDelegate: UIResponder {
 }
 
 extension AppDelegate: UIApplicationDelegate {
-    func application(_: UIApplication,
-                     didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(
+        _: UIApplication,
+        didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         systemController.didFinishLaunching()
         return true
     }
@@ -38,9 +42,11 @@ extension AppDelegate: UIApplicationDelegate {
         systemController.willEnterForeground()
     }
 
-    func application(_: UIApplication,
-                     open url: URL,
-                     options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+    func application(
+        _: UIApplication,
+        open url: URL,
+        options _: [UIApplication.OpenURLOptionsKey: Any] = [:]
+    ) -> Bool {
         systemController.didOpenURL(url)
         return true
     }

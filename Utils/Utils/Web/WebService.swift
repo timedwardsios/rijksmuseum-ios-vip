@@ -3,13 +3,9 @@ import Foundation
 
 enum WebServiceError: LocalizedError {
     case internalError(Error)
-
     case urlComponentsError
-
     case urlGenerationError
-
     case responseError
-
     case statusCodeError
 
     var errorDescription: String? {
@@ -29,7 +25,7 @@ enum WebServiceError: LocalizedError {
 }
 
 public protocol WebService {
-    func publisher<R: WebRequest>(forWebRequest webRequest: R) -> AnyPublisher<R.JSONType, Error>
+    func publisher<R: WebRequest>(forWebRequest webRequest: R) -> AnyPublisher<R.ResponseJSONType, Error>
 }
 
 public class WebServiceDefault {
@@ -46,7 +42,7 @@ public class WebServiceDefault {
 }
 
 extension WebServiceDefault: WebService {
-    public func publisher<R: WebRequest>(forWebRequest webRequest: R) -> AnyPublisher<R.JSONType, Error> {
+    public func publisher<R: WebRequest>(forWebRequest webRequest: R) -> AnyPublisher<R.ResponseJSONType, Error> {
         Just(webRequest)
             .convertToURLRequest()
             .flatMap {
@@ -54,7 +50,7 @@ extension WebServiceDefault: WebService {
                     .mapError { WebServiceError.internalError($0) }
             }
             .processRespsonse()
-            .decode(type: R.JSONType.self, decoder: jsonDecoder)
+            .decode(type: R.ResponseJSONType.self, decoder: jsonDecoder)
             .eraseToAnyPublisher()
     }
 }
