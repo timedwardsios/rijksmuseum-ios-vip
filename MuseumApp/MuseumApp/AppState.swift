@@ -3,7 +3,6 @@ import MuseumDomain
 import Utils
 
 public class AppState {
-
     @Published var arts: Loadable<[Art]> = .notRequested
 
     @Published public var lifecycle: Lifecycle = .launching
@@ -14,7 +13,6 @@ public class AppState {
 }
 
 public extension AppState {
-
     enum Lifecycle {
         case launching
         case launched

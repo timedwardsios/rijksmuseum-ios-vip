@@ -2,7 +2,6 @@ import Foundation
 @testable import Utils
 
 class NetworkSessionDataTaskSpy: TimKit.URLSessionDataTask {
-
     var completion: (() -> Void)?
 
     var resumeArgs = 0

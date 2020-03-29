@@ -3,7 +3,6 @@ import Foundation
 import Utils
 
 class ArtistFactorySpy: ArtistFactory {
-
     var artistsResult: Result<[ArtistMock], Error>
 
     var artistsArgs = [Data]()

@@ -2,7 +2,6 @@ import Combine
 import Foundation
 
 enum WebServiceError: LocalizedError {
-
     case internalError(Error)
 
     case urlComponentsError
@@ -34,7 +33,6 @@ public protocol WebService {
 }
 
 public class WebServiceDefault {
-
     let webSession: WebSession
     let jsonDecoder: JSONDecoder
 
@@ -79,7 +77,6 @@ private extension Publisher where Output == URLSession.DataTaskPublisher.Output 
 private extension Publisher where Output: WebRequest {
     func convertToURLRequest() -> AnyPublisher<URLRequest, Error> {
         tryMap {
-
             guard var urlComponents = URLComponents(url: $0.url, resolvingAgainstBaseURL: true) else {
                 throw WebServiceError.urlComponentsError
             }

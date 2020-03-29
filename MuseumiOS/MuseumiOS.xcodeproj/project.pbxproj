@@ -343,7 +343,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../Tools/swiftformat-v0.44.6/swiftformat --swiftversion 5 .\n";
+			shellScript = "../Tools/swiftformat-v0.44.6/swiftformat --swiftversion 5 ../\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

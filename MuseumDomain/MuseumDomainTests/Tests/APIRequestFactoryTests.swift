@@ -4,7 +4,6 @@ import Utils
 import XCTest
 
 class APIRequestFactoryTests: XCTestCase {
-
     var sut: APIRequestFactoryDefault!
 
     var apiRequestTemplatesMock: APIRequestTemplatesMock!
@@ -26,7 +25,6 @@ class APIRequestFactoryTests: XCTestCase {
 }
 
 extension APIRequestFactoryTests {
-
     func test_constructAPIRequest() {
         // given
         let searchTerm = Seeds.string

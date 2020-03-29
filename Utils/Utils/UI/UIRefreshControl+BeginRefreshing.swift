@@ -1,9 +1,7 @@
 import UIKit
 
 public extension UIRefreshControl {
-
     func beginRefreshingWithAnimation() {
-
         guard let scrollView = superview as? UIScrollView else {
             return
         }

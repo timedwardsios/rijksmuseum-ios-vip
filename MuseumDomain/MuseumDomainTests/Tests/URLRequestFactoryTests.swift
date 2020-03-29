@@ -4,7 +4,6 @@ import Utils
 import XCTest
 
 class URLRequestFactoryTests: XCTestCase {
-
     var sut: URLRequestFactoryDefault!
 
     var apiBaseConfigMock: APIBaseConfigMock!
@@ -23,7 +22,6 @@ class URLRequestFactoryTests: XCTestCase {
 }
 
 extension URLRequestFactoryTests {
-
     func test_constructAPIRequest() {
         // then
         XCTAssertNoThrow(try sut.constructURLRequestFromAPIRequest(apiRequestMock))

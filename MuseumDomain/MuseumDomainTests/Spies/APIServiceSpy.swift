@@ -3,7 +3,6 @@ import Foundation
 import Utils
 
 class APIServiceSpy: APIService {
-
     var performAPIRequestResult: Result<Data, APIServiceError>
 
     var performAPIRequestArgs = [APIRequest]()

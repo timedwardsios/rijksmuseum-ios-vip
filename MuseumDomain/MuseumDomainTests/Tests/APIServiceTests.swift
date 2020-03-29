@@ -4,7 +4,6 @@ import Utils
 import XCTest
 
 class APIServiceTests: XCTestCase {
-
     var sut: APIServiceDefault!
 
     var urlRequestFactorySpy: URLRequestFactorySpy!
@@ -36,7 +35,6 @@ class APIServiceTests: XCTestCase {
 }
 
 extension APIServiceTests {
-
     func test_performAPIRequest_callback() {
         // given
         let exp = expectation(description: "Should callback")

@@ -3,7 +3,6 @@ import TestKit
 @testable import Utils
 
 class NetworkSessionSpy: TimKit.URLSession {
-
     var dataTask: NetworkSessionDataTaskSpy
 
     var data: Data? = Seeds.data
@@ -20,7 +19,6 @@ class NetworkSessionSpy: TimKit.URLSession {
         with request: URLRequest,
         completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
     ) -> URLSessionDataTask {
-
         dataTaskArgs.append(request)
 
         dataTask.completion = {

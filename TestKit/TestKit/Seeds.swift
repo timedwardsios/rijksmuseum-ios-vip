@@ -1,9 +1,8 @@
 import Foundation
 
 public enum Seeds {
-
     public static var int: Int {
-        return Int.random(in: 0...10000)
+        return Int.random(in: 0 ... 10000)
     }
 
     public static var string: String {

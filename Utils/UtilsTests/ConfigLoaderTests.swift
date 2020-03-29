@@ -3,13 +3,11 @@ import TestKit
 import XCTest
 
 class ConfigLoaderTests: XCTestCase {
-
     var sut: ConfigLoaderDefault!
 
     var propertyListDecoderServiceSpy: PropertyListDecoderServiceSpy!
 
     override func setUp() {
-
         super.setUp()
 
         propertyListDecoderServiceSpy = PropertyListDecoderServiceSpy()
@@ -19,9 +17,7 @@ class ConfigLoaderTests: XCTestCase {
 }
 
 extension ConfigLoaderTests {
-
     func test_getConfig() throws {
-
         // given
         let sampleData = loadSampleFileData(withName: "config.plist")
         let bundle = Bundle(for: type(of: self))
@@ -36,7 +32,6 @@ extension ConfigLoaderTests {
     }
 
     func test_getConfig_badBundle() throws {
-
         // given
         let bundle = Bundle.main
 

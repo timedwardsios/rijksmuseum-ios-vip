@@ -4,7 +4,6 @@ import MuseumDomain
 import Utils
 
 public class ArtCollectionViewModel {
-
     @Published public var arts: [Art] = []
 
     @Published public var isAppeared = false
@@ -30,7 +29,6 @@ public class ArtCollectionViewModel {
     }
 
     func bind() {
-
         $isAppeared
             .removeDuplicates()
             .merge(with: $isRequestingRefresh)

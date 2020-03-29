@@ -19,7 +19,6 @@ public struct CollectionWebRequest: WebRequest {
 }
 
 public struct RootJSON: Decodable {
-
     private enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
     }
@@ -33,7 +32,6 @@ public struct RootJSON: Decodable {
 }
 
 public struct ArtJSON: Art, Decodable {
-
     enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
         case id = "objectNumber"

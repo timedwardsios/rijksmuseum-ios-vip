@@ -2,7 +2,6 @@ import Combine
 import Foundation
 
 public enum Loadable<T> {
-
     case notRequested
 
     case loading

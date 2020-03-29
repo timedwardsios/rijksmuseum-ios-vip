@@ -7,7 +7,6 @@ public protocol ArtController {
 }
 
 class ArtControllerDefault {
-
     let appState: AppState
     let webService: WebService
 
@@ -22,7 +21,6 @@ class ArtControllerDefault {
 }
 
 extension ArtControllerDefault: ArtController {
-
     func fetchArts() -> AnyCancellable {
         appState.arts = .loading
         return webService.publisher(forWebRequest: CollectionWebRequest())

@@ -3,7 +3,6 @@ import TestKit
 import XCTest
 
 class ArtistFactoryTests: XCTestCase {
-
     var sut: ArtistFactoryDefault!
 
     var jsonDecoderServiceSpy: JSONDecoderServiceSpy!
@@ -17,7 +16,6 @@ class ArtistFactoryTests: XCTestCase {
 
 extension ArtistFactoryTests {
     func test_createArt() throws {
-
         // given
         guard let data = loadSampleFileData(withName: "SearchSample.json") else {
             XCTFail("Should return data")

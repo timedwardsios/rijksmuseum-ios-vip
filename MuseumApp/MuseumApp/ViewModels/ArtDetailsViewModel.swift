@@ -4,7 +4,6 @@ import MuseumDomain
 import Utils
 
 public class ArtDetailsViewModel {
-
     @Published public var imageURL: URL?
 
     private var subscriptions: Set<AnyCancellable> = []

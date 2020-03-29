@@ -2,7 +2,6 @@ import Combine
 import MuseumDomain
 
 public protocol SystemController {
-
     func didFinishLaunching()
 
     func didEnterBackground()
@@ -13,7 +12,6 @@ public protocol SystemController {
 }
 
 public class SystemControllerDefault {
-
     var appState: AppState
 
     public init(appState: AppState) {
@@ -22,7 +20,6 @@ public class SystemControllerDefault {
 }
 
 extension SystemControllerDefault: SystemController {
-
     public func didFinishLaunching() {
         appState.lifecycle = .launched
     }

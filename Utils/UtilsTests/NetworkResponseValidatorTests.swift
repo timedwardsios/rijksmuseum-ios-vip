@@ -3,7 +3,6 @@ import TestKit
 import XCTest
 
 class NetworkResponseValidatorTests: XCTestCase {
-
     var sut: APIResponseValidatorDefault!
 
     var responseMock: NetworkResponseMock!
@@ -18,16 +17,13 @@ class NetworkResponseValidatorTests: XCTestCase {
 }
 
 extension NetworkResponseValidatorTests {
-
     func test_validateResponse() throws {
-
         // then
         let data = try sut.validateResponse(responseMock)
         XCTAssertEqual(responseMock.data, data)
     }
 
     func test_validateResponse_noData() {
-
         // given
         responseMock.data = nil
 
@@ -36,7 +32,6 @@ extension NetworkResponseValidatorTests {
     }
 
     func test_validateResponse_noInternalURLResponse() {
-
         // given
         responseMock.urlResponse = nil
 
@@ -45,7 +40,6 @@ extension NetworkResponseValidatorTests {
     }
 
     func test_validateResponse_badStatusCode() {
-
         // given
         responseMock.urlResponse = HTTPURLResponse(
             url: Seeds.url,
@@ -59,7 +53,6 @@ extension NetworkResponseValidatorTests {
     }
 
     func test_validateResponse_error() {
-
         // given
         responseMock.error = Seeds.error
 

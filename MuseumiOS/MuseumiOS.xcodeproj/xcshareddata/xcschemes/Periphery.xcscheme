@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2242F29B2430B86E00D2E0DC"
-               BuildableName = "Cleanup"
-               BlueprintName = "Cleanup"
+               BuildableName = "Periphery"
+               BlueprintName = "Periphery"
                ReferencedContainer = "container:MuseumiOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -51,8 +51,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2242F29B2430B86E00D2E0DC"
-            BuildableName = "Cleanup"
-            BlueprintName = "Cleanup"
+            BuildableName = "Periphery"
+            BlueprintName = "Periphery"
             ReferencedContainer = "container:MuseumiOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

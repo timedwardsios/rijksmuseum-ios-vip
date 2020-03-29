@@ -4,7 +4,6 @@ import Utils
 import XCTest
 
 class ArtistServiceTests: XCTestCase {
-
     var sut: ArtistServiceDefault!
 
     var apiRequestFactorySpy: APIRequestFactorySpy!
@@ -30,7 +29,6 @@ class ArtistServiceTests: XCTestCase {
 }
 
 extension ArtistServiceTests {
-
     func test_fetchArtists_callback() {
         // given
         let exp = expectation(description: "Should callback")
@@ -126,7 +124,6 @@ extension ArtistServiceTests {
     }
 
     func test_fetchArtists_artistFactoryFailure() {
-
         // given
         let exp = expectation(description: "Should callback")
 

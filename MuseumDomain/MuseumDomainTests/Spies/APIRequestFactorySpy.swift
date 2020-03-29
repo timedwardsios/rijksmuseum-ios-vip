@@ -3,7 +3,6 @@ import Foundation
 import Utils
 
 class APIRequestFactorySpy: APIRequestFactory {
-
     var constructAPIRequestResult = APIRequestMock()
 
     var constructAPIRequestArgs = [APIOperation]()

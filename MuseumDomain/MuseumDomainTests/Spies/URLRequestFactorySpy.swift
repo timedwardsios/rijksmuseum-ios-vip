@@ -3,7 +3,6 @@ import Foundation
 import TestKit
 
 class URLRequestFactorySpy: URLRequestFactory {
-
     var constructURLRequestFromAPIRequestResult: Result<URLRequest, URLRequestFactoryError> =
         .success(URLRequest(url: Seeds.url))
 

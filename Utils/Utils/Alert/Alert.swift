@@ -8,7 +8,6 @@ public struct Alert {
 }
 
 public extension Alert {
-
     static func generic(_ message: String, okHandler: Handler? = nil) -> Self {
         .init(title: "Alert", message: message, okHandler: okHandler)
     }
