@@ -1,12 +1,6 @@
+@testable import MuseumDomain
 import Foundation
 import TestKit
-@testable import MuseumDomain
-
-struct ConfigMock: Config {
-    var apiBaseConfig: APIBaseConfig = APIBaseConfigMock()
-    var apiRequestTemplates: APIRequestTemplates = APIRequestTemplatesMock()
-    var apiQueryStringKeys: APIQueryStringKeys
-}
 
 struct APIBaseConfigMock: APIBaseConfig {
     var scheme = "https"
@@ -27,4 +21,10 @@ struct APIRequestTemplatesMock: APIRequestTemplates {
 
 struct APIQueryStringKeysMock: APIQueryStringKeys {
     var searchTerm: String = Seeds.string
+}
+
+struct ConfigMock: Config {
+    var apiBaseConfig: APIBaseConfig = APIBaseConfigMock()
+    var apiRequestTemplates: APIRequestTemplates = APIRequestTemplatesMock()
+    var apiQueryStringKeys: APIQueryStringKeys
 }

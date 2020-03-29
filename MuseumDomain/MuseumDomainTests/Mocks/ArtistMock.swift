@@ -1,6 +1,6 @@
+@testable import MuseumDomain
 import Foundation
 import TestKit
-@testable import MuseumDomain
 
 struct ArtistMock: Artist, Equatable {
     var remoteId = Seeds.int

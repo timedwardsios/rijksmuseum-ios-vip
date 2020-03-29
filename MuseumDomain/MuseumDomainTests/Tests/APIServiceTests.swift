@@ -1,7 +1,7 @@
-import XCTest
+@testable import MuseumDomain
 import TestKit
 import Utils
-@testable import MuseumDomain
+import XCTest
 
 class APIServiceTests: XCTestCase {
 
@@ -27,9 +27,11 @@ class APIServiceTests: XCTestCase {
         networkSessionSpy = NetworkSessionSpy(dataTask: networkSessionDataTaskSpy)
         networkResponseValidatorSpy = NetworkResponseValidatorSpy()
 
-        sut = APIServiceDefault(urlRequestFactory: urlRequestFactorySpy,
-                                networkSession: networkSessionSpy,
-                                networkResponseValidator: networkResponseValidatorSpy)
+        sut = APIServiceDefault(
+            urlRequestFactory: urlRequestFactorySpy,
+            networkSession: networkSessionSpy,
+            networkResponseValidator: networkResponseValidatorSpy
+        )
     }
 }
 
@@ -39,7 +41,7 @@ extension APIServiceTests {
         // given
         let exp = expectation(description: "Should callback")
         // when
-        sut.performAPIRequest(apiRequestMock) { (result) in
+        sut.performAPIRequest(apiRequestMock) { result in
 
             // then
             guard case .success(let data) = result else {
@@ -58,7 +60,7 @@ extension APIServiceTests {
         // given
         let exp = expectation(description: "Should callback")
         // when
-        sut.performAPIRequest(apiRequestMock) { (_) in
+        sut.performAPIRequest(apiRequestMock) { _ in
 
             // then
             XCTAssertEqual(1, self.urlRequestFactorySpy.constructURLRequestFromAPIRequestArgs.count)
@@ -74,12 +76,14 @@ extension APIServiceTests {
         // given
         let exp = expectation(description: "Should callback")
         // when
-        sut.performAPIRequest(apiRequestMock) { (_) in
+        sut.performAPIRequest(apiRequestMock) { _ in
 
             // then
             XCTAssertEqual(1, self.networkSessionSpy.dataTaskArgs.count)
-            XCTAssertEqual(self.urlRequestFactorySpy.constructURLRequestFromAPIRequestResult.unwrap(),
-                           self.networkSessionSpy.dataTaskArgs.last)
+            XCTAssertEqual(
+                self.urlRequestFactorySpy.constructURLRequestFromAPIRequestResult.unwrap(),
+                self.networkSessionSpy.dataTaskArgs.last
+            )
 
             exp.fulfill()
         }
@@ -90,7 +94,7 @@ extension APIServiceTests {
         // given
         let exp = expectation(description: "Should callback")
         // when
-        sut.performAPIRequest(apiRequestMock) { (_) in
+        sut.performAPIRequest(apiRequestMock) { _ in
 
             XCTAssertEqual(1, self.networkResponseValidatorSpy.validateResponseArgs.count)
             let lastResponse = self.networkResponseValidatorSpy.validateResponseArgs.last
@@ -108,7 +112,7 @@ extension APIServiceTests {
         let exp = expectation(description: "Should callback")
         urlRequestFactorySpy.constructURLRequestFromAPIRequestResult = .failure(URLRequestFactoryError.invalidPath)
         // when
-        sut.performAPIRequest(apiRequestMock) { (result) in
+        sut.performAPIRequest(apiRequestMock) { result in
             // then
             XCTAssertNil(result.unwrap())
             exp.fulfill()
@@ -122,7 +126,7 @@ extension APIServiceTests {
         let error = APIResponseValidatorError.rawResponseError(Seeds.error)
         networkResponseValidatorSpy.validateResponseResult = .failure(error)
         // when
-        sut.performAPIRequest(apiRequestMock) { (result) in
+        sut.performAPIRequest(apiRequestMock) { result in
             // then
             XCTAssertNil(result.unwrap())
             exp.fulfill()

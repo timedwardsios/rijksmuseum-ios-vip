@@ -4,8 +4,8 @@ public protocol ReuseIdentifiable {
     static var reuseIdentifier: String { get }
 }
 
-extension ReuseIdentifiable {
-    public static var reuseIdentifier: String {
+public extension ReuseIdentifiable {
+    static var reuseIdentifier: String {
         String(describing: self)
     }
 }

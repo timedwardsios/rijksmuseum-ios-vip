@@ -11,8 +11,12 @@ class ArtControllerDefault {
     let appState: AppState
     let webService: WebService
 
+    convenience init(appState: AppState) {
+        self.init(appState: appState, webService: WebServiceDefault())
+    }
+
     init(appState: AppState,
-         webService: WebService = .init()) {
+         webService: WebService) {
         self.appState = appState
         self.webService = webService
     }

@@ -1,6 +1,6 @@
-import XCTest
-import TestKit
 @testable import Utils
+import TestKit
+import XCTest
 
 class ConfigLoaderTests: XCTestCase {
 

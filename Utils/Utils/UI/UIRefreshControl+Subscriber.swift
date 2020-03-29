@@ -1,5 +1,5 @@
-import UIKit
 import Combine
+import UIKit
 
 extension UIRefreshControl: Subscriber {
     public func receive(subscription: Subscription) {
@@ -20,4 +20,3 @@ extension UIRefreshControl: Subscriber {
 
     public func receive(completion: Subscribers.Completion<Never>) { }
 }
-

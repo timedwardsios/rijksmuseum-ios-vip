@@ -1,6 +1,6 @@
-import XCTest
-import TestKit
 @testable import Utils
+import TestKit
+import XCTest
 
 class NetworkResponseValidatorTests: XCTestCase {
 
@@ -47,10 +47,12 @@ extension NetworkResponseValidatorTests {
     func test_validateResponse_badStatusCode() {
 
         // given
-        responseMock.urlResponse = HTTPURLResponse(url: Seeds.url,
-                                               statusCode: 404,
-                                               httpVersion: nil,
-                                               headerFields: nil)
+        responseMock.urlResponse = HTTPURLResponse(
+            url: Seeds.url,
+            statusCode: 404,
+            httpVersion: nil,
+            headerFields: nil
+        )
 
         // then
         XCTAssertThrowsError(try sut.validateResponse(responseMock))

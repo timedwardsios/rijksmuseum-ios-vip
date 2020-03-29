@@ -1,7 +1,7 @@
-import XCTest
+@testable import MuseumDomain
 import TestKit
 import Utils
-@testable import MuseumDomain
+import XCTest
 
 class URLRequestFactoryTests: XCTestCase {
 

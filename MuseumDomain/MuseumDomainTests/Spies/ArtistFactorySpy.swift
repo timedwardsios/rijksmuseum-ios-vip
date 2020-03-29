@@ -1,16 +1,16 @@
+@testable import MuseumDomain
 import Foundation
 import Utils
-@testable import MuseumDomain
 
 class ArtistFactorySpy: ArtistFactory {
 
     var artistsResult: Result<[ArtistMock], Error>
 
+    var artistsArgs = [Data]()
+
     init(artistsResult: Result<[ArtistMock], Error>) {
         self.artistsResult = artistsResult
     }
-
-    var artistsArgs = [Data]()
 
     func constructArtists(fromJSONData data: Data) throws -> [Artist] {
         artistsArgs.append(data)

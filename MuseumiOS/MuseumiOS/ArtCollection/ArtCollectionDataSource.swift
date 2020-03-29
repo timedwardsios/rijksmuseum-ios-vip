@@ -1,22 +1,23 @@
-import UIKit
 import Combine
 import MuseumApp
 import MuseumDomain
+import UIKit
 
 class ArtCollectionDataSource: NSObject {
 
     private static let rowHeight = CGFloat(66)
 
     var arts = [Art]() {
-        didSet{
+        didSet {
             tableView.reloadData()
         }
     }
 
-    @Published var selectedArt: Art? = nil
+    @Published var selectedArt: Art?
 
     private let tableView: UITableView
-    public init(tableView: UITableView) {
+
+    init(tableView: UITableView) {
         self.tableView = tableView
         super.init()
         tableView.register(ArtCollectionCell.self, forCellReuseIdentifier: ArtCollectionCell.reuseIdentifier)
@@ -37,8 +38,10 @@ extension ArtCollectionDataSource: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: ArtCollectionCell.reuseIdentifier,
-                                                     for: indexPath) as? ArtCollectionCell,
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: ArtCollectionCell.reuseIdentifier,
+                for: indexPath
+                ) as? ArtCollectionCell,
             let art = arts[optionalAt: indexPath.row] else {
                 return UITableViewCell()
         }

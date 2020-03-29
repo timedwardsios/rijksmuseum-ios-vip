@@ -7,6 +7,5 @@ class ListingPresenterSpy: ListingPresenting {
 
     func didLoadArt(_ art: Art) {
         didLoadArtArgs.append(art)
-
     }
 }

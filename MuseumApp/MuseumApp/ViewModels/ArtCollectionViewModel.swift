@@ -6,16 +6,26 @@ import Utils
 public class ArtCollectionViewModel {
 
     @Published public var arts: [Art] = []
+
     @Published public var isAppeared = false
+
     @Published public var isRequestingRefresh = false
+
     @Published public var selectedArt: Art? = nil
 
     private var subscriptions: Set<AnyCancellable> = []
 
     private var appState: AppState
+
     private let artController: ArtController
+
+    public convenience init(appState: AppState) {
+        self.init(appState: appState,
+                  artController: ArtControllerDefault(appState: appState))
+    }
+
     public init(appState: AppState,
-                artController: ArtController = .init()) {
+                artController: ArtController) {
         self.appState = appState
         self.artController = artController
         bind()

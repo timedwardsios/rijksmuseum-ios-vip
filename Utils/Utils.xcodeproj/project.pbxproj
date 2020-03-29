@@ -22,7 +22,6 @@
 		2285026022879BBC0059AD7C /* NetworkResponseValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285023B22879B5F0059AD7C /* NetworkResponseValidatorTests.swift */; };
 		2285026622879BCC0059AD7C /* ConfigMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285022E22879B5F0059AD7C /* ConfigMock.swift */; };
 		2285026822879BCC0059AD7C /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285023122879B5F0059AD7C /* NetworkResponseValidatorSpy.swift */; };
-		2285026922879BCC0059AD7C /* PropertyListDecoderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285023222879B5F0059AD7C /* PropertyListDecoderSpy.swift */; };
 		2285026B22879BCC0059AD7C /* NetworkSessionDataTaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285023422879B5F0059AD7C /* NetworkSessionDataTaskSpy.swift */; };
 		2285026C22879BCC0059AD7C /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2285023622879B5F0059AD7C /* config.plist */; };
 		2285026D22879BCC0059AD7C /* config_empty.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2285023722879B5F0059AD7C /* config_empty.plist */; };
@@ -58,7 +57,6 @@
 		2285022722879B5F0059AD7C /* UIAlertController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Alert.swift"; sourceTree = "<group>"; };
 		2285022E22879B5F0059AD7C /* ConfigMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigMock.swift; sourceTree = "<group>"; };
 		2285023122879B5F0059AD7C /* NetworkResponseValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorSpy.swift; sourceTree = "<group>"; };
-		2285023222879B5F0059AD7C /* PropertyListDecoderSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyListDecoderSpy.swift; sourceTree = "<group>"; };
 		2285023422879B5F0059AD7C /* NetworkSessionDataTaskSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTaskSpy.swift; sourceTree = "<group>"; };
 		2285023622879B5F0059AD7C /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		2285023722879B5F0059AD7C /* config_empty.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config_empty.plist; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				2285023122879B5F0059AD7C /* NetworkResponseValidatorSpy.swift */,
-				2285023222879B5F0059AD7C /* PropertyListDecoderSpy.swift */,
 				2285023422879B5F0059AD7C /* NetworkSessionDataTaskSpy.swift */,
 			);
 			path = Spies;
@@ -395,7 +392,6 @@
 				2285026822879BCC0059AD7C /* NetworkResponseValidatorSpy.swift in Sources */,
 				221968762288C08500BF00FB /* NetworkResponseMock.swift in Sources */,
 				2285026F22879BCC0059AD7C /* ConfigLoaderTests.swift in Sources */,
-				2285026922879BCC0059AD7C /* PropertyListDecoderSpy.swift in Sources */,
 				2285026622879BCC0059AD7C /* ConfigMock.swift in Sources */,
 				2285026022879BBC0059AD7C /* NetworkResponseValidatorTests.swift in Sources */,
 			);

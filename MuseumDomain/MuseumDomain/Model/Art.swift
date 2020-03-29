@@ -1,6 +1,6 @@
+import Combine
 import Foundation
 import Utils
-import Combine
 
 public protocol Art {
     var id: String { get }

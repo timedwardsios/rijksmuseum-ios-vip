@@ -1,7 +1,7 @@
-import XCTest
+@testable import MuseumDomain
 import TestKit
 import Utils
-@testable import MuseumDomain
+import XCTest
 
 class APIRequestFactoryTests: XCTestCase {
 
@@ -18,8 +18,10 @@ class APIRequestFactoryTests: XCTestCase {
 
         apiQueryStringKeys = APIQueryStringKeysMock()
 
-        sut = APIRequestFactoryDefault(apiRequestTemplates: apiRequestTemplatesMock,
-                                       apiQueryStringKeys: apiQueryStringKeys)
+        sut = APIRequestFactoryDefault(
+            apiRequestTemplates: apiRequestTemplatesMock,
+            apiQueryStringKeys: apiQueryStringKeys
+        )
     }
 }
 

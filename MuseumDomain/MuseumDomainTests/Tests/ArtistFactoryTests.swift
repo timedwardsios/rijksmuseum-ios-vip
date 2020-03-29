@@ -1,6 +1,6 @@
-import XCTest
-import TestKit
 @testable import MuseumDomain
+import TestKit
+import XCTest
 
 class ArtistFactoryTests: XCTestCase {
 

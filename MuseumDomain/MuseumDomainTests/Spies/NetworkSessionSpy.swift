@@ -6,18 +6,20 @@ class NetworkSessionSpy: TimKit.URLSession {
 
     var dataTask: NetworkSessionDataTaskSpy
 
-    init(dataTask: NetworkSessionDataTaskSpy) {
-        self.dataTask = dataTask
-    }
-
     var data: Data? = Seeds.data
     var urlResponse: URLResponse? = Seeds.urlResponse
     var error: Error?
 
     var dataTaskArgs = [URLRequest]()
 
-    func dataTask(with request: URLRequest,
-                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+    init(dataTask: NetworkSessionDataTaskSpy) {
+        self.dataTask = dataTask
+    }
+
+    func dataTask(
+        with request: URLRequest,
+        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+    ) -> URLSessionDataTask {
 
         dataTaskArgs.append(request)
 

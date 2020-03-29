@@ -27,7 +27,7 @@
 		221967EE228890B200BF00FB /* MuseumDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221967E4228890B200BF00FB /* MuseumDomain.framework */; };
 		22217F37242FA9FD00E103A1 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22217F36242FA9FD00E103A1 /* Utils.framework */; };
 		22217F38242FA9FD00E103A1 /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22217F36242FA9FD00E103A1 /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		222FD85B242FACEB008A45E9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD853242FACEB008A45E9 /* Model.swift */; };
+		222FD85B242FACEB008A45E9 /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD853242FACEB008A45E9 /* Art.swift */; };
 		222FD85C242FACEB008A45E9 /* MuseumKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 222FD855242FACEB008A45E9 /* MuseumKit.h */; };
 		2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5E242FBE070067859A /* CollectionWebRequest.swift */; };
 /* End PBXBuildFile section */
@@ -68,7 +68,7 @@
 		220B73DE228DC84600AF8A8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		220B73E0228DC84600AF8A8D /* URLRequestFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestFactoryTests.swift; sourceTree = "<group>"; };
 		220B73E1228DC84600AF8A8D /* APIRequestFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestFactoryTests.swift; sourceTree = "<group>"; };
-		220B73E2228DC84600AF8A8D /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		220B73E2228DC84600AF8A8D /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; tabWidth = 4; };
 		220B73E3228DC84600AF8A8D /* ArtistFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistFactoryTests.swift; sourceTree = "<group>"; };
 		220B73E4228DC84600AF8A8D /* ArtistServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistServiceTests.swift; sourceTree = "<group>"; };
 		220B73E6228DC84600AF8A8D /* SearchSample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SearchSample.json; sourceTree = "<group>"; };
@@ -78,8 +78,7 @@
 		221967E4228890B200BF00FB /* MuseumDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuseumDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221967ED228890B200BF00FB /* MuseumDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22217F36242FA9FD00E103A1 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		222FD852242FACEB008A45E9 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		222FD853242FACEB008A45E9 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		222FD853242FACEB008A45E9 /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
 		222FD855242FACEB008A45E9 /* MuseumKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuseumKit.h; sourceTree = "<group>"; };
 		222FD856242FACEB008A45E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2239EC5E242FBE070067859A /* CollectionWebRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionWebRequest.swift; sourceTree = "<group>"; };
@@ -192,8 +191,7 @@
 		222FD851242FACEB008A45E9 /* MuseumDomain */ = {
 			isa = PBXGroup;
 			children = (
-				222FD853242FACEB008A45E9 /* Model.swift */,
-				222FD852242FACEB008A45E9 /* Services.swift */,
+				22A388DC243022B20071EA44 /* Model */,
 				2239EC65242FD0F30067859A /* WebRequests */,
 				222FD854242FACEB008A45E9 /* Resources */,
 			);
@@ -215,6 +213,14 @@
 				2239EC5E242FBE070067859A /* CollectionWebRequest.swift */,
 			);
 			path = WebRequests;
+			sourceTree = "<group>";
+		};
+		22A388DC243022B20071EA44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				222FD853242FACEB008A45E9 /* Art.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CCCBA98A3DCDD6CB9B3253AE /* Frameworks */ = {
@@ -379,7 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */,
-				222FD85B242FACEB008A45E9 /* Model.swift in Sources */,
+				222FD85B242FACEB008A45E9 /* Art.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

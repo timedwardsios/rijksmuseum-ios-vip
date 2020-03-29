@@ -1,6 +1,6 @@
+import Combine
 import Foundation
 import Utils
-import Combine
 
 public struct CollectionWebRequest: WebRequest {
 
@@ -21,11 +21,11 @@ public struct CollectionWebRequest: WebRequest {
 
 public struct RootJSON: Decodable {
 
-    public let artJSONs: [ArtJSON]
-
     private enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
     }
+
+    public let artJSONs: [ArtJSON]
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -35,11 +35,6 @@ public struct RootJSON: Decodable {
 
 public struct ArtJSON: Art, Decodable {
 
-    public var id: String
-    public var title: String
-    public var artist: String
-    public var imageURL: URL
-
     enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
         case id = "objectNumber"
@@ -48,6 +43,11 @@ public struct ArtJSON: Art, Decodable {
         case imageDict = "webImage"
         case imageURL = "url"
     }
+
+    public var id: String
+    public var title: String
+    public var artist: String
+    public var imageURL: URL
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

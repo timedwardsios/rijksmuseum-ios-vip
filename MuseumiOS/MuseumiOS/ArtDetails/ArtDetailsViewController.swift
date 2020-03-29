@@ -1,8 +1,8 @@
+import Combine
+import MuseumApp
+import SDWebImage
 import UIKit
 import Utils
-import Combine
-import SDWebImage
-import MuseumApp
 
 class ArtDetailsViewController: UIViewController {
 
@@ -16,34 +16,31 @@ class ArtDetailsViewController: UIViewController {
 
     private var subscriptions = Set<AnyCancellable>()
 
-    private let artID: String
     private let viewModel: ArtDetailsViewModel
 
-    init(artID: String,
-         viewModel: ArtDetailsViewModel) {
-        self.artID = artID
+    init(viewModel: ArtDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) { fatalError() }
+    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
 }
 
 extension ArtDetailsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         bind()
     }
 }
 
 private extension ArtDetailsViewController {
     func bind() {
-//        viewModel.arts
-//            .receive(on: RunLoop.main)
-//            .compactMap { $0.imageURL }
-//            .subscribe(imageView)
-//            .sink {self.imageView.sd_setImage(with: $0)}
-//            .store(in: &subscriptions)
+        viewModel.$imageURL
+            .receive(on: RunLoop.main)
+            .sink { self.imageView.sd_setImage(with: $0) }
+            .store(in: &subscriptions)
     }
 }

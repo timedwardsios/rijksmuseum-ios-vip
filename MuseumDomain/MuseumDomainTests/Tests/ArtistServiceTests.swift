@@ -1,7 +1,7 @@
-import XCTest
+@testable import MuseumDomain
 import TestKit
 import Utils
-@testable import MuseumDomain
+import XCTest
 
 class ArtistServiceTests: XCTestCase {
 
@@ -21,9 +21,11 @@ class ArtistServiceTests: XCTestCase {
         artistFactorySpy = ArtistFactorySpy(artistsResult: .success([artistMock]))
         apiServiceSpy = APIServiceSpy(performAPIRequestResult: .success(Seeds.data))
         apiRequestFactorySpy = APIRequestFactorySpy()
-        sut = ArtistServiceDefault(apiRequestFactory: apiRequestFactorySpy,
-                                   apiService: apiServiceSpy,
-                                   artistFactory: artistFactorySpy)
+        sut = ArtistServiceDefault(
+            apiRequestFactory: apiRequestFactorySpy,
+            apiService: apiServiceSpy,
+            artistFactory: artistFactorySpy
+        )
     }
 }
 
@@ -33,10 +35,12 @@ extension ArtistServiceTests {
         // given
         let exp = expectation(description: "Should callback")
         // when
-        sut.fetchArtists(forSearchTerm: Seeds.string) { (result) in
+        sut.fetchArtists(forSearchTerm: Seeds.string) { result in
             // then
-            XCTAssertEqual(self.artistFactorySpy.artistsResult.unwrap(),
-                           result.unwrap() as? [ArtistMock])
+            XCTAssertEqual(
+                self.artistFactorySpy.artistsResult.unwrap(),
+                result.unwrap() as? [ArtistMock]
+            )
             exp.fulfill()
         }
         wait(for: exp)
@@ -48,7 +52,7 @@ extension ArtistServiceTests {
         let searchTerm = Seeds.string
 
         // when
-        sut.fetchArtists(forSearchTerm: searchTerm) { (_) in
+        sut.fetchArtists(forSearchTerm: searchTerm) { _ in
 
             // then
             XCTAssertEqual(1, self.apiRequestFactorySpy.constructAPIRequestArgs.count)
@@ -74,7 +78,7 @@ extension ArtistServiceTests {
         // given
         let exp = expectation(description: "Should callback")
         // when
-        sut.fetchArtists(forSearchTerm: Seeds.string) { (_) in
+        sut.fetchArtists(forSearchTerm: Seeds.string) { _ in
 
             // then
             XCTAssertEqual(1, self.apiServiceSpy.performAPIRequestArgs.count)
@@ -92,7 +96,7 @@ extension ArtistServiceTests {
         let exp = expectation(description: "Should callback")
 
         // when
-        sut.fetchArtists(forSearchTerm: Seeds.string) { (_) in
+        sut.fetchArtists(forSearchTerm: Seeds.string) { _ in
 
             // then
             XCTAssertEqual(1, self.artistFactorySpy.artistsArgs.count)
@@ -111,7 +115,7 @@ extension ArtistServiceTests {
 
         apiServiceSpy.performAPIRequestResult = .failure(.networkResponseInvalid(Seeds.error))
         // when
-        sut.fetchArtists(forSearchTerm: Seeds.string) { (result) in
+        sut.fetchArtists(forSearchTerm: Seeds.string) { result in
 
             // then
             XCTAssertNil(result.unwrap())
@@ -129,7 +133,7 @@ extension ArtistServiceTests {
         artistFactorySpy.artistsResult = .failure(Seeds.error)
 
         // when
-        sut.fetchArtists(forSearchTerm: Seeds.string) { (result) in
+        sut.fetchArtists(forSearchTerm: Seeds.string) { result in
 
             // then
             XCTAssertNil(result.unwrap())

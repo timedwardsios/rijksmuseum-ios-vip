@@ -1,6 +1,6 @@
-import XCTest
-import TestKit
 @testable import MuseumiOS
+import TestKit
+import XCTest
 
 //class PortfolioInteractorTests: XCTestCase {
 //

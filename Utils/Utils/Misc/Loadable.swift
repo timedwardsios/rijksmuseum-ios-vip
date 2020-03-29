@@ -1,5 +1,5 @@
-import Foundation
 import Combine
+import Foundation
 
 public enum Loadable<T> {
 
@@ -8,32 +8,43 @@ public enum Loadable<T> {
     case success(T)
     case failure(Error)
 
-    var value: T? {
+    public var value: T? {
         switch self {
-        case let .success(last): return last
-        default: return nil
+        case let .success(last):
+            return last
+        default:
+            return nil
         }
     }
-    var error: Error? {
+
+    public var error: Error? {
         switch self {
-        case let .failure(error): return error
-        default: return nil
+        case let .failure(error):
+            return error
+        default:
+            return nil
         }
     }
 }
 
 public extension Publisher {
     func sinkToLoadable(_ completion: @escaping (Loadable<Output>) -> Void) -> AnyCancellable {
-        sink(receiveCompletion: {
-            if case let .failure(error) = $0 {
-                completion(.failure(error))
+        sink(
+            receiveCompletion: {
+                if case let .failure(error) = $0 {
+                    completion(.failure(error))
+                }
+            },
+            receiveValue: {
+                completion(.success($0))
             }
-        }, receiveValue: {
-            completion(.success($0))
-        })
+        )
     }
 
-    func assignLoadable<Root>(to keyPath: ReferenceWritableKeyPath<Root, Loadable<Self.Output>>, on object: Root) -> AnyCancellable {
+    func assignLoadable<Root>(
+        to keyPath: ReferenceWritableKeyPath<Root, Loadable<Self.Output>>,
+        on object: Root
+    ) -> AnyCancellable {
         sinkToLoadable { value in
             object[keyPath: keyPath] = value
         }

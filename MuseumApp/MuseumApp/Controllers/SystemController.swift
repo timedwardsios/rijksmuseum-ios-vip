@@ -13,30 +13,30 @@ public protocol SystemController {
 
 }
 
-class SystemControllerDefault {
+public class SystemControllerDefault {
 
     var appState: AppState
 
-    init(appState: AppState) {
+    public init(appState: AppState) {
         self.appState = appState
     }
 }
 
 extension SystemControllerDefault: SystemController {
 
-    func didFinishLaunching() {
+    public func didFinishLaunching() {
         appState.lifecycle = .launched
     }
 
-    func didEnterBackground() {
+    public func didEnterBackground() {
         appState.lifecycle = .background
     }
 
-    func willEnterForeground() {
+    public func willEnterForeground() {
         appState.lifecycle = .foreground
     }
 
-    func didOpenURL(_ url: URL) {
+    public func didOpenURL(_ url: URL) {
         handleDeepLink(withURL: url)
     }
 }

@@ -5,19 +5,25 @@ import Combine
 
 public class ArtDetailsViewModel {
 
-//    @Published public var imageURL: URL
+    @Published public var imageURL: URL?
 
-    // TODO: finish this
-    // get it from routing
+    private var subscriptions: Set<AnyCancellable> = []
+
+    let artID: String
     let appState: AppState
-    init(appState: AppState) {
+    public init(artID: String,
+                appState: AppState) {
+        self.artID = artID
         self.appState = appState
+        bind()
     }
 
     func bind() {
-        // arts needs to be equatable
-//        appState.data.$arts
-//            .map { $0.first{ $0.id == self.id } }
-//        .removeDuplicates(by: <#T##(Art?, Art?) -> Bool#>)
+        appState.$arts
+            .compactMap { $0.value }
+            .compactMap { $0.first{ $0.id == self.artID } }
+            .map { $0.imageURL }
+            .assign(to: \.imageURL, on: self)
+            .store(in: &subscriptions)
     }
 }

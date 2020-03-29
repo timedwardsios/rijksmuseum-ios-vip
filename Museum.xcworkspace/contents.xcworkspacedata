@@ -5,6 +5,9 @@
       location = "group:todo.txt">
    </FileRef>
    <FileRef
+      location = "group:MuseumiOS/MuseumiOS/../../.swiftlint.yml">
+   </FileRef>
+   <FileRef
       location = "group:MuseumiOS/MuseumiOS.xcodeproj">
    </FileRef>
    <FileRef

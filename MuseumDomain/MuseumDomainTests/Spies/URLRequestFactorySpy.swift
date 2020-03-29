@@ -1,6 +1,6 @@
+@testable import MuseumDomain
 import Foundation
 import TestKit
-@testable import MuseumDomain
 
 class URLRequestFactorySpy: URLRequestFactory {
 

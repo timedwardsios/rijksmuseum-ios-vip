@@ -1,5 +1,5 @@
-import UIKit
 import Combine
+import UIKit
 
 extension UIImageView: Subscriber {
     public func receive(subscription: Subscription) {
@@ -7,7 +7,7 @@ extension UIImageView: Subscriber {
     }
 
     public func receive(_ input: UIImage) -> Subscribers.Demand {
-        return .unlimited
+        .unlimited
     }
 
     public func receive(completion: Subscribers.Completion<Never>) {}

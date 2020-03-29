@@ -1,7 +1,7 @@
-import Foundation
 import Combine
+import Foundation
 
-enum WebServiceError: LocalizedError  {
+enum WebServiceError: LocalizedError {
 
     case internalError(Error)
     case urlComponentsError
@@ -11,11 +11,16 @@ enum WebServiceError: LocalizedError  {
 
     var errorDescription: String? {
         switch self {
-        case let .internalError(error): return "Internal error: \(error)"
-        case .urlComponentsError: return "Failed to create url components"
-        case .urlGenerationError: return "Failed to generate url"
-        case .responseError: return "Recieved a bad response format from URLSession"
-        case .statusCodeError: return "Recieved a bad status code"
+        case let .internalError(error):
+            return "Internal error: \(error)"
+        case .urlComponentsError:
+            return "Failed to create url components"
+        case .urlGenerationError:
+            return "Failed to generate url"
+        case .responseError:
+            return "Recieved a bad response format from URLSession"
+        case .statusCodeError:
+            return "Recieved a bad status code"
         }
     }
 }
@@ -29,8 +34,10 @@ public class WebServiceDefault {
     let webSession: WebSession
     let jsonDecoder: JSONDecoder
 
-    public init(webSession: WebSession,
-                jsonDecoder: JSONDecoder) {
+    public init(
+        webSession: WebSession = URLSession.shared,
+        jsonDecoder: JSONDecoder = .init()
+    ) {
         self.webSession = webSession
         self.jsonDecoder = jsonDecoder
     }
@@ -42,7 +49,8 @@ extension WebServiceDefault: WebService {
             .convertToURLRequest()
             .flatMap {
                 self.webSession.dataTaskPublisher(for: $0)
-                    .mapError { WebServiceError.internalError($0) }}
+                    .mapError { WebServiceError.internalError($0) }
+            }
             .processRespsonse()
             .decode(type: R.JSONType.self, decoder: jsonDecoder)
             .eraseToAnyPublisher()
@@ -72,7 +80,7 @@ private extension Publisher where Output: WebRequest {
                 throw WebServiceError.urlComponentsError
             }
 
-            urlComponents.queryItems = $0.queryItems.map {URLQueryItem(name: $0, value: $1)}
+            urlComponents.queryItems = $0.queryItems.map { URLQueryItem(name: $0, value: $1) }
 
             guard let url = urlComponents.url else {
                 throw WebServiceError.urlGenerationError

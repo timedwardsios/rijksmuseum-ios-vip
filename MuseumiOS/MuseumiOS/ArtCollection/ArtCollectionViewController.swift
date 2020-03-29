@@ -1,7 +1,7 @@
-import UIKit
 import Combine
-import TinyConstraints
 import MuseumApp
+import TinyConstraints
+import UIKit
 import Utils
 
 class ArtCollectionViewController: UIViewController {
@@ -9,14 +9,6 @@ class ArtCollectionViewController: UIViewController {
     private let viewModel: ArtCollectionViewModel
 
     private var subscriptions: Set<AnyCancellable> = []
-
-    init(viewModel: ArtCollectionViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-        bind()
-    }
-
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) { fatalError() }
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -33,6 +25,16 @@ class ArtCollectionViewController: UIViewController {
     }()
 
     private lazy var dataSource = ArtCollectionDataSource(tableView: tableView)
+
+    init(viewModel: ArtCollectionViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        bind()
+    }
+
+    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
+    }
 }
 
 extension ArtCollectionViewController {

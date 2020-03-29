@@ -1,8 +1,8 @@
-import UIKit
-import SDWebImage
-import TinyConstraints
 import MuseumApp
 import MuseumDomain
+import SDWebImage
+import TinyConstraints
+import UIKit
 
 class ArtCollectionCell: UITableViewCell {
 
@@ -10,6 +10,14 @@ class ArtCollectionCell: UITableViewCell {
         let title: String
         let artist: String
         let imageURL: URL
+    }
+
+    var model: Model? = nil {
+        didSet {
+            textLabel?.text = model?.title
+            detailTextLabel?.text = model?.artist
+            thumbnail.sd_setImage(with: model?.imageURL)
+        }
     }
 
     private lazy var thumbnail: UIImageView = {
@@ -27,13 +35,7 @@ class ArtCollectionCell: UITableViewCell {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
     }
 
-    @available(*, unavailable) required init?(coder aDecoder: NSCoder) { fatalError() }
-
-    var model: Model? = nil {
-        didSet{
-            textLabel?.text = model?.title
-            detailTextLabel?.text = model?.artist
-            thumbnail.sd_setImage(with: model?.imageURL)
-        }
+    @available(*, unavailable) required init?(coder aDecoder: NSCoder) {
+        fatalError("Not implemented")
     }
 }

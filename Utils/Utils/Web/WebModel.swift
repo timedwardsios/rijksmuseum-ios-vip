@@ -1,16 +1,17 @@
 import Foundation
 
-public enum HTTPMethod: String {
-    case CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE
-}
-
 public protocol WebRequest {
     associatedtype JSONType: Decodable
+
     var url: URL { get }
-    var httpMethod: HTTPMethod {get}
-    var headers: [String: String] {get}
-    var queryItems: [String: String] {get}
-    var responseJSONFormat: JSONType.Type {get}
+    var httpMethod: HTTPMethod { get }
+    var headers: [String: String] { get }
+    var queryItems: [String: String] { get }
+    var responseJSONFormat: JSONType.Type { get }
+}
+
+public enum HTTPMethod: String {
+    case CONNECT, DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT, TRACE
 }
 
 public extension WebRequest {
@@ -18,7 +19,7 @@ public extension WebRequest {
         .GET
     }
 
-    var headers: [String : String] {
+    var headers: [String: String] {
         [:]
     }
 }

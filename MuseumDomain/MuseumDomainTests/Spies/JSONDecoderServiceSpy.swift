@@ -1,6 +1,6 @@
+@testable import MuseumDomain
 import Foundation
 import Utils
-@testable import MuseumDomain
 
 class JSONDecoderServiceSpy: JSONDecoderService {
 
