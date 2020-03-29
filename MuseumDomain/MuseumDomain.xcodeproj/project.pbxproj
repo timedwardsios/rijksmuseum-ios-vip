@@ -249,7 +249,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 221967F8228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumDomain" */;
 			buildPhases = (
-				226CDF4C24302D9400EFF664 /* SwiftFormat */,
 				22C327DB23D5CEE0001CCB5B /* SwiftLint */,
 				221967DF228890B200BF00FB /* Headers */,
 				221967E0228890B200BF00FB /* Sources */,
@@ -270,7 +269,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 221967FB228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumDomainTests" */;
 			buildPhases = (
-				226CDF4D24302DA100EFF664 /* SwiftFormat */,
 				22C327DC23D5CEED001CCB5B /* SwiftLint */,
 				221967E9228890B200BF00FB /* Sources */,
 				221967EA228890B200BF00FB /* Frameworks */,
@@ -343,42 +341,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		226CDF4C24302D9400EFF664 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
-		226CDF4D24302DA100EFF664 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
 		22C327DB23D5CEE0001CCB5B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

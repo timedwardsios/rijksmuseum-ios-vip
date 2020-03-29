@@ -233,7 +233,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22AC8C5D212EE635000A0BE0 /* Build configuration list for PBXNativeTarget "Utils" */;
 			buildPhases = (
-				226CDF4E24302DD500EFF664 /* SwiftFormat */,
 				22C327DA23D5CCF2001CCB5B /* SwiftLint */,
 				22AC8C44212EE635000A0BE0 /* Headers */,
 				22AC8C45212EE635000A0BE0 /* Sources */,
@@ -253,7 +252,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22AC8C60212EE635000A0BE0 /* Build configuration list for PBXNativeTarget "UtilsTests" */;
 			buildPhases = (
-				226CDF4F24302DE200EFF664 /* SwiftFormat */,
 				22C327D923D5CCE1001CCB5B /* SwiftLint */,
 				22AC8C4E212EE635000A0BE0 /* Sources */,
 				22AC8C4F212EE635000A0BE0 /* Frameworks */,
@@ -328,42 +326,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		226CDF4E24302DD500EFF664 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
-		226CDF4F24302DE200EFF664 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
 		22C327D923D5CCE1001CCB5B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

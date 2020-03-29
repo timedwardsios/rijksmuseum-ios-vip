@@ -189,7 +189,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22706CA120FE5110006E27EE /* Build configuration list for PBXNativeTarget "MuseumiOS" */;
 			buildPhases = (
-				226CDF4624302D0300EFF664 /* SwiftFormat */,
 				2239FE6B23D62378008E9867 /* SwiftLint */,
 				22706C7D20FE510E006E27EE /* Sources */,
 				22706C7E20FE510E006E27EE /* Frameworks */,
@@ -277,24 +276,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		226CDF4624302D0300EFF664 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

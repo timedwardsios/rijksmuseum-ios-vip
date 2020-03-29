@@ -253,7 +253,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22BBE0CB23E81C1C004D8D81 /* Build configuration list for PBXNativeTarget "MuseumApp" */;
 			buildPhases = (
-				226CDF4724302D2200EFF664 /* SwiftFormat */,
 				226CDF4824302D3A00EFF664 /* SwiftLint */,
 				22BBE0B223E81C1C004D8D81 /* Headers */,
 				22BBE0B323E81C1C004D8D81 /* Sources */,
@@ -274,7 +273,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22BBE0CE23E81C1C004D8D81 /* Build configuration list for PBXNativeTarget "MuseumAppTests" */;
 			buildPhases = (
-				226CDF4A24302D6B00EFF664 /* SwiftFormat */,
 				226CDF4924302D5100EFF664 /* SwiftLint */,
 				22BBE0BC23E81C1C004D8D81 /* Sources */,
 				22BBE0BD23E81C1C004D8D81 /* Frameworks */,
@@ -345,24 +343,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		226CDF4724302D2200EFF664 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
-		};
 		226CDF4824302D3A00EFF664 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -398,24 +378,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint --config ../.swiftlint.yml\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		226CDF4A24302D6B00EFF664 /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat --swiftversion 5 .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

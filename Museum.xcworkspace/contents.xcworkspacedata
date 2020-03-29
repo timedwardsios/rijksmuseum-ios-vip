@@ -8,9 +8,6 @@
       location = "group:MuseumiOS/MuseumiOS/../../.swiftlint.yml">
    </FileRef>
    <FileRef
-      location = "group:MuseumiOS/../.swiftformat">
-   </FileRef>
-   <FileRef
       location = "group:MuseumiOS/MuseumiOS.xcodeproj">
    </FileRef>
    <FileRef
