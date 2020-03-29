@@ -70,11 +70,11 @@ whitelist_rules:
 - lower_acl_than_parent
 - mark
 - multiline_arguments
-- multiline_arguments_brackets
+# - multiline_arguments_brackets
 - multiline_function_chains
 - multiline_literal_brackets
 - multiline_parameters
-- multiline_parameters_brackets
+# - multiline_parameters_brackets
 - multiple_closures_with_trailing_closure
 - nesting
 - no_fallthrough_only
@@ -149,7 +149,32 @@ whitelist_rules:
 - xct_specific_matcher
 - xctfail_message
 - yoda_condition
-disabled_rules:
+# - modifier_order
+# - trailing_comma
+# - discouraged_optional_collection       # Optional collections semantically make sense
+# - explicit_acl                          # Too verbose
+# - explicit_top_level_acl                # Maybe enable for frameworks in the future
+# - explicit_type_interface               # Unnecessary
+# - missing_docs                          # Unnecessary
+# - nimble_operator                       # Less readable
+# - no_extension_access_modifier          # Unnecessary
+# - no_grouping_extension                 # Unnecessary
+# - nslocalizedstring_require_bundle      # Unnecessary for single project
+# - number_separator                      # Unnecessary
+# - object_literal                        # Object literals = bad
+# - prefixed_toplevel_constant            # Unnecessary
+# - required_deinit                       # Unnecessary
+# - required_enum_case                    # Unnecessary
+# - untyped_error_in_catch                # Unnecessary
+# - vertical_whitespace_opening_braces    # Unnecessary
+# - implicitly_unwrapped_optional
+# - force_unwrapping
+# - file_types_order
+# - attributes
+# - vertical_whitespace_between_cases
+# - file_name
+# - explicit_enum_raw_value
+# - sorted_imports
 excluded:
 - Pods # to avoid linting cocoapods
 - .bundle # to avoid breaking bundler in the CI

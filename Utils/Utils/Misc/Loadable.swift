@@ -4,8 +4,11 @@ import Foundation
 public enum Loadable<T> {
 
     case notRequested
+
     case loading
+
     case success(T)
+
     case failure(Error)
 
     public var value: T? {

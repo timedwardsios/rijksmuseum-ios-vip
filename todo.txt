@@ -1,37 +1,13 @@
 TODO:
 
-Logging
+Add image caching
 
-Mock data for the entire app is good. Speeds up development and testing.
-
-Use config for everything
-
-Add search
-
-Add caching
-
-Add UserDefaults for settings
-
-Move images to manual loading and caching
+Write behavaioural tests
 
 Write unit tests
 
 Check out mocking frameworks
 
-Improve logging
-
 "final class"
 
-Add strict linting rules
-
-Readme - explain over-engineering reasons
-
-
-
-
-
-
-You can't do behavioural tests, if you don't have event handlers
-
-Write behavaioural tests
-
+In test, add readme - explain over-engineering reasons

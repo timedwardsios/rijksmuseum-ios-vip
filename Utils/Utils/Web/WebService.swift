@@ -4,9 +4,13 @@ import Foundation
 enum WebServiceError: LocalizedError {
 
     case internalError(Error)
+
     case urlComponentsError
+
     case urlGenerationError
+
     case responseError
+
     case statusCodeError
 
     var errorDescription: String? {
