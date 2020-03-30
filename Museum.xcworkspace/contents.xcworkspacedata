@@ -14,7 +14,7 @@
       location = "group:MuseumiOS/MuseumiOS/../../MuseumApp/MuseumApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:/Users/Tim/dev/rijksmuseum-ios-vip-example/MuseumDomain/MuseumDomain.xcodeproj">
+      location = "container:/Users/Tim/dev/rijksmuseum-ios-vip-example/MuseumDomain/MuseumCore.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Utils/Utils.xcodeproj">

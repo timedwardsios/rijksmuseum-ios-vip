@@ -1,23 +1,30 @@
-import Combine
 import Foundation
 import MuseumDomain
 import Utils
+import RxSwift
+import RxCocoa
 
 public class ArtCollectionViewModel {
-    @Published public var arts: [Art] = []
 
-    @Published public var isAppeared = false
+    public struct Inputs {
+        public let didAppear = PublishRelay<Void>()
+        public let didTriggerRefresh = PublishRelay<Void>()
+        public let didSelectArt = PublishRelay<Art>()
+    }
 
-    @Published public var isRequestingRefresh = false
+    public struct Outputs {
+        public let arts = BehaviorRelay(value: [Art]())
+        public let isRefreshing = BehaviorRelay(value: false)
+    }
 
-    @Published public var selectedArt: Art?
+    public let inputs = Inputs()
+    public let outputs = Outputs()
 
-    private var subscriptions: Set<AnyCancellable> = []
-
+    private let disposeBag = DisposeBag()
     private var appState: AppState
-
     private let artController: ArtController
 
+    // MARK: - init
     public convenience init(appState: AppState) {
         self.init(appState: appState, artController: ArtControllerDefault(appState: appState))
     }
@@ -27,40 +34,37 @@ public class ArtCollectionViewModel {
         self.artController = artController
         bind()
     }
+}
 
+private extension ArtCollectionViewModel {
     func bind() {
-        $isAppeared
-            .removeDuplicates()
-            .merge(with: $isRequestingRefresh)
-            .removeDuplicates()
-            .filter { $0 == true }
-            .sink { _ in
+
+        Observable.of(
+            inputs.didAppear.take(1),
+            inputs.didTriggerRefresh.asObservable()
+        )
+            .merge()
+            .flatMapLatest { _ in
                 self.artController.fetchArts()
-                    .store(in: &self.subscriptions)
-            }
-            .store(in: &subscriptions)
+                    .do(onError: {
+                        self.appState.currentRoute.accept(.alert(.error($0)))
+                        self.outputs.isRefreshing.accept(false)
+                    }, onCompleted: {
+                        self.outputs.isRefreshing.accept(false)
+                    }, onSubscribe: {
+                        self.outputs.isRefreshing.accept(true)
+                    })
+                    .asDriver(onErrorJustReturn: [])
 
-        appState.$arts
-            .sink {
-                switch $0 {
-                case .loading:
-                    self.isRequestingRefresh = true
-                case let .success(arts):
-                    self.arts = arts
-                    self.isRequestingRefresh = false
-                case let .failure(error):
-                    self.appState.currentRoute = .alert(.error(error))
-                    self.isRequestingRefresh = false
-                default:
-                    break
-                }
             }
-            .store(in: &subscriptions)
+            .asDriver(onErrorJustReturn: [])
+            .drive(outputs.arts)
+            .disposed(by: disposeBag)
 
-        $selectedArt
-            .compactMap { $0?.id }
-            .map { .artDetails(artID: $0) }
-            .assign(to: \.currentRoute, on: appState)
-            .store(in: &subscriptions)
+        inputs.didSelectArt
+            .asSignal()
+            .map { AppState.Route.artDetails(artID: $0.id) }
+            .emit(to: appState.currentRoute)
+            .disposed(by: disposeBag)
     }
 }

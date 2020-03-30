@@ -1,7 +1,8 @@
-import Combine
 import MuseumApp
 import MuseumDomain
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ArtCollectionDataSource: NSObject {
 
@@ -13,7 +14,7 @@ class ArtCollectionDataSource: NSObject {
         }
     }
 
-    @Published var selectedArt: Art?
+    public let didSelectArt = PublishRelay<Art>()
 
     private let tableView: UITableView
 
@@ -58,7 +59,7 @@ extension ArtCollectionDataSource: UITableViewDataSource {
 extension ArtCollectionDataSource: UITableViewDelegate {
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let art = arts[optionalAt: indexPath.row] {
-            selectedArt = art
+            didSelectArt.accept(art)
         }
     }
 

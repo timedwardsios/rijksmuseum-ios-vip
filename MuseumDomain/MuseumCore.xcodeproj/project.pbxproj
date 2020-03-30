@@ -24,12 +24,15 @@
 		220B73F7228DD39C00AF8A8D /* NetworkSessionSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73F6228DD39C00AF8A8D /* NetworkSessionSpy.swift */; };
 		220B73F9228DD3C500AF8A8D /* NetworkSessionDataTaskSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73F8228DD3C500AF8A8D /* NetworkSessionDataTaskSpy.swift */; };
 		220B73FB228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220B73FA228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift */; };
-		221967EE228890B200BF00FB /* MuseumDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221967E4228890B200BF00FB /* MuseumDomain.framework */; };
+		221967EE228890B200BF00FB /* MuseumCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221967E4228890B200BF00FB /* MuseumCore.framework */; };
 		22217F37242FA9FD00E103A1 /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22217F36242FA9FD00E103A1 /* Utils.framework */; };
 		22217F38242FA9FD00E103A1 /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22217F36242FA9FD00E103A1 /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		222FD85B242FACEB008A45E9 /* Art.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FD853242FACEB008A45E9 /* Art.swift */; };
 		222FD85C242FACEB008A45E9 /* MuseumKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 222FD855242FACEB008A45E9 /* MuseumKit.h */; };
-		2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5E242FBE070067859A /* CollectionWebRequest.swift */; };
+		2239EC62242FBE080067859A /* CollectionAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5E242FBE070067859A /* CollectionAPIRequest.swift */; };
+		224642872432714600BE711E /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642862432714600BE711E /* Repositories.swift */; };
+		22AC6EB7243294D500BB3CE6 /* RijkmuseumAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC6EB6243294D500BB3CE6 /* RijkmuseumAPIConfig.swift */; };
+		22AC6EBB24329F0400BB3CE6 /* ArtRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC6EBA24329F0400BB3CE6 /* ArtRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,13 +78,16 @@
 		220B73F6228DD39C00AF8A8D /* NetworkSessionSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionSpy.swift; sourceTree = "<group>"; };
 		220B73F8228DD3C500AF8A8D /* NetworkSessionDataTaskSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionDataTaskSpy.swift; sourceTree = "<group>"; };
 		220B73FA228DD3F000AF8A8D /* NetworkResponseValidatorSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseValidatorSpy.swift; sourceTree = "<group>"; };
-		221967E4228890B200BF00FB /* MuseumDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuseumDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		221967ED228890B200BF00FB /* MuseumDomainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumDomainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		221967E4228890B200BF00FB /* MuseumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuseumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		221967ED228890B200BF00FB /* MuseumCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22217F36242FA9FD00E103A1 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		222FD853242FACEB008A45E9 /* Art.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Art.swift; sourceTree = "<group>"; };
 		222FD855242FACEB008A45E9 /* MuseumKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuseumKit.h; sourceTree = "<group>"; };
 		222FD856242FACEB008A45E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2239EC5E242FBE070067859A /* CollectionWebRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionWebRequest.swift; sourceTree = "<group>"; };
+		2239EC5E242FBE070067859A /* CollectionAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionAPIRequest.swift; sourceTree = "<group>"; };
+		224642862432714600BE711E /* Repositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		22AC6EB6243294D500BB3CE6 /* RijkmuseumAPIConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RijkmuseumAPIConfig.swift; sourceTree = "<group>"; };
+		22AC6EBA24329F0400BB3CE6 /* ArtRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221967EE228890B200BF00FB /* MuseumDomain.framework in Frameworks */,
+				221967EE228890B200BF00FB /* MuseumCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +178,7 @@
 		221967DA228890B200BF00FB = {
 			isa = PBXGroup;
 			children = (
-				222FD851242FACEB008A45E9 /* MuseumDomain */,
+				222FD851242FACEB008A45E9 /* MuseumCore */,
 				220B73D2228DC84600AF8A8D /* MuseumDomainTests */,
 				221967E5228890B200BF00FB /* Products */,
 				CCCBA98A3DCDD6CB9B3253AE /* Frameworks */,
@@ -182,20 +188,22 @@
 		221967E5228890B200BF00FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				221967E4228890B200BF00FB /* MuseumDomain.framework */,
-				221967ED228890B200BF00FB /* MuseumDomainTests.xctest */,
+				221967E4228890B200BF00FB /* MuseumCore.framework */,
+				221967ED228890B200BF00FB /* MuseumCoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		222FD851242FACEB008A45E9 /* MuseumDomain */ = {
+		222FD851242FACEB008A45E9 /* MuseumCore */ = {
 			isa = PBXGroup;
 			children = (
+				224642862432714600BE711E /* Repositories.swift */,
+				2246429A2432788D00BE711E /* ArtRepository */,
 				22A388DC243022B20071EA44 /* Model */,
 				2239EC65242FD0F30067859A /* WebRequests */,
 				222FD854242FACEB008A45E9 /* Resources */,
 			);
-			path = MuseumDomain;
+			path = MuseumCore;
 			sourceTree = "<group>";
 		};
 		222FD854242FACEB008A45E9 /* Resources */ = {
@@ -210,9 +218,18 @@
 		2239EC65242FD0F30067859A /* WebRequests */ = {
 			isa = PBXGroup;
 			children = (
-				2239EC5E242FBE070067859A /* CollectionWebRequest.swift */,
 			);
 			path = WebRequests;
+			sourceTree = "<group>";
+		};
+		2246429A2432788D00BE711E /* ArtRepository */ = {
+			isa = PBXGroup;
+			children = (
+				22AC6EBA24329F0400BB3CE6 /* ArtRepository.swift */,
+				22AC6EB6243294D500BB3CE6 /* RijkmuseumAPIConfig.swift */,
+				2239EC5E242FBE070067859A /* CollectionAPIRequest.swift */,
+			);
+			path = ArtRepository;
 			sourceTree = "<group>";
 		};
 		22A388DC243022B20071EA44 /* Model */ = {
@@ -245,43 +262,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		221967E3228890B200BF00FB /* MuseumDomain */ = {
+		221967E3228890B200BF00FB /* MuseumCore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 221967F8228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumDomain" */;
+			buildConfigurationList = 221967F8228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumCore" */;
 			buildPhases = (
-				22C327DB23D5CEE0001CCB5B /* SwiftLint */,
 				221967DF228890B200BF00FB /* Headers */,
 				221967E0228890B200BF00FB /* Sources */,
 				221967E1228890B200BF00FB /* Frameworks */,
 				221967E2228890B200BF00FB /* Resources */,
 				22217F39242FA9FD00E103A1 /* Embed Frameworks */,
+				22C327DB23D5CEE0001CCB5B /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MuseumDomain;
+			name = MuseumCore;
+			packageProductDependencies = (
+			);
 			productName = IdagioKit;
-			productReference = 221967E4228890B200BF00FB /* MuseumDomain.framework */;
+			productReference = 221967E4228890B200BF00FB /* MuseumCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		221967EC228890B200BF00FB /* MuseumDomainTests */ = {
+		221967EC228890B200BF00FB /* MuseumCoreTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 221967FB228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumDomainTests" */;
+			buildConfigurationList = 221967FB228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumCoreTests" */;
 			buildPhases = (
-				22C327DC23D5CEED001CCB5B /* SwiftLint */,
 				221967E9228890B200BF00FB /* Sources */,
 				221967EA228890B200BF00FB /* Frameworks */,
 				221967EB228890B200BF00FB /* Resources */,
+				22C327DC23D5CEED001CCB5B /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				221967F0228890B200BF00FB /* PBXTargetDependency */,
 			);
-			name = MuseumDomainTests;
+			name = MuseumCoreTests;
 			productName = IdagioKitTests;
-			productReference = 221967ED228890B200BF00FB /* MuseumDomainTests.xctest */;
+			productReference = 221967ED228890B200BF00FB /* MuseumCoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -303,7 +322,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 221967DE228890B200BF00FB /* Build configuration list for PBXProject "MuseumDomain" */;
+			buildConfigurationList = 221967DE228890B200BF00FB /* Build configuration list for PBXProject "MuseumCore" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -312,12 +331,14 @@
 				Base,
 			);
 			mainGroup = 221967DA228890B200BF00FB;
+			packageReferences = (
+			);
 			productRefGroup = 221967E5228890B200BF00FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				221967E3228890B200BF00FB /* MuseumDomain */,
-				221967EC228890B200BF00FB /* MuseumDomainTests */,
+				221967E3228890B200BF00FB /* MuseumCore */,
+				221967EC228890B200BF00FB /* MuseumCoreTests */,
 			);
 		};
 /* End PBXProject section */
@@ -357,7 +378,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
+			shellScript = "# ../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
 		};
 		22C327DC23D5CEED001CCB5B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -375,7 +396,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
+			shellScript = "# ../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -384,7 +405,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */,
+				22AC6EBB24329F0400BB3CE6 /* ArtRepository.swift in Sources */,
+				2239EC62242FBE080067859A /* CollectionAPIRequest.swift in Sources */,
+				22AC6EB7243294D500BB3CE6 /* RijkmuseumAPIConfig.swift in Sources */,
+				224642872432714600BE711E /* Repositories.swift in Sources */,
 				222FD85B242FACEB008A45E9 /* Art.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +441,7 @@
 /* Begin PBXTargetDependency section */
 		221967F0228890B200BF00FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 221967E3228890B200BF00FB /* MuseumDomain */;
+			target = 221967E3228890B200BF00FB /* MuseumCore */;
 			targetProxy = 221967EF228890B200BF00FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -458,6 +482,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -526,6 +551,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -570,7 +596,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_NAME = MuseumDomain;
+				PRODUCT_NAME = MuseumCore;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -595,7 +621,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_NAME = MuseumDomain;
+				PRODUCT_NAME = MuseumCore;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -613,7 +639,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_NAME = MuseumDomainTests;
+				PRODUCT_NAME = MuseumCoreTests;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -630,7 +656,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_NAME = MuseumDomainTests;
+				PRODUCT_NAME = MuseumCoreTests;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -639,7 +665,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		221967DE228890B200BF00FB /* Build configuration list for PBXProject "MuseumDomain" */ = {
+		221967DE228890B200BF00FB /* Build configuration list for PBXProject "MuseumCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				221967F6228890B200BF00FB /* Debug */,
@@ -648,7 +674,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		221967F8228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumDomain" */ = {
+		221967F8228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				221967F9228890B200BF00FB /* Debug */,
@@ -657,7 +683,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		221967FB228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumDomainTests" */ = {
+		221967FB228890B200BF00FB /* Build configuration list for PBXNativeTarget "MuseumCoreTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				221967FC228890B200BF00FB /* Debug */,

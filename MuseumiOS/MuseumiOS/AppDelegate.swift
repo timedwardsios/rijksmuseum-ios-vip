@@ -5,7 +5,7 @@ import Utils
 @UIApplicationMain
 class AppDelegate: UIResponder {
     let appState: AppState
-    let systemController: SystemController
+    let systemController: SystemInteractor
     let coordinator: Coordinator
 
     convenience override init() {
@@ -17,7 +17,7 @@ class AppDelegate: UIResponder {
         )
     }
 
-    init(appState: AppState, systemController: SystemController, coordinator: Coordinator) {
+    init(appState: AppState, systemController: SystemInteractor, coordinator: Coordinator) {
         self.appState = appState
         self.systemController = systemController
         self.coordinator = coordinator

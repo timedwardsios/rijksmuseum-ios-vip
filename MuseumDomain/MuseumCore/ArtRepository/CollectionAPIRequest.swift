@@ -1,24 +1,20 @@
-import Combine
 import Foundation
 import Utils
 
-public struct CollectionWebRequest: WebRequest {
-    public typealias ResponseJSONType = RootJSON
+public struct CollectionAPIRequest: APIRequest {
 
-    public let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection")!
+    public typealias ResponseJSONType = CollectionJSON
 
-    public let queryItems = [
-        "key": "VV23OnI1",
-        "format": "json",
-        "ps": "100",
-        "imgonly": "true",
-        "s": "relevance",
+    public var pathExtension = "/collection"
+
+    public let queryItems: [URLQueryItem] = [
+        .init(name: "ps", value: "100"),
+        .init(name: "imgonly", value: "true"),
+        .init(name: "s", value: "relevance"),
     ]
-
-    public init() {}
 }
 
-public struct RootJSON: Decodable {
+public struct CollectionJSON: Decodable {
     private enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
     }

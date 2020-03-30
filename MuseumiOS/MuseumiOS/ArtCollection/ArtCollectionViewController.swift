@@ -1,4 +1,5 @@
-import Combine
+import RxSwift
+import RxCocoa
 import MuseumApp
 import TinyConstraints
 import UIKit
@@ -7,18 +8,18 @@ import Utils
 class ArtCollectionViewController: UIViewController {
     private let viewModel: ArtCollectionViewModel
 
-    private var subscriptions: Set<AnyCancellable> = []
+    private let disposeBag = DisposeBag()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         view.addSubview(tableView)
         tableView.edgesToSuperview()
+        tableView.refreshControl = refreshControl
         return tableView
     }()
 
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        tableView.refreshControl = refreshControl
         refreshControl.addTarget(
             self,
             action: #selector(refreshControlDidChangeValue),
@@ -43,29 +44,34 @@ class ArtCollectionViewController: UIViewController {
 extension ArtCollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.isAppeared = true
+        viewModel.inputs.didAppear.accept(())
     }
 }
 
 @objc extension ArtCollectionViewController {
     func refreshControlDidChangeValue() {
-        viewModel.isRequestingRefresh = refreshControl.isRefreshing
+        viewModel.inputs.didTriggerRefresh.accept(())
     }
 }
 
 private extension ArtCollectionViewController {
     func bind() {
-        viewModel.$arts
-            .receive(on: RunLoop.main)
-            .assign(to: \.arts, on: dataSource)
-            .store(in: &subscriptions)
 
-        viewModel.$isRequestingRefresh
-            .receive(on: RunLoop.main)
-            .subscribe(refreshControl)
+        viewModel.outputs.arts
+            .asDriver()
+            .drive(onNext: { self.dataSource.arts = $0 })
+            .disposed(by: disposeBag)
 
-        dataSource.$selectedArt
-            .assign(to: \.selectedArt, on: viewModel)
-            .store(in: &subscriptions)
+
+        viewModel.outputs.isRefreshing
+            .asDriver()
+            .drive(refreshControl.rx.isRefreshingAnimated)
+            .disposed(by: disposeBag)
+
+
+        dataSource.didSelectArt
+            .asSignal()
+            .emit(to: viewModel.inputs.didSelectArt)
+            .disposed(by: disposeBag)
     }
 }

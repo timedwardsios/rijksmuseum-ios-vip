@@ -1,10 +1,12 @@
-import Combine
 import MuseumApp
 import SDWebImage
 import UIKit
 import Utils
+import RxSwift
+import RxCocoa
 
 class ArtDetailsViewController: UIViewController {
+    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         view.addSubview(imageView)
@@ -13,7 +15,7 @@ class ArtDetailsViewController: UIViewController {
         return imageView
     }()
 
-    private var subscriptions = Set<AnyCancellable>()
+    private let disposeBag = DisposeBag()
 
     private let viewModel: ArtDetailsViewModel
 
@@ -33,13 +35,20 @@ extension ArtDetailsViewController {
         view.backgroundColor = .white
         bind()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+    }
 }
 
 private extension ArtDetailsViewController {
     func bind() {
-        viewModel.$imageURL
-            .receive(on: RunLoop.main)
-            .sink { self.imageView.sd_setImage(with: $0) }
-            .store(in: &subscriptions)
+        viewModel.outputs.imageURL
+            .asDriver()
+            .drive(onNext: {
+                self.imageView.sd_setImage(with: $0)
+            })
+            .disposed(by: disposeBag)
     }
 }

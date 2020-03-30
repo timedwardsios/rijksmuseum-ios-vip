@@ -1,7 +1,8 @@
-import Combine
 import MuseumDomain
+import RxSwift
+import RxRelay
 
-public protocol SystemController {
+public protocol SystemInteractor {
     func didFinishLaunching()
 
     func didEnterBackground()
@@ -19,17 +20,17 @@ public class SystemControllerDefault {
     }
 }
 
-extension SystemControllerDefault: SystemController {
+extension SystemControllerDefault: SystemInteractor {
     public func didFinishLaunching() {
-        appState.lifecycle = .launched
+        appState.lifecycle.accept(.launched)
     }
 
     public func didEnterBackground() {
-        appState.lifecycle = .background
+        appState.lifecycle.accept(.background)
     }
 
     public func willEnterForeground() {
-        appState.lifecycle = .foreground
+        appState.lifecycle.accept(.foreground)
     }
 
     public func didOpenURL(_ url: URL) {
@@ -47,7 +48,7 @@ private extension SystemControllerDefault {
         for queryItem in queryItems {
             switch (queryItem.name, queryItem.value) {
             case let ("showArtWithID", value?):
-                appState.currentRoute = .artDetails(artID: value)
+                appState.currentRoute.accept(.artDetails(artID: value))
                 return
             default:
                 break

@@ -1,15 +1,15 @@
 TODO:
 
-Move to RxSwift
+Move away from appstate, add router
 
-Add image caching
+CoreData
 
-Write behavaioural tests
+Remove combine entirely
+
+Data source stuff cocoa - https://github.com/RxSwiftCommunity/RxDataSources
+
+Check out mocking frameworks - https://github.com/Brightify/Cuckoo
 
 Write unit tests
-
-Check out mocking frameworks
-
-"final class"
 
 In test, add readme - explain over-engineering reasons

@@ -1,28 +1,36 @@
-import Combine
 import Foundation
 import MuseumDomain
 import Utils
+import RxSwift
+import RxCocoa
 
 public class ArtDetailsViewModel {
-    @Published public var imageURL: URL?
-
-    private var subscriptions: Set<AnyCancellable> = []
-
-    let artID: String
-    let appState: AppState
-
-    public init(artID: String, appState: AppState) {
+    internal init(artID: String) {
         self.artID = artID
-        self.appState = appState
+    }
+    
+
+    public struct Outputs {
+        public let imageURL = BehaviorRelay<URL?>(value: nil)
+    }
+
+    public let outputs = Outputs()
+
+    private let disposeBag = DisposeBag()
+    private let artID: String
+
+    public init(artID: String,
+                artController: ArtController = ArtControllerDefault()) {
+        self.artID = artID
         bind()
     }
 
     func bind() {
-        appState.$arts
-            .compactMap { $0.value }
-            .compactMap { $0.first { $0.id == self.artID } }
-            .map { $0.imageURL }
-            .assign(to: \.imageURL, on: self)
-            .store(in: &subscriptions)
+        
+        appState.arts
+            .asDriver()
+            .compactMap { $0.first { $0.id == self.artID }?.imageURL }
+            .drive(outputs.imageURL)
+            .disposed(by: disposeBag)
     }
 }

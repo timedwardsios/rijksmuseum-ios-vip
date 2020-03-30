@@ -11,11 +11,13 @@
 		222FD84F242FAC9B008A45E9 /* MuseumDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 222FD84B242FAC91008A45E9 /* MuseumDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22387B9D23E98E9900937F59 /* ArtCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */; };
 		22387B9F23E9913400937F59 /* ArtDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */; };
-		2265A4BB23ECB7F500097D6F /* ArtController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265A4BA23ECB7F500097D6F /* ArtController.swift */; };
+		224642892432715500BE711E /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642882432715500BE711E /* ViewModels.swift */; };
+		2246428B2432716700BE711E /* Interactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246428A2432716700BE711E /* Interactors.swift */; };
+		22AC6EB924329EFA00BB3CE6 /* FetchArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC6EB824329EFA00BB3CE6 /* FetchArt.swift */; };
 		22BBE0C123E81C1C004D8D81 /* MuseumApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBE0B723E81C1C004D8D81 /* MuseumApp.framework */; };
 		22BBE0C823E81C1C004D8D81 /* MuseumApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22BBE0E023E81C6F004D8D81 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0DF23E81C6F004D8D81 /* AppState.swift */; };
-		22BBE0EC23E81DAF004D8D81 /* SystemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0EB23E81DAF004D8D81 /* SystemController.swift */; };
+		22BBE0EC23E81DAF004D8D81 /* SystemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0EB23E81DAF004D8D81 /* SystemInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,14 +48,16 @@
 		222FD84B242FAC91008A45E9 /* MuseumDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuseumDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCollectionViewModel.swift; sourceTree = "<group>"; };
 		22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewModel.swift; sourceTree = "<group>"; };
-		2265A4BA23ECB7F500097D6F /* ArtController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtController.swift; sourceTree = "<group>"; };
+		224642882432715500BE711E /* ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		2246428A2432716700BE711E /* Interactors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactors.swift; sourceTree = "<group>"; };
+		22AC6EB824329EFA00BB3CE6 /* FetchArt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchArt.swift; sourceTree = "<group>"; };
 		22BBE0B723E81C1C004D8D81 /* MuseumApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuseumApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuseumApp.h; sourceTree = "<group>"; };
 		22BBE0BB23E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22BBE0C023E81C1C004D8D81 /* MuseumAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BBE0C723E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22BBE0DF23E81C6F004D8D81 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		22BBE0EB23E81DAF004D8D81 /* SystemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemController.swift; sourceTree = "<group>"; };
+		22BBE0EB23E81DAF004D8D81 /* SystemInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemInteractor.swift; sourceTree = "<group>"; };
 		22BBE10123E81ED5004D8D81 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
 		22BBE10223E81ED5004D8D81 /* PortfolioPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterTests.swift; sourceTree = "<group>"; };
 		22BBE10323E81ED5004D8D81 /* PortfolioPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterSpy.swift; sourceTree = "<group>"; };
@@ -95,13 +99,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2265814123E9AFD7005AF00F /* Controllers */ = {
+		2265814123E9AFD7005AF00F /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				2265A4BA23ECB7F500097D6F /* ArtController.swift */,
-				22BBE0EB23E81DAF004D8D81 /* SystemController.swift */,
+				22AC6EB824329EFA00BB3CE6 /* FetchArt.swift */,
 			);
-			path = Controllers;
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		22A388D6242FEEE40071EA44 /* Resources */ = {
@@ -124,6 +127,8 @@
 		22BBE0AD23E81C1C004D8D81 = {
 			isa = PBXGroup;
 			children = (
+				224642882432715500BE711E /* ViewModels.swift */,
+				2246428A2432716700BE711E /* Interactors.swift */,
 				22BBE0B923E81C1C004D8D81 /* MuseumApp */,
 				22BBE0C423E81C1C004D8D81 /* MuseumAppTests */,
 				22BBE11223E81ED5004D8D81 /* MuseumiOSTests */,
@@ -146,7 +151,7 @@
 			children = (
 				22BBE0DF23E81C6F004D8D81 /* AppState.swift */,
 				22BBE11523E8316F004D8D81 /* ViewModels */,
-				2265814123E9AFD7005AF00F /* Controllers */,
+				2265814123E9AFD7005AF00F /* UseCases */,
 				22A388D6242FEEE40071EA44 /* Resources */,
 			);
 			path = MuseumApp;
@@ -231,6 +236,7 @@
 			children = (
 				22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */,
 				22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */,
+				22BBE0EB23E81DAF004D8D81 /* SystemInteractor.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -253,18 +259,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22BBE0CB23E81C1C004D8D81 /* Build configuration list for PBXNativeTarget "MuseumApp" */;
 			buildPhases = (
-				226CDF4824302D3A00EFF664 /* SwiftLint */,
 				22BBE0B223E81C1C004D8D81 /* Headers */,
 				22BBE0B323E81C1C004D8D81 /* Sources */,
 				22BBE0B423E81C1C004D8D81 /* Frameworks */,
 				22BBE0B523E81C1C004D8D81 /* Resources */,
 				222FD850242FAC9B008A45E9 /* Embed Frameworks */,
+				226CDF4824302D3A00EFF664 /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MuseumApp;
+			packageProductDependencies = (
+			);
 			productName = MuseumApp;
 			productReference = 22BBE0B723E81C1C004D8D81 /* MuseumApp.framework */;
 			productType = "com.apple.product-type.framework";
@@ -273,10 +281,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22BBE0CE23E81C1C004D8D81 /* Build configuration list for PBXNativeTarget "MuseumAppTests" */;
 			buildPhases = (
-				226CDF4924302D5100EFF664 /* SwiftLint */,
 				22BBE0BC23E81C1C004D8D81 /* Sources */,
 				22BBE0BD23E81C1C004D8D81 /* Frameworks */,
 				22BBE0BE23E81C1C004D8D81 /* Resources */,
+				226CDF4924302D5100EFF664 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -315,6 +323,8 @@
 				Base,
 			);
 			mainGroup = 22BBE0AD23E81C1C004D8D81;
+			packageReferences = (
+			);
 			productRefGroup = 22BBE0B823E81C1C004D8D81 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -359,7 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
+			shellScript = "# ../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
 		};
 		226CDF4924302D5100EFF664 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -377,7 +387,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
+			shellScript = "# ../Tools/swiftlint-v0.39.1/swiftlint --config ../.swiftlint.yml\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -386,9 +396,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2265A4BB23ECB7F500097D6F /* ArtController.swift in Sources */,
+				224642892432715500BE711E /* ViewModels.swift in Sources */,
 				22387B9F23E9913400937F59 /* ArtDetailsViewModel.swift in Sources */,
-				22BBE0EC23E81DAF004D8D81 /* SystemController.swift in Sources */,
+				22BBE0EC23E81DAF004D8D81 /* SystemInteractor.swift in Sources */,
+				2246428B2432716700BE711E /* Interactors.swift in Sources */,
+				22AC6EB924329EFA00BB3CE6 /* FetchArt.swift in Sources */,
 				22387B9D23E98E9900937F59 /* ArtCollectionViewModel.swift in Sources */,
 				22BBE0E023E81C6F004D8D81 /* AppState.swift in Sources */,
 			);
@@ -446,6 +458,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -511,6 +524,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;

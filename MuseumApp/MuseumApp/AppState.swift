@@ -1,13 +1,15 @@
-import Combine
 import MuseumDomain
 import Utils
+import RxSwift
+import RxRelay
 
 public class AppState {
-    @Published var arts: Loadable<[Art]> = .notRequested
 
-    @Published public var lifecycle: Lifecycle = .launching
+    public let arts = BehaviorRelay<[Art]>(value: [])
 
-    @Published public var currentRoute: Route = .artCollection
+    public let lifecycle = BehaviorRelay<Lifecycle>(value: .launching)
+
+    public let currentRoute = BehaviorRelay<Route>(value: .artCollection)
 
     public init() {}
 }

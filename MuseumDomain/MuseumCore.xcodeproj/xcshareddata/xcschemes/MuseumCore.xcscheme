@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "221967E3228890B200BF00FB"
                BuildableName = "MuseumDomain.framework"
-               BlueprintName = "MuseumDomain"
-               ReferencedContainer = "container:MuseumDomain.xcodeproj">
+               BlueprintName = "MuseumCore"
+               ReferencedContainer = "container:MuseumCore.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,8 +32,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "221967E3228890B200BF00FB"
             BuildableName = "MuseumDomain.framework"
-            BlueprintName = "MuseumDomain"
-            ReferencedContainer = "container:MuseumDomain.xcodeproj">
+            BlueprintName = "MuseumCore"
+            ReferencedContainer = "container:MuseumCore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -43,8 +43,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "221967EC228890B200BF00FB"
                BuildableName = "MuseumDomainTests.xctest"
-               BlueprintName = "MuseumDomainTests"
-               ReferencedContainer = "container:MuseumDomain.xcodeproj">
+               BlueprintName = "MuseumCoreTests"
+               ReferencedContainer = "container:MuseumCore.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -64,8 +64,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "221967E3228890B200BF00FB"
             BuildableName = "MuseumDomain.framework"
-            BlueprintName = "MuseumDomain"
-            ReferencedContainer = "container:MuseumDomain.xcodeproj">
+            BlueprintName = "MuseumCore"
+            ReferencedContainer = "container:MuseumCore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </LaunchAction>
@@ -80,8 +80,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "221967E3228890B200BF00FB"
             BuildableName = "MuseumDomain.framework"
-            BlueprintName = "MuseumDomain"
-            ReferencedContainer = "container:MuseumDomain.xcodeproj">
+            BlueprintName = "MuseumCore"
+            ReferencedContainer = "container:MuseumCore.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

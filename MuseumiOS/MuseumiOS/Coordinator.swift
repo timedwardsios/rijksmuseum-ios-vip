@@ -1,9 +1,9 @@
-import Combine
 import MuseumApp
 import UIKit
+import RxSwift
 
 public class Coordinator {
-    private var subscriptions: Set<AnyCancellable> = []
+    private let disposeBag = DisposeBag()
 
     var window: UIWindow?
 
@@ -17,19 +17,20 @@ public class Coordinator {
     }
 
     func bind() {
-        appState.$lifecycle
-            .receive(on: RunLoop.main)
+
+        appState.lifecycle
+            .asDriver()
             .filter { $0 == .launched }
-            .sink { _ in
+            .drive(onNext: { _ in
                 self.window = UIWindow()
                 self.window?.makeKeyAndVisible()
                 self.window?.rootViewController = self.navController
-            }
-            .store(in: &subscriptions)
+            })
+            .disposed(by: disposeBag)
 
-        appState.$currentRoute
-            .receive(on: RunLoop.main)
-            .sink {
+        appState.currentRoute
+            .asDriver()
+            .drive(onNext: {
                 switch $0 {
                 case .artCollection:
                     let viewModel = ArtCollectionViewModel(appState: self.appState)
@@ -37,7 +38,7 @@ public class Coordinator {
                     self.navController = UINavigationController(rootViewController: artCollection)
 
                 case let .artDetails(artID):
-                    let viewModel = ArtDetailsViewModel(artID: artID, appState: self.appState)
+                    let viewModel = ArtDetailsViewModel(artID: artID)
                     let detailsViewController = ArtDetailsViewController(viewModel: viewModel)
                     self.navController?.popToRootViewController(animated: false)
                     self.navController?.pushViewController(detailsViewController, animated: true)
@@ -46,7 +47,6 @@ public class Coordinator {
                     let alertController = UIAlertController(alert: alert)
                     self.navController?.present(alertController, animated: true)
                 }
-            }
-            .store(in: &subscriptions)
+            }).disposed(by: disposeBag)
     }
 }
