@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		222FD84E242FAC9B008A45E9 /* MuseumDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222FD84B242FAC91008A45E9 /* MuseumDomain.framework */; };
-		222FD84F242FAC9B008A45E9 /* MuseumDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 222FD84B242FAC91008A45E9 /* MuseumDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22387B9D23E98E9900937F59 /* ArtCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */; };
 		22387B9F23E9913400937F59 /* ArtDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */; };
-		224642892432715500BE711E /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642882432715500BE711E /* ViewModels.swift */; };
-		2246428B2432716700BE711E /* Interactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246428A2432716700BE711E /* Interactors.swift */; };
-		22AC6EB924329EFA00BB3CE6 /* FetchArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC6EB824329EFA00BB3CE6 /* FetchArt.swift */; };
+		224642892432715500BE711E /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642882432715500BE711E /* ViewModelFactory.swift */; };
+		2246428B2432716700BE711E /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246428A2432716700BE711E /* UseCaseFactory.swift */; };
+		2279D7622432AF3300A1ED63 /* MuseumCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2279D7612432AF3300A1ED63 /* MuseumCore.framework */; };
+		2279D7632432AF3300A1ED63 /* MuseumCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2279D7612432AF3300A1ED63 /* MuseumCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		22AC6EB924329EFA00BB3CE6 /* FetchArts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC6EB824329EFA00BB3CE6 /* FetchArts.swift */; };
 		22BBE0C123E81C1C004D8D81 /* MuseumApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBE0B723E81C1C004D8D81 /* MuseumApp.framework */; };
 		22BBE0C823E81C1C004D8D81 /* MuseumApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22BBE0E023E81C6F004D8D81 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0DF23E81C6F004D8D81 /* AppState.swift */; };
-		22BBE0EC23E81DAF004D8D81 /* SystemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0EB23E81DAF004D8D81 /* SystemInteractor.swift */; };
+		22BBE0EC23E81DAF004D8D81 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0EB23E81DAF004D8D81 /* AppViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		222FD850242FAC9B008A45E9 /* Embed Frameworks */ = {
+		2279D7642432AF3300A1ED63 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				222FD84F242FAC9B008A45E9 /* MuseumDomain.framework in Embed Frameworks */,
+				2279D7632432AF3300A1ED63 /* MuseumCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,16 +47,16 @@
 		222FD84B242FAC91008A45E9 /* MuseumDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuseumDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCollectionViewModel.swift; sourceTree = "<group>"; };
 		22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtDetailsViewModel.swift; sourceTree = "<group>"; };
-		224642882432715500BE711E /* ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
-		2246428A2432716700BE711E /* Interactors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactors.swift; sourceTree = "<group>"; };
-		22AC6EB824329EFA00BB3CE6 /* FetchArt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchArt.swift; sourceTree = "<group>"; };
+		224642882432715500BE711E /* ViewModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		2246428A2432716700BE711E /* UseCaseFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
+		2279D7612432AF3300A1ED63 /* MuseumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuseumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22AC6EB824329EFA00BB3CE6 /* FetchArts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchArts.swift; sourceTree = "<group>"; };
 		22BBE0B723E81C1C004D8D81 /* MuseumApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuseumApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuseumApp.h; sourceTree = "<group>"; };
 		22BBE0BB23E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22BBE0C023E81C1C004D8D81 /* MuseumAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuseumAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BBE0C723E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22BBE0DF23E81C6F004D8D81 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		22BBE0EB23E81DAF004D8D81 /* SystemInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemInteractor.swift; sourceTree = "<group>"; };
+		22BBE0EB23E81DAF004D8D81 /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		22BBE10123E81ED5004D8D81 /* PortfolioInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioInteractorTests.swift; sourceTree = "<group>"; };
 		22BBE10223E81ED5004D8D81 /* PortfolioPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterTests.swift; sourceTree = "<group>"; };
 		22BBE10323E81ED5004D8D81 /* PortfolioPresenterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioPresenterSpy.swift; sourceTree = "<group>"; };
@@ -76,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222FD84E242FAC9B008A45E9 /* MuseumDomain.framework in Frameworks */,
+				2279D7622432AF3300A1ED63 /* MuseumCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +93,7 @@
 		2237A30123E8C9A800FFF8C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2279D7612432AF3300A1ED63 /* MuseumCore.framework */,
 				222FD84B242FAC91008A45E9 /* MuseumDomain.framework */,
 			);
 			name = Frameworks;
@@ -102,7 +102,7 @@
 		2265814123E9AFD7005AF00F /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				22AC6EB824329EFA00BB3CE6 /* FetchArt.swift */,
+				22AC6EB824329EFA00BB3CE6 /* FetchArts.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -127,8 +127,6 @@
 		22BBE0AD23E81C1C004D8D81 = {
 			isa = PBXGroup;
 			children = (
-				224642882432715500BE711E /* ViewModels.swift */,
-				2246428A2432716700BE711E /* Interactors.swift */,
 				22BBE0B923E81C1C004D8D81 /* MuseumApp */,
 				22BBE0C423E81C1C004D8D81 /* MuseumAppTests */,
 				22BBE11223E81ED5004D8D81 /* MuseumiOSTests */,
@@ -149,7 +147,8 @@
 		22BBE0B923E81C1C004D8D81 /* MuseumApp */ = {
 			isa = PBXGroup;
 			children = (
-				22BBE0DF23E81C6F004D8D81 /* AppState.swift */,
+				224642882432715500BE711E /* ViewModelFactory.swift */,
+				2246428A2432716700BE711E /* UseCaseFactory.swift */,
 				22BBE11523E8316F004D8D81 /* ViewModels */,
 				2265814123E9AFD7005AF00F /* UseCases */,
 				22A388D6242FEEE40071EA44 /* Resources */,
@@ -234,9 +233,9 @@
 		22BBE11523E8316F004D8D81 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				22BBE0EB23E81DAF004D8D81 /* AppViewModel.swift */,
 				22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */,
 				22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */,
-				22BBE0EB23E81DAF004D8D81 /* SystemInteractor.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -263,8 +262,8 @@
 				22BBE0B323E81C1C004D8D81 /* Sources */,
 				22BBE0B423E81C1C004D8D81 /* Frameworks */,
 				22BBE0B523E81C1C004D8D81 /* Resources */,
-				222FD850242FAC9B008A45E9 /* Embed Frameworks */,
 				226CDF4824302D3A00EFF664 /* SwiftLint */,
+				2279D7642432AF3300A1ED63 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -396,13 +395,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224642892432715500BE711E /* ViewModels.swift in Sources */,
+				224642892432715500BE711E /* ViewModelFactory.swift in Sources */,
 				22387B9F23E9913400937F59 /* ArtDetailsViewModel.swift in Sources */,
-				22BBE0EC23E81DAF004D8D81 /* SystemInteractor.swift in Sources */,
-				2246428B2432716700BE711E /* Interactors.swift in Sources */,
-				22AC6EB924329EFA00BB3CE6 /* FetchArt.swift in Sources */,
+				22BBE0EC23E81DAF004D8D81 /* AppViewModel.swift in Sources */,
+				2246428B2432716700BE711E /* UseCaseFactory.swift in Sources */,
+				22AC6EB924329EFA00BB3CE6 /* FetchArts.swift in Sources */,
 				22387B9D23E98E9900937F59 /* ArtCollectionViewModel.swift in Sources */,
-				22BBE0E023E81C6F004D8D81 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

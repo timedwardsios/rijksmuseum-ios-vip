@@ -8,49 +8,23 @@ public protocol ArtRepository {
 
 public final class ArtRepositoryDefault: ArtRepository {
 
-    private let localRepository: ArtRepositoryLocal
-    private let remoteRepository: ArtRepositoryRemote
+    private var arts = [Art]()
 
-    init(localRepository: ArtRepositoryLocal,
-         remoteRepository: ArtRepositoryRemote) {
-        self.localRepository = localRepository
-        self.remoteRepository = remoteRepository
+    private let artWebService: WebService
+
+    init(artWebService: WebService) {
+        self.artWebService = artWebService
     }
 
     public func fetchArts() -> Observable<[Art]> {
-        Observable.just([])
-    }
-}
-
-
-
-
-
-
-
-
-
-internal class ArtRepositoryRemote: ArtRepository {
-
-    private let apiService: APIService
-
-    init(apiService: APIService) {
-        self.apiService = apiService
-    }
-
-    func fetchArts() -> Observable<[Art]> {
-        apiService.response(forWebRequest: CollectionAPIRequest())
-            .map { $0.artJSONs }
-    }
-}
-
-
-
-
-
-
-internal class ArtRepositoryLocal: ArtRepository {
-    func fetchArts() -> Observable<[Art]> {
-        Observable.just([])
+        Observable.of(
+            Observable.just(arts),
+            artWebService.performRequest(CollectionWebRequest())
+                .map { $0.artJSONs }
+                .do(onNext: {
+                    self.arts = $0
+                })
+            )
+            .merge()
     }
 }

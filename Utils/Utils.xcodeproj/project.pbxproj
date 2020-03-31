@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		221968762288C08500BF00FB /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221968752288C08500BF00FB /* NetworkResponseMock.swift */; };
 		2242F2CA2430D76800D2E0DC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2242F2C92430D76800D2E0DC /* RxSwift */; };
-		224642942432730200BE711E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642932432730200BE711E /* APIService.swift */; };
-		224642962432730A00BE711E /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642952432730A00BE711E /* APIRequest.swift */; };
+		224642942432730200BE711E /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642932432730200BE711E /* WebService.swift */; };
+		224642962432730A00BE711E /* WebServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642952432730A00BE711E /* WebServiceConfig.swift */; };
+		225DF0DE2432C76700F2C2E7 /* JSONDecoder+Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DF0DD2432C76700F2C2E7 /* JSONDecoder+Observable.swift */; };
+		225DF0E02432C90200F2C2E7 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DF0DF2432C90200F2C2E7 /* UseCase.swift */; };
 		225EF9502430E6CB005D770F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 225EF94F2430E6CB005D770F /* RxRelay */; };
 		225EF9522430E6CE005D770F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 225EF9512430E6CE005D770F /* RxCocoa */; };
-		227F994524315C3400CC8FE0 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F994424315C3400CC8FE0 /* Loadable.swift */; };
 		2285024222879B5F0059AD7C /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2285021722879B5F0059AD7C /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2285024822879B5F0059AD7C /* Collection+OptionalAt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285021F22879B5F0059AD7C /* Collection+OptionalAt.swift */; };
 		2285024922879B5F0059AD7C /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285022022879B5F0059AD7C /* UIColor+Hex.swift */; };
@@ -42,10 +43,11 @@
 
 /* Begin PBXFileReference section */
 		221968752288C08500BF00FB /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
-		224642932432730200BE711E /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		224642952432730A00BE711E /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		224642932432730200BE711E /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		224642952432730A00BE711E /* WebServiceConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceConfig.swift; sourceTree = "<group>"; };
+		225DF0DD2432C76700F2C2E7 /* JSONDecoder+Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Observable.swift"; sourceTree = "<group>"; };
+		225DF0DF2432C90200F2C2E7 /* UseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		2273F7B9227112E00027C7FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		227F994424315C3400CC8FE0 /* Loadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		2285021722879B5F0059AD7C /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		2285021822879B5F0059AD7C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2285021F22879B5F0059AD7C /* Collection+OptionalAt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+OptionalAt.swift"; sourceTree = "<group>"; };
@@ -90,9 +92,10 @@
 		2285020E22879B5F0059AD7C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				22AC6EB2243283C100BB3CE6 /* API */,
-				227F994424315C3400CC8FE0 /* Loadable.swift */,
-				22AA3B4723E25F9D00A6AD4E /* Misc */,
+				22AC6EB2243283C100BB3CE6 /* WebService */,
+				225DF0DD2432C76700F2C2E7 /* JSONDecoder+Observable.swift */,
+				2285021F22879B5F0059AD7C /* Collection+OptionalAt.swift */,
+				225DF0DF2432C90200F2C2E7 /* UseCase.swift */,
 				22A2149E23E2576B003F7858 /* UI */,
 				22B3038B23E1F63200980E16 /* Alert */,
 				2285021622879B5F0059AD7C /* Resources */,
@@ -159,21 +162,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		22AA3B4723E25F9D00A6AD4E /* Misc */ = {
+		22AC6EB2243283C100BB3CE6 /* WebService */ = {
 			isa = PBXGroup;
 			children = (
-				2285021F22879B5F0059AD7C /* Collection+OptionalAt.swift */,
+				224642932432730200BE711E /* WebService.swift */,
+				224642952432730A00BE711E /* WebServiceConfig.swift */,
 			);
-			path = Misc;
-			sourceTree = "<group>";
-		};
-		22AC6EB2243283C100BB3CE6 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				224642932432730200BE711E /* APIService.swift */,
-				224642952432730A00BE711E /* APIRequest.swift */,
-			);
-			path = API;
+			path = WebService;
 			sourceTree = "<group>";
 		};
 		22AC8C3F212EE635000A0BE0 = {
@@ -374,14 +369,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				224642962432730A00BE711E /* APIRequest.swift in Sources */,
+				224642962432730A00BE711E /* WebServiceConfig.swift in Sources */,
 				22B3038923E1F5A600980E16 /* Alert.swift in Sources */,
 				2285024922879B5F0059AD7C /* UIColor+Hex.swift in Sources */,
-				224642942432730200BE711E /* APIService.swift in Sources */,
+				224642942432730200BE711E /* WebService.swift in Sources */,
 				22A214A023E25795003F7858 /* ReuseIdentifiable.swift in Sources */,
+				225DF0E02432C90200F2C2E7 /* UseCase.swift in Sources */,
 				2285024C22879B5F0059AD7C /* UIRefreshControl+Reactive.swift in Sources */,
 				2285025022879B5F0059AD7C /* UIAlertController+Alert.swift in Sources */,
-				227F994524315C3400CC8FE0 /* Loadable.swift in Sources */,
+				225DF0DE2432C76700F2C2E7 /* JSONDecoder+Observable.swift in Sources */,
 				2285024822879B5F0059AD7C /* Collection+OptionalAt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

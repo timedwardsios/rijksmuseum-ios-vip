@@ -1,17 +1,11 @@
 import MuseumApp
-import MuseumDomain
+import MuseumCore
 
-struct Dependencies {
-
-    let coordinator: Coordinator
-    let systemController: SystemInteractor
-
-    init() {
-        let appState = AppState()
-        let services = Services()
-        let controllers = Controllers(appState: appState, services: services)
-        let viewModels = ViewModels(appState: appState, controllers: controllers)
-        self.coordinator = Coordinator(appState: appState, viewModels: viewModels)
-        self.systemController = controllers.systemController
-    }
-}
+let viewModelFactory: ViewModelFactory = {
+    let urlSession = URLSession.shared
+    let jsonDecoder = JSONDecoder()
+    let serviceFactory = ServiceFactory(urlSession: urlSession, jsonDecoder: jsonDecoder)
+    let repositoryFactory = RepositoryFactory(serviceFactory: serviceFactory)
+    let useCaseFactory = UseCaseFactory(repositoryFactory: repositoryFactory)
+    return ViewModelFactory(useCaseFactory: useCaseFactory)
+}()

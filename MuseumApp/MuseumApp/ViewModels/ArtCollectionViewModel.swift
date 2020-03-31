@@ -1,5 +1,5 @@
 import Foundation
-import MuseumDomain
+import MuseumCore
 import Utils
 import RxSwift
 import RxCocoa
@@ -21,33 +21,26 @@ public class ArtCollectionViewModel {
     public let outputs = Outputs()
 
     private let disposeBag = DisposeBag()
-    private var appState: AppState
-    private let artController: ArtController
 
-    // MARK: - init
-    public convenience init(appState: AppState) {
-        self.init(appState: appState, artController: ArtControllerDefault(appState: appState))
-    }
+    private let fetchArt: FetchArts
 
-    public init(appState: AppState, artController: ArtController) {
-        self.appState = appState
-        self.artController = artController
+    public init(fetchArt: FetchArts) {
+        self.fetchArt = fetchArt
         bind()
     }
 }
 
 private extension ArtCollectionViewModel {
     func bind() {
-
         Observable.of(
             inputs.didAppear.take(1),
             inputs.didTriggerRefresh.asObservable()
         )
             .merge()
             .flatMapLatest { _ in
-                self.artController.fetchArts()
-                    .do(onError: {
-                        self.appState.currentRoute.accept(.alert(.error($0)))
+                self.fetchArt.execute(())
+                    .do(onError: { _ in
+//                        self.appState.currentRoute.accept(.alert(.error($0)))
                         self.outputs.isRefreshing.accept(false)
                     }, onCompleted: {
                         self.outputs.isRefreshing.accept(false)
@@ -55,16 +48,15 @@ private extension ArtCollectionViewModel {
                         self.outputs.isRefreshing.accept(true)
                     })
                     .asDriver(onErrorJustReturn: [])
-
             }
             .asDriver(onErrorJustReturn: [])
             .drive(outputs.arts)
             .disposed(by: disposeBag)
 
-        inputs.didSelectArt
-            .asSignal()
-            .map { AppState.Route.artDetails(artID: $0.id) }
-            .emit(to: appState.currentRoute)
-            .disposed(by: disposeBag)
+//        inputs.didSelectArt
+//            .asSignal()
+//            .map { AppState.Route.artDetails(artID: $0.id) }
+//            .emit(to: appState.currentRoute)
+//            .disposed(by: disposeBag)
     }
 }

@@ -1,36 +1,30 @@
-import MuseumDomain
+import MuseumCore
 import RxSwift
 import RxRelay
 
-public protocol SystemInteractor {
-    func didFinishLaunching()
+public class AppViewModel {
 
-    func didEnterBackground()
-
-    func willEnterForeground()
-
-    func didOpenURL(_ url: URL)
-}
-
-public class SystemControllerDefault {
-    var appState: AppState
-
-    public init(appState: AppState) {
-        self.appState = appState
+    public struct Inputs {
+        public let didFinishLaunching = PublishRelay<Void>()
+        public let didEnterBackground = PublishRelay<Void>()
+        public let willEnterForeground = PublishRelay<Art>()
+        public let didOpenURL = PublishRelay<URL>()
     }
+
+    public let inputs = Inputs()
 }
 
-extension SystemControllerDefault: SystemInteractor {
+extension AppViewModel {
     public func didFinishLaunching() {
-        appState.lifecycle.accept(.launched)
+//        appState.lifecycle.accept(.launched)
     }
 
     public func didEnterBackground() {
-        appState.lifecycle.accept(.background)
+//        appState.lifecycle.accept(.background)
     }
 
     public func willEnterForeground() {
-        appState.lifecycle.accept(.foreground)
+//        appState.lifecycle.accept(.foreground)
     }
 
     public func didOpenURL(_ url: URL) {
@@ -38,7 +32,7 @@ extension SystemControllerDefault: SystemInteractor {
     }
 }
 
-private extension SystemControllerDefault {
+private extension AppViewModel {
     func handleDeepLink(withURL url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
             let queryItems = components.queryItems else {
@@ -48,7 +42,7 @@ private extension SystemControllerDefault {
         for queryItem in queryItems {
             switch (queryItem.name, queryItem.value) {
             case let ("showArtWithID", value?):
-                appState.currentRoute.accept(.artDetails(artID: value))
+//                appState.currentRoute.accept(.artDetails(artID: value))
                 return
             default:
                 break

@@ -1,5 +1,5 @@
 import MuseumApp
-import MuseumDomain
+import MuseumCore
 import UIKit
 import RxSwift
 import RxCocoa

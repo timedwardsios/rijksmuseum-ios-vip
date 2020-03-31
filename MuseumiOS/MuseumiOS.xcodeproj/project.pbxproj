@@ -36,15 +36,15 @@
 		220DF1BA23E624E1009C2580 /* ArtCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DF1B923E624E1009C2580 /* ArtCollectionDataSource.swift */; };
 		2226ACB423E4FE6C002AEF97 /* ArtCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229CFC7323DDC86900239309 /* ArtCollectionViewController.swift */; };
 		2226ACB723E4FE6C002AEF97 /* ArtCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229CFC7023DDC86900239309 /* ArtCollectionCell.swift */; };
-		2246428D2432717900BE711E /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2246428C2432717900BE711E /* Dependencies.swift */; };
+		22392CD92433722F00B5A66D /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22392CD82433722F00B5A66D /* Dependencies.swift */; };
+		2279D7682432BA1B00A1ED63 /* MuseumCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2279D7672432BA1B00A1ED63 /* MuseumCore.framework */; };
+		2279D7692432BA1B00A1ED63 /* MuseumCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2279D7672432BA1B00A1ED63 /* MuseumCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		229CFC6D23DDC3C400239309 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 229CFC6C23DDC3C400239309 /* SDWebImage */; };
 		22AC8C8E212EEA02000A0BE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C75212EEA02000A0BE0 /* Assets.xcassets */; };
 		22AC8C8F212EEA02000A0BE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22AC8C76212EEA02000A0BE0 /* LaunchScreen.storyboard */; };
 		22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */; };
 		22AE2945242FDE7E003101FE /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AE2944242FDE7E003101FE /* Utils.framework */; };
 		22AE2946242FDE7E003101FE /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22AE2944242FDE7E003101FE /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		22AE2948242FDE8E003101FE /* MuseumDomain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AE2947242FDE8E003101FE /* MuseumDomain.framework */; };
-		22AE2949242FDE8E003101FE /* MuseumDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22AE2947242FDE8E003101FE /* MuseumDomain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		22BBE0F823E81E1C004D8D81 /* ArtDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0F623E81E1C004D8D81 /* ArtDetailsViewController.swift */; };
 		22BBE0FE23E81EC6004D8D81 /* MuseumApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBE0FD23E81EC6004D8D81 /* MuseumApp.framework */; };
 		22BBE0FF23E81EC6004D8D81 /* MuseumApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBE0FD23E81EC6004D8D81 /* MuseumApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -58,9 +58,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2279D7692432BA1B00A1ED63 /* MuseumCore.framework in Embed Frameworks */,
 				22AE2946242FDE7E003101FE /* Utils.framework in Embed Frameworks */,
 				22BBE0FF23E81EC6004D8D81 /* MuseumApp.framework in Embed Frameworks */,
-				22AE2949242FDE8E003101FE /* MuseumDomain.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,8 +74,8 @@
 		221DB1102130ABE20031A401 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		221F3EC9212F3A7B00907255 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2237A30923E8C9C900FFF8C2 /* TimKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TimKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22392CD82433722F00B5A66D /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		2239FE7123D6306B008E9867 /* TestKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2246428C2432717900BE711E /* Dependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		2253927B2276595E007AEF1F /* Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258B965227210A600516603 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258B9852272401900516603 /* TestingUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TestingUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +86,7 @@
 		22695F4721320A27004C47A5 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22695F4921320A72004C47A5 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22706C8120FE510E006E27EE /* Rijksmuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rijksmuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2279D7672432BA1B00A1ED63 /* MuseumCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuseumCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2289A5CA212F121400787E2B /* Utility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		229CFC7023DDC86900239309 /* ArtCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCollectionCell.swift; sourceTree = "<group>"; };
 		229CFC7323DDC86900239309 /* ArtCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtCollectionViewController.swift; sourceTree = "<group>"; };
@@ -110,8 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2279D7682432BA1B00A1ED63 /* MuseumCore.framework in Frameworks */,
 				229CFC6D23DDC3C400239309 /* SDWebImage in Frameworks */,
-				22AE2948242FDE8E003101FE /* MuseumDomain.framework in Frameworks */,
 				22AE2945242FDE7E003101FE /* Utils.framework in Frameworks */,
 				22BBE0FE23E81EC6004D8D81 /* MuseumApp.framework in Frameworks */,
 				22C1809823E5D4BC0009C58E /* TinyConstraints in Frameworks */,
@@ -149,7 +150,7 @@
 		22AC8C73212EEA02000A0BE0 /* MuseumiOS */ = {
 			isa = PBXGroup;
 			children = (
-				2246428C2432717900BE711E /* Dependencies.swift */,
+				22392CD82433722F00B5A66D /* Dependencies.swift */,
 				22AC8C8D212EEA02000A0BE0 /* AppDelegate.swift */,
 				220BDB3623E8A608009ED431 /* Coordinator.swift */,
 				22B07AE523D798CA00D442E7 /* ArtCollection */,
@@ -182,6 +183,7 @@
 		A10F01533FEF44811CAB0213 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2279D7672432BA1B00A1ED63 /* MuseumCore.framework */,
 				22AE2947242FDE8E003101FE /* MuseumDomain.framework */,
 				22AE2944242FDE7E003101FE /* Utils.framework */,
 				2237A30923E8C9C900FFF8C2 /* TimKit.framework */,
@@ -355,7 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2246428D2432717900BE711E /* Dependencies.swift in Sources */,
+				22392CD92433722F00B5A66D /* Dependencies.swift in Sources */,
 				2226ACB423E4FE6C002AEF97 /* ArtCollectionViewController.swift in Sources */,
 				22AC8C9F212EEA02000A0BE0 /* AppDelegate.swift in Sources */,
 				2226ACB723E4FE6C002AEF97 /* ArtCollectionCell.swift in Sources */,

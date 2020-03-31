@@ -1,10 +1,8 @@
 TODO:
 
-Move away from appstate, add router
+Fix broken functionality, add router and CoreData for persistance
 
-CoreData
-
-Remove combine entirely
+Fix diagram
 
 Data source stuff cocoa - https://github.com/RxSwiftCommunity/RxDataSources
 

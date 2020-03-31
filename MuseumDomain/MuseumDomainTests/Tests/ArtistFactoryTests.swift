@@ -1,4 +1,4 @@
-@testable import MuseumDomain
+@testable import MuseumCore
 import TestKit
 import XCTest
 

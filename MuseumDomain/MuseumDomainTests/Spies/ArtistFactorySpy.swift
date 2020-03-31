@@ -1,5 +1,5 @@
 import Foundation
-@testable import MuseumDomain
+@testable import MuseumCore
 import Utils
 
 class ArtistFactorySpy: ArtistFactory {

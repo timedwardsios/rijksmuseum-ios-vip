@@ -1,7 +1,7 @@
 import Foundation
 import Utils
 
-public struct CollectionAPIRequest: APIRequest {
+public struct CollectionWebRequest: WebRequest {
 
     public typealias ResponseJSONType = CollectionJSON
 
