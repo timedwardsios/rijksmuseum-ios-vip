@@ -2,21 +2,21 @@ import MuseumApp
 import UIKit
 import Utils
 
+let dependencies = Dependencies()
+
 @UIApplicationMain
 class AppDelegate: UIResponder {
 
     var window: UIWindow?
 
-    var viewModel = viewModelFactory.appViewModel()
+    var viewModel: AppViewModel = dependencies.resolve()
 }
 
 extension AppDelegate: UIApplicationDelegate {
     func application(_: UIApplication,didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow()
         self.window?.makeKeyAndVisible()
-        let artCollectionViewController = ArtCollectionViewController(
-            viewModel: viewModelFactory.artCollectionViewModel()
-        )
+        let artCollectionViewController = ArtCollectionViewController(viewModel: dependencies.resolve())
         self.window?.rootViewController = artCollectionViewController
         return true
     }

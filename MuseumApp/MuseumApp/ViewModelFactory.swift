@@ -1,18 +1,14 @@
 import MuseumCore
 
-public class ViewModelFactory {
+public protocol ViewModelFactory: UseCaseFactory {}
 
-    private let useCaseFactory: UseCaseFactory
+public extension ViewModelFactory {
 
-    public init(useCaseFactory: UseCaseFactory) {
-        self.useCaseFactory = useCaseFactory
+    func resolve() -> ArtCollectionViewModel {
+        .init(fetchArt: resolve())
     }
 
-    public func artCollectionViewModel() -> ArtCollectionViewModel {
-        .init(fetchArt: useCaseFactory.fetchArts)
-    }
+    func resolve(art: Art) -> ArtDetailsViewModel { .init(art: art) }
 
-    public func artDetailsViewModel(art: Art) -> ArtDetailsViewModel { .init(art: art) }
-
-    public func appViewModel() -> AppViewModel { .init() }
+    func resolve() -> AppViewModel { .init() }
 }

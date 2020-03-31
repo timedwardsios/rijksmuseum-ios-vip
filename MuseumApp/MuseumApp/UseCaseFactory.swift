@@ -1,10 +1,10 @@
 import MuseumCore
 
-public class UseCaseFactory {
+public protocol UseCaseFactory: RepositoryFactory {}
 
-    let fetchArts: FetchArts
+public extension UseCaseFactory {
 
-    public init(repositoryFactory: RepositoryFactory) {
-        fetchArts = FetchArts(artRepository: repositoryFactory.artRepository)
+    func resolve() -> FetchArts {
+        .init(artRepository: resolve())
     }
 }

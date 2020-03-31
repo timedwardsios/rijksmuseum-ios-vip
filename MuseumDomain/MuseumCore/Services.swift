@@ -1,10 +1,12 @@
 import Foundation
 
-public class ServiceFactory {
+public protocol ServiceFactory {
+    var urlSession: URLSession { get }
+    var jsonDecoder: JSONDecoder { get }
+}
 
-    let artWebService: ArtWebService
-
-    public init(urlSession: URLSession, jsonDecoder: JSONDecoder) {
-        self.artWebService = ArtWebService(urlSession: urlSession, jsonDecoder: jsonDecoder)
+extension ServiceFactory {
+    func resolve() -> ArtWebService {
+        ArtWebService(urlSession: urlSession, jsonDecoder: jsonDecoder)
     }
 }

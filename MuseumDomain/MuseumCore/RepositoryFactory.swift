@@ -1,10 +1,9 @@
 import Foundation
 
-public class RepositoryFactory {
+public protocol RepositoryFactory: ServiceFactory {}
 
-    public let artRepository: ArtRepository
-
-    public init(serviceFactory: ServiceFactory) {
-        self.artRepository = ArtRepositoryDefault(artWebService: serviceFactory.artWebService)
+public extension RepositoryFactory {
+    func resolve() -> ArtRepository {
+        ArtRepositoryDefault(artWebService: resolve())
     }
 }
