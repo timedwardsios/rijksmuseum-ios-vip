@@ -8,13 +8,11 @@ public class ArtCollectionViewModel {
 
     public struct Inputs {
         public let didAppear = PublishRelay<Void>()
-        public let didTriggerRefresh = PublishRelay<Void>()
         public let didSelectArt = PublishRelay<Art>()
     }
 
     public struct Outputs {
         public let arts = BehaviorRelay(value: [Art]())
-        public let isRefreshing = BehaviorRelay(value: false)
     }
 
     public let inputs = Inputs()
@@ -32,22 +30,10 @@ public class ArtCollectionViewModel {
 
 private extension ArtCollectionViewModel {
     func bind() {
-        Observable.of(
-            inputs.didAppear.take(1),
-            inputs.didTriggerRefresh.asObservable()
-        )
-            .merge()
+        inputs.didAppear
             .flatMapLatest { _ in
                 self.fetchArt.execute(())
-                    .do(onError: { _ in
-//                        self.appState.currentRoute.accept(.alert(.error($0)))
-                        self.outputs.isRefreshing.accept(false)
-                    }, onCompleted: {
-                        self.outputs.isRefreshing.accept(false)
-                    }, onSubscribe: {
-                        self.outputs.isRefreshing.accept(true)
-                    })
-                    .asDriver(onErrorJustReturn: [])
+                    .asDriver(onErrorJustReturn: [Art]())
             }
             .asDriver(onErrorJustReturn: [])
             .drive(outputs.arts)

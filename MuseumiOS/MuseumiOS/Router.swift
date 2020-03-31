@@ -2,7 +2,13 @@ import MuseumApp
 import UIKit
 import RxSwift
 
-public class Coordinator {
+enum Route {
+    case collection
+    case details(artID: String)
+}
+
+public class Router {
+
     private let disposeBag = DisposeBag()
 
     var window: UIWindow?

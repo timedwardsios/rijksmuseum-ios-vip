@@ -21,9 +21,13 @@ extension AppDelegate: UIApplicationDelegate {
         return true
     }
 
-    func applicationDidEnterBackground(_: UIApplication) { }
+    func applicationDidEnterBackground(_: UIApplication) {
 
-    func applicationWillEnterForeground(_: UIApplication) { }
+    }
+
+    func applicationWillEnterForeground(_: UIApplication) {
+
+    }
 
     func application(
         _: UIApplication,

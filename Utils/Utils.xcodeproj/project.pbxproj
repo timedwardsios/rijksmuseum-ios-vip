@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		221968762288C08500BF00FB /* NetworkResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221968752288C08500BF00FB /* NetworkResponseMock.swift */; };
+		22392CE02433912D00B5A66D /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22392CDF2433912D00B5A66D /* UserDefaultsService.swift */; };
 		2242F2CA2430D76800D2E0DC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2242F2C92430D76800D2E0DC /* RxSwift */; };
 		224642942432730200BE711E /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642932432730200BE711E /* WebService.swift */; };
 		224642962432730A00BE711E /* WebServiceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642952432730A00BE711E /* WebServiceConfig.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		221968752288C08500BF00FB /* NetworkResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseMock.swift; sourceTree = "<group>"; };
+		22392CDF2433912D00B5A66D /* UserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		224642932432730200BE711E /* WebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		224642952432730A00BE711E /* WebServiceConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceConfig.swift; sourceTree = "<group>"; };
 		225DF0DD2432C76700F2C2E7 /* JSONDecoder+Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Observable.swift"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		2285020E22879B5F0059AD7C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				22392CDF2433912D00B5A66D /* UserDefaultsService.swift */,
 				22AC6EB2243283C100BB3CE6 /* WebService */,
 				225DF0DD2432C76700F2C2E7 /* JSONDecoder+Observable.swift */,
 				2285021F22879B5F0059AD7C /* Collection+OptionalAt.swift */,
@@ -370,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				224642962432730A00BE711E /* WebServiceConfig.swift in Sources */,
+				22392CE02433912D00B5A66D /* UserDefaultsService.swift in Sources */,
 				22B3038923E1F5A600980E16 /* Alert.swift in Sources */,
 				2285024922879B5F0059AD7C /* UIColor+Hex.swift in Sources */,
 				224642942432730200BE711E /* WebService.swift in Sources */,

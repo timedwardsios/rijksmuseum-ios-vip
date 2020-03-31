@@ -6,7 +6,7 @@ public protocol ServiceFactory {
 }
 
 extension ServiceFactory {
-    func resolve() -> ArtWebService {
-        ArtWebService(urlSession: urlSession, jsonDecoder: jsonDecoder)
+    func resolve() -> RijkmuseumWebService {
+        RijkmuseumWebService(urlSession: urlSession, jsonDecoder: jsonDecoder)
     }
 }

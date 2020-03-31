@@ -17,14 +17,11 @@ public final class ArtRepositoryDefault: ArtRepository {
     }
 
     public func fetchArts() -> Observable<[Art]> {
-        Observable.of(
-            Observable.just(arts),
-            artWebService.performRequest(CollectionWebRequest())
-                .map { $0.artJSONs }
-                .do(onNext: {
-                    self.arts = $0
-                })
-            )
+
+        let artObserver = artWebService.performRequest(CollectionWebRequest())
+            .map { $0.artJSONs as [Art] }
+
+        return Observable.of(Observable.just(arts), artObserver)
             .merge()
     }
 }

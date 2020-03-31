@@ -2,7 +2,7 @@ import Foundation
 import Utils
 import RxSwift
 
-class ArtWebService: WebService {
+class RijkmuseumWebService: WebService {
 
     struct Config: WebServiceConfig {
 
