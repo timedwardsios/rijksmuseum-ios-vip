@@ -1,17 +1,9 @@
 TODO:
 
-Move to generic data table source, use inherits
+CoreData cache
 
-UserDefault service
-
-Fix broken functionality, add router and CoreData for persistance
-
-Fix diagram
-
-Data source stuff cocoa - https://github.com/RxSwiftCommunity/RxDataSources
+Add routing
 
 Check out mocking frameworks - https://github.com/Brightify/Cuckoo
 
 Write unit tests
-
-In test, add readme - explain over-engineering reasons
