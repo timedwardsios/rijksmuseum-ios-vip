@@ -8,18 +8,15 @@
       location = "group:MuseumiOS/MuseumiOS/../../.swiftlint.yml">
    </FileRef>
    <FileRef
-      location = "group:MuseumiOS/MuseumiOS.xcodeproj">
+      location = "group:iOS/iOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:MuseumiOS/MuseumiOS/../../MuseumApp/MuseumApp.xcodeproj">
+      location = "group:App/App.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:/Users/Tim/dev/rijksmuseum-ios-vip-example/MuseumDomain/MuseumCore.xcodeproj">
+      location = "group:/Users/Tim/dev/rijksmuseum-demo/Core/Core.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Utils/Utils.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:TimKit/../TestKit/TestKit.xcodeproj">
+      location = "group:../utils/Utils.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,5 +1,9 @@
 TODO:
 
+Move to generic data table source, use inherits
+
+UserDefault service
+
 Fix broken functionality, add router and CoreData for persistance
 
 Fix diagram
