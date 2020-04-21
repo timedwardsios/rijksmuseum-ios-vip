@@ -1,8 +1,16 @@
 TODO:
 
+Try cleaning up repos
+
+Fix functionality
+
+Swiftlint
+
 CoreData cache
 
-Add routing
+Add proper routing
+
+Add deeplinking
 
 Check out mocking frameworks - https://github.com/Brightify/Cuckoo
 

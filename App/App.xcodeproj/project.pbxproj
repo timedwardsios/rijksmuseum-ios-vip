@@ -17,7 +17,6 @@
 		22AC6EB924329EFA00BB3CE6 /* FetchArts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC6EB824329EFA00BB3CE6 /* FetchArts.swift */; };
 		22BBE0C123E81C1C004D8D81 /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBE0B723E81C1C004D8D81 /* App.framework */; };
 		22BBE0C823E81C1C004D8D81 /* MuseumApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BBE0BA23E81C1C004D8D81 /* MuseumApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		22BBE0EC23E81DAF004D8D81 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BBE0EB23E81DAF004D8D81 /* AppViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +58,6 @@
 		22BBE0BB23E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22BBE0C023E81C1C004D8D81 /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22BBE0C723E81C1C004D8D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22BBE0EB23E81DAF004D8D81 /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +158,6 @@
 		22BBE11523E8316F004D8D81 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				22BBE0EB23E81DAF004D8D81 /* AppViewModel.swift */,
 				22387B9C23E98E9900937F59 /* ArtCollectionViewModel.swift */,
 				22387B9E23E9913400937F59 /* ArtDetailsViewModel.swift */,
 			);
@@ -323,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22387B9F23E9913400937F59 /* ArtDetailsViewModel.swift in Sources */,
-				22BBE0EC23E81DAF004D8D81 /* AppViewModel.swift in Sources */,
 				2246428B2432716700BE711E /* UseCases.swift in Sources */,
 				22AC6EB924329EFA00BB3CE6 /* FetchArts.swift in Sources */,
 				22387B9D23E98E9900937F59 /* ArtCollectionViewModel.swift in Sources */,
