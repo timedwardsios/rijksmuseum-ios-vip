@@ -9,8 +9,8 @@ struct Dependencies {
     init() {
         let urlSession = URLSession.shared
         let jsonDecoder = JSONDecoder()
-        let services = Services(urlSession: urlSession, jsonDecoder: jsonDecoder)
-        let repositories = Repositories(services: services)
+        let repositories = Repositories(urlSession: urlSession,
+                                        jsonDecoder: jsonDecoder)
         self.useCases = UseCases(repositories: repositories)
     }
 }

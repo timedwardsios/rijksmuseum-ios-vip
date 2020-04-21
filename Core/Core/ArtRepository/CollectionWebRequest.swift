@@ -1,33 +1,33 @@
 import Foundation
 import Utils
 
-public struct CollectionWebRequest: WebRequest {
+struct CollectionWebRequest: WebRequest {
 
-    public typealias ResponseJSONType = CollectionJSON
+    typealias ResponseJSONType = CollectionJSON
 
-    public var pathExtension = "/collection"
+    var pathExtension = "/collection"
 
-    public let queryItems: [URLQueryItem] = [
+    let queryItems: [URLQueryItem] = [
         .init(name: "ps", value: "100"),
         .init(name: "imgonly", value: "true"),
         .init(name: "s", value: "relevance"),
     ]
 }
 
-public struct CollectionJSON: Decodable {
+struct CollectionJSON: Decodable {
     private enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
     }
 
-    public let artJSONs: [ArtJSON]
+    let artJSONs: [ArtJSON]
 
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         artJSONs = try container.decode([ArtJSON].self, forKey: .artArray)
     }
 }
 
-public struct ArtJSON: Art, Decodable {
+struct ArtJSON: Art, Decodable {
     enum CodingKeys: String, CodingKey {
         case artArray = "artObjects"
         case id = "objectNumber"
@@ -37,12 +37,12 @@ public struct ArtJSON: Art, Decodable {
         case imageURL = "url"
     }
 
-    public var id: String
-    public var title: String
-    public var artist: String
-    public var imageURL: URL
+    var id: String
+    var title: String
+    var artist: String
+    var imageURL: URL
 
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
         title = try container.decode(String.self, forKey: .title)

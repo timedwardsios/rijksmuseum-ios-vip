@@ -31,9 +31,7 @@
 		2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2239EC5E242FBE070067859A /* CollectionWebRequest.swift */; };
 		22457226243E2D8100AF318B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22457225243E2D8100AF318B /* Model.swift */; };
 		224642872432714600BE711E /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224642862432714600BE711E /* Repositories.swift */; };
-		225DF0DC2432C59900F2C2E7 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DF0DB2432C59900F2C2E7 /* Services.swift */; };
-		2279D75E2432A99A00A1ED63 /* RijkmuseumWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279D75D2432A99A00A1ED63 /* RijkmuseumWebService.swift */; };
-		22AC6EBB24329F0400BB3CE6 /* ArtRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AC6EBA24329F0400BB3CE6 /* ArtRepository.swift */; };
+		2279D75E2432A99A00A1ED63 /* ArtRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2279D75D2432A99A00A1ED63 /* ArtRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,9 +85,7 @@
 		2239EC5E242FBE070067859A /* CollectionWebRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionWebRequest.swift; sourceTree = "<group>"; };
 		22457225243E2D8100AF318B /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Model/Model.swift; sourceTree = "<group>"; };
 		224642862432714600BE711E /* Repositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
-		225DF0DB2432C59900F2C2E7 /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		2279D75D2432A99A00A1ED63 /* RijkmuseumWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RijkmuseumWebService.swift; sourceTree = "<group>"; };
-		22AC6EBA24329F0400BB3CE6 /* ArtRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtRepository.swift; sourceTree = "<group>"; };
+		2279D75D2432A99A00A1ED63 /* ArtRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,10 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				224642862432714600BE711E /* Repositories.swift */,
-				225DF0DB2432C59900F2C2E7 /* Services.swift */,
 				22457225243E2D8100AF318B /* Model.swift */,
-				2246429A2432788D00BE711E /* ArtRepository */,
-				22392CDA2433810600B5A66D /* RijkmuseumWebService */,
+				22392CDA2433810600B5A66D /* ArtRepository */,
 				222FD854242FACEB008A45E9 /* Resources */,
 			);
 			path = Core;
@@ -218,19 +212,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		22392CDA2433810600B5A66D /* RijkmuseumWebService */ = {
+		22392CDA2433810600B5A66D /* ArtRepository */ = {
 			isa = PBXGroup;
 			children = (
-				2279D75D2432A99A00A1ED63 /* RijkmuseumWebService.swift */,
+				2279D75D2432A99A00A1ED63 /* ArtRepository.swift */,
 				2239EC5E242FBE070067859A /* CollectionWebRequest.swift */,
-			);
-			path = RijkmuseumWebService;
-			sourceTree = "<group>";
-		};
-		2246429A2432788D00BE711E /* ArtRepository */ = {
-			isa = PBXGroup;
-			children = (
-				22AC6EBA24329F0400BB3CE6 /* ArtRepository.swift */,
 			);
 			path = ArtRepository;
 			sourceTree = "<group>";
@@ -401,11 +387,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				22457226243E2D8100AF318B /* Model.swift in Sources */,
-				22AC6EBB24329F0400BB3CE6 /* ArtRepository.swift in Sources */,
 				2239EC62242FBE080067859A /* CollectionWebRequest.swift in Sources */,
-				225DF0DC2432C59900F2C2E7 /* Services.swift in Sources */,
 				224642872432714600BE711E /* Repositories.swift in Sources */,
-				2279D75E2432A99A00A1ED63 /* RijkmuseumWebService.swift in Sources */,
+				2279D75E2432A99A00A1ED63 /* ArtRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

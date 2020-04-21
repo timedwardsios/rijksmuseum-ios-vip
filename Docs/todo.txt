@@ -1,12 +1,12 @@
 TODO:
 
-Try cleaning up repos
+UserDefaults cache
 
 Fix functionality
 
 Swiftlint
 
-CoreData cache
+Move cache to CoreData
 
 Add proper routing
 

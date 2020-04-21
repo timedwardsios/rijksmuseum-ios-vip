@@ -4,7 +4,10 @@ public struct Repositories {
 
     public let artRepository: ArtRepository
 
-    public init(services: Services) {
-        artRepository = ArtRepositoryDefault(artWebService: services.rijkmuseumWebService)
+    public init(urlSession: URLSession,
+                jsonDecoder: JSONDecoder) {
+        artRepository = ArtRepositoryDefault(urlSession: urlSession,
+                                             jsonDecoder: jsonDecoder
+        )
     }
 }
